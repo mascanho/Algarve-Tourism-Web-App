@@ -4,7 +4,7 @@ import { AiFillHeart } from "react-icons/ai";
 
 export const Card: React.FC<{}> = () => {
   return (
-    <section className="max-w-7xl pt-5 space-y-3 text-left md:w-72 mx-auto">
+    <section className="max-w-7xl pt-5 space-y-2 text-left md:w-72 mx-auto">
       <div className="w-full h-40 flex flex-col rounded-t-md overflow-hidden relative">
         <Image
           src="https://th.bing.com/th/id/OIG.XUrUyoz7q_uPku3p7E.0?pid=ImgGn"
@@ -44,7 +44,7 @@ export const Card: React.FC<{}> = () => {
       </div>
       <div className="w-full h-[1px] bg-gray-300" />
       <div className="flex justify-between items-center align-middle w-full">
-        <div className="mt-2 text-sm flex items-center space-x-2 mb-2 bg-sky text-white rounded-full w-32 px-2 py-1">
+        <div className="mt-1 text-sm flex items-center space-x-2 mb-2 bg-sky text-white rounded-full w-32 px-2 py-1">
           <AiFillHeart className="text-red-500" />
           <span className="">Add to dream</span>
         </div>

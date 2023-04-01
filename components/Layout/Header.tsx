@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import Hero from "../Hero";
+import { Avatar } from "@mantine/core";
 
 const Header = () => {
   return (
@@ -91,7 +92,12 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end space-x-4">
+          <Avatar
+            className="rounded-full"
+            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80"
+          />
+
           <a className="mr-2 text-sm py-1 bg-blue-400 text-white rounded-full px-3">
             Contact
           </a>
