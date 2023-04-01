@@ -19,7 +19,10 @@ export default function Home() {
   return (
     <section className="text-center bg-white pt-8 pb-16 space-y-4">
       <div className="w-11/12 mx-auto">
-        <h3 className="text-2xl font-bold sm:text-5xl text-black">
+        <h3
+          id="phototours"
+          className="text-2xl font-bold sm:text-5xl text-black"
+        >
           Guides for your next location{" "}
         </h3>
       </div>
@@ -29,8 +32,6 @@ export default function Home() {
       <Selection />
       <section className="max-w-7xl mx-auto w-11/12 sm:w-full">
         <section className="grid sm:grid-cols-2 md:grid-cols-4 gap-y-8 w-full">
-          <Card />
-          <Card />
           <Card />
           <Card />
           <Card />
