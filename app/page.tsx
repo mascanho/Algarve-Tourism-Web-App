@@ -7,17 +7,14 @@ import { catArr } from "@/Data/Categories";
 import Pagination from "@/components/Pagination";
 import BottomAssets from "@/components/BottomAssets";
 import { CarouselCard } from "@/components/Card2";
-
-export const metadata: Metadata = {
-  title: "Home",
-  description: "Welcome to Next.js",
-};
+import Hero from "@/components/Hero";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <>
+      <Hero />
       <section className="text-center bg-white pt-20 pb-16 space-y-4">
         <div className="w-11/12 mx-auto">
           <h3 className="text-2xl font-bold sm:text-5xl text-black">

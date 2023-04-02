@@ -1,11 +1,16 @@
 "use client";
 import React from "react";
-import { Avatar } from "@mantine/core";
+import { useRouter } from "next/navigation";
+import { HiBars3 } from "react-icons/hi2";
+import { MdCardTravel } from "react-icons/md";
+import Image from "next/image";
 
 const Header = () => {
+  const router = useRouter();
+
   return (
-    <nav className="z-50">
-      <div className="navbar bg-base-100 max-w-7xl mx-auto z-50">
+    <nav className="z-50  ">
+      <div className="navbar bg-white max-w-7xl mx-auto z-50 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -58,7 +63,9 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a className="btn-ghost normal-case text-xl text-left">
+            Algarve Travel
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -93,14 +100,23 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-4">
-          <Avatar
-            className="rounded-full"
-            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80"
-          />
+          <div className="border border-black/20 flex items-center text-xl space-x-2 pr-4 rounded-full overflow-hidden bg-white/50 text-black">
+            <img
+              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80"
+              height={30}
+              width={30}
+              className="rounded-full"
+              alt="avatar"
+            />
+            <HiBars3 />
+            <div className="relative">
+              <span className="absolute -top-1 -right-1 text-[8px] bg-sky text-white rounded-full w-3 h-3 flex justify-center items-center text-center">
+                2
+              </span>
 
-          <a className="mr-2 text-sm py-1 bg-blue-400 text-white rounded-full px-3">
-            Contact
-          </a>
+              <MdCardTravel />
+            </div>
+          </div>
         </div>
       </div>
     </nav>
