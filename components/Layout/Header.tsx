@@ -4,13 +4,15 @@ import { useRouter } from "next/navigation";
 import { HiBars3 } from "react-icons/hi2";
 import { MdCardTravel } from "react-icons/md";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const router = useRouter();
+  const pathname = usePathname();
 
   return (
-    <nav className="z-50  ">
-      <div className="navbar bg-white max-w-7xl mx-auto z-50 ">
+    <nav className={`shadow-sm  w-full top-0  z-50  `}>
+      <div className="navbar max-w-7xl mx-auto z-50 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -49,7 +51,7 @@ const Header = () => {
                     <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                   </svg>
                 </a>
-                <ul className="p-2">
+                <ul className="p-2 bg-black">
                   <li>
                     <a>Submenu 1</a>
                   </li>
@@ -88,7 +90,7 @@ const Header = () => {
                   <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                 </svg>
               </a>
-              <ul className="p-2">
+              <ul className="p-2 bg-black">
                 <li>
                   <a>Submenu 1</a>
                 </li>

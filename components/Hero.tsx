@@ -6,7 +6,7 @@ import Search from "./Search";
 function Hero() {
   return (
     <>
-      <div className=" bg-[url('https://rare-gallery.com/uploads/posts/504981-Public-domain.jpg')]  h-screen overflow-hidden -mt-16 bg-cover bg-blend-multiply bg-black/30 " />
+      <div className=" bg-[url('https://rare-gallery.com/uploads/posts/504981-Public-domain.jpg')]  h-screen overflow-hidden  bg-cover bg-blend-multiply bg-black/30 -mt-16 " />
       <section className="absolute top-60 sm:top-80 mx-auto w-full text-center space-y-6">
         <h1 className="mx-auto text-center sm:text-6xl text-white text-3xl font-bold">
           Algarve&apos;s Travel Guide

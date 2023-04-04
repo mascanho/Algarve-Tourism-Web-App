@@ -33,8 +33,6 @@ export default function Home() {
       <section className="max-w-7xl mx-auto w-11/12 sm:w-full">
         <section className="grid sm:grid-cols-2 md:grid-cols-4 gap-y-8 w-full">
           <Card />
-          <Card />
-          <Card />
         </section>
       </section>
     </section>
