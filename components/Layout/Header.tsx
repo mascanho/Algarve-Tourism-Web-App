@@ -63,7 +63,10 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <a className="btn-ghost normal-case text-xl text-left">
+          <a
+            onClick={() => router.push("/")}
+            className="normal-case text-xl text-left cursor-pointer"
+          >
             Algarve Travel
           </a>
         </div>

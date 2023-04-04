@@ -36,8 +36,6 @@ export default function Home() {
           <Card />
           <Card />
         </section>
-        <Pagination />
-        <BottomAssets />
       </section>
     </section>
   );
