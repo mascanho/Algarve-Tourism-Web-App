@@ -22,12 +22,17 @@ const Selection = () => {
         ))}
       </div>
       <section className="py-4">
-        <select className="select w-9/12 bg-white outline outline-1 sm:hidden">
+        <select
+          onChange={(e) => router.push(e.target.value)}
+          className="select w-9/12 bg-white outline outline-1 sm:h"
+        >
           <option disabled selected className="">
             Pick your next adventure
           </option>
           {catArr.map((item) => (
-            <option key={item.id}>{item.name}</option>
+            <option value={item.route} key={item.id}>
+              {item.name}
+            </option>
           ))}
         </select>
       </section>
