@@ -4,15 +4,15 @@ import React from "react";
 function BottomAssets() {
   return (
     <section className="mt-52 space-y-32  mx-auto">
-      <div className=" mx-auto flex justify-between">
-        <div className="w-[460px] h-[290px] relative">
+      <div className=" mx-auto sm:flex justify-between">
+        <div className="w-[100%] h-[390px] relative sm:w-2/3">
           <Image
             src={"https://th.bing.com/th/id/OIG..r71eUK6hhMQiM6pVaro?pid=ImgGn"}
             fill
             alt="IMAGE"
           />
         </div>
-        <div className="w-1/2 text-left space-y-10">
+        <div className="sm:w-2/3 sm:pl-10 text-left space-y-10">
           <h3 className="text-4xl text-black">Safely Saved Lists</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
@@ -24,8 +24,8 @@ function BottomAssets() {
           </p>
         </div>
       </div>
-      <div className=" mx-auto flex justify-between">
-        <div className="w-1/2 text-left space-y-10">
+      <div className=" mx-auto sm:flex justify-between">
+        <div className="sm:w-2/3 sm:pr-10 text-left space-y-10">
           <h3 className="text-4xl text-black">Safely Saved Lists</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
@@ -36,7 +36,7 @@ function BottomAssets() {
             quod iste vel?
           </p>
         </div>
-        <div className="w-[460px] h-[290px] relative">
+        <div className="w-[100%] h-[390px] relative sm:w-2/3">
           <Image
             src={"https://th.bing.com/th/id/OIG..r71eUK6hhMQiM6pVaro?pid=ImgGn"}
             fill
@@ -44,15 +44,15 @@ function BottomAssets() {
           />
         </div>
       </div>
-      <div className=" mx-auto flex justify-between">
-        <div className="w-[460px] h-[290px] relative">
+      <div className=" mx-auto sm:flex justify-between">
+        <div className="w-[100%] h-[390px] relative sm:w-2/3">
           <Image
             src={"https://th.bing.com/th/id/OIG..r71eUK6hhMQiM6pVaro?pid=ImgGn"}
             fill
             alt="IMAGE"
           />
         </div>
-        <div className="w-1/2 text-left space-y-10">
+        <div className="sm:w-2/3 sm:pl-10 text-left space-y-10">
           <h3 className="text-4xl text-black">Safely Saved Lists</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,

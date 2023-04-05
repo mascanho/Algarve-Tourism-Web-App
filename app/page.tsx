@@ -39,7 +39,7 @@ export default function Home() {
           <BottomAssets />
         </section>
       </section>
-      <section className="h-screen  mx-auto max-w-7xl">
+      <section className="h-full  mx-auto max-w-7xl">
         <div className="py-20 text-center">
           <h2 className="text-black text-4xl">Satisfied customers</h2>
         </div>
