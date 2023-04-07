@@ -4,7 +4,7 @@ import { AiFillHeart } from "react-icons/ai";
 
 export const Card: React.FC<{}> = () => {
   return (
-    <section className="max-w-7xl space-y-2 text-left md:w-60 shadow-sm rounded-md">
+    <section className="max-w-7xl space-y-2 text-left md:w-60 shadow-sm rounded-md pb-2">
       <div className="w-full h-40 flex flex-col rounded-t-md overflow-hidden relative">
         <Image
           src="https://th.bing.com/th/id/OIG.XUrUyoz7q_uPku3p7E.0?pid=ImgGn"
@@ -16,7 +16,7 @@ export const Card: React.FC<{}> = () => {
           📍 Albufeira
         </span>
       </div>
-      <div className="flex w-full  text-left justify-between">
+      <div className="flex w-full  text-left justify-between px-2">
         <h3 className="w-full text-left text-black text-sm">
           {" "}
           🚣‍♀️ Riatclo Bridge, Italy
@@ -24,7 +24,7 @@ export const Card: React.FC<{}> = () => {
         <span className="text-gray-500 text-sm"> $66.99</span>
       </div>
       <div className="w-full h-[1px] bg-gray-300" />
-      <div className="mt-20 flex w-full">
+      <div className="mt-20 flex w-full px-2">
         <p className="line-clamp-3">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea neque
           dicta minus laboriosam illum. Placeat, harum sint! Hic, suscipit
@@ -32,7 +32,7 @@ export const Card: React.FC<{}> = () => {
         </p>
         {/* <span className="flex-1 text-sky text-xs">Read more</span> */}
       </div>
-      <div className="text-xs space-x-2 pb-2">
+      <div className="text-xs space-x-2 pb-2 px-2">
         {["📸 Photo Tour"].map((cat) => (
           <span
             key={cat}
@@ -42,11 +42,11 @@ export const Card: React.FC<{}> = () => {
           </span>
         ))}
       </div>
-      <div className="w-full h-[1px] bg-gray-300" />
-      <div className="flex justify-between items-center align-middle w-full">
+      <div className="w-full h-[1px] bg-gray-300 px-2" />
+      <div className="flex justify-between items-center align-middle w-full px-2">
         <div className="mt-1 text-sm flex items-center space-x-2 mb-2 bg-sky text-white rounded-full w-32 px-2 py-1">
           <AiFillHeart className="text-red-500" />
-          <span className="">Add to dream</span>
+          <span className="tex-xs">Add to dream</span>
         </div>
         <span className="text-sm text-sky">Read More</span>
       </div>
