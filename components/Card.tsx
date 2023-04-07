@@ -4,7 +4,7 @@ import { AiFillHeart } from "react-icons/ai";
 
 export const Card: React.FC<{}> = () => {
   return (
-    <section className="max-w-7xl space-y-2 text-left md:w-72 mx-auto">
+    <section className="max-w-7xl space-y-2 text-left md:w-60 shadow-sm rounded-md">
       <div className="w-full h-40 flex flex-col rounded-t-md overflow-hidden relative">
         <Image
           src="https://th.bing.com/th/id/OIG.XUrUyoz7q_uPku3p7E.0?pid=ImgGn"

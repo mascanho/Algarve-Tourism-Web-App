@@ -15,16 +15,27 @@ export function LeadGrid() {
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - ${theme.spacing.md} / 2)`;
 
   return (
-    <section>
-      <Container my="md" className="w-full ml-0 mt-0 sm:pt-0 sm:pl-0 h-full">
+    <section className="">
+      <Container
+        my="xl"
+        className="w-full min-w-full ml-0 mt-0 sm:pt-0 sm:pl-0 h-full"
+      >
         <SimpleGrid
           cols={2}
           spacing="md"
           breakpoints={[{ maxWidth: "sm", cols: 1 }]}
+          className="w-full h-full min-h-full"
         >
           <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} />
           <Grid gutter="md">
-            <Grid.Col>
+            <Grid.Col span={6}>
+              <Skeleton
+                height={SECONDARY_COL_HEIGHT}
+                radius="md"
+                animate={false}
+              />
+            </Grid.Col>
+            <Grid.Col span={6}>
               <Skeleton
                 height={SECONDARY_COL_HEIGHT}
                 radius="md"
