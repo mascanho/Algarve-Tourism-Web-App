@@ -4,6 +4,12 @@ import { Card } from "@/components/Card";
 import type { Metadata } from "next";
 import { LeadGrid } from "@/components/Layout/GridLayout";
 import { FaRegGem } from "react-icons/fa";
+import { GoLocation } from "react-icons/go";
+import { MdOutlineCardTravel } from "react-icons/md";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { BiMapPin } from "react-icons/bi";
+import { BiShareAlt } from "react-icons/bi";
+import TabsRow from "@/components/Layout/Tabs";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -18,20 +24,43 @@ export default function Home() {
       <section className="w-full ml-0">
         <LeadGrid />
       </section>
-      <h1>Bali - Nusa Penida Island Tour</h1>
-      <div className="w-11/12 mx-auto"></div>
-      <h4 className="w-8/12 mx-auto">
-        Check out this week&apos; selection of popular trips and events
-      </h4>
-
-      <section className="grid sm:grid-cols-2 md:grid-cols-4 gap-y-8 3xl:grid-cols-4 justify-items-start content-start items-start self-start w-11/12 sm:w-full mx-auto sm:mx-0 ">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </section>
+      <div className="space-y-2">
+        <div className="flex items-center space-x-1 bg-gray-200 w-fit px-2 rounded-md text-green-500 text-xs py-1">
+          <FaRegGem />
+          <span>Hidden Gem</span>
+        </div>
+        <div className="flex justify-between">
+          <h1 className="text-2xl text-sky">Bali - Nusa Penida Island Tour</h1>
+          <div className="pr-4 flex space-x-2  ">
+            <MdOutlineCardTravel className="w-8 h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
+            <BiMapPin className="w-8 h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
+            <BiShareAlt className="w-8 h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
+          </div>
+        </div>
+        <div className="flex">
+          <div className="flex-1">
+            <span className="flex items-center text-black">
+              <FaMapMarkerAlt />
+              Albufeira
+            </span>
+            <div className="space-x-2 mt-4">
+              {["Minimalist", "Beach House", "Tropic", "Private Pool"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="bg-gray-200 rounded-md px-2 text-sm py-1 items-center m-auto "
+                  >
+                    {item}
+                  </span>
+                )
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-4">
+        <TabsRow />
+      </div>
     </section>
   );
 }
