@@ -21,7 +21,7 @@ export default function Page() {
 
   return (
     <div>
-      <section className="max-w-7xl mx-auto w-11/12 sm:w-full grid sm:grid-cols-3 gap-y-8 h-full mb-20 ">
+      <section className="max-w-7xl mx-auto w-11/12 sm:w-full grid sm:grid-cols-4 sm:pl-6 gap-y-8 h-full mb-20 ">
         <Card />
         <Card />
         <Card />

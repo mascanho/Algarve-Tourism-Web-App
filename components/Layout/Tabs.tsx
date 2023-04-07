@@ -4,15 +4,14 @@ import { Tabs } from "@mantine/core";
 function TabsRow() {
   return (
     <Tabs color="teal" defaultValue="first">
-      <Tabs.List>
-        <Tabs.Tab value="first">Description</Tabs.Tab>
+      <Tabs.List className="text-left">
+        <Tabs.Tab className="text-left ml-0 pl-0" value="first">
+          Description
+        </Tabs.Tab>
         <Tabs.Tab value="second" color="blue">
-          More Photos
+          Photos
         </Tabs.Tab>
         <Tabs.Tab value="third">Description</Tabs.Tab>
-        <Tabs.Tab value="account" ml="auto">
-          Account
-        </Tabs.Tab>
       </Tabs.List>
 
       <Tabs.Panel value="first" pt="xs">
