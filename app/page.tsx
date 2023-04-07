@@ -44,7 +44,7 @@ export default function Home() {
           <h2 className="text-black text-4xl">Satisfied customers</h2>
         </div>
         <section className="grid sm:grid-cols-4 gap-y-6">
-          {Reviews.map((review) => (
+          {Reviews.map((review: any) => (
             <Review
               key={review.id}
               id={review.id}
