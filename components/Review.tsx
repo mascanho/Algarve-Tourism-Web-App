@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-function Review({ name, job, rating, review, image }) {
+function Review({ name, job, rating, review, image }: any) {
   return (
     <aside className="w-72 bg-neutral-100 p-2 rounded-md">
       <div className="flex items-center space-x-2">
