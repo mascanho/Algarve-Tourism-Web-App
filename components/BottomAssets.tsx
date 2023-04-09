@@ -3,7 +3,7 @@ import React from "react";
 
 function BottomAssets() {
   return (
-    <section className="mt-52 space-y-32  mx-auto">
+    <section className="mt-20 sm:mt-52 space-y-32  mx-auto">
       <div className=" mx-auto sm:flex justify-between">
         <div className="w-[100%] h-[390px] relative sm:w-2/3">
           <Image

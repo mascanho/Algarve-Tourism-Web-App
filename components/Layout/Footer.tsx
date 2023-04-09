@@ -3,9 +3,9 @@ import React from "react";
 function Footer() {
   return (
     <>
-      <section className="bg-black">
+      <section className="bg-black mt-20">
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto ">
-          <section className="grid grid-cols-3">
+          <section className="grid grid-cols-3 w-full sm:flex justify-between ">
             <div className="flex flex-col">
               <span className="footer-title">Services</span>
               <a className="link link-hover">Branding</a>
@@ -19,6 +19,12 @@ function Footer() {
               <a className="link link-hover">Contact</a>
               <a className="link link-hover">Jobs</a>
               <a className="link link-hover">Press kit</a>
+            </div>
+            <div className="flex flex-col">
+              <span className="footer-title">Legal</span>
+              <a className="link link-hover">Terms of use</a>
+              <a className="link link-hover">Privacy policy</a>
+              <a className="link link-hover">Cookie policy</a>
             </div>
             <div className="flex flex-col">
               <span className="footer-title">Legal</span>

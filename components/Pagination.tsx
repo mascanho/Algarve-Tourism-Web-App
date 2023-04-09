@@ -3,7 +3,7 @@ import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
 const Pagination = () => {
   return (
-    <div className="mt-28 flex justify-center  items-center space-x-3">
+    <div className="sm:mt-28 mt-10 flex justify-center  items-center space-x-3">
       <button className="border px-3 py-2 rounded-full items-center text-xs sm:text-sm">
         <GrLinkPrevious className="text-gray-300" />
       </button>

@@ -29,3 +29,4 @@ function Review({ name, job, rating, review, image }: any) {
 }
 
 export default Review;
+``;
