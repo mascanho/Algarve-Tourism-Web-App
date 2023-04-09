@@ -3,9 +3,7 @@ import Image from "next/image";
 import { AiFillHeart } from "react-icons/ai";
 
 export const Card: React.FC<{}> = (category) => {
-  console.log(category.category[0].fields);
-
-  const data = category?.category[0]?.fields;
+  // const data = category?.category[0]?.fields;
 
   return (
     <section className="max-w-7xl space-y-2 text-left md:w-64 shadow-sm rounded-md pb-2">
@@ -17,13 +15,13 @@ export const Card: React.FC<{}> = (category) => {
           className="block"
         />
         <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-black bg-white  ">
-          📍 {data.city}
+          {/* 📍 {data.city} */}
         </span>
       </div>
       <div className="flex w-full  text-left justify-between px-2 items-center">
         <h3 className="w-full text-left text-black text-sm items-center">
           {" "}
-          {data.title}
+          {/* {data.title} */}
         </h3>
         <span className="text-gray-500 text-sm"> $66.99</span>
       </div>
