@@ -10,6 +10,7 @@ import { CarouselCard } from "@/components/Card2";
 import Hero from "@/components/Hero";
 import Review from "@/components/Review";
 import { Reviews } from "@/Data/Reviews";
+import PopularCategories from "@/components/PopularCategories";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -67,6 +68,7 @@ export default function Home() {
               </button>
             </div>
           </div>
+          <PopularCategories />
         </section>
       </section>
     </>

@@ -3,6 +3,7 @@ import "./globals.css";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Layout/Footer";
 import type { Metadata } from "next";
+import Carousel from "@/components/Carousel";
 
 export const metadata: Metadata = {
   title: {
@@ -58,6 +59,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-white">
         <Header />
+
         {children}
         <Footer />
       </body>
