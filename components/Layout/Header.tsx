@@ -129,7 +129,10 @@ const Header = () => {
                 alt="avatar"
               />
               <div className="relative">
-                <HiBars3 className="cursor-pointer" onClick={openLoginMenu} />
+                <HiBars3
+                  className="cursor-pointer active:scale-90"
+                  onClick={openLoginMenu}
+                />
                 {openLogin && (
                   <div>
                     <ul className="menu bg-white shadow-sm border w-56 p-2 rounded-box absolute sm:-left-24 sm:top-8 -left-40 top-8 z-10 text-sm">
@@ -152,7 +155,10 @@ const Header = () => {
                   2
                 </span>
                 <div className="relative">
-                  <MdCardTravel onClick={open} className="cursor-pointer" />
+                  <MdCardTravel
+                    onClick={open}
+                    className="cursor-pointer active:scale-90"
+                  />
                   {openBag && (
                     <div>
                       <ul className="menu bg-white shadow-sm border w-56 p-2 rounded-box absolute sm:-left-28 sm:top-8 -left-48 top-8 z-10 text-sm">

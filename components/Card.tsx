@@ -3,7 +3,7 @@ import Image from "next/image";
 import { AiFillHeart } from "react-icons/ai";
 
 export const Card: React.FC<{}> = (category) => {
-  // const data = category?.category[0]?.fields;
+  // const data: any = category?.category[0]?.fields;
 
   return (
     <section className="max-w-7xl space-y-2 text-left md:w-64 shadow-sm rounded-md pb-2">
