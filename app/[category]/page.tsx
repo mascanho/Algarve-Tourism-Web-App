@@ -1,43 +1,29 @@
-"use client";
-import { Card } from "@/components/Card";
-import React from "react";
-import { usePathname } from "next/navigation";
-import { useSearchParams } from "next/navigation";
+import { createClient } from "contentful";
+import Routes from "@/components/Routes/routes";
 
-export default function Page() {
-  const pathname = usePathname();
+async function Page(props) {
+  // Fetch COntentful data
+  async function getData() {
+    let pathname = props.params.category;
 
-  console.log(pathname);
+    pathname = "events";
 
-  if (pathname === "/sports") {
-    return (
-      <div>
-        <section className="max-w-7xl mx-auto w-11/12 sm:w-full grid sm:grid-cols-4 h-min-screen mb-20 sm:ml-6">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </section>
-      </div>
-    );
+    const client: any = createClient({
+      space: process.env.CONTENTFUL_SPACE_ID!,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+    });
+    const data = await client.getEntries({ content_type: `${pathname}` });
+
+    return await data.items;
   }
+
+  const category = await getData();
 
   return (
     <div>
-      <section className="max-w-7xl mx-auto w-11/12 sm:w-full grid sm:grid-cols-4 sm:ml-6 gap-y-8 h-full mb-20 ">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </section>
+      <Routes category={category} />
     </div>
   );
 }
+
+export default Page;
