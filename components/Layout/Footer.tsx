@@ -5,7 +5,7 @@ function Footer() {
     <>
       <section className="bg-black mt-20">
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto ">
-          <section className="grid grid-cols-3 w-full sm:flex justify-between ">
+          <section className="grid grid-cols-3 w-full sm:flex justify-between px-4 sm:px-0 ">
             <div className="flex flex-col">
               <span className="footer-title">Services</span>
               <a className="link link-hover">Branding</a>
@@ -21,13 +21,13 @@ function Footer() {
               <a className="link link-hover">Press kit</a>
             </div>
             <div className="flex flex-col">
-              <span className="footer-title">Legal</span>
+              <span className="footer-title">Links</span>
               <a className="link link-hover">Terms of use</a>
               <a className="link link-hover">Privacy policy</a>
               <a className="link link-hover">Cookie policy</a>
             </div>
             <div className="flex flex-col">
-              <span className="footer-title">Legal</span>
+              <span className="footer-title">Socials</span>
               <a className="link link-hover">Terms of use</a>
               <a className="link link-hover">Privacy policy</a>
               <a className="link link-hover">Cookie policy</a>
@@ -35,7 +35,7 @@ function Footer() {
           </section>
         </footer>
         <footer className="footer max-w-7xl mx-auto  py-4 border-t  text-base-content border-base-300">
-          <div className="items-center grid-flow-col">
+          <div className="items-center grid-flow-col px-4 sm:px-0">
             <svg
               width="24"
               height="24"
@@ -53,7 +53,7 @@ function Footer() {
             </p>
           </div>
           <div className="md:place-self-center md:justify-self-end">
-            <div className="grid grid-flow-col gap-4">
+            <div className="grid grid-flow-col gap-4 px-4 sm:px-0">
               <a>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
