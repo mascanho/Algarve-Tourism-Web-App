@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import { Card } from "../Card";
 import { useState } from "react";
 
-export default function Routes({ category }) {
+export default function Routes({ category }: any) {
   const pathname = usePathname();
 
   const [path, setPath] = useState();
