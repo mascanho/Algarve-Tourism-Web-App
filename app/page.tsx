@@ -29,7 +29,7 @@ export default function Home() {
         </h4>
         <Selection />
         <section className="max-w-7xl mx-auto w-11/12 sm:w-full">
-          <section className="grid sm:grid-cols-2 md:grid-cols-4 gap-y-4 w-full items-center place-items-center">
+          <section className="grid sm:grid-cols-2 md:grid-cols-4 gap-y-10 w-full items-center place-items-center">
             <Card />
             <Card />
             <Card />

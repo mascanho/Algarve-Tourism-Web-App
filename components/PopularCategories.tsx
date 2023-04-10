@@ -28,7 +28,7 @@ const popularCategories = [
 
 function PopularCategories() {
   return (
-    <section className="max-w-7xl mx-auto mt-40 mb-10 text-center w-11/12 ">
+    <section className="max-w-7xl mx-auto mt-40 mb-10 text-center w-full ">
       <div className="space-y-2">
         <h2 className="text-3xl">Popular Categories For You</h2>
         <h3>50+ locations from the best 3 categories</h3>
