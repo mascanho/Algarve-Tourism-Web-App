@@ -112,7 +112,7 @@ const Header = () => {
                 </ul>
               </li>
               <li>
-                <a>Contact</a>
+                <a>Blog</a>
               </li>
               <li>
                 <a>Contact</a>

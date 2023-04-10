@@ -61,7 +61,7 @@ export default async function Home(props: any) {
         <div className="sm:py-20 my-10 text-center">
           <h2 className="text-black text-4xl">Satisfied customers</h2>
         </div>
-        <section className="grid sm:grid-cols-4 gap-y-6">
+        <section className="grid sm:grid-cols-3 gap-y-6">
           {Reviews.map((review: any) => (
             <Review
               key={review.id}
