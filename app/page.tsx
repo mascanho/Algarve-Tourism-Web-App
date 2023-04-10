@@ -16,17 +16,20 @@ import { createClient } from "contentful";
 const inter = Inter({ subsets: ["latin"] });
 
 // Get all categories from contentful
+
 async function getAllCategories() {
   const client: any = createClient({
     space: process.env.CONTENTFUL_SPACE_ID!,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
   });
-  const res = await client.getEntries({ content_type: "projects" });
+  const res = await client.getEntries({ content_type: "events" });
 
   return await res.items;
 }
 
-export default function Home(props: any) {
+export default async function Home(props: any) {
+  const categories = await getAllCategories();
+
   return (
     <>
       <Hero />
@@ -42,11 +45,13 @@ export default function Home(props: any) {
         <Selection />
         <section className="max-w-7xl mx-auto w-11/12 sm:w-full">
           <section className="grid sm:grid-cols-2 md:grid-cols-4 gap-y-10 w-full items-center place-items-center">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {categories.map((cat: any) => (
+              <Card
+                key={Math.random()}
+                title={cat.fields.title}
+                category={categories}
+              />
+            ))}
           </section>
           <Pagination />
           <BottomAssets />

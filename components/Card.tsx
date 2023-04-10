@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { AiFillHeart } from "react-icons/ai";
 
-export const Card = ({ category }: any) => {
-  // const data: any = category?.category[0]?.fields;
+export const Card = ({ category, title }: any) => {
+  console.log(category);
 
   return (
     <section className="max-w-7xl space-y-2 text-left md:w-64 shadow-sm rounded-md pb-2">
@@ -21,7 +21,7 @@ export const Card = ({ category }: any) => {
       <div className="flex w-full  text-left justify-between px-2 items-center">
         <h3 className="w-full text-left text-black text-sm items-center">
           {" "}
-          {/* {data.title} */}
+          {title}
         </h3>
         <span className="text-gray-500 text-sm"> $66.99</span>
       </div>
