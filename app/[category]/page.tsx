@@ -1,7 +1,7 @@
 import { createClient } from "contentful";
 import Routes from "@/components/Routes/routes";
 
-async function Page(props) {
+async function Page(props: any) {
   // Fetch COntentful data
   async function getData() {
     let pathname = props.params.category;
