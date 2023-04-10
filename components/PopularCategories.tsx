@@ -28,7 +28,7 @@ const popularCategories = [
 
 function PopularCategories() {
   return (
-    <section className="max-w-7xl mx-auto my-20 text-center ">
+    <section className="max-w-7xl mx-auto mt-40 mb-10 text-center w-11/12 ">
       <div className="space-y-2">
         <h2 className="text-3xl">Popular Categories For You</h2>
         <h3>50+ locations from the best 3 categories</h3>
@@ -36,13 +36,16 @@ function PopularCategories() {
 
       <div className="mt-20 sm:flex gap-x-10 justify-center space-y-10 sm:space-y-0 ">
         {popularCategories.map((item: any) => (
-          <div key={item} className="w-fit text-center space-y-4 m-auto ">
+          <div
+            key={item}
+            className="w-fit text-center space-y-4 m-auto rounded-xl overflow-hidden h-fit "
+          >
             <img
               src={item.image}
               height={200}
               width={100}
               alt="image"
-              className="w-80 h-[100px]  object-contain  rounded-2xl"
+              className="w-96 h-[400px] object-cover hover:scale-105 transition-all ease-in delay-75 "
             />
             <h3 className="">{item.name}</h3>
             <div className="flex items-center space-x-2 text-sm border  w-fit px-2 py-1 rounded-md mx-auto">

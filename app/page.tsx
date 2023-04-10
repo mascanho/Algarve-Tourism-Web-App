@@ -20,7 +20,7 @@ export default function Home() {
       <Hero />
       <section className="text-center bg-white pt-20 pb-16 space-y-4">
         <div className="w-11/12 mx-auto">
-          <h3 className="text-2xl font-bold sm:text-5xl text-black">
+          <h3 className="text-3xl font-bold sm:text-5xl text-black">
             Guides for your next location{" "}
           </h3>
         </div>
@@ -41,7 +41,7 @@ export default function Home() {
         </section>
       </section>
       <section className="h-full  mx-auto max-w-7xl">
-        <div className="py-20 text-center">
+        <div className="sm:py-20 my-10 text-center">
           <h2 className="text-black text-4xl">Satisfied customers</h2>
         </div>
         <section className="grid sm:grid-cols-4 gap-y-6">
@@ -58,9 +58,11 @@ export default function Home() {
           ))}
         </section>
         <section className="py-28">
-          <div className="bg-sky w-10/12 mx-auto rounded-xl text-center text-white py-10 px-4 space-y-4">
+          <div className="bg-sky w-11/12 sm:w-full  mx-auto rounded-xl text-center text-white py-10 space-y-2 sm:space-y-4">
             <h4>Come join and have a vacation with us</h4>
-            <h3 className="text-3xl">Prepare yourself and lets explore</h3>
+            <h3 className="text-2xl sm:text-3xl">
+              Prepare yourself and lets explore
+            </h3>
             <h5>Explore the beauty of these hidden places</h5>
             <div className="pt-3">
               <button className="bg-white rounded-md text-black px-3 py-1">
