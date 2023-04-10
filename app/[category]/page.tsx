@@ -17,7 +17,7 @@ async function Page(props: any) {
     return await data.items;
   }
 
-  const category = await getData();
+  const category: any = await getData();
 
   return (
     <div>

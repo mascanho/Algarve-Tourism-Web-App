@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { AiFillHeart } from "react-icons/ai";
 
-export const Card: React.FC<{}> = (category) => {
+export const Card = ({ category }: any) => {
   // const data: any = category?.category[0]?.fields;
 
   return (
