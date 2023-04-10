@@ -20,7 +20,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 interface FunctionProps {}
 
-export default function Home(props): any {
+export default function Home(props: any) {
   return (
     <>
       <section className=" bg-white text-left pb-16 space-y-4 h-full mb-20 sm:pl-6 sm:w-full mx-auto">

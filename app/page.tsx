@@ -11,10 +11,22 @@ import Hero from "@/components/Hero";
 import Review from "@/components/Review";
 import { Reviews } from "@/Data/Reviews";
 import PopularCategories from "@/components/PopularCategories";
+import { createClient } from "contentful";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+// Get all categories from contentful
+async function getAllCategories() {
+  const client: any = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID!,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+  });
+  const res = await client.getEntries({ content_type: "projects" });
+
+  return await res.items;
+}
+
+export default function Home(props: any) {
   return (
     <>
       <Hero />
