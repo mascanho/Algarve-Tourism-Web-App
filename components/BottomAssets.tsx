@@ -10,7 +10,7 @@ function BottomAssets() {
             src={
               "https://cdn.travel-in-portugal.com/sites/default/files/styles/x_large/public/beaches/praia-santa-eulalia-algarve.jpg"
             }
-            fill
+            // fill
             alt="IMAGE"
             className="rounded-md"
           />
@@ -48,7 +48,7 @@ function BottomAssets() {
             src={
               "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/23/42/4d/cd/benagil-cave-visit-we.jpg?w=1200&h=900&s=1"
             }
-            fill
+            // fill
             alt="IMAGE"
             className="rounded-md h-[390px] w-full"
           />
@@ -60,7 +60,7 @@ function BottomAssets() {
             src={
               "https://cdn.visitportugal.com/sites/default/files/styles/encontre_detalhe_poi_destaque/public/mediateca/shutterstock_279519770_PraiaCamiloLagos_AG_PX_Pawel%20Kazmierczak_660x371.jpg?itok=d13l5V-j"
             }
-            fill
+            // fill
             alt="IMAGE"
             className="rounded-md"
           />
@@ -87,7 +87,7 @@ function BottomAssets() {
             src={
               "https://cdn.visitportugal.com/sites/default/files/styles/encontre_detalhe_poi_destaque/public/mediateca/shutterstock_279519770_PraiaCamiloLagos_AG_PX_Pawel%20Kazmierczak_660x371.jpg?itok=d13l5V-j"
             }
-            fill
+            // fill
             alt="IMAGE"
             className="rounded-md"
           />
