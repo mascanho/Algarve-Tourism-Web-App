@@ -21,7 +21,7 @@ const Selection = () => {
           </div>
         ))}
       </div>
-      <section className="py-4">
+      <section className="py-2">
         <select
           onChange={(e) => router.push(e.target.value)}
           className="select w-9/12 bg-white outline outline-1 sm:hidden"
