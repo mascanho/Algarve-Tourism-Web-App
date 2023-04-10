@@ -10,17 +10,35 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { BiMapPin } from "react-icons/bi";
 import { BiShareAlt } from "react-icons/bi";
 import TabsRow from "@/components/Layout/Tabs";
+import { createClient } from "contentful";
 
 export const metadata: Metadata = {
   title: "Home",
   description: "Welcome to Next.js",
 };
-
 const inter = Inter({ subsets: ["latin"] });
 
 interface FunctionProps {}
 
-export default function Home(props: any) {
+export default async function Home(props: any) {
+  const { category, slug } = props.params;
+
+  async function getAllCategories() {
+    const client: any = createClient({
+      space: process.env.CONTENTFUL_SPACE_ID!,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+    });
+    const res = await client.getEntries({ content_type: category });
+
+    return await res.items;
+  }
+
+  const data = await getAllCategories();
+
+  const filteredData = data.filter((obj: any) => obj.fields.slug === slug);
+
+  console.log(filteredData);
+
   return (
     <>
       <section className=" bg-white text-left pb-16 space-y-4 h-full mb-20 sm:pl-6 sm:w-full mx-auto">
@@ -34,7 +52,7 @@ export default function Home(props: any) {
           </div>
           <div className="flex justify-between  ">
             <h1 className="sm:text-2xl text-sky">
-              Bali - Nusa Penida Island Tour
+              {filteredData[0].fields.title}
             </h1>
             <div className="sm:pr-4 flex space-x-2  ">
               <MdOutlineCardTravel className="w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
