@@ -7,7 +7,7 @@ function Hero() {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
             src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/38/d7/a6.jpg"
-            className="max-w-lg rounded-lg shadow-2xl"
+            className="max-w-lg rounded-lg shadow-2xl w-full "
           />
           <div>
             <h1 className="text-5xl font-bold">Box Office News!</h1>
@@ -17,8 +17,8 @@ function Hero() {
               et a id nisi.
             </p>
             <div className="space-x-4">
-              <button className="btn btn-primary">Get Started</button>
-              <button className="btn btn-primary">Get Started</button>
+              {/* <button className="btn btn-primary">Get Started</button> */}
+              {/* <button className="btn btn-primary">Get Started</button> */}
             </div>
           </div>
         </div>
