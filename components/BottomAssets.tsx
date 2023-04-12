@@ -19,7 +19,7 @@ function BottomAssets() {
           <div className="my-3 sm:my-0">
             <h3 className="text-2xl sm:text-4xl  text-black mt-2 mb-4 sm:my-6 font-semibold">🏖️ Santa Eulalia Beach</h3>
             <p>
-              Praia de Santa Eulalia in Albufeira, Portugal is a stunning beach with crystal clear waters and golden sand. Surrounded by lush greenery, including pine trees, it creates a peaceful and serene atmosphere. The beach is perfect for swimming and snorkeling, with calm waters and soft sand. With beachside restaurants, bars, and amenities, it's a convenient and enjoyable destination for visitors.
+              Praia de Santa Eulalia in Albufeira, Portugal is a stunning beach with crystal clear waters and golden sand. Surrounded by lush greenery, including pine trees, it creates a peaceful and serene atmosphere. The beach is perfect for swimming and snorkeling, with calm waters and soft sand. With beachside restaurants, bars, and amenities, it&pos;s a convenient and enjoyable destination for visitors.
             </p>
           </div>
         </div>
