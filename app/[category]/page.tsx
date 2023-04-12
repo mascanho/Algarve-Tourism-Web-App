@@ -23,7 +23,7 @@ async function Page(props: any) {
   const category: any = await getData();
 
   return (
-    <section className="max-w-7xl mx-auto w-11/12 sm:w-full grid sm:grid-cols-4 sm:ml-6 gap-y-8 h-full mb-20">
+    <section className="max-w-7xl mx-auto w-11/12 sm:w-full grid sm:grid-cols-4 sm:ml-6 gap-y-8  mb-20">
       {category.map((cat: any) => (
         <Link key={cat.fields.title} href={`${pathname}/${cat.fields.slug}`}>
           <section className="max-w-7xl space-y-2 text-left md:w-64 shadow-sm rounded-md pb-2">

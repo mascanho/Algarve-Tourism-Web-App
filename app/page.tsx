@@ -27,6 +27,7 @@ async function getAllCategories() {
   return await res.items;
 }
 
+
 export default async function Home(props: any) {
   const categories = await getAllCategories();
 

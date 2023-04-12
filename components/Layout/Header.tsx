@@ -9,6 +9,8 @@ import InstructionModal from "../modals/InstructionModal";
 import { Drawer, Group, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import DrawerModal from "../modals/Drawer";
+import { catArr } from "@/Data/Categories";
+
 
 const Header = () => {
   const router = useRouter();
@@ -24,7 +26,7 @@ const Header = () => {
   return (
     <>
       <nav className={`shadow-sm  w-full top-0  z-50  `}>
-        <div className="navbar max-w-7xl mx-auto z-50 ">
+        <div className="navbar max-w-7xl mx-auto z-50  ">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -52,7 +54,7 @@ const Header = () => {
                 </li>
                 <li tabIndex={0}>
                   <a className="justify-between">
-                    Parent
+                    Catoegories
                     <svg
                       className="fill-current"
                       xmlns="http://www.w3.org/2000/svg"
@@ -86,12 +88,12 @@ const Header = () => {
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
-              <li>
-                <a>Item 1</a>
+              <li className="active:bg-sky active:rounded-md">
+                <a className="active:bg-sky active:rounded-md">Item 1</a>
               </li>
-              <li tabIndex={0}>
-                <a>
-                  Parent
+              <li className="active:bg-transparent rounded-md" tabIndex={0}>
+                <a className="active:bg-sky">
+                  Categories
                   <svg
                     className="fill-current"
                     xmlns="http://www.w3.org/2000/svg"
@@ -103,19 +105,20 @@ const Header = () => {
                   </svg>
                 </a>
                 <ul className="p-2 bg-white z-10">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
+                  {
+                    catArr.map((item) => (
+                      <li key={item.id}>
+                        <a href="">{item.name}</a>
+                      </li>
+                    ))
+                  }
                 </ul>
               </li>
-              <li>
-                <a>Blog</a>
+              <li className="active:bg-sky rounded-md">
+                <a className="active:bg-sky rounded-md" >Blog</a>
               </li>
-              <li>
-                <a>Contact</a>
+              <li className="active:bg-sky rounded-md">
+                <a className="active:bg-sky rounded-md">Contact</a>
               </li>
             </ul>
           </div>
@@ -137,13 +140,13 @@ const Header = () => {
                   <div>
                     <ul className="menu bg-white shadow-sm border w-56 p-2 rounded-box absolute sm:-left-24 sm:top-8 -left-40 top-8 z-10 text-sm">
                       <li>
-                        <a>Item 1</a>
+                        <a className="active:bg-sky rounded-md">Item 1</a>
                       </li>
                       <li>
-                        <a>Item 2</a>
+                        <a className="active:bg-sky rounded-md">Item 1</a>
                       </li>
                       <li>
-                        <a>Item 3</a>
+                        <a className="active:bg-sky rounded-md">Item 1</a>
                       </li>
                     </ul>
                   </div>
