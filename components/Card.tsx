@@ -1,13 +1,15 @@
 "use client";
 import Image from "next/image";
 import { AiFillHeart } from "react-icons/ai";
+import { useRouter } from "next/navigation";
 
-export const Card = ({ category, title }: any) => {
+export const Card = ({ category, title, slug, date, mainImage, city, tags, hiddenGem }: any) => {
   console.log(category);
+  const router = useRouter()
 
   return (
-    <section className="max-w-7xl space-y-2 text-left md:w-64 shadow-sm rounded-md pb-2">
-      <div className="w-full h-40 flex flex-col rounded-t-md overflow-hidden relative">
+    <section className="max-w-7xl space-y-2 text-left md:w-64 shadow-sm rounded-md pb-2 transition-all ease-in delay-75 hover:scale-105 hover:cursor-pointer">
+      <div className="w-full h-40 flex flex-col rounded-t-md overflow-hidden relative ">
         <Image
           src="https://th.bing.com/th/id/OIG.XUrUyoz7q_uPku3p7E.0?pid=ImgGn"
           fill

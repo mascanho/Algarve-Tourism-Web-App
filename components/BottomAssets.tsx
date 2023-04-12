@@ -17,30 +17,21 @@ function BottomAssets() {
         </div>
         <div className="sm:w-2/3 sm:pl-10 text-left  flex justify-center flex-col">
           <div className="my-3 sm:my-0">
-            <h3 className="text-4xl text-black my-3 ">Safely Saved Lists</h3>
+            <h3 className="text-2xl sm:text-4xl  text-black mt-2 mb-4 sm:my-6 font-semibold">🏖️ Santa Eulalia Beach</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatem, non ratione illo rem qui cumque magni, at, voluptate
-              nesciunt ipsam quasi tenetur cupiditate doloribus. Quas doloribus
-              quidem saepe laborum placeat unde ipsum est, quia alias temporibus
-              architecto, iste eligendi fugiat similique, qui quo! Nostrum
-              debitis maxime amet quod iste vel?
+              Praia de Santa Eulalia in Albufeira, Portugal is a stunning beach with crystal clear waters and golden sand. Surrounded by lush greenery, including pine trees, it creates a peaceful and serene atmosphere. The beach is perfect for swimming and snorkeling, with calm waters and soft sand. With beachside restaurants, bars, and amenities, it's a convenient and enjoyable destination for visitors.
             </p>
           </div>
         </div>
       </div>
       <div className=" mx-auto sm:flex justify-between hidden">
-        <div className="sm:w-2/3 sm:pr-10 text-left sm:space-y-10 flex flex-col justify-center">
-          <h3 className="text-4xl text-black my-3 sm:my-0`">
-            Safely Saved Lists
+        <div className="sm:w-2/3 sm:pr-10 text-left flex flex-col justify-center">
+          <h3 className="text-xl sm:text-4xl text-black my-6 font-semibold sm:my-0`">
+            ⛵️ Benagil Caves
           </h3>
-          <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-            non ratione illo rem qui cumque magni, at, voluptate nesciunt ipsam
-            quasi tenetur cupiditate doloribus. Quas doloribus quidem saepe
-            laborum placeat unde ipsum est, quia alias temporibus architecto,
-            iste eligendi fugiat similique, qui quo! Nostrum debitis maxime amet
-            quod iste vel?
+          <p className="sm:pr-4">
+            The Benagil Caves in Portugal captivate visitors with their stunning rock formations, crystal-clear waters, and secluded beaches. They are one of the top attractions in Portugal, offering an unforgettable experience for adventurers and those seeking a tranquil escape.
+            Located along the picturesque Algarve coast, the Benagil Caves are a natural wonder that must be seen to be believed. With their unique beauty and captivating ambiance, they are sure to leave a lasting impression on all who visit.
           </p>
         </div>
         <div className="w-[100%]  relative sm:w-2/3">
@@ -65,17 +56,13 @@ function BottomAssets() {
             className="rounded-md"
           />
         </div>
-        <div className="sm:w-2/3 sm:pl-10 text-left sm:space-y-10 flex flex-col justify-center">
-          <h3 className="text-4xl text-black my-3 sm:my-0">
-            Safely Saved Lists
+        <div className="sm:w-2/3 sm:pl-10 text-left flex flex-col justify-center">
+          <h3 className="text-2xl sm:text-4xl text-black font-semibold mt-4 mb-4 sm:my-6 ">
+            🏖️ Camilo Beach
           </h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-            non ratione illo rem qui cumque magni, at, voluptate nesciunt ipsam
-            quasi tenetur cupiditate doloribus. Quas doloribus quidem saepe
-            laborum placeat unde ipsum est, quia alias temporibus architecto,
-            iste eligendi fugiat similique, qui quo! Nostrum debitis maxime amet
-            quod iste vel?
+            Praia do Camilo is a breathtakingly beautiful beach located in Lagos, Portugal. This small but charming beach is known for its turquoise waters, golden sand, and stunning rock formations. Visitors from around the world come to Praia do Camilo to relax, swim, and soak up the sun. With its picturesque cliffs and clear waters, this beach is a paradise for nature lovers and photographers alike. Whether you&apos;re looking for a
+            peaceful getaway or an active adventure, Praia do Camilo offers an unforgettable experience that is not to be missed.
           </p>
         </div>
       </div>
@@ -85,7 +72,7 @@ function BottomAssets() {
         <div className="w-[100%]  relative sm:w-2/3">
           <img
             src={
-              "https://cdn.visitportugal.com/sites/default/files/styles/encontre_detalhe_poi_destaque/public/mediateca/shutterstock_279519770_PraiaCamiloLagos_AG_PX_Pawel%20Kazmierczak_660x371.jpg?itok=d13l5V-j"
+              "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/23/42/4d/cd/benagil-cave-visit-we.jpg?w=1200&h=900&s=1"
             }
             // fill
             alt="IMAGE"
@@ -93,16 +80,14 @@ function BottomAssets() {
           />
         </div>
         <div className="sm:w-2/3 sm:pr-10 text-left sm:space-y-10 flex flex-col justify-center">
-          <h3 className="text-4xl text-black my-3 sm:my-0`">
-            Safely Saved Lists
+          <h3 className="text-2xl sm:text-4xl font-semibold text-black my-3 sm:my-0`">
+
+            ⛵️ Benagil Caves
+
           </h3>
           <p className="mb-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-            non ratione illo rem qui cumque magni, at, voluptate nesciunt ipsam
-            quasi tenetur cupiditate doloribus. Quas doloribus quidem saepe
-            laborum placeat unde ipsum est, quia alias temporibus architecto,
-            iste eligendi fugiat similique, qui quo! Nostrum debitis maxime amet
-            quod iste vel?
+            The Benagil Caves in Portugal captivate visitors with their stunning rock formations, crystal-clear waters, and secluded beaches. They are one of the top attractions in Portugal, offering an unforgettable experience for adventurers and those seeking a tranquil escape.
+            Located along the picturesque Algarve coast, the Benagil Caves are a natural wonder that must be seen to be believed. With their unique beauty and captivating ambiance, they are sure to leave a lasting impression on all who visit.
           </p>
         </div>
       </div>
