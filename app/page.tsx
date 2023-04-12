@@ -59,8 +59,11 @@ export default async function Home(props: any) {
         </section>
       </section>
       <section className="h-full  mx-auto max-w-7xl">
-        <div className="sm:py-20 my-10 text-center">
-          <h2 className="text-black text-4xl">Satisfied customers</h2>
+        <div className="sm:pt-20 my-10 text-center">
+          <h2 className="text-black text-2xl sm:text-4xl font-semibold">Satisfied customers</h2>
+          <h4 className="w-6/12 mx-auto mt-4">
+            See what people are talking about the fantastic locations, events and hidden gems in the south of Portugal
+          </h4>
         </div>
         <section className="grid sm:grid-cols-3 gap-y-6">
           {Reviews.map((review: any) => (

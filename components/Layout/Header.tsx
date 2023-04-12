@@ -107,8 +107,8 @@ const Header = () => {
                 <ul className="p-2 bg-white z-10">
                   {
                     catArr.map((item) => (
-                      <li key={item.id}>
-                        <a href="">{item.name}</a>
+                      <li key={item.id} className='active:bg-sky rounded-md' onClick={() => router.push(`${item.route}`)}>
+                        <span className='active:bg-sky rounded-md'>{item.name}</span>
                       </li>
                     ))
                   }
@@ -181,8 +181,8 @@ const Header = () => {
               </div>
             </div>
           </div>
-        </div>
-      </nav>
+        </div >
+      </nav >
       {/* Modals */}
       {/* <InstructionModal /> */}
 
