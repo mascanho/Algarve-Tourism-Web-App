@@ -12,6 +12,7 @@ import Review from "@/components/Review";
 import { Reviews } from "@/Data/Reviews";
 import PopularCategories from "@/components/PopularCategories";
 import { createClient } from "contentful";
+import CarouselHero from "@/components/Carousel";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -95,6 +96,7 @@ export default async function Home(props: any) {
           </div>
           <PopularCategories />
         </section>
+        <CarouselHero />
       </section>
     </>
   );
