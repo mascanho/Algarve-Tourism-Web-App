@@ -27,7 +27,6 @@ async function getAllCategories() {
   return await res.items;
 }
 
-
 export default async function Home(props: any) {
   const categories = await getAllCategories();
 
@@ -60,9 +59,12 @@ export default async function Home(props: any) {
       </section>
       <section className="h-full  mx-auto max-w-7xl">
         <div className="sm:pt-20 my-10 text-center">
-          <h2 className="text-black text-2xl sm:text-4xl font-semibold">Satisfied customers</h2>
+          <h2 className="text-black text-2xl sm:text-4xl font-semibold">
+            Satisfied customers
+          </h2>
           <h4 className="w-6/12 mx-auto mt-4">
-            See what people are talking about the fantastic locations, events and hidden gems in the south of Portugal
+            See what people are talking about the fantastic locations, events
+            and hidden gems in the south of Portugal
           </h4>
         </div>
         <section className="grid sm:grid-cols-3 gap-y-6">
@@ -86,8 +88,8 @@ export default async function Home(props: any) {
             </h3>
             <h5>Explore the beauty of these hidden places</h5>
             <div className="pt-3">
-              <button className="bg-white rounded-md text-black px-3 py-1">
-                Get started
+              <button className="bg-white rounded-md text-black px-3 py-1 active:scale-95 transition-all ease-in delay-75">
+                Discover The Best Places
               </button>
             </div>
           </div>

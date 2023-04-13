@@ -143,13 +143,13 @@ const Header = () => {
                   <div>
                     <ul className="menu bg-white shadow-sm border w-56 p-2 rounded-box absolute sm:-left-24 sm:top-8 -left-40 top-8 z-10 text-sm">
                       <li>
-                        <a className="active:bg-sky rounded-md">Item 1</a>
+                        <a className="active:bg-sky rounded-md">Sign up</a>
                       </li>
                       <li>
-                        <a className="active:bg-sky rounded-md">Item 1</a>
+                        <a className="active:bg-sky rounded-md">Login</a>
                       </li>
                       <li>
-                        <a className="active:bg-sky rounded-md">Item 1</a>
+                        <a className="active:bg-sky rounded-md">Logout</a>
                       </li>
                     </ul>
                   </div>
@@ -169,13 +169,13 @@ const Header = () => {
                     <div>
                       <ul className="menu bg-white shadow-sm border w-56 p-2 rounded-box absolute sm:-left-28 sm:top-8 -left-48 top-8 z-10 text-sm">
                         <li>
-                          <a>Item 1</a>
+                          <a>Sign up</a>
                         </li>
                         <li>
-                          <a>Item 2</a>
+                          <a>Login</a>
                         </li>
                         <li>
-                          <a>Item 3</a>
+                          <a>Logout</a>
                         </li>
                       </ul>
                     </div>

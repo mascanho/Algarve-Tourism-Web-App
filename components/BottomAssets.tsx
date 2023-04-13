@@ -41,9 +41,7 @@ function BottomAssets() {
             ⛵️ Benagil Caves
           </h3>
           <p className="sm:pr-4 leading-7">
-            The Benagil Caves in Portugal captivate visitors with their stunning
-            rock formations, crystal-clear waters, and secluded beaches. They
-            are one of the top attractions in Portugal, offering an
+            They are one of the top attractions in Portugal, offering an
             unforgettable experience for adventurers and those seeking a
             tranquil escape. Located along the picturesque Algarve coast, the
             Benagil Caves are a natural wonder that must be seen to be believed.
