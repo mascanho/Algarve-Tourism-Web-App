@@ -11,7 +11,6 @@ import { useDisclosure } from "@mantine/hooks";
 import DrawerModal from "../modals/Drawer";
 import { catArr } from "@/Data/Categories";
 
-
 const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
@@ -83,7 +82,7 @@ const Header = () => {
               onClick={() => router.push("/")}
               className="normal-case text-xl text-left cursor-pointer"
             >
-              Algarve Travel
+              💎 AlgarveGems
             </a>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -105,17 +104,21 @@ const Header = () => {
                   </svg>
                 </a>
                 <ul className="p-2 bg-white z-10">
-                  {
-                    catArr.map((item) => (
-                      <li key={item.id} className='active:bg-sky rounded-md' onClick={() => router.push(`${item.route}`)}>
-                        <span className='active:bg-sky rounded-md'>{item.name}</span>
-                      </li>
-                    ))
-                  }
+                  {catArr.map((item) => (
+                    <li
+                      key={item.id}
+                      className="active:bg-sky rounded-md"
+                      onClick={() => router.push(`${item.route}`)}
+                    >
+                      <span className="active:bg-sky rounded-md">
+                        {item.name}
+                      </span>
+                    </li>
+                  ))}
                 </ul>
               </li>
               <li className="active:bg-sky rounded-md">
-                <a className="active:bg-sky rounded-md" >Blog</a>
+                <a className="active:bg-sky rounded-md">Blog</a>
               </li>
               <li className="active:bg-sky rounded-md">
                 <a className="active:bg-sky rounded-md">Contact</a>
@@ -123,7 +126,7 @@ const Header = () => {
             </ul>
           </div>
           <div className="navbar-end space-x-4">
-            <div className="border border-black/20 flex items-center text-xl space-x-2 pr-4 rounded-full  bg-white/50 text-black">
+            <div className="border border-black/20 flex items-center text-xl  pr-3 rounded-full  bg-white/50 text-black">
               <img
                 src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80"
                 height={30}
@@ -133,7 +136,7 @@ const Header = () => {
               />
               <div className="relative">
                 <HiBars3
-                  className="cursor-pointer active:scale-90"
+                  className="cursor-pointer active:scale-90 ml-1 mr-2"
                   onClick={openLoginMenu}
                 />
                 {openLogin && (
@@ -181,8 +184,8 @@ const Header = () => {
               </div>
             </div>
           </div>
-        </div >
-      </nav >
+        </div>
+      </nav>
       {/* Modals */}
       {/* <InstructionModal /> */}
 

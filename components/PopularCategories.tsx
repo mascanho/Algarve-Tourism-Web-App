@@ -38,14 +38,14 @@ function PopularCategories() {
         {popularCategories.map((item: any) => (
           <div
             key={item}
-            className="w-fit text-center space-y-4 m-auto rounded-xl overflow-hidden h-fit "
+            className="w-fit text-center space-y-4 m-auto rounded-xl h-fit cursor-pointer "
           >
             <img
               src={item.image}
               height={200}
               width={100}
               alt="image"
-              className="w-96 h-[400px] object-cover hover:scale-105 transition-all ease-in delay-75 "
+              className="w-96 h-[400px] object-cover hover:scale-95 transition-all ease-in delay-75 rounded-md cursor-pointer "
             />
             <h3 className="">{item.name}</h3>
             <div className="flex items-center space-x-2 text-sm border  w-fit px-2 py-1 rounded-md mx-auto">
