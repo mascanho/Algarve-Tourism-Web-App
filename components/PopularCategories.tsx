@@ -60,3 +60,4 @@ function PopularCategories() {
 }
 
 export default PopularCategories;
+
