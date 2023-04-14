@@ -29,7 +29,7 @@ function BottomAssets() {
               amenities, it&apos;s a convenient and enjoyable destination for
               visitors.
             </p>
-            <button className="mt-8 border px-3 rounded-md bg-sky text-white py-1">
+            <button className="mt-8 border px-3 rounded-md bg-sky text-white py-1 w-full sm:w-fit">
               View Beaches
             </button>
           </div>
@@ -48,7 +48,7 @@ function BottomAssets() {
             With their unique beauty and captivating ambiance, they are sure to
             leave a lasting impression on all who visit.
           </p>
-          <button className="mt-8 border px-3 rounded-md bg-sky text-white py-1 w-fit">
+          <button className="mt-8 border px-3 rounded-md bg-sky text-white py-1 sm:w-fit">
             View Beaches
           </button>
         </div>
@@ -86,7 +86,7 @@ function BottomAssets() {
             photographers alike. Whether you&apos;re looking for a peaceful
             getaway or an active adventure.
           </p>
-          <button className="mt-8 border px-3 rounded-md bg-sky text-white py-1 w-fit">
+          <button className="mt-8 border px-3 rounded-md bg-sky text-white py-1 sm:w-fit">
             View Beaches
           </button>
         </div>
@@ -118,6 +118,9 @@ function BottomAssets() {
             With their unique beauty and captivating ambiance, they are sure to
             leave a lasting impression on all who visit.
           </p>
+          <button className="mt-4 border px-3 rounded-md bg-sky text-white py-1 sm:w-fit">
+            View Beaches
+          </button>
         </div>
       </div>
     </section>

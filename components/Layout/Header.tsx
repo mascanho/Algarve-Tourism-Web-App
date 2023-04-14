@@ -48,11 +48,11 @@ const Header = () => {
                 tabIndex={0}
                 className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-white rounded-box w-52"
               >
-                <li>
-                  <a>Item 1</a>
+                <li className="active:bg-sky rounded-md">
+                  <a className="active:bg-sky">Blog</a>
                 </li>
-                <li tabIndex={0}>
-                  <a className="justify-between">
+                <li tabIndex={0} className="active:bg-sky rounded-md">
+                  <a className="justify-between active:bg-sky rounded-md">
                     Catoegories
                     <svg
                       className="fill-current"
@@ -65,24 +65,23 @@ const Header = () => {
                     </svg>
                   </a>
                   <ul className="p-2 bg-white z-10">
-                    <li>
-                      <a>Submenu 1</a>
-                    </li>
-                    <li>
-                      <a>Submenu 2</a>
-                    </li>
+                    {catArr.map((cat) => (
+                      <li className="px-1 py-2" key={cat.id}>
+                        {cat.name}
+                      </li>
+                    ))}
                   </ul>
                 </li>
-                <li>
-                  <a>Contact</a>
+                <li className="active:bg-sky rounded-md">
+                  <a className="active:bg-sky rounded-md">Contact</a>
                 </li>
               </ul>
             </div>
             <a
               onClick={() => router.push("/")}
-              className="normal-case text-xl text-left cursor-pointer"
+              className="normal-case text-xl text-left cursor-pointer w-full p-0"
             >
-              💎 AlgarveGems
+              AlgarveGems
             </a>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -141,7 +140,7 @@ const Header = () => {
                 />
                 {openLogin && (
                   <div>
-                    <ul className="menu bg-white shadow-sm border w-56 p-2 rounded-box absolute sm:-left-24 sm:top-8 -left-40 top-8 z-10 text-sm">
+                    <ul className="menu bg-white shadow-sm border  w-56 p-2 rounded-box absolute sm:-left-24 sm:top-8 -left-40 top-8 z-10 text-sm">
                       <li>
                         <a className="active:bg-sky rounded-md">Sign up</a>
                       </li>
