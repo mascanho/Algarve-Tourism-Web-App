@@ -6,7 +6,12 @@ import Image from "next/image";
 function CarouselHero() {
   return (
     <>
-      <section className="w-10/12 m-auto">
+      <section className="w-full sm:w-10/12 m-auto px-4 sm:px-0 mt-20 font-semibold">
+        <div>
+          <h3 className='my-8 text-black text-3xl text-center' >
+            Image Gallery
+          </h3>
+        </div>
         <Carousel
           withIndicators
           height={300}

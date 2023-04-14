@@ -28,13 +28,13 @@ const popularCategories = [
 
 function PopularCategories() {
   return (
-    <section className="max-w-7xl mx-auto mt-40 mb-10 text-center w-full ">
+    <section className="max-w-7xl mx-auto mt-20 sm:mt-40 mb-10 text-center w-full ">
       <div className="space-y-2">
         <h2 className="text-3xl text-black">Popular Categories For You</h2>
         <h3>50+ locations from the best 3 categories</h3>
       </div>
 
-      <div className="mt-20 sm:flex gap-x-10 justify-center space-y-10 sm:space-y-0 ">
+      <div className="mt-20 sm:flex gap-x-10 justify-center space-y-10 sm:space-y-0 px-4 sm:px-0 ">
         {popularCategories.map((item: any) => (
           <div
             key={item}

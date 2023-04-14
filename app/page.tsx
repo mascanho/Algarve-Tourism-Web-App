@@ -60,10 +60,10 @@ export default async function Home(props: any) {
       </section>
       <section className="h-full  mx-auto max-w-7xl">
         <div className="sm:pt-20 my-10 text-center">
-          <h2 className="text-black text-2xl sm:text-4xl font-semibold">
+          <h2 className="text-black text-4xl sm:text-4xl font-semibold">
             Satisfied customers
           </h2>
-          <h4 className="w-6/12 mx-auto mt-4">
+          <h4 className="sm:w-6/12 w-10/12 mx-auto mt-4">
             See what people are talking about the fantastic locations, events
             and hidden gems in the south of Portugal
           </h4>
@@ -81,7 +81,7 @@ export default async function Home(props: any) {
             />
           ))}
         </section>
-        <section className="py-28">
+        <section className="pt-16 sm:py-28">
           <div className="bg-sky w-11/12 sm:w-full  mx-auto rounded-xl text-center text-white py-10 space-y-2 sm:space-y-4">
             <h4>Come join and have a vacation with us</h4>
             <h3 className="text-2xl sm:text-3xl">
