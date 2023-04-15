@@ -12,7 +12,7 @@ function TabsRow() {
           Photos
         </Tabs.Tab>
         <Tabs.Tab value="third">Description</Tabs.Tab>
-        <Tabs.Tab value="forth">Price</Tabs.Tab>
+        <Tabs.Tab value="fourth">Price</Tabs.Tab>
       </Tabs.List>
 
       <Tabs.Panel value="first" pt="xs">
@@ -27,7 +27,7 @@ function TabsRow() {
         third tab color is blue, it gets this value from props, props have the
         priority and will override context value
       </Tabs.Panel>
-      <Tabs.Panel value="forth" pt="xs">
+      <Tabs.Panel value="fourth" pt="xs">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
         dignissimos consequuntur ad aperiam vitae excepturi, ipsam modi.
         Repellendus, quae quis.

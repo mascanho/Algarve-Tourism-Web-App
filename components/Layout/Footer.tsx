@@ -10,29 +10,36 @@ function Footer() {
           <section className="grid grid-cols-3 w-full sm:flex justify-between px-4 sm:px-0 ">
             <div className="flex flex-col">
               <span className="footer-title">About</span>
-              <a className="link link-hover">Branding</a>
-              <a className="link link-hover">Design</a>
-              <a className="link link-hover">Marketing</a>
-              <a className="link link-hover">Advertisement</a>
+              <Link href={"/about"}>
+                <p className="link link-hover">What we do</p>
+              </Link>
+              <p className="link link-hover">Design</p>
+              <p className="link link-hover">Marketing</p>
+              <p className="link link-hover">Advertisement</p>
             </div>
             <div className="flex flex-col">
               <span className="footer-title">Company</span>
-              <a className="link link-hover">About us</a>
-              <a className="link link-hover">Contact</a>
-              <a className="link link-hover">Jobs</a>
-              <a className="link link-hover">Press kit</a>
+              <Link href="/about">
+                <p className="link link-hover">About us</p>
+              </Link>
+              <p className="link link-hover">Contact</p>
+              <p className="link link-hover">Jobs</p>
+              <p className="link link-hover">Press kit</p>
             </div>
             <div className="flex flex-col">
               <span className="footer-title">Quick Links</span>
-              <a className="link link-hover">Submissions</a>
-              <a className="link link-hover">Best Places</a>
-              <a className="link link-hover">Cheapest Places</a>
+              <Link href="/submit">
+                <p className="link link-hover">Submissions</p>
+              </Link>
+              <p className="link link-hover">Best Places</p>
+              <p className="link link-hover">Cheapest Places</p>
             </div>
             <div className="flex flex-col">
               <span className="footer-title">Legal</span>
-              <a className="link link-hover">Terms of use</a>
-              <a className="link link-hover">Privacy policy</a>
-              <a className="link link-hover">Cookie policy</a>
+              <p className="link link-hover">Terms of use</p>
+              <Link href="/policy">
+                <p className="link link-hover">Privacy & Cookies</p>
+              </Link>
             </div>
           </section>
         </footer>
