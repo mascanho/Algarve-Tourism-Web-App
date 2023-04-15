@@ -7,10 +7,11 @@ function CarouselHero() {
   return (
     <>
       <section className="w-full sm:w-10/12 m-auto px-4 sm:px-0 mt-20 font-semibold">
-        <div>
-          <h3 className='my-8 text-black text-3xl text-center' >
-            Image Gallery
-          </h3>
+        <div className="space-y-4 mb-8 text-center">
+          <h3 className=" text-black text-3xl text-center">Image Gallery</h3>
+          <h4>
+            A collection of some of the most beautiful places in the world
+          </h4>
         </div>
         <Carousel
           withIndicators

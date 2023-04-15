@@ -37,8 +37,6 @@ export default async function Home(props: any) {
 
   const filteredData = data.filter((obj: any) => obj.fields.slug === slug);
 
-  console.log(filteredData);
-
   return (
     <>
       <section className=" bg-white text-left pb-16 space-y-4 h-full mb-20 sm:pl-6 sm:w-full mx-auto">
@@ -50,23 +48,25 @@ export default async function Home(props: any) {
             <FaRegGem />
             <span className="">Hidden Gem</span>
           </div>
-          <div className="flex justify-between  ">
+          <div className="flex justify-between space-y-1  ">
             <h1 className="sm:text-2xl text-sky">
-              {filteredData[0].fields.title}
+              {filteredData[0]?.fields?.title}
             </h1>
-            <div className="sm:pr-4 flex space-x-2  ">
-              <MdOutlineCardTravel className="w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
-              <BiMapPin className="w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
-              <BiShareAlt className="w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
+            <div className="flex justify-between w-full">
+              <span className="flex items-center text-black text-sm flex-1 text-left">
+                <FaMapMarkerAlt />
+                Albufeira
+              </span>
+              <div className="sm:pr-4 flex space-x-2  ">
+                <MdOutlineCardTravel className="w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
+                <BiMapPin className="w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
+                <BiShareAlt className="w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
+              </div>
             </div>
           </div>
           <div className="flex">
             <div className="flex-1">
-              <span className="flex items-center text-black text-sm">
-                <FaMapMarkerAlt />
-                Albufeira
-              </span>
-              <div className="space-x-2 mt-4">
+              <div className="space-x-2 mt-1">
                 {["Minimalist", "Beach House", "Tropic", "Private Pool"].map(
                   (item) => (
                     <span
@@ -81,7 +81,7 @@ export default async function Home(props: any) {
             </div>
           </div>
         </div>
-        <div className="mt-4 w-11/12 sm:w-full mx-auto h-screen">
+        <div className="sm:pt-10 w-11/12 sm:w-full mx-auto h-screen">
           <TabsRow />
         </div>
       </section>

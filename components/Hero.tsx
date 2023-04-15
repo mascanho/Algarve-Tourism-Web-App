@@ -11,7 +11,7 @@ function Hero() {
         <h1 className="mx-auto text-center sm:text-6xl text-white text-3xl font-bold">
           Algarve&apos;s Travel Guide
         </h1>
-        <h2 className="w-9/12 sm:w-4/12 mx-auto text-white/60">
+        <h2 className="w-9/12 sm:w-8/12 mx-auto text-white/60">
           Discover the breathtaking beauty of the Algarve! Our website is your
           ultimate guide to the region&apos;s top tourism attractions and less
           known hidden gems 💎

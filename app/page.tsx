@@ -44,12 +44,12 @@ export default async function Home(props: any) {
           Check out this week&apos; selection of popular trips and events
         </h4>
         <Selection />
-        <section className="max-w-7xl mx-auto w-11/12 sm:w-full">
-          <section className="grid sm:grid-cols-2 md:grid-cols-4 gap-y-10 w-full items-center place-items-center">
+        <section className="max-w-7xl mx-auto w-11/12 sm:w-11/12">
+          <section className="grid sm:grid-cols-2 sm:gap-x-4 md:grid-cols-3 lg:grid-cols-4 gap-y-10 w-full items-center place-items-center">
             {categories.map((cat: any) => (
               <Card
                 key={Math.random()}
-                title={cat.fields.title}
+                title={cat?.fields?.title}
                 category={categories}
               />
             ))}

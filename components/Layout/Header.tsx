@@ -51,7 +51,7 @@ const Header = () => {
                 <li className="active:bg-sky rounded-md">
                   <a className="active:bg-sky">Blog</a>
                 </li>
-                <li tabIndex={0} className="active:bg-sky rounded-md">
+                <li tabIndex={0} className="">
                   <a className="justify-between active:bg-sky rounded-md">
                     Catoegories
                     <svg
@@ -66,7 +66,11 @@ const Header = () => {
                   </a>
                   <ul className="p-2 bg-white z-10">
                     {catArr.map((cat) => (
-                      <li className="px-1 py-2" onClick={() => {}} key={cat.id}>
+                      <li
+                        className="px-1 py-2 active:bg-sky rounded-md active:text-white"
+                        onClick={() => router.push(cat.route)}
+                        key={cat.id}
+                      >
                         {cat.name}
                       </li>
                     ))}

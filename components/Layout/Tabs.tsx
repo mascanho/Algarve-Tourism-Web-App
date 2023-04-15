@@ -3,7 +3,7 @@ import { Tabs } from "@mantine/core";
 
 function TabsRow() {
   return (
-    <Tabs color="teal" defaultValue="first">
+    <Tabs color="teal" defaultValue="first" className="">
       <Tabs.List className="text-left">
         <Tabs.Tab className="text-left ml-0 pl-0" value="first">
           Description
@@ -12,6 +12,7 @@ function TabsRow() {
           Photos
         </Tabs.Tab>
         <Tabs.Tab value="third">Description</Tabs.Tab>
+        <Tabs.Tab value="forth">Price</Tabs.Tab>
       </Tabs.List>
 
       <Tabs.Panel value="first" pt="xs">
@@ -25,6 +26,11 @@ function TabsRow() {
       <Tabs.Panel value="third" pt="xs">
         third tab color is blue, it gets this value from props, props have the
         priority and will override context value
+      </Tabs.Panel>
+      <Tabs.Panel value="forth" pt="xs">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+        dignissimos consequuntur ad aperiam vitae excepturi, ipsam modi.
+        Repellendus, quae quis.
       </Tabs.Panel>
     </Tabs>
   );

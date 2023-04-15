@@ -1,5 +1,5 @@
-'use client'
-import Link from next/link
+"use client";
+import Link from "next/link";
 import React from "react";
 
 function Footer() {
@@ -23,13 +23,13 @@ function Footer() {
               <a className="link link-hover">Press kit</a>
             </div>
             <div className="flex flex-col">
-              <span className="footer-title">Links</span>
-              <a className="link link-hover">Terms of use</a>
-              <a className="link link-hover">Privacy policy</a>
-              <a className="link link-hover">Cookie policy</a>
+              <span className="footer-title">Quick Links</span>
+              <a className="link link-hover">Submissions</a>
+              <a className="link link-hover">Best Places</a>
+              <a className="link link-hover">Cheapest Places</a>
             </div>
             <div className="flex flex-col">
-              <span className="footer-title">Socials</span>
+              <span className="footer-title">Legal</span>
               <a className="link link-hover">Terms of use</a>
               <a className="link link-hover">Privacy policy</a>
               <a className="link link-hover">Cookie policy</a>
