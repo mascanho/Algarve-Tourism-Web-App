@@ -66,7 +66,7 @@ const Header = () => {
                   </a>
                   <ul className="p-2 bg-white z-10">
                     {catArr.map((cat) => (
-                      <li className="px-1 py-2" key={cat.id}>
+                      <li className="px-1 py-2" onClick={() => {}} key={cat.id}>
                         {cat.name}
                       </li>
                     ))}

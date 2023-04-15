@@ -1,3 +1,5 @@
+'use client'
+import Link from next/link
 import React from "react";
 
 function Footer() {
@@ -7,7 +9,7 @@ function Footer() {
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto ">
           <section className="grid grid-cols-3 w-full sm:flex justify-between px-4 sm:px-0 ">
             <div className="flex flex-col">
-              <span className="footer-title">Services</span>
+              <span className="footer-title">About</span>
               <a className="link link-hover">Branding</a>
               <a className="link link-hover">Design</a>
               <a className="link link-hover">Marketing</a>

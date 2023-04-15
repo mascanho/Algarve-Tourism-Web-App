@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.mantine-UnstyledButton-root {
+  background-color: white;
+}
+
+.mantine-Carousel-control {
+  background-color: white;
+}
+
+.mantine-1v3yzoy {
+  background-color: white;
+}
