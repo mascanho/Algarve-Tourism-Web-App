@@ -82,7 +82,7 @@ export default async function Home(props: any) {
           ))}
         </section>
         <section className="pt-16 sm:py-28">
-          <div className="bg-sky w-11/12 sm:w-full  mx-auto rounded-xl text-center text-white py-10 space-y-2 sm:space-y-4">
+          <div className="bg-sky w-11/12 sm:w-full  mx-auto rounded-xl text-center text-white py-6 space-y-2 sm:space-y-2">
             <h4>Come join and have a vacation with us</h4>
             <h3 className="text-2xl sm:text-3xl">
               Prepare yourself and lets explore

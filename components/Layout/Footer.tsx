@@ -7,7 +7,7 @@ function Footer() {
     <>
       <section className="bg-black mt-20">
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto ">
-          <section className="grid grid-cols-3 w-full sm:flex justify-between px-4 sm:px-0 ">
+          <section className="grid grid-cols-2 w-full sm:flex justify-between px-4 sm:px-0 ">
             <div className="flex flex-col">
               <span className="footer-title">About</span>
               <Link href={"/about"}>

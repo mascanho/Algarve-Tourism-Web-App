@@ -1,15 +1,13 @@
 import React from "react";
+import CarouselHeroCard from "../CarouselHero";
 
 function Hero() {
   return (
     <section className="bg-base-200 ">
       <div className="hero py-10 bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <img
-            src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/38/d7/a6.jpg"
-            className="max-w-lg rounded-lg shadow-2xl w-full "
-          />
-          <div>
+        <div className="hero-content flex-col flex-col-reverse lg:flex-row-reverse w-full overflow-hidden">
+          <CarouselHeroCard />
+          <div className="sm:w-1/2">
             <h1 className="text-5xl font-bold">Box Office News!</h1>
             <p className="py-6 sm:pr-20">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda

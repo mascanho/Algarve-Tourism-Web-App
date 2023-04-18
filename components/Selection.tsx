@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
-const Selection = () => {
+const Selection = ({ text }: any) => {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -21,13 +21,13 @@ const Selection = () => {
           </div>
         ))}
       </div>
-      <section className="py-2">
+      <section className="w-full flex">
         <select
           onChange={(e) => router.push(e.target.value)}
-          className="select w-11/12 bg-white outline outline-1 sm:hidden"
+          className="select w-11/12 bg-white outline outline-1 sm:hidden mx-auto"
         >
           <option disabled selected className="">
-            Pick your next adventure
+            {text}
           </option>
           {catArr.map((item) => (
             <option value={item.route} key={item.id}>
