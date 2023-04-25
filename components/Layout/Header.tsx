@@ -10,6 +10,7 @@ import { Drawer, Group, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import DrawerModal from "../modals/Drawer";
 import { catArr } from "@/Data/Categories";
+import LoginModal from "../modals/Login";
 
 const Header = () => {
   const router = useRouter();
@@ -17,6 +18,7 @@ const Header = () => {
   const [openLogin, setOpenLogin] = useState(false);
   const [openBag, setOpenBag] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
+  const [loginModal, setLoginModal] = useState(false);
 
   const openLoginMenu = () => {
     setOpenLogin(!openLogin);
@@ -149,7 +151,12 @@ const Header = () => {
                         <a className="active:bg-sky rounded-md">Sign up</a>
                       </li>
                       <li>
-                        <a className="active:bg-sky rounded-md">Login</a>
+                        <a
+                          onClick={() => setLoginModal(true)}
+                          className="active:bg-sky rounded-md"
+                        >
+                          Login
+                        </a>
                       </li>
                       <li>
                         <a className="active:bg-sky rounded-md">Logout</a>

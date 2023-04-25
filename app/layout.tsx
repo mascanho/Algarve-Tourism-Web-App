@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Footer from "@/components/Layout/Footer";
 import type { Metadata } from "next";
 import Carousel from "@/components/Carousel";
+import ClientOnly from "@/components/ClientOnly";
 
 export const metadata: Metadata = {
   title: {
@@ -58,7 +59,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-white">
-        <Header />
+        <ClientOnly>
+          <Header />
+        </ClientOnly>
 
         {children}
         <Footer />
