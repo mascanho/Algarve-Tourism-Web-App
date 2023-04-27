@@ -24,7 +24,7 @@ export default function SidePanel() {
             transition-all 
             ease-in 
             delay-75  
-            ${pathname === item.route ? "bg-sky text-white border-black" : ""}
+            ${pathname === item.route ? "bg-sky text-white border-white" : ""}
             `}
           >
             <span className="cursor-pointer">{item.name}</span>

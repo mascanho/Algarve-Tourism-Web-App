@@ -7,7 +7,7 @@ interface ClientOnlyProps {
 }
 
 const ClientOnly: React.FC<ClientOnlyProps> = ({ children }) => {
-  const [hasMounted, setHasMounted] = useState();
+  const [hasMounted, setHasMounted] = useState<boolean>(true);
 
   useEffect(() => {
     setHasMounted(true);
