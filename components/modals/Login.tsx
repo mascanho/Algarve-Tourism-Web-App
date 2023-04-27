@@ -26,7 +26,7 @@ function LoginModal({
   disabled,
   secondaryAction,
   secondaryLabel,
-}) {
+}: ModalProps) {
   const [opened, { open, close }] = useDisclosure(false);
   const [showModal, setShowModal] = useState(false);
 
