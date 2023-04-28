@@ -4,22 +4,29 @@ import { BsSearch } from "react-icons/bs";
 
 function Search({ allTypes }: any) {
   const [inputValue, setInputValue] = useState("");
-
-  console.log(allTypes);
-
-allTypes.
-
+  const [searchResults, setSearchResults] = useState();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
     console.log("clicked");
+    // Search and filter the results
+    allTypes.forEach((element: any) => {
+      for (let key in element) {
+        const value = element.fields;
+        if (element.fields.title.toLowerCase().includes(inputValue)) {
+          console.log(value);
+          setSearchResults(value);
+          break;
+        } else {
+          console.log("There are no results for your search...");
+        }
+      }
+    });
   };
 
   const handleInputChange = (e: any) => {
     setInputValue(e.target.value);
   };
-
-  console.log(inputValue);
 
   return (
     <>
@@ -37,7 +44,7 @@ allTypes.
           />
           <div />
         </div>
-        <div className="absolute text-xs top-2  flex justify-center items-center right-0 sm:right-4 bg-blue-400 text-white w-12 h-12 rounded-full">
+        <div className="absolute right-0 flex items-center justify-center w-12 h-12 text-xs text-white bg-blue-400 rounded-full top-2 sm:right-4">
           <button type="submit">
             <BsSearch className="text-xl" />
           </button>
