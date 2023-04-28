@@ -15,11 +15,12 @@ function InstructionModal() {
       <Modal
         opened={opened}
         onClose={close}
-        title="Authentication"
+        title="Authentications"
         centered
         className=""
       >
         {/* Modal content */}
+        <p>hello</p>
       </Modal>
     </>
   );

@@ -11,6 +11,7 @@ import { useDisclosure } from "@mantine/hooks";
 import DrawerModal from "../modals/Drawer";
 import { catArr } from "@/Data/Categories";
 import LoginModal from "../modals/Login";
+import DrawerContent from "../modals/DrawerContent";
 
 const Header = () => {
   const router = useRouter();
@@ -206,7 +207,8 @@ const Header = () => {
         onClose={close}
         title="Authentication"
       >
-        {/* Drawer content */}
+        {/* Drawer Content */}
+        <DrawerContent />
       </Drawer>
     </>
   );
