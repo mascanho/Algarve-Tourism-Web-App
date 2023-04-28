@@ -1,9 +1,21 @@
 import Image from "next/image";
 import React from "react";
-
+import { createClient } from "contentful";
 import Search from "./Search";
 
-function Hero() {
+async function getAllCategories() {
+  const client: any = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID!,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+  });
+  const res = await client.getEntries();
+
+  return await res.items;
+}
+
+async function Hero() {
+  const allTypes = await getAllCategories();
+
   return (
     <>
       <div className=" bg-[url('https://rare-gallery.com/uploads/posts/504981-Public-domain.jpg')]  h-screen overflow-hidden  bg-cover bg-blend-multiply bg-black/30 -mt-16 " />
@@ -17,7 +29,7 @@ function Hero() {
           known hidden gems 💎
         </h2>
         <div className="flex mx-auto justify-center"></div>
-        <Search />
+        <Search allTypes={allTypes} />
       </section>
     </>
   );

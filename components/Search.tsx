@@ -2,14 +2,20 @@
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 
-function Search() {
+function Search({ allTypes }: any) {
   const [inputValue, setInputValue] = useState("");
 
+  console.log(allTypes);
+
+allTypes.
+
+
   const handleSubmit = (e: any) => {
+    e.preventDefault();
     console.log("clicked");
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: any) => {
     setInputValue(e.target.value);
   };
 
