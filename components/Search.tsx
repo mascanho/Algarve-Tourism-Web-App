@@ -1,27 +1,37 @@
 "use client";
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
+import { useRouter, usePathname } from "next/navigation";
+import { useParams } from "next/navigation";
 
 function Search({ allTypes }: any) {
   const [inputValue, setInputValue] = useState("");
   const [searchResults, setSearchResults] = useState();
+  const router = useRouter();
+
+  console.log(router);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log("clicked");
-    // Search and filter the results
-    allTypes.forEach((element: any) => {
-      for (let key in element) {
-        const value = element.fields;
-        if (element.fields.title.toLowerCase().includes(inputValue)) {
-          console.log(value);
-          setSearchResults(value);
-          break;
-        } else {
-          console.log("There are no results for your search...");
+
+    if (inputValue === "") {
+      alert("Please input something...");
+    } else {
+      console.log("clicked");
+      // Search and filter the results
+      allTypes.forEach((element: any) => {
+        for (let key in element) {
+          const value = element.fields;
+          if (element.fields.title.toLowerCase().includes(inputValue)) {
+            console.log(value);
+            setSearchResults(value);
+            break;
+          } else {
+            console.log("There are no results for your search...");
+          }
         }
-      }
-    });
+      });
+    }
   };
 
   const handleInputChange = (e: any) => {
