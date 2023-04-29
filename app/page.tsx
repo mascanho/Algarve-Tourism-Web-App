@@ -37,7 +37,7 @@ export default async function Home(props: any) {
   return (
     <>
       <Hero />
-      <section className="pt-20 pb-16 space-y-4 text-center bg-white">
+      <section className="pt-20 pb-6 space-y-4 text-center bg-white">
         <div className="w-11/12 mx-auto">
           <h3 className="text-3xl font-bold text-black sm:text-5xl">
             Guides for your next location{" "}

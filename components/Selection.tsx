@@ -10,7 +10,7 @@ const Selection = ({ text }: any) => {
 
   return (
     <>
-      <div className="items-center justify-between hidden w-10/12 pt-5 m-auto space-x-3 sm:flex max-w-7xl sm:w-11/12">
+      <div className="items-center justify-between hidden w-10/12 pt-10 m-auto space-x-3 sm:flex max-w-7xl sm:w-11/12">
         {catArr.map((cat) => (
           <div
             className="px-2 py-1 text-xs text-center transition-all ease-in delay-75 border rounded-full sm:px-3 sm:py-2 sm:first:w-20 sm:first:bg-blue-400 first:text-white first:bg-blue-400 w-14 sm:w-fit hover:cursor-pointer hover:bg-sky hover:text-white"
