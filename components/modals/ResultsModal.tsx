@@ -10,7 +10,7 @@ function ResultsModal({ setOpenModal, openModal, searchResults }) {
       className={` z-20 w-[80%] mx-auto mt-10 rounded-md backdrop-blur-md  h-60 bg-black/50- overflow-auto flex justify-center p-10 `}
     >
       <div>
-        {searchResults.map((item) => (
+        {searchResults.map((item: any) => (
           <p key={item.id}>{item.title}</p>
         ))}
         <button onClick={() => setOpenModal(false)}>Close</button>

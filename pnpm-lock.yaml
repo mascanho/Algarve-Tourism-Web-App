@@ -10,6 +10,7 @@ specifiers:
   '@mantine/nprogress': ^6.0.5
   '@mantine/spotlight': ^6.0.5
   '@prisma/client': ^4.13.0
+  '@types/bcrypt': ^5.0.0
   '@types/node': 18.15.11
   '@types/react': 18.0.31
   '@types/react-dom': 18.0.11
@@ -67,6 +68,7 @@ dependencies:
   zustand: 4.3.7_react@18.2.0
 
 devDependencies:
+  '@types/bcrypt': 5.0.0
   autoprefixer: 10.4.14_postcss@8.4.21
   postcss: 8.4.21
   prisma: 4.13.0
@@ -714,13 +716,18 @@ packages:
       tslib: 2.5.0
     dev: false
 
+  /@types/bcrypt/5.0.0:
+    resolution: {integrity: sha512-agtcFKaruL8TmcvqbndlqHPSJgsolhf/qPWchFlgnW1gECTN/nKbFcoFnvKAQRFfKbh+BO6A3SWdJu9t+xF3Lw==}
+    dependencies:
+      '@types/node': 18.15.11
+    dev: true
+
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: false
 
   /@types/node/18.15.11:
     resolution: {integrity: sha512-E5Kwq2n4SbMzQOn6wnmBjuK9ouqlURrcZDVfbo9ftDDTFt3nk7ZKK4GMOzoYgnpQJKcxwQw+lGaBvvlMo0qN/Q==}
-    dev: false
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
