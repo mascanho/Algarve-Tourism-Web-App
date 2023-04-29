@@ -47,8 +47,8 @@ export default async function Home(props: any) {
           Check out this week&apos; selection of popular trips and events
         </h4>
         <Selection />
-        <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12">
-          <section className="grid items-center w-full sm:grid-cols-2 sm:gap-x-4 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 place-items-center">
+        <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 sm:pt-5">
+          <section className="grid items-center w-full sm:grid-cols-2 sm:gap-x-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 place-items-left">
             {/* Normal Cards with no search feature */}
             {categories.map((cat: any) => (
               <Card

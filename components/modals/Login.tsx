@@ -2,7 +2,13 @@ import { useDisclosure } from "@mantine/hooks";
 import { Modal, Group, Button } from "@mantine/core";
 import { useState } from "react";
 import { useToggle, upperFirst } from "@mantine/hooks";
-import { FieldValues, useForm } from "react-hook-form";
+import {
+  useForm,
+  SubmitHandler,
+  FieldErrors,
+  FieldValues,
+  UseFormRegister,
+} from "react-hook-form";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
@@ -23,10 +29,23 @@ interface ModalProps {
   secondaryLabel?: string;
 }
 
+interface InputProps {
+  id: string;
+  label: string;
+  type?: string;
+  disabled?: boolean;
+  formatPrice?: boolean;
+  required?: boolean;
+  register: UseFormRegister<FieldValues>;
+  errors: FieldErrors;
+  email: string;
+  name: string;
+  password: string;
+}
+
 function LoginModal({
   isOpen,
   onClose,
-
   title,
   body,
   footer,
@@ -56,18 +75,20 @@ function LoginModal({
     },
   });
 
-  const onSubmit: any = (data: any) => {
-    // setIsLoading(true);
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    setIsLoading(true);
 
     axios
       .post("/api/register", data)
       .then(() => {
-        // toast.success("Registered!");
+        // toast.success('Registered!');
         // registerModal.onClose();
         // loginModal.onOpen();
+        console.log("Registered!");
       })
       .catch((error) => {
         // toast.error(error);
+        console.log(error);
       })
       .finally(() => {
         // setIsLoading(false);
@@ -77,24 +98,24 @@ function LoginModal({
   return (
     <section className="absolute top-0 left-0 z-50 w-full h-full bg-black/80 backdrop-blur-md">
       <div className="flex flex-col items-center justify-center w-full h-full mx-auto">
-        <div className="relative p-8 space-y-2 text-center text-black bg-white rounded-lg sm:w-[40%] animate-jump-in animate-delay-100 animate-once ">
+        <div className="relative p-8 space-y-2 text-center text-black bg-white rounded-lg w-96 sm:w-[500px]  animate-jump-in animate-delay-100 animate-once ">
           <AiFillCloseCircle
             className="absolute text-base cursor-pointer top-4 right-4"
             onClick={closeModal.onClose}
           />
           <h2 className="text-2xl font-bold">Login</h2>
-          <p className="text-sm">Please enter your details</p>
-          <div className="flex items-center justify-center space-x-4">
-            <button className="flex items-center justify-center w-full px-3 py-1 border rounded-md ">
+          <p className="text-sm text-gray-400">Please enter your details</p>
+          <div className="flex items-center justify-center pt-2 space-x-4">
+            <button className="flex items-center justify-center w-full px-3 py-2 border rounded-md ">
               <FcGoogle className="mr-2" />
               Google
             </button>
-            <button className="flex items-center justify-center w-full px-3 py-1 border rounded-md ">
+            <button className="flex items-center justify-center w-full px-3 py-2 border rounded-md ">
               <FaGithub className="mr-2" />
               GitHub
             </button>
           </div>
-          <div className="divider">OR</div>
+          <div className="pt-8 divider">OR</div>
 
           <div className="pt-4">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -105,12 +126,11 @@ function LoginModal({
                 <input
                   type="text"
                   id="firstName"
-                  name="firstName"
                   className="p-2 bg-transparent bg-gray-300 border rounded-md"
                   placeholder="Enter Your Name"
                   required
-                  onChange={(e) => console.log(e.target.value)}
-                  register={register}
+                  {...register("name")}
+                  errors={errors}
                 />
                 {errors.firstName && <span>This field is required</span>}
               </div>
@@ -121,12 +141,11 @@ function LoginModal({
                 <input
                   type="text"
                   id="email"
-                  name="email"
                   className="p-2 bg-transparent bg-gray-300 border rounded-md"
                   placeholder="Enter Your Email"
                   required
-                  onChange={(e) => console.log(e.target.value)}
-                  register={register}
+                  {...register("email")}
+                  errors={errors}
                 />
                 {errors.firstName && <span>This field is required</span>}
               </div>
@@ -137,12 +156,12 @@ function LoginModal({
                 </label>
                 <input
                   type="password"
-                  id="firstName"
-                  name="firstName"
+                  id="password"
                   className="p-2 bg-transparent bg-gray-300 border rounded-sm"
                   placeholder="Enter Your Password"
                   required
-                  register={register}
+                  {...register("password")}
+                  errors={errors}
                 />
                 {errors.firstName && <span>This field is required</span>}
               </div>

@@ -17,8 +17,7 @@ function Toaster() {
     });
 
   return (
-    <div>
-      <button onClick={notify}>Notify!</button>
+    <div className="fixed top-0">
       <ToastContainer />
     </div>
   );

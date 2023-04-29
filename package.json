@@ -17,6 +17,7 @@
     "@mantine/modals": "^6.0.5",
     "@mantine/nprogress": "^6.0.5",
     "@mantine/spotlight": "^6.0.5",
+    "@prisma/client": "^4.13.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",

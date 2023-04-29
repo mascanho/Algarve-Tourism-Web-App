@@ -60,7 +60,7 @@ export default function Home(props: any) {
         </div>
 
         <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12">
-          <section className="grid items-center w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-y-10 place-items-center">
+          <section className="grid items-center w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-y-10 place-items-start">
             {/* Normal Cards with no search feature */}
             {searchData.data?.map((item: any) => (
               <SearchCard
