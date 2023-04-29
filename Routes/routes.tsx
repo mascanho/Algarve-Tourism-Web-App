@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { Card } from "../Card";
+import { Card } from "../components/Card";
 import { useState } from "react";
 
 export default function Routes({ category }: any) {
@@ -13,14 +13,14 @@ export default function Routes({ category }: any) {
 
   if (pathname === "/sports") {
     return (
-      <section className="max-w-7xl mx-auto w-11/12 sm:w-full grid sm:grid-cols-4 sm:ml-6 gap-y-8 h-full mb-20 ">
+      <section className="grid w-11/12 h-full mx-auto mb-20 max-w-7xl sm:w-full sm:grid-cols-4 sm:ml-6 gap-y-8 ">
         <Card category={category} />
       </section>
     );
   }
 
   return (
-    <section className="max-w-7xl mx-auto w-11/12 sm:w-full grid sm:grid-cols-4 sm:ml-6 gap-y-8 h-full mb-20 ">
+    <section className="grid w-11/12 h-full mx-auto mb-20 max-w-7xl sm:w-full sm:grid-cols-4 sm:ml-6 gap-y-8 ">
       <Card category={category} />
     </section>
   );

@@ -10,10 +10,10 @@ const Selection = ({ text }: any) => {
 
   return (
     <>
-      <div className="sm:flex justify-around max-w-7xl mx-auto w-11/12 sm:w-full pt-5 hidden">
+      <div className="justify-center hidden w-11/12 pt-5 mx-auto space-x-3 sm:flex max-w-7xl sm:w-full">
         {catArr.map((cat) => (
           <div
-            className="text-xs  px-2 text-center border sm:px-4 py-1 sm:py-2 sm:first:w-20 sm:first:bg-blue-400 first:text-white first:bg-blue-400 rounded-full w-14 sm:w-32 hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"
+            className="px-2 py-1 text-xs text-center transition-all ease-in delay-75 border rounded-full sm:px-3 sm:py-2 sm:first:w-20 sm:first:bg-blue-400 first:text-white first:bg-blue-400 w-14 sm:w-fit hover:cursor-pointer hover:bg-sky hover:text-white"
             key={cat.id}
             onClick={(e) => router.push(`${cat.route}`)}
           >
@@ -21,10 +21,10 @@ const Selection = ({ text }: any) => {
           </div>
         ))}
       </div>
-      <section className="w-full flex">
+      <section className="flex w-full">
         <select
           onChange={(e) => router.push(e.target.value)}
-          className="select w-11/12 bg-white outline outline-1 sm:hidden mx-auto"
+          className="w-11/12 mx-auto bg-white select outline outline-1 sm:hidden"
         >
           <option disabled selected className="">
             {text}

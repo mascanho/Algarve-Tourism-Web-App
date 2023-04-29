@@ -3,7 +3,7 @@ import Image from "next/image";
 import { AiFillHeart } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 
-export const Card = ({
+export const SearchCard = ({
   category,
   title,
   slug,
@@ -12,11 +12,15 @@ export const Card = ({
   city,
   tags,
   hiddenGem,
+  type,
 }: any) => {
   const router = useRouter();
 
   return (
-    <section className="pb-2 space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl md:w-64 hover:scale-105 hover:cursor-pointer">
+    <section
+      onClick={() => router.push(`/${type}/${slug}`)}
+      className="pb-2 space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl md:w-64 hover:scale-105 hover:cursor-pointer"
+    >
       <div className="relative flex flex-col w-full h-40 overflow-hidden rounded-t-md ">
         <Image
           src="https://th.bing.com/th/id/OIG.XUrUyoz7q_uPku3p7E.0?pid=ImgGn"
@@ -25,7 +29,7 @@ export const Card = ({
           className="block"
         />
         <span className="absolute left-0 py-1 pr-2 text-xs text-black bg-white rounded-r-full top-4 ">
-          {/* 📍 {data.city} */}
+          📍 {city}
         </span>
       </div>
       <div className="flex items-center justify-between w-full px-2 text-left">

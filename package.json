@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.6",
     "@mantine/carousel": "^6.0.5",
     "@mantine/core": "^6.0.5",
+    "@mantine/form": "^6.0.9",
     "@mantine/hooks": "^6.0.5",
     "@mantine/modals": "^6.0.5",
     "@mantine/nprogress": "^6.0.5",
@@ -19,6 +20,8 @@
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
     "contentful": "^9.3.5",
     "daisyui": "^2.51.5",
     "embla-carousel-react": "^7.1.0",
@@ -27,7 +30,9 @@
     "next": "13.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",
+    "react-toastify": "^9.1.2",
     "tabler-icons-react": "^1.56.0",
     "typescript": "5.0.2",
     "zustand": "^4.3.7"
@@ -36,6 +41,8 @@
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
     "prisma": "^4.13.0",
-    "tailwindcss": "^3.3.0"
+    "prisma-client": "^0.0.0",
+    "tailwindcss": "^3.3.0",
+    "tailwindcss-animated": "^1.0.0"
   }
 }

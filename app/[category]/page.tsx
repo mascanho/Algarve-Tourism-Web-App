@@ -1,5 +1,5 @@
 import { createClient } from "contentful";
-import Routes from "@/components/Routes/routes";
+import Routes from "@/Routes/routes";
 import Image from "next/image";
 import { AiFillHeart } from "react-icons/ai";
 import { useRouter } from "next/router";

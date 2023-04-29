@@ -19,17 +19,20 @@ async function Hero() {
   return (
     <>
       <div className=" bg-[url('https://rare-gallery.com/uploads/posts/504981-Public-domain.jpg')]  h-screen overflow-hidden  bg-cover bg-blend-multiply bg-black/30 -mt-16 " />
-      <section className="absolute top-60 sm:top-80 mx-auto w-full text-center space-y-6">
-        <h1 className="mx-auto text-center sm:text-6xl text-white text-3xl font-bold">
+      <section className="absolute w-full mx-auto space-y-6 text-center top-60 sm:top-80">
+        <h1 className="mx-auto text-3xl font-bold text-center text-white sm:text-6xl">
           Algarve&apos;s Travel Guide
         </h1>
-        <h2 className="w-9/12 sm:w-5/12 mx-auto text-white/60">
+        <h2 className="w-9/12 mx-auto sm:w-5/12 text-white/60">
           Discover the breathtaking beauty of the Algarve! Our website is your
           ultimate guide to the region&apos;s top tourism attractions and less
           known hidden gems 💎
         </h2>
-        <div className="flex mx-auto justify-center"></div>
-        <Search allTypes={allTypes} />
+        <div className="flex justify-center mx-auto"></div>
+        <Search
+          allTypes={allTypes}
+          placeholderText={"Search for your destination..."}
+        />
       </section>
     </>
   );

@@ -5,6 +5,7 @@ import Footer from "@/components/Layout/Footer";
 import type { Metadata } from "next";
 import Carousel from "@/components/Carousel";
 import ClientOnly from "@/components/ClientOnly";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata: Metadata = {
   title: {

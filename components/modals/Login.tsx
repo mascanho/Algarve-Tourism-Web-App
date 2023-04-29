@@ -1,6 +1,14 @@
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Group, Button } from "@mantine/core";
 import { useState } from "react";
+import { useToggle, upperFirst } from "@mantine/hooks";
+import { FieldValues, useForm } from "react-hook-form";
+import { AiFillCloseCircle } from "react-icons/ai";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
+import useLoginModalStore from "@/app/hooks/useLoginModal";
+import axios from "axios";
+import Toaster from "../Toastify";
 
 interface ModalProps {
   isOpen?: boolean;
@@ -18,7 +26,7 @@ interface ModalProps {
 function LoginModal({
   isOpen,
   onClose,
-  onSubmit,
+
   title,
   body,
   footer,
@@ -27,48 +35,130 @@ function LoginModal({
   secondaryAction,
   secondaryLabel,
 }: ModalProps) {
+  const [type, toggle] = useToggle(["login", "register"]);
+
   const [opened, { open, close }] = useDisclosure(false);
   const [showModal, setShowModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const closeModal = useLoginModalStore();
+
+  // Form Hanbdling
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FieldValues>({
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+    },
+  });
+
+  const onSubmit: any = (data: any) => {
+    // setIsLoading(true);
+
+    axios
+      .post("/api/register", data)
+      .then(() => {
+        // toast.success("Registered!");
+        // registerModal.onClose();
+        // loginModal.onOpen();
+      })
+      .catch((error) => {
+        // toast.error(error);
+      })
+      .finally(() => {
+        // setIsLoading(false);
+      });
+  };
 
   return (
-    <>
-      <section className="absolute">
-        <Modal opened={opened} onClose={close} title="Authentication" centered>
-          {/* Modal content */}
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore,
-            iusto! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-            dolore quam fugiat, culpa illum officiis! Quae, voluptas ducimus?
-            Nobis dolor repudiandae soluta dignissimos modi id ex cupiditate
-            tempore, vitae odit minus voluptatum velit provident veniam quasi
-            molestias est consequuntur atque error, enim eligendi nostrum
-            repellendus distinctio. Architecto, quae ut, deleniti nostrum
-            debitis explicabo voluptate dolorem, nihil quisquam libero qui
-            possimus veritatis quas dolor in ipsa repellendus voluptatum nobis
-            odit iure aut necessitatibus molestias iste? Natus consequuntur id
-            inventore magnam delectus soluta ad iste debitis hic corporis nulla
-            nihil quaerat veritatis pariatur illo doloremque rem, nemo iusto
-            vero laborum! Porro facilis dolorem rem incidunt dolores
-            exercitationem consequatur ut? Saepe voluptates voluptatum esse
-            earum enim ea molestiae! Voluptates esse fugit ex totam et
-            architecto deleniti voluptatem illum sint, distinctio adipisci
-            voluptatibus itaque iure est expedita deserunt similique sunt iste
-            hic sequi nemo aperiam voluptas repudiandae maiores! Voluptas odit
-            rem reiciendis, vel minus maxime in sed distinctio tempora velit
-            fuga ducimus ea, dolorum quidem libero, sequi explicabo iste? Nulla,
-            aperiam doloremque dolores quidem natus amet maxime atque architecto
-            delectus nemo molestiae impedit a sapiente quas nam cumque
-            perferendis quia harum. Sint, illum dolores ipsa, inventore
-            dignissimos sequi deleniti necessitatibus incidunt nam velit
-            corporis.
-          </p>
-        </Modal>
+    <section className="absolute top-0 left-0 z-50 w-full h-full bg-black/80 backdrop-blur-md">
+      <div className="flex flex-col items-center justify-center w-full h-full mx-auto">
+        <div className="relative p-8 space-y-2 text-center text-black bg-white rounded-lg sm:w-[40%] animate-jump-in animate-delay-100 animate-once ">
+          <AiFillCloseCircle
+            className="absolute text-base cursor-pointer top-4 right-4"
+            onClick={closeModal.onClose}
+          />
+          <h2 className="text-2xl font-bold">Login</h2>
+          <p className="text-sm">Please enter your details</p>
+          <div className="flex items-center justify-center space-x-4">
+            <button className="flex items-center justify-center w-full px-3 py-1 border rounded-md ">
+              <FcGoogle className="mr-2" />
+              Google
+            </button>
+            <button className="flex items-center justify-center w-full px-3 py-1 border rounded-md ">
+              <FaGithub className="mr-2" />
+              GitHub
+            </button>
+          </div>
+          <div className="divider">OR</div>
 
-        <Group position="center">
-          <Button onClick={open}>Open centered Modal</Button>
-        </Group>
-      </section>
-    </>
+          <div className="pt-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <div className="flex flex-col">
+                <label htmlFor="" className="pb-1 text-xs text-left">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  className="p-2 bg-transparent bg-gray-300 border rounded-md"
+                  placeholder="Enter Your Name"
+                  required
+                  onChange={(e) => console.log(e.target.value)}
+                  register={register}
+                />
+                {errors.firstName && <span>This field is required</span>}
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="" className="pb-1 text-xs text-left">
+                  Email
+                </label>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  className="p-2 bg-transparent bg-gray-300 border rounded-md"
+                  placeholder="Enter Your Email"
+                  required
+                  onChange={(e) => console.log(e.target.value)}
+                  register={register}
+                />
+                {errors.firstName && <span>This field is required</span>}
+              </div>
+
+              <div className="flex flex-col pb-6">
+                <label htmlFor="" className="pb-1 text-xs text-left">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="firstName"
+                  name="firstName"
+                  className="p-2 bg-transparent bg-gray-300 border rounded-sm"
+                  placeholder="Enter Your Password"
+                  required
+                  register={register}
+                />
+                {errors.firstName && <span>This field is required</span>}
+              </div>
+
+              <button
+                className="flex items-center justify-center w-full py-4 text-base text-white rounded-md bg-sky"
+                type="submit"
+              >
+                Submit
+              </button>
+              <Toaster />
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 

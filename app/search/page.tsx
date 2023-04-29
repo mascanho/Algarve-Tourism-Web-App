@@ -1,64 +1,85 @@
-import Image from "next/image";
+"use client";
+
 import { Inter } from "next/font/google";
 import Selection from "@/components/Selection";
-import { Card } from "@/components/Card";
-import type { Metadata } from "next";
-import { catArr } from "@/Data/Categories";
+
 import Pagination from "@/components/Pagination";
 import BottomAssets from "@/components/BottomAssets";
-import { CarouselCard } from "@/components/Card2";
-import Hero from "@/components/Hero";
+
 import Review from "@/components/Review";
 import { Reviews } from "@/Data/Reviews";
 import PopularCategories from "@/components/PopularCategories";
-import { createClient } from "contentful";
+
 import CarouselHero from "@/components/Carousel";
-import useSearchedData from "./hooks/useSearchedData";
+import useSearchedData from "../hooks/useSearchedData";
+
+import { SearchCard } from "@/components/SearchCard";
+import Search from "@/components/Search";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// Get all categories from contentful
-
-async function getAllCategories() {
-  const client: any = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID!,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
-  });
-  const res = await client.getEntries({ content_type: "events" });
-
-  return await res.items;
-}
-
-export default async function Home(props: any) {
-  const categories = await getAllCategories();
-
-  console.log(categories[1].sys.contentType.sys.id);
+export default function Home(props: any) {
+  const searchData = useSearchedData();
 
   return (
     <>
-      <Hero />
-      <section className="pt-20 pb-16 space-y-4 text-center bg-white">
+      <section>
+        <Search placeholderText={"Search now..."} />
+      </section>
+      <section className="pt-10 pb-16 space-y-4 text-center bg-white">
         <div className="w-11/12 mx-auto">
-          <h3 className="text-3xl font-bold text-black sm:text-5xl">
-            Guides for your next location{" "}
-          </h3>
+          {searchData.data.length === 0 ? (
+            <>
+              <h3
+                className="text-3xl font-bold text-black sm:text-5xl"
+                id="search"
+              >
+                Ups.... nothing to show here 😭
+              </h3>
+              <h4 className="w-8/12 mx-auto mt-4">
+                Try searching for something else or check out the popular
+                categories
+              </h4>
+            </>
+          ) : (
+            <>
+              <h3
+                className="text-3xl font-bold text-black sm:text-5xl"
+                id="search"
+              >
+                Searching for:{" "}
+                <span className="text-sky">{searchData.searchInput}</span>
+              </h3>
+
+              <h4 className="w-8/12 mx-auto mt-4">
+                Check out this week&apos; selection of popular trips and events
+              </h4>
+            </>
+          )}
         </div>
-        <h4 className="w-8/12 mx-auto">
-          Check out this week&apos; selection of popular trips and events
-        </h4>
-        <Selection />
+
         <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12">
-          <section className="grid items-center w-full sm:grid-cols-2 sm:gap-x-4 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 place-items-center">
+          <section className="grid items-center w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-y-10 place-items-center">
             {/* Normal Cards with no search feature */}
-            {categories.map((cat: any) => (
-              <Card
-                key={Math.random()}
-                title={cat?.fields?.title}
-                category={categories}
+            {searchData.data?.map((item: any) => (
+              <SearchCard
+                key={item.id}
+                title={item.title}
+                category={item.category}
+                slug={item.slug}
+                tags={item.tags}
+                hiddenGem={item.hiddenGem}
+                mainImage={item.mainImage}
+                city={item.city}
+                type={item.type}
               />
             ))}
           </section>
-          <Pagination />
+          {/* <Pagination /> */}
+          <div className="mt-32 divider">
+            <span className="text-xl">Some of our suggestions</span>
+          </div>
           <BottomAssets />
         </section>
       </section>

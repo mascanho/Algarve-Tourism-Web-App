@@ -1,10 +1,17 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import { usePathname } from "next/navigation";
 
 function BottomAssets() {
+  const pathname = usePathname();
+
   return (
-    <section className="mt-20 sm:mt-52 space-y-12 sm:space-y-32  mx-auto">
-      <div className=" mx-auto sm:flex justify-between">
+    <section
+      className={`mx-auto mt-20 space-y-12 sm:mt-52 sm:space-y-32
+    ${pathname === "/search" && "sm:mt-32"}
+    `}
+    >
+      <div className="justify-between mx-auto sm:flex">
         <div className="w-[100%]  relative sm:w-2/3">
           <img
             src={
@@ -15,9 +22,9 @@ function BottomAssets() {
             className="rounded-md"
           />
         </div>
-        <div className="sm:w-2/3 sm:pl-10 text-left  flex justify-center flex-col">
+        <div className="flex flex-col justify-center text-left sm:w-2/3 sm:pl-10">
           <div className="my-3 sm:my-0">
-            <h3 className="text-2xl sm:text-4xl  text-black mt-2 mb-4 sm:my-6 font-semibold">
+            <h3 className="mt-2 mb-4 text-2xl font-semibold text-black sm:text-4xl sm:my-6">
               🏖️ Santa Eulalia Beach
             </h3>
             <p className="leading-7">
@@ -29,18 +36,18 @@ function BottomAssets() {
               amenities, it&apos;s a convenient and enjoyable destination for
               visitors.
             </p>
-            <button className="mt-8 border px-3 rounded-md bg-sky text-white py-1 w-full sm:w-fit">
+            <button className="w-full px-3 py-1 mt-8 text-white border rounded-md bg-sky sm:w-fit">
               View Beaches
             </button>
           </div>
         </div>
       </div>
-      <div className=" mx-auto sm:flex justify-between hidden">
-        <div className="sm:w-2/3 sm:pr-10 text-left flex flex-col justify-center">
+      <div className="justify-between hidden mx-auto sm:flex">
+        <div className="flex flex-col justify-center text-left sm:w-2/3 sm:pr-10">
           <h3 className="text-xl sm:text-4xl text-black my-6 font-semibold sm:my-0`">
             ⛵️ Benagil Caves
           </h3>
-          <p className="sm:pr-4 leading-7">
+          <p className="leading-7 sm:pr-4">
             They are one of the top attractions in Portugal, offering an
             unforgettable experience for adventurers and those seeking a
             tranquil escape. Located along the picturesque Algarve coast, the
@@ -48,7 +55,7 @@ function BottomAssets() {
             With their unique beauty and captivating ambiance, they are sure to
             leave a lasting impression on all who visit.
           </p>
-          <button className="mt-8 border px-3 rounded-md bg-sky text-white py-1 sm:w-fit">
+          <button className="px-3 py-1 mt-8 text-white border rounded-md bg-sky sm:w-fit">
             View Beaches
           </button>
         </div>
@@ -63,7 +70,7 @@ function BottomAssets() {
           />
         </div>
       </div>
-      <div className=" mx-auto sm:flex justify-between ">
+      <div className="justify-between mx-auto sm:flex">
         <div className="w-[100%]  relative sm:w-2/3">
           <img
             src={
@@ -74,8 +81,8 @@ function BottomAssets() {
             className="rounded-md"
           />
         </div>
-        <div className="sm:w-2/3 sm:pl-10 text-left flex flex-col justify-center">
-          <h3 className="text-2xl sm:text-4xl text-black font-semibold mt-4 mb-4 sm:my-6 ">
+        <div className="flex flex-col justify-center text-left sm:w-2/3 sm:pl-10">
+          <h3 className="mt-4 mb-4 text-2xl font-semibold text-black sm:text-4xl sm:my-6 ">
             🏖️ Camilo Beach
           </h3>
           <p className="leading-7">
@@ -86,14 +93,14 @@ function BottomAssets() {
             photographers alike. Whether you&apos;re looking for a peaceful
             getaway or an active adventure.
           </p>
-          <button className="mt-8 border px-3 rounded-md bg-sky text-white py-1 sm:w-fit">
+          <button className="px-3 py-1 mt-8 text-white border rounded-md bg-sky sm:w-fit">
             View Beaches
           </button>
         </div>
       </div>
 
       {/* Last one on mobile */}
-      <div className=" mx-auto justify-between sm:hidden">
+      <div className="justify-between mx-auto sm:hidden">
         <div className="w-[100%]  relative sm:w-2/3">
           <img
             src={
@@ -104,7 +111,7 @@ function BottomAssets() {
             className="rounded-md"
           />
         </div>
-        <div className="sm:w-2/3 sm:pr-10 text-left sm:space-y-10 flex flex-col justify-center">
+        <div className="flex flex-col justify-center text-left sm:w-2/3 sm:pr-10 sm:space-y-10">
           <h3 className="text-2xl sm:text-4xl font-semibold text-black my-3 sm:my-0`">
             ⛵️ Benagil Caves
           </h3>
@@ -118,7 +125,7 @@ function BottomAssets() {
             With their unique beauty and captivating ambiance, they are sure to
             leave a lasting impression on all who visit.
           </p>
-          <button className="mt-4 border px-3 rounded-md bg-sky text-white py-1 sm:w-fit">
+          <button className="px-3 py-1 mt-4 text-white border rounded-md bg-sky sm:w-fit">
             View Beaches
           </button>
         </div>
