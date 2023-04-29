@@ -8,7 +8,7 @@ import ResultsModal from "./modals/ResultsModal";
 function Search({ allTypes }: any) {
   const [inputValue, setInputValue] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
 
   const router = useRouter();
 
@@ -33,6 +33,7 @@ function Search({ allTypes }: any) {
           ) {
             filteredData.push(obj.fields);
             setSearchResults(filteredData);
+            setOpenModal(true);
             break;
           }
         }
