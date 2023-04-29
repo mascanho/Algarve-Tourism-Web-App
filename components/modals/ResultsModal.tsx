@@ -11,7 +11,7 @@ function ResultsModal({ setOpenModal, openModal, searchResults }) {
     >
       <div>
         {searchResults.map((item) => (
-          <p>{item.title}</p>
+          <p key={item.id}>{item.title}</p>
         ))}
         <button onClick={() => setOpenModal(false)}>Close</button>
       </div>
