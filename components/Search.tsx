@@ -3,10 +3,13 @@ import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { useRouter, usePathname } from "next/navigation";
 import { useParams } from "next/navigation";
+import ResultsModal from "./modals/ResultsModal";
 
 function Search({ allTypes }: any) {
   const [inputValue, setInputValue] = useState("");
-  const [searchResults, setSearchResults] = useState();
+  const [searchResults, setSearchResults] = useState([]);
+  const [openModal, setOpenModal] = useState(true);
+
   const router = useRouter();
 
   console.log(router);
@@ -18,16 +21,19 @@ function Search({ allTypes }: any) {
       alert("Please input something...");
     } else {
       console.log("clicked");
+
+      const filteredData = [];
+
       // Search and filter the results
-      allTypes.forEach((element: any) => {
-        for (let key in element) {
-          const value = element.fields;
-          if (element.fields.title.toLowerCase().includes(inputValue)) {
-            console.log(value);
-            setSearchResults(value);
+      const filteredArr = allTypes.filter((obj) => {
+        for (let key in obj) {
+          if (
+            obj.fields.title.includes(inputValue) ||
+            obj.fields.title.toLowerCase().includes(inputValue)
+          ) {
+            filteredData.push(obj.fields);
+            setSearchResults(filteredData);
             break;
-          } else {
-            console.log("There are no results for your search...");
           }
         }
       });
@@ -39,7 +45,7 @@ function Search({ allTypes }: any) {
   };
 
   return (
-    <>
+    <section className="relative">
       <form
         onSubmit={handleSubmit}
         className="relative sm:flex w-[350px] sm:w-[470px] mx-auto"
@@ -60,7 +66,14 @@ function Search({ allTypes }: any) {
           </button>
         </div>
       </form>
-    </>
+      {openModal && (
+        <ResultsModal
+          setOpenModal={setOpenModal}
+          openModal={openModal}
+          searchResults={searchResults}
+        />
+      )}
+    </section>
   );
 }
 
