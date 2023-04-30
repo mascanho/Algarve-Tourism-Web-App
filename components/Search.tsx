@@ -29,7 +29,7 @@ function Search({ allTypes, placeholderText }: any) {
     if (inputValue === "") {
       alert("Please input something...");
     } else {
-      const filteredData: [] = [];
+      const filteredData: Array<{ title: string }> = [];
 
       // Search and filter the results
 
