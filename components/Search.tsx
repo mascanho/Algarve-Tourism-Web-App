@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { useRouter, usePathname } from "next/navigation";
 import { useParams } from "next/navigation";
-import ResultsModal from "./modals/ResultsModal";
 import useSearchedData from "@/app/hooks/useSearchedData";
 
 function Search({ allTypes, placeholderText }: any) {
