@@ -100,13 +100,6 @@ function Search({ allTypes, placeholderText }: any) {
           </button>
         </div>
       </form>
-      {openModal && (
-        <ResultsModal
-          setOpenModal={setOpenModal}
-          openModal={openModal}
-          searchResults={searchResults}
-        />
-      )}
     </section>
   );
 }
