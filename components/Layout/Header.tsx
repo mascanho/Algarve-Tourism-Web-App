@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation";
 import InstructionModal from "../modals/InstructionModal";
 import { Drawer, Group, Button } from "@mantine/core";
 import { useDisclosure, useLocalStorage } from "@mantine/hooks";
-import DrawerModal from "../modals/Drawer";
 import { catArr } from "@/Data/Categories";
 import LoginModal from "../modals/Login";
 import DrawerContent from "../modals/DrawerContent";
