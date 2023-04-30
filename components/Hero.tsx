@@ -1,5 +1,6 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { createClient } from "contentful";
 import Search from "./Search";
 
@@ -13,8 +14,17 @@ async function getAllCategories() {
   return await res.items;
 }
 
-async function Hero() {
-  const allTypes = await getAllCategories();
+const Hero = () => {
+  const [allTypes, setAllTypes] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchAllTypes = async () => {
+      const categories = await getAllCategories();
+      setAllTypes(categories);
+    };
+
+    fetchAllTypes();
+  }, []);
 
   return (
     <>
@@ -36,6 +46,6 @@ async function Hero() {
       </section>
     </>
   );
-}
+};
 
 export default Hero;
