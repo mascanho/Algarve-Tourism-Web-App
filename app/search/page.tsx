@@ -21,6 +21,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(props: any) {
   const searchData = useSearchedData();
+  console.log(searchData);
 
   return (
     <>
@@ -73,6 +74,7 @@ export default function Home(props: any) {
                 mainImage={item.mainImage}
                 city={item.city}
                 type={item.type}
+                shortDescription={item.shortDescription}
               />
             ))}
           </section>

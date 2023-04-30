@@ -13,6 +13,8 @@ export const SearchCard = ({
   tags,
   hiddenGem,
   type,
+  description,
+  shortDescription,
 }: any) => {
   const router = useRouter();
 
@@ -34,18 +36,13 @@ export const SearchCard = ({
       </div>
       <div className="flex items-center justify-between w-full px-2 text-left">
         <h3 className="items-center w-full text-sm text-left text-black">
-          {" "}
           {title}
         </h3>
         <span className="text-sm text-gray-500"> $66.99</span>
       </div>
       <div className="w-full h-[1px] bg-gray-300" />
       <div className="flex w-full px-2 mt-20">
-        <p className="line-clamp-3">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea neque
-          dicta minus laboriosam illum. Placeat, harum sint! Hic, suscipit
-          nobis!
-        </p>
+        <p className="line-clamp-3">{shortDescription} </p>
         {/* <span className="flex-1 text-xs text-sky">Read more</span> */}
       </div>
       <div className="text-[9px] space-x-2 pb-2 px-2">
