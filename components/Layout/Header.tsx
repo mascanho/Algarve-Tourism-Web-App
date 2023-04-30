@@ -112,7 +112,7 @@ const Header = () => {
                     <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                   </svg>
                 </a>
-                <ul className="z-10 p-2 bg-white">
+                <ul className="z-10 p-2 bg-white animate-fade-up animtate-once animate-duration-[400ms]">
                   {catArr.map((item) => (
                     <li
                       key={item.id}
@@ -150,7 +150,7 @@ const Header = () => {
                 />
                 {openLogin && (
                   <div>
-                    <ul className="absolute z-10 w-56 p-2 text-sm bg-white border shadow-sm menu rounded-box sm:-left-24 sm:top-8 -left-40 top-8">
+                    <ul className="absolute z-10 w-56 p-2 text-sm bg-white border animate-fade-up animate-once animate-duration-[400ms] shadow-sm menu rounded-box sm:-left-24 sm:top-8 -left-40 top-8">
                       <li onClick={loginModal.onOpen}>
                         <a
                           className="rounded-md active:bg-sky"

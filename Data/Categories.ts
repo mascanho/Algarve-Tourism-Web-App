@@ -7,9 +7,9 @@ export const catArr = [
   },
   {
     id: 2,
-    name: "📸 Photo Tours",
+    name: "🏖️ Beaches",
     icon: "",
-    route: "/phototours",
+    route: "/beaches",
   },
   {
     id: 3,
