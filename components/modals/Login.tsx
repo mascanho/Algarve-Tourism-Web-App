@@ -18,15 +18,12 @@ import Toaster from "../Toastify";
 
 interface ModalProps {
   isOpen?: boolean;
-  onClose: () => void;
   onSubmit: () => void;
   title?: string;
   body?: React.ReactElement;
   footer?: React.ReactElement;
   actionLabel: string;
-  disabled?: boolean;
-  secondaryAction: () => void;
-  secondaryLabel?: string;
+  onChange: () => void;
 }
 
 interface InputProps {
@@ -43,17 +40,7 @@ interface InputProps {
   password: string;
 }
 
-function LoginModal({
-  isOpen,
-  onClose,
-  title,
-  body,
-  footer,
-  actionLabel,
-  disabled,
-  secondaryAction,
-  secondaryLabel,
-}: ModalProps) {
+function LoginModal({ isOpen, title, body, footer, actionLabel }: ModalProps) {
   const [type, toggle] = useToggle(["login", "register"]);
 
   const [opened, { open, close }] = useDisclosure(false);
@@ -130,7 +117,6 @@ function LoginModal({
                   placeholder="Enter Your Name"
                   required
                   {...register("name")}
-                  errors={errors}
                 />
                 {errors.firstName && <span>This field is required</span>}
               </div>
@@ -145,7 +131,6 @@ function LoginModal({
                   placeholder="Enter Your Email"
                   required
                   {...register("email")}
-                  errors={errors}
                 />
                 {errors.firstName && <span>This field is required</span>}
               </div>
