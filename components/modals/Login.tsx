@@ -16,25 +16,7 @@ import useLoginModalStore from "@/app/hooks/useLoginModal";
 import axios from "axios";
 import Toaster from "../Toastify";
 
-interface ModalProps {
-  isOpen?: boolean;
-}
-
-interface InputProps {
-  id: string;
-  label: string;
-  type?: string;
-  disabled?: boolean;
-  formatPrice?: boolean;
-  required?: boolean;
-  register: UseFormRegister<FieldValues>;
-  errors: FieldErrors;
-  email: string;
-  name: string;
-  password: string;
-}
-
-function LoginModal(): ModalProps {
+function LoginModal(): any {
   const [type, toggle] = useToggle(["login", "register"]);
 
   const [opened, { open, close }] = useDisclosure(false);
