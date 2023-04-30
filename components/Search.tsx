@@ -50,7 +50,7 @@ function Search({ allTypes, placeholderText }: any) {
         });
       }
 
-      const filteredArr = allTypes?.filter((obj: any) => {
+      const filteredArr = allTypes?.filter((obj) => {
         for (let key in obj) {
           if (
             obj.fields.title.includes(inputValue) ||
