@@ -29,7 +29,7 @@ function Search({ allTypes, placeholderText }: any) {
     if (inputValue === "") {
       alert("Please input something...");
     } else {
-      const filteredData: Array<{ title: string }> = [];
+      const filteredData: any = [];
 
       // Search and filter the results
 
@@ -50,7 +50,7 @@ function Search({ allTypes, placeholderText }: any) {
         });
       }
 
-      const filteredArr = allTypes?.filter((obj) => {
+      const filteredArr = allTypes?.filter((obj: any) => {
         for (let key in obj) {
           if (
             obj.fields.title.includes(inputValue) ||
