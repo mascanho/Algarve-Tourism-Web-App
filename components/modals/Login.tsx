@@ -15,6 +15,7 @@ import { FaGithub } from "react-icons/fa";
 import useLoginModalStore from "@/app/hooks/useLoginModal";
 import axios from "axios";
 import Toaster from "../Toastify";
+import { signIn } from "next-auth/react";
 
 function LoginModal(): any {
   const [type, toggle] = useToggle(["login", "register"]);
@@ -69,7 +70,10 @@ function LoginModal(): any {
           <h2 className="text-2xl font-bold">Login</h2>
           <p className="text-sm text-gray-400">Please enter your details</p>
           <div className="flex items-center justify-center pt-2 space-x-4">
-            <button className="flex items-center justify-center w-full px-3 py-2 border rounded-md ">
+            <button
+              onClick={signIn()}
+              className="flex items-center justify-center w-full px-3 py-2 border rounded-md "
+            >
               <FcGoogle className="mr-2" />
               Google
             </button>
