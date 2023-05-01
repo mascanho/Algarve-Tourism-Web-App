@@ -11,7 +11,8 @@ import { useDisclosure, useLocalStorage } from "@mantine/hooks";
 import { catArr } from "@/Data/Categories";
 import LoginModal from "../modals/Login";
 import DrawerContent from "../modals/DrawerContent";
-import useLoginModalStore from "@/app/hooks/useLoginModal";
+import { useLoginModalStore } from "@/app/hooks/useLoginModal";
+import { signOut } from "next-auth/react";
 
 interface UserProps {
   currentUser: {
@@ -152,7 +153,7 @@ const Header = ({ currentUser }: UserProps) => {
               <img
                 src={
                   currentUser?.image ||
-                  "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80"
+                  "https://backalleycrossfit.com/wp-content/uploads/2016/09/profile-placeholder-300x300.png"
                 }
                 height={30}
                 width={30}
@@ -178,7 +179,7 @@ const Header = ({ currentUser }: UserProps) => {
                       <li>
                         <a className="rounded-md active:bg-sky">Login</a>
                       </li>
-                      <li>
+                      <li onClick={() => signOut()}>
                         <a className="rounded-md active:bg-sky">Logout</a>
                       </li>
                     </ul>

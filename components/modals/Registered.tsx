@@ -1,5 +1,3 @@
-
-
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Group, Button } from "@mantine/core";
 import { useEffect, useState } from "react";
@@ -14,12 +12,12 @@ import {
 import { AiFillCloseCircle } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { useLoginModalStore } from "@/app/hooks/useLoginModal";
+import { useLoginModalStore } from "@/app/hooks/useLoginModal"
 import axios from "axios";
 import Toaster from "../Toastify";
 import { signIn } from "next-auth/react";
 
-function LoginModal(): any {
+function RegisteredModal(): any {
   const [type, toggle] = useToggle(["login", "register"]);
 
   const [opened, { open, close }] = useDisclosure(false);
@@ -40,6 +38,7 @@ function LoginModal(): any {
       password: "",
     },
   });
+
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
@@ -70,7 +69,7 @@ function LoginModal(): any {
             className="absolute text-base cursor-pointer top-4 right-4"
             onClick={closeModal.onClose}
           />
-          <h2 className="text-2xl font-bold">Register</h2>
+          <h2 className="text-2xl font-bold">Login</h2>
           <p className="text-sm text-gray-400">Please enter your details to create an account</p>
 
           <div className="pt-4">
@@ -155,4 +154,4 @@ function LoginModal(): any {
   );
 }
 
-export default LoginModal;
+export default RegisteredModal;

@@ -6,10 +6,14 @@ interface LoginModalStore {
   onClose: () => void;
 }
 
-const useLoginModalStore = create<LoginModalStore>((set) => ({
+export const useLoginModalStore = create<LoginModalStore>((set) => ({
   isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
 }));
 
-export default useLoginModalStore;
+export const useRegisteredModalStore = create<RegisteredModalStore>((set) => ({
+  isOpen: false,
+  onOpen: () => set({ isOpen: true }),
+  onClose: () => set({ isOpen: false }),
+}))
