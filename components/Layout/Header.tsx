@@ -11,8 +11,13 @@ import { useDisclosure, useLocalStorage } from "@mantine/hooks";
 import { catArr } from "@/Data/Categories";
 import LoginModal from "../modals/Login";
 import DrawerContent from "../modals/DrawerContent";
-import { useLoginModalStore } from "@/app/hooks/useLoginModal";
+import {
+  useLoginModalStore,
+  useRegisteredModalStore,
+} from "@/app/hooks/useLoginModal";
 import { signOut } from "next-auth/react";
+import UserMenu from "./UserMenu";
+import RegisteredModal from "../modals/Registered";
 
 interface UserProps {
   currentUser: {
@@ -32,15 +37,15 @@ const Header = ({ currentUser }: UserProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const [openLogin, setOpenLogin] = useState(false);
-  const [openBag, setOpenBag] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
-
-  // Modals using Zustand
-  const loginModal = useLoginModalStore();
 
   const openLoginMenu = () => {
     setOpenLogin(!openLogin);
   };
+
+  // Modals using Zustand
+  const loginModal = useLoginModalStore();
+  const registeredModal = useRegisteredModalStore();
 
   return (
     <>
@@ -171,17 +176,27 @@ const Header = ({ currentUser }: UserProps) => {
                       <li onClick={loginModal.onOpen}>
                         <a
                           className="rounded-md active:bg-sky"
-                          onClick={() => openLoginMenu()}
+                          onClick={() => setOpenLogin(!openLogin)}
                         >
                           Sign up
                         </a>
                       </li>
-                      <li>
-                        <a className="rounded-md active:bg-sky">Login</a>
+                      <li onClick={registeredModal.onOpen}>
+                        <a
+                          onClick={() => setOpenLogin(!openLogin)}
+                          className="rounded-md active:bg-sky"
+                        >
+                          Login
+                        </a>
                       </li>
-                      <li onClick={() => signOut()}>
-                        <a className="rounded-md active:bg-sky">Logout</a>
-                      </li>
+
+                      {currentUser ? (
+                        <li onClick={() => signOut()}>
+                          <a className="rounded-md active:bg-sky">Logout</a>
+                        </li>
+                      ) : (
+                        ""
+                      )}
                     </ul>
                   </div>
                 )}
@@ -196,21 +211,6 @@ const Header = ({ currentUser }: UserProps) => {
                     onClick={open}
                     className="cursor-pointer active:scale-90"
                   />
-                  {openBag && (
-                    <div>
-                      <ul className="absolute z-10 w-56 p-2 text-sm bg-white border shadow-sm menu rounded-box sm:-left-28 sm:top-8 -left-48 top-8">
-                        <li>
-                          <a>Sign up</a>
-                        </li>
-                        <li onClick={loginModal.onOpen}>
-                          <a>Login</a>
-                        </li>
-                        <li>
-                          <a>Logout</a>
-                        </li>
-                      </ul>
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
@@ -234,6 +234,7 @@ const Header = ({ currentUser }: UserProps) => {
       {/* Modals Section */}
 
       {loginModal.isOpen === true ? <LoginModal /> : ""}
+      {registeredModal.isOpen === true ? <RegisteredModal /> : ""}
     </>
   );
 };

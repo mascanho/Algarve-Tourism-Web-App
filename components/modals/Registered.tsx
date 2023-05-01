@@ -1,5 +1,5 @@
 import { useDisclosure } from "@mantine/hooks";
-import { Modal, Group, Button } from "@mantine/core";
+
 import { useEffect, useState } from "react";
 import { useToggle, upperFirst } from "@mantine/hooks";
 import {
@@ -12,10 +12,14 @@ import {
 import { AiFillCloseCircle } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { useLoginModalStore } from "@/app/hooks/useLoginModal"
+import {
+  useLoginModalStore,
+  useRegisteredModalStore,
+} from "@/app/hooks/useLoginModal";
 import axios from "axios";
 import Toaster from "../Toastify";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 function RegisteredModal(): any {
   const [type, toggle] = useToggle(["login", "register"]);
@@ -23,7 +27,9 @@ function RegisteredModal(): any {
   const [opened, { open, close }] = useDisclosure(false);
   const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const closeModal = useLoginModalStore();
+
+  const closeRegisteredModal = useRegisteredModalStore();
+  const router = useRouter();
 
   // Form Hanbdling
 
@@ -39,26 +45,19 @@ function RegisteredModal(): any {
     },
   });
 
-
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
 
-    axios
-      .post("/api/register", data)
-      .then(() => {
-        // toast.success('Registered!');
-        // registerModal.onClose();
-        // loginModal.onOpen();
-        console.log("Registered!");
-      })
-      .catch((error) => {
-        // toast.error(error);
-        console.log(error);
-      })
-      .finally(() => {
-        setIsLoading(false);
-        closeModal.onClose();
-      });
+    try {
+      axios.get("/api/login").then((res) => {
+        console.log(res);
+      }); // replace "/api/users" with the actual route to your Prisma API
+
+      // extract the user data from the response
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
   };
 
   return (
@@ -67,10 +66,12 @@ function RegisteredModal(): any {
         <div className="relative p-8 space-y-2 text-center text-black bg-white rounded-lg w-[85%] sm:w-[500px]  animate-jump-in animate-delay-100 animate-once ">
           <AiFillCloseCircle
             className="absolute text-base cursor-pointer top-4 right-4"
-            onClick={closeModal.onClose}
+            onClick={closeRegisteredModal.onClose}
           />
           <h2 className="text-2xl font-bold">Login</h2>
-          <p className="text-sm text-gray-400">Please enter your details to create an account</p>
+          <p className="text-sm text-gray-400">
+            Please enter your details to create an account
+          </p>
 
           <div className="pt-4">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -124,11 +125,13 @@ function RegisteredModal(): any {
               >
                 Submit
               </button>
-              <section className='pt-1'>
-                <div className=" divider py-2">OR</div>
+              <section className="pt-1">
+                <div className="py-2 divider">OR</div>
               </section>
               <h2 className="text-2xl font-bold">Login</h2>
-              <p className="text-sm text-gray-400">You can login using your social accounts</p>
+              <p className="text-sm text-gray-400">
+                You can login using your social accounts
+              </p>
               <div className="flex items-center justify-center pt-2 pb-4 space-x-4">
                 <button
                   onClick={() => signIn("google")}

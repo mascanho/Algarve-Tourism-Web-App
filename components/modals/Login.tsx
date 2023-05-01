@@ -1,5 +1,3 @@
-
-
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Group, Button } from "@mantine/core";
 import { useEffect, useState } from "react";
@@ -71,7 +69,9 @@ function LoginModal(): any {
             onClick={closeModal.onClose}
           />
           <h2 className="text-2xl font-bold">Register</h2>
-          <p className="text-sm text-gray-400">Please enter your details to create an account</p>
+          <p className="text-sm text-gray-400">
+            Please enter your details to create an account
+          </p>
 
           <div className="pt-4">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -125,11 +125,13 @@ function LoginModal(): any {
               >
                 Submit
               </button>
-              <section className='pt-1'>
-                <div className=" divider py-2">OR</div>
+              <section className="pt-1">
+                <div className="py-2  divider">OR</div>
               </section>
               <h2 className="text-2xl font-bold">Login</h2>
-              <p className="text-sm text-gray-400">You can login using your social accounts</p>
+              <p className="text-sm text-gray-400">
+                You can login using your social accounts
+              </p>
               <div className="flex items-center justify-center pt-2 pb-4 space-x-4">
                 <button
                   onClick={() => signIn("google")}
