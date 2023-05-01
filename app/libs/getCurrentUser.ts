@@ -2,8 +2,21 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "../../pages/api/auth/[...nextauth]";
 import prisma from "./prismadb";
 
-// Gets the current user logged in
+interface UserProps {
+  currentUser: {
+    createdAt: string;
+    updatedAt: string;
+    emailVerified: string | null;
+    id: string;
+    name: string | null;
+    email: string | null;
+    image: string | null;
+    hashedPassword: string | null;
+    favoriteIds: string[];
+  } | null;
+}
 
+// Gets the current user logged in
 export async function getSession() {
   return await getServerSession(authOptions);
 }

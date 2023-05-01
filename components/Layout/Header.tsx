@@ -13,7 +13,21 @@ import LoginModal from "../modals/Login";
 import DrawerContent from "../modals/DrawerContent";
 import useLoginModalStore from "@/app/hooks/useLoginModal";
 
-const Header = () => {
+interface UserProps {
+  currentUser: {
+    createdAt: string;
+    updatedAt: string;
+    emailVerified: string | null;
+    id: string;
+    name: string | null;
+    email: string | null;
+    image: string | null;
+    hashedPassword: string | null;
+    favoriteIds: string[];
+  } | null;
+}
+
+const Header = ({ currentUser }: UserProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const [openLogin, setOpenLogin] = useState(false);
@@ -136,7 +150,10 @@ const Header = () => {
           <div className="space-x-4 navbar-end">
             <div className="flex items-center pr-3 text-xl text-black border rounded-full border-black/20 bg-white/50">
               <img
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80"
+                src={
+                  currentUser?.image ||
+                  "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80"
+                }
                 height={30}
                 width={30}
                 className="rounded-full"
