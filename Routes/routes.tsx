@@ -7,9 +7,8 @@ export default function Routes({ category }: any) {
   const pathname = usePathname();
 
   const [path, setPath] = useState();
-
-  const strPath = pathname;
-  const newPath = strPath.replace("/", "");
+  const strPath: any = pathname ?? "";
+  const newPath: string | undefined = strPath?.replace("/", "");
 
   if (pathname === "/sports") {
     return (
