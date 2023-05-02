@@ -17,6 +17,7 @@ import {
 import { signOut } from "next-auth/react";
 import RegisteredModal from "../modals/Registered";
 import getCurrentUser from "@/app/libs/getCurrentUser";
+import { toast } from "react-hot-toast";
 
 interface UserProps {
   currentUser: {
@@ -44,7 +45,10 @@ const Header = ({ currentUser }: UserProps) => {
   };
 
 
-  console.log(currentUser?.name)
+  const userLogsOut = () => {
+    toast.success("Logging you out... bye!");
+    signOut()
+  }
 
   // Modals using Zustand
   const loginModal = useLoginModalStore();
@@ -204,7 +208,7 @@ const Header = ({ currentUser }: UserProps) => {
 
 
                       {currentUser ? (
-                        <li onClick={() => signOut()}>
+                        <li onClick={userLogsOut}>
                           <a className="rounded-md active:bg-sky">Logout</a>
                         </li>
                       ) : (

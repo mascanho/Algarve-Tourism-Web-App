@@ -63,7 +63,7 @@ function RegisteredModal({ currentUser }: any) {
 
           if (callback?.ok) {
 
-            toast.success("Hello " + currentUser?.name + ", you have been logged in!");
+            toast.success("Howdy, you have been logged in!");
             router.refresh();
             closeRegisteredModal.onClose()
 
@@ -88,7 +88,7 @@ function RegisteredModal({ currentUser }: any) {
           />
           <h2 className="text-2xl font-bold">Login</h2>
           <p className="text-sm text-gray-400">
-            Please enter your details to create an account
+            Please enter your details to login to your account
           </p>
 
           <div className="pt-4">
