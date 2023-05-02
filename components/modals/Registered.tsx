@@ -20,8 +20,10 @@ import axios from "axios";
 import Toaster from "../Toastify";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { toast } from "react-hot-toast";
+import getCurrentUser from "@/app/libs/getCurrentUser";
 
-function RegisteredModal(): any {
+function RegisteredModal({ currentUser }: any) {
   const [type, toggle] = useToggle(["login", "register"]);
 
   const [opened, { open, close }] = useDisclosure(false);
@@ -31,6 +33,8 @@ function RegisteredModal(): any {
   const closeRegisteredModal = useRegisteredModalStore();
   const router = useRouter();
 
+  // get the current user lodden in
+
   // Form Hanbdling
 
   const {
@@ -39,26 +43,40 @@ function RegisteredModal(): any {
     formState: { errors },
   } = useForm<FieldValues>({
     defaultValues: {
-      name: "",
       email: "",
       password: "",
     },
   });
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    setIsLoading(true);
 
-    try {
-      axios.get("/api/login").then((res) => {
-        console.log(res);
-      }); // replace "/api/users" with the actual route to your Prisma API
+  const onSubmit: SubmitHandler<FieldValues> =
+    (data) => {
+      setIsLoading(true);
 
-      // extract the user data from the response
-    } catch (error) {
-      console.error(error);
-      return null;
+
+      signIn('credentials', {
+        ...data,
+        redirect: false,
+      })
+        .then((callback) => {
+          setIsLoading(false);
+
+          if (callback?.ok) {
+
+            toast.success("Hello " + currentUser?.name + ", you have been logged in!");
+            router.refresh();
+            closeRegisteredModal.onClose()
+
+          }
+
+          if (callback?.error) {
+            toast.error(callback.error);
+
+          }
+        });
     }
-  };
+
+
 
   return (
     <section className="fixed top-0 bottom-0 left-0 right-0 z-50 w-full h-full bg-black/30 backdrop-blur-md">
@@ -75,20 +93,20 @@ function RegisteredModal(): any {
 
           <div className="pt-4">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-              <div className="flex flex-col">
-                <label htmlFor="" className="pb-1 text-xs text-left">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  className="p-2 bg-transparent bg-gray-300 border rounded-md"
-                  placeholder="Enter Your Name"
-                  required
-                  {...register("name")}
-                />
-                {errors.firstName && <span>This field is required</span>}
-              </div>
+              {/* <div className="flex flex-col"> */}
+              {/*   <label htmlFor="" className="pb-1 text-xs text-left"> */}
+              {/*     Name */}
+              {/*   </label> */}
+              {/*   <input */}
+              {/*     type="text" */}
+              {/*     id="firstName" */}
+              {/*     className="p-2 bg-transparent bg-gray-300 border rounded-md" */}
+              {/*     placeholder="Enter Your Name" */}
+              {/*     required */}
+              {/*     {...register("name")} */}
+              {/*   /> */}
+              {/*   {errors.firstName && <span>This field is required</span>} */}
+              {/* </div> */}
               <div className="flex flex-col">
                 <label htmlFor="" className="pb-1 text-xs text-left">
                   Email

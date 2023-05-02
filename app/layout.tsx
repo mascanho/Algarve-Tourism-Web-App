@@ -7,6 +7,7 @@ import Carousel from "@/components/Carousel";
 import ClientOnly from "@/components/ClientOnly";
 import "react-toastify/dist/ReactToastify.css";
 import getCurrentUser from "./libs/getCurrentUser";
+import { ToasterProvider } from "./providers/ToasterProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -60,10 +61,12 @@ export default async function RootLayout({
 }) {
   const currentUser = await getCurrentUser();
 
+
   return (
     <html lang="en">
       <body className="bg-white">
         <ClientOnly>
+          <ToasterProvider />
           <Header currentUser={currentUser} />
         </ClientOnly>
 

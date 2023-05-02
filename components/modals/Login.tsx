@@ -12,18 +12,21 @@ import {
 import { AiFillCloseCircle } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { useLoginModalStore } from "@/app/hooks/useLoginModal";
+import { useLoginModalStore, useRegisteredModalStore } from "@/app/hooks/useLoginModal";
 import axios from "axios";
 import Toaster from "../Toastify";
 import { signIn } from "next-auth/react";
+import { toast } from "react-hot-toast";
 
-function LoginModal(): any {
+function LoginModal({ currenUser }: any) {
   const [type, toggle] = useToggle(["login", "register"]);
 
   const [opened, { open, close }] = useDisclosure(false);
   const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const closeModal = useLoginModalStore();
+
+  const registeredModal = useRegisteredModalStore()
 
   // Form Hanbdling
 
@@ -45,18 +48,16 @@ function LoginModal(): any {
     axios
       .post("/api/register", data)
       .then(() => {
-        // toast.success('Registered!');
-        // registerModal.onClose();
-        // loginModal.onOpen();
-        console.log("Registered!");
+        toast.success('You Have Been Registered!');
       })
       .catch((error) => {
-        // toast.error(error);
-        console.log(error);
+        toast.error(error);
       })
       .finally(() => {
         setIsLoading(false);
         closeModal.onClose();
+        registeredModal.onOpen()
+
       });
   };
 

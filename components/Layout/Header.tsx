@@ -1,11 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { HiBars3 } from "react-icons/hi2";
 import { MdCardTravel } from "react-icons/md";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import InstructionModal from "../modals/InstructionModal";
 import { Drawer, Group, Button } from "@mantine/core";
 import { useDisclosure, useLocalStorage } from "@mantine/hooks";
 import { catArr } from "@/Data/Categories";
@@ -16,8 +15,8 @@ import {
   useRegisteredModalStore,
 } from "@/app/hooks/useLoginModal";
 import { signOut } from "next-auth/react";
-import UserMenu from "./UserMenu";
 import RegisteredModal from "../modals/Registered";
+import getCurrentUser from "@/app/libs/getCurrentUser";
 
 interface UserProps {
   currentUser: {
@@ -33,6 +32,7 @@ interface UserProps {
   } | null;
 }
 
+
 const Header = ({ currentUser }: UserProps) => {
   const router = useRouter();
   const pathname = usePathname();
@@ -42,6 +42,9 @@ const Header = ({ currentUser }: UserProps) => {
   const openLoginMenu = () => {
     setOpenLogin(!openLogin);
   };
+
+
+  console.log(currentUser?.name)
 
   // Modals using Zustand
   const loginModal = useLoginModalStore();
@@ -173,22 +176,32 @@ const Header = ({ currentUser }: UserProps) => {
                 {openLogin && (
                   <div>
                     <ul className="absolute z-10 w-56 p-2 text-sm bg-white border shadow-sm menu rounded-box sm:-left-24 sm:top-8 -left-40 top-8">
-                      <li onClick={loginModal.onOpen}>
-                        <a
-                          className="rounded-md active:bg-sky"
-                          onClick={() => setOpenLogin(!openLogin)}
-                        >
-                          Sign up
-                        </a>
-                      </li>
-                      <li onClick={registeredModal.onOpen}>
-                        <a
-                          onClick={() => setOpenLogin(!openLogin)}
-                          className="rounded-md active:bg-sky"
-                        >
-                          Login
-                        </a>
-                      </li>
+                      {
+                        !currentUser ? (
+
+                          <>
+
+                            <li onClick={loginModal.onOpen}>
+                              <a
+                                className="rounded-md active:bg-sky"
+                                onClick={() => setOpenLogin(!openLogin)}
+                              >
+                                Sign up
+                              </a>
+                            </li>
+                            <li onClick={registeredModal.onOpen}>
+                              <a
+                                onClick={() => setOpenLogin(!openLogin)}
+                                className="rounded-md active:bg-sky"
+                              >
+                                Login
+                              </a>
+                            </li>
+                          </>
+                        ) : ("")
+                      }
+
+
 
                       {currentUser ? (
                         <li onClick={() => signOut()}>
@@ -233,8 +246,8 @@ const Header = ({ currentUser }: UserProps) => {
 
       {/* Modals Section */}
 
-      {loginModal.isOpen === true ? <LoginModal /> : ""}
-      {registeredModal.isOpen === true ? <RegisteredModal /> : ""}
+      {loginModal.isOpen === true ? <LoginModal currentUser={currentUser} /> : ""}
+      {registeredModal.isOpen === true ? <RegisteredModal currentUser={currentUser} /> : ""}
     </>
   );
 };
