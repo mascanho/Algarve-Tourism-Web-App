@@ -1,22 +1,48 @@
 "use client";
 import { Tabs } from "@mantine/core";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-function TabsRow() {
+function TabsRow({ filteredData }: any) {
+  console.log(filteredData);
+
+  const options = {
+    renderNode: {
+      "embedded-asset-block": (node: any) => {
+        const { title, description, file } = node.data.target.fields;
+        const mimeType = file.contentType;
+        const src = file.url;
+        const alt = title || description;
+        if (mimeType === "image/jpeg" || mimeType === "image/png") {
+          return <img src={src} alt={alt} />;
+        }
+      },
+    },
+  };
+
+  const parsedContent = documentToReactComponents(
+    filteredData[0]?.fields?.description,
+    options
+  );
+
   return (
     <Tabs color="teal" defaultValue="first" className="">
       <Tabs.List className="text-left">
-        <Tabs.Tab className="text-left ml-0 pl-0" value="first">
+        <Tabs.Tab className="text-left ml-0 pl-0" value="first" color="blue">
           Description
         </Tabs.Tab>
         <Tabs.Tab value="second" color="blue">
           Photos
         </Tabs.Tab>
-        <Tabs.Tab value="third">Description</Tabs.Tab>
-        <Tabs.Tab value="fourth">Price</Tabs.Tab>
+        <Tabs.Tab value="third" color="blue">
+          Description
+        </Tabs.Tab>
+        <Tabs.Tab value="fourth" color="blue">
+          Price
+        </Tabs.Tab>
       </Tabs.List>
 
-      <Tabs.Panel value="first" pt="xs">
-        First tab color is teal, it gets this value from context
+      <Tabs.Panel value="first" pt="xs" className="leading-7">
+        {parsedContent}
       </Tabs.Panel>
 
       <Tabs.Panel value="second" pt="xs">
@@ -28,9 +54,7 @@ function TabsRow() {
         priority and will override context value
       </Tabs.Panel>
       <Tabs.Panel value="fourth" pt="xs">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-        dignissimos consequuntur ad aperiam vitae excepturi, ipsam modi.
-        Repellendus, quae quis.
+        {filteredData[0]?.fields?.price}
       </Tabs.Panel>
     </Tabs>
   );

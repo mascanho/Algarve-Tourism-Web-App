@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.16.4",
     "@emotion/react": "^11.10.6",
     "@mantine/carousel": "^6.0.5",
     "@mantine/core": "^6.0.5",
@@ -38,6 +39,7 @@
     "react-icons": "^4.8.0",
     "react-spinners": "^0.13.8",
     "react-toastify": "^9.1.2",
+    "react-tooltip": "^5.11.2",
     "tabler-icons-react": "^1.56.0",
     "typescript": "5.0.2",
     "zustand": "^4.3.7"

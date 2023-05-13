@@ -23,6 +23,8 @@ async function Page(props: any) {
 
   const category: any = await getData();
 
+  console.log(category);
+
   return (
     <>
       <div className="sm:hidden mx-auto flex justify-center w-full mb-8">
@@ -34,13 +36,19 @@ async function Page(props: any) {
             <section className="max-w-7xl space-y-2 text-left md:w-64 shadow-sm rounded-md pb-2">
               <div className="w-full h-40 flex flex-col rounded-t-md overflow-hidden relative">
                 <Image
-                  src="https://th.bing.com/th/id/OIG.XUrUyoz7q_uPku3p7E.0?pid=ImgGn"
+                  src={
+                    cat?.fields?.mainImage?.fields?.file?.url ? (
+                      `https://${cat?.fields?.mainImage?.fields?.file?.url}`
+                    ) : (
+                      <p>No image available</p>
+                    )
+                  }
                   fill
                   alt="image"
                   className="block"
                 />
                 <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-black bg-white  ">
-                  {/* 📍 {data.city} */}
+                  📍 {cat?.fields?.city}
                 </span>
               </div>
               <div className="flex w-full  text-left justify-between px-2 items-center">
@@ -48,18 +56,18 @@ async function Page(props: any) {
                   {" "}
                   {cat.fields.title}
                 </h3>
-                <span className="text-gray-500 text-sm"> $66.99</span>
+                <span className="text-gray-500 text-sm">
+                  {cat?.fields?.price}
+                </span>
               </div>
               <div className="w-full h-[1px] bg-gray-300" />
               <div className="mt-20 flex w-full px-2">
-                <p className="line-clamp-3">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea
-                  neque dicta minus laboriosam illum. Placeat, harum sint! Hic,
-                  suscipit nobis!
+                <p className="line-clamp-3 text-sm">
+                  {cat?.fields?.shortDescription}
                 </p>
                 {/* <span className="flex-1 text-sky text-xs">Read more</span> */}
               </div>
-              <div className="text-[9px] space-x-2 pb-2 px-2">
+              <div className="text-[9px] space-x-2 pb-2 px-2 pt-2">
                 {["📸 Photo Tour"].map((cat) => (
                   <span
                     key={cat}

@@ -11,6 +11,7 @@ import { BiMapPin } from "react-icons/bi";
 import { BiShareAlt } from "react-icons/bi";
 import TabsRow from "@/components/Layout/Tabs";
 import { createClient } from "contentful";
+import Buttons from "@/components/Layout/Buttons";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -35,7 +36,7 @@ export default async function Home(props: any) {
 
   const data = await getAllCategories();
 
-  const filteredData = data.filter((obj: any) => obj.fields.slug === slug);
+  const filteredData: any = data.filter((obj: any) => obj.fields.slug === slug);
 
   return (
     <>
@@ -49,7 +50,7 @@ export default async function Home(props: any) {
             <span className="">Hidden Gem</span>
           </div>
           <div className="flex justify-between space-y-1  items-center ">
-            <h1 className="sm:text-2xl text-sky w-auto min-w-fit sm:mr-4">
+            <h1 className="sm:text-2xl text-sky w-auto font-semibold min-w-fit sm:mr-4">
               {filteredData[0]?.fields?.title}
             </h1>
             <div className="flex justify-between w-full">
@@ -58,9 +59,7 @@ export default async function Home(props: any) {
                 {filteredData[0]?.fields?.city}
               </span>
               <div className="sm:pr-4 flex space-x-2  ">
-                <MdOutlineCardTravel className="w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
-                <BiMapPin className="w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
-                <BiShareAlt className="w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
+                <Buttons filteredData={filteredData} />
               </div>
             </div>
           </div>
@@ -82,7 +81,7 @@ export default async function Home(props: any) {
           </div>
         </div>
         <div className="sm:pt-10 w-11/12 sm:w-full mx-auto h-screen">
-          <TabsRow />
+          <TabsRow filteredData={filteredData} />
         </div>
       </section>
     </>
