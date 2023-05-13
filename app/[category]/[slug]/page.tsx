@@ -40,22 +40,22 @@ export default async function Home(props: any) {
   return (
     <>
       <section className=" bg-white text-left pb-16 space-y-4 h-full mb-20 sm:pl-6 sm:w-full mx-auto">
-        <section className="w-full ml-0">
-          <LeadGrid />
+        <section className="w-full">
+          <LeadGrid filteredData={filteredData} />
         </section>
         <div className="space-y-2 w-11/12 sm:w-full mx-auto">
           <div className="flex items-center space-x-1 bg-gray-200 w-fit px-2 rounded-md text-green-500 text-xs py-1">
             <FaRegGem />
             <span className="">Hidden Gem</span>
           </div>
-          <div className="flex justify-between space-y-1  ">
-            <h1 className="sm:text-2xl text-sky">
+          <div className="flex justify-between space-y-1  items-center ">
+            <h1 className="sm:text-2xl text-sky w-auto min-w-fit sm:mr-4">
               {filteredData[0]?.fields?.title}
             </h1>
             <div className="flex justify-between w-full">
-              <span className="flex items-center text-black text-sm flex-1 text-left">
+              <span className="flex items-center text-black text-sm text-left">
                 <FaMapMarkerAlt />
-                Albufeira
+                {filteredData[0]?.fields?.city}
               </span>
               <div className="sm:pr-4 flex space-x-2  ">
                 <MdOutlineCardTravel className="w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />

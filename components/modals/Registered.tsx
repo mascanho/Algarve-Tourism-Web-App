@@ -48,35 +48,26 @@ function RegisteredModal({ currentUser }: any) {
     },
   });
 
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    setIsLoading(true);
 
-  const onSubmit: SubmitHandler<FieldValues> =
-    (data) => {
-      setIsLoading(true);
+    signIn("credentials", {
+      ...data,
+      redirect: false,
+    }).then((callback) => {
+      setIsLoading(false);
 
+      if (callback?.ok) {
+        toast.success("Howdy, you have been logged in!");
+        router.refresh();
+        closeRegisteredModal.onClose();
+      }
 
-      signIn('credentials', {
-        ...data,
-        redirect: false,
-      })
-        .then((callback) => {
-          setIsLoading(false);
-
-          if (callback?.ok) {
-
-            toast.success("Howdy, you have been logged in!");
-            router.refresh();
-            closeRegisteredModal.onClose()
-
-          }
-
-          if (callback?.error) {
-            toast.error(callback.error);
-
-          }
-        });
-    }
-
-
+      if (callback?.error) {
+        toast.error(callback.error);
+      }
+    });
+  };
 
   return (
     <section className="fixed top-0 bottom-0 left-0 right-0 z-50 w-full h-full bg-black/30 backdrop-blur-md">
@@ -146,28 +137,28 @@ function RegisteredModal({ currentUser }: any) {
               <section className="pt-1">
                 <div className="py-2 divider">OR</div>
               </section>
-              <h2 className="text-2xl font-bold">Login</h2>
-              <p className="text-sm text-gray-400">
-                You can login using your social accounts
-              </p>
-              <div className="flex items-center justify-center pt-2 pb-4 space-x-4">
-                <button
-                  onClick={() => signIn("google")}
-                  className="flex items-center justify-center w-full px-3 py-2 border rounded-md "
-                >
-                  <FcGoogle className="mr-2" />
-                  Google
-                </button>
-                <button
-                  onClick={() => signIn("github")}
-                  className="flex items-center justify-center w-full px-3 py-2 border rounded-md "
-                >
-                  <FaGithub className="mr-2" />
-                  GitHub
-                </button>
-              </div>
-              <Toaster />
             </form>
+            <h2 className="text-2xl font-bold">Login</h2>
+            <p className="text-sm text-gray-400">
+              You can login using your social accounts
+            </p>
+            <div className="flex items-center justify-center pt-2 pb-4 space-x-4">
+              <button
+                onClick={() => signIn("google")}
+                className="flex items-center justify-center w-full px-3 py-2 border rounded-md "
+              >
+                <FcGoogle className="mr-2" />
+                Google
+              </button>
+              <button
+                onClick={() => signIn("github")}
+                className="flex items-center justify-center w-full px-3 py-2 border rounded-md "
+              >
+                <FaGithub className="mr-2" />
+                GitHub
+              </button>
+            </div>
+            <Toaster />
           </div>
         </div>
       </div>

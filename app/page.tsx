@@ -37,13 +37,13 @@ export default async function Home(props: any) {
   return (
     <>
       <Hero />
-      <section className="pt-20 pb-6 space-y-4 text-center bg-white">
-        <div className="w-11/12 mx-auto">
+      <section className="pt-20 pb-6 space-y-4 text-cente-white">
+        <div className="-q11/12 mx-auto">
           <h3 className="text-3xl font-bold text-black sm:text-5xl">
             Guides for your next location{" "}
           </h3>
         </div>
-        <h4 className="w-8/12 mx-auto">
+        <h4 className="-8/12 mx-auto">
           Check out this week&apos; selection of popular trips and events
         </h4>
         <Selection />
