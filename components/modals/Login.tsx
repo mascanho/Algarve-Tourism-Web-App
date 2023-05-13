@@ -12,7 +12,10 @@ import {
 import { AiFillCloseCircle } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { useLoginModalStore, useRegisteredModalStore } from "@/app/hooks/useLoginModal";
+import {
+  useLoginModalStore,
+  useRegisteredModalStore,
+} from "@/app/hooks/useLoginModal";
 import axios from "axios";
 import Toaster from "../Toastify";
 import { signIn } from "next-auth/react";
@@ -26,7 +29,7 @@ function LoginModal({ currenUser }: any) {
   const [isLoading, setIsLoading] = useState(false);
   const closeModal = useLoginModalStore();
 
-  const registeredModal = useRegisteredModalStore()
+  const registeredModal = useRegisteredModalStore();
 
   // Form Hanbdling
 
@@ -48,7 +51,7 @@ function LoginModal({ currenUser }: any) {
     axios
       .post("/api/register", data)
       .then(() => {
-        toast.success('You Have Been Registered!');
+        toast.success("You Have Been Registered!");
       })
       .catch((error) => {
         toast.error(error);
@@ -56,8 +59,7 @@ function LoginModal({ currenUser }: any) {
       .finally(() => {
         setIsLoading(false);
         closeModal.onClose();
-        registeredModal.onOpen()
-
+        registeredModal.onOpen();
       });
   };
 
@@ -85,7 +87,6 @@ function LoginModal({ currenUser }: any) {
                   id="firstName"
                   className="p-2 bg-transparent bg-gray-300 border rounded-md"
                   placeholder="Enter Your Name"
-                  required
                   {...register("name")}
                 />
                 {errors.firstName && <span>This field is required</span>}
@@ -99,7 +100,6 @@ function LoginModal({ currenUser }: any) {
                   id="email"
                   className="p-2 bg-transparent bg-gray-300 border rounded-md"
                   placeholder="Enter Your Email"
-                  required
                   {...register("email")}
                 />
                 {errors.firstName && <span>This field is required</span>}
@@ -114,7 +114,6 @@ function LoginModal({ currenUser }: any) {
                   id="password"
                   className="p-2 bg-transparent bg-gray-300 border rounded-sm"
                   placeholder="Enter Your Password"
-                  required
                   {...register("password")}
                 />
                 {errors.firstName && <span>This field is required</span>}

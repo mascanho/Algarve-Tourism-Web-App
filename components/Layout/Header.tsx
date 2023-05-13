@@ -19,7 +19,10 @@ import RegisteredModal from "../modals/Registered";
 import getCurrentUser from "@/app/libs/getCurrentUser";
 import { toast } from "react-hot-toast";
 
+
+
 interface UserProps {
+
   currentUser: {
     createdAt: string;
     updatedAt: string;
@@ -33,8 +36,8 @@ interface UserProps {
   } | null;
 }
 
-
 const Header = ({ currentUser }: UserProps) => {
+
   const router = useRouter();
   const pathname = usePathname();
   const [openLogin, setOpenLogin] = useState(false);
@@ -44,11 +47,10 @@ const Header = ({ currentUser }: UserProps) => {
     setOpenLogin(!openLogin);
   };
 
-
   const userLogsOut = () => {
     toast.success("Logging you out... bye!");
-    signOut()
-  }
+    signOut();
+  };
 
   // Modals using Zustand
   const loginModal = useLoginModalStore();
@@ -180,32 +182,28 @@ const Header = ({ currentUser }: UserProps) => {
                 {openLogin && (
                   <div>
                     <ul className="absolute z-10 w-56 p-2 text-sm bg-white border shadow-sm menu rounded-box sm:-left-24 sm:top-8 -left-40 top-8">
-                      {
-                        !currentUser ? (
-
-                          <>
-
-                            <li onClick={loginModal.onOpen}>
-                              <a
-                                className="rounded-md active:bg-sky"
-                                onClick={() => setOpenLogin(!openLogin)}
-                              >
-                                Sign up
-                              </a>
-                            </li>
-                            <li onClick={registeredModal.onOpen}>
-                              <a
-                                onClick={() => setOpenLogin(!openLogin)}
-                                className="rounded-md active:bg-sky"
-                              >
-                                Login
-                              </a>
-                            </li>
-                          </>
-                        ) : ("")
-                      }
-
-
+                      {!currentUser ? (
+                        <>
+                          <li onClick={loginModal.onOpen}>
+                            <a
+                              className="rounded-md active:bg-sky"
+                              onClick={() => setOpenLogin(!openLogin)}
+                            >
+                              Sign up
+                            </a>
+                          </li>
+                          <li onClick={registeredModal.onOpen}>
+                            <a
+                              onClick={() => setOpenLogin(!openLogin)}
+                              className="rounded-md active:bg-sky"
+                            >
+                              Login
+                            </a>
+                          </li>
+                        </>
+                      ) : (
+                        ""
+                      )}
 
                       {currentUser ? (
                         <li onClick={userLogsOut}>
@@ -250,8 +248,16 @@ const Header = ({ currentUser }: UserProps) => {
 
       {/* Modals Section */}
 
-      {loginModal.isOpen === true ? <LoginModal currentUser={currentUser} /> : ""}
-      {registeredModal.isOpen === true ? <RegisteredModal currentUser={currentUser} /> : ""}
+      {loginModal.isOpen === true ? (
+        <LoginModal currentUser={currentUser} />
+      ) : (
+        ""
+      )}
+      {registeredModal.isOpen === true ? (
+        <RegisteredModal currentUser={currentUser} />
+      ) : (
+        ""
+      )}
     </>
   );
 };
