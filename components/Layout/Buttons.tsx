@@ -9,8 +9,6 @@ import "react-tooltip/dist/react-tooltip.css";
 const Buttons = ({ filteredData }: any) => {
   const [isCopied, setIsCopied] = useState(false);
 
-  console.log(filteredData[0]?.fields?.locationGps);
-
   function handleClickGps() {
     const GPS = JSON.stringify(filteredData[0]?.fields?.locationGps);
 

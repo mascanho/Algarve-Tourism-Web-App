@@ -38,12 +38,12 @@ export default async function Home(props: any) {
     <>
       <Hero />
       <section className="pt-20 pb-6 space-y-4 text-cente-white">
-        <div className="-q11/12 mx-auto">
+        <div className="-q11/12 mx-auto text-center">
           <h3 className="text-3xl font-bold text-black sm:text-5xl">
             Guides for your next location{" "}
           </h3>
         </div>
-        <h4 className="-8/12 mx-auto">
+        <h4 className="-8/12 mx-auto text-center">
           Check out this week&apos; selection of popular trips and events
         </h4>
         <Selection />
