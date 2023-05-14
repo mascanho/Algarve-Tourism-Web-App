@@ -24,6 +24,9 @@ function TabsRow({ filteredData }: any) {
     options
   );
 
+  // Protect the app in case this is null || false
+  if (!filteredData) return null;
+
   return (
     <Tabs color="teal" defaultValue="first" className="">
       <Tabs.List className="text-left">
@@ -31,13 +34,13 @@ function TabsRow({ filteredData }: any) {
           Description
         </Tabs.Tab>
         <Tabs.Tab value="second" color="blue">
-          Photos
+          Map
         </Tabs.Tab>
         <Tabs.Tab value="third" color="blue">
-          Description
+          Price
         </Tabs.Tab>
         <Tabs.Tab value="fourth" color="blue">
-          Price
+          Reviews
         </Tabs.Tab>
       </Tabs.List>
 
@@ -46,8 +49,21 @@ function TabsRow({ filteredData }: any) {
       </Tabs.Panel>
 
       <Tabs.Panel value="second" pt="xs">
-        Second tab color is blue, it gets this value from props, props have the
-        priority and will override context value
+        <section className="overflow-hidden w-full">
+          {filteredData[0]?.fields?.embededMap === undefined ? (
+            <p>No map to display</p>
+          ) : (
+            <iframe
+              src={filteredData[0]?.fields?.embededMap}
+              width="600"
+              height="450"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              className="w-full"
+            ></iframe>
+          )}
+        </section>
       </Tabs.Panel>
       <Tabs.Panel value="third" pt="xs">
         third tab color is blue, it gets this value from props, props have the

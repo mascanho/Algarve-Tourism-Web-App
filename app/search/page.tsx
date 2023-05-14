@@ -21,7 +21,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(props: any) {
   const searchData = useSearchedData();
-  console.log(searchData);
+  console.log(searchData.data, "<---------------");
 
   return (
     <>

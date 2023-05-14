@@ -142,7 +142,7 @@ function RegisteredModal({ currentUser }: any) {
             <p className="text-sm text-gray-400">
               You can login using your social accounts
             </p>
-            <div className="flex items-center justify-center pt-2 pb-4 space-x-4">
+            <div className="flex items-center justify-center pt-2 sm:pt-6 pb-4 space-x-4">
               <button
                 onClick={() => signIn("google")}
                 className="flex items-center justify-center w-full px-3 py-2 border rounded-md "

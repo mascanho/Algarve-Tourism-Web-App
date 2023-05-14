@@ -13,3 +13,7 @@
 .mantine-1v3yzoy {
   background-color: white;
 }
+
+.mantine-1xx95jg {
+  @apply text-gray-400 !important;
+}

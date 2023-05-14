@@ -12,7 +12,7 @@ import { ToasterProvider } from "./providers/ToasterProvider";
 export const metadata: Metadata = {
   title: {
     default: "Algarve Travel",
-    template: "%s | Lee Robinson",
+    template: "%s | Algarve Travel",
   },
   description: "Developer, writer, and creator.",
   openGraph: {
@@ -60,7 +60,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const currentUser = await getCurrentUser();
-
 
   return (
     <html lang="en">

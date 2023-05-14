@@ -67,7 +67,7 @@ async function Page(props: any) {
                 </p>
                 {/* <span className="flex-1 text-sky text-xs">Read more</span> */}
               </div>
-              <div className="text-[9px] space-x-2 pb-2 px-2 pt-2">
+              <div className="text-[9px] space-x-2 pb-2 px-2">
                 {["📸 Photo Tour"].map((cat) => (
                   <span
                     key={cat}

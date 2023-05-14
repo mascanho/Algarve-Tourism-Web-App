@@ -15,7 +15,8 @@ export const authOptions: AuthOptions = {
       clientSecret: process.env.GITHUB_SECRET as string,
     }),
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientId:
+        "877838669950-qg8n8bevusdapoh161q50tbds53geeus.apps.googleusercontent.com",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
     CredentialsProvider({

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Breadcrumbs from "@/components/Layout/Breadcrumbs";
 import { Inter } from "next/font/google";
 import { Card } from "@/components/Card";
 import type { Metadata } from "next";
@@ -40,24 +41,27 @@ export default async function Home(props: any) {
 
   return (
     <>
+      {/* <Breadcrumbs /> */}
       <section className=" bg-white text-left pb-16 space-y-4 h-full mb-20 sm:pl-6 sm:w-full mx-auto">
         <section className="w-full">
           <LeadGrid filteredData={filteredData} />
         </section>
         <div className="space-y-2 w-11/12 sm:w-full mx-auto">
-          <div className="flex items-center space-x-1 bg-gray-200 w-fit px-2 rounded-md text-green-500 text-xs py-1">
-            <FaRegGem />
-            <span className="">Hidden Gem</span>
+          <div className="flex items-centert space-x-2">
+            <span className="flex items-center text-black text-base text-left">
+              <FaMapMarkerAlt />
+              {filteredData[0]?.fields?.city}
+            </span>
+            <div className="flex items-center space-x-1 bg-gray-200 w-fit px-2 rounded-md text-green-500 text-xs py-1">
+              <FaRegGem />
+              <span className="text-xs">Hidden Gem</span>
+            </div>
           </div>
-          <div className="flex justify-between space-y-1  items-center ">
-            <h1 className="sm:text-2xl text-sky w-auto font-semibold min-w-fit sm:mr-4">
+          <div className="flex justify-between space-y-6 w-full  items-center ">
+            <h1 className="text-lg sm:text-2xl text-sky w-auto font-semibold min-w-fit sm:mr-4">
               {filteredData[0]?.fields?.title}
             </h1>
-            <div className="flex justify-between w-full">
-              <span className="flex items-center text-black text-sm text-left">
-                <FaMapMarkerAlt />
-                {filteredData[0]?.fields?.city}
-              </span>
+            <div className="flex justify-between ">
               <div className="sm:pr-4 flex space-x-2  ">
                 <Buttons filteredData={filteredData} />
               </div>
