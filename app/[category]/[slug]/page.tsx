@@ -42,7 +42,7 @@ export default async function Home(props: any) {
   return (
     <>
       {/* <Breadcrumbs /> */}
-      <section className=" bg-white text-left pb-16 space-y-4 h-full mb-20 sm:pl-6 sm:w-full mx-auto">
+      <section className=" bg-white text-left pb-16 space-y-4  mb-20 sm:pl-6 sm:w-full mx-auto">
         <section className="w-full">
           <LeadGrid filteredData={filteredData} />
         </section>
@@ -69,22 +69,20 @@ export default async function Home(props: any) {
           </div>
           <div className="flex">
             <div className="flex-1">
-              <div className="space-x-2 mt-1">
-                {["Minimalist", "Beach House", "Tropic", "Private Pool"].map(
-                  (item) => (
-                    <span
-                      key={item}
-                      className="bg-gray-200 rounded-md px-2 text-xs sm:text-sm py-1 items-center m-auto "
-                    >
-                      {item}
-                    </span>
-                  )
-                )}
+              <div className="space-x-2">
+                {filteredData[0]?.fields?.tags.map((item: any) => (
+                  <span
+                    key={item}
+                    className="bg-gray-200 rounded-md px-2 text-xs sm:text-xs py-1 items-center m-auto "
+                  >
+                    {item}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
         </div>
-        <div className="sm:pt-10 w-11/12 sm:w-full mx-auto h-screen">
+        <div className="sm:pt-5 w-11/12 sm:w-full mx-auto ">
           <TabsRow filteredData={filteredData} />
         </div>
       </section>

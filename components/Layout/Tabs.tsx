@@ -57,9 +57,9 @@ function TabsRow({ filteredData }: any) {
               src={filteredData[0]?.fields?.embededMap}
               width="600"
               height="450"
-              allowfullscreen=""
+              // allowfullscreen=""
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              // referrerpolicy="no-referrer-when-downgrade"
               className="w-full"
             ></iframe>
           )}
