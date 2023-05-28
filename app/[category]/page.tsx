@@ -23,8 +23,6 @@ async function Page(props: any) {
 
   const category: any = await getData();
 
-  console.log(category);
-
   return (
     <>
       <div className="sm:hidden mx-auto flex justify-center w-full mb-8">
