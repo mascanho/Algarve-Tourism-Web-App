@@ -19,10 +19,7 @@ import RegisteredModal from "../modals/Registered";
 import getCurrentUser from "@/app/libs/getCurrentUser";
 import { toast } from "react-hot-toast";
 
-
-
 interface UserProps {
-
   currentUser: {
     createdAt: string;
     updatedAt: string;
@@ -37,7 +34,6 @@ interface UserProps {
 }
 
 const Header = ({ currentUser }: UserProps) => {
-
   const router = useRouter();
   const pathname = usePathname();
   const [openLogin, setOpenLogin] = useState(false);
@@ -125,7 +121,7 @@ const Header = ({ currentUser }: UserProps) => {
           <div className="hidden navbar-center lg:flex">
             <ul className="px-1 menu menu-horizontal">
               <li className="active:bg-sky active:rounded-md">
-                <a className="active:bg-sky active:rounded-md">Item 1</a>
+                <a className="active:bg-sky active:rounded-md">Search</a>
               </li>
               <li className="rounded-md active:bg-transparent" tabIndex={0}>
                 <a className="active:bg-sky">

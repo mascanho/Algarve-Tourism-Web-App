@@ -13,6 +13,7 @@ import { BiShareAlt } from "react-icons/bi";
 import TabsRow from "@/components/Layout/Tabs";
 import { createClient } from "contentful";
 import Buttons from "@/components/Layout/Buttons";
+import StarRating from "@/components/Layout/StarRating";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -38,6 +39,7 @@ export default async function Home(props: any) {
   const data = await getAllCategories();
 
   const filteredData: any = data.filter((obj: any) => obj.fields.slug === slug);
+  console.log(typeof filteredData[0]?.fields?.rating);
 
   return (
     <>
@@ -57,19 +59,30 @@ export default async function Home(props: any) {
               <span className="text-xs">Hidden Gem</span>
             </div>
           </div>
-          <div className="flex justify-between space-y-6 w-full  items-center ">
-            <h1 className="text-lg sm:text-2xl text-sky w-auto font-semibold min-w-fit sm:mr-4">
-              {filteredData[0]?.fields?.title}
-            </h1>
-            <div className="flex justify-between ">
-              <div className="sm:pr-4 flex space-x-2  ">
+          <div className="flex justify-between space-y-6 w-full  items-end ">
+            <div className="sm:flex items-center mt-2 sm:mt-0">
+              <h1 className="text-lg sm:text-2xl text-sky w-auto font-semibold min-w-fit sm:mr-4">
+                {filteredData[0]?.fields?.title}
+              </h1>
+              <div className="hidden sm:flex">
+                <StarRating rating={filteredData[0]?.fields?.rating} />
+              </div>
+            </div>
+            <div className="flex  justify-between items-center ">
+              <div className="sm:pr-4 space-x-2 items-center hidden sm:flex  ">
                 <Buttons filteredData={filteredData} />
               </div>
             </div>
           </div>
+          <div className="flex justify-between sm:hidden">
+            <StarRating rating={filteredData[0]?.fields?.rating} />
+            <div className="sm:pr-4 space-x-2 items-center sm:hidden flex  ">
+              <Buttons filteredData={filteredData} />
+            </div>
+          </div>
           <div className="flex">
             <div className="flex-1">
-              <div className="space-x-2">
+              <div className="space-x-2 mt-4 sm:mt-0 hidden sm:inline">
                 {filteredData[0]?.fields?.tags.map((item: any) => (
                   <span
                     key={item}

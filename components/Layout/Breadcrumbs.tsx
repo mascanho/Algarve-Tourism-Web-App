@@ -13,17 +13,21 @@ function Breadcrumbs() {
   const items = [
     { title: <AiFillHome />, href: "/" },
     { title: pathanmeNoSlashes[0], href: `/${pathanmeNoSlashes[0]}` },
-    { title: pathanmeNoSlashes[1], href: "#" },
+    { title: pathanmeNoSlashes[1], href: "" },
   ].map((item, index) => (
-    <Anchor href={item.href} key={index}>
+    <a href={item.href} key={index}>
       {item.title}
-    </Anchor>
+    </a>
   ));
 
   return (
     <>
       {/* <Bread>{items}</Bread> */}
-      <Bread separator="/" mt="xs" className="text-gray-400 m-auto">
+      <Bread
+        separator="/"
+        mt="xs"
+        className="text-gray-400 m-auto cursor-pointer z-50 "
+      >
         {items}
       </Bread>
     </>
