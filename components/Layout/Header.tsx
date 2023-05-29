@@ -232,12 +232,7 @@ const Header = ({ currentUser }: UserProps) => {
       {/* <InstructionModal /> */}
 
       {/* Drawer */}
-      <Drawer
-        size={"300px"}
-        opened={opened}
-        onClose={close}
-        title="Authentication"
-      >
+      <Drawer size={"300px"} opened={opened} onClose={close} title="Favourites">
         {/* Drawer Content */}
         <DrawerContent />
       </Drawer>

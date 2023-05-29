@@ -1,15 +1,8 @@
-import Image from "next/image";
-import Breadcrumbs from "@/components/Layout/Breadcrumbs";
 import { Inter } from "next/font/google";
-import { Card } from "@/components/Card";
 import type { Metadata } from "next";
 import { LeadGrid } from "@/components/Layout/GridLayout";
 import { FaRegGem } from "react-icons/fa";
-import { GoLocation } from "react-icons/go";
-import { MdOutlineCardTravel } from "react-icons/md";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { BiMapPin } from "react-icons/bi";
-import { BiShareAlt } from "react-icons/bi";
 import TabsRow from "@/components/Layout/Tabs";
 import { createClient } from "contentful";
 import Buttons from "@/components/Layout/Buttons";

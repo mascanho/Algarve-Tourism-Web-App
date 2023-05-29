@@ -1,9 +1,7 @@
 "use client";
 
 import { Inter } from "next/font/google";
-import Selection from "@/components/Selection";
 
-import Pagination from "@/components/Pagination";
 import BottomAssets from "@/components/BottomAssets";
 
 import Review from "@/components/Review";
@@ -15,7 +13,6 @@ import useSearchedData from "../hooks/useSearchedData";
 
 import { SearchCard } from "@/components/SearchCard";
 import Search from "@/components/Search";
-import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 

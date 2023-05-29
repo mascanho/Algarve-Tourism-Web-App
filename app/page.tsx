@@ -2,18 +2,14 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import Selection from "@/components/Selection";
 import { Card } from "@/components/Card";
-import type { Metadata } from "next";
-import { catArr } from "@/Data/Categories";
 import Pagination from "@/components/Pagination";
 import BottomAssets from "@/components/BottomAssets";
-import { CarouselCard } from "@/components/Card2";
 import Hero from "@/components/Hero";
 import Review from "@/components/Review";
 import { Reviews } from "@/Data/Reviews";
 import PopularCategories from "@/components/PopularCategories";
 import { createClient } from "contentful";
 import CarouselHero from "@/components/Carousel";
-import useSearchedData from "./hooks/useSearchedData";
 
 const inter = Inter({ subsets: ["latin"] });
 

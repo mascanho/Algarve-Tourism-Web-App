@@ -15,7 +15,7 @@ function InstructionModal() {
       <Modal
         opened={opened}
         onClose={close}
-        title="Authentications"
+        title="Favourite Places"
         centered
         className=""
       >
