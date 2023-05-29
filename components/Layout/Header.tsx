@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { HiBars3 } from "react-icons/hi2";
 import { MdCardTravel } from "react-icons/md";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Drawer, Group, Button } from "@mantine/core";
 import { useDisclosure, useLocalStorage } from "@mantine/hooks";
@@ -16,7 +15,6 @@ import {
 } from "@/app/hooks/useLoginModal";
 import { signOut } from "next-auth/react";
 import RegisteredModal from "../modals/Registered";
-import getCurrentUser from "@/app/libs/getCurrentUser";
 import { toast } from "react-hot-toast";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 
@@ -235,7 +233,7 @@ const Header = ({ currentUser }: UserProps) => {
       {/* Drawer */}
       <Drawer size={"300px"} opened={opened} onClose={close} title="Favourites">
         {/* Drawer Content */}
-        <DrawerContent />
+        <DrawerContent close={close} />
       </Drawer>
 
       {/* Modals Section */}

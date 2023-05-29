@@ -63,7 +63,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className="bg-white">
+      <body className="bg-white overflow-x-hidden">
         <ClientOnly>
           <ToasterProvider />
           <Header currentUser={currentUser} />

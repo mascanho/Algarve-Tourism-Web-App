@@ -25,7 +25,7 @@ async function Page(props: any) {
 
   return (
     <>
-      <div className="sm:hidden mx-auto flex justify-center w-full mb-8">
+      <div className="sm:hidden mx-auto flex justify-center w-full mb-8 overflow-x-hidden">
         <Selection text="Filter your adventure" />
       </div>
       <section className="max-w-7xl mx-auto w-11/12 sm:w-full grid sm:grid-cols-3  sm:ml-6 gap-y-8  mb-20">

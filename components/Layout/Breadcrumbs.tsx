@@ -1,5 +1,6 @@
 "use client";
 import { Breadcrumbs as Bread, Anchor } from "@mantine/core";
+import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { AiFillHome } from "react-icons/ai";
 
@@ -15,9 +16,9 @@ function Breadcrumbs() {
     { title: pathanmeNoSlashes[0], href: `/${pathanmeNoSlashes[0]}` },
     { title: pathanmeNoSlashes[1], href: "" },
   ].map((item, index) => (
-    <a href={item.href} key={index}>
+    <Link href={item.href} key={index}>
       {item.title}
-    </a>
+    </Link>
   ));
 
   return (
