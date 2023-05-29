@@ -18,6 +18,7 @@ import { signOut } from "next-auth/react";
 import RegisteredModal from "../modals/Registered";
 import getCurrentUser from "@/app/libs/getCurrentUser";
 import { toast } from "react-hot-toast";
+import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 
 interface UserProps {
   currentUser: {
@@ -38,7 +39,7 @@ const Header = ({ currentUser }: UserProps) => {
   const pathname = usePathname();
   const [openLogin, setOpenLogin] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
-
+  const favourites = useAddToFavourites();
   const openLoginMenu = () => {
     setOpenLogin(!openLogin);
   };
@@ -215,7 +216,7 @@ const Header = ({ currentUser }: UserProps) => {
 
               <div className="relative">
                 <span className="absolute -top-1 -right-1 text-[8px] bg-sky text-white rounded-full w-3 h-3 flex justify-center items-center text-center">
-                  2
+                  {favourites.favourites.length}
                 </span>
                 <div className="relative">
                   <MdCardTravel

@@ -7,10 +7,26 @@ import { BiShareAlt } from "react-icons/bi";
 import { MdOutlineCardTravel } from "react-icons/md";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
+import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 
 const Buttons = ({ filteredData }: any) => {
   const [isCopied, setIsCopied] = useState(false);
   const pathname = usePathname();
+  const addFavourites = useAddToFavourites();
+
+  console.log(addFavourites.favourites);
+
+  function addFav() {
+    addFavourites.addFavourite({
+      id: filteredData[0]?.sys?.id,
+      title: filteredData[0]?.fields?.title,
+      description: filteredData[0]?.fields?.description,
+      image: filteredData[0]?.fields?.mainImage?.fields?.file?.url,
+      slug: filteredData[0]?.fields?.slug,
+      rating: filteredData[0]?.fields?.rating,
+      city: filteredData[0]?.fields?.city,
+    });
+  }
 
   // handle the GPS to open on a new tab
   function handleClickGps() {
@@ -36,6 +52,7 @@ const Buttons = ({ filteredData }: any) => {
       <MdOutlineCardTravel
         data-tooltip-content="Add to favourites"
         className="w-6 h-6 sm:w-8 sm:h-8 outline-none fav p-1 border tooltip rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"
+        onClick={addFav}
       />
       <Tooltip anchorSelect=".fav" />
       <BiMapPin

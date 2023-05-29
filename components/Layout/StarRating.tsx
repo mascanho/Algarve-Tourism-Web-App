@@ -6,7 +6,7 @@ function StarRating(rating: any) {
 
   return (
     <Group position="center">
-      <Rating value={rating?.rating} fractions={2} readOnly />
+      <Rating value={rating?.rating} fractions={2} readOnly size="xs" />
     </Group>
   );
 }

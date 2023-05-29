@@ -1,31 +1,44 @@
-import Link from "next/link";
+import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import React from "react";
+import StarRating from "../Layout/StarRating";
 
 const DrawerContent = () => {
-  return [1, 2, 3, 4, 5].map((item) => (
-    <div key={item} className="my-4">
-      <Link href="/">
-        <div className="border p-2 cursor-pointer hover:bg-sky group  hover:text-white hover:border-white rounded-md relative flex flex-col justify-start text-left transition-all ease-in delay-75">
-          <span className="absolute right-2 text-xs text-gray-500 transition-all ease-in delay-75 group-hover:text-red-400">
-            remove
-          </span>
-          <div className="text-left flex flex-col space-x-2">
-            <div>
-              <img
-                src="https://www.albufeiraportugaltourism.com/images/praia-da-gale-algarve.jpg"
-                alt="dwd"
-                className="w-full h-28 rounded-md object-fill"
-              />
-              <div className="w-full mx-auto flex flex-col mt-2">
-                <h3 className="text-sm">Praia da Gale 😲🙊</h3>
-                <p className="text-sm">Albufeira</p>
+  const { favourites, addFavourite, removeFavourite } = useAddToFavourites();
+
+  console.log(favourites.length);
+
+  return (
+    <>
+      {favourites.map((item) => (
+        <div key={item} className="my-4">
+          <div className="shadow p-2 cursor-pointer hover:bg-sky group  hover:text-white hover:border-white rounded-md relative flex flex-col justify-start text-left transition-all ease-in delay-75">
+            <span
+              onClick={() => removeFavourite(item.id)}
+              className="absolute right-2 text-xs text-gray-500 transition-all ease-in delay-75 group-hover:text-red-400"
+            >
+              x
+            </span>
+            <div className="text-left flex  space-x-3">
+              <div className="flex items-center">
+                <img
+                  src={item?.image}
+                  alt="dwd"
+                  className="w-24 h-16 rounded-md object-fill m-auto"
+                />
+              </div>
+              <div className="w-full mx-auto flex flex-col mt-2 space-y-[2px]">
+                <h3 className="text-sm font-semibold">{item.title}</h3>
+                <div className="flex items-start text-left text-xs">
+                  <StarRating rating={item.rating} />
+                </div>
+                <p className="text-sm text-gray-400">{item.city}</p>
               </div>
             </div>
           </div>
         </div>
-      </Link>
-    </div>
-  ));
+      ))}
+      <span>Export</span>
+    </>
+  );
 };
-
 export default DrawerContent;
