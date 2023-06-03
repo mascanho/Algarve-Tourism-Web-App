@@ -8,6 +8,7 @@ import { BsBookmarkHeart } from "react-icons/bs";
 import { BsQrCodeScan } from "react-icons/bs";
 import { BiMap } from "react-icons/bi";
 import Link from "next/link";
+import { BsShareFill } from "react-icons/bs";
 
 export const Card = ({
   category,
@@ -48,7 +49,7 @@ export const Card = ({
   console.log(tags, "From card ");
 
   return (
-    <section className="border pb-2 mb-10 sm:pb-2 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-[100%] mx-auto sm:w-full md:w-64 hover:scale-105 hover:cursor-pointer">
+    <section className="border pb-2 mb-10 sm:pb-2 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-[100%] mx-auto sm:w-full md:w-64 hover:border-sky hover:cursor-pointer hover:shadow-md">
       <div className="relative flex flex-col w-full h-[180px] sm:h-40 overflow-hidden rounded-t-md ">
         <Image src={`https:${image}`} fill alt="image" className="block" />
         <div className="absolute active:scale-90 w-5 h-5 flex items-center justify-center rounded-full p-1 bg-white top-2 right-2">
@@ -89,6 +90,7 @@ export const Card = ({
           <BsBookmarkHeart />
           <BsQrCodeScan />
           <BiMap />
+          <BsShareFill className="text-xs" />
         </div>
         <div className="flex items-center justify-end text-sm w-full pr-2 ">
           <Link href={`/${type}/${slug}`}>
