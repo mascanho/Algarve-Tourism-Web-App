@@ -21,13 +21,15 @@ async function getAllCategories() {
     space: process.env.CONTENTFUL_SPACE_ID!,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
   });
-  const res = await client.getEntries({ content_type: "events" });
+  const res = await client.getEntries({ content_type: ["beaches", "events"] });
 
   return await res.items;
 }
 
 export default async function Home(props: any) {
   const categories = await getAllCategories();
+
+  console.log(categories[0].fields, "From the Main page");
 
   return (
     <>
@@ -49,7 +51,16 @@ export default async function Home(props: any) {
               <Card
                 key={Math.random()}
                 title={cat?.fields?.title}
+                description={cat?.fields?.shortDescription}
+                image={cat?.fields?.mainImage?.fields?.file?.url}
                 category={categories}
+                slug={cat?.fields?.slug}
+                id={cat?.sys?.id}
+                hiddenGem={cat?.fields?.hiddenGem}
+                city={cat?.fields?.city}
+                type={cat?.fields?.type}
+                shortDescription={cat?.fields?.shortDescription}
+                mainImage={cat?.fields?.mainImage?.fields?.file?.url}
               />
             ))}
           </section>
@@ -97,7 +108,7 @@ export default async function Home(props: any) {
         </section>
       </section>
       <section className="mx-auto mb-40 h-96">
-        <CarouselHero />
+        <CarouselHero categories={categories} />
       </section>
     </>
   );

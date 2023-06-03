@@ -3,10 +3,12 @@ import { Carousel } from "@mantine/carousel";
 import Image from "next/image";
 // import { IconArrowRight, IconArrowLeft } from "@tabler/icons-react";
 
-function CarouselHero() {
+function CarouselHero({ categories }: any) {
+  console.log(categories, "From The caroussel");
+
   return (
     <>
-      <section className="w-full max-w-7xl sm:w-10/12 m-auto px-4 sm:px-0   font-semibold">
+      <section className="w-full max-w-7xl sm:w-11/12 m-auto px-4 sm:px-0   font-semibold">
         <div className="space-y-4 mb-8 text-center">
           <h3 className=" text-black text-3xl text-center">Image Gallery</h3>
           <h4>
@@ -26,71 +28,21 @@ function CarouselHero() {
           ]}
           slidesToScroll={1}
         >
-          <Carousel.Slide>
-            <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
-              <Image
-                src="https://th.bing.com/th/id/OIG.XUrUyoz7q_uPku3p7E.0?pid=ImgGn"
-                fill
-                alt="image"
-                className="block"
-              />
-              <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-black bg-white  ">
-                {/* 📍 {data.city} */}
-              </span>
-            </div>
-          </Carousel.Slide>
-          <Carousel.Slide>
-            <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
-              <Image
-                src="https://th.bing.com/th/id/OIG.XUrUyoz7q_uPku3p7E.0?pid=ImgGn"
-                fill
-                alt="image"
-                className="block"
-              />
-              <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-black bg-white  ">
-                {/* 📍 {data.city} */}
-              </span>
-            </div>
-          </Carousel.Slide>
-          <Carousel.Slide>
-            <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
-              <Image
-                src="https://th.bing.com/th/id/OIG.XUrUyoz7q_uPku3p7E.0?pid=ImgGn"
-                fill
-                alt="image"
-                className="block"
-              />
-              <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-black bg-white  ">
-                {/* 📍 {data.city} */}
-              </span>
-            </div>
-          </Carousel.Slide>
-          <Carousel.Slide>
-            <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
-              <Image
-                src="https://th.bing.com/th/id/OIG.XUrUyoz7q_uPku3p7E.0?pid=ImgGn"
-                fill
-                alt="image"
-                className="block"
-              />
-              <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-black bg-white  ">
-                {/* 📍 {data.city} */}
-              </span>
-            </div>
-          </Carousel.Slide>
-          <Carousel.Slide>
-            <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
-              <Image
-                src="https://th.bing.com/th/id/OIG.XUrUyoz7q_uPku3p7E.0?pid=ImgGn"
-                fill
-                alt="image"
-                className="block"
-              />
-              <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-black bg-white  ">
-                {/* 📍 {data.city} */}
-              </span>
-            </div>
-          </Carousel.Slide>
+          {categories.map((cat) => (
+            <Carousel.Slide>
+              <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
+                <Image
+                  src={`https:${cat?.fields?.mainImage.fields?.file?.url}`}
+                  fill
+                  alt="image"
+                  className="block"
+                />
+                <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-black bg-white  ">
+                  {/* 📍 {data.city} */}
+                </span>
+              </div>
+            </Carousel.Slide>
+          ))}
 
           {/* ...other slides */}
         </Carousel>

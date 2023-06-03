@@ -10,20 +10,19 @@ export const Card = ({
   date,
   mainImage,
   city,
+  image,
   tags,
+  description,
   hiddenGem,
 }: any) => {
   const router = useRouter();
 
+  console.log(mainImage);
+
   return (
     <section className="pb-2 space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl md:w-64 hover:scale-105 hover:cursor-pointer">
       <div className="relative flex flex-col w-full h-40 overflow-hidden rounded-t-md ">
-        <Image
-          src="https://th.bing.com/th/id/OIG.XUrUyoz7q_uPku3p7E.0?pid=ImgGn"
-          fill
-          alt="image"
-          className="block"
-        />
+        <Image src={`https:${image}`} fill alt="image" className="block" />
         <span className="absolute left-0 py-1 pr-2 text-xs text-black bg-white rounded-r-full top-4 ">
           {/* 📍 {data.city} */}
         </span>
@@ -37,11 +36,7 @@ export const Card = ({
       </div>
       <div className="w-full h-[1px] bg-gray-300" />
       <div className="flex w-full px-2 mt-20">
-        <p className="line-clamp-3">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea neque
-          dicta minus laboriosam illum. Placeat, harum sint! Hic, suscipit
-          nobis!
-        </p>
+        <p className="line-clamp-3">{description}</p>
         {/* <span className="flex-1 text-xs text-sky">Read more</span> */}
       </div>
       <div className="text-[9px] space-x-2 pb-2 px-2">

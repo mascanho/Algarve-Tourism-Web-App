@@ -18,6 +18,7 @@ import RegisteredModal from "../modals/Registered";
 import { toast } from "react-hot-toast";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import Link from "next/link";
+import { cityArr } from "@/Data/Cities";
 
 interface UserProps {
   currentUser: {
@@ -127,6 +128,33 @@ const Header = ({ currentUser }: UserProps) => {
                   </span>
                 </li>
               </Link>
+              <li className="rounded-md active:bg-transparent" tabIndex={0}>
+                <a className="active:bg-sky">
+                  Algarve
+                  <svg
+                    className="fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                  </svg>
+                </a>
+                <ul className="z-10 p-2 bg-white">
+                  {cityArr.map((item) => (
+                    <li
+                      key={item.id}
+                      className="rounded-md active:bg-sky"
+                      onClick={() => router.push(`${item.route}`)}
+                    >
+                      <span className="rounded-md active:bg-sky">
+                        {item.name}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </li>
               <li className="rounded-md active:bg-transparent" tabIndex={0}>
                 <a className="active:bg-sky">
                   Categories
