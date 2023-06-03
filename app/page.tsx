@@ -45,7 +45,7 @@ export default async function Home(props: any) {
         </h4>
         <Selection />
         <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 sm:pt-5">
-          <section className="grid items-center w-full sm:grid-cols-2 sm:gap-x-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 place-items-left">
+          <section className="sm:grid mx-auto containera items-center w-full sm:grid-cols-2 sm:gap-x-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-4 place-items-center">
             {/* Normal Cards with no search feature */}
             {categories.map((cat: any) => (
               <Card
@@ -61,6 +61,8 @@ export default async function Home(props: any) {
                 type={cat?.fields?.type}
                 shortDescription={cat?.fields?.shortDescription}
                 mainImage={cat?.fields?.mainImage?.fields?.file?.url}
+                rating={cat?.fields?.rating}
+                tags={cat?.fields?.tags}
               />
             ))}
           </section>
@@ -78,7 +80,7 @@ export default async function Home(props: any) {
             and hidden gems in the south of Portugal
           </h4>
         </div>
-        <section className="grid sm:grid-cols-3 gap-y-6">
+        <section className="grid sm:grid-cols-3 gap-y-6 mx-auto justify-items-center">
           {Reviews.map((review: any) => (
             <Review
               key={review.id}

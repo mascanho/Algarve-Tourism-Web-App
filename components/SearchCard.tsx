@@ -32,6 +32,12 @@ export const SearchCard = ({
           alt="image"
           className="block"
         />
+        <div className="absolute active:scale-90 w-5 h-5 flex items-center justify-center rounded-full p-1 bg-white top-2 right-2">
+          <AiFillHeart
+            // onClick={addToFavourites}
+            className="text-md  text-red-500"
+          />
+        </div>
         <span className="absolute left-0 py-1 pr-2 text-xs text-black bg-white rounded-r-full top-4 ">
           📍 {city}
         </span>
@@ -48,7 +54,7 @@ export const SearchCard = ({
         {/* <span className="flex-1 text-xs text-sky">Read more</span> */}
       </div>
       <div className="text-[9px] space-x-2 pb-2 px-2">
-        {["📸 Photo Tour"].map((cat) => (
+        {tags.map((cat) => (
           <span
             key={cat}
             className="items-center justify-center px-2 py-1 my-auto align-middle border rounded-full item"

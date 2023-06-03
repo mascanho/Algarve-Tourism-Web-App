@@ -129,7 +129,10 @@ const Header = ({ currentUser }: UserProps) => {
                 </li>
               </Link>
               <li className="rounded-md active:bg-transparent" tabIndex={0}>
-                <a className="active:bg-sky">
+                <span
+                  onClick={() => router.push("/algarve")}
+                  className="active:bg-sky"
+                >
                   Algarve
                   <svg
                     className="fill-current"
@@ -140,7 +143,7 @@ const Header = ({ currentUser }: UserProps) => {
                   >
                     <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                   </svg>
-                </a>
+                </span>
                 <ul className="z-10 p-2 bg-white">
                   {cityArr.map((item) => (
                     <li

@@ -1,5 +1,7 @@
 "use client";
 
+import { Select } from "@mantine/core";
+import { IconHas } from "@tabler/icons";
 import { Inter } from "next/font/google";
 import BottomAssets from "@/components/BottomAssets";
 import Review from "@/components/Review";
@@ -92,6 +94,17 @@ export default function Home() {
                 </h4>
               </>
             )}
+            <section className="mt-10">
+              <div className="sm:w-1/2">
+                <Select
+                  onChange={(value: any) => console.log(value)}
+                  // label="Pick a hashtag"
+                  placeholder="Filter by City"
+                  data={["React", "Angular", "Svelte", "Vue"]}
+                  // icon={<IconHash size="1rem" />}
+                />
+              </div>
+            </section>
           </div>
 
           <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12">

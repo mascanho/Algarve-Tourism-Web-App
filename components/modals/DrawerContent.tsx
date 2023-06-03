@@ -9,8 +9,6 @@ import { GoTrashcan } from "react-icons/go";
 const DrawerContent = (close: any) => {
   const { favourites, addFavourite, removeFavourite } = useAddToFavourites();
 
-  console.log(favourites.length);
-
   return (
     <>
       {favourites.map((item) => (
@@ -55,7 +53,12 @@ const DrawerContent = (close: any) => {
       {/* > */}
       {/*   Export Favourites */}
       {/* </button> */}
-      <ExportModal closeDrawer={close} title="Export Favourites" />
+
+      {favourites.length < 1 ? (
+        <span className="text-gray-400">Add places & experiences</span>
+      ) : (
+        <ExportModal closeDrawer={close} title="Export Favourites" />
+      )}
     </>
   );
 };
