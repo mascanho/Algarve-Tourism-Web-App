@@ -29,7 +29,7 @@ function CarouselHero({ categories, marco }: any) {
           slidesToScroll={1}
         >
           {categories?.map((cat: any) => (
-            <Carousel.Slide>
+            <Carousel.Slide key={cat.id}>
               <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
                 <Image
                   src={`https:${cat?.fields?.mainImage.fields?.file?.url}`}

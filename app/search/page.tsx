@@ -54,7 +54,7 @@ export default function Home() {
       setPlainSearch(true);
       console.log(window.location.href);
     }
-  }, []);
+  });
 
   // Making sure the pages renders condicionally based on the url search params
   if (!plainSearch) {
