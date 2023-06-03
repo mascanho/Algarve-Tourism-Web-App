@@ -5,7 +5,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { useParams } from "next/navigation";
 import useSearchedData from "@/app/hooks/useSearchedData";
 
-function Search({ allTypes, placeholderText }: any) {
+function Search({ allTypes, placeholderText, categories }: any) {
   const [inputValue, setInputValue] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [openModal, setOpenModal] = useState(false);

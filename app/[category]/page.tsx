@@ -28,7 +28,7 @@ async function Page(props: any) {
       <div className="sm:hidden mx-auto flex justify-center w-full mb-8 overflow-x-hidden">
         <Selection text="Filter your adventure" />
       </div>
-      <section className="max-w-7xl mx-auto w-11/12 sm:w-full grid sm:grid-cols-3  sm:ml-6 gap-y-8  mb-20">
+      <section className="max-w-7xl mx-auto w-11/12 sm:w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4  sm:ml-6 gap-y-8  mb-20">
         {category.map((cat: any) => (
           <Link key={cat.fields.title} href={`${pathname}/${cat.fields.slug}`}>
             <section className="max-w-7xl space-y-2 text-left md:w-64 shadow-sm rounded-md pb-2">

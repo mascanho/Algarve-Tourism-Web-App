@@ -4,6 +4,7 @@ import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import StarRating from "../Layout/StarRating";
 import ExportModal from "./ExportModal";
+import { GoTrashcan } from "react-icons/go";
 
 const DrawerContent = (close: any) => {
   const { favourites, addFavourite, removeFavourite } = useAddToFavourites();
@@ -23,9 +24,9 @@ const DrawerContent = (close: any) => {
             >
               <span
                 onClick={() => removeFavourite(item.id)}
-                className="absolute right-2 text-xs text-gray-500 transition-all ease-in delay-75 group-hover:text-red-400"
+                className="absolute right-2 bottom-3 text-xs text-gray-500 transition-all ease-in delay-75 group-hover:text-black"
               >
-                x
+                <GoTrashcan />
               </span>
               <div className="text-left flex  space-x-3">
                 <div className="flex items-center">

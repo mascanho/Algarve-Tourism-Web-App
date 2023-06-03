@@ -18,6 +18,8 @@ export const SearchCard = ({
 }: any) => {
   const router = useRouter();
 
+  console.log(mainImage);
+
   return (
     <section
       onClick={() => router.push(`/${type}/${slug}`)}
@@ -25,7 +27,7 @@ export const SearchCard = ({
     >
       <div className="relative flex flex-col w-full h-40 overflow-hidden rounded-t-md ">
         <Image
-          src="https://th.bing.com/th/id/OIG.XUrUyoz7q_uPku3p7E.0?pid=ImgGn"
+          src={`https://${mainImage?.fields?.file?.url}`}
           fill
           alt="image"
           className="block"

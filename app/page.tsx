@@ -10,6 +10,7 @@ import { Reviews } from "@/Data/Reviews";
 import PopularCategories from "@/components/PopularCategories";
 import { createClient } from "contentful";
 import CarouselHero from "@/components/Carousel";
+import useGetAllCategories from "./hooks/useGetAllCategories";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,8 +28,6 @@ async function getAllCategories() {
 
 export default async function Home(props: any) {
   const categories = await getAllCategories();
-
-  console.log(categories[1].sys.contentType.sys.id);
 
   return (
     <>

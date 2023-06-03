@@ -17,6 +17,7 @@ import { signOut } from "next-auth/react";
 import RegisteredModal from "../modals/Registered";
 import { toast } from "react-hot-toast";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
+import Link from "next/link";
 
 interface UserProps {
   currentUser: {
@@ -119,9 +120,13 @@ const Header = ({ currentUser }: UserProps) => {
           </div>
           <div className="hidden navbar-center lg:flex">
             <ul className="px-1 menu menu-horizontal">
-              <li className="active:bg-sky active:rounded-md">
-                <a className="active:bg-sky active:rounded-md">Search</a>
-              </li>
+              <Link href="/search">
+                <li className="active:bg-sky active:rounded-md">
+                  <span className="active:bg-sky active:rounded-md">
+                    Search
+                  </span>
+                </li>
+              </Link>
               <li className="rounded-md active:bg-transparent" tabIndex={0}>
                 <a className="active:bg-sky">
                   Categories
