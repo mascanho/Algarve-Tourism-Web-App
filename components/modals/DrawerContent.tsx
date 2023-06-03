@@ -9,6 +9,8 @@ import { GoTrashcan } from "react-icons/go";
 const DrawerContent = (close: any) => {
   const { favourites, addFavourite, removeFavourite } = useAddToFavourites();
 
+  console.log(favourites, "from the drawer");
+
   return (
     <>
       {favourites.map((item) => (

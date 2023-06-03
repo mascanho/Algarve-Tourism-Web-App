@@ -53,15 +53,15 @@ export default function Home() {
       setPlainSearch(true);
       console.log(window.location.href);
     }
-  }, [ContentfullData]);
+  }, [searchData]);
 
   // Making sure the pages renders condicionally based on the url search params
   if (!plainSearch) {
     return (
       <>
-        <section>
-          <Search placeholderText={"Search now..."} categories={categories} />
-        </section>
+        {/* <section> */}
+        {/*   <Search placeholderText={"Search now..."} categories={categories} /> */}
+        {/* </section> */}
         <section className="pt-10 pb-16 space-y-4 text-center bg-white">
           <div className="w-11/12 mx-auto">
             {searchData.data.length === 0 ? (
@@ -94,7 +94,7 @@ export default function Home() {
               </>
             )}
             <section className="mt-10">
-              <div className="sm:w-1/2">
+              <div className="sm:w-3/12 mx-auto">
                 <Select
                   onChange={(value: any) => console.log(value)}
                   // label="Pick a hashtag"
@@ -179,9 +179,9 @@ export default function Home() {
 
   return (
     <>
-      <section>
-        <Search placeholderText={"Search now..."} categories={categories} />
-      </section>
+      {/* <section> */}
+      {/*   <Search placeholderText={"Search now..."} categories={categories} /> */}
+      {/* </section> */}
       <section className="pt-10 pb-16 space-y-4 text-center bg-white">
         <div className="w-11/12 mx-auto">
           <h3 className="text-3xl font-bold text-black sm:text-5xl" id="search">

@@ -121,7 +121,7 @@ const Header = ({ currentUser }: UserProps) => {
           </div>
           <div className="hidden navbar-center lg:flex">
             <ul className="px-1 menu menu-horizontal">
-              <Link href="/search">
+              <Link href="/#search">
                 <li className="active:bg-sky active:rounded-md">
                   <span className="active:bg-sky active:rounded-md">
                     Search

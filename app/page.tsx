@@ -34,7 +34,7 @@ export default async function Home(props: any) {
   return (
     <>
       <Hero />
-      <section className="pt-20 pb-6 space-y-4 text-cente-white">
+      <section id="search" className="pt-20 pb-6 space-y-4 text-cente-white">
         <div className="-q11/12 mx-auto text-center">
           <h3 className="text-3xl font-bold text-black sm:text-5xl">
             Guides for your next location{" "}
@@ -63,6 +63,8 @@ export default async function Home(props: any) {
                 mainImage={cat?.fields?.mainImage?.fields?.file?.url}
                 rating={cat?.fields?.rating}
                 tags={cat?.fields?.tags}
+                embededMap={cat?.fields?.embededMap}
+                mapShare={cat?.fields?.mapShare}
               />
             ))}
           </section>

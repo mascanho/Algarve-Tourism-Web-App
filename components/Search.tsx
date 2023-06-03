@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { useRouter, usePathname } from "next/navigation";
-import { useParams } from "next/navigation";
 import useSearchedData from "@/app/hooks/useSearchedData";
 
 function Search({ allTypes, placeholderText, categories }: any) {
@@ -27,43 +26,38 @@ function Search({ allTypes, placeholderText, categories }: any) {
 
     if (inputValue === "") {
       alert("Please input something...");
-    } else {
-      const filteredData: any = [];
+      return;
+    }
 
-      // Search and filter the results
+    const filteredData: any = [];
 
-      if (pathname === "/search") {
-        const filteredArr = allTypesStore.allTypes.filter((obj: any) => {
-          for (let key in obj) {
+    const filteredArr =
+      pathname === "/search"
+        ? allTypesStore.allTypes.filter((obj: any) => {
             if (
               obj.fields.title.includes(inputValue) ||
-              obj.fields.title.toLowerCase().includes(inputValue)
+              obj.fields.title.toLowerCase().includes(inputValue) ||
+              obj.fields.city.includes(inputValue) ||
+              obj.fields.city.toLowerCase().includes(inputValue)
             ) {
               filteredData.push(obj.fields);
-              setSearchResults(filteredData);
-              break;
             }
-          }
-          savedData.AddData(filteredData);
-          savedData.addSearchInput(inputValue);
-        });
-      }
+          })
+        : allTypes?.filter((obj: any) => {
+            if (
+              obj.fields.title.includes(inputValue) ||
+              obj.fields.title.toLowerCase().includes(inputValue) ||
+              obj.fields.city.includes(inputValue) ||
+              obj.fields.city.toLowerCase().includes(inputValue)
+            ) {
+              filteredData.push(obj.fields);
+            }
+          });
 
-      const filteredArr = allTypes?.filter((obj: any) => {
-        for (let key in obj) {
-          if (
-            obj.fields.title.includes(inputValue) ||
-            obj.fields.title.toLowerCase().includes(inputValue)
-          ) {
-            filteredData.push(obj.fields);
-            setSearchResults(filteredData);
-            break;
-          }
-        }
-        savedData.AddData(filteredData);
-        savedData.addSearchInput(inputValue);
-      });
-    }
+    setSearchResults(filteredData);
+    savedData.AddData(filteredData);
+    savedData.addSearchInput(inputValue);
+
     router.push(`/search?q=${inputValue}`);
   };
 

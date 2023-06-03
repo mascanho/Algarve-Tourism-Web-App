@@ -23,6 +23,8 @@ export const Card = ({
   type,
   hiddenGem,
   rating,
+  embededMap,
+  mapShare,
 }: any) => {
   const router = useRouter();
   const addFav = useAddToFavourites();
@@ -41,6 +43,8 @@ export const Card = ({
       description,
       hiddenGem,
       rating,
+      embededMap,
+      mapShare,
     };
     addFav.addFavourite(data);
     toast.success(title + " added to " + "🧳");
@@ -87,10 +91,12 @@ export const Card = ({
       <div className="w-full h-[1px] bg-gray-300 px-2" />
       <section className="flex justify-between w-full items-center">
         <div className="flex items-center  w-full px-2 align-middl space-x-2">
-          <BsBookmarkHeart />
-          <BsQrCodeScan />
-          <BiMap />
-          <BsShareFill className="text-xs" />
+          <BsBookmarkHeart className="hover:scale-110" />
+          <BsQrCodeScan className="hover:scale-110" />
+          <a href={mapShare} target="_blank">
+            <BiMap className="hover:scale-110" />
+          </a>
+          <BsShareFill className="text-xs hover:scale-110" />
         </div>
         <div className="flex items-center justify-end text-sm w-full pr-2 ">
           <Link href={`/${type}/${slug}`}>
