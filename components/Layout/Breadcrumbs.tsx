@@ -1,3 +1,4 @@
+"use client";
 import { Breadcrumbs as Bread, Anchor } from "@mantine/core";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
