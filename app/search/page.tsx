@@ -1,7 +1,6 @@
 "use client";
 
 import { Select } from "@mantine/core";
-import { IconHas } from "@tabler/icons";
 import { Inter } from "next/font/google";
 import BottomAssets from "@/components/BottomAssets";
 import Review from "@/components/Review";
@@ -54,7 +53,7 @@ export default function Home() {
       setPlainSearch(true);
       console.log(window.location.href);
     }
-  });
+  }, [ContentfullData]);
 
   // Making sure the pages renders condicionally based on the url search params
   if (!plainSearch) {
