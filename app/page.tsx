@@ -29,7 +29,7 @@ async function getAllCategories() {
 export default async function Home(props: any) {
   const categories = await getAllCategories();
 
-  console.log(categories[0].fields, "From the Main page");
+  console.log(categories, "From the Main page");
 
   return (
     <>

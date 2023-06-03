@@ -3,8 +3,8 @@ import { Carousel } from "@mantine/carousel";
 import Image from "next/image";
 // import { IconArrowRight, IconArrowLeft } from "@tabler/icons-react";
 
-function CarouselHero({ categories }: any) {
-  console.log(categories, "From The caroussel");
+function CarouselHero({ categories, marco }: any) {
+  console.log(categories, marco, "From The caroussel");
 
   return (
     <>
@@ -28,7 +28,7 @@ function CarouselHero({ categories }: any) {
           ]}
           slidesToScroll={1}
         >
-          {categories.map((cat) => (
+          {categories?.map((cat: any) => (
             <Carousel.Slide>
               <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
                 <Image

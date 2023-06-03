@@ -25,7 +25,7 @@ async function getAllCategories() {
     space: process.env.CONTENTFUL_SPACE_ID!,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
   });
-  const res = await client.getEntries({ content_type: "events" });
+  const res = await client.getEntries({ content_type: ["beaches", "events"] });
 
   return await res.items;
 }
@@ -38,6 +38,8 @@ export default function Home() {
   const pathname = usePathname();
   const router = useRouter();
   const params = useSearchParams();
+
+  console.log(categories, "From the searhch page");
 
   useEffect(() => {
     async function data() {
@@ -228,7 +230,7 @@ export default function Home() {
           ))}
         </section>
         <section className="pt-16 sm:py-28">
-          <div className="w-11/12 py-8 mx-auto space-y-2 text-center text-white bg-red-500 sm:w-full rounded-xl sm:space-y-2">
+          <div className="w-11/12 py-8 mx-auto space-y-2 text-center text-white bg-sky sm:w-full rounded-xl sm:space-y-2">
             <h4>Come join and have a vacation with us</h4>
             <h3 className="text-2xl sm:text-3xl">
               Prepare yourself and lets explore
@@ -244,7 +246,7 @@ export default function Home() {
         </section>
       </section>
       <section className="mx-auto mb-40 h-96">
-        <CarouselHero />
+        <CarouselHero categories={categories} />
       </section>
     </>
   );
