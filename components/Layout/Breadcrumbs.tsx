@@ -1,4 +1,3 @@
-"use client";
 import { Breadcrumbs as Bread, Anchor } from "@mantine/core";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
@@ -8,8 +7,9 @@ function Breadcrumbs() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const pathanmeNoSlashes = pathname.replace("/", "").split("/");
-  console.log(pathanmeNoSlashes);
+  const pathanmeNoSlashes = pathname
+    ? pathname.replace("/", "").split("/")
+    : [];
 
   const items = [
     { title: <AiFillHome />, href: "/" },
