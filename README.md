@@ -1,5 +1,7 @@
 # AlGeMs
 
+[![Neovim Minimum Version](https://img.shields.io/badge/Neovim-0.8.3-blueviolet.svg?style=flat-square&logo=Neovim&color=90E59A&logoColor=white)](https://github.com/neovim/neovim)
+
 <img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/1.png" width="800"  /> 
 <img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/2.png" width="800"  />
 <img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/3.png" width="800"  />
@@ -127,8 +129,7 @@ had a really nice time using it.
 <h1 align="center">AlGems</h1>
 
 <div align="center">
- 
-[![Neovim Minimum Version](https://img.shields.io/badge/Neovim-0.8.3-blueviolet.svg?style=flat-square&logo=Neovim&color=90E59A&logoColor=white)](https://github.com/neovim/neovim)
+
 
   </div>
 
