@@ -11,6 +11,7 @@ import { BsQrCodeScan } from "react-icons/bs";
 import { BiMap } from "react-icons/bi";
 import { BsShareFill } from "react-icons/bs";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
+import StarRating from "./Layout/StarRating";
 
 interface Category {
   id: number;
@@ -65,7 +66,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
                   src={
                     cat?.fields?.mainImage?.fields?.file?.url
                       ? `https://${cat?.fields?.mainImage?.fields?.file?.url}`
-                      : "/placeholder-image.png"
+                      : "/placeholder.jpg"
                   }
                   alt="image"
                   className="block"
@@ -106,7 +107,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
                   {cat.fields.title}
                 </h3>
                 <span className="text-gray-500 text-sm">
-                  {cat?.fields?.price}
+                  <StarRating rating={cat?.fields?.rating} />
                 </span>
               </div>
               <div className="w-full h-[1px] bg-gray-300" />

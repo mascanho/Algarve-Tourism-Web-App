@@ -39,7 +39,7 @@ export default async function Home(props: any) {
       <section className="pt-20 pb-6 space-y-4 text-cente-white">
         <div className="-q11/12 mx-auto text-center">
           <h3 className="text-3xl font-bold text-black sm:text-5xl">
-            Guides for your next location{" "}
+            Discover the best of the Algarve
           </h3>
         </div>
         <h4 className="-8/12 mx-auto text-center">
@@ -47,7 +47,7 @@ export default async function Home(props: any) {
         </h4>
         <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 sm:pt-5">
           <Selection />
-          <section className="sm:grid mx-auto containera items-center w-full sm:grid-cols-2 sm:gap-x-10 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center">
+          <section className="sm:grid mx-auto containera items-start w-full sm:grid-cols-2 sm:gap-x-10 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center">
             {/* Normal Cards with no search feature */}
             {categories.map((cat: any) => (
               <Card

@@ -72,7 +72,7 @@ export default async function Home(props: any) {
           </div>
           <span className="flex items-center text-gray-300 text-sm text-left">
             <FaMapMarkerAlt />
-            {filteredData[0]?.fields?.city}
+            <span className="ml-1">{filteredData[0]?.fields?.city}</span>
           </span>
           <div className="flex justify-between sm:hidden">
             <StarRating rating={filteredData[0]?.fields?.rating} />

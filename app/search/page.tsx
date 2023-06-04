@@ -63,7 +63,7 @@ export default function Home() {
         {/*   <Search placeholderText={"Search now..."} categories={categories} /> */}
         {/* </section> */}
         <section className="pt-10 pb-16 space-y-4 text-center bg-white">
-          <div className="w-11/12 mx-auto">
+          <div className="w-11/12 sm:w-10/12 mx-auto">
             {searchData.data.length === 0 ? (
               <>
                 <h3
@@ -113,7 +113,7 @@ export default function Home() {
           </div>
 
           <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12">
-            <section className="grid items-center w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10 place-items-start">
+            <section className="grid items-start w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10 place-items-start">
               {/* Normal Cards with no search feature */}
               {searchData.data?.map((item: any) => (
                 <SearchCard

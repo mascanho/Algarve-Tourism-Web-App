@@ -17,3 +17,10 @@
 .mantine-1xx95jg {
   @apply text-gray-400 !important;
 }
+
+.mantine-Tabs-panel p {
+  @apply mb-4;
+}
+
+.mantine-1hta5os {
+}
