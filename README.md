@@ -19,52 +19,20 @@
 
 ## Features
 
+- [x] Unique locations, businesses, and points of interest
 - [x] Export data/locations using several formats
 - [x] Login/Sign Up
 - [x] Altering layout (Application switching, changing master size...)
-- [x] Fullscreening windows
-- [x] Multiple Desktops
-- [x] Status Bar
-- [ ] Auto Start Commands
-- [ ] Scratchpads
+- [x] Search functionality
 
 ## TODO
 
-There is a script for Ubuntu users, all of the process is automated:
-
-```console
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/suleyman-kaya/Ragnar/main/ubuntu_installation.sh)"
-```
-
-If you want to run Ragnar on your machine,
-clone this repo and install all dependencies
-
-```console
-yay -S xorg xorg-dev xorg-xinit gcc make
-```
-
-Then type this command to install the WM
-
-```console
-sudo make ragnar install
-```
-
-If you get an error that states something like
-"ft2build.h could not be found", type:
-
-```console
-sudo make freetype
-```
-
-This copies the files of freetype to the location
-where xorg thinks it is. This resolves the issue
-and you can keep going with the installation.
-
-Then, in your ~/.xinitrc add:
-
-```
-exec ragnar
-```
+- [] The hability to submit new categories by the user
+- [] Comments and reviews from the DB (Moongo DB)
+- [] Drag-and-drop for the side drawer where favorites are added
+- [] SEO optimisation
+- [] Themes (Light, dark) and colors
+- [] Improve the search functionality
 
 ### IMPORTANT
 
@@ -129,7 +97,6 @@ had a really nice time using it.
 <h1 align="center">AlGems</h1>
 
 <div align="center">
-
 
   </div>
 
