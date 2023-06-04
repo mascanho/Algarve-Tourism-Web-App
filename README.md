@@ -23,16 +23,19 @@
 - [x] Export data/locations using several formats
 - [x] Login/Sign Up
 - [x] Altering layout (Application switching, changing master size...)
-- [x] Search functionality
+- [x] Fullscreening windows
+- [x] Multiple Desktops
+- [x] Status Bar
+- [ ] Auto Start Commands
+- [ ] Scratchpads
+- [ ] The hability to submit new categories by the user
+- [ ] Comments and reviews from the DB (Moongo DB)
+- [ ] Drag-and-drop for the side drawer where favorites are added
+- [ ] SEO optimisation
+- [ ] Themes (Light, dark) and colors
+- [ ] Improve the search functionality
 
-## TODO
-
-- [] The hability to submit new categories by the user
-- [] Comments and reviews from the DB (Moongo DB)
-- [] Drag-and-drop for the side drawer where favorites are added
-- [] SEO optimisation
-- [] Themes (Light, dark) and colors
-- [] Improve the search functionality
+## Disclaimer
 
 ### IMPORTANT
 
@@ -118,39 +121,6 @@ had a really nice time using it.
 ![radium 3](https://nvchad.com/screenshots/radium3.webp)
 
 (Note: these are just 4-5 themes, NvChad has around 56 themes)
-
-</details>
-
-## UI related plugins used
-
-<details><summary> <b>Images (Click to expand!)</b></summary>
-
-<h3> Nvim-tree.lua </h3>
-
-Fast file tree:
-
-<kbd><img src="https://nvchad.com/features/nvimtree.webp"></kbd>
-
-<h3> Telescope-nvim </h3>
-
-A fuzzy file finder, picker, sorter, previewer and much more:
-
-<kbd><img src="https://nvchad.com/features/telescope.webp"></kbd>
-
-<h3> Our own statusline written from scratch  </h3>
-
-[NvChad UI](https://github.com/NvChad/ui)
-
-<kbd><img src="https://nvchad.com/features/statuslines.webp"></kbd>
-
-<h3> Tabufline (our own pertab bufferline) </h3>
-
-<kbd><img src="https://nvchad.com/features/tabufline.webp"></kbd>
-
-- Here's a [video](https://www.youtube.com/watch?v=V_9iJ96U_k8&ab_channel=siduck) that showcases it.
-
-<h3> NvCheatsheet ( our UI Plugin ) </h3>
-<kbd> <img src="https://nvchad.com/features/nvcheatsheet.webp"/></kbd>
 
 </details>
 
