@@ -100,17 +100,19 @@ export const SearchCard = ({
       </div>
       <div className="w-full h-[1px] bg-gray-300 px-2" />
       <section className="flex justify-between w-full items-center">
-        <div className="flex items-center  w-full px-2 align-middl space-x-2">
-          <BsBookmarkHeart className="hover:scale-110" />
-          <BsQrCodeScan className="hover:scale-110" />
+        <div className="flex items-center  w-full px-2  align-middl space-x-2">
+          <BsBookmarkHeart className="hover:scale-110 cursor-pointer" />
+          <BsQrCodeScan className="hover:scale-110 cursor-pointer" />
           <a href={mapShare} target="_blank">
-            <BiMap className="hover:scale-110" />
+            <BiMap className="hover:scale-110 cursor-pointer" />
           </a>
-          <BsShareFill className="text-xs hover:scale-110" />
+          <BsShareFill className="text-xs hover:scale-110 cursor-pointer" />
         </div>
         <div className="flex items-center justify-end text-sm w-full pr-2 ">
           <Link href={`/${type}/${slug}`}>
-            <span className="flex text-xs text-sky">Read More</span>
+            <span className="flex text-xs text-sky cursor-pointer">
+              Read More
+            </span>
           </Link>
         </div>
       </section>

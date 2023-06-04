@@ -129,15 +129,17 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
               <div className="w-full h-[1px] bg-gray-300 px-2" />
               <div className="flex justify-between  text-right w-full px-2">
                 <div className="flex items-center  px-2 align-middl space-x-2">
-                  <BsBookmarkHeart className="hover:scale-110" />
-                  <BsQrCodeScan className="hover:scale-110" />
+                  <BsBookmarkHeart className="hover:scale-110 cursor-pointer" />
+                  <BsQrCodeScan className="hover:scale-110 cursor-pointer" />
                   <a href={cat?.fields?.mapShare} target="_blank">
                     <BiMap className="hover:scale-110" />
                   </a>
-                  <BsShareFill className="text-xs hover:scale-110" />
+                  <BsShareFill className="text-xs hover:scale-110 cursor-pointer" />
                 </div>
                 <Link href={`${pathname}/${cat.fields.slug}`}>
-                  <span className="text-xs text-sky">Read More</span>
+                  <span className="text-xs text-sky cursor-pointer">
+                    Read More
+                  </span>
                 </Link>
               </div>
             </section>
