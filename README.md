@@ -1,7 +1,7 @@
 # AlGeMs
 
-<img src="https://github.com/cococry/Ragnar/blob/main/branding/logo.png" width="200"  /> 
-<img src="https://github.com/cococry/Ragnar/blob/main/branding/workflow.png" width="800"  />
+<img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/1.png" width="200"  /> 
+<img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/2.png" width="800"  />
 
 ## Overview
 
