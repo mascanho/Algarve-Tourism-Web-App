@@ -7,16 +7,18 @@
 <img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/5.png" width="800"  />
 <img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/6.png" width="800"  />
 
-## Overview
+## TLDR
 
-Ragnar is a minimal window manager for X written in C.
-The goal of this project is to create a window manager that has minimal bloat but
-is still accesable for non-technical people.
+- A website that works as an agregator for locations and points of interest to those who frequent the Algarve region.
+
+- Its main goal is to have a clean and easy-to-use UI where users can easialy interact with the website and view locations based on category.
+
+- It should be an alternative to the many blogs and indexes currently available online that are all very confusing and frustrating in terms of UI/UX.
 
 ## Features
 
-- [x] Tiling layout
-- [x] Multi-monitor support
+- [x] Export data/locations using several formats
+- [x] Login/Sign Up
 - [x] Altering layout (Application switching, changing master size...)
 - [x] Fullscreening windows
 - [x] Multiple Desktops
@@ -24,7 +26,7 @@ is still accesable for non-technical people.
 - [ ] Auto Start Commands
 - [ ] Scratchpads
 
-## Installation
+## TODO
 
 There is a script for Ubuntu users, all of the process is automated:
 
@@ -137,14 +139,6 @@ had a really nice time using it.
 
 <img src="https://nvchad.com/screenshots/onedark.webp">
 <img src="https://nvchad.com/screenshots/rxyhn1.webp">
-
-## What is it?
-
-- NvChad is a neovim config written in lua aiming to provide a base configuration with very beautiful UI and blazing fast startuptime (around 0.02 secs ~ 0.07 secs). We tweak UI plugins such as telescope, nvim-tree, bufferline etc well to provide an aesthetic UI experience.
-
-- Lazy loading is done 93% of the time meaning that plugins will not be loaded by default, they will be loaded only when required also at specific commands, events etc. This lowers the startuptime and it was like 0.07~ secs tested on an old pentium machine 1.4ghz + 4gb ram & HDD.
-
-- NvChad isnt a framework! Its supposed to be used as a "base" config, so users could tweak the defaults well, can also remove the things they dont like in the default config and build their config on top of it. Users can tweak the entire default config while staying in their custom config (lua/custom dir). This is the control center of the user's config and gitignored so the users can stay update to-date with NvChad's latest config (main branch) while still controlling it with their chadrc (file that controls entire custom dir)
 
 ## Theme Showcase
 
