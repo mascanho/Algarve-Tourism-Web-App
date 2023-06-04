@@ -1,7 +1,11 @@
 # AlGeMs
 
-<img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/1.png" width="200"  /> 
+<img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/1.png" width="800"  /> 
 <img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/2.png" width="800"  />
+<img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/3.png" width="800"  />
+<img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/4.png" width="800"  />
+<img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/5.png" width="800"  />
+<img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/6.png" width="800"  />
 
 ## Overview
 
