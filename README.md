@@ -8,6 +8,7 @@
 <img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/4.png" width="800"  />
 <img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/5.png" width="800"  />
 <img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/6.png" width="800"  />
+<img src="https://github.com/mascanho/Algarve-Tourism-Web-App/blob/main/screens/7.png" width="800"  />
 
 ## TLDR
 
@@ -24,16 +25,16 @@
 - [x] Login/Sign Up
 - [x] Altering layout (Application switching, changing master size...)
 - [x] Fullscreening windows
-- [x] Multiple Desktops
-- [x] Status Bar
-- [ ] Auto Start Commands
-- [ ] Scratchpads
-- [ ] The hability to submit new categories by the user
+- [ ] The ability to submit new categories by the user
 - [ ] Comments and reviews from the DB (Moongo DB)
 - [ ] Drag-and-drop for the side drawer where favorites are added
 - [ ] SEO optimisation
 - [ ] Themes (Light, dark) and colors
 - [ ] Improve the search functionality
+- [ ] Use localstorage for data persistence
+- [ ] Bokking through the API
+- [ ] Calendar
+- [ ] filter segmentation
 
 ## Disclaimer
 
@@ -42,28 +43,13 @@
 In the [config.h](https://github.com/cococry/Ragnar/blob/main/config.h) file specify your monitor
 setup in order for the WM to work as intended. Also, for configuration of the WM use the config.h file.
 
-## Notes
-
-For the best experience, i suggest to use a X compositer like picom. I am using [picom pijulius](https://github.com/pijulius/picom)
-because i think it has very clean animation support. You can find my picom config [here](https://github.com/cococry/dotfiles/blob/main/picom/picom.conf)
-
-This project is in early stage and not finished. So if you find bugs or have any problems, feel free to [submit an issue](https://github.com/cococry/Ragnar/issues).
-Especially multi monitor setups can be problematic with the current state of the code base.
-
 ## Inspiration
 
-RagnarWM is mainly inspired by [dwm](https://dwm.suckless.org).
-I, myself used dwm as my main window manager in the past and
-i really liked the minimalist style of it. But i found
-it really frustrating how the default dwm repository was
-pretty much unusable out of the box. A lot
-of main features are non-existend in dwm or
-poorly designed. That's why i was inspired to create
-a minimal window manager that comes with usablity
-out of the box. I don't think usablity and features
-have to suffer with minimalism. But don't get
-me wrong, dwm is a great window manager and i
-had a really nice time using it.
+This was inspired by the amount of people that frequently ask me about the Algarve.
+
+I decided to build something that would allow me to learn some new technologies and improve my skills in the process.
+
+I hope this can be useful to others and to the community in general.
 
 ## Usage
 
