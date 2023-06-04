@@ -29,6 +29,7 @@ interface Category {
     shortDescription: string;
     tags: string[];
     mapShare: string;
+    rating: string;
   };
 }
 

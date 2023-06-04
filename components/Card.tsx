@@ -9,6 +9,7 @@ import { BsQrCodeScan } from "react-icons/bs";
 import { BiMap } from "react-icons/bi";
 import Link from "next/link";
 import { BsShareFill } from "react-icons/bs";
+import StarRating from "./Layout/StarRating";
 
 export const Card = ({
   category,
@@ -25,6 +26,7 @@ export const Card = ({
   rating,
   embededMap,
   mapShare,
+  price,
 }: any) => {
   const router = useRouter();
   const addFav = useAddToFavourites();
@@ -45,6 +47,8 @@ export const Card = ({
       rating,
       embededMap,
       mapShare,
+      id: slug,
+      price,
     };
     addFav.addFavourite(data);
     toast.success(title + " added to " + "🧳");
@@ -53,7 +57,7 @@ export const Card = ({
   console.log(tags, "From card ");
 
   return (
-    <section className="border pb-2 mb-10 sm:pb-2 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-[100%] mx-auto sm:w-full md:w-64 hover:border-sky hover:cursor-pointer hover:shadow-md">
+    <section className="border pb-2 mb-10 sm:pb-2 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-[100%] mx-auto sm:w-full md:w-full  hover:border-sky  hover:shadow-md">
       <div className="relative flex flex-col w-full h-[180px] sm:h-40 overflow-hidden rounded-t-md ">
         <Image src={`https:${image}`} fill alt="image" className="block" />
         <div className="absolute active:scale-90 w-5 h-5 flex items-center justify-center rounded-full p-1 bg-white top-2 right-2">
@@ -71,7 +75,9 @@ export const Card = ({
           {" "}
           {title}
         </h3>
-        <span className="text-sm text-gray-500"> $66.99</span>
+        <span className="text-sm text-gray-500">
+          <StarRating rating={rating} />
+        </span>
       </div>
       <div className="w-full h-[1px] bg-gray-300" />
       <div className="flex w-full  mt-20 py-2 overflow-hidden">

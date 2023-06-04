@@ -49,8 +49,8 @@ export const catArr = [
   },
   {
     id: 9,
-    name: "🛒 Businesses",
+    name: "🛒 Business",
     icon: "",
-    route: "/businesses",
+    route: "/business",
   },
 ];

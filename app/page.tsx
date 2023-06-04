@@ -21,7 +21,9 @@ async function getAllCategories() {
     space: process.env.CONTENTFUL_SPACE_ID!,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
   });
-  const res = await client.getEntries({ content_type: ["beaches", "events"] });
+  const res = await client.getEntries({
+    content_type: ["beaches", "events", "restaurants"],
+  });
 
   return await res.items;
 }
@@ -34,18 +36,18 @@ export default async function Home(props: any) {
   return (
     <>
       <Hero />
-      <section id="search" className="pt-20 pb-6 space-y-4 text-cente-white">
+      <section className="pt-20 pb-6 space-y-4 text-cente-white">
         <div className="-q11/12 mx-auto text-center">
           <h3 className="text-3xl font-bold text-black sm:text-5xl">
             Guides for your next location{" "}
           </h3>
         </div>
         <h4 className="-8/12 mx-auto text-center">
-          Check out this week&apos; selection of popular trips and events
+          Check out this week&apos;s selection of popular places and events
         </h4>
-        <Selection />
         <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 sm:pt-5">
-          <section className="sm:grid mx-auto containera items-center w-full sm:grid-cols-2 sm:gap-x-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-4 place-items-center">
+          <Selection />
+          <section className="sm:grid mx-auto containera items-center w-full sm:grid-cols-2 sm:gap-x-10 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center">
             {/* Normal Cards with no search feature */}
             {categories.map((cat: any) => (
               <Card
@@ -65,6 +67,7 @@ export default async function Home(props: any) {
                 tags={cat?.fields?.tags}
                 embededMap={cat?.fields?.embededMap}
                 mapShare={cat?.fields?.mapShare}
+                price={cat?.fields?.price}
               />
             ))}
           </section>

@@ -32,7 +32,6 @@ export default async function Home(props: any) {
   const data = await getAllCategories();
 
   const filteredData: any = data.filter((obj: any) => obj.fields.slug === slug);
-  console.log(typeof filteredData[0]?.fields?.rating);
 
   return (
     <>
@@ -43,30 +42,38 @@ export default async function Home(props: any) {
         </section>
         <div className="space-y-2 w-11/12 sm:w-full mx-auto">
           <div className="flex items-centert space-x-2">
-            <span className="flex items-center text-black text-base text-left">
-              <FaMapMarkerAlt />
-              {filteredData[0]?.fields?.city}
-            </span>
-            <div className="flex items-center space-x-1 bg-gray-200 w-fit px-2 rounded-md text-green-500 text-xs py-1">
-              <FaRegGem />
-              <span className="text-xs">Hidden Gem</span>
-            </div>
+            {filteredData[0]?.fields?.hiddenGem ? (
+              <div className="flex items-center space-x-1 bg-gray-200 w-fit px-2 rounded-md text-green-500 text-xs py-1">
+                <div className="flex items-center space-x-2">
+                  <FaRegGem />
+                  <span className="text-xs">Hidden Gem</span>
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
-          <div className="flex justify-between space-y-6 w-full  items-end ">
+          <div className="flex justify-between space-y-6 sm:space-y-2 w-full sm:pt-4  items-end ">
             <div className="sm:flex items-center mt-2 sm:mt-0">
-              <h1 className="text-lg sm:text-2xl text-sky w-auto font-semibold min-w-fit sm:mr-4">
+              <h1 className="text-lg sm:text-3xl text-sky w-auto font-semibold min-w-fit sm:mr-4">
                 {filteredData[0]?.fields?.title}
               </h1>
+
               <div className="hidden sm:flex">
                 <StarRating rating={filteredData[0]?.fields?.rating} />
               </div>
             </div>
+
             <div className="flex  justify-between items-center ">
               <div className="sm:pr-4 space-x-2 items-center hidden sm:flex  ">
                 <Buttons filteredData={filteredData} />
               </div>
             </div>
           </div>
+          <span className="flex items-center text-gray-300 text-sm text-left">
+            <FaMapMarkerAlt />
+            {filteredData[0]?.fields?.city}
+          </span>
           <div className="flex justify-between sm:hidden">
             <StarRating rating={filteredData[0]?.fields?.rating} />
             <div className="sm:pr-4 space-x-2 items-center sm:hidden flex  ">
@@ -88,7 +95,7 @@ export default async function Home(props: any) {
             </div>
           </div>
         </div>
-        <div className="sm:pt-5 w-11/12 sm:w-full mx-auto ">
+        <div className="sm:pt-2 w-11/12 sm:w-full mx-auto ">
           <TabsRow filteredData={filteredData} />
         </div>
       </section>

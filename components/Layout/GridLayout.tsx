@@ -15,8 +15,6 @@ export function LeadGrid({ filteredData }: any) {
   const theme = useMantineTheme();
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - ${theme.spacing.md} / 2)`;
 
-  console.log(filteredData[0].fields.images);
-
   return (
     <section className=" ml-0">
       <Container
@@ -53,7 +51,7 @@ export function LeadGrid({ filteredData }: any) {
               <Image
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[2]?.fields?.file?.url}`}
-                className={`h-[${SECONDARY_COL_HEIGHT}] rounded-lg`}
+                className={`h-full rounded-lg`}
                 height={80}
                 width={260}
               />
@@ -62,7 +60,7 @@ export function LeadGrid({ filteredData }: any) {
               <Image
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[3]?.fields?.file?.url}`}
-                className={`h-[${SECONDARY_COL_HEIGHT}] rounded-lg`}
+                className={`h-full rounded-lg`}
                 height={80}
                 width={260}
               />
@@ -71,8 +69,8 @@ export function LeadGrid({ filteredData }: any) {
               <Image
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[4]?.fields?.file?.url}`}
-                className={`h-[${SECONDARY_COL_HEIGHT}] rounded-lg`}
-                height={80}
+                className={`h-full rounded-lg`}
+                height={100}
                 width={260}
               />
             </Grid.Col>

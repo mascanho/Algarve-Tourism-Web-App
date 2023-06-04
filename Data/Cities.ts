@@ -1,11 +1,5 @@
 export const cityArr = [
   {
-    id: 1,
-    name: "All Cities",
-    icon: "",
-    route: "/",
-  },
-  {
     id: 2,
     name: "Faro",
     icon: "",

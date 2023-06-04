@@ -16,6 +16,8 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
+import { TiArrowBack } from "react-icons/ti";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,8 +41,6 @@ export default function Home() {
   const pathname = usePathname();
   const router = useRouter();
   const params = useSearchParams();
-
-  console.log(categories, "From the searhch page");
 
   useEffect(() => {
     async function data() {
@@ -79,6 +79,12 @@ export default function Home() {
               </>
             ) : (
               <>
+                <Link href="/#search">
+                  <div className="flex items-center w-full space-x-2 sm:ml-4">
+                    <TiArrowBack />
+                    <span>Back to search</span>
+                  </div>
+                </Link>
                 <h3
                   className="text-3xl font-bold text-black sm:text-5xl"
                   id="search"
