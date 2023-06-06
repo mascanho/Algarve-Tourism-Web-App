@@ -8,6 +8,7 @@ import { MdOutlineCardTravel } from "react-icons/md";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
+import { toast } from "react-hot-toast";
 
 const Buttons = ({ filteredData }: any) => {
   const [isCopied, setIsCopied] = useState(false);
@@ -26,6 +27,7 @@ const Buttons = ({ filteredData }: any) => {
       rating: filteredData[0]?.fields?.rating,
       city: filteredData[0]?.fields?.city,
     });
+    toast.success(filteredData[0]?.fields?.title + " added to " + "🧳");
   }
 
   // handle the GPS to open on a new tab
