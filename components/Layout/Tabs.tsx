@@ -1,6 +1,7 @@
 "use client";
 import { Tabs } from "@mantine/core";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Comments from "./Comments";
 
 function TabsRow({ filteredData }: any) {
   console.log(filteredData);
@@ -68,8 +69,11 @@ function TabsRow({ filteredData }: any) {
       <Tabs.Panel value="third" pt="xs">
         {filteredData[0]?.fields?.price}
       </Tabs.Panel>
-      <Tabs.Panel value="fourth" pt="xs">
+      <Tabs.Panel className="text-left" value="fourth" pt="xs">
         {/* Comments will go here, connected to the DB  */}
+        <section className="text-left flex justify-start">
+          <Comments />
+        </section>
       </Tabs.Panel>
     </Tabs>
   );
