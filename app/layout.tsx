@@ -8,7 +8,7 @@ import ClientOnly from "@/components/ClientOnly";
 import "react-toastify/dist/ReactToastify.css";
 import getCurrentUser from "./libs/getCurrentUser";
 import { ToasterProvider } from "./providers/ToasterProvider";
-import { NextAuthProvider } from "./providers/AuthProvider.tsx";
+import { NextAuthProvider } from "./providers/AuthProvider";
 
 export const metadata: Metadata = {
   title: {
