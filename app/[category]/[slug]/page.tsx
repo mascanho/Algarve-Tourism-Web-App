@@ -14,8 +14,6 @@ export const metadata: Metadata = {
 };
 const inter = Inter({ subsets: ["latin"] });
 
-interface FunctionProps {}
-
 export default async function Home(props: any) {
   const { category, slug } = props.params;
 

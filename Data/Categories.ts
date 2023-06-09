@@ -19,9 +19,9 @@ export const catArr = [
   },
   {
     id: 4,
-    name: "🗺️ Exploration",
+    name: "🗺️ Adventure",
     icon: "",
-    route: "/exploration",
+    route: "/adventure",
   },
   {
     id: 5,

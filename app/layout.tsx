@@ -8,6 +8,7 @@ import ClientOnly from "@/components/ClientOnly";
 import "react-toastify/dist/ReactToastify.css";
 import getCurrentUser from "./libs/getCurrentUser";
 import { ToasterProvider } from "./providers/ToasterProvider";
+import { NextAuthProvider } from "./providers/AuthProvider.tsx";
 
 export const metadata: Metadata = {
   title: {
@@ -68,8 +69,7 @@ export default async function RootLayout({
           <ToasterProvider />
           <Header currentUser={currentUser} />
         </ClientOnly>
-
-        {children}
+        <NextAuthProvider>{children}</NextAuthProvider>
         <Footer />
       </body>
     </html>

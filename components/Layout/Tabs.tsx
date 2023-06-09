@@ -71,7 +71,7 @@ function TabsRow({ filteredData }: any) {
       </Tabs.Panel>
       <Tabs.Panel className="text-left" value="fourth" pt="xs">
         {/* Comments will go here, connected to the DB  */}
-        <section className="text-left flex justify-start">
+        <section>
           <Comments />
         </section>
       </Tabs.Panel>
