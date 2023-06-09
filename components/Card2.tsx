@@ -55,7 +55,7 @@ export function CarouselCard() {
 
   const slides = images.map((image) => (
     <Carousel.Slide key={image}>
-      <Image src={image} height={220} />
+      <img src={image} height={220} />
     </Carousel.Slide>
   ));
 

@@ -62,14 +62,14 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
               className="max-w-7xl space-y-2 text-left md:w-64 shadow-sm rounded-md pb-2 border"
             >
               <div className="w-full h-40 flex  rounded-t-md overflow-hidden relative">
-                <Image
+                <img
                   src={
                     cat?.fields?.mainImage?.fields?.file?.url
                       ? `https://${cat?.fields?.mainImage?.fields?.file?.url}`
                       : "/placeholder.jpg"
                   }
                   alt="image"
-                  className="block"
+                  className="block h-full"
                   width={640}
                   height={360}
                 />
