@@ -1,14 +1,14 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { HiQrCode } from "react-icons/hi2";
 import React, { useState } from "react";
 import { BiMapPin } from "react-icons/bi";
 import { BiShareAlt } from "react-icons/bi";
-import { MdOutlineCardTravel } from "react-icons/md";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { toast } from "react-hot-toast";
+import { BsFillSuitHeartFill } from "react-icons/bs";
 
 const Buttons = ({ filteredData }: any) => {
   const [isCopied, setIsCopied] = useState(false);
@@ -51,9 +51,9 @@ const Buttons = ({ filteredData }: any) => {
 
   return (
     <>
-      <MdOutlineCardTravel
+      <BsFillSuitHeartFill
         data-tooltip-content="Add to favourites"
-        className="w-6 h-6 sm:w-8 sm:h-8 outline-none fav p-1 border tooltip rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"
+        className="w-6 h-6 sm:w-8 sm:h-8 outline-none fav p-[6px] border tooltip rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75 text-xs"
         onClick={addFav}
       />
       <Tooltip anchorSelect=".fav" />

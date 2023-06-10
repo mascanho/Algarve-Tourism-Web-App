@@ -3,7 +3,7 @@ import Image from "next/image";
 import { AiFillHeart } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
-import { BsBookmarkHeart } from "react-icons/bs";
+import { BsBookmarkHeart, BsGlobe } from "react-icons/bs";
 import { BsQrCodeScan } from "react-icons/bs";
 import { BiMap } from "react-icons/bi";
 import Link from "next/link";
@@ -106,6 +106,7 @@ export const SearchCard = ({
             <BiMap className="hover:scale-110 cursor-pointer" />
           </a>
           <BsShareFill className="text-xs hover:scale-110 cursor-pointer" />
+          <BsGlobe className="text-xs hover:scale-110 cursor-pointer" />
         </div>
         <div className="flex items-center justify-end text-sm w-full pr-2 ">
           <Link href={`/${type}/${slug}`}>
