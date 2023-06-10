@@ -100,17 +100,19 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
                 <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-black bg-white  ">
                   📍 {cat?.fields?.city}
                 </span>
+
+                <span className="text-gray-500 text-sm absolute right-0 bottom-0 bg-white p-1 rounded-tl-xl">
+                  <StarRating clas rating={cat?.fields?.rating} />
+                </span>
               </div>
               <div className="flex w-full  text-left justify-between px-2 items-center">
                 <h3 className="w-full text-left text-black text-sm items-center">
                   {" "}
                   {cat.fields.title}
                 </h3>
-                <span className="text-gray-500 text-sm">
-                  <StarRating rating={cat?.fields?.rating} />
-                </span>
               </div>
               <div className="w-full h-[1px] bg-gray-300" />
+
               <div className="mt-20 flex w-full px-2 py-2">
                 <p className="line-clamp-3 text-xs">
                   {cat?.fields?.shortDescription}

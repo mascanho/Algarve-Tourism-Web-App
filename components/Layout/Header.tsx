@@ -55,7 +55,36 @@ const Header = ({ currentUser }: UserProps) => {
 
   return (
     <>
-      <nav className={`shadow-sm  w-full top-0  z-50 fixed bg-white `}>
+      <section className="overflow-hidden">
+        {/* Modals */}
+        {/* <InstructionModal /> */}
+
+        {/* Drawer */}
+        <Drawer
+          size={"300px"}
+          opened={opened}
+          onClose={close}
+          title="Favourites"
+        >
+          {/* Drawer Content */}
+          <DrawerContent close={close} />
+        </Drawer>
+
+        {/* Modals Section */}
+
+        {loginModal.isOpen === true ? (
+          <LoginModal currentUser={currentUser} />
+        ) : (
+          ""
+        )}
+        {registeredModal.isOpen === true ? (
+          <RegisteredModal currentUser={currentUser} />
+        ) : (
+          ""
+        )}
+      </section>
+
+      <nav className={`shadow-sm  w-full sticky  bg-white z-50 `}>
         <div className="z-50 mx-auto navbar max-w-7xl  ">
           <div className="navbar-start ">
             <div className="dropdown">
@@ -257,27 +286,6 @@ const Header = ({ currentUser }: UserProps) => {
           </div>
         </div>
       </nav>
-      {/* Modals */}
-      {/* <InstructionModal /> */}
-
-      {/* Drawer */}
-      <Drawer size={"300px"} opened={opened} onClose={close} title="Favourites">
-        {/* Drawer Content */}
-        <DrawerContent close={close} />
-      </Drawer>
-
-      {/* Modals Section */}
-
-      {loginModal.isOpen === true ? (
-        <LoginModal currentUser={currentUser} />
-      ) : (
-        ""
-      )}
-      {registeredModal.isOpen === true ? (
-        <RegisteredModal currentUser={currentUser} />
-      ) : (
-        ""
-      )}
     </>
   );
 };

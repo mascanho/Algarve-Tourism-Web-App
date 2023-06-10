@@ -11,7 +11,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <div className="w-10/12 max-w-4xl mx-auto ml-4 sm:ml-auto sm:pl-2  sm:mt-4 text-sm mb-4 py-6 overflow-x-hidden">
+      <div className="w-10/12 max-w-4xl mx-auto ml-4 sm:ml-auto sm:pl-2  sm:pt-12 text-sm mb-4 py-6 overflow-x-hidden">
         <Breadcrumbs />
       </div>
       {/* <Hero /> */}
