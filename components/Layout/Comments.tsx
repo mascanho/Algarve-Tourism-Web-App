@@ -2,7 +2,9 @@
 import Comment from "../Comment";
 import CommentForm from "../CommentForm";
 
-function Comments() {
+function Comments(comments: any) {
+  console.log(comments, "from the tab comments");
+
   return (
     <section className="flex justify-start mt-5">
       <div className="flex items-center flex-col justify-start text-left w-full space-y-3">
@@ -12,9 +14,13 @@ function Comments() {
             87 comments
           </span>
         </div>
-        <Comment />
-        <Comment />
-        <Comment />
+        <section className="w-full">
+          {comments.comments
+            .sort((a: any, b: any) => b.createdAt - a.createdAt)
+            .map((comment: any) => (
+              <Comment key={comment.id} comment={comment} />
+            ))}
+        </section>
       </div>
     </section>
   );

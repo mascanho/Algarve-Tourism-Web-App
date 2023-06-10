@@ -7,12 +7,12 @@ import TabsRow from "@/components/Layout/Tabs";
 import { createClient } from "contentful";
 import Buttons from "@/components/Layout/Buttons";
 import StarRating from "@/components/Layout/StarRating";
+import getComments from "@/app/libs/getComments";
 
 export const metadata: Metadata = {
   title: "Home",
   description: "Welcome to Next.js",
 };
-const inter = Inter({ subsets: ["latin"] });
 
 export default async function Home(props: any) {
   const { category, slug } = props.params;
@@ -28,6 +28,7 @@ export default async function Home(props: any) {
   }
 
   const data = await getAllCategories();
+  const commentsArr = await getComments();
 
   const filteredData: any = data.filter((obj: any) => obj.fields.slug === slug);
 
@@ -94,7 +95,7 @@ export default async function Home(props: any) {
           </div>
         </div>
         <div className="sm:pt-2 w-11/12 sm:w-full mx-auto ">
-          <TabsRow filteredData={filteredData} />
+          <TabsRow filteredData={filteredData} comments={commentsArr} />
         </div>
       </section>
     </>

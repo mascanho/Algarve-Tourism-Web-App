@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 function BottomAssets() {
   const pathname = usePathname();
@@ -36,9 +37,11 @@ function BottomAssets() {
               amenities, it&apos;s a convenient and enjoyable destination for
               visitors.
             </p>
-            <button className="w-full px-3 py-1 mt-8 text-white border rounded-md bg-sky sm:w-fit">
-              View Beaches
-            </button>
+            <Link href="/beaches">
+              <button className="w-full px-3 py-1 mt-8 text-white border rounded-md bg-sky sm:w-fit">
+                View Beaches
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -55,9 +58,11 @@ function BottomAssets() {
             With their unique beauty and captivating ambiance, they are sure to
             leave a lasting impression on all who visit.
           </p>
-          <button className="px-3 py-1 mt-8 text-white border rounded-md bg-sky sm:w-fit">
-            View Beaches
-          </button>
+          <Link href="/beaches">
+            <button className="px-3 py-1 mt-8 text-white border rounded-md bg-sky sm:w-fit">
+              View Beaches
+            </button>
+          </Link>
         </div>
         <div className="w-[100%]  relative sm:w-2/3">
           <img
@@ -93,9 +98,11 @@ function BottomAssets() {
             photographers alike. Whether you&apos;re looking for a peaceful
             getaway or an active adventure.
           </p>
-          <button className="px-3 py-1 mt-8 text-white border rounded-md bg-sky sm:w-fit">
-            View Beaches
-          </button>
+          <Link href="/beaches">
+            <button className="px-3 py-1 mt-8 text-white border rounded-md bg-sky sm:w-fit">
+              View Beaches
+            </button>
+          </Link>
         </div>
       </div>
 

@@ -1,28 +1,36 @@
 import React from "react";
 
-function Comment() {
+const options = {
+  // weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  timeZone: "Europe/London",
+};
+
+function Comment({ comment }: any) {
   return (
-    <div>
-      <div className="flex w-full">
+    <div className="full">
+      <div className="flex w-[100%]">
         <img
           alt="Ichigo Kurosaki"
-          src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/05/Ichigo-Kurosaki.jpg"
+          src={comment?.image}
           className="w-10 h-10 rounded-full"
         />
         <div className="flex flex-col items-center justify-center ml-2 w-full">
           <div className="flex items-center space-x-2  my-2 w-full">
-            <span className="text-black font-semibold text-left">
-              Ichigo Kurosaki
+            <span className="text-black  flex-1 font-semibold text-left">
+              {comment?.name}
             </span>
             <div>
-              <span className="text-xs text-gray-400 m-auto ">Apr 2020</span>
+              <span className="text-xs text-gray-400 m-auto ">
+                {comment?.createdAt.toLocaleDateString("en-GB", options)}
+              </span>
             </div>
           </div>
-          <div className="block">
-            <p className="text-base pl-0">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Reiciendis cumque a placeat rem ipsum, nemo aspernatur quod et
-              cupiditate nam?
+          <div className="block w-full text-left">
+            <p className="text-base text-left pl-0 w-full">
+              {comment?.comment}
             </p>
           </div>
         </div>

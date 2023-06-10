@@ -3,7 +3,7 @@ import { Tabs } from "@mantine/core";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Comments from "./Comments";
 
-function TabsRow({ filteredData }: any) {
+function TabsRow({ filteredData, comments }: any) {
   console.log(filteredData);
 
   const options = {
@@ -72,7 +72,7 @@ function TabsRow({ filteredData }: any) {
       <Tabs.Panel className="text-left" value="fourth" pt="xs">
         {/* Comments will go here, connected to the DB  */}
         <section>
-          <Comments />
+          <Comments comments={comments} />
         </section>
       </Tabs.Panel>
     </Tabs>

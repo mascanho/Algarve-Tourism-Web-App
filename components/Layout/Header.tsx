@@ -55,7 +55,7 @@ const Header = ({ currentUser }: UserProps) => {
 
   return (
     <>
-      <nav className={`shadow-sm  w-full top-0  z-50   `}>
+      <nav className={`shadow-sm  w-full top-0  z-50 fixed bg-white `}>
         <div className="z-50 mx-auto navbar max-w-7xl  ">
           <div className="navbar-start ">
             <div className="dropdown">
@@ -80,7 +80,9 @@ const Header = ({ currentUser }: UserProps) => {
                 className="p-2 mt-3 bg-white shadow menu menu-compact dropdown-content rounded-box w-52"
               >
                 <li className="rounded-md active:bg-sky">
-                  <a className="active:bg-sky">Blog</a>
+                  <Link href="/blog">
+                    <span className="active:bg-sky">Blog</span>
+                  </Link>
                 </li>
                 <li tabIndex={0} className="">
                   <ul className="z-10 p-2 bg-white">
@@ -174,7 +176,11 @@ const Header = ({ currentUser }: UserProps) => {
                 </ul>
               </li>
               <li className="rounded-md active:bg-sky">
-                <a className="rounded-md active:bg-sky font-bold">Blog</a>
+                <Link href="/blog">
+                  <span className="rounded-md active:bg-sky font-bold">
+                    Blog
+                  </span>
+                </Link>
               </li>
               <li className="rounded-md active:bg-sky">
                 <a className="rounded-md active:bg-sky font-bold">Contact</a>

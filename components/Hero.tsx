@@ -30,7 +30,7 @@ const Hero = () => {
     <>
       <div
         id="search"
-        className=" bg-[url('https://rare-gallery.com/uploads/posts/504981-Public-domain.jpg')]  h-screen overflow-hidden  bg-cover bg-blend-multiply bg-black/30 -mt-16 "
+        className=" bg-[url('https://rare-gallery.com/uploads/posts/504981-Public-domain.jpg')]  h-screen overflow-hidden  bg-cover bg-blend-multiply bg-black/30  "
       />
       <section className="absolute w-full mx-auto space-y-6 text-center top-60 sm:top-80">
         <h1 className="mx-auto text-3xl font-bold text-center text-white sm:text-6xl">
