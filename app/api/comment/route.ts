@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { headers } from "next/headers";
 import { getServerSession } from "next-auth";
 import prisma from "../../libs/prismadb";
 
@@ -6,6 +7,9 @@ export async function POST(request: Request) {
   const userLogged = await getServerSession();
   const body = await request.json();
   const { comment } = body;
+  let pathname: any = headers();
+  const url = pathname.get("referer");
+  const slug = url.split("/").pop();
 
   // const userEmail = userLogged?.user?.email;
 
@@ -24,6 +28,7 @@ export async function POST(request: Request) {
       name: userLogged?.user?.name,
       email: userLogged?.user?.email,
       image: userLogged?.user?.image,
+      slug,
       // createdAt: new Date(),
     },
   });

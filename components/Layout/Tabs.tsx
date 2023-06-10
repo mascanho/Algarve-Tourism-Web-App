@@ -3,9 +3,7 @@ import { Tabs } from "@mantine/core";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Comments from "./Comments";
 
-function TabsRow({ filteredData, comments }: any) {
-  console.log(filteredData);
-
+function TabsRow({ filteredData, comments, slug }: any) {
   const options = {
     renderNode: {
       "embedded-asset-block": (node: any) => {
@@ -72,7 +70,7 @@ function TabsRow({ filteredData, comments }: any) {
       <Tabs.Panel className="text-left" value="fourth" pt="xs">
         {/* Comments will go here, connected to the DB  */}
         <section>
-          <Comments comments={comments} />
+          <Comments slug={slug} comments={comments} />
         </section>
       </Tabs.Panel>
     </Tabs>

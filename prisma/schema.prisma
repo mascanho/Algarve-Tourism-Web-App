@@ -48,6 +48,7 @@ model Comments {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   comment   String
   email     String?
+  slug      String?
   image     String
   name      String
   User      User?    @relation(fields: [userId], references: [id])

@@ -28,7 +28,7 @@ function Comment({ comment }: any) {
               </span>
             </div>
           </div>
-          <div className="block w-full text-left">
+          <div className="block w-full text-left -mt-2">
             <p className="text-base text-left pl-0 w-full">
               {comment?.comment}
             </p>

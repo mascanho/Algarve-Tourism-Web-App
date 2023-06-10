@@ -64,7 +64,7 @@ function CommentForm() {
           action="submit"
         >
           <input
-            className="bg-gray-200 h-8 rounded-md text-white px-2 text-sm w-full "
+            className="bg-gray-200 h-8 rounded-md text-black outline-none px-2 text-sm w-full "
             type="text"
             placeholder="Type your comment"
             id="comment"

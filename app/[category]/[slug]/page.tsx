@@ -95,7 +95,11 @@ export default async function Home(props: any) {
           </div>
         </div>
         <div className="sm:pt-2 w-11/12 sm:w-full mx-auto ">
-          <TabsRow filteredData={filteredData} comments={commentsArr} />
+          <TabsRow
+            filteredData={filteredData}
+            slug={slug}
+            comments={commentsArr}
+          />
         </div>
       </section>
     </>
