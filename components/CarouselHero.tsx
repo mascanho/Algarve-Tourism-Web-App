@@ -1,7 +1,7 @@
 "use client";
 import { Carousel } from "@mantine/carousel";
 
-function CarouselHeroCard() {
+function CarouselHeroCard({ categories }: any) {
   return (
     <Carousel
       maw={380}

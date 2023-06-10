@@ -3,7 +3,7 @@ import { Carousel } from "@mantine/carousel";
 import Image from "next/image";
 // import { IconArrowRight, IconArrowLeft } from "@tabler/icons-react";
 
-function CarouselHero({ categories, marco }: any) {
+function CarouselHero({ categories }: any) {
   return (
     <>
       <section className="w-full max-w-7xl sm:w-11/12 m-auto px-4 sm:px-0   font-semibold">

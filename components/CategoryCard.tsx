@@ -46,7 +46,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
 
   function addToFavourites(item: any) {
     addFav.addFavourite(item);
-    console.log(item, "added to favs");
+    toast.success(item.title + " added to " + "🧳");
   }
 
   return (
@@ -129,7 +129,28 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
               <div className="w-full h-[1px] bg-gray-300 px-2" />
               <div className="flex justify-between  text-right w-full px-2">
                 <div className="flex items-center  px-2 align-middl space-x-2">
-                  <BsBookmarkHeart className="hover:scale-110 cursor-pointer" />
+                  <BsBookmarkHeart
+                    onClick={() =>
+                      addToFavourites({
+                        id: cat?.fields?.title,
+                        title: cat?.fields?.title,
+                        slug: cat?.fields?.slug,
+                        mainImage:
+                          "https:" + cat?.fields?.mainImage?.fields?.file?.url,
+                        city: cat?.fields?.city,
+                        image:
+                          "https:" + cat?.fields?.mainImage?.fields?.file?.url,
+                        tags: cat?.fields?.tags,
+                        hiddenGem: cat?.fields?.hiddenGem,
+                        rating: cat?.fields?.rating,
+                        mapShare: cat?.fields?.mapShare,
+                        embededMap: cat?.fields?.embededMap,
+                        description: cat?.fields?.description,
+                        shortDescription: cat?.fields?.shortDescription,
+                      })
+                    }
+                    className="hover:scale-110 cursor-pointer"
+                  />
                   <BsQrCodeScan className="hover:scale-110 cursor-pointer" />
                   <a href={cat?.fields?.mapShare} target="_blank">
                     <BiMap className="hover:scale-110" />

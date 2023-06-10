@@ -95,7 +95,10 @@ export const Card = ({
       <div className="w-full h-[1px] bg-gray-300 px-2" />
       <section className="flex justify-between w-full items-center">
         <div className="flex items-center  w-full px-2 align-middl space-x-2">
-          <BsBookmarkHeart className="hover:scale-110 cursor-pointer " />
+          <BsBookmarkHeart
+            onClick={addToFavourites}
+            className="hover:scale-110 cursor-pointer "
+          />
           <BsQrCodeScan className="hover:scale-110 cursor-pointer" />
           <a href={mapShare} target="_blank">
             <BiMap className="hover:scale-110 cursor-pointer" />

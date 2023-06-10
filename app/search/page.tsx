@@ -177,7 +177,7 @@ export default function Home() {
           </section>
         </section>
         <section className="mx-auto mb-40 h-96">
-          <CarouselHero />
+          <CarouselHero categories={categories} />
         </section>
       </>
     );

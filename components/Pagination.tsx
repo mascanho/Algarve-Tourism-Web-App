@@ -4,8 +4,6 @@ import React from "react";
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
 const Pagination = ({ categories }: any) => {
-  console.log(categories, "From the Pagination");
-
   return (
     <div className="sm:mt-10 mt-10 flex justify-center  items-center space-x-3">
       {/* <button className="border px-3 py-2 rounded-full items-center text-xs sm:text-sm"> */}
@@ -22,8 +20,9 @@ const Pagination = ({ categories }: any) => {
         {/*     {page} */}
         {/*   </span> */}
         {/* ))} */}
-        {/* <Link href= */}
-        <button className="border px-5 py-2 rounded-md">View More</button>
+        <Link href={"/beaches"}>
+          <button className="border px-8 py-2 rounded-md">View More</button>
+        </Link>
       </div>
       {/* <button className="border px-3 py-2 rounded-full items-center flex text-xs sm:text-sm"> */}
       {/*   <GrLinkNext className="text-red-400" /> */}

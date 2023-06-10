@@ -55,9 +55,9 @@ const Header = ({ currentUser }: UserProps) => {
 
   return (
     <>
-      <nav className={`shadow-sm  w-full top-0  z-50  `}>
-        <div className="z-50 mx-auto navbar max-w-7xl ">
-          <div className="navbar-start">
+      <nav className={`shadow-sm  w-full top-0  z-50   `}>
+        <div className="z-50 mx-auto navbar max-w-7xl  ">
+          <div className="navbar-start ">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
                 <svg
@@ -83,18 +83,6 @@ const Header = ({ currentUser }: UserProps) => {
                   <a className="active:bg-sky">Blog</a>
                 </li>
                 <li tabIndex={0} className="">
-                  <a className="justify-between rounded-md active:bg-sky">
-                    Catoegories
-                    <svg
-                      className="fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                    </svg>
-                  </a>
                   <ul className="z-10 p-2 bg-white">
                     {catArr.map((cat) => (
                       <li
@@ -123,7 +111,7 @@ const Header = ({ currentUser }: UserProps) => {
             <ul className="px-1 menu menu-horizontal">
               <Link href="/#search">
                 <li className="active:bg-sky active:rounded-md">
-                  <span className="active:bg-sky active:rounded-md">
+                  <span className="active:bg-sky active:rounded-md font-bold">
                     Search
                   </span>
                 </li>
@@ -131,7 +119,7 @@ const Header = ({ currentUser }: UserProps) => {
               <li className="rounded-md active:bg-transparent" tabIndex={0}>
                 <span
                   onClick={() => router.push("/algarve")}
-                  className="active:bg-sky"
+                  className="active:bg-sky font-bold"
                 >
                   Algarve
                   <svg
@@ -159,7 +147,7 @@ const Header = ({ currentUser }: UserProps) => {
                 </ul>
               </li>
               <li className="rounded-md active:bg-transparent" tabIndex={0}>
-                <a className="active:bg-sky">
+                <a className="active:bg-sky font-bold">
                   Categories
                   <svg
                     className="fill-current"
@@ -186,10 +174,10 @@ const Header = ({ currentUser }: UserProps) => {
                 </ul>
               </li>
               <li className="rounded-md active:bg-sky">
-                <a className="rounded-md active:bg-sky">Blog</a>
+                <a className="rounded-md active:bg-sky font-bold">Blog</a>
               </li>
               <li className="rounded-md active:bg-sky">
-                <a className="rounded-md active:bg-sky">Contact</a>
+                <a className="rounded-md active:bg-sky font-bold">Contact</a>
               </li>
             </ul>
           </div>
