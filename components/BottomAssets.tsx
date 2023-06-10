@@ -7,8 +7,8 @@ function BottomAssets() {
 
   return (
     <section
-      className={`mx-auto mt-20 space-y-12 sm:mt-52 sm:space-y-32
-    ${pathname === "/search" && "sm:mt-32"}
+      className={`mx-auto mt-20 space-y-12 sm:mt-32 sm:space-y-32
+    ${pathname === "/search" && "sm:mt-22"}
     `}
     >
       <div className="justify-between mx-auto sm:flex">

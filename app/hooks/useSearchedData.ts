@@ -22,7 +22,6 @@ const useSearchedData = create<SearchedDataProps>((set, get) => ({
     set((state) => ({
       searchInput,
     }));
-    console.log(searchInput);
   },
 
   allTypes: [],
@@ -30,7 +29,6 @@ const useSearchedData = create<SearchedDataProps>((set, get) => ({
     set((state) => ({
       allTypes,
     }));
-    console.log(allTypes, "From Zustand");
   },
 }));
 
