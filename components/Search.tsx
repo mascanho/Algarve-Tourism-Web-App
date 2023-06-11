@@ -58,12 +58,15 @@ function Search({ allTypes, placeholderText, categories }: any) {
     savedData.AddData(filteredData);
     savedData.addSearchInput(inputValue);
 
+    console.log(filteredData);
     router.push(`/search?q=${inputValue}`);
   };
 
   const handleInputChange = (e: any) => {
     setInputValue(e.target.value);
   };
+
+  console.log(inputValue);
 
   return (
     <section
