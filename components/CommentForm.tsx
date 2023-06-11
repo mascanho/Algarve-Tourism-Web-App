@@ -63,7 +63,12 @@ function CommentForm() {
   return (
     <div className="w-full">
       {session.data === null ? (
-        <button onClick={loginModal.onOpen}>Comment</button>
+        <button
+          className="border px-4 py-2 rounded-md"
+          onClick={loginModal.onOpen}
+        >
+          Leave a comment
+        </button>
       ) : (
         <form
           className="flex items-center w-full"
