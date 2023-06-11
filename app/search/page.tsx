@@ -47,6 +47,8 @@ export default function Home() {
   useEffect(() => {
     async function data() {
       const res = await ContentfullData;
+      console.log(res, "this is the res");
+
       setCategories(res);
     }
     data();
