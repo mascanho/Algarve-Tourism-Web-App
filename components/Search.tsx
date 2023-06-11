@@ -31,6 +31,8 @@ function Search({ allTypes, placeholderText, categories }: any) {
 
     const filteredData: any = [];
 
+    console.log(allTypes, "all types from contentful");
+
     const filteredArr = allTypes?.filter((obj: any) => {
       obj.fields.title.includes(inputValue) ||
         obj.fields.title.toLowerCase().includes(inputValue) ||
