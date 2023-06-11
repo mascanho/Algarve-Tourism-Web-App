@@ -42,6 +42,8 @@ export default function Home() {
   const router = useRouter();
   const params = useSearchParams();
 
+  console.log(searchData, "THis is the search data");
+
   useEffect(() => {
     async function data() {
       const res = await ContentfullData;

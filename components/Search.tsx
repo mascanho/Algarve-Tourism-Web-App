@@ -58,7 +58,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
     savedData.AddData(filteredData);
     savedData.addSearchInput(inputValue);
 
-    console.log(filteredData);
+    console.log(filteredData, "Data being filtered");
     router.push(`/search?q=${inputValue}`);
   };
 
@@ -67,6 +67,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
   };
 
   console.log(inputValue);
+  console.log(pathname, "from the search");
 
   return (
     <section
