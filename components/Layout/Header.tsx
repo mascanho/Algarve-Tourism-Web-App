@@ -205,7 +205,7 @@ const Header = ({ currentUser }: UserProps) => {
                 </ul>
               </li>
               <li className="rounded-md active:bg-sky">
-                <Link href="/blog">
+                <Link href="/blog" className="active:bg-sky">
                   <span className="rounded-md active:bg-sky">Blog</span>
                 </Link>
               </li>
