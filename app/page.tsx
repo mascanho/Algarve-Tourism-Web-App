@@ -39,7 +39,7 @@ export default async function Home(props: any) {
             Discover the best of the Algarve
           </h3>
         </div>
-        <h4 className="-8/12 mx-auto text-center">
+        <h4 className="w-8/12 mx-auto text-center">
           Check out this week&apos;s selection of popular places and events
         </h4>
         <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 sm:pt-5">

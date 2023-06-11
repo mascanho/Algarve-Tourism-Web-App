@@ -3,6 +3,7 @@ import { catArr } from "@/Data/Categories";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import { Select } from "@mantine/core";
 
 const Selection = ({ text }: any) => {
   const router = useRouter();
@@ -21,20 +22,12 @@ const Selection = ({ text }: any) => {
           </div>
         ))}
       </div>
-      <section className="flex w-full">
-        <select
-          onChange={(e) => router.push(e.target.value)}
-          className="w-11/12 mx-auto bg-white select outline outline-1 sm:hidden"
-        >
-          <option disabled selected className="">
-            {text}
-          </option>
-          {catArr.map((item) => (
-            <option value={item.route} key={item.id}>
-              {item.name}
-            </option>
-          ))}
-        </select>
+      <section className="flex w-full sm:hidden">
+        <Select
+          className="w-full mb-8 h-[100%]"
+          placeholder="Pick one"
+          data={catArr.map((cat) => cat.name)}
+        />{" "}
       </section>
     </>
   );

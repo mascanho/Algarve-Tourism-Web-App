@@ -9,8 +9,6 @@ function Search({ allTypes, placeholderText, categories }: any) {
   const [searchResults, setSearchResults] = useState([]);
   const [openModal, setOpenModal] = useState(false);
 
-  console.log(categories, "catergories -->>> Search Component");
-
   // Zustand Data
   const savedData = useSearchedData();
   const allTypesStore = useSearchedData();
@@ -20,7 +18,6 @@ function Search({ allTypes, placeholderText, categories }: any) {
   useEffect(() => {
     if (pathname !== "/search") {
       allTypesStore.addAllTypes(allTypes);
-      console.log(allTypes, "This is allypes from the useEffect");
     }
   }, [inputValue]);
 
@@ -61,16 +58,12 @@ function Search({ allTypes, placeholderText, categories }: any) {
     savedData.AddData(filteredData);
     savedData.addSearchInput(inputValue);
 
-    console.log(filteredData, "Data being filtered");
     router.push(`/search?q=${inputValue}`);
   };
 
   const handleInputChange = (e: any) => {
     setInputValue(e.target.value);
   };
-
-  console.log(inputValue);
-  console.log(pathname, "from the search");
 
   return (
     <section

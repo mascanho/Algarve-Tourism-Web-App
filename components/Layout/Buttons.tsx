@@ -15,8 +15,6 @@ const Buttons = ({ filteredData }: any) => {
   const pathname = usePathname();
   const addFavourites = useAddToFavourites();
 
-  console.log(addFavourites.favourites);
-
   function addFav() {
     addFavourites.addFavourite({
       id: filteredData[0]?.sys?.id,

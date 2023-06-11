@@ -35,7 +35,6 @@ function CommentForm() {
   });
 
   const handleMessage = (data: any) => {
-    console.log("clicked");
     axios
       .post("/api/comment", data)
       .then((res) => {
@@ -44,11 +43,9 @@ function CommentForm() {
         reset();
       })
       .catch((err) => {
-        console.log(err);
         alert(err.message);
       })
       .finally(() => {
-        console.log("Comment has been uploaded");
         router.refresh();
       });
   };

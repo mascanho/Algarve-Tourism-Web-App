@@ -142,7 +142,7 @@ const Header = ({ currentUser }: UserProps) => {
             <ul className="px-1 menu menu-horizontal">
               <Link href="/#search">
                 <li className="active:bg-sky active:rounded-md">
-                  <span className="active:bg-sky active:rounded-md font-bold">
+                  <span className="active:bg-sky active:rounded-md font-semibold ">
                     Search
                   </span>
                 </li>
@@ -150,7 +150,7 @@ const Header = ({ currentUser }: UserProps) => {
               <li className="rounded-md active:bg-transparent" tabIndex={0}>
                 <span
                   onClick={() => router.push("/algarve")}
-                  className="active:bg-sky font-bold"
+                  className="active:bg-sky font-semibold "
                 >
                   Algarve
                   <svg
@@ -178,7 +178,7 @@ const Header = ({ currentUser }: UserProps) => {
                 </ul>
               </li>
               <li className="rounded-md active:bg-transparent" tabIndex={0}>
-                <a className="active:bg-sky font-bold">
+                <a className="active:bg-sky font-semibold">
                   Categories
                   <svg
                     className="fill-current"
@@ -206,13 +206,15 @@ const Header = ({ currentUser }: UserProps) => {
               </li>
               <li className="rounded-md active:bg-sky">
                 <Link href="/blog">
-                  <span className="rounded-md active:bg-sky font-bold">
+                  <span className="rounded-md active:bg-sky font-semibold">
                     Blog
                   </span>
                 </Link>
               </li>
               <li className="rounded-md active:bg-sky">
-                <a className="rounded-md active:bg-sky font-bold">Contact</a>
+                <a className="rounded-md active:bg-sky font-semibold">
+                  Contact
+                </a>
               </li>
             </ul>
           </div>
