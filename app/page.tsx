@@ -30,6 +30,7 @@ async function getAllCategories() {
 
 export default async function Home(props: any) {
   const categories = await getAllCategories();
+  console.log(categories, "this comes from the main page");
 
   return (
     <>
