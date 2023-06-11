@@ -9,6 +9,8 @@ function Search({ allTypes, placeholderText, categories }: any) {
   const [searchResults, setSearchResults] = useState([]);
   const [openModal, setOpenModal] = useState(false);
 
+  console.log(categories, "catergories -->>> Search Component");
+
   // Zustand Data
   const savedData = useSearchedData();
   const allTypesStore = useSearchedData();
@@ -44,7 +46,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
               filteredData.push(obj.fields);
             }
           })
-        : allTypes?.filter((obj: any) => {
+        : categories?.filter((obj: any) => {
             if (
               obj.fields.title.includes(inputValue) ||
               obj.fields.title.toLowerCase().includes(inputValue) ||
