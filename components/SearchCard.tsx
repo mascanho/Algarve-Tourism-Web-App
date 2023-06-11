@@ -88,7 +88,7 @@ export const SearchCard = ({
         {/* <span className="flex-1 text-xs text-sky">Read more</span> */}
       </div>
       <div className="text-[9px] space-x-2 pb-2 px-2">
-        {tags.map((cat: any) => (
+        {tags?.map((cat: any) => (
           <span
             key={cat}
             className="items-center justify-center px-2 py-1 my-auto align-middle border rounded-full item"

@@ -38,7 +38,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
         obj.fields.city.includes(inputValue) ||
         obj.fields.city.toLowerCase().includes(inputValue)
       ) {
-        filteredData.push(obj.fields);
+        filteredData.push("marco");
       }
     });
 

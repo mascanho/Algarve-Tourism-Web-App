@@ -204,17 +204,17 @@ export default function Home() {
         <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12">
           <section className="grid items-center w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-y-10 place-items-start">
             {/* Normal Cards with no search feature */}
-            {searchData.data?.map((item: any) => (
+            {searchData?.data?.map((item: any) => (
               <SearchCard
-                key={item.id}
-                title={item.title}
-                category={item.category}
-                slug={item.slug}
-                tags={item.tags}
-                hiddenGem={item.hiddenGem}
-                mainImage={item.mainImage}
-                city={item.city}
-                type={item.type}
+                key={item?.id}
+                title={item?.title}
+                category={item?.category}
+                slug={item?.slug}
+                tags={item?.tags}
+                hiddenGem={item?.hiddenGem}
+                mainImage={item?.mainImage}
+                city={item?.city}
+                type={item?.type}
                 shortDescription={item.shortDescription}
               />
             ))}
