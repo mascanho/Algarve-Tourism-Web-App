@@ -40,6 +40,7 @@ interface CategoryCardProps {
 
 export const CategoryCard: React.FC<CategoryCardProps> = ({
   category,
+  session,
 }: any) => {
   const pathname = usePathname();
   const addFav = useAddToFavourites();

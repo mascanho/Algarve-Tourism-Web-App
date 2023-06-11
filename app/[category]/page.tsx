@@ -7,11 +7,14 @@ import Link from "next/link";
 import { BsBookmarkHeart } from "react-icons/bs";
 import { CategoryCard } from "@/components/CategoryCard";
 import { catArr } from "@/Data/Categories";
+import getCurrentUser from "../libs/getCurrentUser";
 
 async function Page(props: any) {
   let pathname = props.params.category;
   // Fetch Contentful data
   let routeMatched = false;
+  const session = await getCurrentUser();
+
   async function getData() {
     // pathname = "events";
 
@@ -47,7 +50,8 @@ async function Page(props: any) {
   }
 
   // If the route matches Contentful categories then render the categorey card
-  if (routeMatched) return <CategoryCard category={category} />;
+  if (routeMatched)
+    return <CategoryCard session={session} category={category} />;
 
   // If the route does not match Contentful categories then render the a warning
   return (

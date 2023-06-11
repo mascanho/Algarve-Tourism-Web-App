@@ -68,8 +68,8 @@ export default async function RootLayout({
         <ClientOnly>
           <ToasterProvider />
           <Header currentUser={currentUser} />
+          <NextAuthProvider>{children}</NextAuthProvider>
         </ClientOnly>
-        <NextAuthProvider>{children}</NextAuthProvider>
         <Footer />
       </body>
     </html>

@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import { IoSend } from "react-icons/io5";
-import { useSession } from "next-auth/react";
 import {
   FieldValues,
   SubmitHandler,
@@ -10,6 +9,11 @@ import {
 } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
+import {
+  useLoginModalStore,
+  useRegisteredModalStore,
+} from "@/app/hooks/useLoginModal";
 
 interface InputProps {
   id: string;
@@ -22,11 +26,9 @@ interface InputProps {
   formaState: FieldValues;
 }
 
+// const session = true;
+
 function CommentForm() {
-  // const { data: session } = useSession();
-
-  const session = true;
-
   const router = useRouter();
   const {
     register,
@@ -37,12 +39,17 @@ function CommentForm() {
     defaultValues: { comment: "" },
   });
 
+  // Modals using Zustand
+  const loginModal = useLoginModalStore();
+  const registeredModal = useRegisteredModalStore();
+  const session = useSession();
+
+  console.log(session);
+
   const handleMessage = (data: any) => {
     axios
       .post("/api/comment", data)
       .then((res) => {
-        console.log(res);
-        console.log("loading data");
         reset();
       })
       .catch((err) => {
@@ -55,8 +62,8 @@ function CommentForm() {
 
   return (
     <div className="w-full">
-      {!session ? (
-        <button>Comment</button>
+      {session.data === null ? (
+        <button onClick={loginModal.onOpen}>Comment</button>
       ) : (
         <form
           className="flex items-center w-full"

@@ -142,7 +142,7 @@ const Header = ({ currentUser }: UserProps) => {
             <ul className="px-1 menu menu-horizontal">
               <Link href="/#search">
                 <li className="active:bg-sky active:rounded-md">
-                  <span className="active:bg-sky active:rounded-md font-semibold ">
+                  <span className="active:bg-sky active:rounded-md">
                     Search
                   </span>
                 </li>
@@ -150,7 +150,7 @@ const Header = ({ currentUser }: UserProps) => {
               <li className="rounded-md active:bg-transparent" tabIndex={0}>
                 <span
                   onClick={() => router.push("/algarve")}
-                  className="active:bg-sky font-semibold "
+                  className="active:bg-sky "
                 >
                   Algarve
                   <svg
@@ -178,7 +178,7 @@ const Header = ({ currentUser }: UserProps) => {
                 </ul>
               </li>
               <li className="rounded-md active:bg-transparent" tabIndex={0}>
-                <a className="active:bg-sky font-semibold">
+                <a className="active:bg-sky ">
                   Categories
                   <svg
                     className="fill-current"
@@ -206,15 +206,11 @@ const Header = ({ currentUser }: UserProps) => {
               </li>
               <li className="rounded-md active:bg-sky">
                 <Link href="/blog">
-                  <span className="rounded-md active:bg-sky font-semibold">
-                    Blog
-                  </span>
+                  <span className="rounded-md active:bg-sky">Blog</span>
                 </Link>
               </li>
               <li className="rounded-md active:bg-sky">
-                <a className="rounded-md active:bg-sky font-semibold">
-                  Contact
-                </a>
+                <a className="rounded-md active:bg-sky ">Contact</a>
               </li>
             </ul>
           </div>
@@ -223,7 +219,7 @@ const Header = ({ currentUser }: UserProps) => {
               <img
                 src={
                   currentUser?.image ||
-                  "https://backalleycrossfit.com/wp-content/uploads/2016/09/profile-placeholder-300x300.png"
+                  "https://heritagehill.dental/wp-content/uploads/2018/01/person-placeholder-5.png"
                 }
                 height={30}
                 width={30}

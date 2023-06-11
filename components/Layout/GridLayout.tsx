@@ -39,16 +39,16 @@ export function LeadGrid({ filteredData }: any) {
           </div>
           <Grid gutter="md" className="overflow-hidden rounded-lg">
             <Grid.Col span={6}>
-              <Image
+              <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[1]?.fields?.file?.url}`}
-                className={`h-[${SECONDARY_COL_HEIGHT}] rounded-lg`}
+                className={`h-full rounded-lg`}
                 height={80}
                 width={260}
               />
             </Grid.Col>
             <Grid.Col span={6}>
-              <Image
+              <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[2]?.fields?.file?.url}`}
                 className={`h-full rounded-lg`}
@@ -57,7 +57,7 @@ export function LeadGrid({ filteredData }: any) {
               />
             </Grid.Col>
             <Grid.Col span={6}>
-              <Image
+              <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[3]?.fields?.file?.url}`}
                 className={`h-full rounded-lg`}
@@ -66,7 +66,7 @@ export function LeadGrid({ filteredData }: any) {
               />
             </Grid.Col>
             <Grid.Col span={6}>
-              <Image
+              <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[4]?.fields?.file?.url}`}
                 className={`h-full rounded-lg`}

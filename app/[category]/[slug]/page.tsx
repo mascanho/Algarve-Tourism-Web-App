@@ -8,6 +8,7 @@ import { createClient } from "contentful";
 import Buttons from "@/components/Layout/Buttons";
 import StarRating from "@/components/Layout/StarRating";
 import getComments from "@/app/libs/getComments";
+import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
   title: "Home",
