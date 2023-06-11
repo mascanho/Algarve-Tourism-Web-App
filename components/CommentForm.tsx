@@ -23,7 +23,10 @@ interface InputProps {
 }
 
 function CommentForm() {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
+
+  const session = true;
+
   const router = useRouter();
   const {
     register,

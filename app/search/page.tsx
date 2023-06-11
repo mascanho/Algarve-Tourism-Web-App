@@ -80,7 +80,7 @@ export default function Home() {
               <>
                 <section className="max-w-7xl mx-auto">
                   <Link href="/#search">
-                    <div className="flex items-center w-full space-x-2 sm:ml-4">
+                    <div className="flex items-center w-full space-x-2 sm:ml-4 -mt-4 mb-8 sm:mb-0 sm:mt-0">
                       <TiArrowBack />
                       <span>Back to search</span>
                     </div>
@@ -100,7 +100,7 @@ export default function Home() {
                 </section>
               </>
             )}
-            <section className="mt-10">
+            <section className="mt-10 mb-10">
               <div className="sm:w-3/12 mx-auto">
                 <Select
                   onChange={(value: any) => console.log(value)}
@@ -114,7 +114,7 @@ export default function Home() {
           </div>
 
           <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12">
-            <section className="grid items-start w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10 place-items-start">
+            <section className="grid items-start w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-x-8 place-items-start">
               {/* Normal Cards with no search feature */}
               {searchData.data?.map((item: any) => (
                 <SearchCard

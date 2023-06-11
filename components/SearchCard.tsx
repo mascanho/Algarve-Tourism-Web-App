@@ -52,7 +52,7 @@ export const SearchCard = ({
   }
 
   return (
-    <section className="min-h-max pb-2 space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl md:w-64 border hover:shadow-md sm:mt-10 hover:cursor-pointer hover:border-sky ">
+    <section className="border pb-2 mb-10 sm:pb-2 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-[100%] mx-auto sm:w-full md:w-full  hover:border-sky  hover:shadow-md">
       <div className="relative flex flex-col w-full h-40 overflow-hidden rounded-t-md ">
         <img
           src={`https://${mainImage?.fields?.file?.url}`}
