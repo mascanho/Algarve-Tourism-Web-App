@@ -18,6 +18,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
   useEffect(() => {
     if (pathname !== "/search") {
       allTypesStore.addAllTypes(allTypes);
+      console.log(allTypes, "This is allypes from the useEffect");
     }
   }, [inputValue]);
 

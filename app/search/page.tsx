@@ -13,9 +13,6 @@ import Search from "@/components/Search";
 import { createClient } from "contentful";
 import useGetAllCategories from "../hooks/useGetAllCategories";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import { useRouter } from "next/navigation";
-import { useSearchParams } from "next/navigation";
 import { TiArrowBack } from "react-icons/ti";
 import Link from "next/link";
 
@@ -38,26 +35,24 @@ export default function Home() {
   const ContentfullData = getAllCategories();
   const [categories, setCategories] = useState([]);
   const [plainSearch, setPlainSearch] = useState(false);
-  const pathname = usePathname();
-  const router = useRouter();
-  const params = useSearchParams();
 
   console.log(searchData, "THis is the search data");
 
   useEffect(() => {
-    async function data() {
-      const res = await ContentfullData;
-      console.log(res, "this is the res");
-
-      setCategories(res);
-    }
-    data();
-
     if (window.location.href.endsWith("/search")) {
       setPlainSearch(true);
       console.log(window.location.href);
     }
-  }, []);
+    async function data() {
+      const res = await ContentfullData;
+
+      console.log(res, "this is the res");
+      setCategories(res);
+    }
+    console.log("this comes from inside the Useeeff");
+
+    data();
+  }, [searchData]);
 
   // Making sure the pages renders condicionally based on the url search params
   if (!plainSearch) {
