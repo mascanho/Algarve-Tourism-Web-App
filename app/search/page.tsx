@@ -80,7 +80,7 @@ export default function Home() {
               <>
                 <section className="max-w-7xl mx-auto">
                   <Link href="/#search">
-                    <div className="flex items-center w-full space-x-2 sm:ml-4 -mt-4 mb-8 sm:mb-0 sm:mt-0">
+                    <div className="flex items-center w-full space-x-1 sm:ml-4 -mt-4 mb-8 sm:mb-0 sm:mt-0">
                       <TiArrowBack />
                       <span>Back to search</span>
                     </div>
@@ -128,6 +128,7 @@ export default function Home() {
                   city={item.city}
                   type={item.type}
                   shortDescription={item.shortDescription}
+                  rating={item.rating}
                 />
               ))}
             </section>

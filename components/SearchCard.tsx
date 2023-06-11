@@ -9,6 +9,7 @@ import { BiMap } from "react-icons/bi";
 import Link from "next/link";
 import { BsShareFill } from "react-icons/bs";
 import { toast } from "react-hot-toast";
+import StarRating from "./Layout/StarRating";
 
 export const SearchCard = ({
   category,
@@ -38,7 +39,7 @@ export const SearchCard = ({
       date,
       mainImage,
       city,
-      image,
+      image: mainImage?.fields?.file?.url,
       tags,
       description,
       hiddenGem,
@@ -47,6 +48,7 @@ export const SearchCard = ({
       mapShare,
     };
     addFav.addFavourite(data);
+    console.log(data);
 
     toast.success(title + " added to " + "🧳");
   }
@@ -61,15 +63,12 @@ export const SearchCard = ({
         />
         <div className="absolute active:scale-90 w-5 h-5 flex items-center justify-center rounded-full p-1 bg-white top-2 right-2">
           <AiFillHeart
-            onClick={() => console.log("clicked")}
+            onClick={addToFavourites}
             className="text-md  text-red-500"
           />
         </div>
-        <div className="absolute active:scale-90 w-5 h-5 flex items-center justify-center rounded-full p-1 bg-white top-2 right-2">
-          <AiFillHeart
-            // onClick={addToFavourites}
-            className="text-md  text-red-500"
-          />
+        <div className="absolute bg-white rounded-tl-md p-1 bottom-0 right-0">
+          <StarRating rating={rating} />
         </div>
         <span className="absolute left-0 py-1 pr-2 text-xs text-black bg-white rounded-r-full top-4 ">
           📍 {city}
@@ -79,7 +78,7 @@ export const SearchCard = ({
         <h3 className="items-center w-full text-sm text-left text-black">
           {title}
         </h3>
-        <span className="text-sm text-gray-500"> $66.99</span>
+        {/* <span className="text-sm text-gray-500"> $66.99</span> */}
       </div>
       <div className="w-full h-[1px] bg-gray-300" />
       <div className="flex w-full px-2 mt-20 py-2">
