@@ -10,12 +10,10 @@ import { Reviews } from "@/Data/Reviews";
 import PopularCategories from "@/components/PopularCategories";
 import { createClient } from "contentful";
 import CarouselHero from "@/components/Carousel";
-import useGetAllCategories from "./hooks/useGetAllCategories";
 
 const inter = Inter({ subsets: ["latin"] });
 
 // Get all categories from contentful
-
 async function getAllCategories() {
   const client: any = createClient({
     space: process.env.CONTENTFUL_SPACE_ID!,
@@ -34,7 +32,7 @@ export default async function Home(props: any) {
 
   return (
     <>
-      <Hero />
+      <Hero categories={categories} />
       <section className="pt-20 pb-6 space-y-4 text-cente-white">
         <div className="-q11/12 mx-auto text-center">
           <h3 className="text-3xl font-bold text-black sm:text-5xl">

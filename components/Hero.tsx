@@ -14,17 +14,19 @@ async function getAllCategories() {
   return await res.items;
 }
 
-const Hero = () => {
+const Hero = ({ categories }: any) => {
   const [allTypes, setAllTypes] = useState<any[]>([]);
 
-  useEffect(() => {
-    const fetchAllTypes = async () => {
-      const categories = await getAllCategories();
-      setAllTypes(categories);
-    };
+  // useEffect(() => {
+  //   const fetchAllTypes = async () => {
+  //     const categories = await getAllCategories();
+  //     setAllTypes(categories);
+  //   };
 
-    fetchAllTypes();
-  }, []);
+  //   fetchAllTypes();
+  // }, []);
+
+  console.log(categories, "This is freom the categories");
 
   return (
     <>
@@ -45,6 +47,7 @@ const Hero = () => {
         <Search
           allTypes={allTypes}
           placeholderText={"Search for your destination..."}
+          categories={categories}
         />
       </section>
     </>
