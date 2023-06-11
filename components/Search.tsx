@@ -31,28 +31,16 @@ function Search({ allTypes, placeholderText, categories }: any) {
 
     const filteredData: any = [];
 
-    const filteredArr =
-      pathname === "/search"
-        ? allTypesStore.allTypes.filter((obj: any) => {
-            if (
-              obj.fields.title.includes(inputValue) ||
-              obj.fields.title.toLowerCase().includes(inputValue) ||
-              obj.fields.city.includes(inputValue) ||
-              obj.fields.city.toLowerCase().includes(inputValue)
-            ) {
-              filteredData.push(obj.fields);
-            }
-          })
-        : allTypes?.filter((obj: any) => {
-            if (
-              obj.fields.title.includes(inputValue) ||
-              obj.fields.title.toLowerCase().includes(inputValue) ||
-              obj.fields.city.includes(inputValue) ||
-              obj.fields.city.toLowerCase().includes(inputValue)
-            ) {
-              filteredData.push(obj.fields);
-            }
-          });
+    const filteredArr = allTypes?.filter((obj: any) => {
+      if (
+        obj.fields.title.includes(inputValue) ||
+        obj.fields.title.toLowerCase().includes(inputValue) ||
+        obj.fields.city.includes(inputValue) ||
+        obj.fields.city.toLowerCase().includes(inputValue)
+      ) {
+        filteredData.push(obj.fields);
+      }
+    });
 
     setSearchResults(filteredData);
     savedData.AddData(filteredData);
