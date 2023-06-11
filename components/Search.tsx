@@ -32,12 +32,11 @@ function Search({ allTypes, placeholderText, categories }: any) {
     const filteredData: any = [];
 
     const filteredArr = allTypes?.filter((obj: any) => {
-      if (
-        obj.fields.title.includes(inputValue) ||
+      obj.fields.title.includes(inputValue) ||
         obj.fields.title.toLowerCase().includes(inputValue) ||
         obj.fields.city.includes(inputValue) ||
-        obj.fields.city.toLowerCase().includes(inputValue)
-      ) {
+        obj.fields.city.toLowerCase().includes(inputValue);
+      {
         filteredData.push("marco");
       }
     });
