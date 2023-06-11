@@ -13,7 +13,6 @@ async function Page(props: any) {
   let pathname = props.params.category;
   // Fetch Contentful data
   let routeMatched = false;
-  const session = await getCurrentUser();
 
   async function getData() {
     // pathname = "events";
@@ -50,8 +49,7 @@ async function Page(props: any) {
   }
 
   // If the route matches Contentful categories then render the categorey card
-  if (routeMatched)
-    return <CategoryCard session={session} category={category} />;
+  if (routeMatched) return <CategoryCard category={category} />;
 
   // If the route does not match Contentful categories then render the a warning
   return (
