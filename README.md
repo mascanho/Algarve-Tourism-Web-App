@@ -26,15 +26,15 @@
 - [x] Altering layout (Application switching, changing master size...)
 - [x] Fullscreening windows
 - [ ] The ability to submit new categories by the user
-- [ ] Comments and reviews from the DB (Moongo DB)
+- [x] Comments and reviews from the DB (Moongo DB)
 - [ ] Drag-and-drop for the side drawer where favorites are added
 - [ ] SEO optimisation
 - [ ] Themes (Light, dark) and colors
-- [ ] Improve the search functionality
+- [x] Improve the search functionality
 - [ ] Use localstorage for data persistence
-- [ ] Bokking through the API
+- [ ] Booking through the API
 - [ ] Calendar
-- [ ] filter segmentation
+- [x] filter segmentation
 
 ## Disclaimer
 
