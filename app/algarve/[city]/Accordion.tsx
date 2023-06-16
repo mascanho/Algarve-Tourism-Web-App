@@ -14,7 +14,7 @@ function TableAccordion({ tableDate }: any) {
       }}
     >
       <Accordion.Item value="customization">
-        <Accordion.Control>Customization</Accordion.Control>
+        <Accordion.Control>Table of Contents</Accordion.Control>
         <Accordion.Panel>
           Colors, fonts, shadows and many other parts are customizable to fit
           your design needs
