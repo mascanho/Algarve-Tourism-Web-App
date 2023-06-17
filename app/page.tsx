@@ -46,7 +46,7 @@ export default async function Home(props: any) {
           <Selection />
           <section className="sm:grid mx-auto containera items-start w-full sm:grid-cols-2 sm:gap-x-10 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center">
             {/* Normal Cards with no search feature */}
-            {categories.slice(0, 8).map((cat: any) => (
+            {categories.slice(2, 10).map((cat: any) => (
               <Card
                 key={Math.random()}
                 title={cat?.fields?.title}

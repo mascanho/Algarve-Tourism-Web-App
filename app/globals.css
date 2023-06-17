@@ -25,3 +25,11 @@
 .mantine-137wxqm {
   @apply sm:mt-0 sm:mb-0 sm:p-0 !important;
 }
+
+.richText p {
+  @apply mb-4 !important;
+}
+
+.richText li {
+  @apply list-decimal ml-4 !important;
+}

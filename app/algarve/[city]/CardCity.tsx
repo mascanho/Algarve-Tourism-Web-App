@@ -13,17 +13,17 @@ const CardCity = ({
 }: any) => {
   return (
     <Link href={`/${type || "algarve"}/${slug || name.toLowerCase()}`}>
-      <div className="card w-[320px] bg-base-100 shadow-xl  overflow-hidden group">
-        <div className=" h-12 p-4  text-left w-full">
+      <div className="card sm:w-[320px] w-11/12 mx-auto bg-base-100 shadow-xl  overflow-hidden group">
+        <div className=" h-12 p-4  text-left sm:w-full w-full">
           <h2 className="card-title text-left w-full group-hover:text-white text-sm">
             {title || name}
           </h2>
         </div>
-        <figure className="h-56">
+        <figure className="sm:Lh-56 h-48 w-full">
           <img
             src={image}
             alt="Shoes"
-            className="h-full w-full group-hover:scale-105 transition-all ease-in delay-75"
+            className="sm:h-full  w-full group-hover:scale-105 transition-all ease-in delay-75"
           />
         </figure>
       </div>

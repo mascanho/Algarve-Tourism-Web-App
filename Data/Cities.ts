@@ -12,12 +12,15 @@ export const cityArr = [
     name: "Alvor",
     icon: "",
     route: "/alvor",
+    image: "https://www.algarve-tourist.com/images/650/alvor-portugal.jpg",
   },
   {
     id: 16,
     name: "Armação de Pêra",
     icon: "",
     route: "/armacao-de-pera",
+    image:
+      "https://cdn.travel-in-portugal.com/sites/default/files/photos/alvor-algarve.jpg",
   },
   {
     id: 14,
@@ -30,6 +33,8 @@ export const cityArr = [
     name: "Faro",
     icon: "",
     route: "/faro",
+    image:
+      "https://www.movingtoportugal.pt/wp-content/uploads/2021/06/Faro-4.png",
   },
   {
     id: 13,
@@ -42,6 +47,8 @@ export const cityArr = [
     name: "Lagos",
     icon: "",
     route: "/lagos",
+    image:
+      "https://fullsuitcase.com/wp-content/uploads/2022/12/Lagos-Portugal.jpg",
   },
   {
     id: 8,
