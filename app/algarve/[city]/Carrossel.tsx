@@ -10,10 +10,11 @@ import {
   useMantineTheme,
   rem,
 } from "@mantine/core";
+import { cityArr } from "@/Data/Cities";
 
 const useStyles = createStyles((theme) => ({
   card: {
-    height: rem(440),
+    height: rem(280),
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
@@ -54,28 +55,51 @@ function Card({ image, title, category }: CardProps) {
       p="xl"
       radius="md"
       sx={{ backgroundImage: `url(${image})` }}
-      className={`${classes.card} h-64`}
+      className={classes.card}
     >
       <div>
-        <Text className={classes.category} size="xs">
-          {category}
-        </Text>
-        <Title order={3} className={classes.title}>
-          {title}
-        </Title>
+        {/* <Text className={classes.category} size="xs"> */}
+        {/*   {category} */}
+        {/* </Text> */}
+        {/* <Title order={3} className={classes.title}> */}
+        {/*   {title} */}
+        {/* </Title> */}
       </div>
-      <Button variant="white" color="dark">
-        Read article
-      </Button>
+      {/* <Button variant="white" color="dark"> */}
+      {/*   Read article */}
+      {/* </Button> */}
     </Paper>
   );
 }
 
-function CarouselCity({ images }: any) {
+export function CarrosselCity({ images }: any) {
+  let imgArr = images.map((img: any) => {
+    return img.images;
+  });
+
+  let data = [];
+
+  for (let i = 0; i < imgArr.length; i++) {
+    for (let j = 0; j < imgArr[i].length; j++) {
+      data.push({ image: imgArr[i][j].fields.file.url });
+    }
+  }
+
+  // shuffle thje photos in the carrossel
+  function shuffleArray(array: any) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  shuffleArray(data);
+
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
-  const slides = images.map((item: any) => (
-    <Carousel.Slide key={item.title}>
+  const slides = data.map((item: any) => (
+    <Carousel.Slide key={item?.title}>
       <Card {...item} />
     </Carousel.Slide>
   ));
@@ -83,15 +107,14 @@ function CarouselCity({ images }: any) {
   return (
     <Carousel
       slideSize="33%"
-      breakpoints={[{ maxWidth: "lg", slideSize: "50%", slideGap: rem(2) }]}
+      breakpoints={[{ maxWidth: "sm", slideSize: "100%", slideGap: rem(2) }]}
       slideGap="lg"
       align="start"
       slidesToScroll={mobile ? 1 : 2}
-      className="w-full"
     >
       {slides}
     </Carousel>
   );
 }
 
-export default CarouselCity;
+export default CarrosselCity;

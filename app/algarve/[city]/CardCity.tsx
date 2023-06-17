@@ -1,19 +1,33 @@
+import Link from "next/link";
 import React from "react";
 
-const CardCity = () => {
+const CardCity = ({
+  image,
+  title,
+  desc,
+  slug,
+  type,
+  name,
+  city,
+  route,
+}: any) => {
   return (
-    <div className="card w-[300px] bg-base-100 shadow-xl">
-      <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+    <Link href={`/${type || "algarve"}/${slug || name.toLowerCase()}`}>
+      <div className="card w-[320px] bg-base-100 shadow-xl  overflow-hidden group">
+        <div className=" h-12 p-4  text-left w-full">
+          <h2 className="card-title text-left w-full group-hover:text-white text-sm">
+            {title || name}
+          </h2>
+        </div>
+        <figure className="h-56">
+          <img
+            src={image}
+            alt="Shoes"
+            className="h-full w-full group-hover:scale-105 transition-all ease-in delay-75"
+          />
+        </figure>
       </div>
-      <figure>
-        <img
-          src="https://a.cdn-hotels.com/gdcs/production55/d1324/c15fe6ea-0bc9-41c5-8f46-d613d9b52c1b.jpg?impolicy=fcrop&w=800&h=533&q=medium"
-          alt="Shoes"
-        />
-      </figure>
-    </div>
+    </Link>
   );
 };
 

@@ -4,6 +4,9 @@ import TableAccordion from "./Accordion";
 import CardCity from "./CardCity";
 import CarouselCity from "./Carrossel";
 import { createClient } from "contentful";
+import { loadGetInitialProps } from "next/dist/shared/lib/utils";
+import { cityArr } from "@/Data/Cities";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -42,21 +45,36 @@ async function page(props: any) {
 
   let city = props.params.city;
 
-  const filteredCity = categories.filter((cat: any) => {
+  // conditionally route the user if the city is not included in the cityArr
+  let cityIsPresent = false;
+  for (let i = 0; i < cityArr.length; i++) {
+    if (cityArr[i].name.toLowerCase() === city) {
+      cityIsPresent = true;
+      break;
+    }
+  }
+  if (!cityIsPresent) {
+    redirect("/algarve");
+  }
+
+  let filteredCity = categories.filter((cat: any) => {
     if (cat.fields.city.toLowerCase() === city.toLowerCase()) {
       return cat.fields;
     }
   });
 
   const cityImages = filteredCity.map((cat: any) => {
-    return {
-      image: cat.fields.mainImage.fields.file.url,
-      title: cat.fields.title,
-      category: cat.fields.shortDescription,
-    };
+    return cat.fields;
   });
 
-  console.log(props.params);
+  //Shuffle the array with the cards
+  function shuffleArray(array: any) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+  shuffleArray(filteredCity);
 
   return (
     <>
@@ -75,10 +93,13 @@ async function page(props: any) {
         </div>
         {/* Mobile */}
         {/* Desktop */}
-        <aside className="border h-fit sm:w-60 p-4 rounded-md hidden sm:block">
+        <aside className="border h-fit sm:w-72 p-4 rounded-md hidden sm:block">
           <h2 className="mx-auto w-full text-center mb-2 ">Title</h2>
           {[1, 2, 3, 4, 5, 6, 7].map((i) => (
-            <p key={i} className="flex items-center space-x-4 text-black">
+            <p
+              key={i}
+              className="flex pl-2 items-center mx-auto space-x-4 text-black"
+            >
               <span className="text-gray-400 text-xl items-center mr-4 flex classNametext-gray-400">
                 {i} {""}
               </span>
@@ -154,9 +175,16 @@ async function page(props: any) {
             atque exercitationem commodi! Aperiam, quod.
           </p>
         </div>
-        <div className="grid grid-cols-3 w-full gap-y-10 pt-5 max-w-5xl place-content-between place-items-stretch">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <CardCity key={i} />
+        <div className="grid grid-cols-3 w-full gap-y-10 pt-5 max-w-5xl place-content-between place-items-stretch gap-x-6">
+          {filteredCity.slice(0, 6).map((i: any) => (
+            <CardCity
+              key={i}
+              image={i?.fields?.mainImage?.fields?.file?.url}
+              title={i?.fields?.title}
+              desc={i?.fields?.shortDescription}
+              slug={i?.fields?.slug}
+              type={i?.fields?.type}
+            />
           ))}
         </div>
 
