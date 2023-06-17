@@ -9,6 +9,13 @@ const Selection = ({ text }: any) => {
   const router = useRouter();
   const pathname = usePathname();
 
+  const goToPage = (e: any) => {
+    const route = e.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+    console.log(route);
+
+    router.push(`${route}`);
+  };
+
   return (
     <>
       <div className="items-center justify-between hidden w-10/12 pb-10 m-auto space-x-3 sm:flex max-w-7xl sm:w-full ">
@@ -27,6 +34,7 @@ const Selection = ({ text }: any) => {
           className="w-full mb-8 h-[100%]"
           placeholder="Pick one"
           data={catArr.map((cat) => cat.name)}
+          onChange={(e) => goToPage(e)}
         />{" "}
       </section>
     </>
