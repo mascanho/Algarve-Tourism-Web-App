@@ -31,6 +31,18 @@ export const metadata: Metadata = {
 // Get all categories from contentful
 async function getAllCategories() {
   const client: any = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID!,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+  });
+  const res = await client.getEntries({
+    content_type: ["beaches", "events", "restaurants"],
+  });
+
+  return await res.items;
+}
+
+const getCities = async () => {
+  const client: any = createClient({
     space: process.env.CONTENTFUL_SPACE_ID2!,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN2!,
   });
@@ -39,7 +51,8 @@ async function getAllCategories() {
   });
 
   return await res.items;
-}
+};
+
 const tableData: any = [
   {
     id: 1,
@@ -49,27 +62,40 @@ const tableData: any = [
   },
   {
     id: 2,
-    name: "City",
+    name: "How to get here",
     url: "#map",
-    anchor: "#city",
+    anchor: "#map",
+  },
+  {
+    id: 3,
+    name: "What to do",
+    url: "#whattodo",
+    anchor: "#whattodo",
+  },
+  {
+    id: 4,
+    name: "History of the city",
+    url: "#history",
+    anchor: "#history",
   },
 ];
 
 async function page(props: any) {
   const categories = await getAllCategories();
+  const cities = await getCities();
+
+  console.log(cities, "the cities");
 
   let city = props.params.city;
 
-  const filteredData: any = categories.filter(
+  const filteredData: any = cities.filter(
     (obj: any) => obj.fields.slug === city
   );
 
-  console.log(filteredData, "city");
-
   // conditionally route the user if the city is not included in the cityArr
   let cityIsPresent = false;
-  for (let i = 0; i < cityArr.length; i++) {
-    if (cityArr[i].name.toLowerCase() === city) {
+  for (let i = 0; i < cities.length; i++) {
+    if (cities[i].fields.name.toLowerCase() === city) {
       cityIsPresent = true;
       break;
     }
@@ -88,8 +114,6 @@ async function page(props: any) {
     return cat.fields;
   });
 
-  console.log(filteredCity, "city");
-
   //Shuffle the array with the cards
   function shuffleArray(array: any) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -100,17 +124,17 @@ async function page(props: any) {
   shuffleArray(filteredCity);
 
   const aboutCity = documentToReactComponents(
-    categories[0]?.fields?.aboutCity,
+    filteredData[0]?.fields?.about,
     options
   );
 
   const whatToDo = documentToReactComponents(
-    categories[0]?.fields?.whatToDo,
+    filteredData[0]?.fields?.whatToDo,
     options
   );
 
   const history = documentToReactComponents(
-    categories[0]?.fields?.history,
+    cities[0]?.fields?.history,
 
     options
   );
@@ -167,7 +191,7 @@ async function page(props: any) {
           ></iframe>
         </div>
 
-        <div className="max-w-5xl space-y-3 pt-5">
+        <div className="max-w-5xl space-y-3 pt-5" id="whattodo">
           <h2 className="sm:text-3xl text-3xl text-black font-bold">
             What to do
           </h2>
@@ -186,7 +210,7 @@ async function page(props: any) {
           ))}
         </div>
 
-        <div className="max-w-5xl space-y-3 pt-10">
+        <div className="max-w-5xl space-y-3 pt-10" id="history">
           <h2 className="sm:text-3xl text-3xl text-black font-bold">History</h2>
           <div className="richText">{history}</div>
         </div>

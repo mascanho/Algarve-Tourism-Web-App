@@ -126,9 +126,33 @@ const Header = ({ currentUser }: UserProps) => {
                     ))}
                   </ul>
                 </li>
-                <li className="rounded-md active:bg-sky">
-                  <a className="rounded-md active:bg-sky">Contact</a>
-                </li>
+
+                {/* Mobile Menu */}
+                <Link href="algarve">
+                  <li className="rounded-md active:bg-sky">
+                    <span className="rounded-md active:bg-sky">Algarve</span>
+                  </li>
+                </Link>
+                <Link href="/contact">
+                  <li className="rounded-md active:bg-sky">
+                    <span className="rounded-md active:bg-sky">e</span>
+                  </li>
+                </Link>
+                <Link href="/contact">
+                  <li className="rounded-md active:bg-sky">
+                    <span className="rounded-md active:bg-sky">e</span>
+                  </li>
+                </Link>
+                <Link href="/contact">
+                  <li className="rounded-md active:bg-sky">
+                    <span className="rounded-md active:bg-sky">e</span>
+                  </li>
+                </Link>
+                <Link href="/contact">
+                  <li className="rounded-md active:bg-sky">
+                    <span className="rounded-md active:bg-sky">e</span>
+                  </li>
+                </Link>
               </ul>
             </div>
             <a
@@ -210,7 +234,7 @@ const Header = ({ currentUser }: UserProps) => {
                 </Link>
               </li>
               <li className="rounded-md active:bg-sky">
-                <a className="rounded-md active:bg-sky ">Contact</a>
+                <span className="rounded-md active:bg-sky ">Contact</span>
               </li>
             </ul>
           </div>
