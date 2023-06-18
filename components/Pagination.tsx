@@ -21,7 +21,9 @@ const Pagination = ({ categories }: any) => {
         {/*   </span> */}
         {/* ))} */}
         <Link href={"/beaches"}>
-          <button className="border px-8 py-2 rounded-md">View More</button>
+          <button className="border px-8 py-2 rounded-md hover:bg-sky hover:border-white hover:text-white transition-all ease-in delay-75 ">
+            View More
+          </button>
         </Link>
       </div>
       {/* <button className="border px-3 py-2 rounded-full items-center flex text-xs sm:text-sm"> */}

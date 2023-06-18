@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import { IoIosPin } from "react-icons/io";
@@ -6,21 +7,21 @@ const popularCategories = [
   {
     id: Math.random(),
     name: "Unique and Insteresting Events",
-    url: "/culture",
+    url: "/events",
     image:
       "https://www.portugalresident.com/wp-content/uploads/2019/12/Galeria_TN_ALB_FA_cam3_ok.jpg",
   },
   {
     id: Math.random(),
     name: "Unique and Insteresting Culture",
-    url: "/culture",
+    url: "/adventure",
     image:
       "https://d1bv4heaa2n05k.cloudfront.net/user-images/1561648963513/algarve-towns1_main_1561649125133.jpeg",
   },
   {
     id: Math.random(),
     name: "Unique and Insteresting Places",
-    url: "/culture",
+    url: "/beaches",
     image:
       "https://guidebook.isango.com//theguidebook/wp-content/uploads//2021/10/The-Algarve-featured.1.jpg",
   },
@@ -42,17 +43,19 @@ function PopularCategories() {
             key={item}
             className="w-fit text-center space-y-4 m-auto rounded-xl h-fit cursor-pointer "
           >
-            <img
-              src={item.image}
-              height={200}
-              width={100}
-              alt="image"
-              className="w-96 h-[400px] object-cover hover:scale-95 transition-all ease-in delay-75 rounded-md cursor-pointer "
-            />
+            <Link href={item.url}>
+              <img
+                src={item.image}
+                height={200}
+                width={100}
+                alt="image"
+                className="w-96 h-[400px] object-cover hover:scale-95 transition-all ease-in delay-75 rounded-md cursor-pointer "
+              />
+            </Link>
             <h3 className="">{item.name}</h3>
             <div className="flex items-center space-x-2 text-sm border  w-fit px-2 py-1 rounded-md mx-auto">
               <IoIosPin className="text-red-500 text-center" />
-              <span>103 Locations</span>
+              <span>{Math.floor(Math.random() * 100)} Locations</span>
             </div>
           </div>
         ))}
