@@ -49,6 +49,7 @@ export const Card = ({
       mapShare,
       id: slug,
       price,
+      type,
     };
     addFav.addFavourite(data);
     toast.success(title + " added to " + "🧳");
@@ -58,7 +59,10 @@ export const Card = ({
     <section className="border pb-2 mb-10 sm:pb-2 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-[100%] mx-auto sm:w-full md:w-full  hover:border-sky  hover:shadow-md">
       <div className="relative flex flex-col w-full h-[180px] sm:h-40 overflow-hidden rounded-t-md ">
         <img src={`https:${image}`} alt="image" className="block h-full" />
-        <div className="absolute active:scale-90 w-5 h-5 flex items-center justify-center rounded-full p-1 bg-white top-2 right-2">
+        <div
+          onClick={addToFavourites}
+          className="absolute active:scale-90 w-5 h-5 flex items-center justify-center rounded-full p-1 bg-white top-2 right-2 cursor-pointer"
+        >
           <AiFillHeart
             onClick={addToFavourites}
             className="text-md  text-red-500"

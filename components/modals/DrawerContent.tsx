@@ -5,11 +5,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import StarRating from "../Layout/StarRating";
 import ExportModal from "./ExportModal";
 import { GoTrashcan } from "react-icons/go";
+import Link from "next/link";
+import { useDisclosure, useLocalStorage } from "@mantine/hooks";
 
-const DrawerContent = (close: any) => {
+const DrawerContent = () => {
   const { favourites, addFavourite, removeFavourite } = useAddToFavourites();
+  const [opened, { open, close }] = useDisclosure(false);
 
-  console.log(favourites, "from the drawer");
+  console.log(close, "the close button");
 
   return (
     <>
@@ -59,7 +62,15 @@ const DrawerContent = (close: any) => {
       {favourites.length < 1 ? (
         <span className="text-gray-400">Add places & experiences</span>
       ) : (
-        <ExportModal closeDrawer={close} title="Export Favourites" />
+        <Link href="favourites/">
+          <button
+            onClick={close}
+            className="w-full bg-sky text-white px-3 py-1 rounded-md"
+          >
+            {" "}
+            Export
+          </button>
+        </Link>
       )}
     </>
   );

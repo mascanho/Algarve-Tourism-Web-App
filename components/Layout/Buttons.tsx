@@ -9,6 +9,7 @@ import "react-tooltip/dist/react-tooltip.css";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { toast } from "react-hot-toast";
 import { BsFillSuitHeartFill } from "react-icons/bs";
+import { FiPrinter } from "react-icons/fi";
 
 const Buttons = ({ filteredData }: any) => {
   const [isCopied, setIsCopied] = useState(false);
@@ -68,6 +69,10 @@ const Buttons = ({ filteredData }: any) => {
       />
       <Tooltip anchorSelect=".urlCopy" />
       <HiQrCode className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
+      <FiPrinter
+        onClick={() => window.print()}
+        className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"
+      />
     </>
   );
 };

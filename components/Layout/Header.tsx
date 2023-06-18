@@ -67,7 +67,7 @@ const Header = ({ currentUser }: UserProps) => {
           title="Favourites"
         >
           {/* Drawer Content */}
-          <DrawerContent close={close} />
+          <DrawerContent />
         </Drawer>
 
         {/* Modals Section */}

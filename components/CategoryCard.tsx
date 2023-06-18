@@ -92,6 +92,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
                       embededMap: cat?.fields?.embededMap,
                       description: cat?.fields?.description,
                       shortDescription: cat?.fields?.shortDescription,
+                      type: cat?.fields?.type,
                     })
                   }
                   className="absolute cursor-pointer active:scale-90 w-5 h-5 flex items-center justify-center rounded-full p-1 bg-white top-2 right-2"

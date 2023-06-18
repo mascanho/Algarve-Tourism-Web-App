@@ -33,3 +33,23 @@
 .richText li {
   @apply list-decimal ml-4 !important;
 }
+
+@media print {
+  footer,
+  .footer,
+  .favBanner,
+  .header,
+  header,
+  nav {
+    display: none !important;
+  }
+}
+
+@media print {
+  .cardFavs {
+    @apply w-[300px] flex;
+  }
+  .gridFavs {
+    @apply grid-cols-2 gap-y-4;
+  }
+}

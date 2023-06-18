@@ -25,13 +25,13 @@ export function LeadGrid({ filteredData }: any) {
           className={`w-full h-fit min-h-full relative overflow-hidden `}
         >
           <div
-            className="relative overflow-hidden rounded-lg 
+            className="relative overflow-hidden rounded-lg max-h-[400px] 
             "
           >
             <img
               alt={filteredData[0]?.fields?.title}
               src={`https://${filteredData[0]?.fields?.images[0]?.fields?.file?.url}`}
-              className="h-[100%] w-[100%] sm:block"
+              className="h-[100%] w-[100%] sm:block object-contain"
             />
           </div>
           <Grid gutter="md" className="overflow-hidden rounded-lg">
