@@ -78,13 +78,17 @@ const tableData: any = [
     url: "#history",
     anchor: "#history",
   },
+  {
+    id: 5,
+    name: "What is the weather like?",
+    url: "#weather",
+    anchor: "#weather",
+  },
 ];
 
 async function page(props: any) {
   const categories = await getAllCategories();
   const cities = await getCities();
-
-  console.log(cities, "the cities");
 
   let city = props.params.city;
 
@@ -123,6 +127,7 @@ async function page(props: any) {
   }
   shuffleArray(filteredCity);
 
+  // Contentful Rich Text Renderer
   const aboutCity = documentToReactComponents(
     filteredData[0]?.fields?.about,
     options
@@ -139,6 +144,8 @@ async function page(props: any) {
     options
   );
 
+  const weather = documentToReactComponents(filteredData[0]?.fields?.weather);
+
   return (
     <>
       <div className="sm:hidden mt-10 w-11/12 max-w-7xl mx-auto">
@@ -150,21 +157,22 @@ async function page(props: any) {
             <img
               src={filteredData[0]?.fields?.mainImage?.fields?.file?.url}
               alt="image"
-              className="mx-auto relative filter w-full object-cover"
+              className="mx-auto relative filter w-full object-cover rounded-md"
             />
           </div>
         </div>
-        {/* Mobile */}
         {/* Desktop */}
-        <aside className="border h-fit sm:w-72 p-4 rounded-md hidden sm:block">
-          <h2 className="mx-auto w-full text-center mb-2 ">Title</h2>
+        <aside className="border h-fit sm:w-80 p-4 rounded-md hidden sm:block">
+          <h2 className="mx-auto w-full font-semibold text-center mb-2 text-lg ">
+            Table of Contents
+          </h2>
           {tableData.map((i: any) => (
             <Link key={i} href={i.url}>
               <p
                 key={i}
                 className="flex pl-2 items-center mx-auto space-x-4 text-black"
               >
-                <span className="text-gray-400 text-xl items-center mr-4 flex classNametext-gray-400">
+                <span className="text-gray-400 text-lg items-center mr-4 flex classNametext-gray-400">
                   {i.id} {""}
                 </span>
                 {""}
@@ -197,7 +205,7 @@ async function page(props: any) {
           </h2>
           <div className="richText">{whatToDo}</div>
         </div>
-        <div className="grid sm:grid-cols-3 w-full gap-y-10 pt-5 max-w-5xl place-content-between place-items-stretch gap-x-6">
+        <div className="grid sm:grid-cols-3 w-full gap-y-10 pt-5 max-w-5xl place-content-between place-items-stretch md:gap-x-14">
           {filteredCity.slice(0, 6).map((i: any) => (
             <CardCity
               key={i}
@@ -217,6 +225,10 @@ async function page(props: any) {
 
         <div className="max-w-5xl py-10">
           <CarouselCity images={cityImages} />
+        </div>
+        <div className="max-w-5xl space-y-3 pt-2" id="weather">
+          <h2 className="sm:text-3xl text-3xl text-black font-bold">Weather</h2>
+          <div className="richText">{weather}</div>
         </div>
       </section>
     </>

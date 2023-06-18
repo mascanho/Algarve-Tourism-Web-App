@@ -192,7 +192,7 @@ const Header = ({ currentUser }: UserProps) => {
                     <li
                       key={item.id}
                       className="rounded-md active:bg-sky"
-                      onClick={() => router.push(`${item.route}`)}
+                      onClick={() => router.push(`/algarve/${item.route}`)}
                     >
                       <span className="rounded-md active:bg-sky">
                         {item.name}

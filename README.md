@@ -35,6 +35,8 @@
 - [ ] Booking through the API
 - [ ] Calendar
 - [x] filter segmentation
+- [ ] Weather API integration
+- [ ] PDF Download generator
 
 ## Disclaimer
 
