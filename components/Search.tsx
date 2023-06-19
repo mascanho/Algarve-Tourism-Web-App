@@ -29,27 +29,34 @@ function Search({ allTypes, placeholderText, categories }: any) {
       return;
     }
 
+    const searchQueries = inputValue.trim().toLowerCase().split(" ");
     const filteredData: any = [];
 
     const filteredArr =
       pathname === "/search"
         ? allTypesStore.allTypes.filter((obj: any) => {
-            if (
-              obj.fields.title.includes(inputValue) ||
-              obj.fields.title.toLowerCase().includes(inputValue) ||
-              obj.fields.city.includes(inputValue) ||
-              obj.fields.city.toLowerCase().includes(inputValue)
-            ) {
+            const title = obj.fields.title.toLowerCase();
+            const city = obj.fields.city.toLowerCase();
+
+            // Check if any of the search queries match the title or city
+            const matchedQueries = searchQueries.filter(
+              (query) => title.includes(query) || city.includes(query)
+            );
+
+            if (matchedQueries.length === searchQueries.length) {
               filteredData.push(obj.fields);
             }
           })
         : categories?.filter((obj: any) => {
-            if (
-              obj.fields.title.includes(inputValue) ||
-              obj.fields.title.toLowerCase().includes(inputValue) ||
-              obj.fields.city.includes(inputValue) ||
-              obj.fields.city.toLowerCase().includes(inputValue)
-            ) {
+            const title = obj.fields.title.toLowerCase();
+            const city = obj.fields.city.toLowerCase();
+
+            // Check if any of the search queries match the title or city
+            const matchedQueries = searchQueries.filter(
+              (query) => title.includes(query) || city.includes(query)
+            );
+
+            if (matchedQueries.length === searchQueries.length) {
               filteredData.push(obj.fields);
             }
           });
@@ -58,7 +65,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
     savedData.AddData(filteredData);
     savedData.addSearchInput(inputValue);
 
-    router.push(`/search?q=${inputValue}`);
+    router.push(`/search?q=${encodeURIComponent(inputValue)}`);
   };
 
   const handleInputChange = (e: any) => {
