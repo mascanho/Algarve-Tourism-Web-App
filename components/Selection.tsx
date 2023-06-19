@@ -21,7 +21,7 @@ const Selection = ({ text }: any) => {
       <div className="items-center justify-between hidden w-10/12 pb-10 m-auto space-x-3 sm:flex max-w-7xl sm:w-full ">
         {catArr.map((cat) => (
           <div
-            // className="px-2 py-1 text-xs text-center transition-all ease-in delay-75 md:border md:rounded-md md:w-28  md:px-3 sm:py-2 sm:first:w-20 sm:first:bg-blue-400 first:text-white first:bg-blue-400 w-14 sm:w-fit hover:cursor-pointer hover:bg-sky hover:text-white"
+            className="px-2 py-1 text-xs text-center transition-all ease-in delay-75 md:border md:rounded-md md:w-28  md:px-3 sm:py-2 sm:first:w-20 sm:first:bg-blue-400 first:text-white first:bg-blue-400 w-14 sm:w-fit hover:cursor-pointer hover:bg-sky hover:text-white"
             key={cat.id}
             onClick={(e) => router.push(`${cat.route}`)}
           >
@@ -31,7 +31,7 @@ const Selection = ({ text }: any) => {
       </div>
       <section className="flex w-full sm:hidden">
         <Select
-          className="w-full mb-8 h-[100%] rounded-none border-none"
+          className="w-full mb-8 h-[100%]  "
           placeholder="Pick one"
           data={catArr.map((cat) => cat.name)}
           onChange={(e) => goToPage(e)}

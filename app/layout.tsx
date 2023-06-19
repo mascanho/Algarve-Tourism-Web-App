@@ -1,9 +1,7 @@
 import Header from "@/components/Layout/Header";
 import "./globals.css";
-import Hero from "@/components/Hero";
 import Footer from "@/components/Layout/Footer";
 import type { Metadata } from "next";
-import Carousel from "@/components/Carousel";
 import ClientOnly from "@/components/ClientOnly";
 import "react-toastify/dist/ReactToastify.css";
 import getCurrentUser from "./libs/getCurrentUser";
@@ -16,6 +14,10 @@ export const metadata: Metadata = {
     template: "%s | Algarve Travel",
   },
   description: "Developer, writer, and creator.",
+  viewport: {
+    initialScale: 1,
+    maximumScale: 1,
+  },
   openGraph: {
     title: "Lee Robinson",
     description: "Developer, writer, and creator.",
