@@ -61,11 +61,11 @@ export const Card = ({
         <img src={`https:${image}`} alt="image" className="block h-full" />
         <div
           onClick={addToFavourites}
-          className="absolute active:scale-90 w-8 h-8 flex items-center justify-center rounded-full p-1 bg-white top-3 right-3 cursor-pointer"
+          className="absolute active:scale-90 w-8 h-8 flex items-center justify-center rounded-full  bg-white top-3 right-3 cursor-pointer"
         >
           <AiFillHeart
             onClick={addToFavourites}
-            className="text-lg  text-red-500"
+            className="text-xl  text-red-500 pt-[2px]"
           />
         </div>
         <span className="absolute left-0 py-1 pr-2 text-xs text-black bg-white rounded-r-full top-4 ">

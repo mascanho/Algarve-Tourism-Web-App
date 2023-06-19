@@ -14,7 +14,7 @@ function CarouselHero({ categories }: any) {
           </h4>
         </div>
         <Carousel
-          height={300}
+          height={280}
           slideSize="33.333333%"
           slideGap="sm"
           loop
@@ -33,9 +33,9 @@ function CarouselHero({ categories }: any) {
                   alt="image"
                   className="block h-full"
                 />
-                <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-black bg-white  ">
-                  {/* 📍 {data.city} */}
-                </span>
+                {/* <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-black bg-white  "> */}
+                {/* 📍 {data.city} */}
+                {/* </span> */}
               </div>
             </Carousel.Slide>
           ))}

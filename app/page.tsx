@@ -111,7 +111,7 @@ export default async function Home(props: any) {
           <PopularCategories />
         </section>
       </section>
-      <section className="mx-auto mb-40 h-96">
+      <section className="mx-auto mb-40 sm:h-96">
         <CarouselHero categories={categories} />
       </section>
     </>
