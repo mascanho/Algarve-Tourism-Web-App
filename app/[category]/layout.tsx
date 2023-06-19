@@ -11,7 +11,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <section className="h-full">
       <NextAuthProvider>
         <div className="w-10/12 max-w-4xl mx-auto ml-4 sm:ml-auto sm:pl-2  sm:pt-8 text-sm mb-4 py-6 overflow-x-hidden">
           <Breadcrumbs />
@@ -21,6 +21,6 @@ export default function RootLayout({
           <div className="flex-1  mb-20">{children}</div>
         </section>
       </NextAuthProvider>
-    </>
+    </section>
   );
 }
