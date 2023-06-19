@@ -38,7 +38,7 @@ function BottomAssets() {
               visitors.
             </p>
             <Link href="/beaches">
-              <button className="w-full px-3 py-1 mt-8 text-white border rounded-md bg-sky sm:w-fit">
+              <button className="w-full px-4 py-2 mt-8 text-white border rounded-md bg-sky sm:w-fit">
                 View Beaches
               </button>
             </Link>
@@ -59,7 +59,7 @@ function BottomAssets() {
             leave a lasting impression on all who visit.
           </p>
           <Link href="/beaches">
-            <button className="px-3 py-1 mt-8 text-white border rounded-md bg-sky sm:w-fit">
+            <button className="px-4 py-2 mt-8 text-white border rounded-md bg-sky sm:w-fit">
               View Beaches
             </button>
           </Link>
@@ -99,7 +99,7 @@ function BottomAssets() {
             getaway or an active adventure.
           </p>
           <Link href="/beaches">
-            <button className="w-full px-3 py-1 mt-8 text-white border rounded-md bg-sky sm:w-fit">
+            <button className="w-full px-4 py-2 mt-8 text-white border rounded-md bg-sky sm:w-fit">
               View Beaches
             </button>
           </Link>

@@ -109,7 +109,7 @@ const Header = ({ currentUser }: UserProps) => {
                 className="p-2 mt-3 bg-white shadow menu menu-compact dropdown-content rounded-box w-52"
               >
                 <li className="rounded-md active:bg-sky">
-                  <Link href="/blog">
+                  <Link href="/blog" className="rounded-md active:bg-sky">
                     <span className="active:bg-sky">Blog</span>
                   </Link>
                 </li>
@@ -128,7 +128,7 @@ const Header = ({ currentUser }: UserProps) => {
                 </li>
 
                 {/* Mobile Menu */}
-                <Link href="algarve">
+                <Link href="algarve" className="active:bg-sky rounded-md">
                   <li className="rounded-md active:bg-sky">
                     <span className="rounded-md active:bg-sky">Algarve</span>
                   </li>

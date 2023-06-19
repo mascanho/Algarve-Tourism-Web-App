@@ -31,7 +31,7 @@ const Selection = ({ text }: any) => {
       </div>
       <section className="flex w-full sm:hidden">
         <Select
-          className="w-full mb-8 h-[100%]"
+          className="w-full mb-8 h-[100%] rounded-none border-none"
           placeholder="Pick one"
           data={catArr.map((cat) => cat.name)}
           onChange={(e) => goToPage(e)}
