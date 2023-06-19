@@ -62,7 +62,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
               key={cat?.id}
               className="max-w-7xl space-y-2 text-left md:w-64 shadow-sm rounded-md pb-2 border hover:border-sky transition-all ease-in delay-75"
             >
-              <div className="w-full h-40 flex  rounded-t-md overflow-hidden relative">
+              <div className="w-full h-44 sm:h-40 flex  rounded-t-md overflow-hidden relative">
                 <img
                   src={
                     cat?.fields?.mainImage?.fields?.file?.url
