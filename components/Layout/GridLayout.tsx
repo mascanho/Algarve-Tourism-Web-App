@@ -22,16 +22,16 @@ export function LeadGrid({ filteredData }: any) {
           cols={2}
           spacing="md"
           breakpoints={[{ maxWidth: "sm", cols: 1 }]}
-          className={`w-full h-fit min-h-full relative overflow-hidden `}
+          className={`w-full sm:h-full min-h-full relative overflow-hidden `}
         >
           <div
-            className="relative overflow-hidden rounded-lg max-h-[400px] 
+            className="relative overflow-hidden rounded-lg sm:max-h-[380px] 
             "
           >
             <img
               alt={filteredData[0]?.fields?.title}
               src={`https://${filteredData[0]?.fields?.images[0]?.fields?.file?.url}`}
-              className="h-[100%] w-[100%] sm:block object-contain"
+              className="sm:h-full w-[100%] sm:block object-contain"
             />
           </div>
           <Grid gutter="md" className="overflow-hidden rounded-lg">
@@ -39,7 +39,7 @@ export function LeadGrid({ filteredData }: any) {
               <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[1]?.fields?.file?.url}`}
-                className={`sm:h-full sm:max-h-40 rounded-lg`}
+                className={`sm:h-full  rounded-lg`}
                 // height={80}
                 // width={260}
               />
@@ -48,7 +48,7 @@ export function LeadGrid({ filteredData }: any) {
               <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[2]?.fields?.file?.url}`}
-                className={`sm:h-full  sm:max-h-40 rounded-lg`}
+                className={`sm:h-full rounded-lg`}
                 // height={80}
                 // width={260}
               />
@@ -57,7 +57,7 @@ export function LeadGrid({ filteredData }: any) {
               <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[3]?.fields?.file?.url}`}
-                className={`sm:h-full sm:max-h-40 rounded-lg`}
+                className={`sm:h-full rounded-lg`}
                 // height={80}
                 // width={260}
               />
@@ -66,7 +66,7 @@ export function LeadGrid({ filteredData }: any) {
               <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[4]?.fields?.file?.url}`}
-                className={`sm:h-full sm:max-h-40 rounded-lg`}
+                className={`sm:h-full h-full max-h-[200px] rounded-lg`}
                 // height={100}
                 // width={260}
               />
