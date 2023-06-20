@@ -56,7 +56,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
         <div className="sm:hidden mx-auto flex justify-center w-11/12 sm:mb-8 overflow-x-hidden">
           <Selection text="Filter your adventure" />
         </div>
-        <section className="max-w-7xl transition-all ease-in delay-75 mx-auto w-11/12 sm:w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4  sm:ml-6 gap-y-8  mb-20">
+        <section className="max-w-7xl transition-all ease-in delay-75 mx-auto w-11/12 sm:w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:ml-6 gap-y-8  mb-20">
           {category.map((cat: any) => (
             <section
               key={cat?.id}

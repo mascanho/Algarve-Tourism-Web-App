@@ -84,7 +84,7 @@ const Header = ({ currentUser }: UserProps) => {
         )}
       </section>
 
-      <nav id="search" className={`shadow-sm  w-full sticky  bg-white z-50 `}>
+      <nav id="search" className={`shadow-sm  w-full sticky  bg-white  `}>
         <div className="z-50 mx-auto navbar max-w-7xl  ">
           <div className="navbar-start ">
             <div className="dropdown">
