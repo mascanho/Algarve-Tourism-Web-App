@@ -1,4 +1,3 @@
-import Hero from "@/components/Layout/Hero";
 import Breadcrumbs from "@/components/Layout/Breadcrumbs";
 import "../../app/globals.css";
 import type { Metadata } from "next";
