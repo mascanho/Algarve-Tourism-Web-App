@@ -18,21 +18,6 @@ export const metadata: Metadata = {
     initialScale: 1,
     maximumScale: 1,
   },
-  openGraph: {
-    title: "Lee Robinson",
-    description: "Developer, writer, and creator.",
-    url: "https://leerob.io",
-    siteName: "Lee Robinson",
-    images: [
-      {
-        url: "https://leerob.io/og.jpg",
-        width: 1920,
-        height: 1080,
-      },
-    ],
-    locale: "en-US",
-    type: "website",
-  },
   robots: {
     index: true,
     follow: true,
@@ -43,10 +28,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  twitter: {
-    title: "Lee Robinson",
-    card: "summary_large_image",
   },
   icons: {
     shortcut: "/favicon.ico",
