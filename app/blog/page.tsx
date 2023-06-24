@@ -95,7 +95,7 @@ async function page() {
           <section className="mt-10">
             <h2>Places To Visit</h2>
             <div className="mt-5">
-              {[1, 2, 3, 4, 5].map((item) => (
+              {[1, 2, 3].map((item) => (
                 <div key={item} className="flex">
                   <div className="flex mb-5 space-y-1">
                     <div>

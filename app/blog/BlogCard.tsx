@@ -41,7 +41,7 @@ export const BlogCard = ({
       </section>
       <section className="sm:w-11/12 mx-auto">
         <div className="pb-2 sm:w-2/3 w-11/12 mx-auto sm:mx-0 mt-3 sm:mt-1">
-          <p className="text-sm mt-2">{description}</p>
+          <p className="text-sm mt-2 line-clamp-3">{description}</p>
         </div>
         <div className="flex sm:w-full w-11/12 mx-auto mt-1 pb-6">
           {[1, 2, 3].map((item) => (

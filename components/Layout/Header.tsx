@@ -109,8 +109,8 @@ const Header = ({ currentUser }: UserProps) => {
                 className="p-2 mt-3 bg-white shadow menu menu-compact dropdown-content rounded-box w-52"
               >
                 <li className="rounded-md active:bg-sky">
-                  <Link href="/blog" className="rounded-md active:bg-sky">
-                    <span className="active:bg-sky">Blog</span>
+                  <Link href="/#search" className="rounded-md active:bg-sky">
+                    <span className="active:bg-sky">Search</span>
                   </Link>
                 </li>
                 <li tabIndex={0} className="">
@@ -148,9 +148,9 @@ const Header = ({ currentUser }: UserProps) => {
                     <span className="rounded-md active:bg-sky">e</span>
                   </li>
                 </Link>
-                <Link href="/contact">
+                <Link href="/blog">
                   <li className="rounded-md active:bg-sky">
-                    <span className="rounded-md active:bg-sky">e</span>
+                    <span className="rounded-md active:bg-sky">Blog</span>
                   </li>
                 </Link>
               </ul>

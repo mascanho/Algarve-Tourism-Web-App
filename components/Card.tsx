@@ -57,7 +57,7 @@ export const Card = ({
 
   return (
     <section className="border pb-2 mb-10 sm:pb-2 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-[100%] mx-auto sm:w-full md:w-fit  hover:border-sky  hover:shadow-md">
-      <div className="relative flex flex-col w-full h-[180px] sm:h-40 overflow-hidden rounded-t-md ">
+      <div className="relative flex flex-col w-full h-[180px] sm:h-40 overflow-hidden rounded-t-md relative">
         <img src={`https:${image}`} alt="image" className="block h-full" />
         <div
           onClick={addToFavourites}
@@ -71,15 +71,17 @@ export const Card = ({
         <span className="absolute left-0 py-1 pr-2 text-xs text-black bg-white rounded-r-full top-4 ">
           📍 {city}
         </span>
+        <div className="absolute bottom-0 right-0 bg-white px-2 py-1 rounded-tl-md">
+          <span className="text-sm text-gray-500">
+            <StarRating rating={rating} />
+          </span>
+        </div>
       </div>
       <div className="flex items-center justify-between w-full px-2 text-left">
-        <h3 className="items-center w-full text-sm text-left text-black">
+        <h3 className="items-center w-full text-sm text-left font-semibold text-black">
           {" "}
           {title}
         </h3>
-        <span className="text-sm text-gray-500">
-          <StarRating rating={rating} />
-        </span>
       </div>
       <div className="w-full h-[1px] bg-gray-300" />
       <div className="flex w-full  mt-20 py-2 overflow-hidden">

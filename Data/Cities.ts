@@ -105,22 +105,10 @@ export const cityArr = [
     route: "/vale-do-lobo",
   },
   {
-    id: 6,
-    name: "Vilamoura",
-    icon: "",
-    route: "/vilamoura",
-  },
-  {
     id: 20,
     name: "Vila Real de Santo António",
     icon: "",
     route: "/vila-real-de-santo-antonio",
-  },
-  {
-    id: 19,
-    name: "Quinta do Lago",
-    icon: "",
-    route: "/quinta-do-lago",
   },
   // Add more cities as needed
 ];
