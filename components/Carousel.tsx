@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { Carousel } from "@mantine/carousel";
 import Image from "next/image";
 // import { IconArrowRight, IconArrowLeft } from "@tabler/icons-react";
@@ -27,16 +28,18 @@ function CarouselHero({ categories }: any) {
         >
           {categories?.map((cat: any) => (
             <Carousel.Slide key={cat.id}>
-              <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
-                <img
-                  src={`https:${cat?.fields?.mainImage.fields?.file?.url}`}
-                  alt="image"
-                  className="block h-full"
-                />
-                {/* <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-black bg-white  "> */}
-                {/* 📍 {data.city} */}
-                {/* </span> */}
-              </div>
+              <Link href={`/${cat?.fields?.type}/${cat?.fields?.slug}`}>
+                <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
+                  <img
+                    src={`https:${cat?.fields?.mainImage.fields?.file?.url}`}
+                    alt="image"
+                    className="block h-full"
+                  />
+                  <span className="absolute left-0 top-4 pr-2 py-1 pl-1 rounded-r-full text-xs text-black bg-white  ">
+                    📍 {cat?.fields?.title}
+                  </span>
+                </div>
+              </Link>
             </Carousel.Slide>
           ))}
 

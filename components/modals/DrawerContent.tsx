@@ -4,7 +4,7 @@ import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import StarRating from "../Layout/StarRating";
 import ExportModal from "./ExportModal";
-import { GoTrashcan } from "react-icons/go";
+import { GoTrashcan } from "react-icons/go/";
 import Link from "next/link";
 import { useDisclosure, useLocalStorage } from "@mantine/hooks";
 
