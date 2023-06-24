@@ -3,10 +3,9 @@ import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import StarRating from "../Layout/StarRating";
-import ExportModal from "./ExportModal";
-import { GoTrashcan } from "react-icons/go/";
 import Link from "next/link";
 import { useDisclosure, useLocalStorage } from "@mantine/hooks";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 const DrawerContent = () => {
   const { favourites, addFavourite, removeFavourite } = useAddToFavourites();
@@ -29,7 +28,7 @@ const DrawerContent = () => {
                 onClick={() => removeFavourite(item.id)}
                 className="absolute right-2 bottom-3 text-xs text-gray-500 transition-all ease-in delay-75 group-hover:text-black"
               >
-                <GoTrashcan />
+                <FaRegTrashAlt />
               </span>
               <div className="text-left flex  space-x-3">
                 <div className="flex items-center">
