@@ -95,9 +95,9 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
                       type: cat?.fields?.type,
                     })
                   }
-                  className="absolute cursor-pointer active:scale-90 w-5 h-5 flex items-center justify-center rounded-full p-1 bg-white top-2 right-2"
+                  className="absolute cursor-pointer active:scale-90 w-8 h-8 flex items-center justify-center rounded-full  bg-white top-2 right-2"
                 >
-                  <AiFillHeart className="text-md  text-red-500" />
+                  <AiFillHeart className="text-lg  text-red-500" />
                 </div>
                 <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-black bg-white  ">
                   📍 {cat?.fields?.city}
@@ -108,7 +108,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
                 </span>
               </div>
               <div className="flex w-full  text-left justify-between px-2 items-center">
-                <h3 className="w-full text-left text-black text-sm items-center">
+                <h3 className="w-full text-left text-black text-sm items-center font-semibold">
                   {" "}
                   {cat.fields.title}
                 </h3>

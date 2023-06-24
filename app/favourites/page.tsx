@@ -15,7 +15,6 @@ function page() {
     useAddToFavourites();
   const [changeTable, setChangeTable]: any = useState(false);
 
-  console.log(favourites, "from the Favs");
   const elements = [
     { position: 6, mass: 12.011, symbol: "C", name: "Carbon" },
     { position: 7, mass: 14.007, symbol: "N", name: "Nitrogen" },
@@ -42,13 +41,13 @@ function page() {
       <td>{element.price}</td>
       <td>
         <Link href={`${element.type[0]}/${element.slug}`}>
-          <button className="border px-3 py-1">view</button>
+          <button className="border px-3 py-1 hiddenRow">view</button>
         </Link>
       </td>
       <td>
         <AiFillDelete
           onClick={() => removeFavourite(element.id)}
-          className="hover:text-red-500 cursor-pointer"
+          className="hover:text-red-500 cursor-pointer hiddenRow"
         />
       </td>
     </tr>

@@ -39,7 +39,7 @@ export function LeadGrid({ filteredData }: any) {
               <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[1]?.fields?.file?.url}`}
-                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg`}
+                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg favBanner`}
                 // height={80}
                 // width={260}
               />
@@ -48,7 +48,7 @@ export function LeadGrid({ filteredData }: any) {
               <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[2]?.fields?.file?.url}`}
-                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg`}
+                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg favBanner`}
                 // height={80}
                 // width={260}
               />
@@ -57,7 +57,7 @@ export function LeadGrid({ filteredData }: any) {
               <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[3]?.fields?.file?.url}`}
-                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg`}
+                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg favBanner`}
                 // height={80}
                 // width={260}
               />
@@ -66,7 +66,7 @@ export function LeadGrid({ filteredData }: any) {
               <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[4]?.fields?.file?.url}`}
-                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg`}
+                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg favBanner`}
                 // height={100}
                 // width={260}
               />

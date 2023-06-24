@@ -8,8 +8,9 @@ import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { toast } from "react-hot-toast";
-import { BsFillSuitHeartFill } from "react-icons/bs";
+import { BsFillSuitHeartFill, BsGlobe } from "react-icons/bs";
 import { FiPrinter } from "react-icons/fi";
+import Link from "next/link";
 
 const Buttons = ({ filteredData }: any) => {
   const [isCopied, setIsCopied] = useState(false);
@@ -25,6 +26,7 @@ const Buttons = ({ filteredData }: any) => {
       slug: filteredData[0]?.fields?.slug,
       rating: filteredData[0]?.fields?.rating,
       city: filteredData[0]?.fields?.city,
+      type: filteredData[0]?.fields?.type,
     });
     toast.success(filteredData[0]?.fields?.title + " added to " + "🧳");
   }
@@ -56,6 +58,9 @@ const Buttons = ({ filteredData }: any) => {
         onClick={addFav}
       />
       <Tooltip anchorSelect=".fav" />
+      <Link href={filteredData[0].fields.website} target="_blank">
+        <BsGlobe className="w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75  " />
+      </Link>
       <BiMapPin
         data-tooltip-content="Open in Google Maps"
         onClick={handleClickGps}

@@ -39,6 +39,7 @@
   .footer,
   .favBanner,
   .header,
+  .hiddenRow,
   header,
   nav {
     display: none !important;

@@ -61,7 +61,7 @@ const DrawerContent = () => {
       {favourites.length < 1 ? (
         <span className="text-gray-400">Add places & experiences</span>
       ) : (
-        <Link href="favourites/">
+        <Link href="/favourites/">
           <button
             onClick={close}
             className="w-full bg-sky text-white px-3 py-1 rounded-md"
