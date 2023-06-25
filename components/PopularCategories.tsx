@@ -9,21 +9,21 @@ const popularCategories = [
     name: "Unique and Insteresting Events",
     url: "/events",
     image:
-      "https://www.portugalresident.com/wp-content/uploads/2019/12/Galeria_TN_ALB_FA_cam3_ok.jpg",
+      "https://www.walkalgarve.com/wp-content/uploads/2016/10/SandsSculpture-1.jpg",
   },
   {
     id: Math.random(),
     name: "Unique and Insteresting Culture",
     url: "/adventure",
     image:
-      "https://d1bv4heaa2n05k.cloudfront.net/user-images/1561648963513/algarve-towns1_main_1561649125133.jpeg",
+      "https://tourscanner.com/blog/wp-content/uploads/2023/03/things-to-do-in-Albufeira-Portugal.jpg",
   },
   {
     id: Math.random(),
     name: "Unique and Insteresting Places",
     url: "/beaches",
     image:
-      "https://guidebook.isango.com//theguidebook/wp-content/uploads//2021/10/The-Algarve-featured.1.jpg",
+      "https://image.jimcdn.com/app/cms/image/transf/dimension=4096x4096:format=jpg/path/sa6549607c78f5c11/image/ibff35da300188e47/version/1472987546/image.jpg",
   },
 ];
 
