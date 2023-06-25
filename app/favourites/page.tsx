@@ -8,7 +8,7 @@ import { Table } from "@mantine/core";
 import { Rating } from "@mantine/core";
 import CardFavs from "./CardFavs";
 import { AiFillDelete } from "react-icons/ai";
-import { LuLayoutGrid } from "react-icons/lu";
+import { BsGridFill } from "react-icons/bs";
 
 function page() {
   const { favourites, addFavourite, removeFavourite }: any =
@@ -47,7 +47,7 @@ function page() {
       <td>
         <AiFillDelete
           onClick={() => removeFavourite(element.id)}
-          className="hover:text-red-500 cursor-pointer hiddenRow"
+          className="hover:text-red-500 cursor-pointer"
         />
       </td>
     </tr>
@@ -71,7 +71,7 @@ function page() {
       <div className="mt-2 mb-2 sm:mb-0 sm:mt-10 w-full ">
         <div className="flex text-xl space-x-3 w-full justify-end">
           {!changeTable ? (
-            <LuLayoutGrid
+            <BsGridFill
               onClick={() => setChangeTable(!changeTable)}
               className="cursor-pointer"
             />
