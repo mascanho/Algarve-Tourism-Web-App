@@ -157,7 +157,7 @@ async function page(props: any) {
       <div className="sm:hidden mt-10 w-11/12 max-w-7xl mx-auto">
         <TableAccordion tableData={tableData} />
       </div>
-      <section className="sm:pt-20 pt-10 max-w-7xl w-11/12 mx-auto sm:flex">
+      <section className="sm:pt-10 pt-10 max-w-7xl w-11/12 mx-auto sm:flex">
         <div className="w-full">
           <div className="sm:w-full max-w-5xl  sm:pr-10">
             <img
@@ -168,8 +168,8 @@ async function page(props: any) {
           </div>
         </div>
         {/* Desktop */}
-        <aside className=" h-fit sm:w-80 p-4  hidden sm:block">
-          <TableOfContentsFloating tableData={tableData} />
+        <aside className=" h-fit sm:w-80 p-4  hidden sm:block sm:fixed sm:top-20 sm:right-10">
+          <TableOfContentsFloating blogtableData={tableData} />
         </aside>
       </section>
       <section className="sm:mt-8 mt-4 max-w-7xl mx-auto w-11/12 space-y-3 sm:space-y-5">

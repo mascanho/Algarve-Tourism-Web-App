@@ -59,61 +59,56 @@ interface TableOfContentsFloatingProps {
   links: { label: string; link: string; order: number }[];
 }
 
-const TableOfContentsFloating = ({ tableData }: any) => {
+const TableOfContentsFloating = ({ blogTableData }: any) => {
   const { classes, cx } = useStyles();
   const [active, setActive] = useState(2);
 
-  const links = [
+  const tableData: any = [
     {
-      label: "Usage",
-      link: "#usage",
+      id: 1,
+      label: "About ",
+      url: "/",
+      link: "#about",
       order: 1,
     },
     {
-      label: "Position and placement",
-      link: "#position",
+      id: 2,
+      label: "How to get here",
+      url: "#map",
+      link: "#map",
       order: 1,
     },
     {
-      label: "With other overlays",
-      link: "#overlays",
+      id: 3,
+      label: "What to do",
+      url: "#whattodo",
+      link: "#whattodo",
       order: 1,
     },
     {
-      label: "Manage focus",
-      link: "#focus",
+      id: 4,
+      label: "History of the city",
+      url: "#history",
+      link: "#history",
       order: 1,
     },
     {
-      label: "Examples",
-      link: "#1",
+      id: 5,
+      label: "What is the weather like?",
+      url: "#weather",
+      link: "#weather",
       order: 1,
-    },
-    {
-      label: "Show on focus",
-      link: "#2",
-      order: 2,
-    },
-    {
-      label: "Show on hover",
-      link: "#3",
-      order: 2,
-    },
-    {
-      label: "With form",
-      link: "#4",
-      order: 2,
     },
   ];
 
-  const items = tableData.map((item: any, index: any) => (
+  const items = tableData?.map((item: any, index: any) => (
     <Box<"a">
       component="a"
       href={item.link}
-      // onClick={(event: any) => {
-      //   event.preventDefault();
-      //   setActive(index);
-      // }}
+      onClick={(event: any) => {
+        // event.preventDefault();
+        setActive(index);
+      }}
       key={item.label}
       className={cx(classes.link, { [classes.linkActive]: active === index })}
       sx={(theme: any) => ({
@@ -127,8 +122,8 @@ const TableOfContentsFloating = ({ tableData }: any) => {
   return (
     <>
       <Group mb="md">
-        <BsSearch />
-        <Text>Table of contents</Text>
+        <BsSearch className="hidden sm:inline-block" />
+        <Text className="hidden sm:inline-block">Table of contents</Text>
       </Group>
       <div className={classes.links}>
         <div

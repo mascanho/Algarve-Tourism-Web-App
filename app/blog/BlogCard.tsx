@@ -34,7 +34,7 @@ export const BlogCard = ({
               <span>Lorem ipsum dolor sit amet.</span>
             </div>
           </div>
-          <picture className="w-40 h-28 sm:inline-block hidden rounded-md  absolute top-2 right-0">
+          <picture className="w-40 h-28 sm:inline-block hidden rounded-md  absolute top-4 right-0">
             <img
               className="h-28 rounded-md"
               src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/05/Ichigo-Kurosaki.jpg"

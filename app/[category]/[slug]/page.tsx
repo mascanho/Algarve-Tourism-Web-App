@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import { LeadGrid } from "@/components/Layout/GridLayout";
 import { FaRegGem } from "react-icons/fa";
@@ -8,7 +7,6 @@ import { createClient } from "contentful";
 import Buttons from "@/components/Layout/Buttons";
 import StarRating from "@/components/Layout/StarRating";
 import getComments from "@/app/libs/getComments";
-import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
   title: "Home",
