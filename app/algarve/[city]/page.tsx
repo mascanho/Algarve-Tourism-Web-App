@@ -8,6 +8,7 @@ import { cityArr } from "@/Data/Cities";
 import { redirect } from "next/navigation";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Link from "next/link";
+import TableOfContentsFloating from "@/app/blog/[slug]/TableOfContents";
 
 const options = {
   renderNode: {
@@ -56,33 +57,38 @@ const getCities = async () => {
 const tableData: any = [
   {
     id: 1,
-    name: "About ",
+    label: "About ",
     url: "/",
-    anchor: "#about",
+    link: "#about",
+    order: 1,
   },
   {
     id: 2,
-    name: "How to get here",
+    label: "How to get here",
     url: "#map",
-    anchor: "#map",
+    link: "#map",
+    order: 1,
   },
   {
     id: 3,
-    name: "What to do",
+    label: "What to do",
     url: "#whattodo",
-    anchor: "#whattodo",
+    link: "#whattodo",
+    order: 1,
   },
   {
     id: 4,
-    name: "History of the city",
+    label: "History of the city",
     url: "#history",
-    anchor: "#history",
+    link: "#history",
+    order: 1,
   },
   {
     id: 5,
-    name: "What is the weather like?",
+    label: "What is the weather like?",
     url: "#weather",
-    anchor: "#weather",
+    link: "#weather",
+    order: 1,
   },
 ];
 
@@ -162,24 +168,8 @@ async function page(props: any) {
           </div>
         </div>
         {/* Desktop */}
-        <aside className="border h-fit sm:w-80 p-4 rounded-md hidden sm:block">
-          <h2 className="mx-auto w-full font-semibold text-center mb-2 text-lg ">
-            Table of Contents
-          </h2>
-          {tableData.map((i: any) => (
-            <Link key={i} href={i.url}>
-              <p
-                key={i}
-                className="flex pl-2 items-center mx-auto space-x-4 text-black"
-              >
-                <span className="text-gray-400 text-lg items-center mr-4 flex classNametext-gray-400">
-                  {i.id} {""}
-                </span>
-                {""}
-                {i.name}
-              </p>
-            </Link>
-          ))}
+        <aside className=" h-fit sm:w-80 p-4  hidden sm:block">
+          <TableOfContentsFloating tableData={tableData} />
         </aside>
       </section>
       <section className="sm:mt-8 mt-4 max-w-7xl mx-auto w-11/12 space-y-3 sm:space-y-5">

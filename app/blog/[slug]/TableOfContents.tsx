@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState } from "react";
 import { createStyles, Box, Text, Group, rem } from "@mantine/core";
 import { BsSearch } from "react-icons/bs";
@@ -59,7 +59,7 @@ interface TableOfContentsFloatingProps {
   links: { label: string; link: string; order: number }[];
 }
 
-const TableOfContentsFloating = () => {
+const TableOfContentsFloating = ({ tableData }: any) => {
   const { classes, cx } = useStyles();
   const [active, setActive] = useState(2);
 
@@ -106,14 +106,14 @@ const TableOfContentsFloating = () => {
     },
   ];
 
-  const items = links.map((item, index) => (
+  const items = tableData.map((item: any, index: any) => (
     <Box<"a">
       component="a"
       href={item.link}
-      onClick={(event: any) => {
-        event.preventDefault();
-        setActive(index);
-      }}
+      // onClick={(event: any) => {
+      //   event.preventDefault();
+      //   setActive(index);
+      // }}
       key={item.label}
       className={cx(classes.link, { [classes.linkActive]: active === index })}
       sx={(theme: any) => ({
