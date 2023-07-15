@@ -45,7 +45,7 @@ const page = async (props: any) => {
       <div className="sm:w-3/4 w-11/12 flex-1 font-semibold">
         <div className="w-11/12 mb-8">
           <img
-            src="https://www.thetimes.co.uk/travel/wp-content/uploads/sites/6/2021/07/HERO-Lagos-algarve-GettyImages-1211602144.jpg"
+            src={blog[0]?.fields?.image?.fields?.file.url}
             alt="albvufeir"
             className="w-full"
           />

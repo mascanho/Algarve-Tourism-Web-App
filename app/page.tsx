@@ -10,6 +10,8 @@ import { Reviews } from "@/Data/Reviews";
 import PopularCategories from "@/components/PopularCategories";
 import { createClient } from "contentful";
 import CarouselHero from "@/components/Carousel";
+import { catArr } from "@/Data/Categories";
+import RandomBanner from "@/components/Layout/RandomBanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +30,17 @@ async function getAllCategories() {
 
 export default async function Home(props: any) {
   const categories = await getAllCategories();
-  console.log(categories, "this comes from the main page");
+
+  // Generate random items
+  const randomItems = (array: any) => {
+    const randomIndex = Math.floor(Math.random() * (array.length - 1)) + 1;
+    return array[randomIndex];
+  };
+
+  const handleClickRandom = () => {
+    const randomItem = randomItems(catArr);
+    console.log(randomItem.name, "random Item");
+  };
 
   return (
     <>
@@ -75,7 +87,7 @@ export default async function Home(props: any) {
       <section className="h-full mx-auto max-w-7xl">
         <div className="my-10 text-center sm:pt-20">
           <h2 className="text-4xl font-semibold text-black sm:text-4xl">
-            Satisfied customers
+            Satisfied Visitors
           </h2>
           <h4 className="w-10/12 mx-auto mt-4 sm:w-6/12">
             See what people are talking about the fantastic locations, events
@@ -96,18 +108,7 @@ export default async function Home(props: any) {
           ))}
         </section>
         <section className="pt-16 sm:py-28">
-          <div className="w-11/12 py-10 mx-auto space-y-2 text-center text-white bg-sky/60 sm:w-full rounded-xl sm:space-y-2">
-            <h4>Come join and have a vacation with us</h4>
-            <h3 className="text-2xl sm:text-3xl">
-              Prepare yourself and lets explore
-            </h3>
-            <h5>Explore the beauty of these hidden places</h5>
-            <div className="pt-3">
-              <button className="px-3 py-1 text-black transition-all ease-in delay-75 bg-white rounded-md active:scale-95">
-                Discover The Best Places
-              </button>
-            </div>
-          </div>
+          <RandomBanner />
           <PopularCategories />
         </section>
       </section>
