@@ -1,13 +1,12 @@
 import { createClient } from "contentful";
-import Routes from "@/Routes/routes";
-import Image from "next/image";
-import { AiFillHeart } from "react-icons/ai";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import { BsBookmarkHeart } from "react-icons/bs";
 import { CategoryCard } from "@/components/CategoryCard";
 import { catArr } from "@/Data/Categories";
-import getCurrentUser from "../libs/getCurrentUser";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "The Best Places",
+  description: "...",
+};
 
 async function Page(props: any) {
   let pathname = props.params.category;

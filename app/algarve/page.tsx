@@ -1,6 +1,13 @@
 import { cityArr } from "@/Data/Cities";
 import React from "react";
 import CardCity from "./[city]/CardCity";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Algarve",
+  description: "...",
+};
+
 function page() {
   return (
     <section className="max-w-7xl mx-auto sm:mt-20">

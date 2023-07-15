@@ -45,8 +45,8 @@ export const BlogCard = ({
           <div className="pb-2 sm:w-2/3 w-11/12 mx-auto sm:mx-0 mt-3 sm:mt-1">
             <p className="text-sm mt-2 line-clamp-2">{description}</p>
           </div>
-          <div className="flex sm:w-full w-11/12 mx-auto mt-1 pb-6">
-            {[1, 2, 3].map((item) => (
+          <div className="flex sm:w-full w-11/12 mx-auto mt-2 pb-6">
+            {tags.map((item: any) => (
               <span className="border mr-2 px-2 rounded-2xl sm:text-xs bg-gray-100">
                 {item}
               </span>
