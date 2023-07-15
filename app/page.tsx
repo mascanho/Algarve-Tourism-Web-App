@@ -31,17 +31,6 @@ async function getAllCategories() {
 export default async function Home(props: any) {
   const categories = await getAllCategories();
 
-  // Generate random items
-  const randomItems = (array: any) => {
-    const randomIndex = Math.floor(Math.random() * (array.length - 1)) + 1;
-    return array[randomIndex];
-  };
-
-  const handleClickRandom = () => {
-    const randomItem = randomItems(catArr);
-    console.log(randomItem.name, "random Item");
-  };
-
   return (
     <>
       <Hero categories={categories} />

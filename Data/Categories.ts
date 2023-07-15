@@ -1,11 +1,5 @@
 export const catArr = [
   {
-    id: 1,
-    name: "All",
-    icon: "",
-    route: "/",
-  },
-  {
     id: 2,
     name: "🏖️ Beaches",
     icon: "",

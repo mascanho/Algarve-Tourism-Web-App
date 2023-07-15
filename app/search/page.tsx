@@ -41,15 +41,12 @@ export default function Home() {
   useEffect(() => {
     if (window.location.href.endsWith("/search")) {
       setPlainSearch(true);
-      console.log(window.location.href);
     }
     async function data() {
       const res = await ContentfullData;
 
-      console.log(res, "this is the res");
       setCategories(res);
     }
-    console.log("this comes from inside the Useeeff");
 
     data();
   }, [searchData]);
@@ -62,7 +59,7 @@ export default function Home() {
         {/*   <Search placeholderText={"Search now..."} categories={categories} /> */}
         {/* </section> */}
         <section className="pt-10 pb-16 space-y-4 text-center bg-white">
-          <div className="w-11/12 sm:w-10/12 mx-auto">
+          <div className="w-11/12 sm:w-11/12 mx-auto">
             {searchData.data.length === 0 ? (
               <>
                 <h3
@@ -80,7 +77,7 @@ export default function Home() {
               <>
                 <section className="max-w-7xl mx-auto">
                   <Link href="/#search">
-                    <div className="flex items-center w-full space-x-1 sm:ml-4 -mt-4 mb-8 sm:mb-0 sm:mt-0">
+                    <div className="flex items-center w-full space-x-1  -mt-4 mb-8 sm:mb-0 sm:mt-0">
                       <TiArrowBack />
                       <span>Back to search</span>
                     </div>
