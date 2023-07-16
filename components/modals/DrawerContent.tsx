@@ -11,8 +11,6 @@ const DrawerContent = () => {
   const { favourites, addFavourite, removeFavourite } = useAddToFavourites();
   const [opened, { open, close }] = useDisclosure(false);
 
-  console.log(close, "the close button");
-
   return (
     <>
       {favourites.map((item) => (

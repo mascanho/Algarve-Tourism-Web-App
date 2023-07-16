@@ -14,7 +14,6 @@ function RandomBanner() {
 
   const handleClickRandom = () => {
     const randomItem = randomItems(catArr);
-    console.log(randomItem, "random Item");
     router.push(randomItem.route);
   };
 

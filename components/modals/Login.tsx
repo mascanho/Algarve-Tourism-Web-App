@@ -52,9 +52,7 @@ function LoginModal({ currenUser }: any) {
       .then(() => {
         toast.success("You Have Been Registered!");
       })
-      .catch((error) => {
-        console.warn(error);
-      })
+      .catch((error) => {})
       .finally(() => {
         setIsLoading(false);
         closeModal.onClose();

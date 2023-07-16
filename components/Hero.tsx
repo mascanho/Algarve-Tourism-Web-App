@@ -26,12 +26,12 @@ const Hero = ({ categories }: any) => {
   //   fetchAllTypes();
   // }, []);
 
-  console.log(categories, "This is freom the categories");
-
   return (
     <>
       <div
-        className={`bg-[url('https://rare-gallery.com/uploads/posts/504981-Public-domain.jpg')]  h-screen overflow-hidden  bg-cover bg-blend-multiply bg-black/30  `}
+        className={`bg-[url('https://wallpaperaccess.com/full/3099506.jpg')] 
+h-screen overflow-hidden  
+bg-cover bg-blend-multiply bg-black/30  `}
       />
       <section className="absolute w-full mx-auto space-y-6 text-center top-56  sm:top-80">
         <h1 className="mx-auto text-3xl font-bold text-center text-white sm:text-6xl">

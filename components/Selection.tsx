@@ -11,7 +11,6 @@ const Selection = ({ text }: any) => {
 
   const goToPage = (e: any) => {
     const route = e.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
-    console.log(route);
 
     router.push(`${route}`);
   };

@@ -48,7 +48,6 @@ export const SearchCard = ({
       mapShare,
     };
     addFav.addFavourite(data);
-    console.log(data);
 
     toast.success(title + " added to " + "🧳");
   }

@@ -2,6 +2,7 @@ import React from "react";
 import { BlogCard } from "./BlogCard";
 import { createClient } from "contentful";
 import { catArr } from "@/Data/Categories";
+import Link from "next/link";
 
 // Get all blogs from contentful
 async function getBlogs() {
@@ -35,18 +36,30 @@ async function page() {
     },
   ];
 
-  const beachesToVisti = [
+  const beachesToVisit = [
     {
       id: 1,
-      name: "Beach 1",
-      image: "https://randomuser.me/api/portraits/men/1.jpg",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      name: "Camilo Beach",
+      image:
+        "https://a.cdn-hotels.com/gdcs/production119/d895/b91c3722-92d0-4f4e-93de-00d83c6c1fc4.jpg?impolicy=fcrop&w=1600&h=1066&q=medium",
+      desc: "Camilo Beach (Praia do Camilo to locals) is one of the finest places to enjoy the splendours of the Algarve coast.",
+      path: "/beaches/camilo-beach",
     },
     {
       id: 2,
-      name: "Beach 2",
-      image: "https://randomuser.me/api/portraits/women/1.jpg",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      name: "Marinha Beach",
+      image:
+        "https://www.iberian-escapes.com/images/praia-da-marinha-hiking.jpg",
+      desc: "Praia da Marinha (translation: navy beach) is an iconic beach near Lagoa. It is known as one of the most beautiful beaches of the world.",
+      path: "/beaches/marinha-beach",
+    },
+    {
+      id: 3,
+      name: "Marinha Beach",
+      image:
+        "https://www.iberian-escapes.com/images/praia-da-marinha-hiking.jpg",
+      desc: "Praia da Marinha (translation: navy beach) is an iconic beach near Lagoa. It is known as one of the most beautiful beaches of the world.",
+      path: "/beaches/marinha-beach",
     },
   ];
 
@@ -115,14 +128,14 @@ async function page() {
                     <img
                       src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/05/Ichigo-Kurosaki.jpg"
                       alt=""
-                      className="w-12 h-12 rounded-full"
+                      className="w-12 h-12 rounded-full object-cover"
                     />
                     <div className="ml-2">
                       <h5 className="text-black text-sm font-bold">
                         Praia De Sta Eulalia
                       </h5>
                       <div className="flex">
-                        <span className="text-xs">
+                        <span className="text-xs line-clamp-2">
                           Lorem ipsum dolor sit amet consectetur adipisicing
                           elit. Praesentium, corporis.
                         </span>
@@ -137,25 +150,27 @@ async function page() {
           <section className="mt-10">
             <h2 className="text-lg">Beaches to Visit</h2>
             <div className="mt-5">
-              {[1, 2, 3].map((item) => (
-                <div key={item} className="flex">
-                  <div className="flex mb-5 space-y-1">
-                    <div>
-                      <img
-                        src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/05/Ichigo-Kurosaki.jpg"
-                        alt=""
-                        className="h-20 w-36 object-fill rounded-md"
-                      />
+              {beachesToVisit.map((item) => (
+                <div key={item.id} className="flex">
+                  <Link href={item?.path}>
+                    <div className="flex mb-5 space-y-1 cursor-pointer">
+                      <div className="rounded-md overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt=""
+                          className="h-16 w-36  rounded-md"
+                        />
+                      </div>
+                      <div className="ml-2 w-full">
+                        <p className="text-sm font-semibold text-black">
+                          {item.name}
+                        </p>
+                        <span className="text-xs line-clamp-2 w-full flex-1">
+                          {item.desc}
+                        </span>
+                      </div>
                     </div>
-                    <div className="ml-2">
-                      <p className="text-sm font-semibold text-black">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                      </p>
-                      <span className="text-xs">
-                        Lorem ipsum dolor sit amet.
-                      </span>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               ))}
             </div>

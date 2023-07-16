@@ -36,8 +36,6 @@ export default function Home() {
   const [categories, setCategories] = useState([]);
   const [plainSearch, setPlainSearch] = useState(false);
 
-  console.log(searchData, "THis is the search data");
-
   useEffect(() => {
     if (window.location.href.endsWith("/search")) {
       setPlainSearch(true);

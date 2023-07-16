@@ -44,8 +44,6 @@ function CommentForm() {
   const registeredModal = useRegisteredModalStore();
   const session = useSession();
 
-  console.log(session);
-
   const handleMessage = (data: any) => {
     axios
       .post("/api/comment", data)
