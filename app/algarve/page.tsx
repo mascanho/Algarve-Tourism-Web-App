@@ -4,8 +4,8 @@ import CardCity from "./[city]/CardCity";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Algarve",
-  description: "...",
+  title: "Find Your City in The Algarve ",
+  description: "Here you will find the best places in Algarve",
 };
 
 function page() {

@@ -15,11 +15,11 @@ import useGetAllCategories from "../hooks/useGetAllCategories";
 import { useEffect, useState } from "react";
 import { TiArrowBack } from "react-icons/ti";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
 // Get all categories from contentful
-
 async function getAllCategories() {
   const client: any = createClient({
     space: process.env.CONTENTFUL_SPACE_ID!,

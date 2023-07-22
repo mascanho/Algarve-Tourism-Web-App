@@ -12,7 +12,7 @@ const CardCity = ({
   route,
 }: any) => {
   return (
-    <Link href={`/${type || "algarve"}/${slug || name.toLowerCase()}`}>
+    <Link href={`/${type || "algarve"}${route}`}>
       <div className="card sm:w-[300px] w-11/12 mx-auto bg-base-100 shadow-xl  overflow-hidden group">
         <div className=" h-12 p-4  text-left sm:w-full w-full">
           <h2 className="card-title text-left w-full group-hover:text-white text-sm">

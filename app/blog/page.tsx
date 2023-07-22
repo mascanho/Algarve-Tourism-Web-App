@@ -3,6 +3,12 @@ import { BlogCard } from "./BlogCard";
 import { createClient } from "contentful";
 import { catArr } from "@/Data/Categories";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Discover the latest news and blog posts about the Algarve",
+};
 
 // Get all blogs from contentful
 async function getBlogs() {
@@ -55,11 +61,11 @@ async function page() {
     },
     {
       id: 3,
-      name: "Marinha Beach",
+      name: "Santa Eulalia Beach",
       image:
-        "https://www.iberian-escapes.com/images/praia-da-marinha-hiking.jpg",
-      desc: "Praia da Marinha (translation: navy beach) is an iconic beach near Lagoa. It is known as one of the most beautiful beaches of the world.",
-      path: "/beaches/marinha-beach",
+        "https://www.granderealsantaeulalia.realhotelsgroup.com/wp-content/uploads/sites/228/2021/11/Quartos-Grande-Real-Santa-Eulalia-Resort-Hotel-Spa-Albufeira-001.jpg",
+      desc: "Santa Eulalia Beach is one of the most beautiful beaches of the Algarve.",
+      path: "/beaches/praia-de-santa-eulalia",
     },
   ];
 
@@ -121,7 +127,7 @@ async function page() {
           </div>
           <section className="mt-10">
             <div>
-              <h4 className="text-lg">People to Follow</h4>
+              <h4 className="text-lg">Sports to Do</h4>
               {[1, 2, 3].map((item) => (
                 <div className="block mt-4 mb-4" key={item}>
                   <div className="flex">

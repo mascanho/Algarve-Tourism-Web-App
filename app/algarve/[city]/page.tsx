@@ -25,8 +25,8 @@ const options = {
 };
 
 export const metadata: Metadata = {
-  title: "Home",
-  description: "Welcome to Next.js",
+  title: "Discover this City",
+  description: "Here you can enjoy the weather, the local food, and much more.",
 };
 
 // Get all categories from contentful

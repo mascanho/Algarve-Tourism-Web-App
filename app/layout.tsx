@@ -10,10 +10,10 @@ import { NextAuthProvider } from "./providers/AuthProvider";
 
 export const metadata: Metadata = {
   title: {
-    default: "Algarve Travel",
-    template: "%s | Algarve Travel",
+    default: "AlgarGems",
+    template: "%s | AlgarGems",
   },
-  description: "Developer, writer, and creator.",
+  description: "The place to find the best places in Algarve",
   viewport: {
     initialScale: 1,
     maximumScale: 1,
