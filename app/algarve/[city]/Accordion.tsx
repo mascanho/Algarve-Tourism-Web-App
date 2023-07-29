@@ -2,8 +2,6 @@
 import { Accordion } from "@mantine/core";
 import Link from "next/link";
 function TableAccordion({ tableData }: any) {
-  console.log(tableData);
-
   return (
     <Accordion
       // chevron=/* {<IconPlus size="1rem" />} */

@@ -12,8 +12,6 @@ export const BlogCard = ({
   date,
   tags,
 }: any) => {
-  console.log(title, body, "from the blog card");
-
   return (
     <>
       <Link href={`/blog/${slug}`}>

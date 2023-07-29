@@ -40,7 +40,7 @@ function page() {
       </td>
       <td>{element.price}</td>
       <td>
-        <Link href={`${element.type[0]}/${element.slug}`}>
+        <Link href={`${element?.type[0]}/${element?.slug}`}>
           <button className="border px-3 py-1 hiddenRow">view</button>
         </Link>
       </td>

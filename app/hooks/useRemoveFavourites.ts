@@ -12,7 +12,7 @@ const useRemoveFavourites = create<FavouriteProps>((set) => ({
     set((state) => ({
       favourites: state.favourites.filter((item) => item.id !== id),
     }));
-    console.log("Removing: ", id);
+    // console.log("Removing: ", id);
   },
   resetFavourites() {
     set({ favourites: ["helllooooo"] });

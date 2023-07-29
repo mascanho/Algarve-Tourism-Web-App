@@ -64,7 +64,7 @@ function Footer() {
                 AlgarveGems &copy; {new Date().getFullYear()} <br />
               </p>
               <span className="block text-xs">
-                Powered by{" "}
+                Developed by{" "}
                 <a className="text-sky" href="https://markwarrior.dev">
                   MarkWarrior.dev
                 </a>

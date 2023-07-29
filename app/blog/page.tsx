@@ -27,18 +27,22 @@ async function page() {
   const blogs = await getBlogs();
   console.log(blogs, "From the blogs");
 
-  const peopleToFollow = [
+  const sportsToDo = [
     {
       id: 1,
-      name: "John Doe",
-      image: "https://randomuser.me/api/portraits/men/1.jpg",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      name: "Surf Expert - School 🏄",
+      image:
+        "https://images.ctfassets.net/z8r91y113x4j/2Iosoq1xchir3mnPryMchN/c040f1c3a26f4394e55e362b990e26c3/unnamed.jpg",
+      desc: "Since 2002, introducing the culture of surf, stand up paddle and their unique lifestyle, bringing people from all over the world together for unforgettable shared experiences in these amazing surf world. ",
+      path: "/sports/surf-expert-school",
     },
     {
       id: 2,
-      name: "Jane Doe",
-      image: "https://randomuser.me/api/portraits/women/1.jpg",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      name: "Kitesurf Algarve 🪁",
+      image:
+        "https://images.ctfassets.net/z8r91y113x4j/ji8ii1EbGPmkUKbRP30tA/d7fd418f544d2c6dabe1450771b15ff7/g24.png",
+      desc: "To be able to take advantage of all the sensations of this sport, you have to know how to use and control the equipment with security.",
+      path: "/sports/kitesurf-algarve",
     },
   ];
 
@@ -128,24 +132,27 @@ async function page() {
           <section className="mt-10">
             <div>
               <h4 className="text-lg">Sports to Do</h4>
-              {[1, 2, 3].map((item) => (
-                <div className="block mt-4 mb-4" key={item}>
+              {sportsToDo.map((item) => (
+                <div className="block mt-4 mb-4" key={item.id}>
                   <div className="flex">
                     <img
-                      src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/05/Ichigo-Kurosaki.jpg"
-                      alt=""
+                      src={item.image}
+                      alt={item.name}
                       className="w-12 h-12 rounded-full object-cover"
                     />
                     <div className="ml-2">
                       <h5 className="text-black text-sm font-bold">
-                        Praia De Sta Eulalia
+                        {item?.name}
                       </h5>
-                      <div className="flex">
+                      <div className="flex pr-2">
                         <span className="text-xs line-clamp-2">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Praesentium, corporis.
+                          {item?.desc}
                         </span>
-                        <button className="border px-3 rounded-md">view</button>
+                        <Link href={item.path}>
+                          <button className="border px-3 rounded-md">
+                            view
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -157,12 +164,12 @@ async function page() {
             <h2 className="text-lg">Beaches to Visit</h2>
             <div className="mt-5">
               {beachesToVisit.map((item) => (
-                <div key={item.id} className="flex">
+                <div key={item?.id} className="flex">
                   <Link href={item?.path}>
                     <div className="flex mb-5 space-y-1 cursor-pointer">
                       <div className="rounded-md overflow-hidden">
                         <img
-                          src={item.image}
+                          src={item?.image}
                           alt=""
                           className="h-16 w-36  rounded-md"
                         />
