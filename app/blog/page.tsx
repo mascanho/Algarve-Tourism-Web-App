@@ -144,8 +144,8 @@ async function page() {
                       <h5 className="text-black text-sm font-bold">
                         {item?.name}
                       </h5>
-                      <div className="flex pr-2">
-                        <span className="text-xs line-clamp-2">
+                      <div className="flex">
+                        <span className="text-xs line-clamp-2 pr-2">
                           {item?.desc}
                         </span>
                         <Link href={item.path}>
