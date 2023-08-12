@@ -9,8 +9,8 @@ function CarouselHero({ categories }: any) {
     <>
       <section className="w-full max-w-7xl sm:w-11/12 m-auto px-4 sm:px-0   font-semibold">
         <div className="space-y-4 mb-8 text-center">
-          <h3 className=" text-black text-3xl text-center">Image Gallery</h3>
-          <h4>
+          <h3 className=" text-black text-4xl text-center">Image Gallery</h3>
+          <h4 className="pb-9">
             A collection of some of the most beautiful places in the world
           </h4>
         </div>

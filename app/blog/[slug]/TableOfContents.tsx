@@ -61,7 +61,7 @@ interface TableOfContentsFloatingProps {
 
 const TableOfContentsFloating = ({ blogTableData }: any) => {
   const { classes, cx } = useStyles();
-  const [active, setActive] = useState(2);
+  const [active, setActive] = useState(0);
 
   const tableData: any = [
     {

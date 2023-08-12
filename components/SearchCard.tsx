@@ -10,6 +10,7 @@ import Link from "next/link";
 import { BsShareFill } from "react-icons/bs";
 import { toast } from "react-hot-toast";
 import StarRating from "./Layout/StarRating";
+import { usePathname } from "next/navigation";
 
 export const SearchCard = ({
   category,
@@ -30,6 +31,7 @@ export const SearchCard = ({
 }: any) => {
   const router = useRouter();
   const addFav = useAddToFavourites();
+  const pathname = usePathname();
 
   function addToFavourites(e: any) {
     const data = {
@@ -50,6 +52,13 @@ export const SearchCard = ({
     addFav.addFavourite(data);
 
     toast.success(title + " added to " + "🧳");
+  }
+
+  // handle copying the url to share
+  function handleCopyUrl() {
+    const url = `https://markwarrior.dev/${type}/${slug}`;
+    navigator.clipboard.writeText(url);
+    toast.success("URL copied to clipboard");
   }
 
   return (
@@ -98,11 +107,14 @@ export const SearchCard = ({
       <section className="flex justify-between w-full items-center">
         <div className="flex items-center  w-full px-2  align-middl space-x-2">
           <BsBookmarkHeart className="hover:scale-110 cursor-pointer" />
-          <BsQrCodeScan className="hover:scale-110 cursor-pointer" />
+          {/* <BsQrCodeScan className="hover:scale-110 cursor-pointer" /> */}
           <a href={mapShare} target="_blank">
             <BiMap className="hover:scale-110 cursor-pointer" />
           </a>
-          <BsShareFill className="text-xs hover:scale-110 cursor-pointer" />
+          <BsShareFill
+            onClick={handleCopyUrl}
+            className="text-xs hover:scale-110 cursor-pointer"
+          />
           <BsGlobe className="text-xs hover:scale-110 cursor-pointer" />
         </div>
         <div className="flex items-center justify-end text-sm w-full pr-2 ">

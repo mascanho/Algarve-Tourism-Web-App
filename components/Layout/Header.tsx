@@ -233,9 +233,11 @@ const Header = ({ currentUser }: UserProps) => {
                   <span className="rounded-md active:bg-sky">Blog</span>
                 </Link>
               </li>
-              <li className="rounded-md active:bg-sky">
-                <span className="rounded-md active:bg-sky ">Contact</span>
-              </li>
+              <Link href="/contact">
+                <li className="rounded-md active:bg-sky">
+                  <span className="rounded-md active:bg-sky ">Contact</span>
+                </li>
+              </Link>
             </ul>
           </div>
           <div className="space-x-4 navbar-end">

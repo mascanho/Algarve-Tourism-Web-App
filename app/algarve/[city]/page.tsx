@@ -168,7 +168,7 @@ async function page(props: any) {
           </div>
         </div>
         {/* Desktop */}
-        <aside className=" h-fit sm:w-80 p-4  hidden sm:block sm:fixed sm:top-20 sm:right-10">
+        <aside className=" h-fit sm:w-80 p-4  hidden sm:block  sm:top-20 sm:right-10">
           <TableOfContentsFloating blogtableData={tableData} />
         </aside>
       </section>

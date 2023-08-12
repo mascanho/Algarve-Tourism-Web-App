@@ -48,6 +48,7 @@ const Buttons = ({ filteredData }: any) => {
   function handleCopyUrl() {
     const url = `https://markwarrior.dev${pathname}`;
     navigator.clipboard.writeText(url);
+    toast.success("URL copied to clipboard");
   }
 
   return (
@@ -73,7 +74,7 @@ const Buttons = ({ filteredData }: any) => {
         className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"
       />
       <Tooltip anchorSelect=".urlCopy" />
-      <HiQrCode className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
+      {/* <HiQrCode className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" /> */}
       <FiPrinter
         onClick={() => window.print()}
         className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"

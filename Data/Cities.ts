@@ -64,13 +64,13 @@ export const cityArr = [
   },
   {
     id: 11,
-    name: "Olhão",
+    name: "olhão",
     icon: "",
     route: "olhao",
   },
   {
     id: 5,
-    name: "Portimão",
+    name: "portimão",
     icon: "",
     image:
       "https://cdn.travel-in-portugal.com/sites/default/files/photos/praia-da-rocha-portimao.jpg",
@@ -87,6 +87,7 @@ export const cityArr = [
     name: "Sagres",
     icon: "",
     route: "sagres",
+    image: "https://www.iberian-escapes.com/images/sagres-algarve-portugal.jpg",
   },
   {
     id: 12,

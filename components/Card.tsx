@@ -10,6 +10,7 @@ import { BiMap } from "react-icons/bi";
 import Link from "next/link";
 import { BsShareFill } from "react-icons/bs";
 import StarRating from "./Layout/StarRating";
+import { usePathname } from "next/navigation";
 
 export const Card = ({
   category,
@@ -30,6 +31,7 @@ export const Card = ({
 }: any) => {
   const router = useRouter();
   const addFav = useAddToFavourites();
+  const pathname = usePathname();
 
   function addToFavourites(e: any) {
     e.stopPropagation();
@@ -53,6 +55,13 @@ export const Card = ({
     };
     addFav.addFavourite(data);
     toast.success(title + " added to " + "🧳");
+  }
+
+  // handle copying the url to share
+  function handleCopyUrl() {
+    const url = `https://markwarrior.dev/${type}/${slug}`;
+    navigator.clipboard.writeText(url);
+    toast.success("URL copied to clipboard");
   }
 
   return (
@@ -105,12 +114,17 @@ export const Card = ({
             onClick={addToFavourites}
             className="hover:scale-110 cursor-pointer "
           />
-          <BsQrCodeScan className="hover:scale-110 cursor-pointer" />
+          {/* <BsQrCodeScan className="hover:scale-110 cursor-pointer" /> */}
           <a href={mapShare} target="_blank">
             <BiMap className="hover:scale-110 cursor-pointer" />
           </a>
-          <BsShareFill className="text-xs hover:scale-110 cursor-pointer" />
-          <BsGlobe className="text-xs hover:scale-110 cursor-pointer" />
+          <BsShareFill
+            onClick={handleCopyUrl}
+            className="text-xs hover:scale-110 cursor-pointer"
+          />
+          <a target="_blank" href={`/${type}/${slug}`}>
+            <BsGlobe className="text-xs hover:scale-110 cursor-pointer" />
+          </a>
         </div>
         <div className="flex items-center justify-end text-sm w-full pr-2 ">
           <Link href={`/${type}/${slug}`}>
