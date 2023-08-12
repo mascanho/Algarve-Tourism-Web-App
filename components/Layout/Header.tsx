@@ -108,11 +108,6 @@ const Header = ({ currentUser }: UserProps) => {
                 tabIndex={0}
                 className="p-2 mt-3 bg-white shadow menu menu-compact dropdown-content rounded-box w-52"
               >
-                <li className="rounded-md active:bg-sky">
-                  <Link href="/#search" className="rounded-md active:bg-sky">
-                    <span className="active:bg-sky">Search</span>
-                  </Link>
-                </li>
                 <li tabIndex={0} className="">
                   <ul className="z-10 p-2 bg-white">
                     {catArr.map((cat) => (
@@ -128,29 +123,31 @@ const Header = ({ currentUser }: UserProps) => {
                 </li>
 
                 {/* Mobile Menu */}
-                <Link href="algarve" className="active:bg-sky rounded-md">
+
+                <Link href="/search">
+                  <li className="rounded-md active:bg-sky">
+                    <span className="rounded-md active:bg-sky">Search</span>
+                  </li>
+                </Link>
+                <Link href="/beaches">
+                  <li className="rounded-md active:bg-sky">
+                    <span className="rounded-md active:bg-sky">Categories</span>
+                  </li>
+                </Link>
+
+                <Link href="/algarve">
                   <li className="rounded-md active:bg-sky">
                     <span className="rounded-md active:bg-sky">Algarve</span>
-                  </li>
-                </Link>
-                <Link href="/contact">
-                  <li className="rounded-md active:bg-sky">
-                    <span className="rounded-md active:bg-sky">e</span>
-                  </li>
-                </Link>
-                <Link href="/contact">
-                  <li className="rounded-md active:bg-sky">
-                    <span className="rounded-md active:bg-sky">e</span>
-                  </li>
-                </Link>
-                <Link href="/contact">
-                  <li className="rounded-md active:bg-sky">
-                    <span className="rounded-md active:bg-sky">e</span>
                   </li>
                 </Link>
                 <Link href="/blog">
                   <li className="rounded-md active:bg-sky">
                     <span className="rounded-md active:bg-sky">Blog</span>
+                  </li>
+                </Link>
+                <Link href="/contact">
+                  <li className="rounded-md active:bg-sky">
+                    <span className="rounded-md active:bg-sky">Contact</span>
                   </li>
                 </Link>
               </ul>
