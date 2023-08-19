@@ -154,9 +154,9 @@ const Header = ({ currentUser }: UserProps) => {
             </div>
             <a
               onClick={() => router.push("/")}
-              className="w-full p-0 text-xl text-left normal-case cursor-pointer"
+              className="w-full p-0 sm:text-xl text-left normal-case cursor-pointer"
             >
-              AlgarveGems
+              Algarve Wonders
             </a>
           </div>
           <div className="hidden navbar-center lg:flex">

@@ -61,7 +61,7 @@ function Footer() {
             </svg>
             <div>
               <p>
-                AlgarveGems &copy; {new Date().getFullYear()} <br />
+                Algarve Wonders &copy; {new Date().getFullYear()} <br />
               </p>
               <span className="block text-xs">
                 Developed by{" "}

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import Link from "next/link";
 import { BsLayoutTextSidebarReverse } from "react-icons/bs";
@@ -14,6 +14,10 @@ function page() {
   const { favourites, addFavourite, removeFavourite }: any =
     useAddToFavourites();
   const [changeTable, setChangeTable]: any = useState(false);
+
+  useEffect(() => {
+    document.title = "Algarve Wonders - Your Favourites";
+  });
 
   const elements = [
     { position: 6, mass: 12.011, symbol: "C", name: "Carbon" },
@@ -111,6 +115,7 @@ function page() {
                   key={el.title}
                   rating={el.rating}
                   city={el.city}
+                  paid={el.paid}
                 />
               ))}
             </div>

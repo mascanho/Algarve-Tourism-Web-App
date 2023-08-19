@@ -14,6 +14,7 @@ const CardFavs = ({
   city,
   route,
   rating,
+  paid,
 }: any) => {
   return (
     <Link href={`/${type}`}>
