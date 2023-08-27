@@ -18,13 +18,16 @@ function Footer() {
               <p className="link link-hover">Advertisement</p>
             </div>
             <div className="flex flex-col space-y-1">
-              <span className="footer-title">Company</span>
+              <Link href={"/about"}>
+                <span className="footer-title">Company</span>
+              </Link>
               <Link href="/about">
                 <p className="link link-hover">About us</p>
               </Link>
+              <Link href="/legal">
+                <p className="link link-hover">The Boring Stuff</p>
+              </Link>
               <p className="link link-hover">Contact</p>
-              <p className="link link-hover">Jobs</p>
-              <p className="link link-hover">Press kit</p>
             </div>
             <div className="flex flex-col space-y-1">
               <span className="footer-title">Quick Links</span>
@@ -38,8 +41,16 @@ function Footer() {
               </a>
             </div>
             <div className="flex flex-col space-y-1">
-              <span className="footer-title">Legal</span>
-              <p className="link link-hover">Terms of use</p>
+              <span className="footer-title">Partners</span>
+              <a href="https://markwarrior.com" target="_blank">
+                <p className="link link-hover">Mark Warrior</p>
+              </a>
+              <a href="https://markwarrior.com" target="_blank">
+                <p className="link link-hover">Blackcat Marketing</p>
+              </a>
+              <a href="https://markwarrior.com" target="_blank">
+                <p className="link link-hover">Estralho Criativo</p>
+              </a>
               <Link href="/policy">
                 <p className="link link-hover">Privacy & Cookies</p>
               </Link>

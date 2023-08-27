@@ -91,22 +91,74 @@ async function page() {
           >
             About Us
           </h2>
-          <section className="sm:mt-10 mt-5 sm:pr-8">
+          <section className="flex flex-col sm:mt-10 mt-5 sm:pr-8 space-y-5 mb-20">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-              odio officiis cum expedita nobis tempore quibusdam, minus
-              repudiandae qui. Sed, maxime excepturi expedita omnis labore fuga
-              asperiores pariatur iste dicta laboriosam sunt cumque commodi
-              veniam modi mollitia dignissimos, itaque aut. Dolore possimus
-              velit, fugit neque hic ratione aliquam nihil necessitatibus sed
-              reprehenderit non exercitationem, vitae pariatur deserunt nulla
-              amet accusantium atque. Soluta facere porro asperiores voluptatum
-              perspiciatis. Quod, quisquam. Animi, rem. Similique tempora
-              dignissimos minima vero error voluptatem nobis possimus, sapiente
-              totam, sequi ratione explicabo tempore repudiandae sed!
-              Voluptatibus dolor ipsam esse perspiciatis velit possimus tenetur
-              nobis recusandae id alias!
+              Welcome to our corner of discovery, where the natural wonders of
+              the Algarve come to life in all their splendor. We are a
+              passionate team of explorers, adventurers, and nature enthusiasts
+              who have embarked on a journey to uncover the region's best-kept
+              secrets.
             </p>
+            <p>
+              Our website is more than just a virtual guide—it's a window into
+              the heart of the Algarve's untouched beauty and the allure of its
+              hidden gems.
+            </p>
+            Sharing the Unseen** Our mission is simple: to provide you with an
+            authentic and captivating experience of the Algarve that goes beyond
+            the usual tourist paths. We believe that the true essence of a
+            destination lies in its hidden corners, in the whispering woods,
+            along the unspoiled shores, and within the ancient landscapes that
+            few have ventured to explore.
+            <p>
+              Through meticulous research and on-the-ground exploration, we have
+              curated a collection of the most enchanting and
+              off-the-beaten-path locations that the Algarve has to offer.
+              **What We Offer: Your Personal Guide** Our website is designed
+              with your curiosity and wanderlust in mind.
+            </p>
+            <p>
+              We've meticulously organized a treasure trove of nature's wonders
+              and secret hideaways, ensuring that your journey through the
+              Algarve is as seamless and inspiring as possible. Each
+              destination, from the hidden coves to the serene trails, is
+              accompanied by insightful descriptions, captivating photographs,
+              and practical travel tips.
+            </p>
+            <p>
+              We've done the legwork so you can focus on the joy of exploration.
+            </p>
+            <p>
+              We are not your typical travel guide. We are storytellers,
+              dedicated to sharing the tales of the Algarve's landscapes, its
+              history, and its inhabitants. With us, you won't just find a list
+              of places to visit; you'll uncover the stories that make each
+              location special.
+            </p>
+            Whether you're seeking solitude amidst nature or yearning to capture
+            the perfect sunset view, we're here to guide you towards the
+            extraordinary moments that only the Algarve can offer. **Your
+            Adventure Awaits: Planning a trip to the Algarve has never been
+            easier. With our user-friendly interface, you can effortlessly
+            navigate through the best-hidden spots, creating your own
+            personalized itinerary. Whether you're an avid hiker, a beach lover,
+            or a seeker of authentic cultural experiences, our platform empowers
+            you to tailor your Algarve adventure according to your preferences.
+            <p>
+              join us on a journey of discovery as we invite you to witness the
+              Algarve's natural wonders through our eyes. Let the landscapes
+              captivate you, the stories enchant you, and the hidden treasures
+              beckon you. Together, let's embark on a unique exploration of the
+              Algarve, where the unseen becomes a reality and where every corner
+              tells a story waiting to be unveiled.
+            </p>
+            <div className="pb-10">
+              <Link href={"/beaches"}>
+                <button className="bg-sky rounded-md px-4 py-1 mt-2 text-white">
+                  Start Exploring
+                </button>
+              </Link>
+            </div>
           </section>
         </div>
         <div className="w-[480px] sm:pl-6  hidden sm:block">

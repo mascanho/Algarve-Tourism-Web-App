@@ -93,19 +93,58 @@ async function page() {
           </h2>
           <section className="sm:mt-10 mt-5 sm:pr-8">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-              odio officiis cum expedita nobis tempore quibusdam, minus
-              repudiandae qui. Sed, maxime excepturi expedita omnis labore fuga
-              asperiores pariatur iste dicta laboriosam sunt cumque commodi
-              veniam modi mollitia dignissimos, itaque aut. Dolore possimus
-              velit, fugit neque hic ratione aliquam nihil necessitatibus sed
-              reprehenderit non exercitationem, vitae pariatur deserunt nulla
-              amet accusantium atque. Soluta facere porro asperiores voluptatum
-              perspiciatis. Quod, quisquam. Animi, rem. Similique tempora
-              dignissimos minima vero error voluptatem nobis possimus, sapiente
-              totam, sequi ratione explicabo tempore repudiandae sed!
-              Voluptatibus dolor ipsam esse perspiciatis velit possimus tenetur
-              nobis recusandae id alias!
+              **Terms and Conditions** Please read these Terms and Conditions
+              ("Terms") carefully before using our website ("the Website"). Your
+              access to and use of the Website is conditioned on your acceptance
+              of and compliance with these Terms. By accessing or using the
+              Website, you agree to be bound by these Terms. If you disagree
+              with any part of the Terms, then you may not access the Website.
+              **1. Data Usage and Privacy** We are committed to protecting your
+              privacy and ensuring the security of your personal information. We
+              may collect and use certain data to enhance your experience on the
+              Website. This data may include, but is not limited to, your IP
+              address, browser type, device information, and browsing behavior.
+              We use this information solely for internal purposes, such as
+              analyzing trends and improving the Website's functionality and
+              content. Your data will not be sold, shared, or disclosed to third
+              parties without your explicit consent. **2. User Accounts and
+              Passwords** User accounts and passwords are essential for
+              accessing certain features of the Website. We take security
+              seriously, and all user account passwords are encrypted to ensure
+              their confidentiality. It is your responsibility to keep your
+              account credentials secure and confidential. You are solely
+              responsible for any activities that occur under your account. If
+              you suspect any unauthorized use of your account, please notify us
+              immediately. **3. Content and Intellectual Property** All content
+              provided on the Website, including but not limited to text,
+              images, graphics, and software, is the intellectual property of
+              the Website and is protected by applicable copyright and trademark
+              laws. You may not reproduce, distribute, modify, or otherwise use
+              the content without our prior written consent. **4. Disclaimer of
+              Warranties** The Website and its content are provided "as is" and
+              "as available." We make no representations or warranties of any
+              kind, express or implied, regarding the accuracy, reliability, or
+              availability of the Website or its content. You use the Website at
+              your own risk. **5. Limitation of Liability** To the fullest
+              extent permitted by applicable law, we shall not be liable for any
+              indirect, incidental, special, consequential, or punitive damages,
+              or any loss of profits or revenues, whether incurred directly or
+              indirectly, or any loss of data, use, goodwill, or other
+              intangible losses resulting from your access or use of, or
+              inability to access or use, the Website. **6. Changes to Terms**
+              We reserve the right to modify or replace these Terms at any time.
+              Changes will be effective immediately upon posting on the Website.
+              It is your responsibility to review these Terms periodically. By
+              continuing to access or use the Website after changes have been
+              made, you agree to be bound by the revised Terms. **7. Governing
+              Law** These Terms are governed by and construed in accordance with
+              the laws of [Your Country/State], without regard to its conflict
+              of law provisions. **Contact Information** If you have any
+              questions about these Terms, please contact us at
+              [contact@email.com]. By accessing or using the Website, you
+              acknowledge that you have read, understood, and agree to be bound
+              by these Terms and any other guidelines or policies referenced
+              herein.{" "}
             </p>
           </section>
         </div>
