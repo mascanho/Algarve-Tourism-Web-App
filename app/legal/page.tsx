@@ -91,17 +91,22 @@ async function page() {
           >
             Legal
           </h2>
-          <section className="sm:mt-10 mt-5 sm:pr-8">
+          <section className="sm:mt-10 mt-5 sm:pr-8 mb-20 space-y-3">
             <p>
-              **Terms and Conditions** Please read these Terms and Conditions
-              ("Terms") carefully before using our website ("the Website"). Your
-              access to and use of the Website is conditioned on your acceptance
-              of and compliance with these Terms. By accessing or using the
-              Website, you agree to be bound by these Terms. If you disagree
-              with any part of the Terms, then you may not access the Website.
-              **1. Data Usage and Privacy** We are committed to protecting your
-              privacy and ensuring the security of your personal information. We
-              may collect and use certain data to enhance your experience on the
+              Please read these Terms and Conditions ("Terms") carefully before
+              using our website ("the Website"). Your access to and use of the
+              Website is conditioned on your acceptance of and compliance with
+              these Terms.
+            </p>
+            <p>
+              By accessing or using the Website, you agree to be bound by these
+              Terms. If you disagree with any part of the Terms, then you may
+              not access the Website.
+            </p>
+            <p>
+              Data Usage and Privacy We are committed to protecting your privacy
+              and ensuring the security of your personal information. We may
+              collect and use certain data to enhance your experience on the
               Website. This data may include, but is not limited to, your IP
               address, browser type, device information, and browsing behavior.
               We use this information solely for internal purposes, such as
@@ -139,12 +144,14 @@ async function page() {
               made, you agree to be bound by the revised Terms. **7. Governing
               Law** These Terms are governed by and construed in accordance with
               the laws of [Your Country/State], without regard to its conflict
-              of law provisions. **Contact Information** If you have any
-              questions about these Terms, please contact us at
-              [contact@email.com]. By accessing or using the Website, you
-              acknowledge that you have read, understood, and agree to be bound
-              by these Terms and any other guidelines or policies referenced
-              herein.{" "}
+              of law provisions.
+            </p>
+            <p>
+              **Contact Information** If you have any questions about these
+              Terms, please contact us at [contact@email.com]. By accessing or
+              using the Website, you acknowledge that you have read, understood,
+              and agree to be bound by these Terms and any other guidelines or
+              policies referenced herein.{" "}
             </p>
           </section>
         </div>
