@@ -108,6 +108,7 @@ async function page() {
                 avatar={blog?.fields?.avatar}
                 tags={blog?.fields?.tags}
                 date={blog?.fields?.date}
+                role={blog?.fields?.role}
               />
             ))}
           </div>

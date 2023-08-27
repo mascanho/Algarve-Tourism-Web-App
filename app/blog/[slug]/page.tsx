@@ -2,6 +2,7 @@ import React from "react";
 import TableOfContentsFloating from "./TableOfContents";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { createClient } from "contentful";
+import Image from "next/image";
 
 const options = {
   renderNode: {
@@ -36,6 +37,8 @@ const page = async (props: any) => {
   // Contentful Rich Text Renderer
   const post = documentToReactComponents(blog[0]?.fields?.body, options);
 
+  console.log(blog[0].fields.author, "from the blog");
+
   return (
     <section className="max-w-7xl w-11/12 sm:flex mx-auto mt-20">
       <div className="sm:w-1/6 sm:flex sm:flex-col justify-start sticky inline-block order-2">
@@ -43,12 +46,33 @@ const page = async (props: any) => {
       </div>
 
       <div className="sm:w-3/4 w-11/12 flex-1 font-semibold">
-        <div className="w-11/12 mb-8">
+        <div className="w-11/12 mb-8 ">
           <img
             src={blog[0]?.fields?.image?.fields?.file.url}
             alt="albvufeir"
             className="w-full"
           />
+          <div className="relative w-full h-10 space-x-2 mt-4 flex items-center">
+            <div className="relative w-10 h-10">
+              <Image
+                src={`https:${blog[0]?.fields?.avatar?.fields?.file.url}`}
+                layout="responsive"
+                alt="albvufeir"
+                width={80}
+                height={80}
+                objectFit="contain"
+                className="rounded-full w-10 h-10"
+              />
+            </div>
+            <div className="w-fit flex flex-col">
+              <span className="text-black text-xs">
+                {blog[0]?.fields?.author}
+              </span>
+              <span className="text-xs font-semibold">
+                {blog[0]?.fields?.role}
+              </span>
+            </div>
+          </div>
         </div>
         <h1 className="text-black text-5xl font-semibold">
           {blog[0]?.fields?.title}
