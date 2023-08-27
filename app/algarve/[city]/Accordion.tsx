@@ -22,10 +22,12 @@ function TableAccordion({ tableData }: any) {
         {/*   your design needs */}
         {/* </Accordion.Panel> */}
         {tableData.map((bookmark: any) => {
+          console.log(bookmark);
+
           return (
             <Link href={`${bookmark.url}`}>
               <Accordion.Panel key={bookmark.id} className="text-gray-400">
-                {bookmark.name}
+                {bookmark.label}
               </Accordion.Panel>
             </Link>
           );

@@ -27,7 +27,9 @@ function Footer() {
               <Link href="/legal">
                 <p className="link link-hover">The Boring Stuff</p>
               </Link>
-              <p className="link link-hover">Contact</p>
+              <Link href={"/contact"}>
+                <p className="link link-hover">Contact</p>
+              </Link>
             </div>
             <div className="flex flex-col space-y-1">
               <span className="footer-title">Quick Links</span>
