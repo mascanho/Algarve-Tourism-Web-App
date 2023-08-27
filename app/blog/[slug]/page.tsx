@@ -46,6 +46,12 @@ const page = async (props: any) => {
       </div>
 
       <div className="sm:w-3/4 w-11/12 flex-1 font-semibold">
+        <div className="mb-8">
+          <h1 className="text-black text-4xl font-semibold">
+            {blog[0]?.fields?.title}
+          </h1>
+        </div>
+
         <div className="w-11/12 mb-8 ">
           <img
             src={blog[0]?.fields?.image?.fields?.file.url}
@@ -74,9 +80,6 @@ const page = async (props: any) => {
             </div>
           </div>
         </div>
-        <h1 className="text-black text-5xl font-semibold">
-          {blog[0]?.fields?.title}
-        </h1>
         <section className="mt-10 richText">{post}</section>
       </div>
     </section>
