@@ -38,12 +38,12 @@ export const cityArr = [
     image:
       "https://www.movingtoportugal.pt/wp-content/uploads/2021/06/Faro-4.png",
   },
-  {
-    id: 13,
-    name: "Ferragudo",
-    icon: "",
-    route: "ferragudo",
-  },
+  // {
+  //   id: 13,
+  //   name: "Ferragudo",
+  //   icon: "",
+  //   route: "ferragudo",
+  // },
   {
     id: 4,
     name: "Lagos",
@@ -60,18 +60,18 @@ export const cityArr = [
     image:
       "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/fb/9f/37.jpg",
   },
-  {
-    id: 15,
-    name: "Monte Gordo",
-    icon: "",
-    route: "monte-gordo",
-  },
-  {
-    id: 11,
-    name: "Olhão",
-    icon: "",
-    route: "olhao",
-  },
+  // {
+  //   id: 15,
+  //   name: "Monte Gordo",
+  //   icon: "",
+  //   route: "monte-gordo",
+  // },
+  // {
+  //   id: 11,
+  //   name: "Olhão",
+  //   icon: "",
+  //   route: "olhao",
+  // },
   {
     id: 5,
     name: "Portimão",
@@ -85,6 +85,8 @@ export const cityArr = [
     name: "Quarteira",
     icon: "",
     route: "quarteira",
+    image:
+      "https://www.propertyguides.com/portugal/media/sites/3/Wide-sandy-beach-of-Quarteira-and-Vilamoura.jpg",
   },
   {
     id: 7,
