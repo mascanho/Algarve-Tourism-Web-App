@@ -16,7 +16,7 @@ export default function Loading() {
   //   </div>
   return (
     <div className="w-full h-full items-center flex justify-center">
-      <GridLoader color="lightblue" size={100} />
+      <GridLoader color="lightblue" size={85} />
     </div>
   );
 }
