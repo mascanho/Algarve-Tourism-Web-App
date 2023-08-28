@@ -60,5 +60,5 @@ input[type="text"] {
 }
 
 .mantine-1cn2mlo {
-  @apply rounded-none border-none !important;
+  @apply rounded-none  !important;
 }
