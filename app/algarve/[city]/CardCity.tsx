@@ -13,7 +13,7 @@ const CardCity = ({
 }: any) => {
   return (
     <Link href={`/${type || "algarve"}/${route || slug}`}>
-      <div className="card sm:w-[300px] w-11/12 mx-auto bg-base-100 shadow-xl  overflow-hidden group">
+      <div className="card sm:w-[300px] mx-auto bg-base-100 shadow-xl  overflow-hidden group">
         <div className=" h-12 p-4  text-left sm:w-full w-full">
           <h2 className="card-title text-left w-full group-hover:text-white text-sm">
             {title || name}

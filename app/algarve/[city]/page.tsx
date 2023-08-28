@@ -199,7 +199,7 @@ async function page(props: any) {
           </h2>
           <div className="richText">{whatToDo}</div>
         </div>
-        <div className="grid sm:grid-cols-3 w-full gap-y-10 pt-5 max-w-5xl m-0 place-content-between place-items-stretch md:gap-x-14">
+        <div className="grid sm:grid-cols-3 w-full gap-y-10 pt-5 sm:max-w-5xl m-0 place-content-between place-items-stretch md:gap-x-14">
           {filteredCity.slice(0, 6).map((i: any) => (
             <CardCity
               key={i}

@@ -29,9 +29,9 @@ const Hero = ({ categories }: any) => {
   return (
     <>
       <div
-        className={`bg-[url('https://images.unsplash.com/photo-1526737511523-ba685f246e8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1333&q=80')] 
+        className={`bg-[url('https://images.unsplash.com/photo-1562760156-9353a70352ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80')] 
 h-screen overflow-hidden  
-bg-cover bg-blend-multiply bg-black/30  `}
+bg-cover bg-blend-multiply bg-black/30  sm:bg-[url('https://images.unsplash.com/photo-1556967455-3b91f7020daf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80')]   `}
       />
       <section className="absolute w-full mx-auto space-y-6 text-center top-56  sm:top-80">
         <h1 className="mx-auto text-3xl font-bold text-center text-white sm:text-6xl">

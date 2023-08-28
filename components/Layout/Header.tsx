@@ -124,7 +124,7 @@ const Header = ({ currentUser }: UserProps) => {
 
                 {/* Mobile Menu */}
 
-                <Link href="/search">
+                <Link href="/">
                   <li className="rounded-md active:bg-sky">
                     <span className="rounded-md active:bg-sky">Search</span>
                   </li>

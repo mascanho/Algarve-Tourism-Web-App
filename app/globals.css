@@ -58,3 +58,7 @@
 input[type="text"] {
   font-size: 16px;
 }
+
+.mantine-1cn2mlo {
+  @apply rounded-none !important;
+}

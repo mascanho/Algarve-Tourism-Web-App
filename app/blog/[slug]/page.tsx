@@ -37,22 +37,16 @@ const page = async (props: any) => {
   // Contentful Rich Text Renderer
   const post = documentToReactComponents(blog[0]?.fields?.body, options);
 
-  console.log(blog[0].fields.author, "from the blog");
-
   return (
-    <section className="max-w-7xl w-11/12 sm:flex mx-auto mt-20">
-      <div className="sm:w-1/6 sm:flex sm:flex-col justify-start sticky inline-block order-2">
-        <TableOfContentsFloating />
-      </div>
-
-      <div className="sm:w-3/4 w-11/12 flex-1 font-semibold">
+    <section className="max-w-7xl w-11/12 sm:flex mx-auto mt-4 sm:mt-20">
+      <div className="sm:w-3/4 w-full flex-1 font-semibold">
         <div className="mb-8">
-          <h1 className="text-black text-4xl font-semibold">
+          <h1 className="text-black sm:text-4xl text-3xl font-semibold">
             {blog[0]?.fields?.title}
           </h1>
         </div>
 
-        <div className="w-11/12 mb-8 ">
+        <div className="sm:w-11/12 mb-8 ">
           <img
             src={blog[0]?.fields?.image?.fields?.file.url}
             alt="albvufeir"
