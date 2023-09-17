@@ -4,11 +4,11 @@ import { useRouter } from "next/navigation";
 import { HiBars3 } from "react-icons/hi2";
 import { MdCardTravel } from "react-icons/md";
 import { usePathname } from "next/navigation";
-import { Drawer, Group, Button } from "@mantine/core";
-import { useDisclosure, useLocalStorage } from "@mantine/hooks";
+import { useDisclosure } from "@mantine/hooks";
 import { catArr } from "@/Data/Categories";
 import LoginModal from "../modals/Login";
 import DrawerContent from "../modals/DrawerContent";
+import { Modal, Group, Button, Drawer } from "@mantine/core";
 import {
   useLoginModalStore,
   useRegisteredModalStore,
@@ -81,15 +81,16 @@ const Header = ({ currentUser }: UserProps) => {
         {/* <InstructionModal /> */}
 
         {/* Drawer */}
-        <Drawer
-          size={"300px"}
-          opened={opened}
-          onClose={close}
-          title="Favourites"
-        >
-          {/* Drawer Content */}
-          <DrawerContent />
-        </Drawer>
+
+        {/* <Drawer */}
+        {/*   size={"300px"} */}
+        {/*   opened={opened} */}
+        {/*   onClose={close} */}
+        {/*   title="Favourites" */}
+        {/* > */}
+        {/* Drawer Content */}
+        {/*   <DrawerContent /> */}
+        {/* </Drawer> */}
 
         {/* Modals Section */}
 
@@ -327,6 +328,14 @@ const Header = ({ currentUser }: UserProps) => {
             </div>
           </div>
         </div>
+
+        <Modal opened={opened} onClose={close} title="Authentication" centered>
+          {/* Modal content */}
+        </Modal>
+
+        <Group position="center">
+          <Button onClick={open}>Open centered Modal</Button>
+        </Group>
 
         {/* Bottom Navigation */}
 
