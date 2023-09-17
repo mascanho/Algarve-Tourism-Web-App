@@ -329,14 +329,6 @@ const Header = ({ currentUser }: UserProps) => {
           </div>
         </div>
 
-        <Modal opened={opened} onClose={close} title="Authentication" centered>
-          {/* Modal content */}
-        </Modal>
-
-        <Group position="center">
-          <Button onClick={open}>Open centered Modal</Button>
-        </Group>
-
         {/* Bottom Navigation */}
 
         {bottomNav ? (
@@ -384,6 +376,10 @@ const Header = ({ currentUser }: UserProps) => {
           ""
         )}
       </nav>
+      <Modal opened={opened} onClose={close} title="Authentication" centered>
+        {/* Modal content */}
+        <DrawerContent />
+      </Modal>
     </>
   );
 };
