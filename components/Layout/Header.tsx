@@ -23,6 +23,7 @@ import { BsSearch } from "react-icons/bs";
 import { AiOutlineHome } from "react-icons/ai";
 
 interface UserProps {
+  close: () => void;
   currentUser: {
     createdAt: string;
     updatedAt: string;
@@ -336,9 +337,11 @@ const Header = ({ currentUser }: UserProps) => {
             <button>
               <AiOutlineHome className="mt-2" />
             </button>
-            <button className="active:border-gray-700">
-              <BsSearch className="mt-2" />
-            </button>
+            <Link href="/beaches">
+              <button className="active:border-gray-700">
+                <BsSearch className="mt-2" />
+              </button>
+            </Link>
             <button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -378,7 +381,7 @@ const Header = ({ currentUser }: UserProps) => {
       </nav>
       <Modal opened={opened} onClose={close} title="Authentication" centered>
         {/* Modal content */}
-        <DrawerContent />
+        <DrawerContent onClose={close} />
       </Modal>
     </>
   );
