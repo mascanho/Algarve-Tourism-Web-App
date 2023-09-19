@@ -333,15 +333,15 @@ const Header = ({ currentUser }: UserProps) => {
         {/* Bottom Navigation */}
 
         {bottomNav ? (
-          <div className="btm-nav sm:hidden">
+          <div className="fixed bottom-0 sm:hidden">
             <button>
               <AiOutlineHome className="mt-2" />
             </button>
-            <Link href="/beaches">
-              <button className="active:border-gray-700">
+            <button className="active:border-gray-700">
+              <Link href="/beaches">
                 <BsSearch className="mt-2" />
-              </button>
-            </Link>
+              </Link>
+            </button>
             <button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -381,7 +381,7 @@ const Header = ({ currentUser }: UserProps) => {
       </nav>
       <Modal opened={opened} onClose={close} title="Authentication" centered>
         {/* Modal content */}
-        <DrawerContent onClose={close} />
+        <DrawerContent />
       </Modal>
     </>
   );

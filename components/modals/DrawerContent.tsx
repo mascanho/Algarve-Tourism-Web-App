@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useDisclosure, useLocalStorage } from "@mantine/hooks";
 import { FaRegTrashAlt } from "react-icons/fa";
 
-const DrawerContent = ({ onClose }: any) => {
+const DrawerContent = () => {
   const { favourites, addFavourite, removeFavourite } = useAddToFavourites();
 
   return (
@@ -59,10 +59,7 @@ const DrawerContent = ({ onClose }: any) => {
         <span className="text-gray-400">Add places & experiences</span>
       ) : (
         <Link href="/favourites/">
-          <button
-            onClick={() => onClose()}
-            className="w-full bg-sky text-white px-3 py-1 rounded-md"
-          >
+          <button className="w-full bg-sky text-white px-3 py-1 rounded-md">
             {" "}
             Export
           </button>
