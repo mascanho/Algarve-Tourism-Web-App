@@ -37,7 +37,7 @@ interface UserProps {
   } | null;
 }
 
-const Header = ({ currentUser }: UserProps) => {
+const Header = ({ currentUser }: any) => {
   const router = useRouter();
   const pathname = usePathname();
   const [openLogin, setOpenLogin] = useState(false);
