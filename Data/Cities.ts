@@ -15,14 +15,6 @@ export const cityArr = [
   //   image: "",
   // },
   {
-    id: 16,
-    name: "Armação de Pêra",
-    icon: "",
-    route: "armacao-de-pera",
-    image:
-      "https://cdn.travel-in-portugal.com/sites/default/files/photos/alvor-algarve.jpg",
-  },
-  {
     id: 194,
     name: "Carvoeiro",
     icon: "",

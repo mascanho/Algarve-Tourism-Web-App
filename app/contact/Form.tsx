@@ -36,6 +36,8 @@ export default function Form() {
       <textarea
         className="textarea textarea-info bg-transparent"
         placeholder="Your Message..."
+        name="message"
+        id="message"
       />
       <ValidationError prefix="Message" field="message" errors={state.errors} />
       <div className="pt-2 w-full">
