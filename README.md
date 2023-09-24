@@ -37,6 +37,7 @@
 - [x] filter segmentation
 - [ ] Weather API integration
 - [ ] PDF Download generator
+- [ ] Cookie Consent Banner for GDPR
 
 ## Disclaimer
 

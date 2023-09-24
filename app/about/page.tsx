@@ -103,12 +103,14 @@ async function page() {
               the heart of the Algarve's untouched beauty and the allure of its
               hidden gems.
             </p>
-            Sharing the Unseen** Our mission is simple: to provide you with an
-            authentic and captivating experience of the Algarve that goes beyond
-            the usual tourist paths. We believe that the true essence of a
-            destination lies in its hidden corners, in the whispering woods,
-            along the unspoiled shores, and within the ancient landscapes that
-            few have ventured to explore.
+            <p>
+              Our mission is simple: to provide you with an authentic and
+              captivating experience of the Algarve that goes beyond the usual
+              tourist paths. We believe that the true essence of a destination
+              lies in its hidden corners, in the whispering woods, along the
+              unspoiled shores, and within the ancient landscapes that few have
+              ventured to explore.
+            </p>
             <p>
               Through meticulous research and on-the-ground exploration, we have
               curated a collection of the most enchanting and
@@ -134,15 +136,21 @@ async function page() {
               of places to visit; you'll uncover the stories that make each
               location special.
             </p>
-            Whether you're seeking solitude amidst nature or yearning to capture
-            the perfect sunset view, we're here to guide you towards the
-            extraordinary moments that only the Algarve can offer. **Your
-            Adventure Awaits: Planning a trip to the Algarve has never been
-            easier. With our user-friendly interface, you can effortlessly
-            navigate through the best-hidden spots, creating your own
-            personalized itinerary. Whether you're an avid hiker, a beach lover,
-            or a seeker of authentic cultural experiences, our platform empowers
-            you to tailor your Algarve adventure according to your preferences.
+            <p>
+              Whether you're seeking solitude amidst nature or yearning to
+              capture the perfect sunset view, we're here to guide you towards
+              the extraordinary moments that only the Algarve can offer.
+            </p>
+
+            <p>
+              Your Adventure Awaits: Planning a trip to the Algarve has never
+              been easier. With our user-friendly interface, you can
+              effortlessly navigate through the best-hidden spots, creating your
+              own personalized itinerary. Whether you're an avid hiker, a beach
+              lover, or a seeker of authentic cultural experiences, our platform
+              empowers you to tailor your Algarve adventure according to your
+              preferences.
+            </p>
             <p>
               join us on a journey of discovery as we invite you to witness the
               Algarve's natural wonders through our eyes. Let the landscapes
