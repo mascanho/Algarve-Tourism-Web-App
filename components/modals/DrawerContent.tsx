@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useDisclosure, useLocalStorage } from "@mantine/hooks";
 import { FaRegTrashAlt } from "react-icons/fa";
 
-const DrawerContent = () => {
+const DrawerContent = ({ close }: any) => {
   const { favourites, addFavourite, removeFavourite } = useAddToFavourites();
 
   return (
@@ -25,7 +25,7 @@ const DrawerContent = () => {
                 onClick={() => removeFavourite(item.id)}
                 className="absolute right-2 bottom-3 text-xs text-gray-500 transition-all ease-in delay-75 group-hover:text-black"
               >
-                <FaRegTrashAlt />
+                <FaRegTrashAlt className="group-hover:text-white" />
               </span>
               <div className="text-left flex  space-x-3">
                 <div className="flex items-center">
@@ -40,7 +40,9 @@ const DrawerContent = () => {
                   <div className="flex items-start text-left text-xs">
                     <StarRating rating={item.rating} />
                   </div>
-                  <p className="text-sm text-gray-400">{item.city}</p>
+                  <p className="text-sm text-gray-400 group-hover:text-gray-600">
+                    {item.city}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -56,10 +58,25 @@ const DrawerContent = () => {
       {/* </button> */}
 
       {favourites.length < 1 ? (
-        <span className="text-gray-400">Add places & experiences</span>
+        <>
+          <div className="flex flex-col space-y-2">
+            <span className="text-gray-400">Add places & experiences</span>
+            <Link href="/beaches">
+              <button
+                onClick={close}
+                className="w-full bg-sky text-white px-3 py-1 rounded-md"
+              >
+                View categories
+              </button>
+            </Link>
+          </div>
+        </>
       ) : (
         <Link href="/favourites/">
-          <button className="w-full bg-sky text-white px-3 py-1 rounded-md">
+          <button
+            onClick={close}
+            className="w-full bg-sky text-white px-3 py-1 rounded-md"
+          >
             {" "}
             Export
           </button>

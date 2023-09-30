@@ -381,7 +381,7 @@ const Header = ({ currentUser }: any) => {
       </nav>
       <Modal opened={opened} onClose={close} title="Favourite Places" centered>
         {/* Modal content */}
-        <DrawerContent />
+        <DrawerContent close={close} />
       </Modal>
     </>
   );
