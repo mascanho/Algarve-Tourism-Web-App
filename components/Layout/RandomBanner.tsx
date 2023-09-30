@@ -3,10 +3,12 @@
 import { catArr } from "@/Data/Categories";
 import { useRouter } from "next/navigation";
 import { useDisclosure } from "@mantine/hooks";
-import { Modal, Button } from "@mantine/core";
+import { Modal, Button, Stepper } from "@mantine/core";
 import { useState } from "react";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { toast } from "react-hot-toast";
+import RandomModalContent from "../modals/RandomModalContent";
+import StepperModal from "../modals/Stepper";
 
 // Generate random items
 const randomItems = (array: any) => {
@@ -77,12 +79,12 @@ function RandomBanner({ categories }: any) {
   };
 
   return (
-    <div className="bg-[url('https://www.benoitproperties.com/wp-content/uploads/2021/07/algarve-header.png')] bg-cover bg-blend-multiply bg-black/40 w-11/12 py-10 mx-auto space-y-2 text-center text-white sm:w-full rounded-xl sm:space-y-2">
+    <div className="bg-[url('https://www.benoitproperties.com/wp-content/uploads/2021/07/algarve-header.png')] bg-cover bg-blend-multiply bg-black/40 w-11/12 py-16 mx-auto space-y-2 text-center text-white sm:w-full rounded-xl sm:space-y-2">
       <h4>Come join and have a vacation with us</h4>
       <h3 className="text-2xl sm:text-3xl">
         Prepare yourself and lets explore
       </h3>
-      <div className="pt-4 sm:space-x-4 space-y-4">
+      <div className="sm:space-x-8 space-y-4">
         <button
           onClick={handleClickRandom}
           className="px-4 py-2 text-black hover:bg-sky hover:text-white transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
@@ -98,32 +100,34 @@ function RandomBanner({ categories }: any) {
       </div>
       <Modal opened={opened} onClose={close} title="Your Adventure" centered>
         {/* Modal content */}
-        {randomChoice.map((item: any) => (
-          <>
-            <div
-              className="flex space-y-1 border rounded-md p-2 items-center"
-              key={item.id}
-            >
-              <div className="flex items-center">
-                <img
-                  src={item?.fields?.mainImage?.fields?.file?.url}
-                  className="w-8 h-8 rounded-full bg-sky  mr-2"
-                />
-
-                {item?.fields?.title}
-              </div>
-            </div>
-            <span className="[&:nth-child(10)]:hidden text-gray-200 m-auto w-full flex text-center justify-center items-center">
-              |
-            </span>
-          </>
-        ))}
-        <button
-          onClick={addToFavourites}
-          className="mt-8 mb-4 mx-auto px-4 py-2 bg-sky text-white hover:bg-sky hover:text-white transition-all ease-in delay-75  rounded-md active:scale-95 flex justify-center"
-        >
-          Add Choices to Your Adventure
-        </button>
+        {/* {randomChoice.map((item: any) => ( */}
+        {/*   <> */}
+        {/*     <div */}
+        {/*       className="flex space-y-1 border rounded-md p-2 items-center" */}
+        {/*       key={item.id} */}
+        {/*     > */}
+        {/*       <div className="flex items-center"> */}
+        {/*         <img */}
+        {/*           src={item?.fields?.mainImage?.fields?.file?.url} */}
+        {/*           className="w-8 h-8 rounded-full bg-sky  mr-2" */}
+        {/*         /> */}
+        {/*         {item?.fields?.title} */}
+        {/*       </div> */}
+        {/*     </div> */}
+        {/*     <span className="[&:nth-child(10)]:hidden text-gray-200 m-auto w-full flex text-center justify-center items-center"> */}
+        {/*       | */}
+        {/*     </span> */}
+        {/*   </> */}
+        {/* ))} */}
+        {/* <button */}
+        {/*   onClick={addToFavourites} */}
+        {/*   className="mt-8 mb-4 mx-auto px-4 py-2 bg-sky text-white hover:bg-sky hover:text-white transition-all ease-in delay-75  rounded-md active:scale-95 flex justify-center" */}
+        {/* > */}
+        {/*   Add Choices to Your Adventure */}
+        {/* </button> */}
+        <section>
+          <RandomModalContent />
+        </section>
       </Modal>
     </div>
   );
