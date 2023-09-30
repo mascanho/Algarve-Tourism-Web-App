@@ -25,7 +25,6 @@ async function getBlogs() {
 
 async function page() {
   const blogs = await getBlogs();
-  console.log(blogs, "From the blogs");
 
   const sportsToDo = [
     {
@@ -80,7 +79,6 @@ async function page() {
   };
 
   const randomItem = randomItems(catArr);
-  console.log(randomItem.name, "random Item");
 
   return (
     <section className=" sm:max-w-7xl sm:w-full mx-auto sm:h-full  ">

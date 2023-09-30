@@ -31,6 +31,8 @@ async function getAllCategories() {
 export default async function Home(props: any) {
   const categories = await getAllCategories();
 
+  const shuffledCategories = categories.sort(() => 0.5 - Math.random());
+
   return (
     <>
       <Hero categories={categories} />
@@ -97,7 +99,7 @@ export default async function Home(props: any) {
           ))}
         </section>
         <section className="pt-16 sm:py-28">
-          <RandomBanner />
+          <RandomBanner categories={categories} />
           <PopularCategories />
         </section>
       </section>

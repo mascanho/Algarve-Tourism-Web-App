@@ -10,25 +10,28 @@ function Footer() {
           <section className="grid grid-cols-2 w-full sm:flex justify-between px-4 sm:px-0 ">
             <div className="flex flex-col space-y-1">
               <span className="footer-title">About</span>
+              <Link href="/about">
+                <p className="link link-hover">About us</p>
+              </Link>
               <Link href={"/about"}>
                 <p className="link link-hover">What we do</p>
               </Link>
-              <p className="link link-hover">Design</p>
-              <p className="link link-hover">Marketing</p>
-              <p className="link link-hover">Advertisement</p>
+              <Link href={"/about"}>
+                <p className="link link-hover">Marketing</p>
+              </Link>
             </div>
             <div className="flex flex-col space-y-1">
               <Link href={"/about"}>
                 <span className="footer-title">Company</span>
-              </Link>
-              <Link href="/about">
-                <p className="link link-hover">About us</p>
               </Link>
               <Link href="/legal">
                 <p className="link link-hover">The Boring Stuff</p>
               </Link>
               <Link href={"/contact"}>
                 <p className="link link-hover">Contact</p>
+              </Link>
+              <Link href="/policy">
+                <p className="link link-hover">Privacy & Cookies</p>
               </Link>
             </div>
             <div className="flex flex-col space-y-1">
@@ -53,9 +56,6 @@ function Footer() {
               <a href="https://markwarrior.com" target="_blank">
                 <p className="link link-hover">Estralho Criativo</p>
               </a>
-              <Link href="/policy">
-                <p className="link link-hover">Privacy & Cookies</p>
-              </Link>
             </div>
           </section>
         </footer>

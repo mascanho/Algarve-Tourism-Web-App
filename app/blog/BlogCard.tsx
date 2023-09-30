@@ -40,7 +40,7 @@ export const BlogCard = ({
               <span>{role}</span>
             </div>
           </div>
-          <picture className="w-40 h-28 sm:inline-block hidden rounded-md  absolute top-2 right-0">
+          <picture className="w-40 h-28 sm:inline-block hidden rounded-md  absolute top-10 right-0">
             <img
               className="h-28 rounded-md"
               src={`https://${image?.fields?.file?.url}`}
