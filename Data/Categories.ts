@@ -19,7 +19,7 @@ export const catArr = [
   },
   {
     id: 5,
-    name: "🏄‍♂️ Sports",
+    name: "🏄 Sports",
     icon: "",
     route: "/sports",
   },
