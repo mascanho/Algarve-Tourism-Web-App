@@ -33,6 +33,7 @@ function RandomBanner({ categories }: any) {
   const [timeAndDays, setTimeAndDays]: any = useState(0);
   const [daysSelected, setDaysSelected]: any = useState(0);
   const [totalPlacesPerDays, setTotalPlacesPerDays]: any = useState(0);
+  const [validated, setValidated] = useState(false);
 
   const categoriesFiltered: any = [];
   const GenerateRandomChoice = () => {
@@ -92,6 +93,12 @@ function RandomBanner({ categories }: any) {
     setFinalChoice(arrSelected);
     const roundedDaysPlaces = Math.round(daysSelected * totalPlacesPerDays);
     setTimeAndDays(roundedDaysPlaces);
+
+    if (daysSelected <= 0 || totalPlacesPerDays <= 0) {
+      setValidated(false);
+    } else {
+      setValidated(true);
+    }
   };
 
   const addToFavourites = (e: any) => {
@@ -184,12 +191,16 @@ function RandomBanner({ categories }: any) {
                 <h4 className="text-gray-400 pb-1">Number of days</h4>
                 <div className="mb-2 border-b-black pb-2 flex space-x-4">
                   <NumberInput
+                    className="text-xs sm:text-sm"
                     placeholder="Number of days"
                     min={1}
+                    size="xs"
                     max={20}
                     onChange={(e: any) => handleDaysSelection(e)}
                   />{" "}
                   <NumberInput
+                    className="text-xs sm:text-sm"
+                    size="xs"
                     placeholder="Atractions per day"
                     min={1}
                     max={20}
@@ -252,8 +263,9 @@ function RandomBanner({ categories }: any) {
             <div className="w-full flex justify-between mt-4">
               {page === 0 ? (
                 <button
-                  className="bg-sky text-white text-xs sm:text-base px-4 w-full py-1 text-center justify-center rounded-md items-center flex"
+                  className="bg-sky text-white text-xs disabled:bg-gray-300 sm:text-base px-4 w-full py-1 text-center justify-center rounded-md items-center flex"
                   onClick={() => setPage(1)}
+                  disabled={!validated}
                 >
                   Generate Adventure
                 </button>
