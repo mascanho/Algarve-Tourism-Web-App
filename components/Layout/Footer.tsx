@@ -47,7 +47,7 @@ function Footer() {
             </div>
             <div className="flex flex-col space-y-1">
               <span className="footer-title">Partners</span>
-              <a href="https://markwarrior.dev" target="_blank">
+              <a href="/" target="_blank">
                 <p className="link link-hover">Mark Warrior</p>
               </a>
               <a href="https://markwarrior.com" target="_blank">

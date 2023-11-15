@@ -53,24 +53,29 @@ const page = async (props: any) => {
             className="w-full"
           />
           <div className="relative w-full h-10 space-x-2 mt-4 flex items-center">
-            <div className="relative w-10 h-10">
-              <Image
-                src={`https:${blog[0]?.fields?.avatar?.fields?.file.url}`}
-                layout="responsive"
-                alt="albvufeir"
-                width={80}
-                height={80}
-                objectFit="contain"
-                className="rounded-full w-10 h-10"
-              />
+            <div className="w-full flex items-center">
+              <div className="relative w-10 h-10 mr-2">
+                <Image
+                  src={`https:${blog[0]?.fields?.avatar?.fields?.file.url}`}
+                  layout="responsive"
+                  alt="albvufeir"
+                  width={80}
+                  height={80}
+                  objectFit="contain"
+                  className="rounded-full w-10 h-10"
+                />
+              </div>
+              <div className="w-fit flex flex-col">
+                <span className="text-black text-xs">
+                  {blog[0]?.fields?.author}
+                </span>
+                <span className="text-xs font-semibold">
+                  {blog[0]?.fields?.role}
+                </span>
+              </div>
             </div>
-            <div className="w-fit flex flex-col">
-              <span className="text-black text-xs">
-                {blog[0]?.fields?.author}
-              </span>
-              <span className="text-xs font-semibold">
-                {blog[0]?.fields?.role}
-              </span>
+            <div>
+              <span>hello</span>
             </div>
           </div>
         </div>
