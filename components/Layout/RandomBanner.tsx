@@ -131,21 +131,23 @@ function RandomBanner({ categories }: any) {
   };
 
   return (
-    <div className="bg-[url('https://www.benoitproperties.com/wp-content/uploads/2021/07/algarve-header.png')] bg-cover bg-blend-multiply bg-black/40 w-11/12 py-16 mx-auto space-y-2 text-center text-white sm:w-full rounded-xl sm:space-y-2">
-      <h4>Come join and have a vacation with us</h4>
-      <h3 className="text-2xl sm:text-3xl">
-        Prepare yourself and lets explore
-      </h3>
-      <div className="sm:space-x-8 space-y-4">
+    <div className="bg-[url('https://www.benoitproperties.com/wp-content/uploads/2021/07/algarve-header.png')] bg-cover bg-blend-multiply bg-black/40 w-11/12 py-10 sm:py-16 mx-auto sm:space-y-2 text-center text-white sm:w-full rounded-xl sm:space-y-2">
+      <div className="-mt-2 sm:mt-0">
+        <h4>Come join and have a vacation with us</h4>
+        <h3 className="text-2xl sm:text-3xl hidden sm:block">
+          Prepare yourself and lets explore
+        </h3>
+      </div>
+      <div className="sm:space-x-8 space-y-4 mt-8">
         <button
           onClick={handleClickRandom}
-          className="px-4 py-2 text-black hover:bg-sky hover:text-white transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
+          className="px-4 text-sm sm:text-base py-2 text-black hover:bg-sky hover:text-white transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
         >
           Discover The Best Places
         </button>
         <button
           onClick={GenerateRandomChoice}
-          className="px-4 py-2 text-black hover:bg-sky hover:text-white transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
+          className="px-4 py-2 text-sm sm:text-base  text-black hover:bg-sky hover:text-white transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
         >
           Generate Random Choice
         </button>
@@ -188,10 +190,10 @@ function RandomBanner({ categories }: any) {
           <>
             {page === 0 ? (
               <>
-                <h4 className="text-gray-400 pb-1">Number of days</h4>
-                <div className="mb-2 border-b-black pb-2 flex space-x-4">
+                <h4 className="text-gray-400 py-1">Planning</h4>
+                <div className="mb-2 mt-2 border-b-black pb-2 flex space-x-4">
                   <NumberInput
-                    className="text-xs sm:text-sm"
+                    className="text-xs sm:text-sm days"
                     placeholder="Number of days"
                     min={1}
                     size="xs"
@@ -199,7 +201,7 @@ function RandomBanner({ categories }: any) {
                     onChange={(e: any) => handleDaysSelection(e)}
                   />{" "}
                   <NumberInput
-                    className="text-xs sm:text-sm"
+                    className="text-xs sm:text-sm atractions"
                     size="xs"
                     placeholder="Atractions per day"
                     min={1}
@@ -208,7 +210,9 @@ function RandomBanner({ categories }: any) {
                   />{" "}
                 </div>
                 <Chip.Group multiple onChange={(e) => handleChange(e)}>
-                  <h4 className="text-gray-400 ">Select categories</h4>
+                  <h4 className="text-gray-400 text-center ">
+                    Select categories
+                  </h4>
                   <div className="flex w-full flex-wrap items-center mt-2 text-left justify-center">
                     {catArr.map((item: any) => (
                       <Chip

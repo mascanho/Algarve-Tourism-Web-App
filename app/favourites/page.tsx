@@ -66,9 +66,9 @@ function page() {
             className="w-full"
           />
         </div>
-        <div className="m-auto max-w-7xl mt-10 flex items-center justify-between ">
-          <h1 className="text-3xl font-semibold sm:text-6xl ">
-            Your Favourites
+        <div className="m-auto max-w-7xl mt-10 mb-5 flex items-center justify-between ">
+          <h1 className="text-2xl sm:text-3xl font-semibold sm:text-6xl ">
+            Your New Adventure Awaits
           </h1>
         </div>
       </div>

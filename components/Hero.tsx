@@ -29,11 +29,11 @@ const Hero = ({ categories }: any) => {
   return (
     <>
       <div
-        className={`bg-[url('https://images.unsplash.com/photo-1562760156-9353a70352ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80')] 
+        className={`bg-[url('https://images.squarespace-cdn.com/content/v1/5f7f580e2a273179f84ceaee/1604667570899-9D6Z3H8BUJIFUFA7UWOU/IMG_2373-2.jpg')] 
 h-screen overflow-hidden  
 bg-cover bg-blend-multiply bg-black/30  sm:bg-[url('https://www.benoitproperties.com/wp-content/uploads/2021/07/algarve-header.png')]   `}
       />
-      <section className="absolute w-full mx-auto space-y-4 text-center top-36  sm:top-42">
+      <section className="absolute w-full mx-auto space-y-2 text-center top-28  sm:top-46 sm:pt-6">
         <h1 className="mx-auto text-3xl font-bold text-center text-white sm:text-7xl">
           Algarve&apos;s Travel Guide
         </h1>
@@ -42,7 +42,7 @@ bg-cover bg-blend-multiply bg-black/30  sm:bg-[url('https://www.benoitproperties
           the region&apos;s top tourism attractions and less known hidden gems
           💎
         </h2>
-        <div className="flex justify-center m-auto sm:pt-40 pt-20">
+        <div className="flex justify-center m-auto sm:pt-52 pt-36">
           <Search
             allTypes={allTypes}
             placeholderText={"Search for your destination..."}

@@ -160,7 +160,7 @@ export default function Home() {
           <section className="pt-16 sm:py-28">
             <div className="w-11/12 py-8 mx-auto space-y-2 text-center text-white bg-red-500 sm:w-full rounded-xl sm:space-y-2">
               <h4>Come join and have a vacation with us</h4>
-              <h3 className="text-2xl sm:text-3xl">
+              <h3 className="text-2xl sm:text-3xl hidden sm:block">
                 Prepare yourself and lets explore
               </h3>
               <h5>Explore the beauty of these hidden places</h5>
