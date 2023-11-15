@@ -53,7 +53,7 @@ function Footer() {
               <a href="https://markwarrior.com" target="_blank">
                 <p className="link link-hover">Blackcat Marketing</p>
               </a>
-              <a href="https://markwarrior.com" target="_blank">
+              <a href="https://www.estralho-criativo.com/" target="_blank">
                 <p className="link link-hover">Estralho Criativo</p>
               </a>
             </div>

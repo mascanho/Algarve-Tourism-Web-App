@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Lee Robinson",
+    title: "Mascanho",
     card: "summary_large_image",
   },
   icons: {
