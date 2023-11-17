@@ -60,10 +60,10 @@ export default function Home() {
           <div className="w-11/12 sm:w-11/12 mx-auto">
             {searchData.data.length === 0 ? (
               <>
-                <h4 className="w-8/12 mx-auto mt-4">
-                  Try searching for something else or check out the popular
-                  categories
-                </h4>
+                {/* <h4 className="w-8/12 mx-auto mt-4"> */}
+                {/*   Try searching for something else or check out the popular */}
+                {/*   categories */}
+                {/* </h4> */}
                 <section className="max-w-7xl mx-auto">
                   <Link href="/#search">
                     <div className="flex items-center w-full space-x-1  -mt-4 mb-8 sm:mb-0 sm:mt-0">
@@ -104,17 +104,17 @@ export default function Home() {
                 </section>
               </>
             )}
-            <section className="mt-10 mb-10">
-              <div className="sm:w-3/12 mx-auto">
-                <Select
-                  onChange={(value: any) => console.log(value)}
-                  // label="Pick a hashtag"
-                  placeholder="Filter by City"
-                  data={["React", "Angular", "Svelte", "Vue"]}
-                  // icon={<IconHash size="1rem" />}
-                />
-              </div>
-            </section>
+            {/* <section className="mt-10 mb-10"> */}
+            {/*   <div className="sm:w-3/12 mx-auto"> */}
+            {/*     <Select */}
+            {/*       onChange={(value: any) => console.log(value)} */}
+            {/*       // label="Pick a hashtag" */}
+            {/*       placeholder="Filter by City" */}
+            {/*       data={["React", "Angular", "Svelte", "Vue"]} */}
+            {/*       // icon={<IconHash size="1rem" />} */}
+            {/*     /> */}
+            {/*   </div> */}
+            {/* </section> */}
           </div>
 
           <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12">

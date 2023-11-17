@@ -7,7 +7,7 @@ import Image from "next/image";
 function CarouselHero({ categories }: any) {
   return (
     <>
-      <section className="w-full max-w-7xl sm:w-11/12 m-auto px-4 sm:px-0   font-semibold">
+      <section className="w-full max-w-7xl sm:w-11/12 m-auto px-4 sm:px-0 mt-20   font-semibold">
         <div className="space-y-4 mb-8 text-center">
           <h3 className=" text-black text-4xl text-center">Image Gallery</h3>
           <h4 className="pb-9">
