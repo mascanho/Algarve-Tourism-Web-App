@@ -46,13 +46,13 @@ const page = async (props: any) => {
           </h1>
         </div>
 
-        <div className="sm:w-11/12 mb-8 ">
+        <div className="sm:w-full mb-8 ">
           <img
             src={blog[0]?.fields?.image?.fields?.file.url}
             alt="albvufeir"
             className="w-full"
           />
-          <div className="relative w-full h-10 space-x-2 mt-4 flex items-center">
+          <div className="relative w-full h-10 space-x-2 mt-4 flex items-center justify-between">
             <div className="w-full flex items-center">
               <div className="relative w-10 h-10 mr-2">
                 <Image
@@ -65,7 +65,7 @@ const page = async (props: any) => {
                   className="rounded-full w-10 h-10"
                 />
               </div>
-              <div className="w-fit flex flex-col">
+              <div className="w-full flex-1 flex flex-col">
                 <span className="text-black text-xs">
                   {blog[0]?.fields?.author}
                 </span>
@@ -74,7 +74,8 @@ const page = async (props: any) => {
                 </span>
               </div>
             </div>
-            <div>
+            <div className="flex space-x-2 w-52">
+              <span>3 min read</span>
               <span>hello</span>
             </div>
           </div>
