@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: "Algarve Wonders - The Best Hidden Gems in The Algarve",
     template: "%s | Algarve Wonders",
   },
-  description: "The place to find the best places in Algarve",
+  description: "The place to find the best places in the Algarve",
   viewport: {
     initialScale: 1,
     maximumScale: 1,

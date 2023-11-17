@@ -33,7 +33,7 @@ const Hero = ({ categories }: any) => {
 h-screen overflow-hidden  
 bg-cover bg-blend-multiply bg-black/30  sm:bg-[url('https://www.benoitproperties.com/wp-content/uploads/2021/07/algarve-header.png')]   `}
       />
-      <section className="absolute w-full mx-auto space-y-2 text-center top-28  sm:top-46 sm:pt-16">
+      <section className="absolute w-full mx-auto space-y-2 text-center top-28  sm:top-46 sm:pt-12">
         <h1 className="mx-auto text-3xl font-bold text-center text-white sm:text-7xl">
           Algarve&apos;s Travel Guide
         </h1>

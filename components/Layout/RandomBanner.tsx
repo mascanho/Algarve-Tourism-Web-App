@@ -138,19 +138,21 @@ function RandomBanner({ categories }: any) {
           Prepare yourself and lets explore
         </h3>
       </div>
-      <div className="sm:space-x-8 space-y-4 mt-8">
-        <button
-          onClick={handleClickRandom}
-          className="px-4 text-sm sm:text-base py-2 text-black hover:bg-sky hover:text-white transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
-        >
-          Discover The Best Places
-        </button>
-        <button
-          onClick={GenerateRandomChoice}
-          className="px-4 py-2 text-sm sm:text-base  text-black hover:bg-sky hover:text-white transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
-        >
-          Generate Random Choice
-        </button>
+      <div className="w-full flex sm:justify-center">
+        <div className="sm:space-x-8 space-y-4 mt-8">
+          <button
+            onClick={handleClickRandom}
+            className="px-4 w-52 text-sm sm:w-fit sm:text-base py-2 text-black hover:bg-sky hover:text-white transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
+          >
+            Discover The Best Places
+          </button>
+          <button
+            onClick={GenerateRandomChoice}
+            className="px-4 py-2 w-52 sm:w-fit text-sm sm:text-base  text-black hover:bg-sky hover:text-white transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
+          >
+            Generate Random Choice
+          </button>
+        </div>
       </div>
       <Modal
         opened={opened}
