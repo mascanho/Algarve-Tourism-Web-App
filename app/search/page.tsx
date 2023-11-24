@@ -90,7 +90,7 @@ export default function Home() {
                     </div>
                   </Link>
                   <h3
-                    className="text-3xl font-bold text-black sm:text-5xl"
+                    className="text-3xl font-bold text-black sm:text-5xl mt-20"
                     id="search"
                   >
                     Searching for:{" "}
@@ -117,7 +117,7 @@ export default function Home() {
             {/* </section> */}
           </div>
 
-          <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12">
+          <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 pt-10">
             <section className="grid items-start w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-x-8 place-items-start">
               {/* Normal Cards with no search feature */}
               {searchData.data?.map((item: any) => (
