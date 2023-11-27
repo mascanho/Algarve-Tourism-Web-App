@@ -38,21 +38,22 @@ const page = async (props: any) => {
   const post = documentToReactComponents(blog[0]?.fields?.body, options);
 
   return (
-    <section className="max-w-7xl w-11/12 sm:flex mx-auto mt-4 sm:mt-20">
+    <section className="max-w-7xl w-11/12 sm:w-9/12 sm:flex mx-auto mt-4 sm:mt-20">
       <div className="sm:w-3/4 w-full flex-1 font-semibold">
-        <div className="mb-8">
-          <h1 className="text-black sm:text-4xl text-3xl font-semibold">
-            {blog[0]?.fields?.title}
-          </h1>
-        </div>
-
-        <div className="sm:w-full mb-8 ">
+        <div className="sm:w-full mb-8 relative ">
           <img
             src={blog[0]?.fields?.image?.fields?.file.url}
-            alt="albvufeir"
+            alt={blog[0]?.fields?.title}
             className="w-full"
           />
-          <div className="relative w-full h-10 space-x-2 mt-4 flex items-center justify-between">
+          <div className="w-full absolute hidden sm:block bottom-32 h-[100px] bg-gradient-to-b from-transparent to-white" />
+          <div className="w-full absolute hidden sm:block bottom-32 h-[200px] bg-gradient-to-b from-transparent to-white" />
+          <div className="w-11/12 sm:w-full">
+            <h1 className="text-black sm:text-4xl text-2xl font-semibold ">
+              {blog[0]?.fields?.title}
+            </h1>
+          </div>
+          <div className="relative w-full  space-x-2 mt-4 flex items-center justify-between">
             <div className="w-full flex items-center">
               <div className="relative w-10 h-10 mr-2">
                 <Image
@@ -80,7 +81,7 @@ const page = async (props: any) => {
             </div>
           </div>
         </div>
-        <section className="mt-10 richText">{post}</section>
+        <section className="mt-10 sm:mt-20 richText">{post}</section>
       </div>
     </section>
   );
