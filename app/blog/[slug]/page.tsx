@@ -82,7 +82,7 @@ const page = async (props: any) => {
               </div>
             </div>
             <div className="flex space-x-2 w-52 justify-end">
-              <span>3 min read</span>
+              <span className="text-xs">3 min read</span>
             </div>
           </div>
         </div>

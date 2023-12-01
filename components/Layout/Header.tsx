@@ -88,7 +88,7 @@ const Header = ({ currentUser }: any) => {
 
       <nav
         id="search"
-        className={`shadow-sm  w-full sticky  bg-white z-10 h-fit w-full mx-auto `}
+        className={`shadow-sm  sticky  bg-white z-10 h-fit w-full mx-auto `}
       >
         <div className="z-50 mx-auto navbar sm:max-w-4xl flex justify-evenly  lg:max-w-5xl xl:max-w-7xl">
           {/* MOBILE */}
@@ -100,13 +100,13 @@ const Header = ({ currentUser }: any) => {
               url={"/"}
             />
           </section>
-          <div className="navbar-start flex justify-between w-full">
-            <a
+          <div className=" flex justify-between w-full">
+            <span
               onClick={() => router.push("/")}
               className="p-0 sm:text-xl text-left normal-case cursor-pointer"
             >
               Algarve Wonders
-            </a>
+            </span>
             <section className="hidden sm:flex space-x-4 justify-start m-auto">
               <NavMenu trigger={false} title={"Search"} url={"/"} />
               <NavMenu
@@ -119,7 +119,7 @@ const Header = ({ currentUser }: any) => {
               <NavMenu
                 trigger={"hover"}
                 title={"Categories"}
-                url={"/"}
+                url={"/beaches"}
                 categories={true}
               />
               <NavMenu trigger={false} title={"Blog"} url={"/blog"} />

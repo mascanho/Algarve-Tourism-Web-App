@@ -8,15 +8,22 @@ import { catArr } from "@/Data/Categories";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
 
-export function NavMenu({ title, trigger, url, cities, mobile }: any) {
+export function NavMenu({ title, trigger, url, cities, mobile }: any | null) {
   const router = useRouter();
   const pathname = usePathname();
+
+  const handleClick = (url: any) => {
+    if (mobile) {
+      return;
+    }
+    router.push(url);
+  };
 
   return (
     <Menu trigger={trigger} shadow="md" width={200}>
       <Menu.Target>
         <button
-          onClick={mobile ? null : () => router.push(url)}
+          onClick={() => handleClick(url)}
           className={`text-gray-400 flex items-center  p-2 rounded-md transition duration-300 ease-in-out`}
         >
           {trigger ? (
@@ -58,7 +65,7 @@ export function NavMenu({ title, trigger, url, cities, mobile }: any) {
                 {cat.name}
               </Menu.Item>
             ))}
-        <section className="text-gray-700">
+        <section className="text-gray-700 sm:hidden">
           <Link href="/">
             <Menu.Item className="sm:hidden text-gray-400">Search</Menu.Item>
           </Link>

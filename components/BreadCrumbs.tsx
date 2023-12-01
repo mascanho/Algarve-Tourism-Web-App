@@ -22,7 +22,7 @@ export default function BreadCrumbs() {
   ));
   return (
     <>
-      <Breadcrumbs separator="→" mt="xs" className="line-clamp-[10px]">
+      <Breadcrumbs separator="→" mt="xs">
         {items}
       </Breadcrumbs>
     </>
