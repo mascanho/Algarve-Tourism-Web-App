@@ -86,7 +86,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
           <input
             type="text"
             placeholder={placeholderText}
-            className={`h-12 bg-white rounded-full p-4 w-[340px] sm:w-[436px] mx-auto text-sm outline-none border-collapse text-[16px]
+            className={`h-12 bg-white placeholder-gray-300 rounded-full p-4 w-[340px] sm:w-[436px] mx-auto text-xs outline-none border-collapse sm:text-xs
             ${pathname === "/search" && "border-2 border-blue-400"}
             
             `}

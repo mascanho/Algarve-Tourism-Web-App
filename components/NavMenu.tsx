@@ -50,7 +50,7 @@ export function NavMenu({ title, trigger, url, cities, mobile }: any | null) {
               <Menu.Item
                 key={city.name}
                 onClick={() =>
-                  router.push(`/algarve/${city?.name?.toLowerCase()}`)
+                  router.push(`/algarve/${city?.route?.toLowerCase()}`)
                 }
               >
                 {city.name}

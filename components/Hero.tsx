@@ -45,7 +45,7 @@ bg-cover bg-blend-multiply bg-black/30  sm:bg-[url('https://www.benoitproperties
         <div className="flex justify-center m-auto sm:pt-48 pt-36">
           <Search
             allTypes={allTypes}
-            placeholderText={"Search for your destination..."}
+            placeholderText={"Type your destination or activity"}
             categories={categories}
           />
         </div>

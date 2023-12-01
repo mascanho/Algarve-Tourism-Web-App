@@ -107,7 +107,7 @@ const Header = ({ currentUser }: any) => {
             >
               Algarve Wonders
             </span>
-            <section className="hidden sm:flex space-x-4 justify-start m-auto">
+            <section className="hidden sm:flex sm:space-x-6 lg:space-x-8 justify-start m-auto">
               <NavMenu trigger={false} title={"Search"} url={"/"} />
               <NavMenu
                 expandedMenu={false}
