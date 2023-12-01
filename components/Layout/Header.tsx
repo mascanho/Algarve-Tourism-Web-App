@@ -3,9 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { HiBars3 } from "react-icons/hi2";
 import { MdCardTravel } from "react-icons/md";
-import { usePathname } from "next/navigation";
 import { useDisclosure } from "@mantine/hooks";
-import { catArr } from "@/Data/Categories";
 import LoginModal from "../modals/Login";
 import DrawerContent from "../modals/DrawerContent";
 import { Modal, Group, Button, Drawer } from "@mantine/core";
@@ -17,10 +15,9 @@ import { signOut } from "next-auth/react";
 import RegisteredModal from "../modals/Registered";
 import { toast } from "react-hot-toast";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
-import Link from "next/link";
-import { cityArr } from "@/Data/Cities";
-import { BsSearch } from "react-icons/bs";
-import { AiOutlineHome } from "react-icons/ai";
+import { NavMenu } from "../NavMenu";
+
+import { RxHamburgerMenu } from "react-icons/rx";
 
 interface UserProps {
   close: () => void;
@@ -39,7 +36,6 @@ interface UserProps {
 
 const Header = ({ currentUser }: any) => {
   const router = useRouter();
-  const pathname = usePathname();
   const [openLogin, setOpenLogin] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
   const favourites = useAddToFavourites();
@@ -78,23 +74,6 @@ const Header = ({ currentUser }: any) => {
   return (
     <>
       <section className="overflow-hidden">
-        {/* Modals */}
-        {/* <InstructionModal /> */}
-
-        {/* Drawer */}
-
-        {/* <Drawer */}
-        {/*   size={"300px"} */}
-        {/*   opened={opened} */}
-        {/*   onClose={close} */}
-        {/*   title="Favourites" */}
-        {/* > */}
-        {/* Drawer Content */}
-        {/*   <DrawerContent /> */}
-        {/* </Drawer> */}
-
-        {/* Modals Section */}
-
         {loginModal.isOpen === true ? (
           <LoginModal currentUser={currentUser} />
         ) : (
@@ -107,158 +86,44 @@ const Header = ({ currentUser }: any) => {
         )}
       </section>
 
-      <nav id="search" className={`shadow-sm  w-full sticky  bg-white z-10 `}>
-        <div className="z-50 mx-auto navbar max-w-7xl  ">
-          <div className="navbar-start ">
-            <div className="dropdown">
-              <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
-                </svg>
-              </label>
-              <ul
-                tabIndex={0}
-                className="p-2 mt-3 bg-white shadow menu menu-compact dropdown-content rounded-box w-52"
-              >
-                <li tabIndex={0} className="">
-                  <ul className="z-10 p-2 bg-white">
-                    {catArr.map((cat) => (
-                      <li
-                        className="px-1 py-2 rounded-md active:bg-sky active:text-white"
-                        onClick={() => router.push(cat.route)}
-                        key={cat.id}
-                      >
-                        {cat.name}
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-
-                {/* Mobile Menu */}
-
-                <Link href="/">
-                  <li className="rounded-md active:bg-sky">
-                    <span className="rounded-md active:bg-sky">Search</span>
-                  </li>
-                </Link>
-                <Link href="/beaches">
-                  <li className="rounded-md active:bg-sky">
-                    <span className="rounded-md active:bg-sky">Categories</span>
-                  </li>
-                </Link>
-
-                <Link href="/algarve">
-                  <li className="rounded-md active:bg-sky">
-                    <span className="rounded-md active:bg-sky">Algarve</span>
-                  </li>
-                </Link>
-                <Link href="/blog">
-                  <li className="rounded-md active:bg-sky">
-                    <span className="rounded-md active:bg-sky">Blog</span>
-                  </li>
-                </Link>
-                <Link href="/contact">
-                  <li className="rounded-md active:bg-sky">
-                    <span className="rounded-md active:bg-sky">Contact</span>
-                  </li>
-                </Link>
-              </ul>
-            </div>
+      <nav
+        id="search"
+        className={`shadow-sm  w-full sticky  bg-white z-10 h-fit `}
+      >
+        <div className="z-50 mx-auto navbar max-w-7xl">
+          <section className="sm:hidden">
+            <NavMenu
+              mobile={true}
+              trigger={"hover"}
+              title={"Search"}
+              url={"/"}
+            />
+          </section>
+          <div className="navbar-start flex justify-evenly w-full ">
             <a
               onClick={() => router.push("/")}
               className="w-full p-0 sm:text-xl text-left normal-case cursor-pointer"
             >
               Algarve Wonders
             </a>
-          </div>
-          <div className="hidden navbar-center lg:flex">
-            <ul className="px-1 menu menu-horizontal">
-              <Link href="/#search">
-                <li className="active:bg-sky active:rounded-md">
-                  <span className="active:bg-sky active:rounded-md">
-                    Search
-                  </span>
-                </li>
-              </Link>
-              <li className="rounded-md active:bg-transparent" tabIndex={0}>
-                <span
-                  onClick={() => router.push("/algarve")}
-                  className="active:bg-sky "
-                >
-                  Algarve
-                  <svg
-                    className="fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                  </svg>
-                </span>
-                <ul className="z-10 p-2 bg-white">
-                  {cityArr.map((item) => (
-                    <li
-                      key={item.id}
-                      className="rounded-md active:bg-sky"
-                      onClick={() => router.push(`/algarve/${item.route}`)}
-                    >
-                      <span className="rounded-md active:bg-sky">
-                        {item.name}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-              <li className="rounded-md active:bg-transparent" tabIndex={0}>
-                <a className="active:bg-sky ">
-                  Categories
-                  <svg
-                    className="fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                  </svg>
-                </a>
-                <ul className="z-10 p-2 bg-white">
-                  {catArr.map((item) => (
-                    <li
-                      key={item.id}
-                      className="rounded-md active:bg-sky"
-                      onClick={() => router.push(`${item.route}`)}
-                    >
-                      <span className="rounded-md active:bg-sky">
-                        {item.name}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-              <li className="rounded-md active:bg-sky">
-                <Link href="/blog" className="active:bg-sky">
-                  <span className="rounded-md active:bg-sky">Blog</span>
-                </Link>
-              </li>
-              <Link href="/contact">
-                <li className="rounded-md active:bg-sky">
-                  <span className="rounded-md active:bg-sky ">Contact</span>
-                </li>
-              </Link>
-            </ul>
+            <section className="hidden sm:flex space-x-8">
+              <NavMenu trigger={false} title={"Search"} url={"/"} />
+              <NavMenu
+                expandedMenu={false}
+                trigger={"hover"}
+                title={"Algarve"}
+                cities={true}
+                url={"/algarve"}
+              />
+              <NavMenu
+                trigger={"hover"}
+                title={"Categories"}
+                url={"/"}
+                categories={true}
+              />
+              <NavMenu trigger={false} title={"Blog"} url={"/blog"} />
+              <NavMenu trigger={false} title={"Contact"} url={"/contact"} />
+            </section>
           </div>
           <div className="space-x-4 navbar-end">
             <div className="flex items-center pr-3 text-xl text-black border rounded-full border-black/20 bg-white/50">
@@ -329,55 +194,6 @@ const Header = ({ currentUser }: any) => {
             </div>
           </div>
         </div>
-
-        {/* Bottom Navigation */}
-
-        {/* {bottomNav ? ( */}
-        {/*   <div className="fixed bottom-0 sm:hidden"> */}
-        {/*     <button> */}
-        {/*       <AiOutlineHome className="mt-2" /> */}
-        {/*     </button> */}
-        {/*     <button className="active:border-gray-700"> */}
-        {/*       <Link href="/beaches"> */}
-        {/*         <BsSearch className="mt-2" /> */}
-        {/*       </Link> */}
-        {/*     </button> */}
-        {/*     <button> */}
-        {/*       <svg */}
-        {/*         xmlns="http://www.w3.org/2000/svg" */}
-        {/*         className="h-5 w-5" */}
-        {/*         fill="none" */}
-        {/*         viewBox="0 0 24 24" */}
-        {/*         stroke="currentColor" */}
-        {/*       > */}
-        {/*         <path */}
-        {/*           strokeLinecap="round" */}
-        {/*           strokeLinejoin="round" */}
-        {/*           strokeWidth="2" */}
-        {/*           d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" */}
-        {/*         /> */}
-        {/*       </svg> */}
-        {/*     </button> */}
-        {/*     <button> */}
-        {/*       <svg */}
-        {/*         xmlns="http://www.w3.org/2000/svg" */}
-        {/*         className="h-5 w-5" */}
-        {/*         fill="none" */}
-        {/*         viewBox="0 0 24 24" */}
-        {/*         stroke="currentColor" */}
-        {/*       > */}
-        {/*         <path */}
-        {/*           strokeLinecap="round" */}
-        {/*           strokeLinejoin="round" */}
-        {/*           strokeWidth="2" */}
-        {/*           d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" */}
-        {/*         /> */}
-        {/*       </svg> */}
-        {/*     </button> */}
-        {/*   </div> */}
-        {/* ) : ( */}
-        {/*   "" */}
-        {/* )} */}
       </nav>
       <Modal opened={opened} onClose={close} title="Favourite Places" centered>
         {/* Modal content */}
