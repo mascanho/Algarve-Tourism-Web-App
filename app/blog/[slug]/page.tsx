@@ -3,6 +3,7 @@ import TableOfContentsFloating from "./TableOfContents";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { createClient } from "contentful";
 import Image from "next/image";
+import BreadCrumbs from "@/components/BreadCrumbs";
 
 const options = {
   renderNode: {
@@ -38,18 +39,23 @@ const page = async (props: any) => {
   const post = documentToReactComponents(blog[0]?.fields?.body, options);
 
   return (
-    <section className="max-w-7xl w-11/12 sm:w-9/12 sm:flex mx-auto mt-4 sm:mt-20">
+    <section className="max-w-7xl w-11/12 sm:w-9/12 sm:flex mx-auto mt-4 sm:mt-10">
       <div className="sm:w-3/4 w-full flex-1 font-semibold">
+        <section className="mb-5 sm:mb-10 line-clamp-1 overflow-hidden text-xs">
+          <BreadCrumbs />
+        </section>
         <div className="sm:w-full mb-8 relative ">
           <img
             src={blog[0]?.fields?.image?.fields?.file.url}
             alt={blog[0]?.fields?.title}
-            className="w-full"
+            className="w-full mb-4 sm:mb-0"
           />
-          <div className="w-full absolute hidden sm:block bottom-32 h-[100px] bg-gradient-to-b from-transparent to-white" />
-          <div className="w-full absolute hidden sm:block bottom-32 h-[200px] bg-gradient-to-b from-transparent to-white" />
+          <section className="hidden">
+            <div className="w-full absolute hidden sm:block sm:bottom-28 h-[100px] bg-gradient-to-b from-transparent to-white" />
+            <div className="w-full absolute hidden sm:block sm:bottom-28 h-[200px] bg-gradient-to-b from-transparent to-white" />
+          </section>
           <div className="w-11/12 sm:w-full">
-            <h1 className="text-black sm:text-4xl text-2xl font-semibold ">
+            <h1 className="text-black sm:text-4xl text-2xl sm:mt-4 font-semibold ">
               {blog[0]?.fields?.title}
             </h1>
           </div>
@@ -75,9 +81,8 @@ const page = async (props: any) => {
                 </span>
               </div>
             </div>
-            <div className="flex space-x-2 w-52">
+            <div className="flex space-x-2 w-52 justify-end">
               <span>3 min read</span>
-              <span>hello</span>
             </div>
           </div>
         </div>

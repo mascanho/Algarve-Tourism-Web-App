@@ -88,9 +88,10 @@ const Header = ({ currentUser }: any) => {
 
       <nav
         id="search"
-        className={`shadow-sm  w-full sticky  bg-white z-10 h-fit `}
+        className={`shadow-sm  w-full sticky  bg-white z-10 h-fit w-full mx-auto `}
       >
-        <div className="z-50 mx-auto navbar max-w-7xl">
+        <div className="z-50 mx-auto navbar sm:max-w-4xl flex justify-evenly  lg:max-w-5xl xl:max-w-7xl">
+          {/* MOBILE */}
           <section className="sm:hidden">
             <NavMenu
               mobile={true}
@@ -99,14 +100,14 @@ const Header = ({ currentUser }: any) => {
               url={"/"}
             />
           </section>
-          <div className="navbar-start flex justify-evenly w-full ">
+          <div className="navbar-start flex justify-between w-full">
             <a
               onClick={() => router.push("/")}
-              className="w-full p-0 sm:text-xl text-left normal-case cursor-pointer"
+              className="p-0 sm:text-xl text-left normal-case cursor-pointer"
             >
               Algarve Wonders
             </a>
-            <section className="hidden sm:flex space-x-8">
+            <section className="hidden sm:flex space-x-4 justify-start m-auto">
               <NavMenu trigger={false} title={"Search"} url={"/"} />
               <NavMenu
                 expandedMenu={false}
@@ -125,7 +126,7 @@ const Header = ({ currentUser }: any) => {
               <NavMenu trigger={false} title={"Contact"} url={"/contact"} />
             </section>
           </div>
-          <div className="space-x-4 navbar-end">
+          <div className="space-x-4 sm:w-fit navbar-end">
             <div className="flex items-center pr-3 text-xl text-black border rounded-full border-black/20 bg-white/50">
               <img
                 src={
