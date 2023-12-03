@@ -33,16 +33,21 @@ const Hero = ({ categories }: any) => {
 h-screen overflow-hidden  
 bg-cover bg-blend-multiply bg-black/30  sm:bg-[url('https://www.benoitproperties.com/wp-content/uploads/2021/07/algarve-header.png')]   `}
       />
-      <section className="absolute w-full mx-auto space-y-2 text-center top-28  sm:top-42 sm:pt-4">
-        <h1 className="mx-auto text-3xl font-bold text-center text-white sm:text-7xl">
+      <section className="w-full mx-auto h-screen space-y-2 text-center m-auto absolute top-36 sm:top-52">
+        <h1 className="mx-auto text-5xl font-bold text-center text-white sm:text-8xl">
           Algarve&apos;s Travel Guide
         </h1>
-        <h2 className="w-9/12 mx-auto sm:w-10/12 sm:max-w-lg text-white/60 sm:pt-2">
+        <h2 className="w-9/12 hidden sm:block mx-auto sm:w-10/12 text-gray-500 rounded-sm sm:p-0 mt-4 sm:mt-0 sm:max-w-lg text-white/60 sm:pt-2">
           Discover the breathtaking beauty of the Algarve! The ultimate guide to
           the region&apos;s top tourism attractions and less known hidden gems
           💎
         </h2>
-        <div className="flex justify-center m-auto sm:pt-48 pt-36">
+        <h2 className="sm:hidden w-9/12 mx-auto sm:w-10/12 text-gray-500 rounded-sm sm:p-0 mt-4 sm:mt-0 sm:max-w-lg text-white/60 sm:pt-2">
+          {" "}
+          The region&apos;s top tourism attractions and less known hidden gems
+          💎
+        </h2>
+        <div className="flex justify-center m-auto sm:pt-48 pt-20">
           <Search
             allTypes={allTypes}
             placeholderText={"Type your destination or activity"}

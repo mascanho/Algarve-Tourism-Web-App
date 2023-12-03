@@ -36,7 +36,7 @@ export default async function Home(props: any) {
   return (
     <>
       <Hero categories={categories} />
-      <section className="pt-20 pb-6 space-y-4 text-cente-white">
+      <section className="pt-14 sm:pt-20 pb-6 space-y-4 text-cente-white">
         <div className="-q11/12 mx-auto text-center">
           <h3 className="text-3xl font-bold text-black sm:text-5xl">
             Discover the best of the Algarve
