@@ -6,6 +6,16 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "The Best Places",
   description: "...",
+  icons: {
+    icon: "/images/icon.png",
+    href: "/images/icon.png",
+    shortcut: "/shortcut-icon.png",
+    apple: "/apple-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon-precomposed.png",
+    },
+  },
 };
 
 async function Page(props: any) {

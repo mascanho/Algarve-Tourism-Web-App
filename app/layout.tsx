@@ -30,7 +30,18 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    shortcut: "/favicon.ico",
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/images/icon.png",
+        href: "/images/icon.png",
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/images/icon.png",
+        href: "/images/icon-dark.png",
+      },
+    ],
   },
   verification: {
     google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
