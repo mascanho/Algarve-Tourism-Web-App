@@ -28,45 +28,54 @@ export function LeadGrid({ filteredData }: any) {
             className="relative overflow-hidden rounded-lg sm:max-h-[380px] 
             "
           >
-            <img
+            <Image
+              fill
               alt={filteredData[0]?.fields?.title}
               src={`https://${filteredData[0]?.fields?.images[0]?.fields?.file?.url}`}
-              className="sm:h-full w-[100%] sm:w-full sm:block object-contain sm:object-fill"
+              className="sm:h-full w-[100%] sm:w-full sm:block object-contain sm:object-fill "
             />
           </div>
           <Grid gutter="md" className="overflow-hidden rounded-lg">
-            <Grid.Col span={6}>
-              <img
+            <Grid.Col span={6} className="relative">
+              <Image
+                width={260}
+                height={100}
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[1]?.fields?.file?.url}`}
-                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg favBanner`}
+                className={`sm:h-[100%] h-full max-h-[130px] sm:max-h-full rounded-lg favBanner object-cover`}
                 // height={80}
                 // width={260}
               />
             </Grid.Col>
             <Grid.Col span={6}>
-              <img
+              <Image
+                width={260}
+                height={100}
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[2]?.fields?.file?.url}`}
-                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg favBanner`}
+                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg favBanner object-cover`}
                 // height={80}
                 // width={260}
               />
             </Grid.Col>
             <Grid.Col span={6}>
-              <img
+              <Image
+                width={260}
+                height={100}
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[3]?.fields?.file?.url}`}
-                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg favBanner`}
+                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg favBanner object-cover`}
                 // height={80}
                 // width={260}
               />
             </Grid.Col>
             <Grid.Col span={6}>
-              <img
+              <Image
+                width={260}
+                height={100}
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[4]?.fields?.file?.url}`}
-                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg favBanner`}
+                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg favBanner object-cover`}
                 // height={100}
                 // width={260}
               />

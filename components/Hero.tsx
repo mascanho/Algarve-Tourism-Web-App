@@ -33,11 +33,11 @@ const Hero = ({ categories }: any) => {
 h-screen overflow-hidden  
 bg-cover bg-blend-multiply bg-black/30  sm:bg-[url('https://www.benoitproperties.com/wp-content/uploads/2021/07/algarve-header.png')]   `}
       />
-      <section className="w-full mx-auto h-screen space-y-2 text-center m-auto absolute top-36 sm:top-52">
+      <section className="w-full mx-auto h-screen space-y-2 text-center m-auto absolute top-36 sm:top-52 md:top-28">
         <h1 className="mx-auto text-5xl font-bold text-center text-white sm:text-8xl">
           Algarve&apos;s Travel Guide
         </h1>
-        <h2 className="w-9/12 hidden sm:block mx-auto sm:w-10/12 text-gray-500 rounded-sm sm:p-0 mt-4 sm:mt-0 sm:max-w-lg text-white/60 sm:pt-2">
+        <h2 className="w-9/12 hidden sm:block mx-auto sm:w-10/12 md:w-[800px]  text-gray-500 rounded-sm sm:p-0 mt-4  text-white/60 sm:pt-2">
           Discover the breathtaking beauty of the Algarve! The ultimate guide to
           the region&apos;s top tourism attractions and less known hidden gems
           💎

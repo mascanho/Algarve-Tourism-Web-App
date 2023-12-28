@@ -8,11 +8,16 @@ import Buttons from "@/components/Layout/Buttons";
 import StarRating from "@/components/Layout/StarRating";
 import getComments from "@/app/libs/getComments";
 
-export const metadata: Metadata = {
-  title: "Home",
-  description: "Welcome to Next.js",
-};
+// export const metadata: Metadata = {
+//   title: "Home",
+//   description: "Welcome to Next.js",
+// };
 
+export async function generateMetadata({ params, searchParams }: any) {
+  return {
+    title: params.slug.toUpperCase(),
+  };
+}
 export default async function Home(props: any) {
   const { category, slug } = props.params;
 
@@ -93,7 +98,7 @@ export default async function Home(props: any) {
             </div>
           </div>
         </div>
-        <div className="sm:pt-2 w-11/12 sm:w-full mx-auto ">
+        <div className="sm:pt-10 w-11/12 sm:w-full mx-auto ">
           <TabsRow
             filteredData={filteredData}
             slug={slug}
