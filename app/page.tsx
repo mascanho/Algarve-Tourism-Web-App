@@ -98,12 +98,12 @@ export default async function Home(props: any) {
             />
           ))}
         </section>
-        <section className="pt-16 sm:py-28">
+        <section className="pt-16 sm:pt-28 pb-16">
           <RandomBanner categories={categories} />
           <PopularCategories />
         </section>
       </section>
-      <section className="mx-auto mb-40 sm:h-96">
+      <section className="mx-auto mb-40 ">
         <CarouselHero categories={categories} />
       </section>
     </>

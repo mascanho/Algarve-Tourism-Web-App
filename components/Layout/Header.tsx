@@ -16,6 +16,7 @@ import RegisteredModal from "../modals/Registered";
 import { toast } from "react-hot-toast";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { NavMenu } from "../NavMenu";
+import Image from "next/image";
 
 import { RxHamburgerMenu } from "react-icons/rx";
 
@@ -100,7 +101,14 @@ const Header = ({ currentUser }: any) => {
               url={"/"}
             />
           </section>
-          <div className=" flex justify-between w-full">
+          <div className="flex justify-between w-full">
+            <Image
+              className="pr-2 hidden sm:block"
+              src="/images/icon.png"
+              alt="logo"
+              width={40}
+              height={30}
+            />
             <span
               onClick={() => router.push("/")}
               className="p-0 sm:text-xl text-left normal-case cursor-pointer"

@@ -47,14 +47,20 @@ function Footer() {
             </div>
             <div className="flex flex-col space-y-1">
               <span className="footer-title">Partners</span>
-              <a href="/" target="_blank">
+              <a href="https://markwarrior.dev" target="_blank">
                 <p className="link link-hover">Mark Warrior</p>
               </a>
-              <a href="https://markwarrior.com" target="_blank">
-                <p className="link link-hover">Blackcat Marketing</p>
-              </a>
+              {/* <a href="https://markwarrior.com" target="_blank"> */}
+              {/*   <p className="link link-hover">Blackcat Marketing</p> */}
+              {/* </a> */}
               <a href="https://www.estralho-criativo.com/" target="_blank">
                 <p className="link link-hover">Estralho Criativo</p>
+              </a>
+              <a
+                href="https://algarveinformativo.blogspot.com/"
+                target="_blank"
+              >
+                <p className="link link-hover">Algarve Informativo</p>
               </a>
             </div>
           </section>

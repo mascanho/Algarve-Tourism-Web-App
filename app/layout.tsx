@@ -30,19 +30,16 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      {
-        media: "(prefers-color-scheme: light)",
-        url: "/images/icon.png",
-        href: "/images/icon.png",
-      },
-      {
-        media: "(prefers-color-scheme: dark)",
-        url: "/images/icon.png",
-        href: "/images/icon-dark.png",
-      },
-    ],
+    icon: "/images/icon.png",
+    href: "/images/icon.png",
+    shortcut: "/shortcut-icon.png",
+    apple: "/apple-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon-precomposed.png",
+    },
   },
+
   verification: {
     google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
     yandex: "14d2e73487fa6c71",
