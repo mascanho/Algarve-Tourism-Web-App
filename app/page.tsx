@@ -13,6 +13,21 @@ import CarouselHero from "@/components/Carousel";
 import { catArr } from "@/Data/Categories";
 import RandomBanner from "@/components/Layout/RandomBanner";
 
+export const metadata = {
+  title: "Algarve Wonders - Find The Best Hidden Gems",
+  description: "The Best Place To Find The Hidden Gems In Algarve",
+  icons: {
+    icon: "/images/icon.png",
+    href: "/images/icon.png",
+    shortcut: "/shortcut-icon.png",
+    apple: "/apple-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon-precomposed.png",
+    },
+  },
+};
+
 const inter = Inter({ subsets: ["latin"] });
 
 // Get all categories from contentful

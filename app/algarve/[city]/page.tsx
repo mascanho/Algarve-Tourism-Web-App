@@ -9,6 +9,7 @@ import { redirect } from "next/navigation";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Link from "next/link";
 import TableOfContentsFloating from "@/app/blog/[slug]/TableOfContents";
+import Breadcrumbs from "@/components/Layout/Breadcrumbs";
 
 const options = {
   renderNode: {
@@ -171,6 +172,9 @@ async function page(props: any) {
       </div>
       <section className="sm:pt-10 pt-10 max-w-7xl w-11/12 mx-auto sm:flex">
         <div className="w-full">
+          <div className="text-gray-400 mb-4">
+            <Breadcrumbs />
+          </div>
           <div className="sm:w-full max-w-5xl  sm:pr-10">
             <img
               src={filteredData[0]?.fields?.mainImage?.fields?.file?.url}
@@ -231,6 +235,13 @@ async function page(props: any) {
         <div className="max-w-5xl space-y-3" id="weather">
           <h2 className="sm:text-3xl text-3xl text-black font-bold">Weather</h2>
           <div className="richText">{weather}</div>
+        </div>
+        <div className="pt-10">
+          <Link href="/algarve">
+            <button type="button" className="btn">
+              Go back
+            </button>
+          </Link>
         </div>
       </section>
     </>

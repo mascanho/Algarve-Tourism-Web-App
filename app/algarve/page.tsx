@@ -2,15 +2,30 @@ import { cityArr } from "@/Data/Cities";
 import React from "react";
 import CardCity from "./[city]/CardCity";
 import { Metadata } from "next";
+import Breadcrumbs from "@/components/Layout/Breadcrumbs";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Find Your City in The Algarve ",
   description: "Here you will find the best places in Algarve",
+  icons: {
+    icon: "/images/icon.png",
+    href: "/images/icon.png",
+    shortcut: "/shortcut-icon.png",
+    apple: "/apple-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon-precomposed.png",
+    },
+  },
 };
 
 function page() {
   return (
-    <section className="max-w-7xl mx-auto sm:mt-20">
+    <section className="max-w-7xl mx-auto sm:mt-20 sm:px-3">
+      <div className="-mt-12 mb-8">
+        <Breadcrumbs />
+      </div>
       <div className="w-11/12 sm:w-full mx-auto">
         <img
           src="https://lp-cms-production.imgix.net/2022-05/GettyRF_1013112160.jpg?auto=format&w=1440&h=810&fit=crop&q=75"
@@ -76,7 +91,7 @@ function page() {
           </p>
         </div>
       </div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10 sm:mt-20 sm:gap-x-8 overflow-hidden mx-auto w-11/12 sm:w-full sm:gap-y-20 gap-y-8 max-w-7xl justify-stretch place-items-center  place-content-between">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10 sm:mt-12 sm:gap-x-4 overflow-hidden mx-auto w-11/12 sm:w-full sm:gap-y-8 gap-y-8 max-w-7xl justify-stretch place-items-center  place-content-between">
         {cityArr.map((city: any) => (
           <CardCity
             key={city.id}
@@ -86,6 +101,35 @@ function page() {
             route={city.route}
           />
         ))}
+      </div>
+
+      <div className="mt-10 space-y-4">
+        <h3 className="font-bold text-xl">Charming Coastal Towns</h3>
+        <p>
+          The Algarve is not only about nature's grandeur but also about the
+          quaint charm of its coastal towns. Lagos, with its historic
+          architecture and vibrant markets, is a living testament to the
+          region's rich history. Faro, the capital of the Algarve, enchants
+          visitors with its medieval walls, cobbled streets, and a picturesque
+          old town. Each town narrates a story of the region's past, with
+          influences from Moorish, Roman, and medieval eras blending seamlessly
+          into the present.
+        </p>
+        <p>
+          In each city of the Algarve, history and modernity dance together,
+          creating an atmosphere that invites exploration and relaxation in
+          equal measure. From the narrow alleys of Faro to the vibrant streets
+          of Albufeira, the charisma of these urban gems adds an extra layer of
+          allure to the sun-drenched splendor that defines Portugal's southern
+          coastal paradise.
+        </p>
+      </div>
+      <div className="pt-10">
+        <Link href="/">
+          <button type="button" className="btn hover:text-white">
+            Go back
+          </button>
+        </Link>
       </div>
     </section>
   );
