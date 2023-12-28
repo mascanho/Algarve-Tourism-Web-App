@@ -13,17 +13,17 @@ function BottomAssets() {
     `}
     >
       <div className="justify-between mx-auto sm:flex">
-        <div className="w-[100%]  relative sm:w-2/3">
+        <div className="w-[100%]  relative sm:w-2/3 animate-fade-in">
           <img
             src={
               "https://cdn.travel-in-portugal.com/sites/default/files/styles/x_large/public/beaches/praia-santa-eulalia-algarve.jpg"
             }
             // fill
             alt="IMAGE"
-            className="rounded-md"
+            className="rounded-md animate-fade-in"
           />
         </div>
-        <div className="flex flex-col justify-center text-left sm:w-2/3 sm:pl-10">
+        <div className="flex flex-col justify-center text-left sm:w-2/3 sm:pl-10 animate-fade-in">
           <div className="my-3 sm:my-0">
             <h3 className="mt-2 mb-4 text-2xl font-semibold text-black sm:text-4xl sm:my-6">
               🏖️ Santa Eulalia Beach
@@ -45,7 +45,7 @@ function BottomAssets() {
           </div>
         </div>
       </div>
-      <div className="justify-between hidden mx-auto sm:flex">
+      <div className="justify-between hidden mx-auto sm:flex animate-fade-in">
         <div className="flex flex-col justify-center text-left sm:w-2/3 sm:pr-10">
           <h3 className="text-xl sm:text-4xl text-black my-6 font-semibold sm:my-0`">
             ⛵️ Benagil Caves
@@ -64,7 +64,7 @@ function BottomAssets() {
             </button>
           </Link>
         </div>
-        <div className="w-[100%]  relative sm:w-2/3">
+        <div className="w-[100%]  relative sm:w-2/3 animate-fade-in">
           <img
             src={
               "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/23/42/4d/cd/benagil-cave-visit-we.jpg?w=1200&h=900&s=1"
@@ -75,7 +75,7 @@ function BottomAssets() {
           />
         </div>
       </div>
-      <div className="justify-between mx-auto sm:flex">
+      <div className="justify-between mx-auto sm:flex animate-fade-in">
         <div className="w-[100%]  relative sm:w-2/3">
           <img
             src={
@@ -86,7 +86,7 @@ function BottomAssets() {
             className="rounded-md"
           />
         </div>
-        <div className="flex flex-col justify-center text-left sm:w-2/3 sm:pl-10">
+        <div className="flex flex-col justify-center text-left sm:w-2/3 sm:pl-10 animate-fade-in">
           <h3 className="mt-4 mb-4 text-2xl font-semibold text-black sm:text-4xl sm:my-6 ">
             🏖️ Camilo Beach
           </h3>
@@ -107,7 +107,7 @@ function BottomAssets() {
       </div>
 
       {/* Last one on mobile */}
-      <div className="justify-between mx-auto sm:hidden">
+      <div className="justify-between mx-auto sm:hidden animate-fade-in">
         <div className="w-[100%]  relative sm:w-2/3">
           <img
             src={

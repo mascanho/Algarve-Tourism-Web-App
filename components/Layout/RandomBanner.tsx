@@ -131,7 +131,7 @@ function RandomBanner({ categories }: any) {
   };
 
   return (
-    <div className="bg-[url('https://www.benoitproperties.com/wp-content/uploads/2021/07/algarve-header.png')] bg-cover bg-blend-multiply bg-black/40 w-11/12 py-10 sm:py-16 mx-auto sm:space-y-2 text-center text-white sm:w-full rounded-xl sm:space-y-2">
+    <div className="animate-fade-in bg-[url('https://www.benoitproperties.com/wp-content/uploads/2021/07/algarve-header.png')] bg-cover bg-blend-multiply bg-black/40 w-11/12 py-10 sm:py-16 mx-auto sm:space-y-2 text-center text-white sm:w-full rounded-xl sm:space-y-2">
       <div className="-mt-2 sm:mt-0">
         <h4>Come join and have a vacation with us</h4>
         <h3 className="text-2xl sm:text-3xl hidden sm:block">

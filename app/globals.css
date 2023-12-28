@@ -67,3 +67,36 @@ input[type="text"] {
 .mantine-1cn2mlo {
   @apply rounded-none border-slate-50 outline-none active:outline-none active:rounded-none active:border-black;
 }
+
+/* Animations and preferences */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade {
+    animation: fade-out linear;
+    animation-timeline: view();
+    animation-range: exit -200px;
+  }
+
+  .animate-fade-in {
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 550px;
+  }
+
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      scale: 0.8;
+      opacity: 0;
+    }
+    to {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+}

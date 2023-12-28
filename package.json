@@ -25,6 +25,7 @@
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
+    "aos": "3.0.0-beta.6",
     "axios": "^1.6.2",
     "bcrypt": "^5.1.1",
     "contentful": "^9.3.5",
