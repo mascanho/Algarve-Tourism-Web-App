@@ -24,10 +24,18 @@ const options = {
   },
 };
 
-export const metadata: Metadata = {
-  title: "Discover this City",
-  description: "Here you can enjoy the weather, the local food, and much more.",
-};
+// export const generateMetadata: Metadata = {
+//   title: "Discover this City",
+//   description: "Here you can enjoy the weather, the local food, and much more.",
+// };
+
+export function generateMetadata({ params, searchParams }: any) {
+  return {
+    title: params.city.charAt(0).toUpperCase() + params.city.slice(1),
+    description:
+      "Here you can enjoy the weather, the local food, and much more.",
+  };
+}
 
 // Get all categories from contentful
 async function getAllCategories() {
@@ -99,7 +107,7 @@ async function page(props: any) {
   let city = props.params.city;
 
   const filteredData: any = cities.filter(
-    (obj: any) => obj.fields.slug === city
+    (obj: any) => obj.fields.slug === city,
   );
 
   // conditionally route the user if the city is not included in the cityArr
@@ -140,18 +148,18 @@ async function page(props: any) {
   // Contentful Rich Text Renderer
   const aboutCity = documentToReactComponents(
     filteredData[0]?.fields?.about,
-    options
+    options,
   );
 
   const whatToDo = documentToReactComponents(
     filteredData[0]?.fields?.whatToDo,
-    options
+    options,
   );
 
   const history = documentToReactComponents(
     cities[0]?.fields?.history,
 
-    options
+    options,
   );
 
   const weather = documentToReactComponents(filteredData[0]?.fields?.weather);

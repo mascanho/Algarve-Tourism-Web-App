@@ -254,7 +254,7 @@ export default function Home() {
           ))}
         </section>
         <section className="pt-16 sm:py-28">
-          <div className="w-11/12 py-8 mx-auto space-y-2 text-center text-white bg-sky sm:w-full rounded-xl sm:space-y-2">
+          <div className="w-11/12 py-8 sm:py-0 mx-auto space-y-2 text-center text-white bg-sky sm:w-full rounded-xl ">
             <h4>Come join and have a vacation with us</h4>
             <h3 className="text-2xl sm:text-3xl">
               Prepare yourself and lets explore

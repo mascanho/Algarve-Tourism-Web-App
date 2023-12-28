@@ -74,7 +74,7 @@ function RandomBanner({ categories }: any) {
       return array.filter((item) => {
         return searchValues.some((searchValue) => {
           return item.fields.type.some((val: any) =>
-            String(val).includes(searchValue)
+            String(val).includes(searchValue),
           );
         });
       });
@@ -87,7 +87,7 @@ function RandomBanner({ categories }: any) {
 
     const arrSelected = searchResult.slice(
       0,
-      Math.floor(daysSelected * totalPlacesPerDays)
+      Math.floor(daysSelected * totalPlacesPerDays),
     );
 
     setFinalChoice(arrSelected);
@@ -139,7 +139,7 @@ function RandomBanner({ categories }: any) {
         </h3>
       </div>
       <div className="w-full flex sm:justify-center">
-        <div className="sm:space-x-8 space-y-4 mt-8">
+        <div className="sm:space-x-8 space-y-4 mt-8 sm:mt-0">
           <button
             onClick={handleClickRandom}
             className="px-4 w-52 text-sm sm:w-fit sm:text-base py-2 text-black hover:bg-sky hover:text-white transition-all ease-in delay-75 bg-white rounded-md active:scale-95"

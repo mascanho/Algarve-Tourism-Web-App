@@ -123,7 +123,7 @@ const Header = ({ currentUser }: any) => {
                 categories={true}
               />
               <NavMenu trigger={false} title={"Blog"} url={"/blog"} />
-              <NavMenu trigger={false} title={"News"} url={"/news"} />
+              {/* <NavMenu trigger={false} title={"News"} url={"/news"} /> */}
               <NavMenu trigger={false} title={"Contact"} url={"/contact"} />
             </section>
           </div>
