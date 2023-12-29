@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import Selection from "@/components/Selection";
 import { Card } from "@/components/Card";
 import Pagination from "@/components/Pagination";
@@ -10,8 +9,8 @@ import { Reviews } from "@/Data/Reviews";
 import PopularCategories from "@/components/PopularCategories";
 import { createClient } from "contentful";
 import CarouselHero from "@/components/Carousel";
-import { catArr } from "@/Data/Categories";
 import RandomBanner from "@/components/Layout/RandomBanner";
+import { cityArr } from "@/Data/Cities";
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -28,8 +27,6 @@ export const metadata = {
   },
 };
 
-const inter = Inter({ subsets: ["latin"] });
-
 // Get all categories from contentful
 async function getAllCategories() {
   const client: any = createClient({
@@ -43,10 +40,15 @@ async function getAllCategories() {
   return await res.items;
 }
 
+const cities = cityArr;
+
 export default async function Home(props: any) {
   const categories = await getAllCategories();
 
-  const shuffledCategories = categories.sort(() => 0.5 - Math.random());
+  // Filter restaurants from all the categories
+  const restaurants = categories.filter(
+    (cat: any) => cat.fields.type && cat.fields.type.includes("restaurants"),
+  );
 
   return (
     <>
@@ -119,7 +121,13 @@ export default async function Home(props: any) {
         </section>
       </section>
       <section className="mx-auto mb-40 ">
-        <CarouselHero categories={categories} />
+        <CarouselHero categories={categories} title="What to do" />
+      </section>
+      <section className="mx-auto mb-40">
+        <CarouselHero cities={cities} title="Cities to visit" />
+      </section>
+      <section className="mx-auto mb-40">
+        <CarouselHero restaurants={restaurants} title="Best places to eat" />
       </section>
     </>
   );

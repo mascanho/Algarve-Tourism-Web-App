@@ -58,12 +58,14 @@ export const cityArr = [
   //   icon: "",
   //   route: "monte-gordo",
   // },
-  // {
-  //   id: 11,
-  //   name: "Olhão",
-  //   icon: "",
-  //   route: "olhao",
-  // },
+  {
+    id: 11,
+    name: "Olhão",
+    icon: "",
+    route: "olhao",
+    image:
+      "https://toursinalgarve.com/wp-content/uploads/2022/08/tours-in-olhao.jpg",
+  },
   {
     id: 5,
     name: "Portimão",

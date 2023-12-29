@@ -78,7 +78,6 @@ async function page() {
   };
 
   const randomItem = randomItems(catArr);
-  console.log(randomItem.name, "random Item");
 
   return (
     <section className=" sm:max-w-7xl sm:w-full mx-auto sm:h-full  ">

@@ -205,23 +205,27 @@ async function page(props: any) {
           ></iframe>
         </div>
 
-        <div className="max-w-5xl space-y-3" id="whattodo">
+        <div className="max-w-5xl space-y-3 pt-5" id="whattodo">
           <h2 className="sm:text-3xl text-3xl text-black font-bold">
             What to do
           </h2>
           <div className="richText">{whatToDo}</div>
         </div>
         <div className="grid sm:grid-cols-3 w-full gap-y-10 pt-5 sm:max-w-5xl m-0 place-content-between place-items-stretch md:gap-x-14">
-          {filteredCity.slice(0, 6).map((i: any) => (
-            <CardCity
-              key={i}
-              image={i?.fields?.mainImage?.fields?.file?.url}
-              title={i?.fields?.title}
-              desc={i?.fields?.shortDescription}
-              slug={i?.fields?.slug}
-              type={i?.fields?.type}
-            />
-          ))}
+          {cityImages.length === 0
+            ? null
+            : filteredCity
+                .slice(0, 6)
+                .map((i: any) => (
+                  <CardCity
+                    key={i}
+                    image={i?.fields?.mainImage?.fields?.file?.url}
+                    title={i?.fields?.title}
+                    desc={i?.fields?.shortDescription}
+                    slug={i?.fields?.slug}
+                    type={i?.fields?.type}
+                  />
+                ))}
         </div>
 
         <div className="max-w-5xl space-y-3 pt-5" id="history">
@@ -229,9 +233,11 @@ async function page(props: any) {
           <div className="richText">{history}</div>
         </div>
 
-        <div className="max-w-5xl py-5">
-          <CarouselCity images={cityImages} />
-        </div>
+        {cityImages.length === 0 ? null : (
+          <div className="max-w-5xl py-5">
+            <CarouselCity images={cityImages} />
+          </div>
+        )}
         <div className="max-w-5xl space-y-3" id="weather">
           <h2 className="sm:text-3xl text-3xl text-black font-bold">Weather</h2>
           <div className="richText">{weather}</div>

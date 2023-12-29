@@ -56,7 +56,6 @@ function RandomBanner({ categories }: any) {
 
   const handleDaysSelection = (value: any) => {
     setDaysSelected(value);
-    console.log(daysSelected);
   };
   // Handle Chip Selection
   let selectedCategories: any;
@@ -67,8 +66,6 @@ function RandomBanner({ categories }: any) {
       // Remove the first character and the space afterward
       return str.substring(3)?.trim()?.toLowerCase();
     });
-
-    console.log(textCategories);
 
     const searchObjectsByValues = (array: any[], searchValues: any[]) => {
       return array.filter((item) => {
@@ -82,7 +79,6 @@ function RandomBanner({ categories }: any) {
 
     // Search for objects where fields.type includes the selected categories
     const searchResult = searchObjectsByValues(categories, textCategories);
-    console.log(searchResult);
     selectedCategories = searchResult;
 
     const arrSelected = searchResult.slice(

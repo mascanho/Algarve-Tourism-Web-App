@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useDisclosure, useLocalStorage } from "@mantine/hooks";
 import { FaRegTrashAlt } from "react-icons/fa";
 
-const DrawerContent = ({ close }: any) => {
+const DrawerContent = ({ close, title }: any) => {
   const { favourites, addFavourite, removeFavourite } = useAddToFavourites();
 
   return (
@@ -49,13 +49,6 @@ const DrawerContent = ({ close }: any) => {
           </AnimatePresence>
         </div>
       ))}
-      {/* <button */}
-      {/*   className={` */}
-      {/*  border w-full p-2 rounded-md  */}
-      {/*  ${favourites.length > 0 ? "bg-sky text-white" : "bg-gray-300"}`} */}
-      {/* > */}
-      {/*   Export Favourites */}
-      {/* </button> */}
 
       {favourites.length < 1 ? (
         <>

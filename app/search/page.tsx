@@ -104,17 +104,6 @@ export default function Home() {
                 </section>
               </>
             )}
-            {/* <section className="mt-10 mb-10"> */}
-            {/*   <div className="sm:w-3/12 mx-auto"> */}
-            {/*     <Select */}
-            {/*       onChange={(value: any) => console.log(value)} */}
-            {/*       // label="Pick a hashtag" */}
-            {/*       placeholder="Filter by City" */}
-            {/*       data={["React", "Angular", "Svelte", "Vue"]} */}
-            {/*       // icon={<IconHash size="1rem" />} */}
-            {/*     /> */}
-            {/*   </div> */}
-            {/* </section> */}
           </div>
 
           <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 pt-10">

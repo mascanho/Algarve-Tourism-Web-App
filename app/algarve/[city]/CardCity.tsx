@@ -22,7 +22,7 @@ const CardCity = ({
         <figure className="sm:Lh-56 h-48 w-full">
           <img
             src={image}
-            alt="Shoes"
+            alt={title || name || city}
             className="sm:h-full  w-full group-hover:scale-105 transition-all ease-in delay-75"
           />
         </figure>

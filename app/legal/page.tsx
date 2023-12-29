@@ -24,7 +24,6 @@ async function getBlogs() {
 
 async function page() {
   const blogs = await getBlogs();
-  console.log(blogs, "From the blogs");
 
   const sportsToDo = [
     {

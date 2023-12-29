@@ -17,25 +17,9 @@ import { toast } from "react-hot-toast";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { NavMenu } from "../NavMenu";
 import Image from "next/image";
+import WeatherModal from "../modals/WeatherModal";
 
-import { RxHamburgerMenu } from "react-icons/rx";
-
-interface UserProps {
-  close: () => void;
-  currentUser: {
-    createdAt: string;
-    updatedAt: string;
-    emailVerified: string | null;
-    id: string;
-    name: string | null;
-    email: string | null;
-    image: string | null;
-    hashedPassword: string | null;
-    favoriteIds: string[];
-  } | null;
-}
-
-const Header = ({ currentUser }: any) => {
+const Header = ({ currentUser, weatherData }: any) => {
   const router = useRouter();
   const [openLogin, setOpenLogin] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
@@ -44,6 +28,7 @@ const Header = ({ currentUser }: any) => {
   const openLoginMenu = () => {
     setOpenLogin(!openLogin);
   };
+  const [weatherModal, setWeatherModal] = useState(false);
 
   const userLogsOut = () => {
     toast.success("Logging you out... bye!");
@@ -71,6 +56,18 @@ const Header = ({ currentUser }: any) => {
       window.removeEventListener("scroll", showBottomNav);
     };
   }, []);
+
+  const showWeather = () => {
+    setWeatherModal(true);
+    open();
+  };
+
+  const showFavourites = () => {
+    if (weatherModal) {
+      setWeatherModal(false);
+    }
+    open();
+  };
 
   return (
     <>
@@ -134,6 +131,19 @@ const Header = ({ currentUser }: any) => {
               {/* <NavMenu trigger={false} title={"News"} url={"/news"} /> */}
               <NavMenu trigger={false} title={"Contact"} url={"/contact"} />
             </section>
+            {/* Weather API */}
+            <div
+              onClick={showWeather}
+              className="flex items-center sm:mr-6 cursor-pointer hover:scale-105 transition ease-in"
+            >
+              {weatherData.current.temp_c + "°"}{" "}
+              <img
+                src={"https:" + weatherData.current.condition.icon}
+                alt="weather"
+                width={30}
+                height={30}
+              />{" "}
+            </div>
           </div>
           <div className="space-x-4 sm:w-fit navbar-end">
             <div className="flex items-center pr-3 text-xl text-black border rounded-full border-black/20 bg-white/50">
@@ -196,7 +206,7 @@ const Header = ({ currentUser }: any) => {
                 </span>
                 <div className="relative">
                   <MdCardTravel
-                    onClick={open}
+                    onClick={showFavourites}
                     className="cursor-pointer active:scale-90"
                   />
                 </div>
@@ -205,9 +215,18 @@ const Header = ({ currentUser }: any) => {
           </div>
         </div>
       </nav>
-      <Modal opened={opened} onClose={close} title="Favourite Places" centered>
+      <Modal
+        opened={opened}
+        onClose={close}
+        title={weatherModal ? "Weather in the Algarve, Portugal" : "Favourites"}
+        centered
+      >
         {/* Modal content */}
-        <DrawerContent close={close} />
+        {weatherModal ? (
+          <WeatherModal weatherData={weatherData} />
+        ) : (
+          <DrawerContent close={close} />
+        )}
       </Modal>
     </>
   );

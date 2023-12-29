@@ -14,10 +14,6 @@ export const metadata: Metadata = {
     template: "%s | Algarve Wonders",
   },
   description: "The place to find the best places in the Algarve",
-  viewport: {
-    initialScale: 1,
-    maximumScale: 1,
-  },
   robots: {
     index: true,
     follow: true,
@@ -46,6 +42,14 @@ export const metadata: Metadata = {
   },
 };
 
+// Fetch Weather data
+async function getWeatherData() {
+  const res = await fetch(
+    `https://api.weatherapi.com/v1/current.json?key=8fd5b11106094719a89115725232912&q=Algarve&aqi=no`,
+  );
+  return await res.json();
+}
+
 export default async function RootLayout({
   children,
 }: {
@@ -53,12 +57,14 @@ export default async function RootLayout({
 }) {
   const currentUser = await getCurrentUser();
 
+  const weatherData = await getWeatherData();
+
   return (
     <html lang="en">
       <body className="bg-white overflow-x-hidden">
         <ClientOnly>
           <ToasterProvider />
-          <Header currentUser={currentUser} />
+          <Header currentUser={currentUser} weatherData={weatherData} />
           <NextAuthProvider>{children}</NextAuthProvider>
         </ClientOnly>
         <Footer />
