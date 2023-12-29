@@ -30,8 +30,16 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   icons: {
-    shortcut: "/favicon.ico",
+    icon: "/images/icon.png",
+    href: "/images/icon.png",
+    shortcut: "/shortcut-icon.png",
+    apple: "/apple-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon-precomposed.png",
+    },
   },
+
   verification: {
     google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
     yandex: "14d2e73487fa6c71",

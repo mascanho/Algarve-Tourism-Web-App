@@ -11,6 +11,7 @@ import { createClient } from "contentful";
 import CarouselHero from "@/components/Carousel";
 import RandomBanner from "@/components/Layout/RandomBanner";
 import { cityArr } from "@/Data/Cities";
+import { carRentals } from "@/Data/CarRentals";
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -115,19 +116,22 @@ export default async function Home(props: any) {
             />
           ))}
         </section>
-        <section className="pt-16 sm:pt-28 pb-16">
+        <section className="pt-16 sm:pt-28 pb-16 sm:pb-2">
           <RandomBanner categories={categories} />
           <PopularCategories />
         </section>
       </section>
-      <section className="mx-auto mb-40 ">
+      <section className="mx-auto animate-fade-in ">
         <CarouselHero categories={categories} title="What to do" />
       </section>
-      <section className="mx-auto mb-40">
+      <section className="mx-auto animate-fade-in ">
         <CarouselHero cities={cities} title="Cities to visit" />
       </section>
-      <section className="mx-auto mb-40">
+      <section className="mx-auto animate-fade-in pb-20 ">
         <CarouselHero restaurants={restaurants} title="Best places to eat" />
+      </section>
+      <section className="mx-auto animate-fade-in pb-20 ">
+        <CarouselHero carRentals={carRentals} title="Rent the best cars" />
       </section>
     </>
   );

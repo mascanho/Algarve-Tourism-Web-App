@@ -73,7 +73,7 @@ export default async function Home(props: any) {
               </div>
             </div>
           </div>
-          <span className="flex items-center text-gray-300 text-sm text-left">
+          <span className="flex items-center text-gray-400 text-sm text-left">
             <FaMapMarkerAlt />
             <span className="ml-1">{filteredData[0]?.fields?.city}</span>
           </span>
@@ -84,7 +84,7 @@ export default async function Home(props: any) {
             </div>
           </div>
           <div className="flex">
-            <div className="flex-1">
+            <div className="flex-1 sm:pt-2">
               <div className="space-x-2 mt-4 sm:mt-0 hidden sm:inline">
                 {filteredData[0]?.fields?.tags.map((item: any) => (
                   <span

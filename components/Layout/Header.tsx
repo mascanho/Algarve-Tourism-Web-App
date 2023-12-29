@@ -108,7 +108,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             />
             <span
               onClick={() => router.push("/")}
-              className="p-0 sm:text-xl text-left normal-case cursor-pointer"
+              className="p-0 sm:text-xl text-left normal-case cursor-pointer font-semibold"
             >
               Algarve Wonders
             </span>
@@ -218,7 +218,7 @@ const Header = ({ currentUser, weatherData }: any) => {
       <Modal
         opened={opened}
         onClose={close}
-        title={weatherModal ? "Weather in the Algarve, Portugal" : "Favourites"}
+        title={weatherModal ? "Weather" : "Favourites"}
         centered
       >
         {/* Modal content */}
