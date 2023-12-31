@@ -9,27 +9,62 @@ import { Rating } from "@mantine/core";
 import CardFavs from "./CardFavs";
 import { AiFillDelete } from "react-icons/ai";
 import { BsGridFill } from "react-icons/bs";
+import { AiOutlineMail } from "react-icons/ai";
+import { compileMailTemplate, sendMail } from "@/libs/NodeMailer";
+import { toast } from "react-hot-toast";
+import ReactDOMServer from "react-dom/server";
 
 function page() {
   const { favourites, addFavourite, removeFavourite }: any =
     useAddToFavourites();
   const [changeTable, setChangeTable]: any = useState(false);
-
-  const checkLocalStorage = () => {
-    if (localStorage.getItem("favourites_all")) {
-      return JSON.parse(localStorage.getItem("favourites_all")!);
-    }
-  };
+  const [userEmail, setUserEmail]: any = useState("");
+  const [loading, setLoading]: any = useState(false);
 
   useEffect(() => {
     document.title = "Algarve Wonders - Your Favourites";
-
-    if (favourites.length <= 0) {
-      return;
-    } else {
-      localStorage.setItem("favourites_all", JSON.stringify(favourites));
-    }
   });
+
+  const sendFavEmail = async () => {
+    if (userEmail.length < 1) {
+      toast("Please enter a valid email address", {
+        icon: "🚨",
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
+      return;
+    }
+    console.log(userEmail, "This is the email");
+    setLoading(true);
+
+    const converToHtml = favourites.map((obj: any, index: any) => {
+      return {
+        ...obj,
+      };
+    });
+
+    const html = JSON.stringify(converToHtml);
+
+    await sendMail({
+      to: userEmail,
+      subject: "Algarve Wonders",
+      name: "Marco",
+      body: await compileMailTemplate(html),
+    });
+    setUserEmail("");
+    setLoading(false);
+    toast("Email sent to: " + userEmail, {
+      icon: "📬",
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
+  };
 
   const rows = favourites.map((element: any) => (
     <tr key={element.title}>
@@ -90,6 +125,7 @@ function page() {
               onClick={() => setChangeTable(!changeTable)}
             />
           )}
+          <AiOutlineMail className="cursor-pointer" />
           <FiPrinter
             onClick={() => window.print()}
             className="cursor-pointer"
@@ -126,6 +162,31 @@ function page() {
             </div>
           )}
         </div>
+      </div>
+      <div className="w-full flex justify-center mt-20">
+        <form action="submit">
+          {!favourites.length ? (
+            ""
+          ) : (
+            <input
+              className="h-10 rounded-l-md bg-white border p-2 "
+              type="email"
+              name="email"
+              placeholder="Your email"
+              onChange={(e) => setUserEmail(e.target.value)}
+              required
+              value={userEmail}
+            />
+          )}
+          <button
+            className=" -ml-2 btn m-auto disabled:text-gray-400 disabled:cursor-not-allowed hover:text-white"
+            type="button"
+            // disabled={!favourites.length}
+            onClick={sendFavEmail}
+          >
+            {loading ? "Sending email..." : "Send email"}
+          </button>
+        </form>
       </div>
     </section>
   );

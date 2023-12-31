@@ -35,9 +35,10 @@
 - [ ] Booking through the API
 - [ ] Calendar
 - [x] filter segmentation
-- [ ] Weather API integration
+- [x] Weather API integration
 - [ ] PDF Download generator
 - [ ] Cookie Consent Banner for GDPR
+- [ ] Add inspiration page to the website (containing images with route interception)
 
 ## Disclaimer
 
@@ -56,6 +57,3 @@ I hope this can be useful to others and to the community in general.
 - I'm decent at ricing i.e customizing system and making it look pretty so I posted my neovim rice on [neovim subreddit](https://www.reddit.com/r/neovim/comments/m3xl4f/neovim_rice/), my neovim-dotfiles github repo blew up and then I had to come up with a name, I was amazed by the chad meme lol so I put NvChad as the name, the chad word in here doesnt literally mean the chad guy but in the sense such as chad linux vs windows i.e meaning superior, best etc. NvChad was made for my personal use but it gained some popularity which inspired me to make a public config i.e config usable by many and less hassle to update as everyone's going to use the same base config (NvChad) with their custom modifications (which are gitignored so that wont mess up), without the custom config stuff users would have to keep a track of every commit and copy paste git diffs to manually update nvchad.
 
 ## Software/tech used
-
-- [Elianiva](https://github.com/elianiva) helped me with NeoVim Lua related issues many times, NvChad wouldn't exist without his help at all as he helped me in my initial neovim journey!
-- @lorvethe for making the beautiful NvChad logo.

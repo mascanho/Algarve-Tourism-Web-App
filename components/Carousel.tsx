@@ -7,6 +7,7 @@ import Image from "next/image";
 function CarouselHero({
   categories,
   title,
+  subTitle,
   cities,
   restaurants,
   carRentals,
@@ -16,9 +17,7 @@ function CarouselHero({
       <section className="w-full max-w-7xl sm:w-11/12 m-auto px-4 sm:px-0 mt-20   font-semibold">
         <div className="space-y-4 mb-8 text-center">
           <h3 className=" text-black text-4xl text-center">{title}</h3>
-          <h4 className="pb-9">
-            A collection of some of the most beautiful places in the world
-          </h4>
+          <h4 className="pb-9">{subTitle}</h4>
         </div>
         <Carousel
           height={280}
@@ -39,7 +38,7 @@ function CarouselHero({
                   <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
                     <img
                       src={`https:${cat?.fields?.mainImage.fields?.file?.url}`}
-                      alt="image"
+                      alt={cat?.fields?.title}
                       className="block h-full"
                     />
                     <span className="absolute left-0 top-4 pr-2 py-1 pl-1 rounded-r-full text-xs text-black bg-white  ">

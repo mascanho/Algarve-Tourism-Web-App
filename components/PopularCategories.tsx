@@ -3,31 +3,34 @@ import Image from "next/image";
 import React from "react";
 import { IoIosPin } from "react-icons/io";
 
-const popularCategories = [
-  {
-    id: Math.random(),
-    name: "Unique and Insteresting Events",
-    url: "/events",
-    image:
-      "https://www.walkalgarve.com/wp-content/uploads/2016/10/SandsSculpture-1.jpg",
-  },
-  {
-    id: Math.random(),
-    name: "Unique and Insteresting Culture",
-    url: "/adventure",
-    image:
-      "https://tourscanner.com/blog/wp-content/uploads/2023/03/things-to-do-in-Albufeira-Portugal.jpg",
-  },
-  {
-    id: Math.random(),
-    name: "Unique and Insteresting Places",
-    url: "/beaches",
-    image:
-      "https://image.jimcdn.com/app/cms/image/transf/dimension=4096x4096:format=jpg/path/sa6549607c78f5c11/image/ibff35da300188e47/version/1472987546/image.jpg",
-  },
-];
+function PopularCategories({ beaches, events, adventure }: any) {
+  const popularCategories = [
+    {
+      id: Math.random(),
+      name: "Unique and Insteresting Events",
+      url: "/events",
+      image:
+        "https://www.walkalgarve.com/wp-content/uploads/2016/10/SandsSculpture-1.jpg",
+      quantity: events.length,
+    },
+    {
+      id: Math.random(),
+      name: "Unique and Insteresting Culture",
+      url: "/adventure",
+      image:
+        "https://tourscanner.com/blog/wp-content/uploads/2023/03/things-to-do-in-Albufeira-Portugal.jpg",
+      quantity: adventure.length,
+    },
+    {
+      id: Math.random(),
+      name: "Unique and Insteresting Places",
+      url: "/beaches",
+      image:
+        "https://image.jimcdn.com/app/cms/image/transf/dimension=4096x4096:format=jpg/path/sa6549607c78f5c11/image/ibff35da300188e47/version/1472987546/image.jpg",
+      quantity: beaches.length,
+    },
+  ];
 
-function PopularCategories() {
   return (
     <section className="max-w-7xl mx-auto mt-20 sm:mt-40 mb-10 text-center w-full ">
       <div className="space-y-2">
@@ -55,7 +58,7 @@ function PopularCategories() {
             <h3 className="">{item.name}</h3>
             <div className="flex items-center space-x-2 text-sm border  w-fit px-2 py-1 rounded-md mx-auto">
               <IoIosPin className="text-red-500 text-center" />
-              <span>{Math.floor(Math.random() * 100)} Locations</span>
+              <span>{item.quantity} Locations</span>
             </div>
           </div>
         ))}

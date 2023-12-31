@@ -28,7 +28,7 @@ export default function SidePanel() {
             delay-75  
             ${
               pathname?.includes(item?.route)
-                ? "bg-sky text-white border-white"
+                ? "bg-sky text-white border-gray-400"
                 : ""
             }
             `}

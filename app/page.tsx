@@ -12,6 +12,9 @@ import CarouselHero from "@/components/Carousel";
 import RandomBanner from "@/components/Layout/RandomBanner";
 import { cityArr } from "@/Data/Cities";
 import { carRentals } from "@/Data/CarRentals";
+import { sendMail } from "@/libs/NodeMailer";
+import Acordion from "@/components/Acordion";
+import AffixScrollToTop from "@/components/Layout/Affix";
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -49,6 +52,21 @@ export default async function Home(props: any) {
   // Filter restaurants from all the categories
   const restaurants = categories.filter(
     (cat: any) => cat.fields.type && cat.fields.type.includes("restaurants"),
+  );
+
+  // filter beaches from all the PopularCategories
+  const beaches = categories.filter(
+    (cat: any) => cat.fields.type && cat.fields.type.includes("beaches"),
+  );
+
+  // filter adventure from all the PopularCategories
+  const adventure = categories.filter(
+    (cat: any) => cat.fields.type && cat.fields.type.includes("adventure"),
+  );
+
+  // filter all events from PopularCategories
+  const events = categories.filter(
+    (cat: any) => cat.fields.type && cat.fields.type.includes("events"),
   );
 
   return (
@@ -116,23 +134,51 @@ export default async function Home(props: any) {
             />
           ))}
         </section>
-        <section className="pt-16 sm:pt-28 pb-16 sm:pb-2">
+        <section className="pt-16 sm:pt-28 sm:pb-2 w-11/12 mx-auto">
           <RandomBanner categories={categories} />
-          <PopularCategories />
+          <PopularCategories
+            beaches={beaches}
+            adventure={adventure}
+            events={events}
+          />
         </section>
       </section>
       <section className="mx-auto animate-fade-in ">
-        <CarouselHero categories={categories} title="What to do" />
+        <CarouselHero
+          categories={categories}
+          title="What to do"
+          subTitle="Start today and discover the best of the south of Portugal"
+        />
       </section>
       <section className="mx-auto animate-fade-in ">
-        <CarouselHero cities={cities} title="Cities to visit" />
+        <CarouselHero
+          cities={cities}
+          title="Cities to visit"
+          subTitle="Amazing cities waiting for you to start your next adventure"
+        />
       </section>
       <section className="mx-auto animate-fade-in pb-20 ">
-        <CarouselHero restaurants={restaurants} title="Best places to eat" />
+        <CarouselHero
+          restaurants={restaurants}
+          title="Best places to eat"
+          subTitle="Dine on the best traditional restaurtants and taste the real mediterranean diet"
+        />
       </section>
       <section className="mx-auto animate-fade-in pb-20 ">
-        <CarouselHero carRentals={carRentals} title="Rent the best cars" />
+        <CarouselHero
+          carRentals={carRentals}
+          title="Rent the best cars"
+          subTitle="If you don't want to walk here are a few options for you"
+        />
       </section>
+      <section className="w-11/12 md:max-w-7xl mx-auto space-y-8 animate-fade-in mb-40">
+        <h4 className="text-xl">Frequently asked questions</h4>
+        <Acordion />
+      </section>
+      {/* <section className="hidden sm:block w-11/12 max-w-7xl"> */}
+      {/*   <AffixScrollToTop /> */}
+      {/* </section> */}
     </>
+    // TODO: Crate local tips: https://www.viator.com/Algarve/d774
   );
 }
