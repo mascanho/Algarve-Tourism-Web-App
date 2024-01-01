@@ -1,7 +1,8 @@
-"use client";
+// Use client only for Next.js pages
+// import { useClient } from "react-query/client";
 import { IconArrowUp } from "@tabler/icons-react";
 import { useWindowScroll } from "@mantine/hooks";
-import { Affix, Button, Text, Transition, rem } from "@mantine/core";
+import { Affix, Button, Transition, rem } from "@mantine/core";
 
 function AffixScrollToTop() {
   const [scroll, scrollTo] = useWindowScroll();
@@ -14,13 +15,16 @@ function AffixScrollToTop() {
         position={{ bottom: 350, right: 50 }}
         className="hidden sm:block opacity-70"
       >
-        <Transition transition="slide-up" mounted={scroll.y > 7300}>
-          {(transitionStyles) => (
+        <Transition
+          transition="slide-up"
+          mounted={scroll.y !== undefined && scroll.y > 7300}
+        >
+          {(transitionStyles: React.CSSProperties) => (
             <Button
               className="bg-sky"
-              leftSection={
-                <IconArrowUp style={{ width: rem(16), height: rem(16) }} />
-              }
+              // leftSection={
+              //   <IconArrowUp style={{ width: rem(16), height: rem(16) }} />
+              // }
               style={transitionStyles}
               onClick={() => scrollTo({ y: 0 })}
             >
