@@ -12,7 +12,6 @@ import { BsGridFill } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { compileMailTemplate, sendMail } from "@/libs/NodeMailer";
 import { toast } from "react-hot-toast";
-import ReactDOMServer from "react-dom/server";
 
 function page() {
   const { favourites, addFavourite, removeFavourite }: any =
@@ -23,7 +22,8 @@ function page() {
 
   useEffect(() => {
     document.title = "Algarve Wonders - Your Favourites";
-    let link = document.querySelector("link[rel~='icon']");
+    let link: HTMLLinkElement | null =
+      document.querySelector("link[rel~='icon']");
     if (!link) {
       link = document.createElement("link");
       link.rel = "icon";
