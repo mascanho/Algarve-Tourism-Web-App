@@ -10,7 +10,7 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({ params, searchParams }: any) {
   const titleCaseTitle = params.slug
     .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word: any) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
   return {
