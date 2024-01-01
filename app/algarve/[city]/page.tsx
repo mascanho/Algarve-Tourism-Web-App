@@ -5,7 +5,7 @@ import CardCity from "./CardCity";
 import CarouselCity from "./Carrossel";
 import { createClient } from "contentful";
 import { cityArr } from "@/Data/Cities";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Link from "next/link";
 import TableOfContentsFloating from "@/app/blog/[slug]/TableOfContents";
@@ -24,11 +24,6 @@ const options = {
     },
   },
 };
-
-// export const generateMetadata: Metadata = {
-//   title: "Discover this City",
-//   description: "Here you can enjoy the weather, the local food, and much more.",
-// };
 
 export function generateMetadata({ params, searchParams }: any) {
   return {
@@ -102,6 +97,8 @@ const tableData: any = [
 ];
 
 async function page(props: any) {
+  console.log(props, "from the city");
+
   const categories = await getAllCategories();
   const cities = await getCities();
 
@@ -115,15 +112,13 @@ async function page(props: any) {
 
   let cityIsPresent = false;
   for (let i = 0; i < cities.length; i++) {
-    if (
-      cities[i].fields.name.toLowerCase() === city ||
-      cities[i].fields.slug === "loule"
-    ) {
+    if (cities[i].fields.name.toLowerCase() === city) {
       cityIsPresent = true;
       break;
     }
   }
   if (!cityIsPresent) {
+    notFound();
     redirect("/algarve");
   }
 

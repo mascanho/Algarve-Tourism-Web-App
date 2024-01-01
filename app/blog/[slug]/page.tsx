@@ -4,6 +4,40 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { createClient } from "contentful";
 import Image from "next/image";
 import BreadCrumbs from "@/components/BreadCrumbs";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+
+export async function generateMetadata({ params, searchParams }: any) {
+  const titleCaseTitle = params.slug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  return {
+    title: titleCaseTitle,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    icons: {
+      icon: "/images/icon.png",
+      href: "/images/icon.png",
+      shortcut: "/shortcut-icon.png",
+      apple: "/apple-icon.png",
+      other: {
+        rel: "apple-touch-icon-precomposed",
+        url: "/apple-touch-icon-precomposed.png",
+      },
+    },
+  };
+}
 
 const options = {
   renderNode: {
@@ -34,6 +68,11 @@ const page = async (props: any) => {
 
   const allBlogs = await getAllBlogs();
   const blog = allBlogs.filter((obj: any) => obj.fields.slug === slug);
+
+  // Redirect the user if the pathaname doesn't exist
+  if (!blog[0]) {
+    notFound();
+  }
 
   // Contentful Rich Text Renderer
   const post = documentToReactComponents(blog[0]?.fields?.body, options);

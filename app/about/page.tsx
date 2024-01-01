@@ -3,6 +3,7 @@ import { createClient } from "contentful";
 import { catArr } from "@/Data/Categories";
 import Link from "next/link";
 import { Metadata } from "next";
+import BlogCarousel from "../blog/_components/Carousel";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -169,20 +170,7 @@ async function page() {
         </div>
         <div className="w-[480px] sm:pl-6  hidden sm:block">
           <div className="mt-10">
-            <div className="bg-gray-200 p-4 py-6 rounded-lg space-y-2">
-              <h3 className="text-black font-bold text-lg">
-                Randomise my selection
-              </h3>
-              <p className="text-sm">
-                Let chance choose your next destination, your next adventure,
-                your next trip
-              </p>
-              <div className="mt-2">
-                <button className="bg-sky rounded-md px-4 py-1 mt-2 text-white">
-                  Random Choice
-                </button>
-              </div>
-            </div>
+            <BlogCarousel />
           </div>
           <section className="mt-10">
             <div>

@@ -23,6 +23,13 @@ function page() {
 
   useEffect(() => {
     document.title = "Algarve Wonders - Your Favourites";
+    let link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.head.appendChild(link);
+    }
+    link.href = "/images/icon.png";
   });
 
   const sendFavEmail = async () => {
@@ -179,9 +186,9 @@ function page() {
             />
           )}
           <button
-            className=" -ml-2 btn m-auto disabled:text-gray-400 disabled:cursor-not-allowed hover:text-white"
+            className="hiddenRow -ml-2 btn m-auto disabled:text-gray-400 disabled:cursor-not-allowed hover:text-white"
             type="button"
-            // disabled={!favourites.length}
+            disabled={!favourites.length}
             onClick={sendFavEmail}
           >
             {loading ? "Sending email..." : "Send email"}

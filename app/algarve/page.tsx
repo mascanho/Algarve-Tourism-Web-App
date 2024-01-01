@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-function page() {
+function page(props: any) {
   return (
     <section className="max-w-7xl mx-auto sm:mt-20 sm:px-3">
       <div className="-mt-12 mb-8">

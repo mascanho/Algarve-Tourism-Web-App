@@ -2,6 +2,7 @@ import { createClient } from "contentful";
 import { CategoryCard } from "@/components/CategoryCard";
 import { catArr } from "@/Data/Categories";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "The Best Places",
@@ -58,21 +59,12 @@ async function Page(props: any) {
   }
 
   // If the route matches Contentful categories then render the categorey card
-  if (routeMatched) return <CategoryCard category={category} />;
-
+  if (routeMatched) {
+    const shuffledCategory = category?.sort(() => 0.5 - Math.random());
+    return <CategoryCard category={shuffledCategory} />;
+  }
   // If the route does not match Contentful categories then render the a warning
-  return (
-    <>
-      <section className="ml-6">
-        <h2 className="text-2xl">
-          {" "}
-          <span className="text-sky">{pathname} </span>
-          {""}does not exist
-        </h2>
-        <p>Please select an existing category</p>
-      </section>
-    </>
-  );
+  notFound();
 }
 
 export default Page;

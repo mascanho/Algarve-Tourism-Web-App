@@ -15,6 +15,8 @@ import { carRentals } from "@/Data/CarRentals";
 import Acordion from "@/components/Acordion";
 import AffixScrollToTop from "@/components/Layout/Affix";
 import Features from "@/components/Features";
+import AlgarveSpecs from "@/components/AlgarveSpecs";
+import { cache } from "react";
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -31,23 +33,25 @@ export const metadata = {
   },
 };
 
-// Get all categories from contentful
-async function getAllCategories() {
-  const client: any = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID!,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
-  });
-  const res = await client.getEntries({
-    content_type: ["beaches", "events", "restaurants", "adventure"],
-  });
+const getCategoriesCached = cache(
+  // Get all categories from contentful
+  async function getAllCategories() {
+    const client: any = createClient({
+      space: process.env.CONTENTFUL_SPACE_ID!,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+    });
+    const res = await client.getEntries({
+      content_type: ["beaches", "events", "restaurants", "adventure"],
+    });
 
-  return await res.items;
-}
+    return await res.items;
+  },
+);
 
 const cities = cityArr;
 
 export default async function Home(props: any) {
-  const categories = await getAllCategories();
+  const categories = await getCategoriesCached();
 
   // Filter restaurants from all the categories
   const restaurants = categories.filter(
@@ -174,14 +178,18 @@ export default async function Home(props: any) {
           subTitle="If you don't want to walk here are a few options for you"
         />
       </section>
-      <section className="w-11/12 md:max-w-7xl mx-auto space-y-8 animate-fade-in mb-40">
+      <section className="w-11/12 md:max-w-7xl mx-auto space-y-8 animate-fade-in mb-20">
         <h4 className="text-xl">Frequently asked questions</h4>
         <Acordion />
       </section>
       {/* <section className="hidden sm:block w-11/12 max-w-7xl"> */}
       {/*   <AffixScrollToTop /> */}
       {/* </section> */}
+      <section className="mb-40 animate-fade-in">
+        <AlgarveSpecs />
+      </section>
     </>
     // TODO: Crate local tips: https://www.viator.com/Algarve/d774
+    // TODO: Finish the pages like the about us and T&Cs
   );
 }

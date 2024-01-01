@@ -8,8 +8,37 @@ import CarouselHero from "@/components/Carousel";
 import BlogCarousel from "./_components/Carousel";
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "Discover the latest news and blog posts about the Algarve",
+  title: {
+    default: "Algarve Wonders - The Blog",
+    template: "%s | Algarve Wonders",
+  },
+  description: "The place to find the best places in the Algarve",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/images/icon.png",
+    href: "/images/icon.png",
+    shortcut: "/shortcut-icon.png",
+    apple: "/apple-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon-precomposed.png",
+    },
+  },
+
+  verification: {
+    google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
+    yandex: "14d2e73487fa6c71",
+  },
 };
 
 // Get all blogs from contentful

@@ -48,8 +48,8 @@ export const BlogCard = ({
           </picture>
         </section>
         <section className="sm:w-11/12 mx-auto">
-          <div className="pb-2 sm:w-2/3 w-11/12 mx-auto sm:mx-0 mt-3 sm:mt-2">
-            <span className="text-black font-semiboldk">{title}</span>
+          <div className="pb-2 sm:w-2/3 w-11/12 mx-auto sm:mx-0 mt-3 sm:mt-3">
+            <span className="text-black font-semibold">{title}</span>
             <p className="text-sm mt-2 line-clamp-2">{description}</p>
           </div>
           <div className="flex sm:w-full w-11/12 mx-auto mt-2 pb-6">
