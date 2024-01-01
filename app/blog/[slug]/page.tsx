@@ -84,27 +84,30 @@ const page = async (props: any) => {
           <BreadCrumbs />
         </section>
         <div className="sm:w-full mb-8 relative ">
-          <img
-            src={blog[0]?.fields?.image?.fields?.file.url}
+          <div className="w-11/12 sm:w-full my-4">
+            <h1 className="text-black sm:text-4xl text-2xl sm:mt-4 font-semibold ">
+              {blog[0]?.fields?.title}
+            </h1>
+          </div>
+
+          <Image
+            width={900}
+            height={700}
+            src={"https:" + blog[0]?.fields?.image?.fields?.file.url}
             alt={blog[0]?.fields?.title}
-            className="w-full mb-4 sm:mb-0"
+            className="mb-4 sm:mb-0 object-contain w-full h-full rounded-md"
           />
           <section className="hidden">
             <div className="w-full absolute hidden sm:block sm:bottom-28 h-[100px] bg-gradient-to-b from-transparent to-white" />
             <div className="w-full absolute hidden sm:block sm:bottom-28 h-[200px] bg-gradient-to-b from-transparent to-white" />
           </section>
-          <div className="w-11/12 sm:w-full">
-            <h1 className="text-black sm:text-4xl text-2xl sm:mt-4 font-semibold ">
-              {blog[0]?.fields?.title}
-            </h1>
-          </div>
-          <div className="relative w-full  space-x-2 mt-4 flex items-center justify-between">
+          <div className="relative w-full space-x-2 mt-4 flex items-center justify-between">
             <div className="w-full flex items-center">
               <div className="relative w-10 h-10 mr-2">
                 <Image
                   src={`https:${blog[0]?.fields?.avatar?.fields?.file.url}`}
                   layout="responsive"
-                  alt="albvufeir"
+                  alt={blog[0]?.fields?.author}
                   width={80}
                   height={80}
                   objectFit="contain"
@@ -120,8 +123,15 @@ const page = async (props: any) => {
                 </span>
               </div>
             </div>
-            <div className="flex space-x-2 w-52 justify-end">
-              <span className="text-xs">3 min read</span>
+            <div className="flex flex-col space-y-1 w-28  justify-end">
+              <span className="text-xs w-full">
+                {new Intl.DateTimeFormat("en-US", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                }).format(new Date(blog[0]?.fields?.date))}
+              </span>
+              <span className="text-xs w-full">3 min read</span>
             </div>
           </div>
         </div>
