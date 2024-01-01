@@ -12,9 +12,9 @@ import CarouselHero from "@/components/Carousel";
 import RandomBanner from "@/components/Layout/RandomBanner";
 import { cityArr } from "@/Data/Cities";
 import { carRentals } from "@/Data/CarRentals";
-import { sendMail } from "@/libs/NodeMailer";
 import Acordion from "@/components/Acordion";
 import AffixScrollToTop from "@/components/Layout/Affix";
+import Features from "@/components/Features";
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -73,6 +73,9 @@ export default async function Home(props: any) {
     <>
       <Hero categories={categories} />
       <section className="pt-14 sm:pt-20 pb-6 space-y-4 text-cente-white">
+        <div className="mb-28">
+          <Features />
+        </div>
         <div className="-q11/12 mx-auto text-center">
           <h3 className="text-3xl font-bold text-black sm:text-5xl">
             Discover the best of the Algarve
@@ -157,7 +160,7 @@ export default async function Home(props: any) {
           subTitle="Amazing cities waiting for you to start your next adventure"
         />
       </section>
-      <section className="mx-auto animate-fade-in pb-20 ">
+      <section className="mx-auto animate-fade-in">
         <CarouselHero
           restaurants={restaurants}
           title="Best places to eat"

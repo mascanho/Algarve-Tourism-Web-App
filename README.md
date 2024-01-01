@@ -39,6 +39,10 @@
 - [ ] PDF Download generator
 - [ ] Cookie Consent Banner for GDPR
 - [ ] Add inspiration page to the website (containing images with route interception)
+- [ ] Modal with suggestions of places to pop after a while.
+- [ ] FAQ section
+- [ ] News section
+- [ ] Spotlight Search
 
 ## Disclaimer
 

@@ -5,6 +5,7 @@ import { catArr } from "@/Data/Categories";
 import Link from "next/link";
 import { Metadata } from "next";
 import CarouselHero from "@/components/Carousel";
+import BlogCarousel from "./_components/Carousel";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -114,7 +115,7 @@ async function page() {
         </div>
         <div className="w-[480px] sm:pl-6  hidden sm:block">
           <div className="mt-10">
-            <CarouselHero />
+            <BlogCarousel />
           </div>
           <section className="mt-10">
             <div>
