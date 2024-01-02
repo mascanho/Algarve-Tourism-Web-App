@@ -90,7 +90,7 @@ export const cityArr = [
     image: "https://www.iberian-escapes.com/images/sagres-algarve-portugal.jpg",
   },
   {
-    id: 12,
+    id: Math.random(),
     name: "Silves",
     icon: "",
     image:
