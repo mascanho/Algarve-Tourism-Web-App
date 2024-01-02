@@ -12,7 +12,7 @@
 
 ## TLDR
 
-- A website that works as an agregator for locations and points of interest to those who frequent the Algarve region.
+- A website that works as an aggregator for locations and points of interest to those who frequent the Algarve region.
 
 - Its main goal is to have a clean and easy-to-use UI where users can easialy interact with the website and view locations based on category.
 
@@ -39,11 +39,11 @@
 - [ ] PDF Download generator
 - [ ] Cookie Consent Banner for GDPR
 - [ ] Add inspiration page to the website (containing images with route interception)
-- [ ] Modal with suggestions of places to pop after a while.
-- [ ] FAQ section
+- [ ] Modal with suggestions of places to visit (useEffect)
+- [x] FAQ section
 - [ ] News section
 - [ ] Spotlight Search
-- [ ] Randomize cards in the category pages
+- [x ] Randomize cards in the category pages
 
 ## Disclaimer
 
