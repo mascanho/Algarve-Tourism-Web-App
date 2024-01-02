@@ -43,7 +43,7 @@
 - [x] FAQ section
 - [ ] News section
 - [ ] Spotlight Search
-- [x ] Randomize cards in the category pages
+- [x] Randomize cards in the category pages
 
 ## Disclaimer
 
