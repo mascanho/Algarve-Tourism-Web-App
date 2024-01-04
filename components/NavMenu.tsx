@@ -24,7 +24,7 @@ export function NavMenu({ title, trigger, url, cities, mobile }: any | null) {
       <Menu.Target>
         <button
           onClick={() => handleClick(url)}
-          className={`text-gray-400 flex items-center  p-2 rounded-md transition duration-300 ease-in-out`}
+          className={`text-gray-400 flex items-center mr-1 rounded-md transition duration-300 ease-in-out`}
         >
           {trigger ? (
             <>
