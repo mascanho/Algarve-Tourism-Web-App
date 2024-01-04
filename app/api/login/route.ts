@@ -4,9 +4,9 @@ import bcrypt from "bcrypt";
 
 import prisma from "@/app/libs/prismadb";
 
-export async function GET(req: NextApiRequest) {
+export async function handler(req: NextApiRequest) {
   const email = req?.body?.email as string;
-  const user = await prisma.user.findUnique({
+  const user = await prisma?.user?.findUnique({
     where: { email: email },
     select: { id: true, name: true, email: true },
   });
