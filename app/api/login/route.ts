@@ -3,12 +3,8 @@ import bcrypt from "bcrypt";
 
 import prisma from "@/app/libs/prismadb";
 
-export async function GET(request: { body?: { email?: string } }) {
+export async function GET(request: Request) {
   const email = request?.body?.email;
-
-  if (!email) {
-    return NextResponse.json({ error: "Email is required" }, { status: 400 });
-  }
 
   const user = await prisma.user.findUnique({
     where: { email: email },
@@ -16,7 +12,7 @@ export async function GET(request: { body?: { email?: string } }) {
   });
 
   if (user) {
-    // console.log(user);
+    console.log(user);
   }
 
   return NextResponse.json(user);
