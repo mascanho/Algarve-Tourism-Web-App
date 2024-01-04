@@ -2,7 +2,7 @@ import Header from "@/components/Layout/Header";
 import "./globals.css";
 // import "@mantine/spotlight/styles.css";
 import Footer from "@/components/Layout/Footer";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import ClientOnly from "@/components/ClientOnly";
 import "react-toastify/dist/ReactToastify.css";
 import getCurrentUser from "./libs/getCurrentUser";
@@ -41,6 +41,11 @@ export const metadata: Metadata = {
     google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
     yandex: "14d2e73487fa6c71",
   },
+};
+
+export const viewport: Viewport = {
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 // Fetch Weather data
