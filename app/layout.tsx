@@ -46,6 +46,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
+  width: "device-width",
 };
 
 // Fetch Weather data
