@@ -81,12 +81,12 @@ function AlgarveSpecs() {
       <div className="max-w-7xl w-11/12 mx-auto space-y-4 mb-8">
         <h4 className="text-xl">Some good to knows</h4>
       </div>
-      <section className="grid grid-cols-3 gap-x-4 gap-y-10 max-w-7xl m-auto w-11/12">
+      <section className="grid sm:grid-cols-3 gap-x-4 gap-y-10 max-w-7xl m-auto w-11/12">
         {data.map((item, index) => {
           return (
             <div key={index} className="flex">
               <div>
-                <div className="flex justify-center items-center text-4xl text-white mr-3 bg-sky w-14 h-14 rounded-xl">
+                <div className="flex justify-center items-center text-4xl text-white mr-3 bg-sky w-12 h-12 rounded-xl">
                   {item.image}
                 </div>
               </div>

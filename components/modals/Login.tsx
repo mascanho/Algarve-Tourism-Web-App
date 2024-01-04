@@ -1,5 +1,4 @@
 import { useDisclosure } from "@mantine/hooks";
-import { Modal, Group, Button } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { useToggle, upperFirst } from "@mantine/hooks";
 import {
