@@ -19,6 +19,7 @@ import axios from "axios";
 import Toaster from "../Toastify";
 import { signIn } from "next-auth/react";
 import { toast } from "react-hot-toast";
+import { sendMail } from "@/libs/NodeMailer";
 
 function LoginModal({ currenUser }: any) {
   const [type, toggle] = useToggle(["login", "register"]);
@@ -43,15 +44,30 @@ function LoginModal({ currenUser }: any) {
     },
   });
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setIsLoading(true);
+
+    const sendTheEmail = async (message: any) => {
+      if (!message || message === null) {
+        await sendMail({
+          to: data.email,
+          subject: "Algarve Wonders",
+          body: `Hello ${data.email}, welcome to Algarve Wonders. Thank you for registering. Your password is: ${data.password}`,
+          name: "Algarve Wonders",
+        });
+      }
+    };
 
     axios
       .post("/api/register", data)
       .then(() => {
         toast.success("You Have Been Registered!");
+        sendTheEmail(null);
       })
-      .catch((error) => {})
+      .catch((error) => {
+        toast.error(error.message);
+        sendTheEmail(error.message);
+      })
       .finally(() => {
         setIsLoading(false);
         closeModal.onClose();

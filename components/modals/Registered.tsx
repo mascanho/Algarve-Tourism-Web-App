@@ -61,10 +61,8 @@ function RegisteredModal({ currentUser }: any) {
         toast.success("Howdy, you have been logged in!");
         router.refresh();
         closeRegisteredModal.onClose();
-      }
-
-      if (callback?.error) {
-        toast.error(callback.error);
+      } else {
+        toast.error("Something went wrong");
       }
     });
   };
