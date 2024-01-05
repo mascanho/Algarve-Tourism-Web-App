@@ -81,6 +81,7 @@ function Features() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-8 grid-rows-2">
         {mockData.map((item) => (
           <div
+            key={item.id}
             className="flex-col justify-start text-left rounded-md items-center space-y-2 p-8 border "
             data-aos="zoom-in-up"
           >

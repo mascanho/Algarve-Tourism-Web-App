@@ -32,8 +32,8 @@ function CarouselHero({
           slidesToScroll={1}
         >
           {categories &&
-            categories?.map((cat: any) => (
-              <Carousel.Slide key={cat.id}>
+            categories?.map((cat: any, index: string) => (
+              <Carousel.Slide key={index}>
                 <Link href={`/${cat?.fields?.type}/${cat?.fields?.slug}`}>
                   <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
                     <img
@@ -50,8 +50,8 @@ function CarouselHero({
             ))}
 
           {cities &&
-            cities?.map((city: any) => (
-              <Carousel.Slide key={city?.id}>
+            cities?.map((city: any, index: string) => (
+              <Carousel.Slide key={index}>
                 <Link href={`/algarve/${city?.route}`}>
                   <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
                     <img
@@ -68,8 +68,8 @@ function CarouselHero({
             ))}
 
           {restaurants &&
-            restaurants?.map((rest: any) => (
-              <Carousel.Slide key={rest?.id}>
+            restaurants?.map((rest: any, index: string) => (
+              <Carousel.Slide key={index}>
                 <Link href={`/restaurants/${rest?.fields.slug}`}>
                   <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
                     <img
@@ -86,8 +86,8 @@ function CarouselHero({
             ))}
 
           {carRentals &&
-            carRentals?.map((car: any) => (
-              <Carousel.Slide key={car?.id}>
+            carRentals?.map((car: any, index: string) => (
+              <Carousel.Slide key={index}>
                 <Link target="_blank" href={car?.url}>
                   <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
                     <img

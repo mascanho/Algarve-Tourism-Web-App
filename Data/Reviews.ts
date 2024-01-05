@@ -9,7 +9,7 @@ interface ReviewsProps {
 
 export const Reviews: any = [
   {
-    id: 1,
+    id: Math.random(),
     name: "Michael Anderson",
     job: "Marketing Manager",
     rating: "⭐️ 3,6",
@@ -19,7 +19,7 @@ export const Reviews: any = [
       "https://mail.4kwallpapers.com/images/wallpapers/ichigo-kurosaki-bleach-2732x2732-10512.jpg",
   },
   {
-    id: 1,
+    id: Math.random(),
     name: "Sarah Thompson",
     job: "Marketing Manager",
     rating: "⭐️ 3,6",
@@ -29,7 +29,7 @@ export const Reviews: any = [
       "https://mail.4kwallpapers.com/images/wallpapers/ichigo-kurosaki-bleach-2732x2732-10512.jpg",
   },
   {
-    id: 1,
+    id: Math.random(),
     name: "Benjamin Taylor",
     job: "Marketing Manager",
     rating: "⭐️ 3,6",
@@ -39,7 +39,7 @@ export const Reviews: any = [
       "https://mail.4kwallpapers.com/images/wallpapers/ichigo-kurosaki-bleach-2732x2732-10512.jpg",
   },
   {
-    id: 1,
+    id: Math.random(),
     name: "Emily Roberts",
     job: "Marketing Manager",
     rating: "⭐️ 3,6",
@@ -49,7 +49,7 @@ export const Reviews: any = [
       "https://mail.4kwallpapers.com/images/wallpapers/ichigo-kurosaki-bleach-2732x2732-10512.jpg",
   },
   {
-    id: 1,
+    id: Math.random(),
     name: "Olivia Mitchell",
     job: "Marketing Manager",
     rating: "⭐️ 3,6",
@@ -59,7 +59,7 @@ export const Reviews: any = [
       "https://mail.4kwallpapers.com/images/wallpapers/ichigo-kurosaki-bleach-2732x2732-10512.jpg",
   },
   {
-    id: 1,
+    id: Math.random(),
     name: "David Williams",
     job: "Marketing Manager",
     rating: "⭐️ 3,6",

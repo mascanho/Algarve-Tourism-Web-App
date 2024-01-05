@@ -112,7 +112,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             >
               Algarve Wonders
             </span>
-            <section className="hidden sm:flex sm:space-x-4 sm:pt-1 sm:text-sm md:text-base sm:items-center lg:space-x-8 justify-start m-auto">
+            <section className="hidden sm:flex sm:space-x-4 md:space-x-8 sm:pt-1 sm:text-sm md:text-base sm:items-center justify-start m-auto">
               <NavMenu trigger={false} title={"Search"} url={"/"} />
               <NavMenu
                 expandedMenu={false}
@@ -172,7 +172,7 @@ const Header = ({ currentUser, weatherData }: any) => {
                               className="rounded-md active:bg-sky"
                               onClick={() => setOpenLogin(!openLogin)}
                             >
-                              Sign up
+                              Sign-up / Register
                             </a>
                           </li>
                           <li onClick={registeredModal.onOpen}>
