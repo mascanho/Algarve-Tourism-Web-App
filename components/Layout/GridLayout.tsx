@@ -28,8 +28,7 @@ export function LeadGrid({ filteredData }: any) {
             className="relative overflow-hidden rounded-lg sm:max-h-[380px] 
             "
           >
-            <Image
-              fill
+            <img
               alt={filteredData[0]?.fields?.title}
               src={`https://${filteredData[0]?.fields?.images[0]?.fields?.file?.url}`}
               className="sm:h-full w-[100%] sm:w-full sm:block object-contain sm:object-fill "
@@ -48,7 +47,7 @@ export function LeadGrid({ filteredData }: any) {
               />
             </Grid.Col>
             <Grid.Col span={6}>
-              <Image
+              <img
                 width={260}
                 height={100}
                 alt={filteredData[0]?.fields?.title}
@@ -59,7 +58,7 @@ export function LeadGrid({ filteredData }: any) {
               />
             </Grid.Col>
             <Grid.Col span={6}>
-              <Image
+              <img
                 width={260}
                 height={100}
                 alt={filteredData[0]?.fields?.title}
@@ -70,7 +69,7 @@ export function LeadGrid({ filteredData }: any) {
               />
             </Grid.Col>
             <Grid.Col span={6}>
-              <Image
+              <img
                 width={260}
                 height={100}
                 alt={filteredData[0]?.fields?.title}

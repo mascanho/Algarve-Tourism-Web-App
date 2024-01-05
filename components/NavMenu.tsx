@@ -10,7 +10,6 @@ import Link from "next/link";
 
 export function NavMenu({ title, trigger, url, cities, mobile }: any | null) {
   const router = useRouter();
-  const pathname = usePathname();
 
   const handleClick = (url: any) => {
     if (mobile) {
@@ -33,7 +32,7 @@ export function NavMenu({ title, trigger, url, cities, mobile }: any | null) {
               )}
               {!mobile && title}{" "}
               {!mobile && trigger ? (
-                <IoChevronDownSharp className="ml-1 mt-1" />
+                <IoChevronDownSharp className="md:mt-1 md:pl-1" />
               ) : (
                 ""
               )}
@@ -65,7 +64,10 @@ export function NavMenu({ title, trigger, url, cities, mobile }: any | null) {
                 {cat.name}
               </Menu.Item>
             ))}
-        <section className="text-gray-700 sm:hidden">
+        <section className="text-gray-700 block ">
+          <Link href="/">
+            <Menu.Item className="sm:hidden text-gray-400">Home</Menu.Item>
+          </Link>
           <Link href="/">
             <Menu.Item className="sm:hidden text-gray-400">Search</Menu.Item>
           </Link>

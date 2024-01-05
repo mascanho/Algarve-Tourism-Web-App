@@ -29,7 +29,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/images/icon.png",
     href: "/images/icon.png",
-    shortcut: "/shortcut-icon.png",
     apple: "/apple-icon.png",
     other: {
       rel: "apple-touch-icon-precomposed",

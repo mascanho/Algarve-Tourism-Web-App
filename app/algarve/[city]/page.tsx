@@ -30,6 +30,15 @@ export function generateMetadata({ params, searchParams }: any) {
     title: params.city.charAt(0).toUpperCase() + params.city.slice(1),
     description:
       "Here you can enjoy the weather, the local food, and much more.",
+    icons: {
+      icon: "/images/icon.png",
+      href: "/images/icon.png",
+      apple: "/apple-icon.png",
+      other: {
+        rel: "apple-touch-icon-precomposed",
+        url: "/apple-touch-icon-precomposed.png",
+      },
+    },
   };
 }
 

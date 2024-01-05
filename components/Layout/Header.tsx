@@ -98,7 +98,7 @@ const Header = ({ currentUser, weatherData }: any) => {
               url={"/"}
             />
           </section>
-          <div className="flex justify-between w-full">
+          <div className="flex justify-between w-full items-center">
             <Image
               className="pr-2 hidden sm:block"
               src="/images/icon.png"
@@ -108,11 +108,11 @@ const Header = ({ currentUser, weatherData }: any) => {
             />
             <span
               onClick={() => router.push("/")}
-              className="p-0 sm:text-xl text-left normal-case cursor-pointer font-semibold"
+              className=" sm:text-base pt-1 sm:pt-0 text-left normal-case cursor-pointer font-semibold text-base my-auto  flex items-center"
             >
               Algarve Wonders
             </span>
-            <section className="hidden sm:flex sm:space-x-6 lg:space-x-8 justify-start m-auto">
+            <section className="hidden sm:flex sm:space-x-4 sm:pt-1 sm:text-sm md:text-base sm:items-center lg:space-x-8 justify-start m-auto">
               <NavMenu trigger={false} title={"Search"} url={"/"} />
               <NavMenu
                 expandedMenu={false}
@@ -129,12 +129,12 @@ const Header = ({ currentUser, weatherData }: any) => {
               />
               <NavMenu trigger={false} title={"Blog"} url={"/blog"} />
               {/* <NavMenu trigger={false} title={"News"} url={"/news"} /> */}
-              <NavMenu trigger={false} title={"Contact"} url={"/contact"} />
+              {/* <NavMenu trigger={false} title={"Contact"} url={"/contact"} /> */}
             </section>
             {/* Weather API */}
             <div
               onClick={showWeather}
-              className="flex items-center sm:mr-6 cursor-pointer hover:scale-105 transition ease-in"
+              className="flex items-center pt-1 justify-end sm:mr-6 cursor-pointer hover:scale-105 transition ease-in"
             >
               {weatherData.current.temp_c + "°"}{" "}
               <img
