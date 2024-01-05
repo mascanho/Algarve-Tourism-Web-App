@@ -112,7 +112,10 @@ async function page(props: any) {
 
   let cityIsPresent = false;
   for (let i = 0; i < cities.length; i++) {
-    if (cities[i].fields.name.toLowerCase() === city) {
+    if (
+      cities[i].fields.name.toLowerCase() === city ||
+      cities[i].fields.slug === city
+    ) {
       cityIsPresent = true;
       break;
     }

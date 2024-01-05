@@ -98,7 +98,7 @@ export const cityArr = [
     route: "silves",
   },
   {
-    id: 7,
+    id: Math.random(),
     name: "Tavira",
     icon: "",
     route: "tavira",
