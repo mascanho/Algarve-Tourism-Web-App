@@ -83,23 +83,23 @@ export default function Home() {
                     </div>
                   </Link>
                   <h3
-                    className="text-3xl font-bold text-black sm:text-5xl mt-20"
+                    className="text-3xl font-bold text-black sm:text-5xl mt-5"
                     id="search"
                   >
                     Searching for:{" "}
                     <span className="text-sky">{searchData.searchInput}</span>
                   </h3>
 
-                  <h4 className="w-8/12 mx-auto mt-4">
-                    Check out this week&apos; selection of popular trips and
-                    events
-                  </h4>
+                  {/* <h4 className="w-8/12 mx-auto mt-4"> */}
+                  {/*   Check out this week&apos; selection of popular trips and */}
+                  {/*   events */}
+                  {/* </h4> */}
                 </section>
               </>
             )}
           </div>
 
-          <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 pt-10">
+          <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 pt-5">
             <section className="grid items-start w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-x-8 place-items-start">
               {/* Normal Cards with no search feature */}
               {searchData.data?.map((item: any) => (
@@ -148,9 +148,12 @@ export default function Home() {
               />
             ))}
           </section>
-        </section>
-        <section className="mx-auto mb-40 h-96">
-          <CarouselHero categories={categories} />
+          <Link href="/#search">
+            <div className="flex items-center w-full space-x-1  -mt-4 mb-8 sm:mb-0 sm:mt-0">
+              <TiArrowBack />
+              <span>Back to search</span>
+            </div>
+          </Link>
         </section>
       </>
     );

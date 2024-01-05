@@ -104,8 +104,8 @@ function Footer() {
             </div>
           </div>
           <div className="md:place-self-center md:justify-self-end">
-            <div className="grid grid-flow-col gap-4 px-4 sm:px-0">
-              <div className="flex bg-gray-400/30 space-x-2 items-center py-1 px-4 text-xs rounded-xl">
+            <div className="grid grid-flow-col px-4 sm:px-0 ">
+              <div className="flex bg-gray-400/30 space-x-2 -mt-6 sm:mt-0 items-center py-1 px-4 text-xs rounded-xl">
                 <span suppressHydrationWarning className="text-sky">
                   {onlineUsers}
                 </span>{" "}
