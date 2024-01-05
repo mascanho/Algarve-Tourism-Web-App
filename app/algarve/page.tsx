@@ -103,7 +103,7 @@ function page(props: any) {
         ))}
       </div>
 
-      <div className="mt-10 space-y-4">
+      <div className="mt-10 space-y-4 max-w-7xl px-3 mx-auto">
         <h3 className="font-bold text-xl">Charming Coastal Towns</h3>
         <p>
           The Algarve is not only about nature's grandeur but also about the
@@ -124,7 +124,7 @@ function page(props: any) {
           coastal paradise.
         </p>
       </div>
-      <div className="pt-10">
+      <div className="pt-10  mx-auto max-w-7xl px-3">
         <Link href="/">
           <button type="button" className="btn hover:text-white">
             Go back
