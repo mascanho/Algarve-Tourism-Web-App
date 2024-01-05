@@ -53,17 +53,10 @@ export default function Home() {
   if (!plainSearch) {
     return (
       <>
-        {/* <section> */}
-        {/*   <Search placeholderText={"Search now..."} categories={categories} /> */}
-        {/* </section> */}
         <section className="pt-10 pb-16 space-y-4 text-center bg-white">
           <div className="w-11/12 sm:w-11/12 mx-auto">
             {searchData.data.length === 0 ? (
               <>
-                {/* <h4 className="w-8/12 mx-auto mt-4"> */}
-                {/*   Try searching for something else or check out the popular */}
-                {/*   categories */}
-                {/* </h4> */}
                 <section className="max-w-7xl mx-auto">
                   <Link href="/#search">
                     <div className="flex items-center w-full space-x-1  -mt-4 mb-8 sm:mb-0 sm:mt-0">
@@ -155,21 +148,6 @@ export default function Home() {
               />
             ))}
           </section>
-          {/* <section className="pt-16 sm:py-28"> */}
-          {/*   <div className="w-11/12 py-8 mx-auto space-y-2 text-center text-white bg-red-500 sm:w-full rounded-xl sm:space-y-2"> */}
-          {/*     <h4>Come join and have a vacation with us</h4> */}
-          {/*     <h3 className="text-2xl sm:text-3xl hidden sm:block"> */}
-          {/*       Prepare yourself and lets explore */}
-          {/*     </h3> */}
-          {/*     <h5>Explore the beauty of these hidden places</h5> */}
-          {/*     <div className="pt-3"> */}
-          {/*       <button className="px-3 py-1 text-black transition-all ease-in delay-75 bg-white rounded-md active:scale-95"> */}
-          {/*         Discover The Best Places */}
-          {/*       </button> */}
-          {/*     </div> */}
-          {/*   </div> */}
-          {/*   <PopularCategories /> */}
-          {/* </section> */}
         </section>
         <section className="mx-auto mb-40 h-96">
           <CarouselHero categories={categories} />
@@ -244,7 +222,7 @@ export default function Home() {
         </section>
         <section className="pt-16 sm:py-28">
           <div className="w-11/12 py-8 sm:py-0 mx-auto space-y-2 text-center text-white bg-sky sm:w-full rounded-xl ">
-            <h4>Come join and have a vacation with us</h4>
+            <h4>Start exploring</h4>
             <h3 className="text-2xl sm:text-3xl">
               Prepare yourself and lets explore
             </h3>
@@ -258,9 +236,6 @@ export default function Home() {
           <PopularCategories />
         </section>
       </section>
-      {/* <section className="mx-auto mb-40 h-96"> */}
-      {/*   <CarouselHero categories={categories} /> */}
-      {/* </section> */}
     </>
   );
 }

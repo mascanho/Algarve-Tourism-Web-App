@@ -15,10 +15,10 @@ function PopularCategories({ beaches, events, adventure }: any) {
     },
     {
       id: Math.random(),
-      name: "Unique and Insteresting Culture",
+      name: "Unique and Insteresting Adventures",
       url: "/adventure",
       image:
-        "https://tourscanner.com/blog/wp-content/uploads/2023/03/things-to-do-in-Albufeira-Portugal.jpg",
+        "https://blog-cdn.checkyeti.com/wp-content/uploads/2020/07/Skydiving_in_the_Algarve.jpg",
       quantity: adventure.length,
     },
     {

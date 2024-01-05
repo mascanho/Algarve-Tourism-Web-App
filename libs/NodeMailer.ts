@@ -45,8 +45,6 @@ export async function sendMail({
 }
 
 export async function compileMailTemplate(body: any) {
-  console.log(body, "what the fuck #########");
-
   const arrObj = JSON.parse(body);
 
   const jsdom = require("jsdom");

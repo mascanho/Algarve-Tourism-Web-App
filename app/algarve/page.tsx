@@ -91,7 +91,7 @@ function page(props: any) {
           </p>
         </div>
       </div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10 sm:mt-12 sm:gap-x-4 overflow-hidden mx-auto w-11/12 sm:w-full sm:gap-y-8 gap-y-8 max-w-7xl justify-stretch place-items-center  place-content-between">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-10 sm:mt-12 sm:gap-x-4 overflow-hidden mx-auto w-11/12 sm:w-full sm:gap-y-8 gap-y-8 max-w-7xl justify-stretch place-items-center  place-content-between">
         {cityArr.map((city: any) => (
           <CardCity
             key={city.id}

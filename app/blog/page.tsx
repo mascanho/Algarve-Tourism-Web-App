@@ -115,12 +115,6 @@ async function page() {
     <section className=" sm:max-w-7xl sm:w-full mx-auto sm:h-full  ">
       <div className="relative flex justify-center  w-full mx-auto ">
         <div className="sm:border-r sm:w-full block  w-full pt-10 mx-auto justify-center sm:ml-0">
-          {/* <div className="mx-auto sm:w-11/12 my-6 w-full flex sm:flex "> */}
-          {/*   <input */}
-          {/*     className=" mx-auto  sm:mx-0 rounded-lg bg-transparent border py-1 pl-2 sm:w-full w-11/12" */}
-          {/*     placeholder="Search..." */}
-          {/*   /> */}
-          {/* </div> */}
           <h2 className="sm:w-11/12 mx-auto w-11/12 border-b pb-5 font-bold text-black text-2xl">
             Articles
           </h2>
@@ -142,7 +136,7 @@ async function page() {
             ))}
           </div>
         </div>
-        <div className="w-[480px] sm:pl-6  hidden sm:block">
+        <div className="w-[480px] sm:px-6  hidden sm:block">
           <div className="mt-10">
             <BlogCarousel />
           </div>

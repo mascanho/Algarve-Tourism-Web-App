@@ -9,7 +9,7 @@ import {
   UseFormRegister,
 } from "react-hook-form";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { FcGoogle } from "react-icons/fc";
+import { FcClearFilters, FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import {
   useLoginModalStore,
@@ -19,7 +19,8 @@ import axios from "axios";
 import Toaster from "../Toastify";
 import { signIn } from "next-auth/react";
 import { toast } from "react-hot-toast";
-import { sendMail } from "@/libs/NodeMailer";
+import { compileMailTemplate, sendMail } from "@/libs/NodeMailer";
+import { emailTemplate, mailTemplate } from "@/libs/MailTemplate";
 
 function LoginModal({ currenUser }: any) {
   const [type, toggle] = useToggle(["login", "register"]);
@@ -51,8 +52,8 @@ function LoginModal({ currenUser }: any) {
       if (!message || message === null) {
         await sendMail({
           to: data.email,
-          subject: "Algarve Wonders",
-          body: `Hello ${data.email}, welcome to Algarve Wonders. Thank you for registering. Your password is: ${data.password}`,
+          subject: "Welcome to Algarve Wonders 🎊",
+          body: emailTemplate(data.email, data.password),
           name: "Algarve Wonders",
         });
       }
@@ -90,18 +91,6 @@ function LoginModal({ currenUser }: any) {
 
           <div className="pt-4">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-              {/* <div className="flex flex-col"> */}
-              {/*   <label htmlFor="" className="pb-1 text-xs text-left"> */}
-              {/*     Name */}
-              {/*   </label> */}
-              {/*   <input */}
-              {/*     type="text" */}
-              {/*     id="firstName" */}
-              {/*     className="p-2 bg-transparent bg-gray-300 border rounded-md" */}
-              {/*     placeholder="Enter Your Name" */}
-              {/*     {...register("name")} */}
-              {/*   /> */}
-              {/* </div> */}
               <div className="flex flex-col">
                 <label htmlFor="" className="pb-1 text-xs text-left">
                   Email

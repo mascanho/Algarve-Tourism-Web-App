@@ -12,9 +12,7 @@ function WeatherModal({ weatherData }: any) {
           <img
             src={weatherData.current.condition.icon}
             alt="weather"
-            width={30}
-            height={30}
-            className="w-20 h-20 mx-auto"
+            className="w-18 h-18 mx-auto object-contain"
           />
         </div>
       </div>

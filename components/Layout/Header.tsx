@@ -88,7 +88,7 @@ const Header = ({ currentUser, weatherData }: any) => {
         id="search"
         className={`shadow-sm  sticky  bg-white z-10  sm:h-full w-full mx-auto -m-2 pt-1 sm:pt-0 sm:m-0 `}
       >
-        <div className="z-50 mx-auto navbar sm:max-w-4xl flex justify-evenly  lg:max-w-5xl xl:max-w-7xl">
+        <div className="z-50 mx-auto navbar sm:max-w-6xl flex justify-evenly  lg:max-w-6xl xl:max-w-7xl">
           {/* MOBILE */}
           <section className="sm:hidden">
             <NavMenu
@@ -134,7 +134,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             {/* Weather API */}
             <div
               onClick={showWeather}
-              className="flex items-center pt-1 justify-end sm:mr-6 cursor-pointer hover:scale-105 transition ease-in"
+              className="flex items-center pt-1 justify-end sm:mr-4 -mr-8 cursor-pointer hover:scale-105 transition ease-in"
             >
               {weatherData.current.temp_c + "°"}{" "}
               <img

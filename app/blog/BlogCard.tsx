@@ -40,7 +40,7 @@ export const BlogCard = ({
               <span>{role}</span>
             </div>
           </div>
-          <picture className="w-40 h-28 sm:inline-block hidden rounded-md  absolute top-10 right-0">
+          <picture className="w-40 h-28 sm:inline-block hidden rounded-md  absolute top-7 right-0">
             <img
               className="h-28 rounded-md"
               src={`https://${image?.fields?.file?.url}`}
@@ -54,7 +54,7 @@ export const BlogCard = ({
           </div>
           <div className="flex sm:w-full w-11/12 mx-auto mt-2 pb-6">
             {tags.map((item: any) => (
-              <span className="border mr-2 px-2 rounded-2xl sm:text-xs bg-gray-100">
+              <span className="border mr-2 px-2 py-1 rounded-2xl text-xs bg-sky text-white font-semibold">
                 {item}
               </span>
             ))}

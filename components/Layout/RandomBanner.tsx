@@ -127,24 +127,24 @@ function RandomBanner({ categories }: any) {
   };
 
   return (
-    <div className="animate-fade-in bg-[url('https://www.benoitproperties.com/wp-content/uploads/2021/07/algarve-header.png')] bg-cover bg-blend-multiply bg-black/40 w-11/12 py-10 sm:py-16 mx-auto sm:space-y-2 text-center text-white sm:w-full rounded-xl sm:space-y-2">
-      <div className="-mt-2 sm:mt-0">
-        <h4>Come join and have a vacation with us</h4>
+    <div className="animate-fade-in bg-[url('https://www.benoitproperties.com/wp-content/uploads/2021/07/algarve-header.png')] bg-cover bg-blend-multiply bg-black/60 w-11/12 py-10 sm:py-16 mx-auto sm:space-y-2 text-center text-white sm:w-full rounded-xl sm:space-y-2">
+      <div className="-mt-4 sm:mt-0">
+        <h4 className="text-2xl font-semibold">Start your journey</h4>
         <h3 className="text-2xl sm:text-3xl hidden sm:block">
           Prepare yourself and lets explore
         </h3>
       </div>
-      <div className="w-full flex sm:justify-center">
-        <div className="sm:space-x-8 space-y-4 mt-8 sm:mt-0">
+      <div className="w-full flex sm:justify-center mx-auto px-2">
+        <div className="sm:space-x-8 space-y-4 mt-2 sm:-pt-4 space-x-2  m-auto ">
           <button
             onClick={handleClickRandom}
-            className="px-4 w-52 text-sm sm:w-fit sm:text-base py-2 text-black hover:bg-sky hover:text-white transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
+            className="px-4 w-52 text-sm sm:w-fit sm:text-base py-2 text-black  hover:text-white hover:bg-black transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
           >
             Discover The Best Places
           </button>
           <button
             onClick={GenerateRandomChoice}
-            className="px-4 py-2 w-52 sm:w-fit text-sm sm:text-base  text-black hover:bg-sky hover:text-white transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
+            className="px-4 py-2 w-52 sm:w-fit text-sm sm:text-base  text-white bg-sky hover:bg-black hover:text-white transition-all ease-in delay-75 rounded-md active:scale-95"
           >
             Generate Random Choice
           </button>
@@ -158,32 +158,6 @@ function RandomBanner({ categories }: any) {
         centered
         color="blue"
       >
-        {/* Modal content */}
-        {/* {randomChoice.map((item: any) => ( */}
-        {/*   <> */}
-        {/*     <div */}
-        {/*       className="flex space-y-1 border rounded-md p-2 items-center" */}
-        {/*       key={item.id} */}
-        {/*     > */}
-        {/*       <div className="flex items-center"> */}
-        {/*         <img */}
-        {/*           src={item?.fields?.mainImage?.fields?.file?.url} */}
-        {/*           className="w-8 h-8 rounded-full bg-sky  mr-2" */}
-        {/*         /> */}
-        {/*         {item?.fields?.title} */}
-        {/*       </div> */}
-        {/*     </div> */}
-        {/*     <span className="[&:nth-child(10)]:hidden text-gray-200 m-auto w-full flex text-center justify-center items-center"> */}
-        {/*       | */}
-        {/*     </span> */}
-        {/*   </> */}
-        {/* ))} */}
-        {/* <button */}
-        {/*   onClick={addToFavourites} */}
-        {/*   className="mt-8 mb-4 mx-auto px-4 py-2 bg-sky text-white hover:bg-sky hover:text-white transition-all ease-in delay-75  rounded-md active:scale-95 flex justify-center" */}
-        {/* > */}
-        {/*   Add Choices to Your Adventure */}
-        {/* </button> */}
         <section>
           <>
             {page === 0 ? (
@@ -224,15 +198,6 @@ function RandomBanner({ categories }: any) {
                     ))}
                   </div>
                 </Chip.Group>{" "}
-                {/* {finalChoice.map((item: any) => { */}
-                {/*   console.log(timeAndDays); */}
-                {/*   return ( */}
-                {/*     <div className="overflow-auto"> */}
-                {/*       {timeAndDays} */}
-                {/*       {item.fields.title} */}
-                {/*     </div> */}
-                {/*   ); */}
-                {/* })} */}
               </>
             ) : (
               <section>
@@ -265,7 +230,7 @@ function RandomBanner({ categories }: any) {
             <div className="w-full flex justify-between mt-4">
               {page === 0 ? (
                 <button
-                  className="bg-sky text-white text-xs disabled:bg-gray-300 sm:text-base px-4 w-full py-1 text-center justify-center rounded-md items-center flex"
+                  className="bg-sky text-white text-xs disabled:bg-gray-300 sm:text-base px-4 w-full py-2 font-semibold text-center justify-center rounded-md items-center flex"
                   onClick={() => setPage(1)}
                   disabled={!validated}
                 >
