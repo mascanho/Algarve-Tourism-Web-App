@@ -115,10 +115,10 @@ async function page() {
     <section className=" sm:max-w-7xl sm:w-full mx-auto sm:h-full  ">
       <div className="relative flex justify-center  w-full mx-auto ">
         <div className="sm:border-r sm:w-full block  w-full pt-10 mx-auto justify-center sm:ml-0">
-          <h2 className="sm:w-11/12 mx-auto w-11/12 border-b pb-5 font-bold text-black text-2xl">
+          <h2 className="sm:w-11/12 mx-auto w-11/12  pb-10 font-bold text-black text-3xl">
             Articles
           </h2>
-          <div className="mx-auto mt-5 mb-64">
+          <div className="mx-auto sm:mt-5 mb-64 ">
             {blogs.map((blog: any) => (
               <BlogCard
                 key={blog?.sys?.id}

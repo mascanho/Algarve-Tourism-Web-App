@@ -27,11 +27,15 @@
 }
 
 .richText p {
-  @apply mb-4 !important;
+  @apply text-black mb-4 !important;
 }
 
 .richText li {
   @apply list-decimal ml-4 !important;
+}
+
+.richText a {
+  @apply underline text-sky !important;
 }
 
 @media print {

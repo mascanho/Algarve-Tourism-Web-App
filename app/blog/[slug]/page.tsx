@@ -136,14 +136,14 @@ const page = async (props: any) => {
           </div>
         </div>
         <section className="mt-10 sm:mt-20 richText">{post}</section>
+        <section className="pt-11 block">
+          <Link href="/blog">
+            <button className="btn" type="button">
+              Back to Blogs
+            </button>
+          </Link>
+        </section>
       </div>
-      <section className="pt-10">
-        <Link href="/blog">
-          <button className="btn" type="button">
-            Back to Blogs
-          </button>
-        </Link>
-      </section>
     </section>
   );
 };
