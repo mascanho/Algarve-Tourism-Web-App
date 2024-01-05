@@ -36,9 +36,7 @@ export function LeadGrid({ filteredData }: any) {
           </div>
           <Grid gutter="md" className="overflow-hidden rounded-lg">
             <Grid.Col span={6} className="relative">
-              <Image
-                width={260}
-                height={100}
+              <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[1]?.fields?.file?.url}`}
                 className={`sm:h-[100%] h-full max-h-[130px] sm:max-h-full rounded-lg favBanner object-cover`}
