@@ -148,12 +148,14 @@ export default function Home() {
               />
             ))}
           </section>
-          <Link href="/#search">
-            <div className="flex items-center w-full space-x-1  -mt-4 mb-8 sm:mb-0 sm:mt-0">
-              <TiArrowBack />
-              <span>Back to search</span>
-            </div>
-          </Link>
+          <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 pt-10">
+            <Link href="/#search">
+              <div className="flex items-center w-full space-x-1  -mt-4 mb-8 sm:mb-0 sm:mt-0">
+                <TiArrowBack />
+                <span>Back to search</span>
+              </div>
+            </Link>
+          </section>
         </section>
       </>
     );
