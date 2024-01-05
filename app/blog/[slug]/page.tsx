@@ -6,6 +6,7 @@ import Image from "next/image";
 import BreadCrumbs from "@/components/BreadCrumbs";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 export async function generateMetadata({ params, searchParams }: any) {
   const titleCaseTitle = params.slug
@@ -29,7 +30,6 @@ export async function generateMetadata({ params, searchParams }: any) {
     icons: {
       icon: "/images/icon.png",
       href: "/images/icon.png",
-      shortcut: "/shortcut-icon.png",
       apple: "/apple-icon.png",
       other: {
         rel: "apple-touch-icon-precomposed",
@@ -103,7 +103,7 @@ const page = async (props: any) => {
           </section>
           <div className="relative w-full space-x-2 mt-4 flex items-center justify-between">
             <div className="w-full flex items-center">
-              <div className="relative w-10 h-10 mr-2">
+              <div className="relative w-10 h-10 mr-2 flex items-center">
                 <Image
                   src={`https:${blog[0]?.fields?.avatar?.fields?.file.url}`}
                   layout="responsive"
@@ -111,10 +111,10 @@ const page = async (props: any) => {
                   width={80}
                   height={80}
                   objectFit="contain"
-                  className="rounded-full w-10 h-10"
+                  className="rounded-full w-14 h-14"
                 />
               </div>
-              <div className="w-full flex-1 flex flex-col">
+              <div className="w-full  flex flex-col">
                 <span className="text-black text-xs">
                   {blog[0]?.fields?.author}
                 </span>
@@ -123,7 +123,7 @@ const page = async (props: any) => {
                 </span>
               </div>
             </div>
-            <div className="flex flex-col space-y-1 w-28  justify-end">
+            <div className="flex flex-col space-y-1 w-full text-right">
               <span className="text-xs w-full">
                 {new Intl.DateTimeFormat("en-US", {
                   day: "numeric",
@@ -137,6 +137,13 @@ const page = async (props: any) => {
         </div>
         <section className="mt-10 sm:mt-20 richText">{post}</section>
       </div>
+      <section className="pt-10">
+        <Link href="/blog">
+          <button className="btn" type="button">
+            Back to Blogs
+          </button>
+        </Link>
+      </section>
     </section>
   );
 };

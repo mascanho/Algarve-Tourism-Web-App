@@ -29,14 +29,14 @@ export const BlogCard = ({
               <img src={`https://${avatar?.fields?.file?.url}`} />
             </div>
           </div>
-          <div className="block w-full h-full">
+          <div className="flex flex-col justify-center my-auto w-full h-full">
             <div className="flex items-center pl-2 space-y-1">
               <h4 className="font-bold flex-items text-black">{author}</h4>
               <div className="flex items-center">
-                <span className="pb-1 text-sm ml-2">{humanDate}</span>
+                <span className="text-sm ml-2">{humanDate}</span>
               </div>
             </div>
-            <div className="block pl-2 text-sm">
+            <div className="block pl-2 pt-1 text-sm">
               <span>{role}</span>
             </div>
           </div>
