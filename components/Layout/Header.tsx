@@ -127,14 +127,19 @@ const Header = ({ currentUser, weatherData }: any) => {
                 url={"/beaches"}
                 categories={true}
               />
-              <NavMenu trigger={false} title={"Blog"} url={"/blog"} />
+              <NavMenu
+                trigger={false}
+                title={"Blog"}
+                url={"/blog"}
+                categories={true}
+              />
               {/* <NavMenu trigger={false} title={"News"} url={"/news"} /> */}
               {/* <NavMenu trigger={false} title={"Contact"} url={"/contact"} /> */}
             </section>
             {/* Weather API */}
             <div
               onClick={showWeather}
-              className="flex items-center pt-1 justify-end sm:mr-4 -mr-4 cursor-pointer hover:scale-105 transition ease-in"
+              className="flex items-center pt-1 justify-end sm:mr-4 -mr- cursor-pointer hover:scale-105 transition ease-in"
             >
               {weatherData.current.temp_c + "°"}{" "}
               <img

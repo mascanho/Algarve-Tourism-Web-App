@@ -56,15 +56,17 @@ export function NavMenu({ title, trigger, url, cities, mobile }: any | null) {
               </Menu.Item>
             ))
           : catArr.map((cat: any) => (
-              <Menu.Item
-                key={cat.name}
-                className="hidden sm:flex"
-                onClick={() => router.push(`${cat?.route?.toLowerCase()}`)}
-              >
-                {cat.name}
-              </Menu.Item>
+              <div className="hidden sm:flex" key={cat.name}>
+                <Menu.Item
+                  key={cat.name}
+                  className="hidden"
+                  onClick={() => router.push(`${cat?.route?.toLowerCase()}`)}
+                >
+                  {cat.name}
+                </Menu.Item>
+              </div>
             ))}
-        <section className="text-gray-700 block ">
+        <section className="text-gray-700 block sm:hidden ">
           <Link href="/">
             <Menu.Item className="sm:hidden text-gray-400">Home</Menu.Item>
           </Link>

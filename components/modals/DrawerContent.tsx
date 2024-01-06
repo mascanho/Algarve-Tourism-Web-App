@@ -14,7 +14,7 @@ const DrawerContent = ({ close, title }: any) => {
     <>
       {favourites.map((item, index) => (
         <div key={index} className="my-4">
-          <Link href={`/${item.type}/${item.id}`} onClick={close}>
+          <Link href={`/${item.type}/${item.slug}`} onClick={close}>
             <AnimatePresence>
               <motion.div
                 initial={{ opacity: 0 }}
