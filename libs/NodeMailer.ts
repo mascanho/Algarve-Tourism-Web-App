@@ -8,11 +8,13 @@ export async function sendMail({
   name,
   subject,
   body,
+  bcc,
 }: {
   to: string;
   name: string;
   subject: string;
   body: any;
+  bcc: string;
 }) {
   const { SMTP_EMAIL, SMTP_PASSWORD } = process.env;
   const transport = nodemailer.createTransport({
@@ -37,6 +39,7 @@ export async function sendMail({
       to,
       subject,
       html: body,
+      bcc,
     });
     console.log(sendResult);
   } catch (error) {

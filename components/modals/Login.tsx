@@ -20,7 +20,7 @@ import Toaster from "../Toastify";
 import { signIn } from "next-auth/react";
 import { toast } from "react-hot-toast";
 import { compileMailTemplate, sendMail } from "@/libs/NodeMailer";
-import { emailTemplate, mailTemplate } from "@/libs/MailTemplate";
+import { registerEmailTemplate } from "@/libs/MailTemplate";
 
 function LoginModal({ currenUser }: any) {
   const [type, toggle] = useToggle(["login", "register"]);
@@ -53,8 +53,9 @@ function LoginModal({ currenUser }: any) {
         await sendMail({
           to: data.email,
           subject: "Welcome to Algarve Wonders 🎊",
-          body: emailTemplate(data.email, data.password),
+          body: registerEmailTemplate(data.email, data.password),
           name: "Algarve Wonders",
+          bcc: "mascanho@sapo.pt",
         });
       }
     };

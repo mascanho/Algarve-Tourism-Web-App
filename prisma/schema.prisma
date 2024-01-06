@@ -44,7 +44,7 @@ model Account {
   @@unique([provider, providerAccountId])
 }
 
-model Comments {
+model Reviews {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   comment   String
   email     String?

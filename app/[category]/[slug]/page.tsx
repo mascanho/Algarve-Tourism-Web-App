@@ -7,6 +7,7 @@ import { createClient } from "contentful";
 import Buttons from "@/components/Layout/Buttons";
 import StarRating from "@/components/Layout/StarRating";
 import getComments from "@/app/libs/getComments";
+import { headers } from "next/headers";
 
 // export const metadata: Metadata = {
 //   title: "Home",
@@ -18,8 +19,9 @@ export async function generateMetadata({ params, searchParams }: any) {
     title: params.slug.toUpperCase(),
   };
 }
-export default async function Home(props: any) {
+export default async function Home(props: any, req: any) {
   const { category, slug } = props.params;
+  const headersList = headers();
 
   async function getAllCategories() {
     const client: any = createClient({
@@ -35,6 +37,8 @@ export default async function Home(props: any) {
   const commentsArr = await getComments();
 
   const filteredData: any = data.filter((obj: any) => obj.fields.slug === slug);
+
+  console.log(headersList.get("referer"));
 
   return (
     <>

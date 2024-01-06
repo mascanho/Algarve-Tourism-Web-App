@@ -56,11 +56,11 @@ function RegisteredModal({ currentUser }: any) {
       redirect: false,
     }).then((callback) => {
       setIsLoading(false);
-
       if (callback?.ok) {
-        toast.success("Howdy, you have been logged in!");
         router.refresh();
         closeRegisteredModal.onClose();
+        window.location.reload();
+        toast.success("Howdy, you have been logged in!");
       } else {
         toast.error("Something went wrong");
       }

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { IoSend } from "react-icons/io5";
 import {
   FieldValues,
@@ -8,12 +8,13 @@ import {
   FieldErrors,
 } from "react-hook-form";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import {
   useLoginModalStore,
   useRegisteredModalStore,
 } from "@/app/hooks/useLoginModal";
+import { FaSpinner } from "react-icons/fa";
 
 interface InputProps {
   id: string;
@@ -26,8 +27,6 @@ interface InputProps {
   formaState: FieldValues;
 }
 
-// const session = true;
-
 function CommentForm() {
   const router = useRouter();
   const {
@@ -38,16 +37,33 @@ function CommentForm() {
   } = useForm<FieldValues>({
     defaultValues: { comment: "" },
   });
+  const [signedIn, setsignedIn] = useState(false);
+  const pathname = usePathname();
 
   // Modals using Zustand
   const loginModal = useLoginModalStore();
   const registeredModal = useRegisteredModalStore();
   const session = useSession();
 
+  const handleCommentAuthentication = () => {
+    registeredModal.onOpen();
+    router.push(pathname + "?reviews=reviews");
+    if (session.status === "authenticated") {
+      setsignedIn(true);
+    }
+  };
+
+  // useEffect to render the button or the form based on user logged in or not
+  useEffect(() => {
+    setsignedIn(!signedIn);
+  }, [session.status]);
+
   const handleMessage = (data: any) => {
     axios
       .post("/api/comment", data)
       .then((res) => {
+        console.log(res);
+
         reset();
       })
       .catch((err) => {
@@ -58,12 +74,14 @@ function CommentForm() {
       });
   };
 
+  console.log(session.data?.user?.email);
+
   return (
     <div className="w-full">
-      {session.data === null ? (
+      {session.status === "unauthenticated" ? (
         <button
           className="border px-4 py-2 rounded-md"
-          onClick={loginModal.onOpen}
+          onClick={handleCommentAuthentication}
         >
           Leave a comment
         </button>
@@ -79,12 +97,13 @@ function CommentForm() {
             placeholder="Type your comment"
             id="comment"
             {...register("comment")}
+            required
           />
           <button
             type="submit"
             className="bg-sky w-10 h-10 justify-center rounded-md relative flex -ml-4 items-center"
           >
-            <IoSend className=" text-white mx-auto " />
+            <IoSend className=" text-white mx-auto active:scale-95 " />
           </button>
         </form>
       )}

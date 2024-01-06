@@ -2,8 +2,16 @@
 import { Tabs } from "@mantine/core";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Comments from "./Comments";
+import { usePathname } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
-function TabsRow({ filteredData, comments, slug }: any) {
+function TabsRow({ filteredData, comments, slug, props }: any) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const search = searchParams.getAll("reviews");
+
+  console.log(search[0]);
+
   const options = {
     renderNode: {
       "embedded-asset-block": (node: any) => {
@@ -20,14 +28,23 @@ function TabsRow({ filteredData, comments, slug }: any) {
 
   const parsedContent = documentToReactComponents(
     filteredData[0]?.fields?.description,
-    options
+    options,
   );
 
   // Protect the app in case this is null || false
   if (!filteredData) return null;
 
+  let activeTab = "";
+  if (search[0] === "reviews") {
+    activeTab = "reviews";
+  }
+
   return (
-    <Tabs color="teal" defaultValue="first" className="">
+    <Tabs
+      color="teal"
+      defaultValue={activeTab === "" ? "first" : activeTab}
+      className=""
+    >
       <Tabs.List className="text-left">
         <Tabs.Tab className="text-left ml-0 pl-0" value="first" color="blue">
           Description
@@ -38,7 +55,7 @@ function TabsRow({ filteredData, comments, slug }: any) {
         <Tabs.Tab value="third" color="blue">
           Price
         </Tabs.Tab>
-        <Tabs.Tab value="fourth" color="blue">
+        <Tabs.Tab value="reviews" color="blue">
           Reviews
         </Tabs.Tab>
       </Tabs.List>
@@ -67,7 +84,7 @@ function TabsRow({ filteredData, comments, slug }: any) {
       <Tabs.Panel value="third" pt="xs">
         {filteredData[0]?.fields?.price}
       </Tabs.Panel>
-      <Tabs.Panel className="text-left" value="fourth" pt="xs">
+      <Tabs.Panel className="text-left" value="reviews" pt="xs">
         {/* Comments will go here, connected to the DB  */}
         <section>
           <Comments slug={slug} comments={comments} />

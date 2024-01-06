@@ -59,7 +59,7 @@ export function NavMenu({ title, trigger, url, cities, mobile }: any | null) {
               <div className="hidden sm:flex" key={cat.name}>
                 <Menu.Item
                   key={cat.name}
-                  className="hidden"
+                  className="hidden sm:flex"
                   onClick={() => router.push(`${cat?.route?.toLowerCase()}`)}
                 >
                   {cat.name}
