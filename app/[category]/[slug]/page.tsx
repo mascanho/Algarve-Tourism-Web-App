@@ -6,7 +6,7 @@ import TabsRow from "@/components/Layout/Tabs";
 import { createClient } from "contentful";
 import Buttons from "@/components/Layout/Buttons";
 import StarRating from "@/components/Layout/StarRating";
-import getComments from "@/app/libs/getComments";
+import getReviews from "@/app/libs/getReviews";
 import { headers } from "next/headers";
 
 // export const metadata: Metadata = {
@@ -34,11 +34,9 @@ export default async function Home(props: any, req: any) {
   }
 
   const data = await getAllCategories();
-  const commentsArr = await getComments();
+  const reviewsArr = await getReviews();
 
   const filteredData: any = data.filter((obj: any) => obj.fields.slug === slug);
-
-  console.log(headersList.get("referer"));
 
   return (
     <>
@@ -105,7 +103,7 @@ export default async function Home(props: any, req: any) {
           <TabsRow
             filteredData={filteredData}
             slug={slug}
-            comments={commentsArr}
+            reviews={reviewsArr}
           />
         </div>
       </section>

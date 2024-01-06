@@ -7,7 +7,7 @@ interface ReviewsProps {
 }
 [];
 
-export const Reviews: any = [
+export const quotes: any = [
   {
     id: Math.random(),
     name: "Michael Anderson",

@@ -27,7 +27,7 @@ interface InputProps {
   formaState: FieldValues;
 }
 
-function CommentForm() {
+function ReviewForm() {
   const router = useRouter();
   const {
     register,
@@ -35,7 +35,7 @@ function CommentForm() {
     formState: { errors },
     reset,
   } = useForm<FieldValues>({
-    defaultValues: { comment: "" },
+    defaultValues: { review: "" },
   });
   const [signedIn, setsignedIn] = useState(false);
   const pathname = usePathname();
@@ -53,14 +53,9 @@ function CommentForm() {
     }
   };
 
-  // useEffect to render the button or the form based on user logged in or not
-  useEffect(() => {
-    setsignedIn(!signedIn);
-  }, [session.status]);
-
   const handleMessage = (data: any) => {
     axios
-      .post("/api/comment", data)
+      .post("/api/review", data)
       .then((res) => {
         console.log(res);
 
@@ -74,8 +69,6 @@ function CommentForm() {
       });
   };
 
-  console.log(session.data?.user?.email);
-
   return (
     <div className="w-full">
       {session.status === "unauthenticated" ? (
@@ -83,7 +76,7 @@ function CommentForm() {
           className="border px-4 py-2 rounded-md"
           onClick={handleCommentAuthentication}
         >
-          Leave a comment
+          Leave a review
         </button>
       ) : (
         <form
@@ -94,9 +87,9 @@ function CommentForm() {
           <input
             className="bg-gray-200 h-8 rounded-md text-black outline-none px-2 text-sm w-full "
             type="text"
-            placeholder="Type your comment"
-            id="comment"
-            {...register("comment")}
+            placeholder="Write your review..."
+            id="review"
+            {...register("review")}
             required
           />
           <button
@@ -111,4 +104,4 @@ function CommentForm() {
   );
 }
 
-export default CommentForm;
+export default ReviewForm;

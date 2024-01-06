@@ -1,30 +1,28 @@
-import Comment from "../Comment";
-import CommentForm from "../CommentForm";
+import Review from "../Review";
+import ReviewForm from "../ReviewForm";
 import { usePathname } from "next/navigation";
 
-function Comments(comments: any) {
-  const slug = usePathname();
-
+function Reviews(reviews: any) {
   return (
     <section className="flex justify-start mt-5">
       <div className="flex items-center flex-col justify-start text-left w-full space-y-3">
-        <CommentForm />
+        <ReviewForm />
 
         <div className="flex justify-start w-full pt-2 pb-2">
           <span className="font font-semibold text-xs text-left ml-0">
             {
-              comments.comments.filter((obj: any) => obj.slug === comments.slug)
+              reviews.reviews.filter((obj: any) => obj.slug === reviews.slug)
                 .length
             }{" "}
             comments
           </span>
         </div>
         <section className="w-full">
-          {comments.comments
-            .filter((obj: any) => obj.slug === comments.slug)
+          {reviews.reviews
+            .filter((obj: any) => obj.slug === reviews.slug)
             .sort((a: any, b: any) => b.createdAt - a.createdAt)
-            .map((comment: any) => (
-              <Comment key={comment.id} comment={comment} />
+            .map((review: any) => (
+              <Review key={review.id} review={review} />
             ))}
         </section>
       </div>
@@ -32,4 +30,4 @@ function Comments(comments: any) {
   );
 }
 
-export default Comments;
+export default Reviews;

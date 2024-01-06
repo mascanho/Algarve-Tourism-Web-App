@@ -4,8 +4,8 @@ import { Card } from "@/components/Card";
 import Pagination from "@/components/Pagination";
 import BottomAssets from "@/components/BottomAssets";
 import Hero from "@/components/Hero";
-import Review from "@/components/Review";
-import { Reviews } from "@/Data/Reviews";
+import Feedback from "@/components/Feedback";
+import { quotes } from "@/Data/Quotes";
 import PopularCategories from "@/components/PopularCategories";
 import { createClient } from "contentful";
 import CarouselHero from "@/components/Carousel";
@@ -129,8 +129,8 @@ export default async function Home(props: any) {
           </h4>
         </div>
         <section className="grid sm:grid-cols-3 gap-y-6 mx-auto justify-items-center">
-          {Reviews.map((review: any) => (
-            <Review
+          {quotes.map((review: any) => (
+            <Feedback
               key={review.id}
               id={review.id}
               name={review.name}

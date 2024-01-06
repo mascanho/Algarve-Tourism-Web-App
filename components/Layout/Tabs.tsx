@@ -1,16 +1,14 @@
 "use client";
 import { Tabs } from "@mantine/core";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import Comments from "./Comments";
+import Reviews from "./Reviews";
 import { usePathname } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 
-function TabsRow({ filteredData, comments, slug, props }: any) {
+function TabsRow({ filteredData, reviews, slug, props }: any) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const search = searchParams.getAll("reviews");
-
-  console.log(search[0]);
+  const search: any = searchParams?.getAll("reviews");
 
   const options = {
     renderNode: {
@@ -87,7 +85,7 @@ function TabsRow({ filteredData, comments, slug, props }: any) {
       <Tabs.Panel className="text-left" value="reviews" pt="xs">
         {/* Comments will go here, connected to the DB  */}
         <section>
-          <Comments slug={slug} comments={comments} />
+          <Reviews slug={slug} reviews={reviews} />
         </section>
       </Tabs.Panel>
     </Tabs>

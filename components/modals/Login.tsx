@@ -97,7 +97,7 @@ function LoginModal({ currenUser }: any) {
                   Email
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   id="email"
                   className="p-2 bg-transparent bg-gray-300 border rounded-md"
                   placeholder="Enter Your Email"
@@ -121,7 +121,7 @@ function LoginModal({ currenUser }: any) {
               </div>
 
               <button
-                className="flex items-center justify-center w-full py-4 pb-4 text-base text-white rounded-md bg-sky"
+                className="flex font-semibold items-center justify-center w-full py-4 pb-4 text-base text-white rounded-md bg-sky sm:text-xl"
                 type="submit"
               >
                 Submit

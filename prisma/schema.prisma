@@ -20,10 +20,10 @@ model User {
   createdAt      DateTime   @default(now())
   updatedAt      DateTime   @updatedAt
   favoriteIds    String[]   @db.ObjectId
-  comment        String?
+  review         String?
   slug           String?
   accounts       Account[]
-  comments       Comments[]
+  reviews        Reviews[]
 }
 
 model Account {
@@ -46,7 +46,7 @@ model Account {
 
 model Reviews {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  comment   String
+  review    String
   email     String?
   slug      String?
   image     String
