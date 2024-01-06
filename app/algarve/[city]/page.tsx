@@ -195,7 +195,7 @@ async function page(props: any) {
           <TableOfContentsFloating blogtableData={tableData} />
         </aside>
       </section>
-      <section className="sm:mt-8 mt-4 max-w-7xl mx-auto w-11/12 space-y-3 sm:space-y-5">
+      <section className="sm:mt-8 mt-4 max-w-7xl mx-auto w-11/12 space-y-3 sm:space-y-5 text-black">
         <h1 id="about" className="text-4xl font-bold sm:text-6xl text-black">
           {filteredData[0]?.fields?.name}
         </h1>

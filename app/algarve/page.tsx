@@ -31,7 +31,7 @@ function page(props: any) {
           src="https://lp-cms-production.imgix.net/2022-05/GettyRF_1013112160.jpg?auto=format&w=1440&h=810&fit=crop&q=75"
           alt=""
         />
-        <div className="space-y-4 mt-10">
+        <div className="space-y-4 mt-10 text-black">
           <h1 className="text-3xl sm:text-6xl text-black font-bold mb-8">
             Algarve
           </h1>
@@ -103,7 +103,7 @@ function page(props: any) {
         ))}
       </div>
 
-      <div className="mt-10 space-y-4 max-w-7xl px-3 mx-auto">
+      <div className="mt-10 space-y-4 max-w-7xl px-3 mx-auto text-black">
         <h3 className="font-bold text-xl">Charming Coastal Towns</h3>
         <p>
           The Algarve is not only about nature's grandeur but also about the

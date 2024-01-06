@@ -1,21 +1,18 @@
 "use client";
 
-import { Select } from "@mantine/core";
 import { Inter } from "next/font/google";
 import BottomAssets from "@/components/BottomAssets";
 import Review from "@/components/Review";
-import { Reviews } from "@/Data/Reviews";
+import { quotes } from "@/Data/Quotes";
 import PopularCategories from "@/components/PopularCategories";
-import CarouselHero from "@/components/Carousel";
 import useSearchedData from "../hooks/useSearchedData";
 import { SearchCard } from "@/components/SearchCard";
-import Search from "@/components/Search";
 import { createClient } from "contentful";
-import useGetAllCategories from "../hooks/useGetAllCategories";
 import { useEffect, useState } from "react";
 import { TiArrowBack } from "react-icons/ti";
 import Link from "next/link";
 import type { Metadata } from "next";
+import Feedback from "@/components/Feedback";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -136,8 +133,8 @@ export default function Home() {
             </h4>
           </div>
           <section className="grid sm:grid-cols-3 gap-y-6">
-            {Reviews.map((review: any) => (
-              <Review
+            {quotes.map((review: any) => (
+              <Feedback
                 key={review.id}
                 id={review.id}
                 name={review.name}

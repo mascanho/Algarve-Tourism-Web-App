@@ -26,7 +26,8 @@
   @apply sm:mt-0 sm:mb-0 sm:p-0 !important;
 }
 
-.richText p {
+.richText p,
+b {
   @apply text-black mb-4 !important;
 }
 

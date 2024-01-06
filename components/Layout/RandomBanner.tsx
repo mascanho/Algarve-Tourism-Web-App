@@ -128,14 +128,14 @@ function RandomBanner({ categories }: any) {
 
   return (
     <div className="animate-fade-in bg-[url('https://www.benoitproperties.com/wp-content/uploads/2021/07/algarve-header.png')] bg-cover bg-blend-multiply bg-black/60 w-11/12 py-10 sm:py-16 mx-auto sm:space-y-2 text-center text-white sm:w-full rounded-xl sm:space-y-2">
-      <div className="-mt-4 sm:mt-0">
+      <div className="-mt-4 sm:mt-0 space-y-2">
         <h4 className="text-2xl font-semibold">Start your journey</h4>
         <h3 className="text-2xl sm:text-3xl hidden sm:block">
           Prepare yourself and lets explore
         </h3>
       </div>
       <div className="w-full flex sm:justify-center mx-auto px-2">
-        <div className="sm:space-x-8 space-y-4 mt-8 sm:-pt-4  m-auto ">
+        <div className="sm:space-x-8 space-y-4 mt-8 sm:mt-0 sm:-pt-4  m-auto ">
           <button
             onClick={handleClickRandom}
             className="px-4 w-52 text-sm sm:w-fit sm:text-base py-2 text-black  hover:text-white hover:bg-black transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
