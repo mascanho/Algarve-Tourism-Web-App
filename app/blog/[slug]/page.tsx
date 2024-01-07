@@ -1,12 +1,22 @@
-import React from "react";
-import TableOfContentsFloating from "./TableOfContents";
+import React, { Suspense } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { createClient } from "contentful";
 import Image from "next/image";
 import BreadCrumbs from "@/components/BreadCrumbs";
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import CommentCard from "../_components/CommentCard";
+import CommentInput from "../_components/CommentInput";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import getCurrentUser from "@/app/libs/getCurrentUser";
+import prisma from "@/app/libs/prismadb";
+
+// Fetch comments from Mongo DB
+export async function getComments() {
+  const comments = await prisma?.comments?.findMany();
+  return comments;
+}
 
 export async function generateMetadata({ params, searchParams }: any) {
   const titleCaseTitle = params.slug
@@ -63,11 +73,78 @@ async function getAllBlogs() {
   return await res.items;
 }
 
+const DUMMY_COMMENTS = [
+  {
+    id: Math.random(),
+    name: "John Doe",
+    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    date: new Date(),
+    image:
+      "https://i.seadn.io/gae/qZFMhhVvyIT0xm3EwgdLzir4ymrjF6Z_r1xkt2705Ln_OScH6fZWh6JzogYVfCZS2gRsOXRHtM_2PcobJ32Q14g1b0JSljuhv8xy?auto=format&dpr=1&w=1000",
+    thumbs: 3,
+    likes: 5,
+  },
+  {
+    id: Math.random(),
+    name: "John Doe",
+    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    date: new Date(),
+    image:
+      "https://i.seadn.io/gae/qZFMhhVvyIT0xm3EwgdLzir4ymrjF6Z_r1xkt2705Ln_OScH6fZWh6JzogYVfCZS2gRsOXRHtM_2PcobJ32Q14g1b0JSljuhv8xy?auto=format&dpr=1&w=1000",
+    thumbs: 3,
+    likes: 5,
+  },
+  {
+    id: Math.random(),
+    name: "John Doe",
+    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    date: new Date(),
+    image:
+      "https://i.seadn.io/gae/qZFMhhVvyIT0xm3EwgdLzir4ymrjF6Z_r1xkt2705Ln_OScH6fZWh6JzogYVfCZS2gRsOXRHtM_2PcobJ32Q14g1b0JSljuhv8xy?auto=format&dpr=1&w=1000",
+    thumbs: 3,
+    likes: 5,
+  },
+  {
+    id: Math.random(),
+    name: "John Doe",
+    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    date: new Date(),
+    image:
+      "https://i.seadn.io/gae/qZFMhhVvyIT0xm3EwgdLzir4ymrjF6Z_r1xkt2705Ln_OScH6fZWh6JzogYVfCZS2gRsOXRHtM_2PcobJ32Q14g1b0JSljuhv8xy?auto=format&dpr=1&w=1000",
+    thumbs: 3,
+    likes: 5,
+  },
+  {
+    id: Math.random(),
+    name: "John Doe",
+    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    date: new Date(),
+    image:
+      "https://i.seadn.io/gae/qZFMhhVvyIT0xm3EwgdLzir4ymrjF6Z_r1xkt2705Ln_OScH6fZWh6JzogYVfCZS2gRsOXRHtM_2PcobJ32Q14g1b0JSljuhv8xy?auto=format&dpr=1&w=1000",
+    thumbs: 3,
+    likes: 5,
+  },
+];
+
 const page = async (props: any) => {
   const { category, slug } = props.params;
+  const session = await getServerSession(authOptions);
+  const currentUser = getCurrentUser();
+
+  const allComments = await getComments();
+
+  // Filtering the right comments to match the right slug
+  const commentsFiltered = allComments?.filter(
+    (obj: any) => obj?.slug === slug,
+  );
+
+  // Order the comments by date
+  const comments = commentsFiltered?.sort(
+    (a: any, b: any) => b?.createdAt - a?.createdAt,
+  );
 
   const allBlogs = await getAllBlogs();
-  const blog = allBlogs.filter((obj: any) => obj.fields.slug === slug);
+  const blog = allBlogs?.filter((obj: any) => obj.fields.slug === slug);
 
   // Redirect the user if the pathaname doesn't exist
   if (!blog[0]) {
@@ -136,6 +213,27 @@ const page = async (props: any) => {
           </div>
         </div>
         <section className="mt-10 sm:mt-20 richText">{post}</section>
+        <section className="text-black mt-10">
+          <hr />
+          <div className="mt-10">
+            <h3 className="sm:text-3xl">Comments</h3>
+            <div className="my-4">
+              {session === null ? (
+                <p>You need to be logged in to comment</p>
+              ) : (
+                <CommentInput currentUser={currentUser} />
+              )}
+            </div>
+            <div>
+              {comments.map((comment: any) => (
+                <Suspense key={comment.id} fallback={<p>Loading...</p>}>
+                  <CommentCard comment={comment} />
+                </Suspense>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="pt-11 block">
           <Link href="/blog">
             <button className="btn" type="button">

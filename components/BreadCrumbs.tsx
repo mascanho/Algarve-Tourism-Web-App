@@ -5,9 +5,7 @@ import { usePathname } from "next/navigation";
 export default function BreadCrumbs() {
   const pathname = usePathname();
 
-  console.log(window.location.host);
-
-  const url = window.location.href;
+  const url = window?.location?.href;
 
   const [_, folder, article] = url.split("/").filter(Boolean);
 

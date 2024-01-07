@@ -139,9 +139,9 @@ const Header = ({ currentUser, weatherData }: any) => {
             {/* Weather API */}
             <div
               onClick={showWeather}
-              className="flex items-center pt-1 justify-end sm:mr-4 -mr- cursor-pointer hover:scale-105 transition ease-in"
+              className="flex items-center pt-1 justify-end sm:mr-4 -mr-2 cursor-pointer hover:scale-105 transition ease-in"
             >
-              {weatherData.current.temp_c + "°"}{" "}
+              <span className="-mr-1">{weatherData.current.temp_c + "°"}</span>
               <img
                 src={"https:" + weatherData.current.condition.icon}
                 alt="weather"

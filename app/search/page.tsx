@@ -210,8 +210,8 @@ export default function Home() {
           </h4>
         </div>
         <section className="grid sm:grid-cols-3 gap-y-6">
-          {Reviews.map((review: any) => (
-            <Review
+          {quotes.map((review: any) => (
+            <Feedback
               key={review.id}
               id={review.id}
               name={review.name}
