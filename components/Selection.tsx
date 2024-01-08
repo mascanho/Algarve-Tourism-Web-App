@@ -30,7 +30,7 @@ const Selection = ({ text }: any) => {
       </div>
       <section className="flex w-full sm:hidden">
         <Select
-          className="w-full mb-8 h-[100%] rounded-none border-red-600 outline-none  "
+          className="w-full mb-8 h-[100%] rounded-none outline-none  "
           placeholder="Select a category"
           data={catArr.map((cat) => cat.name)}
           onChange={(e) => goToPage(e)}

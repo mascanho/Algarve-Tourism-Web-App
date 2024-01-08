@@ -13,9 +13,9 @@ const CardCity = ({
 }: any) => {
   return (
     <Link href={`/${type || "algarve"}/${route}`}>
-      <div className="card sm:w-[100%] md:w-[360px] lg:w-[320px] lg:h-60 sm:h-72 mx-auto bg-base-100 shadow-xl  overflow-hidden group">
+      <div className="card sm:w-[100%] sm:h-52 md:w-[360px] lg:w-[320px] xl:w-[360px] xl:h-64 lg:h-60 sm:h-72 mx-auto bg-base-100 shadow-xl  overflow-hidden group">
         <div className=" h-12 p-4  text-left sm:w-full w-full">
-          <h2 className="card-title text-left w-full group-hover:text-white text-sm">
+          <h2 className="card-title text-left w-full text-gray-300 group-hover:text-white text-sm">
             {title || name}
           </h2>
         </div>

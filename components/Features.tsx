@@ -14,9 +14,9 @@ const mockData = [
   {
     id: Math.random(),
     icon: <MdOutlinePlace />,
-    name: "Save Locations",
+    name: "Search and Save Locations",
     description:
-      "Save all of the best hidden wonders in the Algarve in one place, never losing them again. Easially accessible within your account",
+      "Discover and save all of the best hidden wonders in the Algarve in one place, never losing them again. Easially accessible within your account",
   },
   {
     id: Math.random(),
@@ -69,9 +69,9 @@ function Features() {
         <span className="bg-sky px-4 py-1 font-semibold text-white rounded-full">
           How It Works
         </span>
-        <h4 className="text-4xl font-semibold pt-2">
-          The best of the Algarve at your fingertips
-        </h4>
+        {/* <h4 className="sm:text-4xl text-2xl  font-semibold pt-2"> */}
+        {/*   The best of the Algarve at your fingertips */}
+        {/* </h4> */}
         <h5 className="w-10/12 mx-auto">
           Discover the best places, save and share your next adventure with
           others, all in one place, no stress and no time wasted

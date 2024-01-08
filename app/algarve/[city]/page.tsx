@@ -10,6 +10,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Link from "next/link";
 import TableOfContentsFloating from "@/app/blog/[slug]/TableOfContents";
 import Breadcrumbs from "@/components/Layout/Breadcrumbs";
+import { IoArrowBack } from "react-icons/io5";
 
 const options = {
   renderNode: {
@@ -174,7 +175,7 @@ async function page(props: any) {
 
   return (
     <>
-      <div className="sm:hidden mt-10 w-11/12 max-w-7xl mx-auto">
+      <div className="sm:hidden mt-5 w-11/12 max-w-7xl mx-auto">
         <TableAccordion tableData={tableData} />
       </div>
       <section className="sm:pt-10 pt-10 max-w-7xl w-11/12 mx-auto sm:flex">
@@ -251,7 +252,8 @@ async function page(props: any) {
         </div>
         <div className="pt-10">
           <Link href="/algarve">
-            <button type="button" className="btn">
+            <button type="button" className="flex items-center btn">
+              <IoArrowBack className="mr-1" />
               Go back
             </button>
           </Link>

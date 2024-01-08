@@ -28,7 +28,7 @@ const Hero = ({ categories }: any) => {
     <>
       <div
         className={`sm:hidden  animate-fade bg-[url('https://images.unsplash.com/photo-1607419977878-5b1099c99715?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] 
- overflow-hidden  bg-cover bg-blend-multiply bg-black/60  bg-fixed h-screen`}
+ overflow-hidden  bg-blend-multiply bg-black/60  bg-fixed h-screen`}
       />
       <div
         className={` hidden sm:block animate-fade overflow-hidden  bg-cover bg-fixed bg-blend-multiply bg-black/70  h-screen`}

@@ -70,7 +70,7 @@ input[type="text"] {
 }
 
 .mantine-1cn2mlo {
-  @apply rounded-none border-slate-50 outline-none active:outline-none active:rounded-none active:border-black;
+  @apply rounded-none outline-none active:outline-none active:rounded-none;
 }
 
 /* Animations and preferences */

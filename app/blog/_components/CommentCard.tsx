@@ -13,7 +13,7 @@ const CommentCard = ({ comment }: any) => {
   return (
     <div
       key={comment.id}
-      className="my-6 flex items-center   p-4 border rounded-md"
+      className="my-4 sm:my-5 flex items-center   p-4 border rounded-md"
     >
       <div className="w-12 h-12 flex">
         <img className="rounded-full" src={comment.image} alt="" />

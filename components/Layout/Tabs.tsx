@@ -58,7 +58,7 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
         </Tabs.Tab>
       </Tabs.List>
 
-      <Tabs.Panel value="first" pt="xs" className="leading-7">
+      <Tabs.Panel value="first" pt="xs" className="leading-7 text-gray-700">
         {parsedContent}
       </Tabs.Panel>
 

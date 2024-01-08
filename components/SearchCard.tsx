@@ -69,7 +69,7 @@ export const SearchCard = ({
           alt="image"
           className="block h-full"
         />
-        <div className="absolute active:scale-90 w-5 h-5 flex items-center justify-center rounded-full p-1 bg-white top-2 right-2">
+        <div className="absolute active:scale-90 w-8 h-8 flex items-center justify-center rounded-full p-1 bg-white top-2 right-2">
           <AiFillHeart
             onClick={addToFavourites}
             className="text-md  text-red-500"

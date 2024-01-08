@@ -52,7 +52,7 @@ const Buttons = ({ filteredData }: any) => {
   }
 
   return (
-    <>
+    <section className="text-gray-500 flex space-x-1 sm:space-x-2">
       <BsFillSuitHeartFill
         data-tooltip-content="Add to favourites"
         className="w-6 h-6 sm:w-8 sm:h-8 outline-none fav p-[6px] border tooltip rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75 text-xs"
@@ -60,7 +60,7 @@ const Buttons = ({ filteredData }: any) => {
       />
       <Tooltip anchorSelect=".fav" />
       <Link href={filteredData[0].fields.website} target="_blank">
-        <BsGlobe className="w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75  " />
+        <BsGlobe className="w-6 h-6 sm:w-8 sm:h-8 p-[6px] border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75  " />
       </Link>
       <BiMapPin
         data-tooltip-content="Open in Google Maps"
@@ -79,7 +79,7 @@ const Buttons = ({ filteredData }: any) => {
         onClick={() => window.print()}
         className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"
       />
-    </>
+    </section>
   );
 };
 
