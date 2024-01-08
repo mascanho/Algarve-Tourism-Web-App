@@ -17,8 +17,8 @@ function Footer() {
               <Link href={"/about"}>
                 <p className="link link-hover">What we do</p>
               </Link>
-              <Link href={"/about"}>
-                <p className="link link-hover">Marketing</p>
+              <Link href={"/changelog"}>
+                <p className="link link-hover">Changelog</p>
               </Link>
             </div>
             <div className="flex flex-col space-y-1">
@@ -49,6 +49,9 @@ function Footer() {
 
               <Link href={"/algarve"}>
                 <p className="link link-hover">Best Cities</p>
+              </Link>
+              <Link href={"/algarve"}>
+                <p className="link link-hover">Submit Places</p>
               </Link>
             </div>
             <div className="flex flex-col space-y-1">
@@ -104,8 +107,8 @@ function Footer() {
             </div>
           </div>
           <div className="md:place-self-center md:justify-self-end">
-            <div className="grid grid-flow-col px-4 sm:px-0 ">
-              <div className="flex bg-gray-400/30 space-x-2 -mt-6 sm:mt-0 items-center py-1 px-4 text-xs rounded-xl">
+            <div className="grid grid-flow-col px-4 sm:px-0 w-full ">
+              <div className="flex bg-gray-400/30  space-x-2 -mt-6 sm:mt-0 mb-4 sm:mb-0 mx-auto w-full items-center py-1 px-4 text-xs rounded-xl">
                 <span suppressHydrationWarning className="text-sky">
                   {onlineUsers}
                 </span>{" "}

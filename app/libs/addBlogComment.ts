@@ -5,7 +5,7 @@ import { getServerSession } from "next-auth/next";
 import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
 
-export async function createComment(data: FormData, slug: any) {
+export async function createComment(data: any, slug: any) {
   // Get the full url of where the comment is being added
   const headersList = headers();
   const domain = headersList.get("host") || "";
@@ -22,7 +22,10 @@ export async function createComment(data: FormData, slug: any) {
   await prisma.comments.create({
     data: {
       comment,
-      name: session?.user?.name || "Anonymous",
+      name:
+        session?.user?.name ||
+        session?.user?.email?.split("@")[0] ||
+        "anonymous",
       email: session?.user?.email || "anonymous",
       image: session?.user?.image || null,
       slug: url,

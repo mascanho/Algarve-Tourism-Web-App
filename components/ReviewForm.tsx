@@ -14,7 +14,6 @@ import {
   useLoginModalStore,
   useRegisteredModalStore,
 } from "@/app/hooks/useLoginModal";
-import { FaSpinner } from "react-icons/fa";
 
 interface InputProps {
   id: string;

@@ -11,6 +11,9 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import getCurrentUser from "@/app/libs/getCurrentUser";
 import prisma from "@/app/libs/prismadb";
+import { IoArrowBack } from "react-icons/io5";
+import { Button } from "@mantine/core";
+import LoginButton from "../_components/LoginButton";
 
 // Fetch comments from Mongo DB
 export async function getComments() {
@@ -129,7 +132,7 @@ const DUMMY_COMMENTS = [
 const page = async (props: any) => {
   const { category, slug } = props.params;
   const session = await getServerSession(authOptions);
-  const currentUser = getCurrentUser();
+  const currentUser: any = getCurrentUser();
 
   const allComments = await getComments();
 
@@ -213,18 +216,14 @@ const page = async (props: any) => {
           </div>
         </div>
         <section className="mt-10 sm:mt-20 richText">{post}</section>
-        <section className="text-black mt-10">
+        <section className="text-black mt-20">
           <hr />
-          <div className="mt-10">
+          <div className="mt-20">
             <h3 className="sm:text-3xl">Comments</h3>
             <div className="my-4">
-              {session === null ? (
-                <p>You need to be logged in to comment</p>
-              ) : (
-                <CommentInput currentUser={currentUser} />
-              )}
+              {session === null ? <LoginButton /> : <CommentInput />}
             </div>
-            <div>
+            <div className="mt-10">
               {comments.map((comment: any) => (
                 <Suspense key={comment.id} fallback={<p>Loading...</p>}>
                   <CommentCard comment={comment} />
@@ -235,8 +234,13 @@ const page = async (props: any) => {
         </section>
 
         <section className="pt-11 block">
+          <hr className="mt-8 mb-16" />
           <Link href="/blog">
-            <button className="btn" type="button">
+            <button
+              className="text-gray-600 flex items-center space-x-2"
+              type="button"
+            >
+              <IoArrowBack className="mr-2" />
               Back to Blogs
             </button>
           </Link>
