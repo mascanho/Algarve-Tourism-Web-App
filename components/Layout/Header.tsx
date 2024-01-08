@@ -141,7 +141,9 @@ const Header = ({ currentUser, weatherData }: any) => {
               onClick={showWeather}
               className="flex items-center pt-1 justify-end sm:mr-4 -mr-2 cursor-pointer hover:scale-105 transition ease-in"
             >
-              <span className="-mr-1">{weatherData.current.temp_c + "°"}</span>
+              <span className="-mr-[1px]">
+                {weatherData.current.temp_c + "°"}
+              </span>
               <img
                 src={"https:" + weatherData.current.condition.icon}
                 alt="weather"
