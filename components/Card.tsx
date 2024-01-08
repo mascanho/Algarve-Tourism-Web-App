@@ -31,10 +31,9 @@ export const Card = ({
   embededMap,
   mapShare,
   price,
+  id,
 }: any) => {
-  const router = useRouter();
   const addFav = useAddToFavourites();
-  const pathname = usePathname();
 
   useEffect(() => {
     AOS.init();
@@ -58,12 +57,12 @@ export const Card = ({
       rating,
       embededMap,
       mapShare,
-      id: slug,
+      id,
       price,
       type,
     };
     addFav.addFavourite(data);
-    toast.success(title + " added to " + "🧳");
+    // toast.success(title + " added to " + "🧳");
   }
 
   // handle copying the url to share

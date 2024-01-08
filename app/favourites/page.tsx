@@ -20,6 +20,7 @@ function page() {
   const [changeTable, setChangeTable]: any = useState(false);
   const [userEmail, setUserEmail]: any = useState("");
   const [loading, setLoading]: any = useState(false);
+  const [sendEmail, setSendEmail] = useState(false);
 
   useEffect(() => {
     document.title = "Algarve Wonders - Your Favourites";
@@ -72,6 +73,8 @@ function page() {
       },
     });
   };
+
+  console.log(favourites);
 
   const rows = favourites.map((element: any) => (
     <tr key={element.title}>
@@ -132,7 +135,10 @@ function page() {
               onClick={() => setChangeTable(!changeTable)}
             />
           )}
-          <AiOutlineMail className="cursor-pointer" />
+          <AiOutlineMail
+            className="cursor-pointer"
+            onClick={() => setSendEmail(!sendEmail)}
+          />
           <FiPrinter
             onClick={() => window.print()}
             className="cursor-pointer"
@@ -175,27 +181,27 @@ function page() {
       </div>
       <div className="w-full flex justify-center mt-20">
         <form action="submit">
-          {!favourites.length ? (
-            ""
-          ) : (
-            <input
-              className="h-10 rounded-l-md bg-white border p-2 "
-              type="email"
-              name="email"
-              placeholder="Your email"
-              onChange={(e) => setUserEmail(e.target.value)}
-              required
-              value={userEmail}
-            />
+          {sendEmail && (
+            <>
+              <input
+                className="h-10 rounded-l-md bg-white border p-2 "
+                type="email"
+                name="email"
+                placeholder="Your email"
+                onChange={(e) => setUserEmail(e.target.value)}
+                required
+                value={userEmail}
+              />
+              <button
+                className="hiddenRow -ml-2 btn m-auto text-sm sm:text-base disabled:text-gray-400 disabled:cursor-not-allowed hover:text-white"
+                type="button"
+                disabled={!favourites.length}
+                onClick={sendFavEmail}
+              >
+                {loading ? "Sending..." : "Send email"}
+              </button>
+            </>
           )}
-          <button
-            className="hiddenRow -ml-2 btn m-auto disabled:text-gray-400 disabled:cursor-not-allowed hover:text-white"
-            type="button"
-            disabled={!favourites.length}
-            onClick={sendFavEmail}
-          >
-            {loading ? "Sending email..." : "Send email"}
-          </button>
         </form>
       </div>
     </section>

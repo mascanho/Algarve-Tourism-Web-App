@@ -1,3 +1,4 @@
+import { toast } from "react-hot-toast";
 import { create } from "zustand";
 
 interface FavouriteProps {
@@ -9,9 +10,23 @@ interface FavouriteProps {
 const useAddToFavourites = create<FavouriteProps>((set) => ({
   favourites: [],
   addFavourite(data: any) {
-    set((state) => ({
-      favourites: [...state.favourites, data],
-    }));
+    set((state: any) => {
+      const existingItem = state.favourites.find(
+        (item: any) => item.id === data.id,
+      );
+
+      if (existingItem) {
+        toast.error("Already added to favourites");
+        return state;
+      } else {
+        toast.success("Added to favourites");
+        console.log(state);
+      }
+
+      return {
+        favourites: [...state.favourites, data],
+      };
+    });
   },
   removeFavourite(id: number) {
     set((state) => ({

@@ -5,7 +5,10 @@ import { Toaster } from "react-hot-toast";
 export const ToasterProvider = () => {
   return (
     <>
-      <Toaster position="bottom-center" />
+      <Toaster
+        toastOptions={{ style: { maxWidth: "800px" } }}
+        position="bottom-center"
+      />
     </>
   );
 };

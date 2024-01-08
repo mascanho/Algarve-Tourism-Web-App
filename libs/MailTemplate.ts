@@ -11,13 +11,18 @@ export const favouritesEmail = (email: any, favourites: any) => {
   let listItems = "";
   let images = "";
   favourites.map((favourite: any) => {
-    listItems += `<li style="display: flex; margin: 6px; 0; align-items: center; text-align: left"><img style="text-align: left; border-radius: 4px; margin-right: 6px;" src="${favourite.image}" alt="${favourite.title}" width="40" height="40" /> ${favourite.title} - <span style="font-weight: 500; margin-left: 2px">${favourite.city}</span></li> `;
+    listItems += `<li style="display: flex; margin: 10px; 0; align-items: center; text-align: left"><img style="text-align: left; border-radius: 4px; margin-right: 6px;" src="${favourite.image}" alt="${favourite.title}" width="40" height="40" /> ${favourite.title} - <span style="font-weight: 500; margin-left: 2px">${favourite.city}</span></li> `;
   });
 
   return `
-    <h2>Favourites</h2>
+    <h2>Hi, ${email}</h2>
+    <p>We hope you enjoy your time in the Algarve.</p>
+    <p>Here are some of your favourites:</p>
     <ul style="list-style-type:none; padding: 0">
       ${listItems}
     </ul>
+    <a href="" target="_blank">
+    <button style="background-color: #60a5fa; color: white; padding: 8px 10px; border-radius: 2px; margin: 20px 0">Visit website</button>
+</a>
   `;
 };

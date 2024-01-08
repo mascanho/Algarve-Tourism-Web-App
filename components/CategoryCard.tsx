@@ -1,11 +1,9 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Selection from "@/components/Selection";
 import { AiFillHeart } from "react-icons/ai";
 import { usePathname } from "next/navigation";
-import { toast } from "react-hot-toast";
 import { BsBookmarkHeart } from "react-icons/bs";
 import { BsQrCodeScan } from "react-icons/bs";
 import { BiMap } from "react-icons/bi";
@@ -47,7 +45,6 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
 
   function addToFavourites(item: any) {
     addFav.addFavourite(item);
-    toast.success(item.title + " added to " + "🧳");
   }
 
   return (

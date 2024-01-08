@@ -209,7 +209,7 @@ const Header = ({ currentUser, weatherData }: any) => {
 
               <div className="relative">
                 <span className="absolute -top-1 -right-1 text-[8px] bg-sky text-white rounded-full w-3 h-3 flex justify-center items-center text-center">
-                  {favourites.favourites.length}
+                  {favourites?.favourites?.length}
                 </span>
                 <div className="relative">
                   <MdCardTravel

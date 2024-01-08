@@ -100,7 +100,7 @@ export default async function Home(props: any) {
                 image={cat?.fields?.mainImage?.fields?.file?.url}
                 category={categories}
                 slug={cat?.fields?.slug}
-                id={cat?.sys?.id}
+                id={cat?.fields?.title}
                 hiddenGem={cat?.fields?.hiddenGem}
                 city={cat?.fields?.city}
                 type={cat?.fields?.type}
