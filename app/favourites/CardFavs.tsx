@@ -3,6 +3,7 @@ import { Card } from "@mantine/core";
 import Link from "next/link";
 import React from "react";
 import { AiFillDelete } from "react-icons/ai";
+import useAddToFavourites from "../hooks/useAddToFavourites";
 
 const CardFavs = ({
   image,
@@ -15,20 +16,23 @@ const CardFavs = ({
   route,
   rating,
   paid,
+  id,
 }: any) => {
+  const { removeFavourite } = useAddToFavourites();
+
   return (
-    <Link href={`/${type}`}>
-      <div className="card sm:w-[300px] w-11/12 mx-auto bg-base-100 shadow-xl  overflow-hidden group cardFavs">
-        <div className=" h-12 p-4  text-left sm:w-full w-full relative">
-          <h2 className="card-title text-left w-full group-hover:text-white text-sm">
-            {title || "name"}
-          </h2>
-          <AiFillDelete
-            onClick={() => console.log("delete")}
-            className="group-hover:text-red-500 absolute bottom-4 right-4"
-          />
-        </div>
-        <figure className="relative sm:Lh-56 h-48 w-full">
+    <div className="card w-full sm:w-[300px] mx-auto bg-base-100 shadow-xl  overflow-hidden group cardFavs">
+      <div className=" h-12 p-4  text-left sm:w-full w-full relative overflow-hidden">
+        <h2 className="card-title text-left w-full group-hover:text-white text-sm">
+          {title || "name"}
+        </h2>
+        <AiFillDelete
+          onClick={() => removeFavourite(id)}
+          className="group-hover:text-red-500 absolute bottom-4 right-4"
+        />
+      </div>
+      <Link href={`/${type[0]}/${slug}`}>
+        <figure className="relative h-48 w-full overflow-hidden">
           <img
             src={image}
             alt="Shoes"
@@ -41,8 +45,8 @@ const CardFavs = ({
         <div className="p-2">
           <StarRating rating={rating} />
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 

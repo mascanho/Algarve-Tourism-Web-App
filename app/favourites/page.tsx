@@ -12,6 +12,7 @@ import { BsGridFill } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { compileMailTemplate, sendMail } from "@/libs/NodeMailer";
 import { toast } from "react-hot-toast";
+import { favouritesEmail } from "@/libs/MailTemplate";
 
 function page() {
   const { favourites, addFavourite, removeFavourite }: any =
@@ -53,14 +54,13 @@ function page() {
       };
     });
 
-    const html = JSON.stringify(converToHtml);
-
     await sendMail({
       to: userEmail,
-      subject: "Algarve Wonders",
+      subject: "Algarve Wonders - Your Favourites",
+      body: favouritesEmail(userEmail, favourites),
       name: "Marco",
-      body: await compileMailTemplate(html),
     });
+    // favouritesEmail(userEmail, favourites);
     setUserEmail("");
     setLoading(false);
     toast("Email sent to: " + userEmail, {
@@ -141,7 +141,7 @@ function page() {
         <div className="flex font-bold sapce-x-5 w-full justify-between pb-2 mb-10 h-full overflow-auto">
           {/* Optional table */}
           {!changeTable ? (
-            <Table className="table-normal overflow-auto" fontSize={14}>
+            <Table className="table-normal overflow-auto mt-10" fontSize={14}>
               <thead>
                 <tr className="text-4xl">
                   <th>Destination</th>
@@ -155,7 +155,7 @@ function page() {
               <tbody>{rows}</tbody>
             </Table>
           ) : (
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gridFavs mt-10 gap-x-8">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gridFavs mt-10 sm:gap-x-4 gap-y-4 w-full">
               {favourites.map((el: any) => (
                 <CardFavs
                   title={el.title}
@@ -164,6 +164,9 @@ function page() {
                   rating={el.rating}
                   city={el.city}
                   paid={el.paid}
+                  slug={el.slug}
+                  type={el.type}
+                  id={el.id}
                 />
               ))}
             </div>

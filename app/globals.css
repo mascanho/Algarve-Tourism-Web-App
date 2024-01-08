@@ -107,7 +107,7 @@ input[type="text"] {
 /* } */
 
 .changelog {
-  @apply font-bold mt-16;
+  @apply font-bold mt-12;
 
   p,
   li {
@@ -115,7 +115,7 @@ input[type="text"] {
   }
 
   h1 {
-    @apply text-5xl mb-10 text-center;
+    @apply text-5xl mb-16 text-center;
   }
 
   h2 {

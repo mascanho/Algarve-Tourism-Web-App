@@ -50,7 +50,7 @@ function Footer() {
               <Link href={"/algarve"}>
                 <p className="link link-hover">Best Cities</p>
               </Link>
-              <Link href={"/algarve"}>
+              <Link href={"/submit"}>
                 <p className="link link-hover">Submit Places</p>
               </Link>
             </div>

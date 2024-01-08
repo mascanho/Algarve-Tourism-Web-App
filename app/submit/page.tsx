@@ -1,5 +1,6 @@
 import Form from "./Form";
 import Image from "next/image";
+
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
@@ -48,7 +49,7 @@ function page() {
         <Form />
         <section className="relative w-[100%]">
           <Image
-            src="/contact-image.webp"
+            src="/images/places.jpeg"
             alt="contact image"
             // width={600}
             // height={500}
