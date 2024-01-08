@@ -35,10 +35,4 @@ export const MainPageFaqs = [
     description:
       "No. In the summer, the Algarve can be more expensive than Lisbon, but it is still relatively cheap compared to other European beach destinations. It’s possible to have a budget holiday outside of the summer months. Local meals run at about €10 per person, a pint of beer at €2.",
   },
-  {
-    emoji: "🥦",
-    value: "How many days do you need in the Algarve?",
-    description:
-      "Spend three days for an overview of the Algarve. However, for those who want to simply relax and enjoy the sun, a good week or so is needed to experience the beaches, nightlife, and culture of the region.",
-  },
 ];

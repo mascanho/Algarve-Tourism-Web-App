@@ -79,7 +79,7 @@ function AlgarveSpecs() {
   return (
     <>
       <div className="max-w-7xl w-11/12 mx-auto space-y-4 mb-8">
-        <h4 className="text-xl">Some good to knows</h4>
+        <h4 className="text-xl">Good To Know</h4>
       </div>
       <section className="grid sm:grid-cols-3 gap-x-4 gap-y-10 max-w-7xl m-auto w-11/12">
         {data.map((item, index) => {
@@ -91,11 +91,11 @@ function AlgarveSpecs() {
                 </div>
               </div>
               <div className="w-9/12">
-                <span className="font-semibold text-xl pb-1 text-gray-500">
+                <span className="font-semibold text-xl pb-1 text-gray-800">
                   {item.title}
                 </span>
                 <div className="">
-                  <span className="text-sm text-gray-400">
+                  <span className="text-sm text-gray-500">
                     {item.description}
                   </span>
                 </div>

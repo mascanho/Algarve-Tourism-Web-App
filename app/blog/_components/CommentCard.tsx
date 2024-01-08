@@ -22,16 +22,6 @@ const CommentCard = ({ comment }: any) => {
         <div className="flex flex-col ml-3  ">
           <p className="text-gray-600 font-semibold">{comment.name}</p>
           <p className="font-thin">{comment.comment}</p>
-          {/* <div className="space-x-3 mt-1 flex"> */}
-          {/*   <span className="flex items-center"> */}
-          {/*     {comment.thumbs} */}
-          {/*     <IoThumbsUp className="ml-1" /> */}
-          {/*   </span> */}
-          {/*   <span className="flex items-center"> */}
-          {/*     {comment.likes} */}
-          {/*     <IoHeart className="ml-1 text-red-600" /> */}
-          {/*   </span> */}
-          {/* </div> */}
         </div>
         <div>
           <span className="text-xs text-gray-400 w-full">
