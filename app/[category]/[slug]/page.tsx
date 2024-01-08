@@ -7,7 +7,8 @@ import { createClient } from "contentful";
 import Buttons from "@/components/Layout/Buttons";
 import StarRating from "@/components/Layout/StarRating";
 import getReviews from "@/app/libs/getReviews";
-import { headers } from "next/headers";
+import { IoArrowBack } from "react-icons/io5";
+import Link from "next/link";
 
 // export const metadata: Metadata = {
 //   title: "Home",
@@ -105,6 +106,14 @@ export default async function Home(props: any, req: any) {
             reviews={reviewsArr}
           />
         </div>
+        <section className="mx-auto w-11/12 sm:w-full py-10">
+          <Link href={`/${category}`} className="text-sm text-sky">
+            <button type="button" className="flex items-center ">
+              <IoArrowBack className="mr-1" />
+              back to {category}
+            </button>
+          </Link>
+        </section>
       </section>
     </>
   );

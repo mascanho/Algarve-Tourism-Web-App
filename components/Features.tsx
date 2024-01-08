@@ -72,7 +72,7 @@ function Features() {
         {/* <h4 className="sm:text-4xl text-2xl  font-semibold pt-2"> */}
         {/*   The best of the Algarve at your fingertips */}
         {/* </h4> */}
-        <h5 className="w-10/12 mx-auto">
+        <h5 className="w-10/12 sm:w-2/4 mx-auto">
           Discover the best places, save and share your next adventure with
           others, all in one place, no stress and no time wasted
         </h5>

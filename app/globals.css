@@ -74,34 +74,51 @@ input[type="text"] {
 }
 
 /* Animations and preferences */
-@media (prefers-reduced-motion: no-preference) {
-  .animate-fade {
-    animation: fade-out linear;
-    animation-timeline: view();
-    animation-range: exit -200px;
+/* @media (prefers-reduced-motion: no-preference) { */
+/*   .animate-fade { */
+/*     animation: fade-out linear; */
+/*     animation-timeline: view(); */
+/*     animation-range: exit -200px; */
+/*   } */
+/**/
+/*   .animate-fade-in { */
+/*     animation: fade-in linear forwards; */
+/*     animation-timeline: view(); */
+/*     animation-range-start: cover; */
+/*     animation-range-end: 550px; */
+/*   } */
+/**/
+/*   @keyframes fade-out { */
+/*     to { */
+/*       opacity: 0; */
+/*     } */
+/*   } */
+/**/
+/*   @keyframes fade-in { */
+/*     from { */
+/*       scale: 0.8; */
+/*       opacity: 0; */
+/*     } */
+/*     to { */
+/*       scale: 1; */
+/*       opacity: 1; */
+/*     } */
+/*   } */
+/* } */
+
+.changelog {
+  @apply font-bold mt-16;
+
+  p,
+  li {
+    @apply font-normal m-0;
   }
 
-  .animate-fade-in {
-    animation: fade-in linear forwards;
-    animation-timeline: view();
-    animation-range-start: cover;
-    animation-range-end: 550px;
+  h1 {
+    @apply text-5xl mb-10 text-center;
   }
 
-  @keyframes fade-out {
-    to {
-      opacity: 0;
-    }
-  }
-
-  @keyframes fade-in {
-    from {
-      scale: 0.8;
-      opacity: 0;
-    }
-    to {
-      scale: 1;
-      opacity: 1;
-    }
+  h2 {
+    @apply text-4xl;
   }
 }

@@ -35,7 +35,7 @@ const data = [
     image: <FaPhoneAlt className="text-3xl" />,
     title: "Phone Code",
     description:
-      "The country code for Portugal, including the Algarve, is +351.",
+      "The country code for Portugal, including the Algarve, is +351. For any urgencies suchs as police or ambulance services, the phone number is simply 112.",
   },
   {
     image: <TbMessageLanguage />,

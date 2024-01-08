@@ -4,6 +4,7 @@ import CardCity from "./[city]/CardCity";
 import { Metadata } from "next";
 import Breadcrumbs from "@/components/Layout/Breadcrumbs";
 import Link from "next/link";
+import { IoArrowBack } from "react-icons/io5";
 
 export const metadata: Metadata = {
   title: "Find Your City in The Algarve ",
@@ -126,8 +127,9 @@ function page(props: any) {
       </div>
       <div className="pt-10  mx-auto max-w-7xl px-3">
         <Link href="/">
-          <button type="button" className="btn hover:text-white">
-            Go back
+          <button type="button" className="btn hover:text-white flex">
+            <IoArrowBack className="mr-1" />
+            Home
           </button>
         </Link>
       </div>
