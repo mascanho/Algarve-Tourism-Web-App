@@ -13,7 +13,7 @@ import StarRating from "./Layout/StarRating";
 import { usePathname } from "next/navigation";
 
 export const SearchCard = ({
-  category,
+  // category,
   title,
   slug,
   date,

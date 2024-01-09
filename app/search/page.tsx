@@ -189,6 +189,9 @@ export default function Home() {
                 city={item?.city}
                 type={item?.type}
                 shortDescription={item.shortDescription}
+                rating={item?.rating}
+                id={item?.id}
+                image={item?.image}
               />
             ))}
           </section>
