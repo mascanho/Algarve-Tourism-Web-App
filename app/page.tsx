@@ -53,8 +53,6 @@ const cities = cityArr;
 export default async function Home(props: any) {
   const categories = await getCategoriesCached();
 
-  console.log("Categories: ", categories);
-
   // Filter restaurants from all the categories
   const restaurants = categories.filter(
     (cat: any) => cat.fields.type && cat.fields.type.includes("restaurants"),
@@ -96,7 +94,7 @@ export default async function Home(props: any) {
             {/* Normal Cards with no search feature */}
             {categories.slice(0, 8).map((cat: any) => (
               <Card
-                key={Math.random()}
+                key={cat?.fields?.title}
                 title={cat?.fields?.title}
                 description={cat?.fields?.shortDescription}
                 image={cat?.fields?.mainImage?.fields?.file?.url}
@@ -116,7 +114,7 @@ export default async function Home(props: any) {
               />
             ))}
           </section>
-          <Pagination categories={categories} />
+          {/* <Pagination categories={categories} /> */}
           <BottomAssets />
         </section>
       </section>

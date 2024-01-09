@@ -76,8 +76,7 @@ const DrawerContent = ({ close, title }: any) => {
             onClick={close}
             className="w-full bg-sky text-white px-3 py-2 rounded-md font-semibold"
           >
-            {" "}
-            Save or Email Favourites
+            View favourites
           </button>
         </Link>
       )}

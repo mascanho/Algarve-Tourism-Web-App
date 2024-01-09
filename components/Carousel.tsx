@@ -33,7 +33,7 @@ function CarouselHero({
         >
           {categories &&
             categories?.map((cat: any, index: string) => (
-              <Carousel.Slide key={index}>
+              <Carousel.Slide key={cat?.fields?.title}>
                 <Link href={`/${cat?.fields?.type}/${cat?.fields?.slug}`}>
                   <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
                     <img
@@ -51,7 +51,7 @@ function CarouselHero({
 
           {cities &&
             cities?.map((city: any, index: string) => (
-              <Carousel.Slide key={index}>
+              <Carousel.Slide key={city?.name}>
                 <Link href={`/algarve/${city?.route}`}>
                   <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
                     <img
@@ -69,7 +69,7 @@ function CarouselHero({
 
           {restaurants &&
             restaurants?.map((rest: any, index: string) => (
-              <Carousel.Slide key={index}>
+              <Carousel.Slide key={rest?.fields?.title}>
                 <Link href={`/restaurants/${rest?.fields.slug}`}>
                   <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
                     <img
@@ -78,7 +78,7 @@ function CarouselHero({
                       className="block h-full"
                     />
                     <span className="absolute left-0 top-4 pr-2 py-1 pl-1 rounded-r-full text-xs text-black bg-white  ">
-                      📍 {rest?.fields.title}
+                      📍 {rest?.fields?.title}
                     </span>
                   </div>
                 </Link>
@@ -87,7 +87,7 @@ function CarouselHero({
 
           {carRentals &&
             carRentals?.map((car: any, index: string) => (
-              <Carousel.Slide key={index}>
+              <Carousel.Slide key={car?.name}>
                 <Link target="_blank" href={car?.url}>
                   <div className="w-full h-full flex flex-col rounded-md overflow-hidden relative">
                     <img

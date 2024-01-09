@@ -4,7 +4,7 @@ import { Accordion } from "@mantine/core";
 
 const Acordion = () => {
   const items = MainPageFaqs.map((item, index) => (
-    <Accordion.Item key={index} value={item.value}>
+    <Accordion.Item key={item?.id} value={item.value}>
       <Accordion.Control>{item.value}</Accordion.Control>
       <Accordion.Panel>{item.description}</Accordion.Panel>
     </Accordion.Item>

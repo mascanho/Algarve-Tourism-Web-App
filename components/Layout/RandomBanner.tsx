@@ -117,12 +117,11 @@ function RandomBanner({ categories }: any) {
         embededMap: finalChoice[i]?.fields?.embededMap,
         mapShare: finalChoice[i]?.fields?.mapShare,
         price: finalChoice[i]?.fields?.price,
-        id: Math.random(),
+        id: finalChoice[i]?.fields?.title,
       };
       addFav.addFavourite(favorites);
     }
 
-    toast.success("Random Items" + " added to " + "🧳");
     close();
   };
 
@@ -202,7 +201,7 @@ function RandomBanner({ categories }: any) {
             ) : (
               <section>
                 {finalChoice.map((item: any) => (
-                  <section key={item.id} className="mt-2">
+                  <section key={item?.fields?.title} className="mt-2">
                     <div
                       className="flex space-y-2 border rounded-md p-2 items-center"
                       key={item.id}

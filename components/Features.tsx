@@ -12,21 +12,21 @@ import { MdOutlineTipsAndUpdates } from "react-icons/md";
 
 const mockData = [
   {
-    id: Math.random(),
+    id: 1,
     icon: <MdOutlinePlace />,
     name: "Search and Save Locations",
     description:
       "Discover and save all of the best hidden wonders in the Algarve in one place, never losing them again. Easially accessible within your account",
   },
   {
-    id: Math.random(),
+    id: 2,
     icon: <MdFavoriteBorder />,
     name: "Add to Favorites",
     description:
       "Add your favourite places to your list and revisit them in a simple and intuitive way. Make your wishlist something to look forward to.",
   },
   {
-    id: Math.random(),
+    id: 3,
     icon: <IoShareSocialOutline />,
     name: "Share with Others",
     description:
@@ -34,14 +34,14 @@ const mockData = [
   },
 
   {
-    id: Math.random(),
+    id: 4,
     icon: <RiMoneyEuroCircleLine />,
     name: "Save Money",
     description:
       "Discover the best free places, without unpleasant surprises and the high prices. The best places don't need to be expensive.",
   },
   {
-    id: Math.random(),
+    id: 5,
     icon: <RxUpdate />,
     name: "Regular Updates",
 
@@ -49,7 +49,7 @@ const mockData = [
       "Constant database updates and continuous improvements to the platform, showcasing the latest and greatest attractions in the Algarve.",
   },
   {
-    id: Math.random(),
+    id: 6,
     icon: <MdOutlineTipsAndUpdates />,
     name: "Tips & Tricks",
     description:
@@ -81,7 +81,7 @@ function Features() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-8 grid-rows-2">
         {mockData.map((item) => (
           <div
-            key={item.id}
+            key={item?.id}
             className="flex-col justify-start text-left rounded-md items-center space-y-2 p-8 border "
             data-aos="zoom-in-up"
           >

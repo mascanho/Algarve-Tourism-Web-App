@@ -21,7 +21,7 @@ const Selection = ({ text }: any) => {
         {catArr.map((cat) => (
           <div
             className="px-2 py-1 text-xs text-center transition-all ease-in delay-75 md:border md:rounded-md md:w-28  md:px-3 sm:py-2  w-14 sm:w-fit hover:cursor-pointer hover:bg-sky hover:text-white"
-            key={cat.id}
+            key={Math.random()}
             onClick={(e) => router.push(`${cat.route}`)}
           >
             {cat.name}

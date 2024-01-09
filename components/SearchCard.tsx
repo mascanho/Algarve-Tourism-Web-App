@@ -27,6 +27,7 @@ export const SearchCard = ({
   mapShare,
   embededMap,
   image,
+  price,
   rating,
   id,
 }: any) => {
@@ -49,11 +50,10 @@ export const SearchCard = ({
       rating,
       embededMap,
       mapShare,
-      id: id?.fields.title,
+      id: id?.fields?.title,
+      price,
     };
     addFav.addFavourite(data);
-
-    toast.success(title + " added to " + "🧳");
   }
 
   // handle copying the url to share

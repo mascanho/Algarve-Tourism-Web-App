@@ -6,7 +6,7 @@ import { IoIosPin } from "react-icons/io";
 function PopularCategories({ beaches, events, adventure }: any) {
   const popularCategories = [
     {
-      id: Math.random(),
+      id: 1,
       name: "Unique and Insteresting Events",
       url: "/events",
       image:
@@ -14,7 +14,7 @@ function PopularCategories({ beaches, events, adventure }: any) {
       quantity: events?.length,
     },
     {
-      id: Math.random(),
+      id: 2,
       name: "Unique and Insteresting Adventures",
       url: "/adventure",
       image:
@@ -22,7 +22,7 @@ function PopularCategories({ beaches, events, adventure }: any) {
       quantity: adventure?.length,
     },
     {
-      id: Math.random(),
+      id: 3,
       name: "Unique and Insteresting Places",
       url: "/beaches",
       image:
@@ -43,7 +43,7 @@ function PopularCategories({ beaches, events, adventure }: any) {
       <div className="mt-20 sm:flex gap-x-10 justify-center space-y-10 sm:space-y-0 px-4 sm:px-0 ">
         {popularCategories.map((item: any) => (
           <div
-            key={item}
+            key={item.id}
             className="w-fit text-center space-y-4 m-auto rounded-xl h-fit cursor-pointer "
           >
             <Link href={item.url}>

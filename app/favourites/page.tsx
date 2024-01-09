@@ -15,6 +15,9 @@ import { toast } from "react-hot-toast";
 import { favouritesEmail } from "@/libs/MailTemplate";
 import { useSession } from "next-auth/react";
 import { useLoginModalStore } from "../hooks/useLoginModal";
+import useWindowSize from "react-use/lib/useWindowSize";
+import Confetti from "react-confetti";
+import { FaSpinner } from "react-icons/fa";
 
 function page() {
   const { favourites, addFavourite, removeFavourite }: any =
@@ -25,6 +28,7 @@ function page() {
   const [sendEmail, setSendEmail] = useState(false);
   const session = useSession();
   const loginModal = useLoginModalStore();
+  const { width, height } = useWindowSize();
 
   console.log(session, "This is the user state");
 
@@ -52,8 +56,21 @@ function page() {
       });
       return;
     }
-    console.log(userEmail, "This is the email");
-    console.log(favourites, "from the favourites");
+
+    // if user email is not a valid email address
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(userEmail)) {
+      toast("Please enter a valid email address", {
+        icon: "🚨",
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
+      return;
+    }
+
     setLoading(true);
 
     await sendMail({
@@ -203,12 +220,19 @@ function page() {
                       value={userEmail}
                     />
                     <button
-                      className="hiddenRow block mt-4  btn m-auto text-sm sm:text-base disabled:text-gray-400 disabled:cursor-not-allowed hover:text-white z-10"
+                      className="hiddenRow block mt-6 w-44  btn m-auto text-sm sm:text-base disabled:text-gray-400 disabled:cursor-not-allowed hover:text-white z-10"
                       type="button"
                       disabled={!favourites.length}
                       onClick={sendFavEmail}
                     >
-                      {loading ? "Sending..." : "Send email"}
+                      {loading ? (
+                        <div className="flex items-center justify-center">
+                          <FaSpinner className="animate-spin mr-1" />
+                          <span>sending</span>
+                        </div>
+                      ) : (
+                        "Send email"
+                      )}
                     </button>
                   </>
                 )}

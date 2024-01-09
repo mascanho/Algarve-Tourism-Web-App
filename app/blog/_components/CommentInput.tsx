@@ -15,8 +15,8 @@ const CommentInput = () => {
       ref={formRef}
       action={async (data: FormData, slug: FormData) =>
         createComment(data, slug).then(() => {
-          // router.refresh();
           formRef.current?.reset();
+          router.refresh();
         })
       }
     >

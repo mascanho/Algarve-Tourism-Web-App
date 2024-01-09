@@ -19,8 +19,8 @@ const inter = Inter({ subsets: ["latin"] });
 // Get all categories from contentful
 async function getAllCategories() {
   const client: any = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID!,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+    space: process?.env?.CONTENTFUL_SPACE_ID!,
+    accessToken: process?.env?.CONTENTFUL_ACCESS_TOKEN!,
   });
   const res = await client.getEntries({ content_type: ["beaches", "events"] });
 
@@ -101,17 +101,19 @@ export default function Home() {
               {/* Normal Cards with no search feature */}
               {searchData.data?.map((item: any) => (
                 <SearchCard
-                  key={item.id}
-                  title={item.title}
-                  category={item.category}
-                  slug={item.slug}
-                  tags={item.tags}
-                  hiddenGem={item.hiddenGem}
-                  mainImage={item.mainImage}
-                  city={item.city}
-                  type={item.type}
-                  shortDescription={item.shortDescription}
-                  rating={item.rating}
+                  key={item?.title}
+                  title={item?.title}
+                  category={item?.category}
+                  slug={item?.slug}
+                  tags={item?.tags}
+                  hiddenGem={item?.hiddenGem}
+                  mainImage={item?.mainImage}
+                  city={item?.city}
+                  type={item?.type}
+                  shortDescription={item?.shortDescription}
+                  rating={item?.rating}
+                  price={item?.price}
+                  id={item?.id}
                 />
               ))}
             </section>
@@ -190,7 +192,8 @@ export default function Home() {
                 type={item?.type}
                 shortDescription={item.shortDescription}
                 rating={item?.rating}
-                id={item?.id}
+                id={item?.title}
+                price={item?.price}
                 image={item?.image}
               />
             ))}
