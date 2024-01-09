@@ -53,6 +53,8 @@ const cities = cityArr;
 export default async function Home(props: any) {
   const categories = await getCategoriesCached();
 
+  console.log("Categories: ", categories);
+
   // Filter restaurants from all the categories
   const restaurants = categories.filter(
     (cat: any) => cat.fields.type && cat.fields.type.includes("restaurants"),

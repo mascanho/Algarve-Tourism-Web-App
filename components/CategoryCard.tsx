@@ -80,8 +80,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
                       mainImage:
                         "https:" + cat?.fields?.mainImage?.fields?.file?.url,
                       city: cat?.fields?.city,
-                      image:
-                        "https:" + cat?.fields?.mainImage?.fields?.file?.url,
+                      image: cat?.fields?.mainImage?.fields?.file?.url,
                       tags: cat?.fields?.tags,
                       hiddenGem: cat?.fields?.hiddenGem,
                       rating: cat?.fields?.rating,
@@ -90,6 +89,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
                       description: cat?.fields?.description,
                       shortDescription: cat?.fields?.shortDescription,
                       type: cat?.fields?.type,
+                      price: cat?.fields?.price,
                     })
                   }
                   className="absolute cursor-pointer active:scale-90 w-8 h-8 flex items-center justify-center rounded-full  bg-white top-2 right-2"

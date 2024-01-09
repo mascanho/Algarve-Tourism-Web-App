@@ -59,11 +59,11 @@ const DrawerContent = ({ close, title }: any) => {
       {favourites.length < 1 ? (
         <>
           <div className="flex flex-col space-y-2">
-            <span className="text-gray-400">Add places & experiences</span>
+            <span className="text-gray-400 my-4">Add places & experiences</span>
             <Link href="/beaches">
               <button
                 onClick={close}
-                className="w-full bg-sky text-white px-3 py-1 rounded-md"
+                className="w-full bg-sky text-white px-3 py-2 font-semibold rounded-md"
               >
                 View categories
               </button>
@@ -74,10 +74,10 @@ const DrawerContent = ({ close, title }: any) => {
         <Link href="/favourites/">
           <button
             onClick={close}
-            className="w-full bg-sky text-white px-3 py-1 rounded-md"
+            className="w-full bg-sky text-white px-3 py-2 rounded-md font-semibold"
           >
             {" "}
-            Export
+            Save or Email Favourites
           </button>
         </Link>
       )}

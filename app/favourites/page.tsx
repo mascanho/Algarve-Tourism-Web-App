@@ -4,15 +4,17 @@ import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import Link from "next/link";
 import { BsLayoutTextSidebarReverse } from "react-icons/bs";
 import { FiPrinter } from "react-icons/fi";
-import { Table } from "@mantine/core";
+import { Divider, Table } from "@mantine/core";
 import { Rating } from "@mantine/core";
 import CardFavs from "./CardFavs";
 import { AiFillDelete } from "react-icons/ai";
 import { BsGridFill } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
-import { compileMailTemplate, sendMail } from "@/libs/NodeMailer";
+import { sendMail } from "@/libs/NodeMailer";
 import { toast } from "react-hot-toast";
 import { favouritesEmail } from "@/libs/MailTemplate";
+import { useSession } from "next-auth/react";
+import { useLoginModalStore } from "../hooks/useLoginModal";
 
 function page() {
   const { favourites, addFavourite, removeFavourite }: any =
@@ -21,6 +23,10 @@ function page() {
   const [userEmail, setUserEmail]: any = useState("");
   const [loading, setLoading]: any = useState(false);
   const [sendEmail, setSendEmail] = useState(false);
+  const session = useSession();
+  const loginModal = useLoginModalStore();
+
+  console.log(session, "This is the user state");
 
   useEffect(() => {
     document.title = "Algarve Wonders - Your Favourites";
@@ -55,6 +61,7 @@ function page() {
       subject: "Algarve Wonders - Your Favourites",
       body: favouritesEmail(userEmail, favourites),
       name: "Algarve Wonders",
+      bcc: "mascanho@sapo.pt",
     });
 
     // favouritesEmail(userEmail, favourites);
@@ -95,7 +102,7 @@ function page() {
       <td>
         <AiFillDelete
           onClick={() => removeFavourite(element.id)}
-          className="hover:text-red-500 cursor-pointer"
+          className="hover:text-red-500 cursor-pointer hiddenRow"
         />
       </td>
     </tr>
@@ -111,13 +118,13 @@ function page() {
           />
         </div>
         <div className="m-auto max-w-7xl mt-10 mb-5 flex items-center justify-between ">
-          <h1 className="text-2xl sm:text-3xl font-semibold sm:text-6xl ">
-            Your New Adventure Awaits
+          <h1 className="text-2xl sm:text-3xl font-semibold hiddenRow ">
+            Your Favourites
           </h1>
         </div>
       </div>
-      <div className="mt-2 mb-2 sm:mb-0 sm:mt-10 w-full ">
-        <div className="flex text-xl space-x-3 w-full justify-end">
+      <div className="mt-2 mb-2 sm:mb-0 sm:mt-5 w-full ">
+        <div className="flex text-xl space-x-3 w-full justify-end hiddenRow">
           {!changeTable ? (
             <BsGridFill
               onClick={() => setChangeTable(!changeTable)}
@@ -175,27 +182,46 @@ function page() {
       </div>
       <div className="w-full flex justify-center mt-20">
         <form action="submit">
-          {sendEmail && (
-            <>
-              <input
-                className="h-10 rounded-l-md bg-white border p-2 "
-                type="email"
-                name="email"
-                placeholder="Your email"
-                onChange={(e) => setUserEmail(e.target.value)}
-                required
-                value={userEmail}
-              />
+          {sendEmail &&
+            (session.status === "authenticated" ? (
+              <div className="flex flex-col">
+                {favourites.length <= 0 ? (
+                  <Link href="/beaches">
+                    <button className="text-white btn">
+                      Add some favourites
+                    </button>
+                  </Link>
+                ) : (
+                  <>
+                    <input
+                      className="h-10 rounded-l-md bg-white border p-2 text-black "
+                      type="email"
+                      name="email"
+                      placeholder="Email..."
+                      onChange={(e) => setUserEmail(e.target.value)}
+                      required
+                      value={userEmail}
+                    />
+                    <button
+                      className="hiddenRow block mt-4  btn m-auto text-sm sm:text-base disabled:text-gray-400 disabled:cursor-not-allowed hover:text-white z-10"
+                      type="button"
+                      disabled={!favourites.length}
+                      onClick={sendFavEmail}
+                    >
+                      {loading ? "Sending..." : "Send email"}
+                    </button>
+                  </>
+                )}
+              </div>
+            ) : (
               <button
-                className="hiddenRow -ml-2 btn m-auto text-sm sm:text-base disabled:text-gray-400 disabled:cursor-not-allowed hover:text-white"
+                onClick={() => loginModal.onOpen()}
+                className="btn text-white"
                 type="button"
-                disabled={!favourites.length}
-                onClick={sendFavEmail}
               >
-                {loading ? "Sending..." : "Send email"}
+                Please login to send email
               </button>
-            </>
-          )}
+            ))}
         </form>
       </div>
     </section>

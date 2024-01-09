@@ -82,20 +82,6 @@ function RegisteredModal({ currentUser }: any) {
 
           <div className="pt-4">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-              {/* <div className="flex flex-col"> */}
-              {/*   <label htmlFor="" className="pb-1 text-xs text-left"> */}
-              {/*     Name */}
-              {/*   </label> */}
-              {/*   <input */}
-              {/*     type="text" */}
-              {/*     id="firstName" */}
-              {/*     className="p-2 bg-transparent bg-gray-300 border rounded-md" */}
-              {/*     placeholder="Enter Your Name" */}
-              {/*     required */}
-              {/*     {...register("name")} */}
-              {/*   /> */}
-              {/*   {errors.firstName && <span>This field is required</span>} */}
-              {/* </div> */}
               <div className="flex flex-col">
                 <label htmlFor="" className="pb-1 text-xs text-left">
                   Email

@@ -35,7 +35,7 @@ function Footer() {
                 <p className="link link-hover">Contact</p>
               </Link>
             </div>
-            <div className="flex flex-col space-y-1">
+            <div className="flex flex-col space-y-1 mt-5 sm:mt-0">
               <span className="footer-title">Quick Links</span>
               {/* <Link href="/submit"> */}
               {/*   <p className="link link-hover">Submissions</p> */}
@@ -54,7 +54,7 @@ function Footer() {
                 <p className="link link-hover">Submit Places</p>
               </Link>
             </div>
-            <div className="flex flex-col space-y-1">
+            <div className="flex flex-col space-y-1 mt-5 sm:mt-0">
               <span className="footer-title">Partners</span>
               <a href="https://markwarrior.dev" target="_blank">
                 <p className="link link-hover">Mark Warrior</p>
