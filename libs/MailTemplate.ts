@@ -5,13 +5,13 @@ export const registerEmailTemplate = (email: any, password: any) => {
 };
 
 export const favouritesEmail = (email: any, favourites: any) => {
-  console.log(email, favourites, "from the email");
+  console.log(email, favourites[0], "from the email in the templates");
 
   // for every favourite add a list item
   let listItems = "";
   let images = "";
   favourites.map((favourite: any) => {
-    listItems += `<li style="display: flex; margin: 10px; 0; align-items: center; text-align: left"><img style="text-align: left; border-radius: 4px; margin-right: 6px;" src="${favourite.image}" alt="${favourite.title}" width="40" height="40" /> ${favourite.title} - <span style="font-weight: 500; margin-left: 2px">${favourite.city}</span></li> `;
+    listItems += `<li style="display: flex; margin: 10px; 0; align-items: center; text-align: left"><img style="text-align: left; border-radius: 4px; margin-right: 6px;" src="https:${favourite.image}" alt="${favourite.title}" width="40" height="40" /> ${favourite.title} - <span style="font-weight: 500; margin-left: 2px">${favourite.city}</span></li> `;
   });
 
   return `

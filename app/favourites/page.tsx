@@ -47,20 +47,16 @@ function page() {
       return;
     }
     console.log(userEmail, "This is the email");
+    console.log(favourites, "from the favourites");
     setLoading(true);
-
-    const converToHtml = favourites.map((obj: any, index: any) => {
-      return {
-        ...obj,
-      };
-    });
 
     await sendMail({
       to: userEmail,
       subject: "Algarve Wonders - Your Favourites",
       body: favouritesEmail(userEmail, favourites),
-      name: "Marco",
+      name: "Algarve Wonders",
     });
+
     // favouritesEmail(userEmail, favourites);
     setUserEmail("");
     setLoading(false);
@@ -73,8 +69,6 @@ function page() {
       },
     });
   };
-
-  console.log(favourites);
 
   const rows = favourites.map((element: any) => (
     <tr key={element.title}>

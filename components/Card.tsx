@@ -44,7 +44,7 @@ export const Card = ({
   function addToFavourites(e: any) {
     e.stopPropagation();
     const data = {
-      category,
+      // category,
       title,
       slug,
       date,

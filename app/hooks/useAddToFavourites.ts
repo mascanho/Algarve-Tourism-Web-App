@@ -24,7 +24,7 @@ const useAddToFavourites = create<FavouriteProps>((set) => ({
       }
 
       return {
-        favourites: [...state.favourites, data],
+        favourites: [data, ...state.favourites],
       };
     });
   },
