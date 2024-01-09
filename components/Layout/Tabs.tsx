@@ -59,11 +59,11 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
       </Tabs.List>
 
       <Tabs.Panel value="first" pt="xs" className="leading-7 text-gray-700">
-        {parsedContent}
+        <div className="mt-5">{parsedContent}</div>
       </Tabs.Panel>
 
       <Tabs.Panel value="map" pt="xs">
-        <section className="overflow-hidden w-full">
+        <section className="overflow-hidden w-full mt-5">
           {filteredData[0]?.fields?.embededMap === undefined ? (
             <p>No map to display</p>
           ) : (
@@ -80,7 +80,7 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
         </section>
       </Tabs.Panel>
       <Tabs.Panel value="third" pt="xs">
-        {filteredData[0]?.fields?.price}
+        <div className="mt-5">{filteredData[0]?.fields?.price}</div>
       </Tabs.Panel>
       <Tabs.Panel className="text-left" value="reviews" pt="xs">
         {/* Comments will go here, connected to the DB  */}

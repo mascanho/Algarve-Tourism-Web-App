@@ -28,6 +28,7 @@ export const SearchCard = ({
   embededMap,
   image,
   rating,
+  id,
 }: any) => {
   const router = useRouter();
   const addFav = useAddToFavourites();
@@ -35,7 +36,7 @@ export const SearchCard = ({
 
   function addToFavourites(e: any) {
     const data = {
-      category,
+      // category,
       title,
       slug,
       date,
@@ -48,6 +49,7 @@ export const SearchCard = ({
       rating,
       embededMap,
       mapShare,
+      id: id?.fields.title,
     };
     addFav.addFavourite(data);
 

@@ -1,5 +1,4 @@
 import StarRating from "@/components/Layout/StarRating";
-import { Card } from "@mantine/core";
 import Link from "next/link";
 import React from "react";
 import { AiFillDelete } from "react-icons/ai";

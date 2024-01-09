@@ -99,7 +99,7 @@ export default async function Home(props: any, req: any) {
             </div>
           </div>
         </div>
-        <div className="sm:pt-10 w-11/12 sm:w-full mx-auto ">
+        <div className="pt-5 sm:pt-10 w-11/12 sm:w-full mx-auto ">
           <TabsRow
             filteredData={filteredData}
             slug={slug}

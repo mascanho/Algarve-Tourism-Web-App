@@ -19,7 +19,7 @@ const Buttons = ({ filteredData }: any) => {
 
   function addFav() {
     addFavourites.addFavourite({
-      id: filteredData[0]?.sys?.id,
+      id: filteredData[0]?.sys?.title,
       title: filteredData[0]?.fields?.title,
       description: filteredData[0]?.fields?.description,
       image: filteredData[0]?.fields?.mainImage?.fields?.file?.url,
@@ -28,7 +28,6 @@ const Buttons = ({ filteredData }: any) => {
       city: filteredData[0]?.fields?.city,
       type: filteredData[0]?.fields?.type,
     });
-    toast.success(filteredData[0]?.fields?.title + " added to " + "🧳");
   }
 
   // handle the GPS to open on a new tab
@@ -52,32 +51,32 @@ const Buttons = ({ filteredData }: any) => {
   }
 
   return (
-    <section className="text-gray-500 flex space-x-1 sm:space-x-2">
+    <section className="text-gray-500 flex space-x-2">
       <BsFillSuitHeartFill
         data-tooltip-content="Add to favourites"
-        className="w-6 h-6 sm:w-8 sm:h-8 outline-none fav p-[6px] border tooltip rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75 text-xs"
+        className="w-8 h-8 outline-none fav p-[6px] border tooltip rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75 text-xs"
         onClick={addFav}
       />
       <Tooltip anchorSelect=".fav" />
       <Link href={filteredData[0].fields.website} target="_blank">
-        <BsGlobe className="w-6 h-6 sm:w-8 sm:h-8 p-[6px] border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75  " />
+        <BsGlobe className="w-8 h-8 p-[6px] border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75  " />
       </Link>
       <BiMapPin
         data-tooltip-content="Open in Google Maps"
         onClick={handleClickGps}
-        className="w-6 h-6 sm:w-8 sm:h-8 p-1 tooltip border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"
+        className="w-8 h-8 p-1 tooltip border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"
       />
       <Tooltip anchorSelect=".tooltip" />
       <BiShareAlt
         data-tooltip-content="Share this page"
         onClick={handleCopyUrl}
-        className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"
+        className="urlCopy w-8 h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"
       />
       <Tooltip anchorSelect=".urlCopy" />
       {/* <HiQrCode className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" /> */}
       <FiPrinter
         onClick={() => window.print()}
-        className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"
+        className="urlCopy w-8 h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"
       />
     </section>
   );
