@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import CarouselHero from "@/components/Carousel";
 import BlogCarousel from "./_components/Carousel";
+import { getContentfulData } from "@/libs/getContentfulData";
 
 export const metadata: Metadata = {
   title: {
@@ -56,6 +57,16 @@ async function getBlogs() {
 
 async function page() {
   const blogs = await getBlogs();
+
+  const allCats = ["beaches", "events", "restaurants", "adventure"];
+
+  const beaches = await getContentfulData("beaches", 4);
+  const events = await getContentfulData("events", 4);
+  const restaurants = await getContentfulData("restaurants", 4);
+
+  const all = [...beaches, ...events, ...restaurants];
+
+  console.log(all, all.length);
 
   const sportsToDo = [
     {
@@ -138,7 +149,7 @@ async function page() {
         </div>
         <div className="w-[480px] sm:px-6  hidden sm:block">
           <div className="mt-10">
-            <BlogCarousel />
+            <BlogCarousel items={all} />
           </div>
           <section className="mt-10">
             <div>
@@ -155,7 +166,7 @@ async function page() {
                       <h5 className="text-black text-sm font-bold">
                         {item?.name}
                       </h5>
-                      <div className="flex">
+                      <div className="flex mt-1">
                         <span className="text-xs line-clamp-2 pr-2">
                           {item?.desc}
                         </span>
@@ -185,7 +196,7 @@ async function page() {
                           className="h-16 w-36  rounded-md"
                         />
                       </div>
-                      <div className="ml-2 w-full">
+                      <div className="ml-2 w-full space-y-1">
                         <p className="text-sm font-semibold text-black">
                           {item.name}
                         </p>

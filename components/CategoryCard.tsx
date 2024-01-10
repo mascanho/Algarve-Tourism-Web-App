@@ -59,7 +59,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
               key={cat?.id}
               className="max-w-7xl space-y-2 text-left md:w-64 shadow-sm rounded-md pb-2 border hover:border-sky transition-all ease-in delay-75"
             >
-              <div className="w-full h-44 sm:h-40 flex  rounded-t-md overflow-hidden relative">
+              <div className="w-full h-48 sm:h-40 flex  rounded-t-md overflow-hidden relative">
                 <img
                   src={
                     cat?.fields?.mainImage?.fields?.file?.url
@@ -127,8 +127,8 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
                   </span>
                 ))}
               </div>
-              <div className="w-full h-[1px] bg-gray-300 px-2" />
-              <div className="flex justify-between  text-right w-full px-2">
+              <div className="w-full h-[1px] bg-gray-300 " />
+              <div className="flex justify-between  text-right py-2 sm:py-0 w-full pr-4 ">
                 <div className="flex items-center  px-2 align-middl space-x-2">
                   <BsBookmarkHeart
                     onClick={() =>

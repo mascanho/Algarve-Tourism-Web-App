@@ -189,7 +189,5 @@ export default async function Home(props: any) {
         <AlgarveSpecs />
       </section>
     </>
-    // TODO: Crate local tips: https://www.viator.com/Algarve/d774
-    // TODO: Finish the pages like the about us and T&Cs
   );
 }

@@ -13,7 +13,7 @@ const DrawerContent = ({ close, title }: any) => {
   return (
     <>
       {favourites.map((item, index) => (
-        <div key={index} className="my-4 flex items-center w-full">
+        <div key={index} className="my-1 flex items-center w-full">
           <Link
             href={`/${item.type}/${item.slug}`}
             onClick={close}
@@ -58,8 +58,8 @@ const DrawerContent = ({ close, title }: any) => {
 
       {favourites.length < 1 ? (
         <>
-          <div className="flex flex-col space-y-2">
-            <span className="text-gray-400 my-4">Add places & experiences</span>
+          <div className="flex flex-col space-y-2 mb-2">
+            <span className="text-gray-400 mb-2">Add places & experiences</span>
             <Link href="/beaches">
               <button
                 onClick={close}
@@ -74,7 +74,7 @@ const DrawerContent = ({ close, title }: any) => {
         <Link href="/favourites/">
           <button
             onClick={close}
-            className="w-full bg-sky text-white px-3 py-2 rounded-md font-semibold"
+            className="w-full bg-sky text-white px-3 py-2 mt-4 rounded-md font-semibold"
           >
             View favourites
           </button>
