@@ -3,7 +3,6 @@ import { createClient } from "contentful";
 import { catArr } from "@/Data/Categories";
 import Link from "next/link";
 import { Metadata } from "next";
-import BlogCarousel from "../blog/_components/Carousel";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -77,8 +76,6 @@ async function page() {
     const randomIndex = Math.floor(Math.random() * (array.length - 1)) + 1;
     return array[randomIndex];
   };
-
-  const randomItem = randomItems(catArr);
 
   return (
     <section className=" sm:max-w-7xl sm:w-full mx-auto sm:h-full  ">
@@ -169,9 +166,7 @@ async function page() {
           </section>
         </div>
         <div className="w-[480px] sm:pl-6  hidden sm:block">
-          <div className="mt-10">
-            <BlogCarousel />
-          </div>
+          <div className="mt-10"></div>
           <section className="mt-10">
             <div>
               <h4 className="text-lg">Sports to Do</h4>

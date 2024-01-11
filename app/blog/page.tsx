@@ -66,8 +66,6 @@ async function page() {
 
   const all = [...beaches, ...events, ...restaurants];
 
-  console.log(all, all.length);
-
   const sportsToDo = [
     {
       id: 1,
@@ -119,8 +117,6 @@ async function page() {
     const randomIndex = Math.floor(Math.random() * (array.length - 1)) + 1;
     return array[randomIndex];
   };
-
-  const randomItem = randomItems(catArr);
 
   return (
     <section className=" sm:max-w-7xl sm:w-full mx-auto sm:h-full  ">

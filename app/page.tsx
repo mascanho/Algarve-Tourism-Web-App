@@ -42,6 +42,8 @@ const getCategoriesCached = cache(
     });
     const res = await client.getEntries({
       content_type: ["beaches", "events", "restaurants", "adventure"],
+      limit: 100,
+      order: "-sys.createdAt",
     });
 
     return await res.items;
