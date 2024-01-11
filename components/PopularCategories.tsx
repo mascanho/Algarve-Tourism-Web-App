@@ -33,10 +33,11 @@ function PopularCategories({ beaches, events, adventure }: any) {
 
   return (
     <section className="max-w-7xl mx-auto mt-20 sm:mt-40 mb-10 text-center w-full ">
-      <div className="space-y-2">
-        <h2 className="text-2xl sm:font-bold sm:text-4xl text-black font-semibold">
+      <div className="space-y-4 w-fit mx-auto group">
+        <h2 className="text-2xl sm:font-bold sm:text-4xl  text-black font-semibold">
           Popular Categories For You
         </h2>
+        <hr className="w-16 transition-all ease-in delay-100  group-hover:w-full hover:rounded-full   bg-sky h-1 mx-auto rounded-full " />
         <h3>50+ locations from the best 3 categories</h3>
       </div>
 

@@ -22,7 +22,14 @@ function BlogCarousel({ items }: any) {
   }, []);
 
   return (
-    <Carousel withIndicators height={200} dragFree slideGap="md" align="start">
+    <Carousel
+      withIndicators
+      height={200}
+      dragFree
+      slideGap="md"
+      align="start"
+      loop
+    >
       {shuffledItems.map((item: any) => (
         <Carousel.Slide key={item?.sys?.id}>
           <Link href={`/${item?.fields.type}/${item?.fields?.slug}`}>

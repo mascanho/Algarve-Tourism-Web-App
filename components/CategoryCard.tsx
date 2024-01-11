@@ -53,13 +53,13 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
         <div className="sm:hidden mx-auto flex justify-center w-11/12 sm:mb-8 overflow-x-hidden">
           <Selection text="Filter your adventure" />
         </div>
-        <section className="max-w-7xl transition-all ease-in delay-75 mx-auto w-11/12 sm:w-full  sm:px-6  grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4  md:ml-auto gap-y-8 md:gap-x-10  mb-20">
+        <section className="max-w-7xl transition-all ease-in delay-75 mx-auto w-11/12 sm:w-full  sm:px-6  grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  md:ml-auto gap-y-8 md:gap-x-6  mb-20">
           {category.map((cat: any) => (
             <section
               key={cat?.id}
-              className="space-y-2 text-left lg:w-full    shadow-sm rounded-md pb-2 border hover:border-sky transition-all ease-in delay-75"
+              className="space-y-2 text-left lg:w-full shadow-sm rounded-md pb-2 border hover:border-sky transition-all ease-in delay-75"
             >
-              <div className="w-full h-52 sm:h-56 md:h-72 xl:h-36 flex  rounded-t-md overflow-hidden relative">
+              <div className="w-full h-52 sm:h-56 md:h-48 xl:h-36 flex  rounded-t-md overflow-hidden relative">
                 <img
                   src={
                     cat?.fields?.mainImage?.fields?.file?.url
