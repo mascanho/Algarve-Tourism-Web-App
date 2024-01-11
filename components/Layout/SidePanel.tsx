@@ -8,11 +8,9 @@ export default function SidePanel() {
   const router = useRouter();
   const pathname = usePathname();
 
-  console.log(pathname);
-
   return (
-    <div className="border-r-2 pr-4  hidden sm:block mb-40">
-      <div className="w-40 space-y-4 cursor-pointer  px-2 rounded-md transition-all ease-in delay-75  ">
+    <div className="hidden sm:block mb-40">
+      <div className="w-40 space-y-4 cursor-pointer pr-6 border-r-[2px] h-full  rounded-md transition-all ease-in delay-75  ">
         {catArr.map((item) => (
           <div
             onClick={() => router.push(`${item.route}`)}

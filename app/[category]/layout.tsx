@@ -53,10 +53,10 @@ export default function RootLayout({
   return (
     <section className="h-full">
       <NextAuthProvider>
-        <div className="w-10/12 sm:max-w-xs  md:w-10/12  md:max-w-4xl mx-auto ml-4 sm:ml-auto sm:pl-2  sm:pt-8 text-sm mb-4 py-6 overflow-x-hidden">
+        <div className="w-11/12 sm:w-6/12 md:w-8/12 mx-auto  my-8 max-w-7xl xl:max-w-4xl">
           <Breadcrumbs />
         </div>
-        <section className="max-w-7xl mx-auto flex   justify-start transition-all ease-in delay-75 sticky top-11  ">
+        <section className="sm:pl-4 xl:pl-0    max-w-7xl mx-auto flex   justify-start transition-all ease-in delay-75 sticky top-11  ">
           <SidePanel />
           <div className="flex-1  mb-20">{children}</div>
         </section>
