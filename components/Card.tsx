@@ -77,7 +77,7 @@ export const Card = ({
       data-aos="zoom-in-up"
       className="border pb-2 mb-10 sm:pb-2 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-[100%] mx-auto sm:w-full md:w-fit  hover:border-sky  hover:shadow-md"
     >
-      <div className="relative flex flex-col w-full h-[200px] sm:h-40 overflow-hidden rounded-t-md ">
+      <div className="relative flex flex-col w-full h-[200px] sm:h-40 md:h-52 overflow-hidden rounded-t-md ">
         <img src={`https:${image}`} alt="image" className="block h-full" />
         <div
           onClick={addToFavourites}

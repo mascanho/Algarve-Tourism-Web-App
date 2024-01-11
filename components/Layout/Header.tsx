@@ -136,10 +136,13 @@ const Header = ({ currentUser, weatherData }: any) => {
               {/* <NavMenu trigger={false} title={"News"} url={"/news"} /> */}
               {/* <NavMenu trigger={false} title={"Contact"} url={"/contact"} /> */}
             </section>
+          </div>
+          <div className="space-x-4 sm:w-fit navbar-end">
+            {" "}
             {/* Weather API */}
             <div
               onClick={showWeather}
-              className="flex items-center pt-1 justify-end sm:mr-4 -mr-2 cursor-pointer hover:scale-105 transition ease-in"
+              className="flex items-center pt-1 justify-end sm:mr-1  -mr-2 cursor-pointer hover:scale-105 transition ease-in"
             >
               <span className="-mr-[1px]">
                 {weatherData.current.temp_c + "°"}
@@ -151,8 +154,6 @@ const Header = ({ currentUser, weatherData }: any) => {
                 height={30}
               />{" "}
             </div>
-          </div>
-          <div className="space-x-4 sm:w-fit navbar-end">
             <div className="flex items-center pr-3 text-xl text-black border rounded-full border-black/20 bg-white/50">
               <img
                 src={

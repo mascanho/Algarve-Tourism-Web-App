@@ -4,7 +4,7 @@ import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "Algarve Wonders - Contact",
+    default: "Algarve Wonders - Partners",
     template: "%s | Algarve Wonders",
   },
   description: "The place to find the best places in the Algarve",
@@ -48,7 +48,7 @@ function page() {
         <Form />
         <section className="relative w-[100%]">
           <Image
-            src="/contact-image.webp"
+            src="/images/partner.webp"
             alt="contact image"
             // width={600}
             // height={500}

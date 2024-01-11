@@ -28,7 +28,7 @@ function Footer() {
               <Link href="/legal">
                 <p className="link link-hover pt-2">The Boring Stuff</p>
               </Link>
-              <Link href={"/contact"}>
+              <Link href={"/partners"}>
                 <p className="link link-hover">Partnerships</p>
               </Link>
               <Link href={"/contact"}>

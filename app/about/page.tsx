@@ -96,16 +96,16 @@ async function page() {
   };
 
   return (
-    <section className=" sm:max-w-7xl sm:w-full mx-auto sm:h-full sm:px-5 xl:px-0  ">
+    <section className=" sm:max-w-7xl sm:w-full mx-auto sm:h-full sm:px-4  ">
       <div className="relative flex justify-center  w-full mx-auto ">
         <div className="sm:border-r sm:w-full block  w-11/12 pt-10 mx-auto justify-center sm:ml-0">
           <h2
-            className="sm:w-full mx-auto w-full border-b pb-5 font-bold text-black text-2xl
+            className="sm:w-full mx-auto w-full sm:border-b pb-5  font-bold text-black text-3xl
             sm:text-4xl"
           >
             About Us
           </h2>
-          <section className="flex flex-col sm:mt-10 mt-5 sm:pr-8 space-y-5 mb-20">
+          <section className="flex flex-col sm:mt-10 mt-5 sm:pr-8 space-y-5 mb-20 text-black">
             <p>
               Welcome to our corner of discovery, where the natural wonders of
               the Algarve come to life in all their splendor. We are a
