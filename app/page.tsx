@@ -17,6 +17,7 @@ import AffixScrollToTop from "@/components/Layout/Affix";
 import Features from "@/components/Features";
 import AlgarveSpecs from "@/components/AlgarveSpecs";
 import { cache } from "react";
+import Link from "next/link";
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -116,6 +117,11 @@ export default async function Home(props: any) {
               />
             ))}
           </section>
+          <div className="flex justify-center my-10">
+            <Link href="/beaches">
+              <button className="border px-5 py-2 rounded-md">View more</button>
+            </Link>
+          </div>
           {/* <Pagination categories={categories} /> */}
           <BottomAssets />
         </section>
