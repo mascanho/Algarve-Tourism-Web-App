@@ -86,9 +86,9 @@ const Header = ({ currentUser, weatherData }: any) => {
 
       <nav
         id="search"
-        className={`shadow-sm  sticky  bg-white z-10  sm:h-full w-full mx-auto -m-2 pt-1 sm:pt-0 sm:m-0 `}
+        className={`shadow-sm  sticky  bg-white z-10  sm:h-full  mx-auto -m-2 pt-1 sm:pt-0 sm:m-0 `}
       >
-        <div className="z-50 mx-auto navbar sm:max-w-6xl flex justify-evenly  lg:max-w-6xl xl:max-w-7xl">
+        <div className="z-50 mx-auto navbar max-w-7xl flex justify-evenly ">
           {/* MOBILE */}
           <section className="sm:hidden">
             <NavMenu
@@ -137,12 +137,12 @@ const Header = ({ currentUser, weatherData }: any) => {
               {/* <NavMenu trigger={false} title={"Contact"} url={"/contact"} /> */}
             </section>
           </div>
-          <div className="space-x-4 sm:w-fit navbar-end">
+          <div className="space-x-4  navbar-end mr-2">
             {" "}
             {/* Weather API */}
             <div
               onClick={showWeather}
-              className="flex items-center pt-1 justify-end sm:mr-1  -mr-2 cursor-pointer hover:scale-105 transition ease-in"
+              className="flex items-center pt-1 justify-end sm:mr-1 -mr-2 cursor-pointer hover:scale-105 transition ease-in"
             >
               <span className="-mr-[1px]">
                 {weatherData.current.temp_c + "°"}
@@ -154,7 +154,7 @@ const Header = ({ currentUser, weatherData }: any) => {
                 height={30}
               />{" "}
             </div>
-            <div className="flex items-center pr-3 text-xl text-black border rounded-full border-black/20 bg-white/50">
+            <div className="flex items-center max-w-max pr-8 sm:pr-2 text-xl text-black border rounded-full  border-black/20 bg-white/50">
               <img
                 src={
                   currentUser?.image ||
@@ -165,9 +165,9 @@ const Header = ({ currentUser, weatherData }: any) => {
                 className="rounded-full"
                 alt="avatar"
               />
-              <div className="relative">
+              <div className="relative flex">
                 <HiBars3
-                  className="ml-1 mr-2 cursor-pointer active:scale-90"
+                  className="ml-1 mr-1 cursor-pointer active:scale-90"
                   onClick={openLoginMenu}
                 />
                 {openLogin && (
@@ -206,17 +206,16 @@ const Header = ({ currentUser, weatherData }: any) => {
                     </ul>
                   </div>
                 )}
-              </div>
-
-              <div className="relative">
-                <span className="absolute -top-1 -right-1 text-[8px] bg-sky text-white rounded-full w-3 h-3 flex justify-center items-center text-center">
-                  {favourites?.favourites?.length}
-                </span>
                 <div className="relative">
-                  <MdCardTravel
-                    onClick={showFavourites}
-                    className="cursor-pointer active:scale-90"
-                  />
+                  <span className="absolute -top-1 -right-1 text-[8px] bg-sky text-white rounded-full w-3 h-3 flex justify-center items-center text-center">
+                    {favourites?.favourites?.length}
+                  </span>
+                  <div className="relative">
+                    <MdCardTravel
+                      onClick={showFavourites}
+                      className="cursor-pointer active:scale-90"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
