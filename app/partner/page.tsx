@@ -4,7 +4,7 @@ import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "Algarve Wonders - Partners",
+    default: "Algarve Wonders - Legal",
     template: "%s | Algarve Wonders",
   },
   description: "The place to find the best places in the Algarve",

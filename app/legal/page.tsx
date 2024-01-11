@@ -6,26 +6,39 @@ import { Metadata } from "next";
 import BlogCarousel from "../blog/_components/Carousel";
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description: "Discover the latest news and blog posts about the Algarve",
+  title: {
+    default: "Algarve Wonders - Legal",
+    template: "%s | Algarve Wonders",
+  },
+  description: "The place to find the best places in the Algarve",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/images/icon.png",
+    href: "/images/icon.png",
+    apple: "/apple-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon-precomposed.png",
+    },
+  },
+
+  verification: {
+    google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
+    yandex: "14d2e73487fa6c71",
+  },
 };
 
-// Get all blogs from contentful
-async function getBlogs() {
-  const client: any = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID3!,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN3!,
-  });
-  const res = await client.getEntries({
-    content_type: "blog",
-  });
-
-  return await res.items;
-}
-
 async function page() {
-  const blogs = await getBlogs();
-
   const sportsToDo = [
     {
       id: 1,
@@ -72,20 +85,12 @@ async function page() {
     },
   ];
 
-  // Generate random items
-  const randomItems = (array: any) => {
-    const randomIndex = Math.floor(Math.random() * (array.length - 1)) + 1;
-    return array[randomIndex];
-  };
-
-  const randomItem = randomItems(catArr);
-
   return (
     <section className=" sm:max-w-7xl sm:w-full mx-auto sm:h-full  ">
       <div className="relative flex justify-center  w-full mx-auto ">
         <div className="sm:border-r sm:w-full block  w-11/12 pt-10 mx-auto justify-center sm:ml-0">
           <h2
-            className="sm:w-full mx-auto w-full border-b pb-5 font-bold text-black text-2xl
+            className="sm:w-full mx-auto w-full sm:border-b pb-8 font-bold text-black text-3xl
             sm:text-4xl"
           >
             Legal
@@ -179,9 +184,7 @@ async function page() {
           </section>
         </div>
         <div className="w-[480px] sm:pl-6  hidden sm:block">
-          <div className="mt-10">
-            <BlogCarousel />
-          </div>
+          <div className="mt-10">{/* <BlogCarousel /> */}</div>
           <section className="mt-10">
             <div>
               <h4 className="text-lg">Sports to Do</h4>
