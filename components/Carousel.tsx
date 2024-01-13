@@ -14,10 +14,11 @@ function CarouselHero({
 }: any) {
   return (
     <>
-      <section className="w-full max-w-7xl sm:w-11/12 m-auto px-4 sm:px-0 mt-20   font-semibold">
-        <div className="space-y-4 mb-8 text-center">
+      <section className="w-full max-w-7xl sm:w-11/12 m-auto px-4 sm:px-0 mt-20 sm:mt-24   font-semibold">
+        <div className="space-y-4 mb-8 text-center group w-fit mx-auto">
           <h3 className=" text-black text-4xl text-center">{title}</h3>
-          <h4 className="pb-9">{subTitle}</h4>
+          <hr className="sm:mb-12 w-16 transition-all ease-in delay-100  group-hover:w-11/12 hover:rounded-full   bg-sky h-1 mx-auto rounded-full " />
+          {/* <h4>{subTitle}</h4> */}
         </div>
         <Carousel
           height={280}
@@ -30,6 +31,7 @@ function CarouselHero({
             { maxWidth: "sm", slideSize: "100%", slideGap: 0 },
           ]}
           slidesToScroll={1}
+          className="pt-2"
         >
           {categories &&
             categories?.map((cat: any, index: string) => (

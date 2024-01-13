@@ -18,6 +18,7 @@ import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { NavMenu } from "../NavMenu";
 import Image from "next/image";
 import WeatherModal from "../modals/WeatherModal";
+import Sheet from "./Sheet";
 
 const Header = ({ currentUser, weatherData }: any) => {
   const router = useRouter();
@@ -91,12 +92,13 @@ const Header = ({ currentUser, weatherData }: any) => {
         <div className="z-50 mx-auto navbar max-w-7xl flex justify-evenly ">
           {/* MOBILE */}
           <section className="sm:hidden">
-            <NavMenu
-              mobile={true}
-              trigger={"hover"}
-              title={"Search"}
-              url={"/"}
-            />
+            {/* <NavMenu */}
+            {/*   mobile={true} */}
+            {/*   trigger={"hover"} */}
+            {/*   title={"Search"} */}
+            {/*   url={"/"} */}
+            {/* /> */}
+            <Sheet />
           </section>
           <div className="flex justify-between w-full items-center">
             <Image
@@ -137,7 +139,7 @@ const Header = ({ currentUser, weatherData }: any) => {
               {/* <NavMenu trigger={false} title={"Contact"} url={"/contact"} /> */}
             </section>
           </div>
-          <div className="space-x-4  navbar-end mr-2">
+          <div className="space-x-4  navbar-end sm:w-0 mr-2">
             {" "}
             {/* Weather API */}
             <div
