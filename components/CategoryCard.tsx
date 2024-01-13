@@ -88,6 +88,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
                       shortDescription: cat?.fields?.shortDescription,
                       type: cat?.fields?.type,
                       price: cat?.fields?.price,
+                      pathname: window?.location?.href,
                     })
                   }
                   className="absolute cursor-pointer active:scale-90 w-8 h-8 flex items-center justify-center rounded-full  bg-white top-2 right-2"

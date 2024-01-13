@@ -71,7 +71,7 @@ export default async function Home(props: any, req: any) {
 
             <div className="flex  justify-between items-center ">
               <div className="sm:pr-4 space-x-2 items-center hidden sm:flex  ">
-                <Buttons filteredData={filteredData} />
+                <Buttons filteredData={filteredData} data={data} />
               </div>
             </div>
           </div>

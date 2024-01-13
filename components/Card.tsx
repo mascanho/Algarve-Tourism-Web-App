@@ -34,6 +34,7 @@ export const Card = ({
   id,
 }: any) => {
   const addFav = useAddToFavourites();
+  const pathname = usePathname();
 
   useEffect(() => {
     AOS.init();
@@ -60,6 +61,7 @@ export const Card = ({
       id,
       price,
       type,
+      pathname: window?.location?.href,
     };
     addFav.addFavourite(data);
     // toast.success(title + " added to " + "🧳");

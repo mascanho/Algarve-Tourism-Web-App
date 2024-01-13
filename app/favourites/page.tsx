@@ -153,7 +153,12 @@ function page() {
           )}
           <AiOutlineMail
             className="cursor-pointer"
-            onClick={() => setSendEmail(!sendEmail)}
+            onClick={(e) => {
+              e.preventDefault();
+              const section = document.getElementById("sendEmail");
+              section?.scrollIntoView({ behavior: "smooth" });
+              setSendEmail(true);
+            }}
           />
           <FiPrinter
             onClick={() => window.print()}
@@ -208,7 +213,7 @@ function page() {
           )}
         </div>
       </div>
-      <div className="w-full flex justify-center mt-20">
+      <div className="w-full flex justify-center mt-20" id="sendEmail">
         <form action="submit">
           {sendEmail &&
             (session.status === "authenticated" ? (
@@ -249,13 +254,15 @@ function page() {
                 )}
               </div>
             ) : (
-              <button
-                onClick={() => loginModal.onOpen()}
-                className="btn text-white"
-                type="button"
-              >
-                Please login to send email
-              </button>
+              <section className="mb-20 hiddenRow">
+                <button
+                  onClick={() => loginModal.onOpen()}
+                  className="btn text-white"
+                  type="button"
+                >
+                  Please login to send email
+                </button>
+              </section>
             ))}
         </form>
       </div>

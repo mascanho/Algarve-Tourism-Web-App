@@ -16,10 +16,11 @@ const Buttons = ({ filteredData }: any) => {
   const [isCopied, setIsCopied] = useState(false);
   const pathname = usePathname();
   const addFavourites = useAddToFavourites();
+  const favourites = useAddToFavourites();
 
   function addFav() {
     addFavourites.addFavourite({
-      id: filteredData[0]?.sys?.title,
+      id: filteredData[0]?.fields?.title,
       title: filteredData[0]?.fields?.title,
       description: filteredData[0]?.fields?.description,
       image: filteredData[0]?.fields?.mainImage?.fields?.file?.url,
@@ -27,7 +28,15 @@ const Buttons = ({ filteredData }: any) => {
       rating: filteredData[0]?.fields?.rating,
       city: filteredData[0]?.fields?.city,
       type: filteredData[0]?.fields?.type,
+      price: filteredData[0]?.fields?.price,
+      pathname: window?.location?.pathname,
+      shortDescription: filteredData[0]?.fields?.shortDescription,
+      embededMap: filteredData[0]?.fields?.embededMap,
+      mapShare: filteredData[0]?.fields?.mapShare,
+      tags: filteredData[0]?.fields?.tags,
+      date: filteredData[0]?.fields?.date,
     });
+    console.log(filteredData[0], "from the favourites");
   }
 
   // handle the GPS to open on a new tab

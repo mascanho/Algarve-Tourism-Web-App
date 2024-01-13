@@ -6,6 +6,10 @@
   background-color: white;
 } */
 
+html {
+  scroll-behavior: smooth;
+}
+
 .mantine-Carousel-control {
   background-color: white;
 }
