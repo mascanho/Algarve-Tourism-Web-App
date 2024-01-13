@@ -92,12 +92,6 @@ const Header = ({ currentUser, weatherData }: any) => {
         <div className="z-50 mx-auto navbar max-w-7xl flex justify-evenly ">
           {/* MOBILE */}
           <section className="sm:hidden">
-            {/* <NavMenu */}
-            {/*   mobile={true} */}
-            {/*   trigger={"hover"} */}
-            {/*   title={"Search"} */}
-            {/*   url={"/"} */}
-            {/* /> */}
             <Sheet />
           </section>
           <div className="flex justify-between w-full items-center">

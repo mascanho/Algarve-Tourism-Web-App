@@ -8,9 +8,9 @@ import { cityArr } from "@/Data/Cities";
 import { catArr } from "@/Data/Categories";
 import { IoBag } from "react-icons/io5";
 import { useRouter } from "next/navigation";
-import { FaBook, FaHome } from "react-icons/fa";
+import { FaBook, FaHeartbeat, FaHome } from "react-icons/fa";
 import { HiMagnifyingGlass } from "react-icons/hi2";
-import { MdDataArray } from "react-icons/md";
+import { MdDataArray, MdFavorite } from "react-icons/md";
 import { FaLocationCrosshairs } from "react-icons/fa6";
 
 function Sheet() {
@@ -18,7 +18,7 @@ function Sheet() {
   const router = useRouter();
 
   return (
-    <>
+    <section className="flex">
       <Drawer
         opened={opened}
         onClose={close}
@@ -75,6 +75,19 @@ function Sheet() {
           <div
             className="flex items-center mb-2"
             onClick={() => {
+              router.push("/favourites");
+              close();
+            }}
+          >
+            <MdFavorite
+              className="w-8 h-8 bg-sky p-[6px]  rounded-md flex items-center justify-center text-white mr-2"
+              size={16}
+            />
+            <span className="my-auto">Favourites</span>
+          </div>{" "}
+          <div
+            className="flex items-center mb-2"
+            onClick={() => {
               router.push("/blog");
               close();
             }}
@@ -88,10 +101,10 @@ function Sheet() {
         </section>
       </Drawer>
 
-      <span className="text-sky mt-1 mr-1" onClick={open}>
-        <HiMenuAlt2 className="text-3xl" />
+      <span className="text-sky mt-1 mr-2" onClick={open}>
+        <HiMenuAlt2 className="text-2xl" />
       </span>
-    </>
+    </section>
   );
 }
 

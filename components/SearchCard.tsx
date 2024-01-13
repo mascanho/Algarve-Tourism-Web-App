@@ -50,6 +50,8 @@ export const SearchCard = ({
       mapShare,
       id,
       price,
+      shortDescription,
+      type,
     };
     addFav.addFavourite(data);
     console.log(data, "from the favourites");
@@ -87,7 +89,6 @@ export const SearchCard = ({
         <h3 className="items-center w-full text-sm text-left text-black">
           {title}
         </h3>
-        {/* <span className="text-sm text-gray-500"> $66.99</span> */}
       </div>
       <div className="w-full h-[1px] bg-gray-300" />
       <div className="flex w-full px-2 mt-20 py-2">

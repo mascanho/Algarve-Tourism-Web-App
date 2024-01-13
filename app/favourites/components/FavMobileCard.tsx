@@ -33,34 +33,34 @@ function FavMobileCard({
 
       <Group className="flex  justify-between mb-1" mt="md">
         <Text fw={500}>{title}</Text>
+        <Rating value={rating} fractions={2} className="" readOnly size="xs" />
+      </Group>
+      <section className="flex justify-between space-x-6 pb-1 mt-1 items-center">
+        <Group className="flex font-normal  text-gray-400">
+          <IoLocation className="w-4 h-4 -ml-1" />
+          <Text className="-ml-[14px] text-sm">{city}</Text>
+        </Group>
         <Badge color={price === "Free" ? "green" : "red"} variant="light">
           {price}
         </Badge>
-      </Group>
-      <section className="flex justify-between space-x-6 mb-2 mt-1 items-center">
-        <Group className="flex font-normal  text-gray-400">
-          <IoLocation className="w-4 h-4" />
-          <Text className="-ml-3">{city}</Text>
-        </Group>
-        <Rating value={rating} fractions={2} className="" readOnly size="xs" />
       </section>
-      {/* <Divider my={"md"} /> */}
+      <Divider my={"md"} />
       <Text size="sm" c="dimmed" className="text-black font-thin">
         {shortDescription}
       </Text>
       <Text size="sm" c="dimmed" className="mt-4"></Text>
       <div className="flex items-center space-x-3">
-        <button
-          onClick={() => removeFavourite(id)}
-          className="px-3 w-full bg-sky py-2 rounded-lg text-white font-semibold"
-        >
-          View
-        </button>
-        <Link href={`/${type}/${slug}`}>
-          <button className="px-3 w-full bg-red-500 py-2 rounded-lg text-white font-semibold">
-            Delete
+        <Link href={`/${type}/${slug}`} className="w-full">
+          <button className="px-3 w-full  bg-sky py-2 rounded-lg text-white font-semibold">
+            View
           </button>
         </Link>
+        <button
+          onClick={() => removeFavourite(id)}
+          className="px-3  bg-red-500 py-2  rounded-lg text-white font-semibold"
+        >
+          Delete
+        </button>
       </div>
     </Card>
   );

@@ -26,7 +26,7 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
 
   const parsedContent = documentToReactComponents(
     filteredData[0]?.fields?.description,
-    options,
+    options
   );
 
   // Protect the app in case this is null || false
@@ -43,8 +43,8 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
       defaultValue={activeTab === "" ? "first" : activeTab}
       className=""
     >
-      <Tabs.List className="text-left">
-        <Tabs.Tab className="text-left ml-0 pl-0" value="first" color="blue">
+      <Tabs.List justify="center" className="text-center">
+        <Tabs.Tab className="ml-0 pl-0" value="first" color="blue">
           Description
         </Tabs.Tab>
         <Tabs.Tab value="map" color="blue">
@@ -59,11 +59,11 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
       </Tabs.List>
 
       <Tabs.Panel value="first" pt="xs" className="leading-7 text-gray-700">
-        <div className="mt-5">{parsedContent}</div>
+        <div className="mt-2">{parsedContent}</div>
       </Tabs.Panel>
 
       <Tabs.Panel value="map" pt="xs">
-        <section className="overflow-hidden w-full mt-5">
+        <section className="overflow-hidden w-full mt-2">
           {filteredData[0]?.fields?.embededMap === undefined ? (
             <p>No map to display</p>
           ) : (

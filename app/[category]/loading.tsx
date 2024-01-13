@@ -1,6 +1,11 @@
 "use client";
 import Image from "next/image";
-import { GridLoader } from "react-spinners";
+import {
+  GridLoader,
+  HashLoader,
+  RiseLoader,
+  ScaleLoader,
+} from "react-spinners";
 
 export default function Loading() {
   // You can add any UI inside Loading, including a Skeleton.
@@ -15,8 +20,8 @@ export default function Loading() {
   //     />
   //   </div>
   return (
-    <div className="w-full h-full items-center flex justify-center">
-      <GridLoader color="lightblue" size={85} />
+    <div className="w-full h-full items-center flex mt-10 justify-center ">
+      <HashLoader color="gray" size={120} />
     </div>
   );
 }
