@@ -10,6 +10,8 @@ import { IoBag } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 import { FaBook, FaHome } from "react-icons/fa";
 import { HiMagnifyingGlass } from "react-icons/hi2";
+import { MdDataArray } from "react-icons/md";
+import { FaLocationCrosshairs } from "react-icons/fa6";
 
 function Sheet() {
   const [opened, { open, close }] = useDisclosure(false);
@@ -20,7 +22,7 @@ function Sheet() {
       <Drawer
         opened={opened}
         onClose={close}
-        title=""
+        title="Menu"
         overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
         size="15em"
         position="left"
@@ -59,13 +61,13 @@ function Sheet() {
           <div className="">
             <NavLinks
               data={cityArr}
-              icon={<IoBag size={20} />}
+              icon={<FaLocationCrosshairs size={20} />}
               title="Algarve"
               close={close}
             />
             <NavLinks
               data={catArr}
-              icon={<IoBag size={20} />}
+              icon={<MdDataArray size={20} />}
               title="Categories"
               close={close}
             />
@@ -78,7 +80,7 @@ function Sheet() {
             }}
           >
             <FaBook
-              className="w-8 h-8 bg-sky p-[5px]  rounded-md flex items-center justify-center text-white mr-2"
+              className="w-8 h-8 bg-sky p-[6px]  rounded-md flex items-center justify-center text-white mr-2"
               size={16}
             />
             <span className="my-auto">Blog</span>

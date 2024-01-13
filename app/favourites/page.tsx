@@ -4,7 +4,7 @@ import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import Link from "next/link";
 import { BsLayoutTextSidebarReverse } from "react-icons/bs";
 import { FiPrinter } from "react-icons/fi";
-import { Divider, Table } from "@mantine/core";
+import { Accordion, Divider, Table } from "@mantine/core";
 import { Rating } from "@mantine/core";
 import CardFavs from "./CardFavs";
 import { AiFillDelete } from "react-icons/ai";
@@ -16,8 +16,8 @@ import { favouritesEmail } from "@/libs/MailTemplate";
 import { useSession } from "next-auth/react";
 import { useLoginModalStore } from "../hooks/useLoginModal";
 import useWindowSize from "react-use/lib/useWindowSize";
-import Confetti from "react-confetti";
 import { FaSpinner } from "react-icons/fa";
+import FavMobileCard from "./components/FavMobileCard";
 
 function page() {
   const { favourites, addFavourite, removeFavourite }: any =
@@ -29,8 +29,6 @@ function page() {
   const session = useSession();
   const loginModal = useLoginModalStore();
   const { width, height } = useWindowSize();
-
-  console.log(session, "This is the user state");
 
   useEffect(() => {
     document.title = "Algarve Wonders - Your Favourites";
@@ -127,7 +125,7 @@ function page() {
   return (
     <section className="max-w-7xl mx-auto w-11/12">
       <div className="relative justify-center overflow-hidden bg-cover bg-blend-multiply ">
-        <div className="w-full favBanner">
+        <div className="w-full favBanner hidden sm:flex">
           <img
             src="https://www.thetimes.co.uk/travel/wp-content/uploads/sites/6/2021/05/USE_Carvoeiro-Beach-Algarve-Portugal_Credit_Alamy_2AP6967.jpg?w=2200&h=880&crop=1"
             alt="beach"
@@ -165,19 +163,29 @@ function page() {
         <div className="flex font-bold sapce-x-5 w-full justify-between pb-2 mb-10 h-full overflow-auto">
           {/* Optional table */}
           {!changeTable ? (
-            <Table className="table-normal overflow-auto mt-10" fontSize={14}>
-              <thead>
-                <tr className="text-4xl">
-                  <th>Destination</th>
-                  <th>City</th>
-                  <th>Rating</th>
-                  <th>Price</th>
-                  <th className="hiddenRow">Details</th>
-                  <th className="hiddenRow">Remove</th>
-                </tr>
-              </thead>
-              <tbody>{rows}</tbody>
-            </Table>
+            <>
+              <Table
+                className="table-normal overflow-auto mt-10 hidden sm:inline-table"
+                fontSize={14}
+              >
+                <thead>
+                  <tr className="text-4xl">
+                    <th>Destination</th>
+                    <th>City</th>
+                    <th>Rating</th>
+                    <th>Price</th>
+                    <th className="hiddenRow">Details</th>
+                    <th className="hiddenRow">Remove</th>
+                  </tr>
+                </thead>
+                <tbody>{rows}</tbody>
+              </Table>
+              <div className="mt-10 sm:hidden grid grid-col-1 gap-y-6">
+                {favourites.map((el: any) => (
+                  <FavMobileCard key={el.title} {...el} />
+                ))}
+              </div>
+            </>
           ) : (
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gridFavs mt-10 sm:gap-x-4 gap-y-4 w-full">
               {favourites.map((el: any) => (
@@ -191,6 +199,9 @@ function page() {
                   slug={el.slug}
                   type={el.type}
                   id={el.id}
+                  shortDescription={el.shortDescription}
+                  price={el.price}
+                  tags={el.tags}
                 />
               ))}
             </div>

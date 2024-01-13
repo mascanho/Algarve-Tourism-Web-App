@@ -31,9 +31,7 @@ export const SearchCard = ({
   rating,
   id,
 }: any) => {
-  const router = useRouter();
   const addFav = useAddToFavourites();
-  const pathname = usePathname();
 
   function addToFavourites(e: any) {
     const data = {
@@ -50,10 +48,11 @@ export const SearchCard = ({
       rating,
       embededMap,
       mapShare,
-      id: id?.fields?.title,
+      id,
       price,
     };
     addFav.addFavourite(data);
+    console.log(data, "from the favourites");
   }
 
   // handle copying the url to share

@@ -139,7 +139,7 @@ const Header = ({ currentUser, weatherData }: any) => {
               {/* <NavMenu trigger={false} title={"Contact"} url={"/contact"} /> */}
             </section>
           </div>
-          <div className="space-x-4  navbar-end sm:w-0 mr-2">
+          <div className="space-x-4 ">
             {" "}
             {/* Weather API */}
             <div
@@ -156,71 +156,71 @@ const Header = ({ currentUser, weatherData }: any) => {
                 height={30}
               />{" "}
             </div>
-            <div className="flex items-center max-w-max pr-8 sm:pr-2 text-xl text-black border rounded-full  border-black/20 bg-white/50">
-              <img
-                src={
-                  currentUser?.image ||
-                  "https://heritagehill.dental/wp-content/uploads/2018/01/person-placeholder-5.png"
-                }
-                height={30}
-                width={30}
-                className="rounded-full"
-                alt="avatar"
-              />
-              <div className="relative flex">
-                <HiBars3
-                  className="ml-1 mr-1 cursor-pointer active:scale-90"
-                  onClick={openLoginMenu}
+            <section className="border rounded-full">
+              <div className="flex items-center   pr-8 sm:pr-2 text-xl text-black bg-white/50">
+                <img
+                  src={
+                    currentUser?.image ||
+                    "https://heritagehill.dental/wp-content/uploads/2018/01/person-placeholder-5.png"
+                  }
+                  height={30}
+                  width={30}
+                  className="rounded-full"
+                  alt="avatar"
                 />
-                {openLogin && (
-                  <div>
-                    <ul className="absolute z-10 w-56 p-2 text-sm bg-white border shadow-sm menu rounded-box sm:-left-24 sm:top-8 -left-40 top-8">
-                      {!currentUser ? (
-                        <>
-                          <li onClick={loginModal.onOpen}>
-                            <a
-                              className="rounded-md active:bg-sky"
-                              onClick={() => setOpenLogin(!openLogin)}
-                            >
-                              Sign-up / Register
-                            </a>
-                          </li>
-                          <li onClick={registeredModal.onOpen}>
-                            <a
-                              onClick={() => setOpenLogin(!openLogin)}
-                              className="rounded-md active:bg-sky"
-                            >
-                              Login
-                            </a>
-                          </li>
-                        </>
-                      ) : (
-                        ""
-                      )}
-
-                      {currentUser ? (
-                        <li onClick={userLogsOut}>
-                          <a className="rounded-md active:bg-sky">Logout</a>
-                        </li>
-                      ) : (
-                        ""
-                      )}
-                    </ul>
-                  </div>
-                )}
-                <div className="relative">
-                  <span className="absolute -top-1 -right-1 text-[8px] bg-sky text-white rounded-full w-3 h-3 flex justify-center items-center text-center">
-                    {favourites?.favourites?.length}
-                  </span>
-                  <div className="relative">
+                <div className="relative flex">
+                  <HiBars3
+                    className="ml-1 mr-1 cursor-pointer active:scale-90"
+                    onClick={openLoginMenu}
+                  />{" "}
+                  <div className="relative flex">
+                    <span className="absolute -top-1 -right-1 text-[8px] bg-sky text-white rounded-full w-3 h-3 flex justify-center items-center text-center">
+                      {favourites?.favourites?.length}
+                    </span>
                     <MdCardTravel
                       onClick={showFavourites}
                       className="cursor-pointer active:scale-90"
                     />
                   </div>
+                  {openLogin && (
+                    <div>
+                      <ul className="absolute z-10 w-56 p-2 text-sm bg-white border shadow-sm menu rounded-box sm:-left-24 sm:top-8 -left-40 top-8">
+                        {!currentUser ? (
+                          <>
+                            <li onClick={loginModal.onOpen}>
+                              <a
+                                className="rounded-md active:bg-sky"
+                                onClick={() => setOpenLogin(!openLogin)}
+                              >
+                                Sign-up / Register
+                              </a>
+                            </li>
+                            <li onClick={registeredModal.onOpen}>
+                              <a
+                                onClick={() => setOpenLogin(!openLogin)}
+                                className="rounded-md active:bg-sky"
+                              >
+                                Login
+                              </a>
+                            </li>
+                          </>
+                        ) : (
+                          ""
+                        )}
+
+                        {currentUser ? (
+                          <li onClick={userLogsOut}>
+                            <a className="rounded-md active:bg-sky">Logout</a>
+                          </li>
+                        ) : (
+                          ""
+                        )}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
-            </div>
+            </section>
           </div>
         </div>
       </nav>

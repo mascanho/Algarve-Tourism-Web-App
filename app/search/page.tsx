@@ -16,20 +16,9 @@ import Feedback from "@/components/Feedback";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// Get all categories from contentful
-async function getAllCategories() {
-  const client: any = createClient({
-    space: process?.env?.CONTENTFUL_SPACE_ID!,
-    accessToken: process?.env?.CONTENTFUL_ACCESS_TOKEN!,
-  });
-  const res = await client.getEntries({ content_type: ["beaches", "events"] });
-
-  return await res.items;
-}
-
-export default function Home() {
+async function Search() {
   const searchData = useSearchedData();
-  const ContentfullData = getAllCategories();
+  // Get all categories from contentful
   const [categories, setCategories] = useState([]);
   const [plainSearch, setPlainSearch] = useState(false);
 
@@ -38,9 +27,8 @@ export default function Home() {
       setPlainSearch(true);
     }
     async function data() {
-      const res = await ContentfullData;
-
-      setCategories(res);
+      // const res = await ContentfullData;
+      // setCategories(res);
     }
 
     data();
@@ -62,7 +50,7 @@ export default function Home() {
                     </div>
                   </Link>
                   <h3
-                    className="text-3xl font-bold text-black sm:text-5xl"
+                    className="text-xl font-bold text-black sm:text-5xl"
                     id="search"
                   >
                     Searching for:{" "}
@@ -80,7 +68,7 @@ export default function Home() {
                     </div>
                   </Link>
                   <h3
-                    className="text-3xl font-bold text-black sm:text-5xl mt-5"
+                    className="text-xl font-bold text-black sm:text-5xl mt-5 text-left"
                     id="search"
                   >
                     Searching for:{" "}
@@ -113,7 +101,11 @@ export default function Home() {
                   shortDescription={item?.shortDescription}
                   rating={item?.rating}
                   price={item?.price}
-                  id={item?.id}
+                  id={item?.title}
+                  date={item?.date}
+                  embededMap={item?.embededMap}
+                  mapShare={item?.mapShare}
+                  description={item?.description}
                 />
               ))}
             </section>
@@ -247,3 +239,4 @@ export default function Home() {
     </>
   );
 }
+export default Search;
