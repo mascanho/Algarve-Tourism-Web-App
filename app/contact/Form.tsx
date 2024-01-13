@@ -7,14 +7,14 @@ export default function Form() {
   const [state, handleSubmit] = useForm("xeqbrndo");
   if (state.succeeded) {
     return (
-      <>
-        <p className="text-center">We got your message!</p>
+      <section className="flex flex-col items-center justify-center text-center w-full">
+        <h2 className="text-center text-3xl">Thank You For Your Contact</h2>
         <Link href="/">
-          <button className="border bg-sky text-white w-full py-2 mt-8">
+          <button className="border bg-sky text-white w-full py-2 mt-8 px-4 rounded-md">
             Back to Home Page
           </button>
         </Link>
-      </>
+      </section>
     );
   }
 
@@ -41,6 +41,7 @@ export default function Form() {
           id="email"
           type="email"
           name="email"
+          required
         />{" "}
         <ValidationError prefix="Email" field="email" errors={state.errors} />
         <textarea
@@ -48,6 +49,7 @@ export default function Form() {
           placeholder="Your Message..."
           name="message"
           id="message"
+          required
         />
         <ValidationError
           prefix="Message"

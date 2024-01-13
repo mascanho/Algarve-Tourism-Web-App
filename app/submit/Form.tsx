@@ -7,14 +7,14 @@ export default function Form() {
   const [state, handleSubmit] = useForm("xeqbrndo");
   if (state.succeeded) {
     return (
-      <>
-        <p className="text-center">We got your place!</p>
+      <section className="flex flex-col items-center justify-center text-center w-full">
+        <h2 className="text-center text-3xl">We Got Your Place!</h2>
         <Link href="/">
-          <button className="border bg-sky text-white w-full py-2 mt-8">
+          <button className="border bg-sky text-white w-full py-2 mt-8 px-4 rounded-md">
             Back to Home Page
           </button>
         </Link>
-      </>
+      </section>
     );
   }
 
@@ -42,6 +42,7 @@ export default function Form() {
           id="name"
           type="text"
           name="name"
+          required
         />{" "}
         <ValidationError prefix="name" field="name" errors={state.errors} />
         <input
@@ -50,6 +51,7 @@ export default function Form() {
           id="city"
           type="text"
           name="city"
+          required
         />{" "}
         <ValidationError prefix="city" field="city" errors={state.errors} />
         <input

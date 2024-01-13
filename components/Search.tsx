@@ -92,6 +92,8 @@ function Search({ allTypes, placeholderText, categories }: any) {
             `}
             value={inputValue}
             onChange={handleInputChange}
+            id="search"
+            name="search"
           />
           <div />
         </div>

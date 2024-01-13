@@ -8,7 +8,7 @@ import { cityArr } from "@/Data/Cities";
 import { catArr } from "@/Data/Categories";
 import { IoBag } from "react-icons/io5";
 import { useRouter } from "next/navigation";
-import { FaBook, FaHeartbeat, FaHome } from "react-icons/fa";
+import { FaBook, FaBookOpen, FaHeartbeat, FaHome } from "react-icons/fa";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { MdDataArray, MdFavorite } from "react-icons/md";
 import { FaLocationCrosshairs } from "react-icons/fa6";
@@ -92,8 +92,8 @@ function Sheet() {
               close();
             }}
           >
-            <FaBook
-              className="w-8 h-8 bg-sky p-[6px]  rounded-md flex items-center justify-center text-white mr-2"
+            <FaBookOpen
+              className="w-8 h-8 bg-sky p-[7px]  rounded-md flex items-center justify-center text-white mr-2"
               size={16}
             />
             <span className="my-auto">Blog</span>

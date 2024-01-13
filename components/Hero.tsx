@@ -27,7 +27,7 @@ const Hero = ({ categories }: any) => {
   return (
     <>
       <div
-        className={`sm:hidden  animate-fade bg-[url('https://images.unsplash.com/photo-1607419977878-5b1099c99715?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] 
+        className={`sm:hidden  animate-fade bg-[url('https://gretastravels.com/wp-content/uploads/2021/09/DSC_0911.jpg.webp')] 
  overflow-hidden  bg-blend-multiply bg-black/60  bg-cover h-screen`}
       />
       <div
@@ -39,7 +39,7 @@ const Hero = ({ categories }: any) => {
         }}
       />
       <section className="mx-auto w-full sm:h-screen space-y-2 flex flex-col justify-center text-center m-auto absolute top-64  sm:top-2 md:top-0 ">
-        <h1 className="mx-auto text-5xl font-bold text-center text-white sm:text-8xl">
+        <h1 className="mx-auto text-5xl font-bold text-center text-white sm:text-8xl ">
           Algarve&apos;s Travel Guide
         </h1>
         <div className=" rounded-lg w-7/12 mx-auto p-2 hidden sm:block">
@@ -52,7 +52,6 @@ const Hero = ({ categories }: any) => {
         <h2 className="sm:hidden w-9/12 mx-auto sm:w-10/12 text-white rounded-sm sm:p-0 mt-4 sm:mt-0 sm:max-w-lg text-white/60 sm:pt-2">
           {" "}
           The region&apos;s top tourism attractions and less known hidden gems
-          💎
         </h2>
         <div className="flex justify-center m-auto pt-5">
           <Search
