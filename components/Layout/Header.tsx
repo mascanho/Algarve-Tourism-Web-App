@@ -26,6 +26,7 @@ const Header = ({ currentUser, weatherData }: any) => {
   const [opened, { open, close }] = useDisclosure(false);
   const favourites = useAddToFavourites();
   const [bottomNav, setBottomNav] = useState(false);
+  const [favouritesLength, setFavouritesLength] = useState(0);
   const openLoginMenu = () => {
     setOpenLogin(!openLogin);
   };
@@ -57,6 +58,10 @@ const Header = ({ currentUser, weatherData }: any) => {
       window.removeEventListener("scroll", showBottomNav);
     };
   }, []);
+
+  useEffect(() => {
+    setFavouritesLength(favourites.favourites.length);
+  }, [favourites]);
 
   const showWeather = () => {
     setWeatherModal(true);
@@ -167,9 +172,9 @@ const Header = ({ currentUser, weatherData }: any) => {
                     className="ml-1 mr-1 cursor-pointer active:scale-90"
                     onClick={openLoginMenu}
                   />{" "}
-                  <div className="relative flex">
+                  <div className="relative flex" suppressHydrationWarning>
                     <span className="absolute -top-1 -right-1 text-[8px] bg-sky text-white rounded-full w-3 h-3 flex justify-center items-center text-center">
-                      {favourites?.favourites?.length}
+                      {favouritesLength}
                     </span>
                     <MdCardTravel
                       onClick={showFavourites}

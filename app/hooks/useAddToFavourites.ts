@@ -52,8 +52,10 @@ const useAddToFavourites = create<FavouriteProps>((set) => ({
 }));
 
 // Initialization logic outside the store creation
-const storedFavourites = JSON.parse(
-  localStorage?.getItem("favourites") || "[]"
-);
-useAddToFavourites.setState({ favourites: storedFavourites });
+if (typeof window !== "undefined") {
+  const favourites = localStorage?.getItem("favourites");
+  if (favourites) {
+    useAddToFavourites.setState({ favourites: JSON.parse(favourites) });
+  }
+}
 export default useAddToFavourites;
