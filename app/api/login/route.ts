@@ -12,7 +12,7 @@ export async function handler(request: NextApiRequest) {
   });
 
   if (user) {
-    console.log(user);
+    console.log("\x1b[36m%s\x1b[0m", user, "This text is in cyan");
   }
 
   return NextResponse.json(user);

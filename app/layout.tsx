@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import getCurrentUser from "./libs/getCurrentUser";
 import { ToasterProvider } from "./providers/ToasterProvider";
 import { NextAuthProvider } from "./providers/AuthProvider";
+import { getSession } from "next-auth/react";
 
 export const metadata: Metadata = {
   title: {
@@ -51,7 +52,7 @@ export const viewport: Viewport = {
 // Fetch Weather data
 async function getWeatherData() {
   const res = await fetch(
-    `https://api.weatherapi.com/v1/current.json?key=8fd5b11106094719a89115725232912&q=Algarve&aqi=no`,
+    `https://api.weatherapi.com/v1/current.json?key=8fd5b11106094719a89115725232912&q=Algarve&aqi=no`
   );
   return await res.json();
 }
@@ -65,16 +66,21 @@ export default async function RootLayout({
 
   const weatherData = await getWeatherData();
 
+  const session = await getSession();
+  console.log(session, "000000000000000000000000000000000000");
+
   return (
     <html lang="en">
-      <body className="bg-white overflow-x-hidden">
-        <ClientOnly>
-          <ToasterProvider />
-          <Header currentUser={currentUser} weatherData={weatherData} />
-          <NextAuthProvider>{children}</NextAuthProvider>
-        </ClientOnly>
-        <Footer />
-      </body>
+      <NextAuthProvider>
+        <body className="bg-white overflow-x-hidden">
+          <ClientOnly>
+            <ToasterProvider />
+            <Header currentUser={currentUser} weatherData={weatherData} />
+            {children}
+          </ClientOnly>
+          <Footer />
+        </body>
+      </NextAuthProvider>
     </html>
   );
 }
