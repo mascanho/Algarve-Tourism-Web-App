@@ -155,7 +155,7 @@ const Header = ({ currentUser, weatherData }: any) => {
                 height={30}
               />{" "}
             </div>
-            <section className="border rounded-full">
+            <section className="border rounded-full mt-1">
               <div className="flex items-center   pr-8 sm:pr-2 text-xl text-black bg-white/50">
                 <img
                   src={

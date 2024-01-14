@@ -93,7 +93,7 @@ function page() {
   };
 
   const rows = favourites.map((element: any) => (
-    <tr key={element?.title}>
+    <tr key={element?.title} suppressHydrationWarning>
       <td className="flex items-center space-x-2 ">
         <div className="w-12 h-12 rounded-full mr-2">
           <img
@@ -170,6 +170,7 @@ function page() {
           {!changeTable ? (
             <>
               <Table
+                suppressHydrationWarning
                 className="table-normal overflow-auto mt-10 hidden sm:inline-table"
                 fontSize={14}
               >
@@ -183,7 +184,7 @@ function page() {
                     <th className="hiddenRow">Remove</th>
                   </tr>
                 </thead>
-                <tbody>{rows}</tbody>
+                <tbody suppressHydrationWarning>{rows}</tbody>
               </Table>
               <div className="mt-10 sm:hidden grid grid-col-1 gap-y-6">
                 {favourites.map((el: any) => (
@@ -195,18 +196,18 @@ function page() {
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gridFavs mt-10 sm:gap-x-4 gap-y-4 w-full">
               {favourites.map((el: any) => (
                 <CardFavs
-                  title={el.title}
-                  image={el.image}
-                  key={el.title}
-                  rating={el.rating}
-                  city={el.city}
-                  paid={el.paid}
-                  slug={el.slug}
-                  type={el.type}
-                  id={el.id}
-                  shortDescription={el.shortDescription}
-                  price={el.price}
-                  tags={el.tags}
+                  title={el?.title}
+                  image={el?.image}
+                  key={el?.title}
+                  rating={el?.rating}
+                  city={el?.city}
+                  paid={el?.paid}
+                  slug={el?.slug}
+                  type={el?.type}
+                  id={el?.id}
+                  shortDescription={el?.shortDescription}
+                  price={el?.price}
+                  tags={el?.tags}
                 />
               ))}
             </div>
