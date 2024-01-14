@@ -50,12 +50,15 @@ async function Search() {
                     </div>
                   </Link>
                   <h3
-                    className="text-xl font-bold text-black sm:text-5xl"
+                    className="text-xl pt-10  font-bold text-black sm:text-5xl"
                     id="search"
                   >
                     Searching for:{" "}
                     <span className="text-sky">{searchData.searchInput}</span>
                   </h3>
+                  <p className="text-gray-400 mt-4">
+                    There are no results for this query{" "}
+                  </p>
                 </section>
               </>
             ) : (
@@ -110,7 +113,7 @@ async function Search() {
               ))}
             </section>
             {/* <Pagination /> */}
-            <div className="mt-32 divider">
+            <div className="mt-10 divider">
               <span className="text-xl">Some of our suggestions</span>
             </div>
             <BottomAssets />

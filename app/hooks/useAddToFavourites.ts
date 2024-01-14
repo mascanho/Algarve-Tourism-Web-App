@@ -11,16 +11,23 @@ const useAddToFavourites = create<FavouriteProps>((set) => ({
   favourites: [],
   addFavourite(data: any) {
     set((state: any) => {
-      const existingItem = state.favourites.find(
-        (item: any) => item.id === data.id,
+      const existingItem = state?.favourites?.find(
+        (item: any) => item.id === data.id
       );
 
       if (existingItem) {
         toast.error("Already added to favourites");
         return state;
       } else {
+        // Local storage
+        localStorage.setItem(
+          "favourites",
+          JSON.stringify([data, ...state?.favourites])
+        );
         toast.success("Added to favourites");
-        console.log(state);
+
+        const storage = localStorage.getItem("favourites");
+        const parsedStorage = JSON.parse(storage || "[]");
       }
 
       return {
@@ -29,10 +36,16 @@ const useAddToFavourites = create<FavouriteProps>((set) => ({
     });
   },
   removeFavourite(id: number) {
-    set((state) => ({
-      favourites: state.favourites.filter((item) => item.id !== id),
-    }));
-    console.log("Removing: ", id);
+    set((state) => {
+      const favourites = state.favourites.filter((item) => item.id !== id);
+
+      localStorage.setItem("favourites", JSON.stringify([...favourites]));
+
+      return {
+        ...state,
+        favourites,
+      };
+    });
   },
 }));
 

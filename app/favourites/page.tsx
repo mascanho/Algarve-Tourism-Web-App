@@ -93,24 +93,24 @@ function page() {
   };
 
   const rows = favourites.map((element: any) => (
-    <tr key={element.title}>
+    <tr key={element?.title}>
       <td className="flex items-center space-x-2 ">
         <div className="w-12 h-12 rounded-full mr-2">
           <img
             className="w-12 h-12 rounded-full flex"
-            src={element.image}
+            src={element?.image}
             alt="image"
           />
         </div>
-        {element.title}
+        {element?.title}
       </td>
       <td>{element.city}</td>
       <td className="text-left">
-        <Rating value={element.rating} />
+        <Rating value={element?.rating} />
       </td>
-      <td>{element.price}</td>
+      <td>{element?.price}</td>
       <td>
-        <Link href={`${element?.type[0]}/${element?.slug}`}>
+        <Link href={`${element?.type}/${element?.slug}`}>
           <button className="border px-3 py-1 hiddenRow">view</button>
         </Link>
       </td>
@@ -193,22 +193,23 @@ function page() {
             </>
           ) : (
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gridFavs mt-10 sm:gap-x-4 gap-y-4 w-full">
-              {favourites.map((el: any) => (
-                <CardFavs
-                  title={el.title}
-                  image={el.image}
-                  key={el.title}
-                  rating={el.rating}
-                  city={el.city}
-                  paid={el.paid}
-                  slug={el.slug}
-                  type={el.type}
-                  id={el.id}
-                  shortDescription={el.shortDescription}
-                  price={el.price}
-                  tags={el.tags}
-                />
-              ))}
+              {favourites > 0 &&
+                favourites.map((el: any) => (
+                  <CardFavs
+                    title={el.title}
+                    image={el.image}
+                    key={el.title}
+                    rating={el.rating}
+                    city={el.city}
+                    paid={el.paid}
+                    slug={el.slug}
+                    type={el.type}
+                    id={el.id}
+                    shortDescription={el.shortDescription}
+                    price={el.price}
+                    tags={el.tags}
+                  />
+                ))}
             </div>
           )}
         </div>
@@ -227,7 +228,7 @@ function page() {
                 ) : (
                   <>
                     <input
-                      className="h-10 rounded-l-md bg-white border p-2 text-black "
+                      className="h-10 rounded-md bg-white border p-2 text-black "
                       type="email"
                       name="email"
                       placeholder="Email..."

@@ -31,6 +31,7 @@ export const Card = ({
   embededMap,
   mapShare,
   price,
+  shortDescription,
   id,
 }: any) => {
   const addFav = useAddToFavourites();
@@ -60,6 +61,7 @@ export const Card = ({
       mapShare,
       id,
       price,
+      shortDescription,
       type,
       pathname: window?.location?.href,
     };
