@@ -16,10 +16,10 @@ export const favouritesEmail = (email: any, favourites: any) => {
   let images = "";
   favourites.map((favourite: any) => {
     // listItems += `<li style="display: flex; margin: 10px; 0; align-items: center; text-align: left"><img style="text-align: left; border-radius: 4px; margin-right: 6px;" src="https:${favourite.image}" alt="${favourite.title}" width="40" height="40" /> ${favourite.title} - <span style="font-weight: 500; margin-left: 2px">${favourite.city}</span></li> `;
-    listItems += ` <a href={"${favourite?.pathname}"}>
+    listItems += `
+<a href={"${favourite?.pathname}"} style="text-decoration: none; color: inherit;">
 <li style="display:flex;align-items:center;text-align:left;list-style:none;padding:0;margin:10px;width:100%"><img style="border-radius:4px;margin-right:6px" src="https:${favourite.image}" alt="${favourite.title}" width="40" height="40"><div style="display:flex;flex-direction:row;width:100%"><span style="font-weight:200;margin-bottom:2px">${favourite.title}</span>-<span style="font-weight:500; margin-left: 4px">${favourite.city}</span></div></li>
-</a>
-`;
+</a>`;
   });
 
   return `

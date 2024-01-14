@@ -20,15 +20,14 @@ import { FaSpinner } from "react-icons/fa";
 import FavMobileCard from "./components/FavMobileCard";
 
 function page() {
-  const { favourites, addFavourite, removeFavourite }: any =
-    useAddToFavourites();
+  const [favourites, setFavourites] = useState<any[]>([]);
   const [changeTable, setChangeTable]: any = useState(false);
   const [userEmail, setUserEmail]: any = useState("");
   const [loading, setLoading]: any = useState(false);
   const [sendEmail, setSendEmail] = useState(false);
   const session = useSession();
   const loginModal = useLoginModalStore();
-  const { width, height } = useWindowSize();
+  const { removeFavourite } = useAddToFavourites();
 
   useEffect(() => {
     document.title = "Algarve Wonders - Your Favourites";
@@ -40,7 +39,26 @@ function page() {
       document.head.appendChild(link);
     }
     link.href = "/images/icon.png";
-  });
+
+    // Initialization logic outside the store creation
+    if (typeof window !== "undefined") {
+      const favourites = localStorage?.getItem("favourites");
+      if (favourites) {
+        useAddToFavourites.setState({ favourites: JSON.parse(favourites) });
+        setFavourites(JSON.parse(favourites));
+      }
+    }
+  }, []);
+
+  const removeFavouriteGlobal = (id: number) => {
+    // Remove the favorite from the local state
+    const updatedFavourites = favourites.filter((fav) => fav.id !== id);
+    removeFavourite(id);
+    setFavourites(updatedFavourites);
+
+    // Update local storage
+    localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
+  };
 
   const sendFavEmail = async () => {
     if (userEmail.length < 1) {
@@ -92,8 +110,8 @@ function page() {
     });
   };
 
-  const rows = favourites.map((element: any) => (
-    <tr key={element?.title} suppressHydrationWarning>
+  const rows = favourites?.map((element: any) => (
+    <tr key={element?.title} suppressHydrationWarning={true}>
       <td className="flex items-center space-x-2 ">
         <div className="w-12 h-12 rounded-full mr-2">
           <img
@@ -104,7 +122,7 @@ function page() {
         </div>
         {element?.title}
       </td>
-      <td>{element.city}</td>
+      <td>{element?.city}</td>
       <td className="text-left">
         <Rating value={element?.rating} />
       </td>
@@ -116,14 +134,17 @@ function page() {
       </td>
       <td>
         <AiFillDelete
-          onClick={() => removeFavourite(element.id)}
+          onClick={() => removeFavouriteGlobal(element?.id)}
           className="hover:text-red-500 cursor-pointer hiddenRow"
         />
       </td>
     </tr>
   ));
   return (
-    <section className="max-w-7xl mx-auto w-11/12">
+    <section
+      className="max-w-7xl mx-auto w-11/12"
+      suppressHydrationWarning={true}
+    >
       <div className="relative justify-center overflow-hidden bg-cover bg-blend-multiply ">
         <div className="w-full favBanner hidden sm:flex">
           <img
@@ -170,7 +191,7 @@ function page() {
           {!changeTable ? (
             <>
               <Table
-                suppressHydrationWarning
+                suppressHydrationWarning={true}
                 className="table-normal overflow-auto mt-10 hidden sm:inline-table"
                 fontSize={14}
               >
@@ -184,7 +205,7 @@ function page() {
                     <th className="hiddenRow">Remove</th>
                   </tr>
                 </thead>
-                <tbody suppressHydrationWarning>{rows}</tbody>
+                <tbody suppressHydrationWarning={true}>{rows}</tbody>
               </Table>
               <div className="mt-10 sm:hidden grid grid-col-1 gap-y-6">
                 {favourites.map((el: any) => (
@@ -215,7 +236,7 @@ function page() {
         </div>
       </div>
       <div className="w-full flex justify-center mt-20" id="sendEmail">
-        <form action="submit">
+        <form action="submit" className="w-full">
           {sendEmail &&
             (session.status === "authenticated" ? (
               <div className="flex flex-col">
@@ -228,16 +249,16 @@ function page() {
                 ) : (
                   <>
                     <input
-                      className="h-10 rounded-md bg-white border p-2 text-black "
+                      className="h-10 max-w-sm w-full mx-auto rounded-md bg-white border p-2 text-black"
                       type="email"
                       name="email"
-                      placeholder="Email..."
+                      placeholder="Email your favourites"
                       onChange={(e) => setUserEmail(e.target.value)}
                       required
                       value={userEmail}
                     />
                     <button
-                      className="hiddenRow block mt-6 w-44  btn m-auto text-sm sm:text-base disabled:text-gray-400 disabled:cursor-not-allowed hover:text-white z-10"
+                      className="hiddenRow block mt-6 w-44 sm:w-52  btn m-auto text-sm sm:text-base disabled:text-gray-400 disabled:cursor-not-allowed hover:text-white z-10"
                       type="button"
                       disabled={!favourites.length}
                       onClick={sendFavEmail}
