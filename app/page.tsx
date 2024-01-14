@@ -20,6 +20,7 @@ import { cache } from "react";
 import Link from "next/link";
 import UsefullLinks from "@/components/UsefullLinks";
 import Agenda from "@/components/Agenda";
+import MosaicCategories from "@/components/MosaicCategories";
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -195,12 +196,18 @@ export default async function Home(props: any) {
       {/* <section className="hidden sm:block w-11/12 max-w-7xl"> */}
       {/*   <AffixScrollToTop /> */}
       {/* </section> */}
-      <section className="animate-fade-in">
+      <section className="animate-fade-in pb-10">
         <AlgarveSpecs />
       </section>
-      <section className="my-20 max-w-7xl mx-auto w-11/12 ">
+
+      {/* Mosaic  */}
+
+      <section className="animate-fade-in sm: my-10 max-w-7xl w-11/12 m-auto">
+        <MosaicCategories categories={categories} />
+      </section>
+      <section className="sm:mb-20 max-w-7xl mx-auto w-11/12  mt-20">
         <h3 className="text-2xl">Useful links</h3>
-        <hr className="w-16 transition-all ease-in mt-2 delay-100  group-hover:w-11/12 hover:rounded-full   bg-sky h-1 rounded-full " />
+        <hr className="w-32 transition-all ease-in mt-2 delay-100  group-hover:w-11/12 hover:rounded-full   bg-sky h-1 rounded-full " />
         <div className="mt-8">
           <UsefullLinks />
         </div>
