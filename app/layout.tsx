@@ -8,14 +8,15 @@ import "react-toastify/dist/ReactToastify.css";
 import getCurrentUser from "./libs/getCurrentUser";
 import { ToasterProvider } from "./providers/ToasterProvider";
 import { NextAuthProvider } from "./providers/AuthProvider";
-import { getSession } from "next-auth/react";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: {
     default: "Algarve Wonders - The Best Hidden Gems in The Algarve",
     template: "%s | Algarve Wonders",
   },
-  description: "The place to find the best places in the Algarve",
+  description:
+    "Search, save and share the best hidden gems the Algarve has to offer. All in one place. Hassle free.",
   robots: {
     index: true,
     follow: true,
@@ -76,6 +77,7 @@ export default async function RootLayout({
             {children}
           </ClientOnly>
           <Footer />
+          <GoogleTagManager gtmId="GTM-MHX7R9FF" />
         </body>
       </NextAuthProvider>
     </html>
