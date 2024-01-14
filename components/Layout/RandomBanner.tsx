@@ -71,7 +71,7 @@ function RandomBanner({ categories }: any) {
       return array.filter((item) => {
         return searchValues.some((searchValue) => {
           return item.fields.type.some((val: any) =>
-            String(val).includes(searchValue),
+            String(val).includes(searchValue)
           );
         });
       });
@@ -83,7 +83,7 @@ function RandomBanner({ categories }: any) {
 
     const arrSelected = searchResult.slice(
       0,
-      Math.floor(daysSelected * totalPlacesPerDays),
+      Math.floor(daysSelected * totalPlacesPerDays)
     );
 
     setFinalChoice(arrSelected);
@@ -118,6 +118,7 @@ function RandomBanner({ categories }: any) {
         mapShare: finalChoice[i]?.fields?.mapShare,
         price: finalChoice[i]?.fields?.price,
         id: finalChoice[i]?.fields?.title,
+        shortDescription: finalChoice[i]?.fields?.shortDescription,
       };
       addFav.addFavourite(favorites);
     }
