@@ -23,7 +23,7 @@ function BlogCarousel({ items }: any) {
 
   return (
     <Carousel
-      withIndicators
+      // withIndicators
       height={200}
       dragFree
       slideGap="md"

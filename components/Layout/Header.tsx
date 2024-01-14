@@ -36,20 +36,6 @@ const Header = ({ currentUser, weatherData }: any) => {
     signOut();
   };
 
-  // On load check the localstorage and retrieve the favourites
-  useEffect(() => {
-    const storedFavourites = localStorage.getItem("favourites");
-    if (storedFavourites) {
-      const parsedFavourites = JSON.parse(storedFavourites);
-      console.log(parsedFavourites, "from local storage");
-
-      // remove the objects from the array and add them to the favourites
-      parsedFavourites.forEach((item: any) => {
-        favourites.addFavourite(item);
-      });
-    }
-  }, []);
-
   // Modals using Zustand
   const loginModal = useLoginModalStore();
   const registeredModal = useRegisteredModalStore();
