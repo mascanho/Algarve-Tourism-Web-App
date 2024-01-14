@@ -129,7 +129,7 @@ input[type="text"] {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 
 /* Track */

@@ -26,15 +26,15 @@ function FavMobileCard({
   const { removeFavourite } = useAddToFavourites();
 
   return (
-    <Card shadow="sm" padding="lg" radius="md" withBorder>
+    <Card shadow="sm" padding="lg" className="flex justify-between" withBorder>
       <Card.Section component="a" href="https://mantine.dev/">
-        <Image src={image} height={160} alt={title} />
+        <Image src={image} height={180} alt={title} />
       </Card.Section>
 
-      <Group className="flex  justify-between mb-1" mt="md">
-        <Text fw={500}>{title}</Text>
-        <Rating value={rating} fractions={2} className="" readOnly size="xs" />
-      </Group>
+      <section className="flex mt-4 justify-between items-center space-y-1">
+        <Group className="">{title}</Group>
+        <Rating value={rating} fractions={2} readOnly />
+      </section>
       <section className="flex justify-between space-x-6 pb-1 mt-1 items-center">
         <Group className="flex font-normal  text-gray-400">
           <IoLocation className="w-4 h-4 -ml-1" />
@@ -44,7 +44,7 @@ function FavMobileCard({
           {price}
         </Badge>
       </section>
-      <Divider my={"md"} />
+      <Divider my={"sm"} />
       <Text size="sm" c="dimmed" className="text-black font-thin">
         {shortDescription}
       </Text>
