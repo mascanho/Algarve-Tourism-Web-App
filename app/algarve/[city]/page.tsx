@@ -219,7 +219,7 @@ async function page(props: any) {
           </h2>
           <div className="richText">{whatToDo}</div>
         </div>
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-x-4 w-full gap-y-10 pt-5 sm:max-w-5xl m-0 place-content-between place-items-stretch md:gap-x-7">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-col-4 gap-x-4 w-full gap-y-10 pt-5 sm:max-w-5xl m-0 place-content-between place-items-stretch md:gap-x-7">
           {cityImages.length === 0
             ? null
             : filteredCity
