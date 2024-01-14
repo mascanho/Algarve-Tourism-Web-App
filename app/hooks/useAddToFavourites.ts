@@ -27,9 +27,7 @@ const useAddToFavourites = create<FavouriteProps>((set) => ({
       }
 
       const updatedFavourites = [data, ...state.favourites];
-      if (typeof window !== "undefined") {
-        localStorage?.setItem("favourites", JSON.stringify(updatedFavourites));
-      }
+      localStorage?.setItem("favourites", JSON.stringify(updatedFavourites));
 
       return {
         favourites: updatedFavourites,
@@ -41,9 +39,8 @@ const useAddToFavourites = create<FavouriteProps>((set) => ({
       const updatedFavourites = state.favourites.filter(
         (item) => item.id !== id
       );
-      if (typeof window !== "undefined") {
-        localStorage?.setItem("favourites", JSON.stringify(updatedFavourites));
-      }
+      localStorage?.setItem("favourites", JSON.stringify(updatedFavourites));
+
       return {
         favourites: updatedFavourites,
       };
@@ -52,11 +49,8 @@ const useAddToFavourites = create<FavouriteProps>((set) => ({
 }));
 
 // Initialization logic outside the store creation
-if (typeof window !== "undefined") {
-  const storedFavourites = JSON.parse(
-    localStorage?.getItem("favourites") || "[]"
-  );
-  useAddToFavourites.setState({ favourites: storedFavourites });
-}
-
+const storedFavourites = JSON.parse(
+  localStorage?.getItem("favourites") || "[]"
+);
+useAddToFavourites.setState({ favourites: storedFavourites });
 export default useAddToFavourites;

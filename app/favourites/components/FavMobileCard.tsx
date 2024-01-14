@@ -26,14 +26,14 @@ function FavMobileCard({
   const { removeFavourite } = useAddToFavourites();
 
   return (
-    <Card shadow="sm" padding="lg" className="flex justify-between" withBorder>
+    <Card shadow="sm" padding="lg" withBorder>
       <Card.Section component="a" href="https://mantine.dev/">
         <Image src={image} height={180} alt={title} />
       </Card.Section>
 
       <section className="flex mt-4 justify-between items-center space-y-1">
         <Group className="">{title}</Group>
-        <Rating value={rating} fractions={2} readOnly />
+        <Rating value={rating} fractions={2} readOnly size="xs" />
       </section>
       <section className="flex justify-between space-x-6 pb-1 mt-1 items-center">
         <Group className="flex font-normal  text-gray-400">
