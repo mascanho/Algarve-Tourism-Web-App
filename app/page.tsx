@@ -18,6 +18,8 @@ import Features from "@/components/Features";
 import AlgarveSpecs from "@/components/AlgarveSpecs";
 import { cache } from "react";
 import Link from "next/link";
+import UsefullLinks from "@/components/UsefullLinks";
+import Agenda from "@/components/Agenda";
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -48,7 +50,7 @@ const getCategoriesCached = cache(
     });
 
     return await res.items;
-  },
+  }
 );
 
 const cities = cityArr;
@@ -58,22 +60,22 @@ export default async function Home(props: any) {
 
   // Filter restaurants from all the categories
   const restaurants = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("restaurants"),
+    (cat: any) => cat.fields.type && cat.fields.type.includes("restaurants")
   );
 
   // filter beaches from all the PopularCategories
   const beaches = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("beaches"),
+    (cat: any) => cat.fields.type && cat.fields.type.includes("beaches")
   );
 
   // filter adventure from all the PopularCategories
   const adventure = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("adventure"),
+    (cat: any) => cat.fields.type && cat.fields.type.includes("adventure")
   );
 
   // filter all events from PopularCategories
   const events = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("events"),
+    (cat: any) => cat.fields.type && cat.fields.type.includes("events")
   );
 
   return (
@@ -193,8 +195,29 @@ export default async function Home(props: any) {
       {/* <section className="hidden sm:block w-11/12 max-w-7xl"> */}
       {/*   <AffixScrollToTop /> */}
       {/* </section> */}
-      <section className="mb-40 animate-fade-in">
+      <section className="animate-fade-in">
         <AlgarveSpecs />
+      </section>
+      <section className="my-20 max-w-7xl mx-auto w-11/12 ">
+        <h3 className="text-2xl">Useful links</h3>
+        <hr className="w-16 transition-all ease-in mt-2 delay-100  group-hover:w-11/12 hover:rounded-full   bg-sky h-1 rounded-full " />
+        <div className="mt-8">
+          <UsefullLinks />
+        </div>
+      </section>
+      <section className="my-20 max-w-7xl mx-auto w-11/12 ">
+        <h3 className="text-2xl">Agenda</h3>
+        <hr className="w-20 transition-all ease-in mt-2 delay-100  group-hover:w-11/12 hover:rounded-full   bg-sky h-1 rounded-full " />
+        <div className="mt-8 w-full justify-center">
+          <Agenda />{" "}
+          <Link href="/events" className="w-full">
+            <div className="justify-center w-full my-16 flex">
+              <button className="border mx-auto rounded-md px-4 w-fit py-2">
+                See all events
+              </button>
+            </div>
+          </Link>
+        </div>
       </section>
     </>
   );
