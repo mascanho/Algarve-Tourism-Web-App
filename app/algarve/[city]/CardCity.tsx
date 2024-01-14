@@ -14,7 +14,7 @@ const CardCity = ({
   console.log(type, slug, "from the card city");
   return (
     <Link href={`/${type || "algarve"}/${slug || route}`}>
-      <div className="card sm:w-[100%] sm:h-52 md:w-11/12 lg:w-[360px] lg:h-64 xl:w-[380px] xl:h-64 lg:h-60 sm:h-72 mx-auto bg-base-100 shadow-xl  overflow-hidden group">
+      <div className="card sm:w-[100%] sm:h-52 md:w-11/12 lg:w-[360px] lg:h-64 xl:w-[320px] xl:h-64  lg:h-60 sm:h-72 mx-auto bg-base-100 shadow-xl  overflow-hidden group">
         <div className=" h-12 p-4  text-left sm:w-full w-full">
           <h2 className="card-title text-left w-full text-gray-300 group-hover:text-white text-sm">
             {title || name}

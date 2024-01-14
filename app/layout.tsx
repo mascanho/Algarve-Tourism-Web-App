@@ -66,9 +66,6 @@ export default async function RootLayout({
 
   const weatherData = await getWeatherData();
 
-  const session = await getSession();
-  console.log(session, "000000000000000000000000000000000000");
-
   return (
     <html lang="en">
       <NextAuthProvider>
