@@ -8,8 +8,8 @@
 }
 
 .itemIcon {
-  padding: var(--mantine-spacing-xs);
-  margin-right: var(--mantine-spacing-md);
+  padding: 1em;
+  margin-right: 0.3em;
 }
 
 .itemTitle {
@@ -42,5 +42,5 @@
   padding-top: 0;
   border-radius: var(--mantine-radius-sm);
   display: inline-block;
-  color: light-dark(inherit, var(--mantine-color-white));
+  color: white;
 }

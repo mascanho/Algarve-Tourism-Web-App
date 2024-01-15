@@ -21,6 +21,7 @@ import Link from "next/link";
 import UsefullLinks from "@/components/UsefullLinks";
 import Agenda from "@/components/Agenda";
 import MosaicCategories from "@/components/MosaicCategories";
+import BottomCarousel from "@/components/Layout/BottomCarousel";
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -225,6 +226,9 @@ export default async function Home(props: any) {
             </div>
           </Link>
         </div>
+      </section>
+      <section className="max-w-7xl w-11/12 mx-auto sm:pt-20 pb-20">
+        <BottomCarousel categories={categories} />
       </section>
     </>
   );

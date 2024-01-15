@@ -1,0 +1,11 @@
+.title {
+  font-weight: 900;
+  color: white;
+  line-height: 1.2;
+  font-size: rem(32px);
+  cursor: default;
+}
+
+.mantine-Carousel-control {
+  display: none;
+}

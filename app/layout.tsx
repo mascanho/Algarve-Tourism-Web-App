@@ -1,6 +1,6 @@
+import "@mantine/carousel/esm/index";
 import Header from "@/components/Layout/Header";
 import "./globals.css";
-// import "@mantine/spotlight/styles.css";
 import Footer from "@/components/Layout/Footer";
 import type { Metadata, Viewport } from "next";
 import ClientOnly from "@/components/ClientOnly";

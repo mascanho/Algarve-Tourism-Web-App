@@ -22,7 +22,9 @@ const Agenda = () => {
               <span className="text-[10px] font-thin">
                 10 de jan a 16 de jan 2024
               </span>
-              <p>Feira de Vakantiebeurs</p>
+              <p className="group-hover:text-black transition ease-in delay-100">
+                Feira de Vakantiebeurs
+              </p>
             </div>
           </Link>
         </section>
