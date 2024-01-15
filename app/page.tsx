@@ -213,6 +213,9 @@ export default async function Home(props: any) {
           <UsefullLinks />
         </div>
       </section>
+
+      {/* Agenda  */}
+
       <section className="my-20 max-w-7xl mx-auto w-11/12 ">
         <h3 className="text-2xl">Agenda</h3>
         <hr className="w-20 transition-all ease-in mt-2 delay-100  group-hover:w-11/12 hover:rounded-full   bg-sky h-1 rounded-full " />

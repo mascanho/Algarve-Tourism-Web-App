@@ -6,6 +6,21 @@ const MosaicCategories = ({ categories }: any) => {
   // return the categories randomized in a grid
   const randomCategories = categories.sort(() => Math.random() - 0.5);
 
+  const items = categories.slice(0).map((cat: any) => {
+    const titleWithoutEmoji = cat?.fields?.title.replace(/\p{Emoji}/gu, "");
+
+    return {
+      title: titleWithoutEmoji,
+      image: cat?.fields?.images.map((img: any) => img?.fields?.file?.url),
+      city: cat?.fields?.city,
+      description: cat?.fields?.shortDescription,
+      rating: cat?.fields?.rating,
+      price: cat?.fields?.price,
+      type: cat?.fields?.type,
+      slug: cat?.fields?.slug,
+    };
+  });
+
   return (
     <div className="grid grid-cols-4 grid-rows-1 gap-2 sm:gap-4 mx-auto">
       <div className="col-span-2">

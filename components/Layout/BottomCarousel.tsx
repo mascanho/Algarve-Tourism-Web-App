@@ -44,7 +44,7 @@ function Card({
         backgroundBlendMode: "multiply",
         backgroundColor: "rgba(0, 0, 0, 0.5)",
       }}
-      className="h-full w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+      className="h-[300px] sm:h-full w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
     >
       <div className="">
         <div className="flex items-center justify-between">
@@ -113,8 +113,8 @@ function BottomCarousel({ categories }: { categories: string[] }) {
   return (
     <Carousel
       // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-      className={classes}
-      slideSize={"23.333333%"}
+      className="w-full"
+      slideSize={mobile ? "63.333333%" : "23.333333%"}
       slideGap={"md"}
       align="start"
       slidesToScroll={mobile ? 1 : 1}
