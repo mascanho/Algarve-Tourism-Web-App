@@ -142,3 +142,7 @@ input[type="text"] {
 ::-webkit-scrollbar-thumb {
   @apply bg-sky rounded-xl;
 }
+
+.bottomCarousel .mantine-vcl0d1 {
+  @apply sm:flex hidden flex -top-12 justify-end w-11/12 mx-auto space-x-2 !important;
+}

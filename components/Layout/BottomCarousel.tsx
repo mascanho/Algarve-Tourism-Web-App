@@ -44,14 +44,11 @@ function Card({
         backgroundBlendMode: "multiply",
         backgroundColor: "rgba(0, 0, 0, 0.5)",
       }}
-      className="car h-[300px] sm:h-full w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+      className="h-[300px] sm:h-full w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
     >
-      <div className="">
-        <div className="flex items-center justify-between">
-          <Text
-            className="text-white/50 sm:mb-1 uppercase font-semibold"
-            size="xs"
-          >
+      <div className="w-full">
+        <div className="flex items-center justify-between w-full">
+          <Text className="text-white/50  uppercase font-semibold" size="xs">
             {city}
           </Text>
           <Text size={"xs"} className="flex items-center text-xs">
@@ -68,15 +65,15 @@ function Card({
         <Title order={3} className={classes.title}>
           {title}
         </Title>
-        <Text className="text-white/50 mt-2 text-xs line-clamp-3">
-          {description}
-        </Text>
+        {/* <Text className="text-white/50 mt-2 text-xs line-clamp-3"> */}
+        {/*   {description} */}
+        {/* </Text> */}
         <Rating value={rating} size="xs" readOnly className="mt-2" />
       </div>
       <div>
         <Link href={`/${type}/${slug}`} className="w-full h-full">
           <Button variant="white" className="bg-white" color="dark">
-            Read more
+            View {type}
           </Button>
         </Link>
       </div>
@@ -85,8 +82,6 @@ function Card({
 }
 
 function BottomCarousel({ categories }: { categories: string[] }) {
-  console.log(categories);
-
   const items = categories.map((cat: any) => {
     const titleWithoutEmoji = cat?.fields?.title.replace(/\p{Emoji}/gu, "");
 
@@ -113,13 +108,14 @@ function BottomCarousel({ categories }: { categories: string[] }) {
   return (
     <Carousel
       // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-      // className={classes}
+      className="bottomCarousel mt-10"
       slideSize={mobile ? "63.333333%" : "23.333333%"}
       slideGap={"md"}
-      align="start"
+      // align="start"
       slidesToScroll={mobile ? 1 : 1}
       height={300}
-      withControls={mobile ? false : true}
+      // withControls={mobile ? false : true}
+      // withControls={false}
       // loop
       initialSlide={1}
     >

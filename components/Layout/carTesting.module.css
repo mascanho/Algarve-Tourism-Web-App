@@ -1,0 +1,23 @@
+.control {
+  &[data-inactive] {
+    opacity: 0;
+    cursor: default;
+  }
+}
+
+.carousel {
+  display: none;
+}
+
+.fuck {
+  .mantine-vcl0d1 {
+    display: none;
+  }
+}
+.mantine-Carousel-controls {
+  display: none;
+}
+
+.car {
+  display: none;
+}

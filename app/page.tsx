@@ -22,6 +22,7 @@ import UsefullLinks from "@/components/UsefullLinks";
 import Agenda from "@/components/Agenda";
 import MosaicCategories from "@/components/MosaicCategories";
 import BottomCarousel from "@/components/Layout/BottomCarousel";
+import Testing from "@/components/Layout/CarTesting";
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -190,6 +191,18 @@ export default async function Home(props: any) {
           subTitle="If you don't want to walk here are a few options for you"
         />
       </section>
+      {/* Algarve Specs */}
+      <section className="animate-fade-in pb-10">
+        <AlgarveSpecs />
+      </section>
+      {/* Bottom Carousel */}
+      <section className=" mx-auto sm:pt-20 pb-20">
+        <h4 className="max-w-7xl pb-10 mx-auto w-11/12 text-4xl text-center font-semibold text-black">
+          More to explore
+        </h4>
+        <BottomCarousel categories={categories} />
+      </section>
+      {/* Frequently asked questions */}
       <section className="w-11/12 md:max-w-7xl mx-auto space-y-8 animate-fade-in mb-20">
         <h4 className="text-xl">Frequently asked questions</h4>
         <Acordion />
@@ -197,42 +210,31 @@ export default async function Home(props: any) {
       {/* <section className="hidden sm:block w-11/12 max-w-7xl"> */}
       {/*   <AffixScrollToTop /> */}
       {/* </section> */}
-      <section className="animate-fade-in pb-10">
-        <AlgarveSpecs />
-      </section>
-
-      {/* Mosaic  */}
-
-      <section className="animate-fade-in sm: my-10 max-w-7xl w-11/12 m-auto">
-        <MosaicCategories categories={categories} />
-      </section>
-      <section className="sm:mb-20 max-w-7xl mx-auto w-11/12  mt-20">
+      {/* Good To Know */}
+      <section className="sm:mb-40 max-w-7xl mx-auto w-11/12  mt-20">
         <h3 className="text-2xl">Useful links</h3>
         <hr className="w-32 transition-all ease-in mt-2 delay-100  group-hover:w-11/12 hover:rounded-full   bg-sky h-1 rounded-full " />
         <div className="mt-8">
           <UsefullLinks />
         </div>
       </section>
-
       {/* Agenda  */}
-
-      <section className="my-20 max-w-7xl mx-auto w-11/12 ">
-        <h3 className="text-2xl">Agenda</h3>
-        <hr className="w-20 transition-all ease-in mt-2 delay-100  group-hover:w-11/12 hover:rounded-full   bg-sky h-1 rounded-full " />
-        <div className="mt-8 w-full justify-center">
-          <Agenda />{" "}
-          <Link href="/events" className="w-full">
-            <div className="justify-center w-full my-16 flex">
-              <button className="border mx-auto rounded-md px-4 w-fit py-2">
-                See all events
-              </button>
-            </div>
-          </Link>
-        </div>
-      </section>
-      <section className="max-w-7xl w-11/12 mx-auto sm:pt-20 pb-20">
-        <BottomCarousel categories={categories} />
-      </section>
+      {/**/}
+      {/* <section className="my-20 max-w-7xl mx-auto w-11/12 "> */}
+      {/*   <h3 className="text-2xl">Agenda</h3> */}
+      {/*   <hr className="w-20 transition-all ease-in mt-2 delay-100  group-hover:w-11/12 hover:rounded-full   bg-sky h-1 rounded-full " /> */}
+      {/*   <div className="mt-8 w-full justify-center"> */}
+      {/*     <Agenda />{" "} */}
+      {/*     <Link href="/events" className="w-full"> */}
+      {/*       <div className="justify-center w-full my-16 flex"> */}
+      {/*         <button className="border mx-auto rounded-md px-4 w-fit py-2"> */}
+      {/*           See all events */}
+      {/*         </button> */}
+      {/*       </div> */}
+      {/*     </Link> */}
+      {/*   </div> */}
+      {/*    */}
+      {/* </section> */}
     </>
   );
 }
