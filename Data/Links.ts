@@ -34,11 +34,7 @@ export const usefulLinks = [
     title: "Ria Formosa Natural Park",
     link: "https://www.icnf.pt/portal/ap/rnf/rnf",
   },
-  {
-    id: 9,
-    title: "Top Algarve Beaches",
-    link: "https://www.algarvetips.com/algarve-beaches/",
-  },
+
   {
     id: 10,
     title: "Sagres Fortress",

@@ -42,7 +42,7 @@ function Card({
           image[Math.floor(Math.random()) * image.length]
         })`,
         backgroundBlendMode: "multiply",
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        backgroundColor: "rgba(0, 0, 0, 0.3)",
       }}
       className="h-[300px] sm:h-full w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
     >
@@ -85,6 +85,27 @@ function BottomCarousel({ categories }: { categories: string[] }) {
   const items = categories.map((cat: any) => {
     const titleWithoutEmoji = cat?.fields?.title.replace(/\p{Emoji}/gu, "");
 
+    // Ensure originalText is a string before using replace
+    let newType;
+    if (
+      cat?.fields?.type[0] === "beaches" ||
+      cat?.fields?.type[0] === "events" ||
+      cat?.fields?.type[0] === "adventures" ||
+      cat?.fields?.type[0] === "sports" ||
+      cat?.fields?.type[0] === "events"
+    ) {
+      newType = cat?.fields?.type[0].replace(/s$/, "");
+
+      if (cat?.fields?.type[0] === "beaches") {
+        newType = "beach";
+      }
+    } else {
+      newType = cat?.fields?.type[0].replace(/s$/, "");
+    }
+    if (cat?.fields?.type[0] === "sports") {
+      newType = cat?.fields?.type[0].replace(/s$/, "");
+    }
+
     return {
       title: titleWithoutEmoji,
       image: cat?.fields?.images.map((img: any) => img?.fields?.file?.url),
@@ -92,7 +113,7 @@ function BottomCarousel({ categories }: { categories: string[] }) {
       description: cat?.fields?.shortDescription,
       rating: cat?.fields?.rating,
       price: cat?.fields?.price,
-      type: cat?.fields?.type,
+      type: newType,
       slug: cat?.fields?.slug,
     };
   });

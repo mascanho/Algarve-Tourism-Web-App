@@ -196,7 +196,7 @@ export default async function Home(props: any) {
         <AlgarveSpecs />
       </section>
       {/* Bottom Carousel */}
-      <section className=" mx-auto sm:pt-20 pb-20">
+      <section className=" mx-auto sm:pt-20 pb-28">
         <h4 className="max-w-7xl pb-10 mx-auto w-11/12 text-4xl text-center font-semibold text-black">
           More to explore
         </h4>

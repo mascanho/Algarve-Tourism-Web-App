@@ -28,7 +28,7 @@ const Hero = ({ categories }: any) => {
     <>
       <div
         className={`sm:hidden  animate-fade bg-[url('https://gretastravels.com/wp-content/uploads/2021/09/DSC_0911.jpg.webp')] 
- overflow-hidden  bg-blend-multiply bg-black/60  bg-cover h-screen`}
+ overflow-hidden  bg-blend-multiply bg-black/60  bg-cover bg-fixed h-screen`}
       />
       <div
         className={` hidden sm:block animate-fade overflow-hidden  bg-cover bg-fixed bg-blend-multiply bg-black/70  h-screen`}
