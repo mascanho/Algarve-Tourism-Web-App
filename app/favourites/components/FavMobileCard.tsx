@@ -11,6 +11,7 @@ import {
 } from "@mantine/core";
 import { IoLocation } from "react-icons/io5";
 import Link from "next/link";
+import { useEffect } from "react";
 
 function FavMobileCard({
   title,
@@ -22,8 +23,9 @@ function FavMobileCard({
   id,
   city,
   shortDescription,
+  removeFavouriteGlobal,
 }: any) {
-  const { removeFavourite } = useAddToFavourites();
+  // const { removeFavourite } = useAddToFavourites();
 
   return (
     <Card shadow="sm" padding="lg" withBorder>
@@ -56,7 +58,7 @@ function FavMobileCard({
           </button>
         </Link>
         <button
-          onClick={() => removeFavourite(id)}
+          onClick={() => removeFavouriteGlobal(id)}
           className="px-3  bg-red-500 py-2  rounded-lg text-white font-semibold"
         >
           Delete

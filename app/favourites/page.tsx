@@ -29,6 +29,15 @@ function page() {
   const loginModal = useLoginModalStore();
   const { removeFavourite } = useAddToFavourites();
 
+  const removeFavouriteGlobal = (id: number) => {
+    // Remove the favorite from the local state
+    const updatedFavourites = favourites.filter((fav) => fav.id !== id);
+    removeFavourite(id);
+    setFavourites(updatedFavourites);
+
+    // Update local storage
+    localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
+  };
   useEffect(() => {
     document.title = "Algarve Wonders - Your Favourites";
     let link: HTMLLinkElement | null =
@@ -48,17 +57,7 @@ function page() {
         setFavourites(JSON.parse(favourites));
       }
     }
-  }, []);
-
-  const removeFavouriteGlobal = (id: number) => {
-    // Remove the favorite from the local state
-    const updatedFavourites = favourites.filter((fav) => fav.id !== id);
-    removeFavourite(id);
-    setFavourites(updatedFavourites);
-
-    // Update local storage
-    localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
-  };
+  }, [removeFavourite]);
 
   const sendFavEmail = async () => {
     if (userEmail.length < 1) {
@@ -209,7 +208,11 @@ function page() {
               </Table>
               <div className="mt-10 sm:hidden grid grid-col-1 gap-y-6">
                 {favourites.map((el: any) => (
-                  <FavMobileCard key={el.title} {...el} />
+                  <FavMobileCard
+                    key={el.title}
+                    {...el}
+                    removeFavouriteGlobal={removeFavouriteGlobal}
+                  />
                 ))}
               </div>
             </>
@@ -229,6 +232,7 @@ function page() {
                   shortDescription={el?.shortDescription}
                   price={el?.price}
                   tags={el?.tags}
+                  removeFavouriteGlobal={removeFavouriteGlobal}
                 />
               ))}
             </div>

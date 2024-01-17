@@ -16,6 +16,7 @@ const CardFavs = ({
   rating,
   paid,
   id,
+  removeFavouriteGlobal,
 }: any) => {
   const { removeFavourite } = useAddToFavourites();
 
@@ -26,7 +27,7 @@ const CardFavs = ({
           {title || "name"}
         </h2>
         <AiFillDelete
-          onClick={() => removeFavourite(id)}
+          onClick={() => removeFavouriteGlobal(id)}
           className="group-hover:text-red-500 absolute bottom-4 right-4 cursor-pointer"
         />
       </div>
