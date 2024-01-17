@@ -15,34 +15,20 @@ function Feedback({ name, job, rating, review, image }: any) {
 
   return (
     <Carousel
-      slideSize={mobile ? "70%" : "48%"}
-      loop
-      slidesToScroll={mobile ? 1 : 2}
-      align={mobile ? "center" : "center"}
-      slideGap={mobile ? "sm" : "xl"}
+      align={mobile ? "start" : "start"}
+      slideSize={mobile ? "100%" : "23%"}
+      slideGap={mobile ? "" : "xl"}
       nextControlIcon={<IconArrowRight />}
       previousControlIcon={<IconArrowLeft />}
-      // style={{ flex: 1 }}
-      plugins={[autoplay.current]}
-      onMouseEnter={autoplay.current.stop}
-      onMouseLeave={autoplay.current.reset}
-      className="flex items-center"
+      // className="flex items-center"
       withControls={mobile ? false : false}
+      plugins={[autoplay.current]}
     >
       {quotes.map((q: any) => (
-        <Carousel.Slide key={q.id} className="mb-5">
-          <div className="w-full max-w-md py-4 mt-4 bg-white rounded-lg border  mx-auto  sm:h-fit">
-            {/* <div className="flex justify-center  md:justify-end"> */}
-            {/*   <img */}
-            {/*     className="object-cover w-14 h-14 border-2 border-blue-500 rounded-full dark:border-blue-400 absolute bottom-0" */}
-            {/*     alt="Testimonial avatar" */}
-            {/*     src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=76&q=80" */}
-            {/*   /> */}
-            {/* </div> */}
-            <Blockquote className="text-gray-300 text-sm" cite={q.name}>
-              {q.review}
-            </Blockquote>
-          </div>
+        <Carousel.Slide key={q.review} className="w-full">
+          <Blockquote cite={q.name} className="border rounded-md">
+            {q.review}
+          </Blockquote>
         </Carousel.Slide>
       ))}
     </Carousel>

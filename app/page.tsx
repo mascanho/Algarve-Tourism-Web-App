@@ -141,7 +141,7 @@ export default async function Home(props: any) {
             and hidden gems in the south of Portugal
           </h4>
         </div>
-        <section className=" sm:w-3/4 mx-auto ">
+        <section className="w-11/12 sm:w-full mx-auto">
           <Feedback {...quotes} />
         </section>
         <section
