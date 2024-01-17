@@ -30,6 +30,7 @@ function Card({
   rating,
   price,
   slug,
+  singleName,
   type,
 }: any) {
   return (
@@ -73,7 +74,7 @@ function Card({
       <div>
         <Link href={`/${type}/${slug}`} className="w-full h-full">
           <Button variant="white" className="bg-white" color="dark">
-            View {type}
+            View {singleName}
           </Button>
         </Link>
       </div>
@@ -113,8 +114,9 @@ function BottomCarousel({ categories }: { categories: string[] }) {
       description: cat?.fields?.shortDescription,
       rating: cat?.fields?.rating,
       price: cat?.fields?.price,
-      type: newType,
+      type: cat?.fields?.type,
       slug: cat?.fields?.slug,
+      singleName: newType,
     };
   });
 

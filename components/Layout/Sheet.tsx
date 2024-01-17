@@ -1,8 +1,6 @@
 import { useDisclosure } from "@mantine/hooks";
 import { Drawer } from "@mantine/core";
 import { HiMenuAlt2 } from "react-icons/hi";
-import { IconXboxX } from "@tabler/icons-react";
-import NavbarNested from "./NavbarNestedMenu";
 import NavLinks from "./NavLinks";
 import { cityArr } from "@/Data/Cities";
 import { catArr } from "@/Data/Categories";
@@ -18,11 +16,11 @@ function Sheet() {
   const router = useRouter();
 
   return (
-    <section className="flex">
+    <section className="flex justify-between">
       <Drawer
         opened={opened}
         onClose={close}
-        title="Menu"
+        title=""
         overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
         size="15em"
         position="left"
@@ -31,7 +29,18 @@ function Sheet() {
         }}
       >
         {/* Sheet content */}
-        <section className="space-y-4">
+        <section className="space-y-4  overflow-hidden  flex-grow">
+          <div className="py-1">
+            <button
+              onClick={() => {
+                router.push("/#aigenerate");
+                close();
+              }}
+              className="border px-3 py-2 w-full border-sky"
+            >
+              AI Generate
+            </button>
+          </div>
           <div
             className="flex items-center mb-2"
             onClick={() => {

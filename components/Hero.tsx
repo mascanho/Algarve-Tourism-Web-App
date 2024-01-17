@@ -43,10 +43,10 @@ const Hero = ({ categories }: any) => {
           Algarve&apos;s Travel Guide
         </h1>
         <div className=" rounded-lg w-7/12 mx-auto p-2 hidden sm:block">
-          <h2 className="hidden sm:block  mx-auto rounded-sm  text-white ">
+          <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12  text-white ">
             Discover the breathtaking beauty of the Algarve! The ultimate guide
             to the region&apos;s top tourism attractions and less known hidden
-            gems 💎
+            gems
           </h2>
         </div>
         <h2 className="sm:hidden w-9/12 mx-auto sm:w-10/12 text-white rounded-sm sm:p-0 mt-4 sm:mt-0 sm:max-w-lg text-white/60 sm:pt-2">

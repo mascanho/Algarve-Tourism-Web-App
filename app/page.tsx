@@ -141,20 +141,13 @@ export default async function Home(props: any) {
             and hidden gems in the south of Portugal
           </h4>
         </div>
-        <section className="grid sm:grid-cols-3 gap-y-6 mx-auto justify-items-center">
-          {quotes.map((review: any) => (
-            <Feedback
-              key={review.id}
-              id={review.id}
-              name={review.name}
-              job={review.job}
-              rating={review.rating}
-              review={review.review}
-              image={review.image}
-            />
-          ))}
+        <section className=" sm:w-3/4 mx-auto ">
+          <Feedback {...quotes} />
         </section>
-        <section className="pt-16 sm:pt-28 sm:pb-2 w-11/12 mx-auto">
+        <section
+          className="pt-16 sm:pt-28 sm:pb-2 w-11/12 mx-auto"
+          id="aigenerate"
+        >
           <RandomBanner categories={categories} />
           <PopularCategories
             beaches={beaches}

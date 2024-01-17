@@ -27,7 +27,8 @@ const LinksSubMenu = ({ data, close }: any) => {
           component="a"
           href={item.href}
           key={item.name}
-          className="text-gray-400 pl-2 mb-3 flex items-center mr-1 rounded-md transition duration-300 ease-in-out"
+          size="lg"
+          className="text-gray-400 pl-2 mb-3 flex items-center mr-1 rounded-md transition duration-300 ease-in-out text-lg"
           onClick={() => {
             if (cityArr.map((c: any) => c.route).includes(item.route)) {
               router.push("/algarve/" + item.route);
