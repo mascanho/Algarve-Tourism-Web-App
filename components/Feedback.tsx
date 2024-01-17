@@ -26,7 +26,10 @@ function Feedback({ name, job, rating, review, image }: any) {
     >
       {quotes.map((q: any) => (
         <Carousel.Slide key={q.review} className="w-full">
-          <Blockquote cite={q.name} className="border rounded-md">
+          <Blockquote
+            cite={q.name}
+            className="border rounded-md text-sm text-gray-400"
+          >
             {q.review}
           </Blockquote>
         </Carousel.Slide>
