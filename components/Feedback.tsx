@@ -15,10 +15,10 @@ function Feedback({ name, job, rating, review, image }: any) {
 
   return (
     <Carousel
-      slideSize={mobile ? "70%" : "38%"}
+      slideSize={mobile ? "70%" : "48%"}
       loop
       slidesToScroll={mobile ? 1 : 2}
-      align={mobile ? "start" : "center"}
+      align={mobile ? "center" : "center"}
       slideGap={mobile ? "sm" : "xl"}
       nextControlIcon={<IconArrowRight />}
       previousControlIcon={<IconArrowLeft />}
@@ -31,7 +31,7 @@ function Feedback({ name, job, rating, review, image }: any) {
     >
       {quotes.map((q: any) => (
         <Carousel.Slide key={q.id} className="mb-5">
-          <div className="w-full max-w-md py-4 mt-4 bg-white rounded-lg   mx-auto  sm:h-fit">
+          <div className="w-full max-w-md py-4 mt-4 bg-white rounded-lg border  mx-auto  sm:h-fit">
             {/* <div className="flex justify-center  md:justify-end"> */}
             {/*   <img */}
             {/*     className="object-cover w-14 h-14 border-2 border-blue-500 rounded-full dark:border-blue-400 absolute bottom-0" */}
