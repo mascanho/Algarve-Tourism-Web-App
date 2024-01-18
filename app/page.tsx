@@ -23,7 +23,8 @@ import Agenda from "@/components/Agenda";
 import MosaicCategories from "@/components/MosaicCategories";
 import BottomCarousel from "@/components/Layout/BottomCarousel";
 import Testing from "@/components/Layout/CarTesting";
-
+import GenericCarousel from "@/components/Layout/CarouselGeneric";
+import StaticDataCarousel from "@/components/Layout/StaticDataCarousel";
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
   description: "The Best Place To Find The Hidden Gems In Algarve",
@@ -56,8 +57,6 @@ const getCategoriesCached = cache(
   }
 );
 
-const cities = cityArr;
-
 export default async function Home(props: any) {
   const categories = await getCategoriesCached();
 
@@ -80,6 +79,9 @@ export default async function Home(props: any) {
   const events = categories.filter(
     (cat: any) => cat.fields.type && cat.fields.type.includes("events")
   );
+
+  // Filter the cities
+  const cities = cityArr;
 
   return (
     <>
@@ -145,7 +147,7 @@ export default async function Home(props: any) {
           <Feedback {...quotes} />
         </section>
         <section
-          className="pt-16 sm:pt-28 sm:pb-2 w-11/12 mx-auto"
+          className="pt-16 sm:pt-28 sm:pb-2 w-11/12 sm:w-full mx-auto"
           id="aigenerate"
         >
           <RandomBanner categories={categories} />
@@ -156,34 +158,36 @@ export default async function Home(props: any) {
           />
         </section>
       </section>
-      <section className="mx-auto animate-fade-in ">
-        <CarouselHero
-          categories={categories}
-          title="What to do"
-          subTitle="Start today and discover the best of the south of Portugal"
-        />
+
+      {/* Generic Carousel  */}
+
+      <section className="mx-auto animate-fade-in mt-20 ">
+        <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
+          What to do
+        </h2>
+        <GenericCarousel categories={categories} />
       </section>
-      <section className="mx-auto animate-fade-in ">
-        <CarouselHero
-          cities={cities}
-          title="Cities to visit"
-          subTitle="Amazing cities waiting for you to start your next adventure"
-        />
+      <section className="mx-auto animate-fade-in mt-20 ">
+        <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
+          Cities to visit
+        </h2>
+        <StaticDataCarousel categories={cities} />
       </section>
-      <section className="mx-auto animate-fade-in">
-        <CarouselHero
-          restaurants={restaurants}
-          title="Best places to eat"
-          subTitle="Dine on the best traditional restaurtants and taste the real mediterranean diet"
-        />
+
+      <section className="mx-auto animate-fade-in mt-20 ">
+        <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
+          Restaurants
+        </h2>
+        <GenericCarousel categories={restaurants} />
       </section>
-      <section className="mx-auto animate-fade-in pb-20 ">
-        <CarouselHero
-          carRentals={carRentals}
-          title="Rent the best cars"
-          subTitle="If you don't want to walk here are a few options for you"
-        />
+
+      <section className="mx-auto animate-fade-in mt-20 mb-14 sm:mb-32 ">
+        <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
+          Car Rentals
+        </h2>
+        <StaticDataCarousel categories={carRentals} />
       </section>
+
       {/* Algarve Specs */}
       <section className="animate-fade-in pb-10">
         <AlgarveSpecs />
@@ -211,23 +215,6 @@ export default async function Home(props: any) {
           <UsefullLinks />
         </div>
       </section>
-      {/* Agenda  */}
-      {/**/}
-      {/* <section className="my-20 max-w-7xl mx-auto w-11/12 "> */}
-      {/*   <h3 className="text-2xl">Agenda</h3> */}
-      {/*   <hr className="w-20 transition-all ease-in mt-2 delay-100  group-hover:w-11/12 hover:rounded-full   bg-sky h-1 rounded-full " /> */}
-      {/*   <div className="mt-8 w-full justify-center"> */}
-      {/*     <Agenda />{" "} */}
-      {/*     <Link href="/events" className="w-full"> */}
-      {/*       <div className="justify-center w-full my-16 flex"> */}
-      {/*         <button className="border mx-auto rounded-md px-4 w-fit py-2"> */}
-      {/*           See all events */}
-      {/*         </button> */}
-      {/*       </div> */}
-      {/*     </Link> */}
-      {/*   </div> */}
-      {/*    */}
-      {/* </section> */}
     </>
   );
 }
