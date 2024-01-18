@@ -107,7 +107,7 @@ function GenericCarousel({ categories }: { categories: any[] }) {
   return (
     <Carousel
       // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-      className="bottomCarousel mt-10"
+      className="bottomCarousel mt-10 overflow-hidden"
       slideSize={mobile ? "63.333333%" : "23.333333%"}
       slideGap={"md"}
       // align="start"

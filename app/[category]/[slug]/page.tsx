@@ -10,6 +10,8 @@ import getReviews from "@/app/libs/getReviews";
 import { IoArrowBack } from "react-icons/io5";
 import Link from "next/link";
 import GenericCarousel from "@/components/Layout/CarouselGeneric";
+import { Carousel } from "@mantine/carousel";
+import Suggestions from "./_components/Suggestions";
 
 // export const metadata: Metadata = {
 //   title: "Home",
@@ -38,9 +40,9 @@ export default async function Home(props: any, req: any) {
   const reviewsArr = await getReviews();
 
   const filteredData: any = data.filter((obj: any) => obj.fields.slug === slug);
-  const recomended: any = data.filter(
-    (obj: any) => obj.fields.type === category
-  );
+  const recomended: any = data.filter((obj: any) => obj.fields.slug !== slug);
+
+  console.log(recomended, "00000000000000000");
 
   return (
     <>
@@ -112,14 +114,20 @@ export default async function Home(props: any, req: any) {
           />
         </div>
 
-        <section className="mx-auto w-11/12 sm:w-full py-10">
-          <Link href={`/${category}`} className="text-sm text-sky">
-            <button type="button" className="flex items-center ">
-              <IoArrowBack className="mr-1" />
-              back to {category}
-            </button>
-          </Link>
+        <section className="overflow-hidden w-full pt-20">
+          <h3 className="text-black mb-10 font-semibold text-4xl">
+            Other {category}
+          </h3>
+          <Suggestions recomended={recomended} />
         </section>
+      </section>
+      <section className="mx-auto w-11/12 sm:w-full py-10 overflow-hidden">
+        <Link href={`/${category}`} className="text-sm text-sky">
+          <button type="button" className="flex items-center ">
+            <IoArrowBack className="mr-1" />
+            back to {category}
+          </button>
+        </Link>
       </section>
     </>
   );
