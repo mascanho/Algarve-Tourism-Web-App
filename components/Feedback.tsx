@@ -15,7 +15,7 @@ function Feedback({ name, job, rating, review, image }: any) {
 
   return (
     <Carousel
-      align={mobile ? "start" : "start"}
+      align={mobile ? "start" : "center"}
       slideSize={mobile ? "100%" : "23%"}
       slideGap={mobile ? "" : "xl"}
       nextControlIcon={<IconArrowRight />}
