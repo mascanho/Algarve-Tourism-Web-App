@@ -9,6 +9,7 @@ import StarRating from "@/components/Layout/StarRating";
 import getReviews from "@/app/libs/getReviews";
 import { IoArrowBack } from "react-icons/io5";
 import Link from "next/link";
+import GenericCarousel from "@/components/Layout/CarouselGeneric";
 
 // export const metadata: Metadata = {
 //   title: "Home",
@@ -37,10 +38,13 @@ export default async function Home(props: any, req: any) {
   const reviewsArr = await getReviews();
 
   const filteredData: any = data.filter((obj: any) => obj.fields.slug === slug);
+  const recomended: any = data.filter(
+    (obj: any) => obj.fields.type === category
+  );
 
   return (
     <>
-      <section className=" bg-white text-left pb-16 sm:px-4 md:w-full md:px-6 lg:px-6 xl:pr-0 space-y-4  md:max-w-4xl lg:max-w-7xl lg:pl-6  mb-2 text-black">
+      <section className="overflow-hidden bg-white text-left pb-16 sm:px-4 md:w-full md:px-6 lg:px-6 xl:pr-0 space-y-4  md:max-w-4xl lg:max-w-7xl lg:pl-6  mb-2 text-black">
         <section className="w-full">
           <LeadGrid filteredData={filteredData} />
         </section>
@@ -107,6 +111,7 @@ export default async function Home(props: any, req: any) {
             reviews={reviewsArr}
           />
         </div>
+
         <section className="mx-auto w-11/12 sm:w-full py-10">
           <Link href={`/${category}`} className="text-sm text-sky">
             <button type="button" className="flex items-center ">
