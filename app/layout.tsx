@@ -68,9 +68,9 @@ export default async function RootLayout({
   const weatherData = await getWeatherData();
 
   return (
-    <html lang="en" className="overflow-x-hidden">
+    <html lang="en">
       <NextAuthProvider>
-        <body className="bg-white overflow-x-hidden">
+        <body className="bg-white ">
           <ClientOnly>
             <ToasterProvider />
             <Header currentUser={currentUser} weatherData={weatherData} />
