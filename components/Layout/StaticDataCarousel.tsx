@@ -58,7 +58,7 @@ function Card({ image, url, city, rating, price, type }: any) {
         <Title
           order={3}
           className={classes.title}
-          style={type === "city" ? { fontSize: "2rem" } : { fontSize: "" }}
+          style={type === "city" ? { fontSize: "3rem" } : { fontSize: "" }}
         >
           {city}
         </Title>
@@ -67,15 +67,13 @@ function Card({ image, url, city, rating, price, type }: any) {
         )}
       </div>
 
-      {city && (
+      {type === "city" ? (
         <Link href={`${url}`}>
           <Button variant="white" className="bg-white" color="dark">
             View {city}
           </Button>
         </Link>
-      )}
-
-      {!(type === "city") && (
+      ) : (
         <div>
           <a href={url} className="w-full h-full">
             <ImNewTab className="w-8 h-8 text-white" />

@@ -23,6 +23,7 @@ function Feedback({ name, job, rating, review, image }: any) {
       // className="flex items-center"
       withControls={mobile ? false : false}
       plugins={[autoplay.current]}
+      loop
     >
       {quotes.map((q: any) => (
         <Carousel.Slide key={q.review} className="w-full h-full">
