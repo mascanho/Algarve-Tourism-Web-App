@@ -16,12 +16,10 @@ const LinksSubMenu = ({ data, close }: any) => {
         router.push(obj.href);
       }
     }
-
-    console.log(item);
   };
 
   return (
-    <section className="ml-3 pl-2 border-l-[1px] border-gray-200 mb-1 mt-2">
+    <section className="ml-4 pl-2 border-l-[1px] border-gray-200 mb-1 mt-2">
       {data.map((item: any) => (
         <Text
           component="a"

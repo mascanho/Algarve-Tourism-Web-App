@@ -123,8 +123,8 @@ function Sheet({ showMobileBurger, favourites }: any) {
         onClick={open}
       >
         <HiMenuAlt2
-          className={`text-2xl transition duration-500 ease-in ${
-            showMobileBurger && "rotate-180"
+          className={`text-2xl transition-all duration-500 ease-in ${
+            showMobileBurger && "animate-fade"
           }`}
         />
       </span>

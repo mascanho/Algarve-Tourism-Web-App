@@ -24,6 +24,13 @@ const Selection = ({ text }: any) => {
     placeholder = matching.name;
   }
 
+  // when the pathname is "/"
+  if (pathname === "/") {
+    // Add your code here for when the pathname is "/"
+    // ...
+    placeholder = "Select your category";
+  }
+
   return (
     <>
       <div className="items-center justify-between hidden w-10/12 pb-10 m-auto space-x-3 sm:flex max-w-7xl sm:w-full ">

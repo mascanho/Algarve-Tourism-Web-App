@@ -18,7 +18,7 @@ function Footer() {
 
       // Check if the distance is less than or equal to 200 pixels
       // and the scroll position is not within the first 200 pixels from the top
-      if (distanceFromBottom <= 200 && window.scrollY > 200) {
+      if (window.scrollY > 1000) {
         // If true, set setShowToTop to true
         setShowToTop(true);
       } else {
