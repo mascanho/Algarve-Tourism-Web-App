@@ -183,24 +183,24 @@ export default async function Home(props: any) {
 
       <section className="mx-auto animate-fade-in mt-20 mb-14 sm:mb-32 ">
         <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
-          Car Rentals
+          Car rentals
         </h2>
         <StaticDataCarousel categories={carRentals} />
       </section>
 
+      <section className=" mx-auto pt-12 pb-24 sm:pb-32">
+        <h4 className="max-w-7xl text-left sm:pb-6 mx-auto w-11/12 text-5xl  font-semibold text-black">
+          More to explore
+        </h4>
+        <BottomCarousel categories={categories} />
+      </section>
       {/* Algarve Specs */}
       <section className="animate-fade-in pb-10">
         <AlgarveSpecs />
       </section>
       {/* Bottom Carousel */}
-      <section className=" mx-auto pt-20 pb-24 sm:pb-32">
-        <h4 className="max-w-7xl text-left sm:pb-10 mx-auto w-11/12 text-4xl  font-semibold text-black">
-          More to explore
-        </h4>
-        <BottomCarousel categories={categories} />
-      </section>
       {/* Frequently asked questions */}
-      <section className="w-11/12 md:max-w-7xl mx-auto space-y-8 animate-fade-in mb-20">
+      <section className="w-11/12 md:max-w-7xl mx-auto space-y-8 animate-fade-in my-20">
         <h4 className="text-xl">Frequently asked questions</h4>
         <Acordion />
       </section>

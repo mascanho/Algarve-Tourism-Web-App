@@ -1,18 +1,6 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { createClient } from "contentful";
 import Search from "./Search";
-
-async function getAllCategories() {
-  const client: any = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID!,
-    accessToken: process?.env?.CONTENTFUL_ACCESS_TOKEN!,
-  });
-  const res = await client.getEntries();
-
-  return await res.items;
-}
 
 const IMAGES_DESKTOP = [
   "https://lp-cms-production.imgix.net/2022-05/GettyRF_1013112160.jpg?auto=format&w=1440&h=810&fit=crop&q=75",
@@ -43,7 +31,7 @@ const Hero = ({ categories }: any) => {
           Algarve&apos;s Travel Guide
         </h1>
         <div className=" rounded-lg w-7/12 mx-auto p-2 hidden sm:block">
-          <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12  text-white ">
+          <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12  text-white/70 ">
             Discover the breathtaking beauty of the Algarve! The ultimate guide
             to the region&apos;s top tourism attractions and less known hidden
             gems

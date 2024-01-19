@@ -22,7 +22,7 @@ interface CardProps {
   categories: any;
 }
 
-function Card({ image, url, city, rating, price, type }: any) {
+function Card({ image, url, city, rating, price, type, route }: any) {
   return (
     <Paper
       shadow="md"
@@ -38,8 +38,11 @@ function Card({ image, url, city, rating, price, type }: any) {
       <div className="w-full group">
         <div className="flex items-center justify-between w-full">
           {city && (
-            <Text className="text-white/50  uppercase font-semibold" size="xs">
-              {type}
+            <Text
+              className="text-white/50  uppercase font-semibold m-0"
+              size="xs"
+            >
+              {type === "city" ? "Algarve" : type}
             </Text>
           )}
           <Text size={"xs"} className="flex items-center text-xs">
@@ -68,7 +71,7 @@ function Card({ image, url, city, rating, price, type }: any) {
       </div>
 
       {type === "city" ? (
-        <Link href={`${url}`}>
+        <Link href={`/algarve/${route}`}>
           <Button variant="white" className="bg-white" color="dark">
             View {city}
           </Button>
@@ -95,6 +98,7 @@ function StaticDataCarousel({ categories }: { categories: any[] }) {
       slug: cat?.fields?.slug,
       paid: cat?.fields?.paid,
       url: cat?.url,
+      route: cat?.route,
     };
   });
 

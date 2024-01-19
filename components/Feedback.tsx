@@ -34,10 +34,12 @@ function Feedback({ name, job, rating, review, image }: any) {
                 <span className="block text-sm w-7/12 sm:w-fit sm:pl-2">
                   - {q.name}
                 </span>
-                <img
-                  src={q.image}
-                  className="w-12 p-1 h-12 -ml-4 border-sky border  rounded-full"
-                />
+                <div className="pl-6">
+                  <img
+                    src={q.image}
+                    className="w-12 p-1 h-12   border-sky border  rounded-full"
+                  />
+                </div>
               </div>
             </div>
             <div className="mt-1  w-full  py-1 rounded-r-md rounded-bl-md text-right flex items-center justify-end">
