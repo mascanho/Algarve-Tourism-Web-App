@@ -15,6 +15,7 @@ const Selection = ({ text }: any) => {
     router.push(`${route}`);
   };
 
+  // matching the placeholder of the dropdown select with the path and title of category
   let placeholder = "";
 
   const matching = catArr.find((cat) => cat.route === pathname);
