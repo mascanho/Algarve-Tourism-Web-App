@@ -160,19 +160,19 @@ function page() {
       </div>
       <div className="mt-2 mb-2 sm:mb-0 sm:mt-5 w-full ">
         <div className="flex text-xl space-x-3 w-full justify-end hiddenRow">
-          {!changeTable ? (
-            <BsGridFill
-              onClick={() => setChangeTable(!changeTable)}
-              className="cursor-pointer"
-            />
-          ) : (
-            <BsLayoutTextSidebarReverse
-              className="font-bold text-xl cursor-pointer"
-              onClick={() => setChangeTable(!changeTable)}
-            />
-          )}
+          {/* {!changeTable ? ( */}
+          {/*   <BsGridFill */}
+          {/*     onClick={() => setChangeTable(!changeTable)} */}
+          {/*     className="cursor-pointer" */}
+          {/*   /> */}
+          {/* ) : ( */}
+          {/*   <BsLayoutTextSidebarReverse */}
+          {/*     className="font-bold text-xl cursor-pointer" */}
+          {/*     onClick={() => setChangeTable(!changeTable)} */}
+          {/*   /> */}
+          {/* )} */}
           <AiOutlineMail
-            className="cursor-pointer"
+            className="cursor-pointer text-2xl"
             onClick={(e) => {
               e.preventDefault();
               const section = document.getElementById("sendEmail");
@@ -182,7 +182,7 @@ function page() {
           />
           <FiPrinter
             onClick={() => window.print()}
-            className="cursor-pointer"
+            className="cursor-pointer text-2xl"
           />
         </div>
         <div className="flex font-bold sapce-x-5 w-full justify-between pb-2 mb-10 h-full overflow-auto">

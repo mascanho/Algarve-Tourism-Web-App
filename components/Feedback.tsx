@@ -30,9 +30,15 @@ function Feedback({ name, job, rating, review, image }: any) {
           <section className="h-full pb-10 pt-8">
             <div className="bg-white pb-8 space-y-2 shadow-md rounded-l-md rounded-tr-md pt-2  relative h-full sm:w-full flex flex-col justify-between">
               <Blockquote cite={q.review} className="text-gray-600" />
-              <span className="block text-sm w-7/12 sm:w-8/12 mx-auto sm:pl-2">
-                - {q.name}
-              </span>
+              <div className="flex items-center justify-between mx-10">
+                <span className="block text-sm w-7/12 sm:w-fit sm:pl-2">
+                  - {q.name}
+                </span>
+                <img
+                  src={q.image}
+                  className="w-12 p-1 h-12 -ml-4 border-sky border  rounded-full"
+                />
+              </div>
             </div>
             <div className="mt-1  w-full  py-1 rounded-r-md rounded-bl-md text-right flex items-center justify-end">
               <div className="text-right bg-gray-600  py-1 rounded-l-md rounded-br-md px-2">
@@ -43,10 +49,6 @@ function Feedback({ name, job, rating, review, image }: any) {
                   readOnly
                 />
               </div>
-              <img
-                src={q.image}
-                className="w-12 bottom-[6.2rem] p-1 right-12 h-12 border-sky border absolute rounded-full"
-              />
             </div>
           </section>
         </Carousel.Slide>
