@@ -120,29 +120,7 @@ async function Search() {
           </section>
         </section>
         <section className="h-full mx-auto max-w-7xl">
-          <div className="my-10 text-center sm:pt-20">
-            <h2 className="text-4xl font-semibold text-black sm:text-4xl">
-              Satisfied customers
-            </h2>
-            <h4 className="w-10/12 mx-auto mt-4 sm:w-6/12">
-              See what people are talking about the fantastic locations, events
-              and hidden gems in the south of Portugal
-            </h4>
-          </div>
-          <section className="grid sm:grid-cols-3 gap-y-6">
-            {quotes.map((review: any) => (
-              <Feedback
-                key={review.id}
-                id={review.id}
-                name={review.name}
-                job={review.job}
-                rating={review.rating}
-                review={review.review}
-                image={review.image}
-              />
-            ))}
-          </section>
-          <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 pt-10">
+          <section className="w-11/12 mx-auto max-w-7xl  w-full pt-10">
             <Link href="/#search">
               <div className="flex items-center w-full space-x-1  -mt-4 mb-8 sm:mb-0 sm:mt-0">
                 <TiArrowBack />
@@ -210,19 +188,6 @@ async function Search() {
             and hidden gems in the south of Portugal
           </h4>
         </div>
-        <section className="grid sm:grid-cols-3 gap-y-6">
-          {quotes.map((review: any) => (
-            <Feedback
-              key={review.id}
-              id={review.id}
-              name={review.name}
-              job={review.job}
-              rating={review.rating}
-              review={review.review}
-              image={review.image}
-            />
-          ))}
-        </section>
         <section className="pt-16 sm:py-28">
           <div className="w-11/12 py-8 sm:py-0 mx-auto space-y-2 text-center text-white bg-sky sm:w-full rounded-xl ">
             <h4>Start exploring</h4>
