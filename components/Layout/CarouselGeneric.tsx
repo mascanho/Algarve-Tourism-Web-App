@@ -79,8 +79,6 @@ function Card({
 }
 
 function GenericCarousel({ categories }: { categories: any[] }) {
-  console.log(categories, "dehdewdewfhewjk;fwekjhf");
-
   const items = categories.map((cat: any) => {
     return {
       title: cat?.fields?.title,
