@@ -25,11 +25,13 @@ const Header = ({ currentUser, weatherData }: any) => {
   const [openLogin, setOpenLogin] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
   const favourites = useAddToFavourites();
-  const [bottomNav, setBottomNav] = useState(false);
   const [favouritesLength, setFavouritesLength] = useState(0);
   const openLoginMenu = () => {
     setOpenLogin(!openLogin);
   };
+  const [showMobileBurger, setShowMobileBurger] = useState(false);
+  const [showToTop, setShowToTop] = useState(false);
+
   const [weatherModal, setWeatherModal] = useState(false);
 
   const userLogsOut = () => {
@@ -40,24 +42,6 @@ const Header = ({ currentUser, weatherData }: any) => {
   // Modals using Zustand
   const loginModal = useLoginModalStore();
   const registeredModal = useRegisteredModalStore();
-
-  // Dynamically render the bottom Nav
-  const showBottomNav = () => {
-    if (window.scrollY > 70) {
-      console.log("bigger than 10");
-      setBottomNav(true);
-    } else {
-      console.log("smaller than 10");
-      setBottomNav(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", showBottomNav, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", showBottomNav);
-    };
-  }, []);
 
   useEffect(() => {
     setFavouritesLength(favourites.favourites.length);
@@ -74,6 +58,28 @@ const Header = ({ currentUser, weatherData }: any) => {
     }
     open();
   };
+
+  useEffect(() => {
+    // check the scroll height
+    const handleScroll = () => {
+      console.log("Scroll position:", window.scrollY);
+      if (window.scrollY > 120) {
+        console.log("Greater than 200 pixels");
+        setShowMobileBurger(true);
+      } else {
+        console.log("Less than 200 pixels");
+        setShowMobileBurger(false);
+      }
+    };
+
+    // Add scroll event listener when the component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Remove the scroll event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -96,8 +102,17 @@ const Header = ({ currentUser, weatherData }: any) => {
       >
         <div className="z-50 mx-auto navbar max-w-7xl flex justify-evenly ">
           {/* MOBILE */}
-          <section className="sm:hidden">
-            <Sheet />
+
+          <section
+            className={`sm:hidden ${
+              showMobileBurger &&
+              "fixed left-6 top-4 bg-white rounded-md pl-1 pb-1 transition-all ease-in delay-75 border"
+            }`}
+          >
+            <Sheet
+              showMobileBurger={showMobileBurger}
+              favourites={favourites}
+            />
           </section>
           <div className="flex justify-between w-full items-center">
             <Image

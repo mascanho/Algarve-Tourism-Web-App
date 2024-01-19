@@ -11,9 +11,11 @@ import { HiMagnifyingGlass } from "react-icons/hi2";
 import { MdDataArray, MdFavorite } from "react-icons/md";
 import { FaLocationCrosshairs } from "react-icons/fa6";
 
-function Sheet() {
+function Sheet({ showMobileBurger, favourites }: any) {
   const [opened, { open, close }] = useDisclosure(false);
   const router = useRouter();
+
+  console.log(favourites.favourites, "THESE I NEED");
 
   return (
     <section className="flex justify-between">
@@ -24,9 +26,6 @@ function Sheet() {
         overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
         size="15em"
         position="left"
-        closeButtonProps={{
-          icon: <HiMenuAlt2 size={20} stroke={1.5} />,
-        }}
       >
         {/* Sheet content */}
         <section className="space-y-4  overflow-hidden  flex-grow">
@@ -92,7 +91,16 @@ function Sheet() {
               className="w-8 h-8 bg-sky p-[6px]  rounded-md flex items-center justify-center text-white mr-2"
               size={16}
             />
-            <span className="my-auto">Favourites</span>
+            <span className="my-auto">
+              Favourites
+              {favourites.favourites.length > 0 ? (
+                <span className="text-sm text-gray-400 ml-2">
+                  {favourites.favourites.length}
+                </span>
+              ) : (
+                ""
+              )}
+            </span>
           </div>{" "}
           <div
             className="flex items-center mb-2"
@@ -110,8 +118,15 @@ function Sheet() {
         </section>
       </Drawer>
 
-      <span className="text-sky mt-1 mr-2" onClick={open}>
-        <HiMenuAlt2 className="text-2xl" />
+      <span
+        className="text-sky mt-1 mr-2 transition duration-500 ease-in"
+        onClick={open}
+      >
+        <HiMenuAlt2
+          className={`text-2xl transition duration-500 ease-in ${
+            showMobileBurger && "rotate-180"
+          }`}
+        />
       </span>
     </section>
   );

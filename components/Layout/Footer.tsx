@@ -1,12 +1,52 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { BsArrowUp } from "react-icons/bs";
+import { FaArrowUp } from "react-icons/fa";
+import { HiArrowUp } from "react-icons/hi2";
 
 function Footer() {
   const onlineUsers = Math.floor(Math.random() * 1000);
+  const [showToTop, setShowToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Calculate the distance from the bottom of the page
+      const distanceFromBottom =
+        document.documentElement.scrollHeight -
+        (window.scrollY + window.innerHeight);
+
+      // Check if the distance is less than or equal to 200 pixels
+      // and the scroll position is not within the first 200 pixels from the top
+      if (distanceFromBottom <= 200 && window.scrollY > 200) {
+        // If true, set setShowToTop to true
+        setShowToTop(true);
+      } else {
+        // If false, set setShowToTop to false
+        setShowToTop(false);
+      }
+    };
+
+    // Add scroll event listener when the component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Remove the scroll event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <section className="bg-black mt-20">
+        {showToTop && (
+          <HiArrowUp
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="text-5xl text-sky cursor-pointer fixed bottom-10 right-6 sm:right-10  bg-white border rounded-full p-1 py-2 transition-all ease-in-out delay-200"
+          />
+        )}
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto w-11/12 ">
           <section className="grid grid-cols-2 w-full sm:flex justify-between px-4 sm:px-0 ">
             <div className="flex flex-col space-y-1">
