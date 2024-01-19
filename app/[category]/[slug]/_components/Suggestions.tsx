@@ -17,7 +17,7 @@ function Suggestions({ recomended }: any) {
         <Carousel.Slide key={item?.fields?.title} className="mr-2 relative">
           <div
             style={{ backgroundImage: `url(${item?.fields?.mainImage})` }}
-            className={`w-full h-full relative bg-blend-multiply bg-[url(https: + ${item?.fields?.mainImage?.fields?.file?.url})] `}
+            className={`w-full  h-full relative bg-blend-multiply bg-[url(https: + ${item?.fields?.mainImage?.fields?.file?.url})] `}
           >
             <img
               src={"https:" + item?.fields?.mainImage?.fields?.file?.url}

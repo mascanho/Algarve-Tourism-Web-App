@@ -114,7 +114,7 @@ export default async function Home(props: any, req: any) {
           />
         </div>
 
-        <section className="overflow-hidden w-full pt-20">
+        <section className="overflow-hidden w-11/12 sm:full pt-20 mx-auto">
           <h3 className="text-black mb-10 font-semibold text-4xl">
             Other {category}
           </h3>
