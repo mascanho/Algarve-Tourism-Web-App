@@ -1,10 +1,8 @@
 import React from "react";
-import type { Metadata } from "next";
 import TableAccordion from "./Accordion";
 import CardCity from "./CardCity";
 import CarouselCity from "./Carrossel";
 import { createClient } from "contentful";
-import { cityArr } from "@/Data/Cities";
 import { notFound, redirect } from "next/navigation";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Link from "next/link";
@@ -166,7 +164,7 @@ async function page(props: any) {
   );
 
   const history = documentToReactComponents(
-    cities[0]?.fields?.history,
+    filteredData[0]?.fields?.history,
 
     options
   );
