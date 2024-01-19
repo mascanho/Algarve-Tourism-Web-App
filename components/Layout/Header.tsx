@@ -182,19 +182,22 @@ const Header = ({ currentUser, weatherData }: any) => {
                     />
                   </div>
                   {openLogin && (
-                    <div>
-                      <ul className="absolute z-10 w-56 p-2 text-sm bg-white border shadow-sm menu rounded-box sm:-left-24 sm:top-8 -left-40 top-8">
+                    <div className="overflow-hidden">
+                      <ul className="absolute z-10 w-36 sm:w-36 overflow-hidden p-2 text-sm bg-white border text-right shadow-sm menu rounded-box  sm:-left-12 sm:top-10 border-t-3 border-t-sky -left-24 top-10">
                         {!currentUser ? (
                           <>
-                            <li onClick={loginModal.onOpen}>
+                            <li onClick={loginModal.onOpen} className="w-full">
                               <a
                                 className="rounded-md active:bg-sky"
                                 onClick={() => setOpenLogin(!openLogin)}
                               >
-                                Sign-up / Register
+                                Sign-up
                               </a>
                             </li>
-                            <li onClick={registeredModal.onOpen}>
+                            <li
+                              onClick={registeredModal.onOpen}
+                              className="w-full"
+                            >
                               <a
                                 onClick={() => setOpenLogin(!openLogin)}
                                 className="rounded-md active:bg-sky"

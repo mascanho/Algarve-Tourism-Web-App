@@ -127,26 +127,26 @@ function RandomBanner({ categories }: any) {
   };
 
   return (
-    <div className="animate-fade-in sm:bg-[url('https://www.benoitproperties.com/wp-content/uploads/2021/07/algarve-header.png')] sm:bg-cover sm:bg-blend-multiply sm:bg-black/60 w-11/12 py-10 sm:py-16 mx-auto sm:space-y-2 text-center text-white sm:w-full rounded-xl sm:space-y-2">
-      <div className="-mt-4 sm:mt-0 space-y-2">
-        <h4 className="sm:text-2xl font-semibold text-black sm:text-white text-4xl">
+    <div className="animate-fade-in  w-fit py-10 sm:py-16 mx-auto sm:space-y-2 text-center text-white sm:w-full rounded-xl sm:space-y-2">
+      <div className="-mt-4 sm:mt-0 space-y-2 sm:space-y-6">
+        <h4 className="sm:text-5xl font-semibold text-black  text-4xl">
           Start your journey
         </h4>
-        <h3 className="text-2xl sm:text-3xl hidden sm:block text-black sm:text-white">
-          Prepare yourself and lets explore
+        <h3 className="sm:text-4xl hidden sm:block text-black text-gray-400">
+          Generate your new journey with AI
         </h3>
       </div>
       <div className="w-full flex sm:justify-center mx-auto px-2">
-        <div className="sm:space-x-8 space-y-4 mt-8 sm:mt-0 sm:-pt-4  m-auto ">
+        <div className="sm:space-x-8 space-y-4 mt-8 sm:mt-2 sm:-pt-2  m-auto ">
           <button
             onClick={handleClickRandom}
-            className="px-4 w-52 text-sm sm:w-fit sm:text-base py-2 text-black border sm:border-none  hover:text-white hover:bg-black transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
+            className="px-4 w-52 text-sm border sm:w-fit sm:text-base py-2 text-black hover:text-white hover:bg-black transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
           >
             Discover The Best Places
           </button>
           <button
             onClick={GenerateRandomChoice}
-            className="px-4 py-2 w-52 sm:w-fit text-sm sm:text-base  text-white bg-sky hover:bg-black hover:text-white transition-all ease-in delay-75 rounded-md active:scale-95"
+            className="px-8 py-2 w-52 sm:w-fit text-sm sm:text-base  text-white bg-sky hover:bg-black hover:text-white transition-all ease-in delay-75 rounded-md active:scale-95"
           >
             Generate AI Journey
           </button>
