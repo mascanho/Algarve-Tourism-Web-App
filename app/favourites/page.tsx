@@ -280,10 +280,10 @@ function page() {
                 )}
               </div>
             ) : (
-              <section className="mb-20 hiddenRow">
+              <section className="mb-20 hiddenRow mx-auto flex justify-center">
                 <button
                   onClick={() => loginModal.onOpen()}
-                  className="btn text-white"
+                  className="btn text-white mx-auto"
                   type="button"
                 >
                   Please login to send email

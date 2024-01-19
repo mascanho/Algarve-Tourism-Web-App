@@ -31,7 +31,7 @@ const Hero = ({ categories }: any) => {
  overflow-hidden  bg-blend-multiply bg-black/60  bg-cover h-screen`}
       />
       <div
-        className={` hidden sm:block animate-fade w-screen  bg-cover bg-fixed bg-blend-multiply bg-black/70  h-screen`}
+        className={` hidden sm:block animate-fade w-screen  bg-cover  bg-blend-multiply bg-black/70  h-screen`}
         style={{
           backgroundImage: `url(${
             IMAGES_DESKTOP[Math.floor(Math.random() * IMAGES_DESKTOP.length)]
