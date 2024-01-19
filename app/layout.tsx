@@ -70,7 +70,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <NextAuthProvider>
-        <body className="bg-white overflow-hidden ">
+        <body className="bg-white overflow-x-hidden ">
           <ClientOnly>
             <ToasterProvider />
             <Header currentUser={currentUser} weatherData={weatherData} />
