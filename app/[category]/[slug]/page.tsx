@@ -42,8 +42,6 @@ export default async function Home(props: any, req: any) {
   const filteredData: any = data.filter((obj: any) => obj.fields.slug === slug);
   const recomended: any = data.filter((obj: any) => obj.fields.slug !== slug);
 
-  console.log(recomended, "00000000000000000");
-
   return (
     <>
       <section className="overflow-hidden bg-white text-left pb-16 sm:px-4 md:w-full md:px-6 lg:px-6 xl:pr-0 space-y-4  md:max-w-4xl lg:max-w-7xl lg:pl-6  mb-2 text-black">

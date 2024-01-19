@@ -15,6 +15,14 @@ const Selection = ({ text }: any) => {
     router.push(`${route}`);
   };
 
+  let placeholder = "";
+
+  const matching = catArr.find((cat) => cat.route === pathname);
+
+  if (matching) {
+    placeholder = matching.name;
+  }
+
   return (
     <>
       <div className="items-center justify-between hidden w-10/12 pb-10 m-auto space-x-3 sm:flex max-w-7xl sm:w-full ">
@@ -30,12 +38,12 @@ const Selection = ({ text }: any) => {
       </div>
       <section className="flex w-full sm:hidden">
         <Select
-          className="w-full mb-8 h-[100%] rounded-none outline-none  "
-          placeholder="Select a category"
+          className="w-full mb-8 h-[100%] rounded-none outline-none"
+          placeholder={placeholder}
           data={catArr.map((cat) => cat.name)}
           onChange={(e) => goToPage(e)}
           searchable={false}
-        />{" "}
+        />
       </section>
     </>
   );

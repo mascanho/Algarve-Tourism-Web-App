@@ -30,7 +30,6 @@ const Header = ({ currentUser, weatherData }: any) => {
     setOpenLogin(!openLogin);
   };
   const [showMobileBurger, setShowMobileBurger] = useState(false);
-  const [showToTop, setShowToTop] = useState(false);
 
   const [weatherModal, setWeatherModal] = useState(false);
 
@@ -62,12 +61,9 @@ const Header = ({ currentUser, weatherData }: any) => {
   useEffect(() => {
     // check the scroll height
     const handleScroll = () => {
-      console.log("Scroll position:", window.scrollY);
       if (window.scrollY > 120) {
-        console.log("Greater than 200 pixels");
         setShowMobileBurger(true);
       } else {
-        console.log("Less than 200 pixels");
         setShowMobileBurger(false);
       }
     };
