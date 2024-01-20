@@ -59,15 +59,9 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
                   {currentUser?.name || currentUser?.email.split("@")[0]}
                 </span>
               </div>
-            )}{" "}
-            {currentUser ? (
-              <button
-                onClick={handleLogout}
-                className="border px-3 py-1 w-full border-gray-100 bg-gray-700 rounded-full text-xs text-white"
-              >
-                Logout
-              </button>
-            ) : (
+            )}
+
+            {!currentUser && (
               <button
                 onClick={handleLogin}
                 className="border px-3 py-2 w-full border-gray-100 bg-gray-700 rounded-full text-sm text-white"
@@ -75,6 +69,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
                 Login
               </button>
             )}
+
             {/* <button */}
             {/*   onClick={() => { */}
             {/*     router.push("/#aigenerate"); */}
@@ -161,6 +156,14 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
             />
             <span className="my-auto">Blog</span>
           </div>{" "}
+          <Divider my="md" />
+          <div>
+            {currentUser && (
+              <span className="mt-4" onClick={handleLogout}>
+                Logout
+              </span>
+            )}
+          </div>
         </section>
       </Drawer>
 
