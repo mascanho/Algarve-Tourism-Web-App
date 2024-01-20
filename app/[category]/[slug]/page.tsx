@@ -64,7 +64,7 @@ export default async function Home(props: any, req: any) {
           <div className="flex justify-between space-y-6 sm:space-y-2 w-full sm:pt-4  items-end ">
             <div className="sm:flex md:block lg:flex items-center mt-2 sm:mt-0">
               <div>
-                <h1 className="text-2xl sm:text-3xl text-sky w-auto font-semibold min-w-fit sm:mr-4">
+                <h1 className="text-2xl sm:text-4xl text-sky w-auto font-semibold min-w-fit sm:mr-4">
                   {filteredData[0]?.fields?.title}
                 </h1>
               </div>
@@ -112,14 +112,14 @@ export default async function Home(props: any, req: any) {
           />
         </div>
 
-        <section className="overflow-hidden w-11/12 sm:full pt-20 mx-auto">
+        <section className="overflow-hidden w-11/12 sm:w-full pt-20 mx-auto">
           <h3 className="text-black mb-10 font-semibold text-4xl">
             Other {category}
           </h3>
           <Suggestions recomended={recomended} />
         </section>
       </section>
-      <section className="mx-auto w-11/12 sm:w-full py-10 overflow-hidden">
+      <section className="mx-auto w-11/12 sm:w-full  py-10 overflow-hidden">
         <Link href={`/${category}`} className="text-sm text-sky">
           <button type="button" className="flex items-center ">
             <IoArrowBack className="mr-1" />
