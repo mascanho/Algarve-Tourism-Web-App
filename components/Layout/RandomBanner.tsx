@@ -213,6 +213,7 @@ function RandomBanner({ categories }: any) {
                         <img
                           src={item?.fields?.mainImage?.fields?.file?.url}
                           className="w-8 h-8 rounded-full bg-sky  mr-2"
+                          loading="lazy"
                         />
                         {item?.fields?.title}
                       </div>

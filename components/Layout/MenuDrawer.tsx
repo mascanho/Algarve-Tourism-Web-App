@@ -1,16 +1,25 @@
+"use client";
 import { Drawer } from "vaul";
 
 import React from "react";
 import { HiBars3 } from "react-icons/hi2";
+import {
+  useLoginModalStore,
+  useRegisteredModalStore,
+} from "@/app/hooks/useLoginModal";
 
-const MenuDrawer = () => {
+const MenuDrawer = ({ currentUser }: any) => {
+  const loginModal = useLoginModalStore();
+  const registeredModal = useRegisteredModalStore();
+
+  console.log(currentUser);
+
   return (
     <Drawer.Root>
       <Drawer.Trigger asChild>
         <button>
           <HiBars3 className="sm:hidden  ml-1 mr-1 cursor-pointer active:scale-90" />{" "}
         </button>
-        <button>Open Drawer</button>
       </Drawer.Trigger>
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/40" />
@@ -21,28 +30,23 @@ const MenuDrawer = () => {
               <Drawer.Title className="font-medium mb-4">
                 Unstyled drawer for React.
               </Drawer.Title>
-              <p className="text-zinc-600 mb-2">
-                This component can be used as a replacement for a Dialog on
-                mobile and tablet devices.
-              </p>
-              <p className="text-zinc-600 mb-8">
-                It uses{" "}
-                <a
-                  href="https://www.radix-ui.com/docs/primitives/components/dialog"
-                  className="underline"
-                  target="_blank"
-                >
-                  Radix&rsquo;s Dialog primitive
-                </a>{" "}
-                under the hood and is inspired by{" "}
-                <a
-                  href="https://twitter.com/devongovett/status/1674470185783402496"
-                  className="underline"
-                  target="_blank"
-                >
-                  this tweet.
-                </a>
-              </p>
+
+              {currentUser ? (
+                <p>Logout</p>
+              ) : (
+                <div>
+                  <p className="text-zinc-600 mb-2" onClick={loginModal.onOpen}>
+                    Sign In{" "}
+                  </p>
+
+                  <p
+                    className="text-zinc-600 mb-8"
+                    onClick={registeredModal.onOpen}
+                  >
+                    Sign In
+                  </p>
+                </div>
+              )}
             </div>
           </div>
           <div className="p-4 bg-zinc-100 border-t border-zinc-200 mt-auto pb-8">

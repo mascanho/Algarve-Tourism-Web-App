@@ -1,5 +1,5 @@
 import { useDisclosure } from "@mantine/hooks";
-import { Drawer } from "@mantine/core";
+import { Divider, Drawer } from "@mantine/core";
 import { HiMenuAlt2 } from "react-icons/hi";
 import NavLinks from "./NavLinks";
 import { cityArr } from "@/Data/Cities";
@@ -10,12 +10,29 @@ import { FaBook, FaBookOpen, FaHeartbeat, FaHome } from "react-icons/fa";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { MdDataArray, MdFavorite } from "react-icons/md";
 import { FaLocationCrosshairs } from "react-icons/fa6";
+import { toast } from "react-hot-toast";
+import { signOut } from "next-auth/react";
+import {
+  useLoginModalStore,
+  useRegisteredModalStore,
+} from "@/app/hooks/useLoginModal";
 
-function Sheet({ showMobileBurger, favourites }: any) {
+function Sheet({ showMobileBurger, favourites, currentUser }: any) {
   const [opened, { open, close }] = useDisclosure(false);
   const router = useRouter();
+  const loginModal = useLoginModalStore();
+  const registerModal = useRegisteredModalStore();
 
-  console.log(favourites.favourites, "THESE I NEED");
+  const handleLogout = () => {
+    close();
+    toast.success("Logging you out... bye!");
+    signOut();
+  };
+
+  const handleLogin = () => {
+    close();
+    registerModal.onOpen();
+  };
 
   return (
     <section className="flex justify-between">
@@ -28,18 +45,47 @@ function Sheet({ showMobileBurger, favourites }: any) {
         position="left"
       >
         {/* Sheet content */}
-        <section className="space-y-4  overflow-hidden  flex-grow">
-          <div className="py-1">
-            <button
-              onClick={() => {
-                router.push("/#aigenerate");
-                close();
-              }}
-              className="border px-3 py-2 w-full border-sky"
-            >
-              AI Generate
-            </button>
+        <section className="space-y-4  overflow-hidden  flex-grow h-[100%] min-h-[600px]">
+          <div className="py-1 space-y-2">
+            {!currentUser ? (
+              ""
+            ) : (
+              <div className="flex items-center space-x-2  px-2">
+                <img
+                  src={currentUser?.image}
+                  className="w-9 h-9 rounded-full"
+                />
+                <span>
+                  {currentUser?.name || currentUser?.email.split("@")[0]}
+                </span>
+              </div>
+            )}{" "}
+            {currentUser ? (
+              <button
+                onClick={handleLogout}
+                className="border px-3 py-1 w-full border-gray-100 bg-gray-700 rounded-full text-xs text-white"
+              >
+                Logout
+              </button>
+            ) : (
+              <button
+                onClick={handleLogin}
+                className="border px-3 py-2 w-full border-gray-100 bg-gray-700 rounded-full text-sm text-white"
+              >
+                Login
+              </button>
+            )}
+            {/* <button */}
+            {/*   onClick={() => { */}
+            {/*     router.push("/#aigenerate"); */}
+            {/*     close(); */}
+            {/*   }} */}
+            {/*   className="border px-3 py-2 w-full border-sky" */}
+            {/* > */}
+            {/*   AI Generate */}
+            {/* </button> */}
           </div>
+          <Divider my="md" />
           <div
             className="flex items-center mb-2"
             onClick={() => {

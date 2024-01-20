@@ -109,6 +109,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             <Sheet
               showMobileBurger={showMobileBurger}
               favourites={favourites}
+              currentUser={currentUser}
             />
           </section>
           <div className="flex justify-between w-full items-center">
@@ -182,10 +183,9 @@ const Header = ({ currentUser, weatherData }: any) => {
                 <div className="relative flex">
                   <HiBars3
                     className="hidden sm:inline ml-1 mr-1 cursor-pointer active:scale-90"
-                    className="hidden sm:inline-flex  ml-1 mr-1 cursor-pointer active:scale-90"
                     onClick={openLoginMenu}
                   />{" "}
-                  <MenuDrawer />
+                  <MenuDrawer currentUser={currentUser} />
                   <div className="relative flex" suppressHydrationWarning>
                     <span className="absolute -top-1 -right-1 text-[8px] bg-sky text-white rounded-full w-3 h-3 flex justify-center items-center text-center">
                       {favouritesLength}
@@ -234,7 +234,7 @@ const Header = ({ currentUser, weatherData }: any) => {
                       </ul>
                     </div>
                   )}
-                </HiBars3>
+                </div>
               </div>
             </section>
           </div>
