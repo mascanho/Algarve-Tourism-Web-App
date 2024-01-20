@@ -15,21 +15,30 @@ const Hero = ({ categories }: any) => {
   return (
     <>
       <div
+        style={{
+          backgroundImage: `url(https://gretastravels.com/wp-content/uploads/2021/09/DSC_0911.jpg.webp)`,
+          width: "100vw",
+          height: "100vh",
+          backgroundSize: "fit",
+          backgroundPosition: "center",
+        }}
         className={`sm:hidden  animate-fade bg-[url('https://gretastravels.com/wp-content/uploads/2021/09/DSC_0911.jpg.webp')] 
- overflow-hidden  bg-blend-multiply bg-black/60  w-screen  bg-fixed h-screen`}
+ overflow-x-hidden  bg-blend-multiply bg-black/60  w-screen  bg-fixed h-screen`}
       />
       <div
-        className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed w-screen  bg-cover  bg-blend-multiply bg-black/70  h-screen`}
+        className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed bg-cover  bg-blend-multiply bg-black/70  h-dvh`}
         style={{
           backgroundImage: `url(${IMAGES_DESKTOP[1]})`,
+          width: "100vw",
+          height: "100vh",
         }}
       />
       <section className="mx-auto w-full sm:h-screen space-y-2 flex flex-col justify-center text-center m-auto absolute top-64  sm:top-2 md:top-0 ">
         <h1 className="mx-auto text-5xl font-bold text-center text-white sm:text-8xl ">
           Algarve&apos;s Travel Guide
         </h1>
-        <div className=" rounded-lg w-7/12 sm:w-full mx-auto p-2 hidden sm:block">
-          <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12 sm:w-10/12 lg:w-2/4 px-4  text-white/70 ">
+        <div className=" rounded-lg w-7/12 sm:w-fit mx-auto p-2 hidden sm:block">
+          <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12 sm:w-10/12 lg:w-2/4 px-4  text-white/70  ">
             Discover the breathtaking beauty of the Algarve! The ultimate guide
             to the region&apos;s top tourism attractions and less known hidden
             gems

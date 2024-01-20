@@ -6,9 +6,21 @@
   background-color: white;
 } */
 
-html {
-  scroll-behavior: smooth;
+* {
+  box-sizing: border-box;
 }
+
+/* *, */
+/* html, */
+/* body { */
+/*   margin: 0; */
+/*   padding: 0; */
+/* } */
+
+/* html { */
+/*   scroll-behavior: smooth; */
+/*   scrollbar-gutter: stable; */
+/* } */
 
 .mantine-Carousel-control {
   background-color: white;

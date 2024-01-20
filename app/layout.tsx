@@ -68,18 +68,18 @@ export default async function RootLayout({
   const weatherData = await getWeatherData();
 
   return (
-    <html lang="en" className="scroll-smooth overflow-x-hidden">
+    <html lang="en" className="scroll-smooth">
       <NextAuthProvider>
-        <body className="bg-white overflow-x-hidden ">
+        <body className="bg-white  ">
           <ClientOnly>
             <ToasterProvider />
-            <div className="sm:pb-14 overflow-x-hidden">
+            <div className="sm:pb-14">
               <Header currentUser={currentUser} weatherData={weatherData} />
             </div>
             {children}
           </ClientOnly>
-          <Footer />
           <GoogleTagManager gtmId="GTM-MHX7R9FF" />
+          <Footer />
         </body>
       </NextAuthProvider>
     </html>

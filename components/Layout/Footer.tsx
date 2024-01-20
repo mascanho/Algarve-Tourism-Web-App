@@ -38,16 +38,17 @@ function Footer() {
 
   return (
     <>
-      <section className="bg-black mt-20">
-        {showToTop && (
-          <HiArrowUp
-            onClick={() => {
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            className="text-5xl text-sky cursor-pointer fixed bottom-10 right-6 sm:right-10  bg-white border rounded-full p-1 py-2 transition-all ease-in-out delay-200"
-          />
-        )}
-        <footer className="footer  py-10 text-base-content max-w-7xl mx-auto w-11/12 ">
+      {showToTop && (
+        <HiArrowUp
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="text-5xl text-sky cursor-pointer fixed bottom-10 right-6 sm:right-10  bg-white border rounded-full p-1 py-2 transition-all ease-in-out delay-200"
+        />
+      )}
+
+      <section className="bg-black mt-20 overflow-x-hidden w-full">
+        <footer className="footer  py-10 text-base-content max-w-7xl mx-auto w-11/12 overflow-x-hidden ">
           <section className="grid grid-cols-2 w-full sm:flex justify-between px-4 sm:px-0 ">
             <div className="flex flex-col space-y-1">
               <span className="footer-title">About</span>
