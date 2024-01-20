@@ -97,9 +97,13 @@ function Search({ allTypes, placeholderText, categories }: any) {
           />
           <div />
         </div>
-        <div className="absolute right-0 flex items-center justify-center w-12 h-12 text-xs text-white bg-blue-400 rounded-full cursor-pointer top-2 sm:right-4">
-          <button type="submit" className="active:scale-95">
-            <BsSearch className="text-xl" />
+        <div className="absolute  flex items-center justify-center w-20 active:scale-95 transition duration-300 ease-in  sm:w-32 h-[40px] sm:h-9 text-xs text-white bg-blue-400 rounded-full cursor-pointer top-3 sm:top-[15px] right-1 sm:right-6">
+          <button
+            type="submit"
+            className="active:scale-95 font-semibold sm:text-base"
+          >
+            {/* <BsSearch className="text-xl" /> */}
+            Search
           </button>
         </div>
       </form>

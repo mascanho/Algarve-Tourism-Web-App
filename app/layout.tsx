@@ -73,7 +73,9 @@ export default async function RootLayout({
         <body className="bg-white overflow-x-hidden ">
           <ClientOnly>
             <ToasterProvider />
-            <Header currentUser={currentUser} weatherData={weatherData} />
+            <div className="sm:pb-14">
+              <Header currentUser={currentUser} weatherData={weatherData} />
+            </div>
             {children}
           </ClientOnly>
           <Footer />

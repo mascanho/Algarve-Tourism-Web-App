@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 function page(props: any) {
   return (
     <section className="max-w-7xl mx-auto sm:mt-20 sm:px-3">
-      <div className="-mt-12 mb-8">
+      <div className="sm:-mt-12 pt-8 sm:pt-0 mb-8 w-11/12 sm:w-full mx-auto">
         <Breadcrumbs />
       </div>
       <div className="w-11/12 sm:w-full mx-auto">

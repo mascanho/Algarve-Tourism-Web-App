@@ -65,12 +65,13 @@ export const SearchCard = ({
   }
 
   return (
-    <section className="border pb-2 mb-10 sm:pb-2 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-[100%] mx-auto sm:w-full md:w-full  hover:border-sky  hover:shadow-md">
+    <section className="border pb-2 mb-10 sm:pb-2 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-[100%] mx-auto sm:w-full md:w-full  hover:border-sky  hover:shadow-md z-0">
       <div className="relative flex flex-col w-full h-48 sm:h-40 overflow-hidden rounded-t-md ">
         <img
           src={`https://${mainImage?.fields?.file?.url}`}
           alt="image"
-          className="block h-full"
+          className="block h-full z-0"
+          loading="lazy"
         />
         <div className="absolute active:scale-90 w-8 h-8 flex items-center justify-center rounded-full p-1 bg-white top-2 right-2">
           <AiFillHeart

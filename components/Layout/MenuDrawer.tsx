@@ -7,6 +7,8 @@ import {
   useLoginModalStore,
   useRegisteredModalStore,
 } from "@/app/hooks/useLoginModal";
+import { TbNotification, TbNotificationOff } from "react-icons/tb";
+import { AiOutlineNotification } from "react-icons/ai";
 
 const MenuDrawer = ({ currentUser }: any) => {
   const loginModal = useLoginModalStore();
@@ -18,7 +20,7 @@ const MenuDrawer = ({ currentUser }: any) => {
     <Drawer.Root>
       <Drawer.Trigger asChild>
         <button>
-          <HiBars3 className="sm:hidden  ml-1 mr-1 cursor-pointer active:scale-90" />{" "}
+          <AiOutlineNotification className="sm:hidden  ml-1 mr-1 cursor-pointer active:scale-90 z-50" />{" "}
         </button>
       </Drawer.Trigger>
       <Drawer.Portal>

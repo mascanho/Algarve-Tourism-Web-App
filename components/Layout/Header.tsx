@@ -20,6 +20,7 @@ import Image from "next/image";
 import WeatherModal from "../modals/WeatherModal";
 import Sheet from "./Sheet";
 import MenuDrawer from "./MenuDrawer";
+import { IoNotifications, IoNotificationsOutline } from "react-icons/io5";
 
 const Header = ({ currentUser, weatherData }: any) => {
   const router = useRouter();
@@ -95,7 +96,7 @@ const Header = ({ currentUser, weatherData }: any) => {
 
       <nav
         id="search"
-        className={`shadow-sm  sticky  bg-white z-10  sm:h-full  mx-auto -m-2 pt-1 sm:pt-0 sm:m-0 `}
+        className={`shadow-sm sm:fixed  bg-white z-10 sm:w-full    mx-auto    sm:pb-0 `}
       >
         <div className="z-50 mx-auto navbar max-w-7xl flex justify-evenly ">
           {/* MOBILE */}
@@ -126,7 +127,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             >
               Algarve Wonders
             </span>
-            <section className="hidden sm:flex sm:space-x-4 md:space-x-8 sm:pt-1 sm:text-sm md:text-base sm:items-center justify-start m-auto">
+            <section className="hidden sm:flex sm:space-x-4 md:space-x-8 lg:space-x-14 sm:pt-1 sm:text-sm md:text-base sm:items-center justify-start m-auto">
               <NavMenu trigger={false} title={"Search"} url={"/"} />
               <NavMenu
                 expandedMenu={false}
@@ -181,8 +182,8 @@ const Header = ({ currentUser, weatherData }: any) => {
                   alt="avatar"
                 />
                 <div className="relative flex">
-                  <HiBars3
-                    className="hidden sm:inline ml-1 mr-1 cursor-pointer active:scale-90"
+                  <IoNotificationsOutline
+                    className="hidden sm:inline ml-1 mr-1 mt-[1px] cursor-pointer active:scale-90"
                     onClick={openLoginMenu}
                   />{" "}
                   <MenuDrawer currentUser={currentUser} />
