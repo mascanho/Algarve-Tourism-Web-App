@@ -7,14 +7,14 @@ function NotificationsModal() {
 
   const content = Array(20)
     .fill(0)
-    .map((_, index) => <p key={index}>Modal with scroll</p>);
+    .map((_, index) => <p key={index}>...</p>);
 
   return (
     <>
       <Modal
         opened={opened}
         onClose={close}
-        title="Header is sticky"
+        title="Notifications"
         scrollAreaComponent={ScrollArea.Autosize}
       >
         {content}

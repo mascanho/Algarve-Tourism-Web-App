@@ -86,7 +86,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
           <input
             type="text"
             placeholder={placeholderText}
-            className={`h-12 bg-white placeholder-gray-300 rounded-full p-4 w-[340px] sm:w-[436px] mx-auto text-xs outline-none border-collapse sm:text-xs
+            className={`h-12 bg-white placeholder-gray-300 rounded-full p-4 w-[340px] sm:w-[436px] mx-auto text-xs outline-none border-collapse placeholder:text-[14px] pb-5 sm:pb-4  sm:text-xs
             ${pathname === "/search" && "border-2 border-blue-400"}
             
             `}
@@ -97,10 +97,10 @@ function Search({ allTypes, placeholderText, categories }: any) {
           />
           <div />
         </div>
-        <div className="absolute  flex items-center justify-center w-20 active:scale-95 transition duration-300 ease-in  sm:w-32 h-[40px] sm:h-9 text-xs text-white bg-blue-400 rounded-full cursor-pointer top-3 sm:top-[15px] right-1 sm:right-6">
+        <div className="absolute  flex items-center justify-center w-20 active:scale-95 transition duration-300 ease-in  sm:w-32 h-[40px] sm:h-9 text-xs bg-gradient-to-r from-fuchsia-600 via-sky to-pink-600 text-white animate-gradient rounded-full cursor-pointer top-3 sm:top-[14px] right-1 sm:right-6">
           <button
             type="submit"
-            className="active:scale-95 font-semibold sm:text-base"
+            className="active:scale-95 font-semibold sm:text-base "
           >
             {/* <BsSearch className="text-xl" /> */}
             Search
