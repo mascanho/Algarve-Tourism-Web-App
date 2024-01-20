@@ -102,9 +102,9 @@ const Header = ({ currentUser, weatherData }: any) => {
           <div className="flex justify-between w-11/12 sm:w-full items-center transition-all ease-in delay-100">
             <div className="flex justify-between w-full items-center sm:w-fit sm:mx-0 ">
               <section
-                className={`sm:hidden flex justify-between   ${
+                className={`sm:hidden flex justify-between -ml-3  ${
                   showMobileBurger &&
-                  "fixed left-4 top-4 bg-white rounded-md p-1 text-black pb-1 transition-all ease-in delay-75 border z-50"
+                  "fixed left-6 top-4 bg-white rounded-md pl-1 text-black pb-1 transition-all ease-in delay-75 border z-50"
                 }`}
               >
                 <Sheet
@@ -113,7 +113,7 @@ const Header = ({ currentUser, weatherData }: any) => {
                   currentUser={currentUser}
                 />
               </section>
-              <div className="flex items-center justify-center w-fit mx-auto text-right">
+              <div className="flex items-center justify-center w-fit mx-auto text-right -mr-2">
                 <Image
                   className="pr-1 -ml-8 sm:ml-0 sm:block p-2 "
                   src="/images/icon.png"
