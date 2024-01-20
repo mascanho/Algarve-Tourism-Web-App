@@ -158,3 +158,22 @@ input[type="text"] {
 .bottomCarousel .mantine-vcl0d1 {
   @apply sm:flex hidden flex -top-16 justify-end w-11/12 mx-auto space-x-2 !important;
 }
+
+.animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 10s ease infinite alternate;
+  -moz-animation: animatedgradient 10s ease infinite alternate;
+  animation: animatedgradient 10s ease infinite alternate;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

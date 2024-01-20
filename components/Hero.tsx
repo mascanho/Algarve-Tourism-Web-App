@@ -34,7 +34,7 @@ const Hero = ({ categories }: any) => {
         }}
       />
       <section className="mx-auto w-full sm:h-screen space-y-2 flex flex-col justify-center text-center m-auto absolute top-64  sm:top-2 md:top-0 ">
-        <h1 className="mx-auto text-5xl font-bold text-center text-white sm:text-8xl bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text pb-2 animate-gradient ">
+        <h1 className="mx-auto text-5xl font-bold text-center sm:text-8xl bg-gradient-to-r from-sky via-pink-500 to-indigo-400 text-transparent bg-clip-text pb-2 animate-gradient ">
           Algarve&apos;s Travel Guide
         </h1>
         <div className=" rounded-lg w-7/12 sm:w-fit mx-auto p-2 hidden sm:block">
