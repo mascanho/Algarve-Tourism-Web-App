@@ -8,7 +8,7 @@ import {
 } from "@/app/hooks/useLoginModal";
 import { AiOutlineNotification } from "react-icons/ai";
 
-const MenuDrawer = ({ currentUser }: any) => {
+const MobileDrawer = ({ currentUser }: any) => {
   const loginModal = useLoginModalStore();
   const registeredModal = useRegisteredModalStore();
 
@@ -18,7 +18,7 @@ const MenuDrawer = ({ currentUser }: any) => {
     <Drawer.Root>
       <Drawer.Trigger asChild>
         <button>
-          <AiOutlineNotification className="sm:hidden  ml-1 mr-1 cursor-pointer active:scale-90 z-50" />{" "}
+          <AiOutlineNotification className="sm:hidden ml-1 mr-1 cursor-pointer active:scale-90 z-50" />{" "}
         </button>
       </Drawer.Trigger>
       <Drawer.Portal>
@@ -49,7 +49,7 @@ const MenuDrawer = ({ currentUser }: any) => {
               )}
             </div>
           </div>
-          <div className="p-4 bg-zinc-100 border-t border-zinc-200 mt-auto pb-8">
+          <div className="p-4 bg-zinc-100 border-t border-zinc-200 mt-auto">
             <div className="flex gap-6 justify-end max-w-md mx-auto">
               <a
                 className="text-xs text-zinc-600 flex items-center gap-0.25"
@@ -105,4 +105,4 @@ const MenuDrawer = ({ currentUser }: any) => {
   );
 };
 
-export default MenuDrawer;
+export default MobileDrawer;

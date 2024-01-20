@@ -19,8 +19,8 @@ import { NavMenu } from "../NavMenu";
 import Image from "next/image";
 import WeatherModal from "../modals/WeatherModal";
 import Sheet from "./Sheet";
-import MenuDrawer from "./MenuDrawer";
-import { IoNotifications, IoNotificationsOutline } from "react-icons/io5";
+import NotificationsModal from "./NotificationsModal";
+import MobileDrawer from "./MobileDrawer";
 
 const Header = ({ currentUser, weatherData }: any) => {
   const router = useRouter();
@@ -114,19 +114,21 @@ const Header = ({ currentUser, weatherData }: any) => {
             />
           </section>
           <div className="flex justify-between w-full items-center">
-            <Image
-              className="pr-2 hidden sm:block"
-              src="/images/icon.png"
-              alt="logo"
-              width={40}
-              height={30}
-            />
-            <span
-              onClick={() => router.push("/")}
-              className=" sm:text-base pt-1 sm:pt-0 text-left normal-case cursor-pointer font-semibold text-base my-auto  flex items-center"
-            >
-              Algarve Wonders
-            </span>
+            <div className="flex mx-auto sm:mx-0 sm:w-ful">
+              <Image
+                className="pr-1 -ml-5 sm:ml-0 sm:block p-2 "
+                src="/images/icon.png"
+                alt="logo"
+                width={40}
+                height={30}
+              />
+              <span
+                onClick={() => router.push("/")}
+                className=" sm:text-base pt-1 sm:pt-0 text-left normal-case cursor-pointer font-semibold text-xl m-auto sm:my-auto sm:mx-0  flex items-center"
+              >
+                Algarve Wonders
+              </span>
+            </div>
             <section className="hidden sm:flex sm:space-x-4 md:space-x-8 lg:space-x-14 sm:pt-1 sm:text-sm md:text-base sm:items-center justify-start m-auto">
               <NavMenu trigger={false} title={"Search"} url={"/"} />
               <NavMenu
@@ -157,7 +159,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             {/* Weather API */}
             <div
               onClick={showWeather}
-              className="flex items-center pt-1 justify-end sm:mr-1 -mr-2 cursor-pointer hover:scale-105 transition ease-in"
+              className="hidden sm:flex items-center pt-1 justify-end sm:mr-1 -mr-2 cursor-pointer hover:scale-105 transition ease-in"
             >
               <span className="-mr-[1px]">
                 {weatherData.current.temp_c + "°"}
@@ -169,8 +171,8 @@ const Header = ({ currentUser, weatherData }: any) => {
                 height={30}
               />{" "}
             </div>
-            <section className="border rounded-full mt-1">
-              <div className="flex items-center   pr-8 sm:pr-2 text-xl text-black bg-white/50">
+            <section className="border sm:inline hidden rounded-full mt-1 sm:w-fit">
+              <div className="flex items-center  pr-2  sm:pr-2 text-xl text-black bg-white/50">
                 <img
                   src={
                     currentUser?.image ||
@@ -178,16 +180,17 @@ const Header = ({ currentUser, weatherData }: any) => {
                   }
                   height={30}
                   width={30}
-                  className="rounded-full"
+                  className="rounded-full hidden sm:inline"
                   alt="avatar"
+                  onClick={openLoginMenu}
                 />
+                <NotificationsModal />
                 <div className="relative flex">
-                  <IoNotificationsOutline
-                    className="hidden sm:inline ml-1 mr-1 mt-[1px] cursor-pointer active:scale-90"
-                    onClick={openLoginMenu}
-                  />{" "}
-                  <MenuDrawer currentUser={currentUser} />
-                  <div className="relative flex" suppressHydrationWarning>
+                  <MobileDrawer currentUser={currentUser} />
+                  <div
+                    className="relative flex sm:inline hidden"
+                    suppressHydrationWarning
+                  >
                     <span className="absolute -top-1 -right-1 text-[8px] bg-sky text-white rounded-full w-3 h-3 flex justify-center items-center text-center">
                       {favouritesLength}
                     </span>
@@ -198,7 +201,7 @@ const Header = ({ currentUser, weatherData }: any) => {
                   </div>
                   {openLogin && (
                     <div className="overflow-hidden">
-                      <ul className="absolute z-10 w-36 sm:w-36 overflow-hidden p-2 text-sm bg-white border text-right shadow-sm menu rounded-box  sm:-left-12 sm:top-10 border-t-3 border-t-sky -left-24 top-10">
+                      <ul className="absolute z-10 w-36 sm:w-36 overflow-hidden p-2 text-sm bg-white border text-right shadow-sm menu rounded-box  sm:right-10 sm:top-10 border-t-3 border-t-sky -left-24 top-10">
                         {!currentUser ? (
                           <>
                             <li onClick={loginModal.onOpen} className="w-full">
