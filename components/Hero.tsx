@@ -31,7 +31,7 @@ const Hero = ({ categories }: any) => {
           height: "100vh",
         }}
       />
-      <section className="mx-auto w-full sm:h-screen space-y-2 flex flex-col justify-center text-center m-auto absolute top-[14em]  sm:top-2 md:top-0 ">
+      <section className="mx-auto w-full sm:h-screen space-y-2 flex flex-col justify-center text-center m-auto absolute top-[10em]  sm:top-2 md:top-0 ">
         <h1 className="mx-auto text-7xl font-bold text-center sm:text-8xl bg-gradient-to-r from-green-500 via-sky to-red-500 text-transparent bg-clip-text pb-2 animate-gradient ">
           Algarve&apos;s Travel Guide
         </h1>
