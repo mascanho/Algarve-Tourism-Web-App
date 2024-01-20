@@ -54,6 +54,7 @@ function PopularCategories({ beaches, events, adventure }: any) {
                 width={100}
                 alt="image"
                 className="w-96 h-[400px] object-cover hover:scale-95 transition-all ease-in delay-75 rounded-md cursor-pointer "
+                loading="lazy"
               />
             </Link>
             <h3 className="">{item.name}</h3>

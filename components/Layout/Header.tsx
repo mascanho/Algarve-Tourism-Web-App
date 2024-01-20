@@ -181,7 +181,11 @@ const Header = ({ currentUser, weatherData }: any) => {
                 />
                 <div className="relative flex">
                   <HiBars3
+<<<<<<< Updated upstream
                     className="hidden sm:inline ml-1 mr-1 cursor-pointer active:scale-90"
+=======
+                    className="hidden sm:inline-flex  ml-1 mr-1 cursor-pointer active:scale-90"
+>>>>>>> Stashed changes
                     onClick={openLoginMenu}
                   />{" "}
                   <MenuDrawer />

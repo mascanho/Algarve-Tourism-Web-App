@@ -7,9 +7,13 @@ const MenuDrawer = () => {
   return (
     <Drawer.Root>
       <Drawer.Trigger asChild>
+<<<<<<< Updated upstream
         <button>
           <HiBars3 className="sm:hidden  ml-1 mr-1 cursor-pointer active:scale-90" />{" "}
         </button>
+=======
+        <button>Open Drawer</button>
+>>>>>>> Stashed changes
       </Drawer.Trigger>
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/40" />

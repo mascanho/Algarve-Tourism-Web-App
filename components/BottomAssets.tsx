@@ -21,6 +21,7 @@ function BottomAssets() {
             // fill
             alt="IMAGE"
             className="rounded-md animate-fade-in"
+            loading="lazy"
           />
         </div>
         <div className="flex flex-col justify-center text-left sm:w-2/3 sm:pl-10 animate-fade-in">
@@ -72,6 +73,7 @@ function BottomAssets() {
             // fill
             alt="IMAGE"
             className="rounded-md h-[390px] w-full"
+            loading="lazy"
           />
         </div>
       </div>
@@ -84,6 +86,7 @@ function BottomAssets() {
             // fill
             alt="IMAGE"
             className="rounded-md"
+            loading="lazy"
           />
         </div>
         <div className="flex flex-col justify-center text-left sm:w-2/3 sm:pl-10 animate-fade-in">
@@ -116,6 +119,7 @@ function BottomAssets() {
             // fill
             alt="IMAGE"
             className="rounded-md"
+            loading="lazy"
           />
         </div>
         <div className="flex flex-col justify-center text-left sm:w-2/3 sm:pr-10 sm:space-y-10">

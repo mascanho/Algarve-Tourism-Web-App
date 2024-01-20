@@ -188,7 +188,7 @@ export default async function Home(props: any) {
         <StaticDataCarousel categories={carRentals} />
       </section>
 
-      <section className=" mx-auto pt-12 pb-24 sm:pb-32">
+      <section className=" mx-auto pt-12 sm:pt-2 pb-24 sm:pb-32">
         <h4 className="max-w-7xl text-left sm:pb-6 mx-auto w-11/12 text-5xl  font-semibold text-black">
           More to explore
         </h4>

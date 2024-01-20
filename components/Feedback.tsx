@@ -38,6 +38,8 @@ function Feedback({ name, job, rating, review, image }: any) {
                   <img
                     src={q.image}
                     className="w-12 p-1 h-12   border-sky border  rounded-full"
+                    alt="avatar"
+                    loading="lazy"
                   />
                 </div>
               </div>

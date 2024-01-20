@@ -37,14 +37,14 @@ function Card({
   return (
     <Paper
       shadow="md"
-      p="xl"
+      p="md"
       radius="md"
       style={{
         backgroundImage: `url(https:${image && (image[0] || image)})`,
         backgroundBlendMode: "multiply",
         backgroundColor: "rgba(0, 0, 0, 0.3)",
       }}
-      className="h-[300px] sm:h-full w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+      className="h-[300px] sm:h-full w-full sm:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
     >
       <div className="w-full">
         <div className="flex items-center justify-between w-full">
@@ -107,7 +107,7 @@ function GenericCarousel({ categories }: { categories: any[] }) {
       // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
       className="bottomCarousel mt-10"
       slideSize={mobile ? "63.333333%" : "23.333333%"}
-      slideGap={"md"}
+      slideGap={mobile ? "md" : "md"}
       // align="start"
       slidesToScroll={mobile ? 1 : 1}
       height={300}

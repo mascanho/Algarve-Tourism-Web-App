@@ -64,6 +64,7 @@
     "tabler-icons-react": "^1.56.0",
     "typescript": "5.0.2",
     "unique-names-generator": "^4.7.1",
+    "vaul": "^0.8.0",
     "zustand": "^4.4.6"
   },
   "devDependencies": {
