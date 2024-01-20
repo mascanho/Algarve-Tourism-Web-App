@@ -30,8 +30,8 @@ const Hero = ({ categories }: any) => {
         <h1 className="mx-auto text-5xl font-bold text-center text-white sm:text-8xl ">
           Algarve&apos;s Travel Guide
         </h1>
-        <div className=" rounded-lg w-7/12 mx-auto p-2 hidden sm:block">
-          <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12  text-white/70 ">
+        <div className=" rounded-lg w-7/12 sm:w-full mx-auto p-2 hidden sm:block">
+          <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12 sm:w-10/12 px-4  text-white/70 ">
             Discover the breathtaking beauty of the Algarve! The ultimate guide
             to the region&apos;s top tourism attractions and less known hidden
             gems
