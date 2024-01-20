@@ -36,7 +36,7 @@ export const quotes: any = [
     review:
       "It surpassed all expectations! Breathtaking beaches, stunning cliffs, and incredible seafood made it an unforgettable experience",
     image:
-      "https://mail.4kwallpapers.com/images/wallpapers/ichigo-kurosaki-bleach-2732x2732-10512.jpg",
+      "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww",
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ export const quotes: any = [
     review:
       "I fell in love with warm weather, charming villages, and friendly locals created the perfect vacation atmosphere.",
     image:
-      "https://mail.4kwallpapers.com/images/wallpapers/ichigo-kurosaki-bleach-2732x2732-10512.jpg",
+      "https://www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg",
   },
   {
     id: 5,
@@ -56,7 +56,7 @@ export const quotes: any = [
     review:
       "I can't stop raving about it! From the picturesque towns to the exhilarating water sports, it was an adventure-filled paradise",
     image:
-      "https://mail.4kwallpapers.com/images/wallpapers/ichigo-kurosaki-bleach-2732x2732-10512.jpg",
+      "https://www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-01.jpg",
   },
   {
     id: 6,
@@ -66,6 +66,6 @@ export const quotes: any = [
     review:
       "The Algarve stole my heart! Exploring the hidden coves, indulging in delicious pastries, and witnessing stunning sunsets made it a romantic getaway.",
     image:
-      "https://mail.4kwallpapers.com/images/wallpapers/ichigo-kurosaki-bleach-2732x2732-10512.jpg",
+      "https://media.istockphoto.com/id/183819034/photo/two-dices.jpg?s=612x612&w=0&k=20&c=sawA-Q6tAlmzm37EiFViPCr9AT3f-PnwCM8qXrQzR2w=",
   },
 ];
