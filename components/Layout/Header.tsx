@@ -107,11 +107,13 @@ const Header = ({ currentUser, weatherData }: any) => {
                   "fixed left-6 top-4 bg-white rounded-md pl-1 text-black pb-1 transition-all ease-in delay-75 border z-50"
                 }`}
               >
-                <Sheet
-                  showMobileBurger={showMobileBurger}
-                  favourites={favourites}
-                  currentUser={currentUser}
-                />
+                <div className="pt-1">
+                  <Sheet
+                    showMobileBurger={showMobileBurger}
+                    favourites={favourites}
+                    currentUser={currentUser}
+                  />
+                </div>
               </section>
               <div className="flex items-center justify-center w-fit mx-auto text-right -mr-2">
                 <Image
