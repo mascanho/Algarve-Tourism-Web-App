@@ -78,6 +78,7 @@ function CarouselHero({
                       src={rest?.fields.mainImage.fields?.file?.url}
                       alt={rest?.fields.title}
                       className="block h-full"
+                      loading="lazy"
                     />
                     <span className="absolute left-0 top-4 pr-2 py-1 pl-1 rounded-r-full text-xs text-black bg-white  ">
                       📍 {rest?.fields?.title}
