@@ -63,7 +63,7 @@ const Header = ({ currentUser, weatherData }: any) => {
   useEffect(() => {
     // check the scroll height
     const handleScroll = () => {
-      if (window.scrollY > 120) {
+      if (window.scrollY > 150) {
         setShowMobileBurger(true);
       } else {
         setShowMobileBurger(false);
@@ -99,14 +99,12 @@ const Header = ({ currentUser, weatherData }: any) => {
         className={`shadow-sm sm:fixed  bg-white z-10   mx-auto  w-svw  sm:pb-0 `}
       >
         <div className="z-10 mx-auto navbar flex justify-evenly max-w-7xl px-0 w-11/12 ">
-          {/* MOBILE */}
-
           <div className="flex justify-between w-11/12 sm:w-full items-center transition-all ease-in delay-100">
-            <div className="flex justify-between w-full items-center sm:w-fit sm:mx-0 space-x-20 ">
+            <div className="flex justify-between w-full items-center sm:w-fit sm:mx-0 ">
               <section
                 className={`sm:hidden flex justify-between   ${
                   showMobileBurger &&
-                  "fixed left-4 top-4 bg-white rounded-md pl-1 text-black pb-1 transition-all ease-in delay-75 border z-50"
+                  "fixed left-4 top-4 bg-white rounded-md p-1 text-black pb-1 transition-all ease-in delay-75 border z-50"
                 }`}
               >
                 <Sheet
@@ -115,7 +113,7 @@ const Header = ({ currentUser, weatherData }: any) => {
                   currentUser={currentUser}
                 />
               </section>
-              <div className="flex items-center justify-start w-full text-right">
+              <div className="flex items-center justify-center w-fit mx-auto text-right">
                 <Image
                   className="pr-1 -ml-8 sm:ml-0 sm:block p-2 "
                   src="/images/icon.png"

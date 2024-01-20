@@ -164,16 +164,11 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
         </section>
       </Drawer>
 
-      <span
-        className="text-sky mt-1 mr-2 transition duration-500 ease-in"
-        onClick={open}
-      >
-        <HiMenuAlt2
-          className={`text-2xl transition-all text-black duration-500 ease-in ${
-            showMobileBurger && "animate-fade"
-          }`}
-        />
-      </span>
+      <HiMenuAlt2
+        className={`text-2xl transition-all text-black duration-500 left-8 top-4 ease-in ${
+          showMobileBurger && "animate-fade "
+        }`}
+      />
     </section>
   );
 }
