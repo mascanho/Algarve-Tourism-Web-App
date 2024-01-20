@@ -12,16 +12,55 @@ import Link from "next/link";
 import GenericCarousel from "@/components/Layout/CarouselGeneric";
 import { Carousel } from "@mantine/carousel";
 import Suggestions from "./_components/Suggestions";
+import { getContentfulData } from "@/libs/getContentfulData";
 
-// export const metadata: Metadata = {
-//   title: "Home",
-//   description: "Welcome to Next.js",
-// };
-
+// TODO: Check this stuff
 export async function generateMetadata({ params, searchParams }: any) {
-  return {
-    title: params.slug.toUpperCase(),
+  const getDATA = async () => {
+    const client = createClient({
+      space: process.env.CONTENTFUL_SPACE_ID!,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+    });
+
+    try {
+      const res = await client.getEntries({
+        content_type: params?.category,
+        limit: 10,
+        include: 1,
+        skip: 0,
+        "fields.slug": params?.slug,
+        select: "fields.shortDescription",
+      });
+
+      return res?.items[0]?.fields?.shortDescription;
+    } catch (error) {
+      // Handle potential errors when fetching data
+      console.error("Error fetching data from Contentful:", error);
+      return null;
+    }
   };
+
+  try {
+    const description = await getDATA();
+    console.log(description);
+
+    return {
+      // Remove the "-" from the title, separate words with spaces and uppercase the first letter
+      title: params.slug
+        .split("-")
+        .map((word: any) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" "),
+
+      description: description || "", // Use the retrieved description or an empty string
+    };
+  } catch (error) {
+    // Handle errors that might occur during metadata generation
+    console.error("Error generating metadata:", error);
+
+    return {
+      description: "",
+    };
+  }
 }
 export default async function Home(props: any, req: any) {
   const { category, slug } = props.params;

@@ -2,12 +2,10 @@
 import { Drawer } from "vaul";
 
 import React from "react";
-import { HiBars3 } from "react-icons/hi2";
 import {
   useLoginModalStore,
   useRegisteredModalStore,
 } from "@/app/hooks/useLoginModal";
-import { TbNotification, TbNotificationOff } from "react-icons/tb";
 import { AiOutlineNotification } from "react-icons/ai";
 
 const MenuDrawer = ({ currentUser }: any) => {

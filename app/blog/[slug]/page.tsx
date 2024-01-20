@@ -21,14 +21,46 @@ export async function getComments() {
   return comments;
 }
 
+async function getAllBlogs() {
+  const client: any = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID3!,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN3!,
+  });
+  const res = await client.getEntries({
+    content_type: "blog",
+    limit: 10,
+    include: 10,
+    skip: 0,
+  });
+
+  return await res.items;
+}
+
 export async function generateMetadata({ params, searchParams }: any) {
   const titleCaseTitle = params.slug
     .split("-")
     .map((word: any) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
+  const getDescription = async ({ params }: any) => {
+    const client: any = createClient({
+      space: process.env.CONTENTFUL_SPACE_ID3!,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN3!,
+    });
+    const res = await client.getEntries({
+      content_type: "blog",
+      limit: 1,
+      skip: 0,
+      "fields.slug": params.slug,
+    });
+    return res.items[0].fields.description;
+  };
+
+  const description = await getDescription({ params });
+
   return {
     title: titleCaseTitle,
+    description,
     robots: {
       index: true,
       follow: true,
@@ -66,69 +98,6 @@ const options = {
   },
 };
 
-async function getAllBlogs() {
-  const client: any = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID3!,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN3!,
-  });
-  const res = await client.getEntries({ content_type: "blog" });
-
-  return await res.items;
-}
-
-const DUMMY_COMMENTS = [
-  {
-    id: Math.random(),
-    name: "John Doe",
-    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    date: new Date(),
-    image:
-      "https://i.seadn.io/gae/qZFMhhVvyIT0xm3EwgdLzir4ymrjF6Z_r1xkt2705Ln_OScH6fZWh6JzogYVfCZS2gRsOXRHtM_2PcobJ32Q14g1b0JSljuhv8xy?auto=format&dpr=1&w=1000",
-    thumbs: 3,
-    likes: 5,
-  },
-  {
-    id: Math.random(),
-    name: "John Doe",
-    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    date: new Date(),
-    image:
-      "https://i.seadn.io/gae/qZFMhhVvyIT0xm3EwgdLzir4ymrjF6Z_r1xkt2705Ln_OScH6fZWh6JzogYVfCZS2gRsOXRHtM_2PcobJ32Q14g1b0JSljuhv8xy?auto=format&dpr=1&w=1000",
-    thumbs: 3,
-    likes: 5,
-  },
-  {
-    id: Math.random(),
-    name: "John Doe",
-    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    date: new Date(),
-    image:
-      "https://i.seadn.io/gae/qZFMhhVvyIT0xm3EwgdLzir4ymrjF6Z_r1xkt2705Ln_OScH6fZWh6JzogYVfCZS2gRsOXRHtM_2PcobJ32Q14g1b0JSljuhv8xy?auto=format&dpr=1&w=1000",
-    thumbs: 3,
-    likes: 5,
-  },
-  {
-    id: Math.random(),
-    name: "John Doe",
-    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    date: new Date(),
-    image:
-      "https://i.seadn.io/gae/qZFMhhVvyIT0xm3EwgdLzir4ymrjF6Z_r1xkt2705Ln_OScH6fZWh6JzogYVfCZS2gRsOXRHtM_2PcobJ32Q14g1b0JSljuhv8xy?auto=format&dpr=1&w=1000",
-    thumbs: 3,
-    likes: 5,
-  },
-  {
-    id: Math.random(),
-    name: "John Doe",
-    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    date: new Date(),
-    image:
-      "https://i.seadn.io/gae/qZFMhhVvyIT0xm3EwgdLzir4ymrjF6Z_r1xkt2705Ln_OScH6fZWh6JzogYVfCZS2gRsOXRHtM_2PcobJ32Q14g1b0JSljuhv8xy?auto=format&dpr=1&w=1000",
-    thumbs: 3,
-    likes: 5,
-  },
-];
-
 const page = async (props: any) => {
   const { category, slug } = props.params;
   const session = await getServerSession(authOptions);
@@ -138,12 +107,12 @@ const page = async (props: any) => {
 
   // Filtering the right comments to match the right slug
   const commentsFiltered = allComments?.filter(
-    (obj: any) => obj?.slug === slug,
+    (obj: any) => obj?.slug === slug
   );
 
   // Order the comments by date
   const comments = commentsFiltered?.sort(
-    (a: any, b: any) => b?.createdAt - a?.createdAt,
+    (a: any, b: any) => b?.createdAt - a?.createdAt
   );
 
   const allBlogs = await getAllBlogs();
