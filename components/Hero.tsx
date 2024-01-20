@@ -4,7 +4,7 @@ import Search from "./Search";
 
 const IMAGES_DESKTOP = [
   "/images/bg1.jpeg",
-  "https://fullsuitcase.com/wp-content/uploads/2023/05/Lagos-the-nicest-town-in-Algarve-Portugal.jpg.webp",
+  "/images/bg2.webp",
   "https://escales.ponant.com/wp-content/uploads/2023/07/iStock-621690956-1.jpg",
   "https://turismo.eurodicas.com.br/wp-content/uploads/2019/07/praias-do-algarve-1.jpg",
 ];
@@ -19,12 +19,10 @@ const Hero = ({ categories }: any) => {
  overflow-hidden  bg-blend-multiply bg-black/60  w-screen  bg-fixed h-screen`}
       />
       <div
-        className={` hidden sm:block animate-fade w-screen  bg-cover  bg-blend-multiply bg-black/70  h-screen`}
-        // style={{
-        //   backgroundImage: `url(${
-        //     IMAGES_DESKTOP[Math.floor(Math.random() * IMAGES_DESKTOP.length)]
-        //   })`,
-        // }}
+        className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed w-screen  bg-cover  bg-blend-multiply bg-black/70  h-screen`}
+        style={{
+          backgroundImage: `url(${IMAGES_DESKTOP[1]})`,
+        }}
       />
       <section className="mx-auto w-full sm:h-screen space-y-2 flex flex-col justify-center text-center m-auto absolute top-64  sm:top-2 md:top-0 ">
         <h1 className="mx-auto text-5xl font-bold text-center text-white sm:text-8xl ">

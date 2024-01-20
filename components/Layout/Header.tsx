@@ -96,9 +96,9 @@ const Header = ({ currentUser, weatherData }: any) => {
 
       <nav
         id="search"
-        className={`shadow-sm sm:fixed  bg-white z-10 sm:w-full    mx-auto    sm:pb-0 `}
+        className={`shadow-sm sm:fixed  bg-white z-10 sm:w-full   mx-auto    sm:pb-0 `}
       >
-        <div className="z-50 mx-auto navbar max-w-7xl flex justify-evenly ">
+        <div className="z-50 mx-auto navbar flex justify-evenly ">
           {/* MOBILE */}
 
           <section
