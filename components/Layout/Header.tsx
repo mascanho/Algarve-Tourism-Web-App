@@ -101,33 +101,35 @@ const Header = ({ currentUser, weatherData }: any) => {
         <div className="z-10 mx-auto navbar flex justify-evenly max-w-7xl px-0 w-11/12 ">
           {/* MOBILE */}
 
-          <section
-            className={`sm:hidden ${
-              showMobileBurger &&
-              "fixed left-4 top-4 bg-white rounded-md pl-1 text-black pb-1 transition-all ease-in delay-75 border z-50"
-            }`}
-          >
-            <Sheet
-              showMobileBurger={showMobileBurger}
-              favourites={favourites}
-              currentUser={currentUser}
-            />
-          </section>
-          <div className="flex justify-between w-full items-center">
-            <div className="flex mx-auto sm:mx-0 sm:w-ful">
-              <Image
-                className="pr-1 -ml-5 sm:ml-0 sm:block p-2 "
-                src="/images/icon.png"
-                alt="logo"
-                width={40}
-                height={30}
-              />
-              <span
-                onClick={() => router.push("/")}
-                className=" sm:text-base pt-1 sm:pt-0 text-left normal-case cursor-pointer font-semibold text-xl m-auto sm:my-auto sm:mx-0  flex items-center"
+          <div className="flex justify-between w-11/12 sm:w-full items-center transition-all ease-in delay-100">
+            <div className="flex justify-between w-full items-center sm:w-fit sm:mx-0 space-x-20 ">
+              <section
+                className={`sm:hidden flex justify-between   ${
+                  showMobileBurger &&
+                  "fixed left-4 top-4 bg-white rounded-md pl-1 text-black pb-1 transition-all ease-in delay-75 border z-50"
+                }`}
               >
-                Algarve Wonders
-              </span>
+                <Sheet
+                  showMobileBurger={showMobileBurger}
+                  favourites={favourites}
+                  currentUser={currentUser}
+                />
+              </section>
+              <div className="flex items-center justify-start w-full text-right">
+                <Image
+                  className="pr-1 -ml-8 sm:ml-0 sm:block p-2 "
+                  src="/images/icon.png"
+                  alt="logo"
+                  width={40}
+                  height={30}
+                />
+                <span
+                  onClick={() => router.push("/")}
+                  className=" sm:text-base pt-1 text-center sm:pt-0 normal-case cursor-pointer font-semibold text-xl  sm:my-auto sm:mx-0  flex items-center"
+                >
+                  Algarve Wonders
+                </span>
+              </div>
             </div>
             <section className="hidden sm:flex sm:space-x-4 md:space-x-8 lg:space-x-14 sm:pt-1 sm:text-sm md:text-base sm:items-center justify-start m-auto">
               <NavMenu trigger={false} title={"Search"} url={"/"} />
