@@ -21,9 +21,9 @@ const Hero = ({ categories }: any) => {
           height: "100vh",
           backgroundSize: "fit",
           backgroundPosition: "center",
+          zIndex: 0,
         }}
-        className={`sm:hidden  animate-fade bg-[url('https://gretastravels.com/wp-content/uploads/2021/09/DSC_0911.jpg.webp')] 
- overflow-x-hidden  bg-blend-multiply bg-black/60  w-screen  bg-fixed h-screen`}
+        className={`sm:hidden  animate-fade overflow-x-hidden  bg-blend-multiply bg-black/60  w-screen  bg-fixed h-screen`}
       />
       <div
         className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed bg-cover  bg-blend-multiply bg-black/70  h-dvh`}
@@ -38,7 +38,7 @@ const Hero = ({ categories }: any) => {
           Algarve&apos;s Travel Guide
         </h1>
         <div className=" rounded-lg w-7/12 sm:w-fit mx-auto p-2 hidden sm:block">
-          <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12 sm:w-10/12 lg:w-2/4 px-4  text-white/70  ">
+          <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12 sm:w-10/12 lg:w-3/4 px-4  text-white/70  ">
             Discover the breathtaking beauty of the Algarve! The ultimate guide
             to the region&apos;s top tourism attractions and less known hidden
             gems

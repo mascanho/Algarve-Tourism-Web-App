@@ -122,7 +122,7 @@ async function Search() {
         <section className="h-full mx-auto max-w-7xl">
           <section className="w-11/12 mx-auto max-w-7xl  w-full pt-10">
             <Link href="/#search">
-              <div className="flex items-center w-full space-x-1  -mt-4 mb-8 sm:mb-0 sm:mt-0">
+              <div className="flex items-center  space-x-1 w-11/12 sm:w-full mx-auto  -mt-4 mb-8 sm:mb-0 sm:mt-0">
                 <TiArrowBack />
                 <span>Back to search</span>
               </div>

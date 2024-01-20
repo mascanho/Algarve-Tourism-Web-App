@@ -98,13 +98,13 @@ const Header = ({ currentUser, weatherData }: any) => {
         id="search"
         className={`shadow-sm sm:fixed  bg-white z-10   mx-auto  w-svw  sm:pb-0 `}
       >
-        <div className="z-50 mx-auto navbar flex justify-evenly max-w-7xl px-0 w-11/12 ">
+        <div className="z-10 mx-auto navbar flex justify-evenly max-w-7xl px-0 w-11/12 ">
           {/* MOBILE */}
 
           <section
             className={`sm:hidden ${
               showMobileBurger &&
-              "fixed left-4 top-4 bg-white rounded-md pl-1 pb-1 transition-all ease-in delay-75 border"
+              "fixed left-4 top-4 bg-white rounded-md pl-1 pb-1 transition-all ease-in delay-75 border z-50"
             }`}
           >
             <Sheet
