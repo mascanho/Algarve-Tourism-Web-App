@@ -19,11 +19,9 @@ const Hero = ({ categories }: any) => {
           backgroundImage: `url(https://gretastravels.com/wp-content/uploads/2021/09/DSC_0911.jpg.webp)`,
           width: "100vw",
           height: "100vh",
-          backgroundSize: "fit",
-          backgroundPosition: "center",
           zIndex: 0,
         }}
-        className={`sm:hidden  animate-fade overflow-x-hidden  bg-blend-multiply bg-black/60  w-screen  bg-fixed h-screen`}
+        className={`sm:hidden  animate-fade overflow-x-hidden  bg-blend-multiply bg-black/60   bg-fixed h-screen`}
       />
       <div
         className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed bg-cover  bg-blend-multiply bg-black/70  h-dvh`}

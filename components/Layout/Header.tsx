@@ -104,7 +104,7 @@ const Header = ({ currentUser, weatherData }: any) => {
           <section
             className={`sm:hidden ${
               showMobileBurger &&
-              "fixed left-4 top-4 bg-white rounded-md pl-1 pb-1 transition-all ease-in delay-75 border z-50"
+              "fixed left-4 top-4 bg-white rounded-md pl-1 text-black pb-1 transition-all ease-in delay-75 border z-50"
             }`}
           >
             <Sheet

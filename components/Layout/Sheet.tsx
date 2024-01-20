@@ -41,7 +41,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
         onClose={close}
         title=""
         overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
-        size="15em"
+        size="19em"
         position="left"
       >
         {/* Sheet content */}
@@ -169,7 +169,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
         onClick={open}
       >
         <HiMenuAlt2
-          className={`text-2xl transition-all duration-500 ease-in ${
+          className={`text-2xl transition-all text-black duration-500 ease-in ${
             showMobileBurger && "animate-fade"
           }`}
         />
