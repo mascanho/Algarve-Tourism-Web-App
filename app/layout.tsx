@@ -9,6 +9,9 @@ import getCurrentUser from "./libs/getCurrentUser";
 import { ToasterProvider } from "./providers/ToasterProvider";
 import { NextAuthProvider } from "./providers/AuthProvider";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { PT_Sans } from "next/font/google";
+
+const ptsans = PT_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   title: {
@@ -68,7 +71,7 @@ export default async function RootLayout({
   const weatherData = await getWeatherData();
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={ptsans.className}>
       <NextAuthProvider>
         <body className="bg-white  ">
           <ClientOnly>

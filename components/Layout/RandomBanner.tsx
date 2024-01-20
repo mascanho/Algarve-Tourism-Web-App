@@ -129,10 +129,10 @@ function RandomBanner({ categories }: any) {
   return (
     <div className="animate-fade-in  w-fit py-10 sm:py-16 mx-auto sm:space-y-2 text-center text-white sm:w-full rounded-xl sm:space-y-2">
       <div className="-mt-4 sm:mt-0 space-y-2 sm:space-y-6">
-        <h4 className="sm:text-5xl font-semibold text-black  text-4xl">
+        <h4 className="sm:text-7xl font-semibold text-black  text-4xl">
           Start your journey
         </h4>
-        <h3 className="sm:text-4xl hidden sm:block text-black text-gray-400">
+        <h3 className="sm:text-4xl hidden sm:block text-gray-400">
           Generate your new journey with AI
         </h3>
       </div>
