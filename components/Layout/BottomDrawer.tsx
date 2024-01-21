@@ -8,6 +8,11 @@ function BottomDrawer({ favouritesLength }: any) {
 
   console.log(favouritesLength);
 
+  const favouritesFromLocalStorage = localStorage.getItem("favourites");
+  const favouritesArray = JSON.parse(favouritesFromLocalStorage) || [];
+
+  console.log(favouritesArray, "the array");
+
   return (
     <>
       <Drawer

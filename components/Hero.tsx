@@ -17,7 +17,7 @@ const Hero = ({ categories }: any) => {
       <div className="border border-red-500 w-full h-full sm:hidden">
         <img
           src="/images/bg-mobile.webp"
-          className="w-screen h-screen object-cover filter brightness-50"
+          className="object-cover filter brightness-50"
         />
       </div>
       <div
@@ -43,6 +43,13 @@ const Hero = ({ categories }: any) => {
           {" "}
           The region&apos;s top tourism attractions and less known hidden gems
         </h2>
+        <div className="flex justify-center m-auto pt-5">
+          <Search
+            allTypes={allTypes}
+            placeholderText={"Type your destination or activity"}
+            categories={categories}
+          />
+        </div>
       </section>
     </>
   );
