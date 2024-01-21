@@ -14,20 +14,12 @@ const Hero = ({ categories }: any) => {
 
   return (
     <>
-      <section className="w-screen h-screen sm:hidden overflow-hidden">
-        <div
-          style={{
-            width: "100vw",
-            height: "100vh",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "cover",
-            // backgroundImage: `url('/images/bg-mobile.webp')`,
-            backgroundBlendMode: "multiply",
-            backgroundColor: "rgba(0, 0, 0, 0.3)",
-            // backgroundSize: "contain",
-          }}
+      <div>
+        <img
+          src="/images/bg-mobile.webp"
+          className="w-screen h-screen object-cover filter brightness-50"
         />
-      </section>
+      </div>
       <div
         className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed bg-cover  bg-blend-multiply bg-black/70  h-dvh`}
         style={{

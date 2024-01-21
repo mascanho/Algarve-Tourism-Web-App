@@ -72,15 +72,11 @@ function Footer() {
   }, [favourites.length]);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setFakeOnlineUsers((prevOnlineUsers: any) => {
-        // You can update the online users based on the previous value if needed
-        // For now, we're generating a random number in this example
-        return Math.floor(Math.random() * 1000);
-      });
-    }, 5000);
-
-    return () => clearInterval(intervalId);
+    setFakeOnlineUsers((prevOnlineUsers: any) => {
+      // You can update the online users based on the previous value if needed
+      // For now, we're generating a random number in this example
+      return Math.floor(Math.random() * 1000);
+    });
   }, []);
 
   return (
