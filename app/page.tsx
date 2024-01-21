@@ -49,7 +49,7 @@ const getCategoriesCached = cache(
     });
 
     return await res.items;
-  }
+  },
 );
 
 export default async function Home(props: any) {
@@ -57,22 +57,22 @@ export default async function Home(props: any) {
 
   // Filter restaurants from all the categories
   const restaurants = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("restaurants")
+    (cat: any) => cat.fields.type && cat.fields.type.includes("restaurants"),
   );
 
   // filter beaches from all the PopularCategories
   const beaches = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("beaches")
+    (cat: any) => cat.fields.type && cat.fields.type.includes("beaches"),
   );
 
   // filter adventure from all the PopularCategories
   const adventure = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("adventure")
+    (cat: any) => cat.fields.type && cat.fields.type.includes("adventure"),
   );
 
   // filter all events from PopularCategories
   const events = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("events")
+    (cat: any) => cat.fields.type && cat.fields.type.includes("events"),
   );
 
   // Filter the cities
@@ -126,8 +126,6 @@ export default async function Home(props: any) {
               <button className="border px-5 py-2 rounded-md">View more</button>
             </Link>
           </div>
-          {/* <Pagination categories={categories} /> */}
-          <BottomAssets />
         </section>
       </section>
       <section className="h-full mx-auto max-w-7xl">
@@ -144,20 +142,13 @@ export default async function Home(props: any) {
           <Feedback {...quotes} />
         </section>
         <section
-          className="pt-16 sm:pt-28 sm:pb-2 w-11/12 sm:w-full mx-auto"
+          className="pt-16 sm:pt-20 sm:pb-2 w-11/12 sm:w-full mx-auto"
           id="aigenerate"
         >
           <RandomBanner categories={categories} />
-          <PopularCategories
-            beaches={beaches}
-            adventure={adventure}
-            events={events}
-          />
         </section>
       </section>
-
       {/* Generic Carousel  */}
-
       <section className="mx-auto animate-fade-in mt-20 ">
         <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
           What to do
@@ -170,26 +161,35 @@ export default async function Home(props: any) {
         </h2>
         <StaticDataCarousel categories={cities} />
       </section>
-
       <section className="mx-auto animate-fade-in mt-20 ">
         <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
           Restaurants
         </h2>
         <GenericCarousel categories={restaurants} />
       </section>
-
       <section className="mx-auto animate-fade-in mt-20 mb-14 sm:mb-32 ">
         <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
           Car rentals
         </h2>
         <StaticDataCarousel categories={carRentals} />
       </section>
-
-      <section className=" mx-auto pt-12 sm:pt-2 pb-24 sm:pb-32">
+      <section className=" mx-auto pt-12 sm:pt-2 pb-24 sm:pb-1 ">
         <h4 className="max-w-7xl text-left sm:pb-6 mx-auto w-11/12 text-5xl  font-semibold text-black">
           More to explore
         </h4>
         <BottomCarousel categories={categories} />
+      </section>
+      {/* POPULAR CATEGORIES */}
+      <section>
+        <PopularCategories
+          beaches={beaches}
+          adventure={adventure}
+          events={events}
+        />
+      </section>
+      {/*BOTTOM ASSETS */}
+      <section className="max-w-7xl mx-auto w-11/12 mb-20">
+        <BottomAssets />
       </section>
       {/* Algarve Specs */}
       <section className="animate-fade-in pb-10">
