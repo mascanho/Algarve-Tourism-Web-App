@@ -80,6 +80,9 @@ export default async function Home(props: any) {
 
   return (
     <>
+      <div className="relative">
+        <Hero categories={categories} />
+      </div>
       <section className="pt-14 sm:pt-20 pb-6 space-y-4 text-cente-white overflow-hidden">
         <div className="mb-28">
           <Features />
@@ -92,9 +95,6 @@ export default async function Home(props: any) {
         <h4 className="w-8/12 mx-auto text-center">
           Check out this week&apos;s selection of popular places and events
         </h4>
-        <div className="relative">
-          <Hero categories={categories} />
-        </div>
         <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 sm:pt-5">
           <Selection />
           <section className="sm:grid mx-auto containera items-start w-full sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center">
