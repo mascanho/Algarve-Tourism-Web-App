@@ -15,7 +15,7 @@ const Hero = ({ categories }: any) => {
   return (
     <>
       <div
-        className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed sm:bg-cover  bg-blend-multiply bg-black/70  h-dvh`}
+        className={` overflow-x-hidden  sm:block animate-fade bg-fixed sm:bg-cover  bg-blend-multiply bg-black/70  h-dvh`}
         style={{
           backgroundImage: `url(${IMAGES_DESKTOP[1]})`,
           width: "100vw",
