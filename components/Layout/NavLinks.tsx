@@ -17,7 +17,7 @@ function NavLinks({ title, icon, city, data, close }: any) {
   return (
     <>
       <Box maw={400} mx="auto" className="my-4">
-        <Group justify="center" mb={9} className="">
+        <Group justify="center" mb={9} className="font-semibold">
           <div className="flex items-center" onClick={toggle}>
             <span className="w-8 h-8 bg-sky rounded-md flex items-center justify-center text-white mr-2">
               {icon}

@@ -92,7 +92,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
               className="w-8 h-8 bg-sky p-[5px]  rounded-md flex items-center justify-center text-white mr-2"
               size={16}
             />
-            <span className="my-auto">Home</span>
+            <span className="my-auto font-semibold">Home</span>
           </div>{" "}
           <div
             className="flex items-center mb-2"
@@ -151,7 +151,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
             }}
           >
             <FaBookOpen
-              className="w-8 h-8 bg-sky p-[7px]  rounded-md flex items-center justify-center text-white mr-2"
+              className="w-8 h-8 bg-sky p-[7px]  rounded-md flex items-center justify-center text-white mr-2 font-semibold"
               size={16}
             />
             <span className="my-auto">Blog</span>
