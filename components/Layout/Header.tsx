@@ -188,7 +188,6 @@ const Header = ({ currentUser, weatherData }: any) => {
                 />
                 <NotificationsModal />
                 <div className="relative flex">
-                  <MobileDrawer currentUser={currentUser} />
                   <div
                     className="relative flex sm:inline hidden"
                     suppressHydrationWarning
