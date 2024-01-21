@@ -72,11 +72,12 @@ function Footer() {
         />
       )}
 
-      {favourites.length > 0 && (
-        <p className="fixed bottom-10 right-6">
-          favourites: {favourites.length}
-        </p>
-      )}
+      <div
+        className={`"fixed sm:hidden w-full bottom-8  ${isScrollingUp ? "fixed" : "hidden"}`}
+      >
+        {/* Your content goes here */}
+        <p>This is your scroll-up indicator.</p>
+      </div>
 
       <section className="bg-black mt-20 overflow-x-hidden w-full">
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto w-11/12 overflow-x-hidden ">
