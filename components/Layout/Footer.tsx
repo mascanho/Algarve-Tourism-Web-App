@@ -3,8 +3,10 @@ import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { BsArrowUp } from "react-icons/bs";
-import { FaArrowUp } from "react-icons/fa";
+import { FaArrowUp, FaHeart } from "react-icons/fa";
 import { HiArrowUp } from "react-icons/hi2";
+import NotificationsModal from "./NotificationsModal";
+import MobileDrawer from "./MobileDrawer";
 
 function Footer() {
   const onlineUsers = Math.floor(Math.random() * 1000);
@@ -76,8 +78,8 @@ function Footer() {
         className={`"fixed sm:hidden w-full bottom-20 text-center  ${isScrollingUp ? "fixed" : "hidden"}`}
       >
         {/* Your content goes here */}
-        <aside className="bg-gray-800 rounded-full text-xs py-2 px-3 w-fit mx-auto">
-          favs: {favourites.length}
+        <aside className="bg-gray-800 rounded-full text-xs py-2 px-3 w-fit mx-auto flex items-center">
+          <MobileDrawer /> {favourites.length}
         </aside>
       </div>
 

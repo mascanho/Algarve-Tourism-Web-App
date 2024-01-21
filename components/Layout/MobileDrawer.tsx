@@ -7,18 +7,17 @@ import {
   useRegisteredModalStore,
 } from "@/app/hooks/useLoginModal";
 import { AiOutlineNotification } from "react-icons/ai";
+import { FaHeart } from "react-icons/fa";
 
 const MobileDrawer = ({ currentUser }: any) => {
   const loginModal = useLoginModalStore();
   const registeredModal = useRegisteredModalStore();
 
-  console.log(currentUser);
-
   return (
     <Drawer.Root>
       <Drawer.Trigger asChild>
         <button>
-          <AiOutlineNotification className="sm:hidden ml-1 mr-1 cursor-pointer active:scale-90 z-50" />{" "}
+          <FaHeart className="inline mr-1 animate-pulse text-red-500" />{" "}
         </button>
       </Drawer.Trigger>
       <Drawer.Portal>
