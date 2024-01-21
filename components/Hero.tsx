@@ -21,7 +21,7 @@ const Hero = ({ categories }: any) => {
           height: "100vh",
           zIndex: 0,
         }}
-        className={`sm:hidden  animate-fade overflow-x-hidden  bg-blend-multiply bg-black/60   bg-fixed h-screen`}
+        className={`sm:hidden  animate-fade overflow-x-hidden  bg-blend-multiply bg-black/60   bg-fixed h-screen w-screen`}
       />
       <div
         className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed bg-cover  bg-blend-multiply bg-black/70  h-dvh`}

@@ -10,6 +10,7 @@ import { ToasterProvider } from "./providers/ToasterProvider";
 import { NextAuthProvider } from "./providers/AuthProvider";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { PT_Sans } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const ptsans = PT_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -56,7 +57,7 @@ export const viewport: Viewport = {
 // Fetch Weather data
 async function getWeatherData() {
   const res = await fetch(
-    `https://api.weatherapi.com/v1/current.json?key=8fd5b11106094719a89115725232912&q=Algarve&aqi=no`
+    `https://api.weatherapi.com/v1/current.json?key=8fd5b11106094719a89115725232912&q=Algarve&aqi=no`,
   );
   return await res.json();
 }
@@ -85,6 +86,7 @@ export default async function RootLayout({
           <Footer />
         </body>
       </NextAuthProvider>
+      <SpeedInsights />
     </html>
   );
 }
