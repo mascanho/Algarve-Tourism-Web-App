@@ -73,10 +73,12 @@ function Footer() {
       )}
 
       <div
-        className={`"fixed sm:hidden w-full bottom-8  ${isScrollingUp ? "fixed" : "hidden"}`}
+        className={`"fixed sm:hidden w-full bottom-20 text-center  ${isScrollingUp ? "fixed" : "hidden"}`}
       >
         {/* Your content goes here */}
-        <p>This is your scroll-up indicator.</p>
+        <aside className="bg-gray-800 rounded-full text-xs py-2 px-3 w-fit mx-auto">
+          favs: {favourites.length}
+        </aside>
       </div>
 
       <section className="bg-black mt-20 overflow-x-hidden w-full">

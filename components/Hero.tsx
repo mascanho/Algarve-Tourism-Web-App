@@ -24,6 +24,7 @@ const Hero = ({ categories }: any) => {
           backgroundImage: `url('/images/bg-mobile.webp')`,
           backgroundBlendMode: "multiply",
           backgroundColor: "rgba(0, 0, 0, 0.3)",
+          backgroundSize: "contain",
         }}
       />
       <div
