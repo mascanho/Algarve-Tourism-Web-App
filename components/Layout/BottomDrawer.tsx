@@ -46,16 +46,21 @@ function BottomDrawer({ favouritesLength }: any) {
             </Tabs.Tab>
           </Tabs.List>
 
-          <Tabs.Panel value="favourites" className="h-64">
-            {favouritesArray.map((item: any) => (
-              <div
-                className="px-4 py-3 border text-xs flex flex-col  mb-3 space-y-1  rounded-md "
-                key={item.id}
-              >
-                <h5 className="my-0 font-semibold">{item.title}</h5>
-                <p className="text-gray-500">{item.shortDescription}</p>
-              </div>
-            ))}
+          <Tabs.Panel value="favourites">
+            <section className="h-2">
+              {favouritesArray.map((item: any) => (
+                <div
+                  className="px-4 py-3 border text-xs flex flex-col  mb-3 space-y-1  rounded-md "
+                  key={item.id}
+                >
+                  <h5 className="my-0 font-semibold">{item.title}</h5>
+                  <p className="text-gray-500">{item.shortDescription}</p>
+                </div>
+              ))}
+            </section>
+          </Tabs.Panel>
+          <Tabs.Panel value="notifications">
+            <p>Notifications</p>
           </Tabs.Panel>
         </Tabs>
       </Drawer>
