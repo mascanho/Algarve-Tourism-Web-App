@@ -14,14 +14,8 @@ const Hero = ({ categories }: any) => {
 
   return (
     <>
-      <div>
-        <img
-          src="/images/bg-mobile.webp"
-          className="w-screen h-screen object-cover filter brightness-50"
-        />
-      </div>
       <div
-        className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed bg-cover  bg-blend-multiply bg-black/70  h-dvh`}
+        className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed sm:bg-cover  bg-blend-multiply bg-black/70  h-dvh`}
         style={{
           backgroundImage: `url(${IMAGES_DESKTOP[1]})`,
           width: "100vw",
@@ -43,7 +37,13 @@ const Hero = ({ categories }: any) => {
           {" "}
           The region&apos;s top tourism attractions and less known hidden gems
         </h2>
-        <div className="flex justify-center m-auto pt-5"></div>
+        <div className="flex justify-center m-auto pt-5">
+          <Search
+            allTypes={allTypes}
+            placeholderText={"Type your destination or activity"}
+            categories={categories}
+          />
+        </div>
       </section>
     </>
   );
