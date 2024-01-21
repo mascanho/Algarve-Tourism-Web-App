@@ -80,7 +80,7 @@ export default async function Home(props: any) {
 
   return (
     <>
-      <div className="relative overflow-x-hidden">
+      <div className="relative">
         <Hero categories={categories} />
       </div>
       <section className="pt-14 sm:pt-20 pb-6 space-y-4 text-cente-white overflow-hidden">
