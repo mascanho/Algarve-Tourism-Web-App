@@ -14,7 +14,7 @@ const Hero = ({ categories }: any) => {
 
   return (
     <>
-      <div className="border border-red-500 w-full h-full sm:hidden">
+      <div className="w-full h-full sm:hidden">
         <img
           src="/images/bg-mobile.webp"
           className="object-cover filter brightness-50"
@@ -28,7 +28,7 @@ const Hero = ({ categories }: any) => {
           height: "100vh",
         }}
       />
-      <section className="mx-auto w-full sm:h-screen space-y-2 flex flex-col justify-center text-center m-auto absolute top-[10em] sm:-mt-36  md:top-0 ">
+      <section className="mx-auto w-full sm:h-screen space-y-2 flex flex-col justify-center text-center m-auto absolute top-[8em] sm:-mt-36  md:top-0 ">
         <h1 className="mx-auto text-7xl font-bold text-center sm:text-8xl bg-gradient-to-r from-green-500 via-sky to-red-500 sm:text-transparent text-white  bg-clip-text pb-2 animate-gradient ">
           Algarve&apos;s Travel Guide
         </h1>
