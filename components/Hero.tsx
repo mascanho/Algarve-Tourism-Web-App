@@ -15,13 +15,16 @@ const Hero = ({ categories }: any) => {
   return (
     <>
       <div
+        className={`sm:hidden  animate-fade overflow-x-hidden  bg-blend-multiply bg-black/60  `}
         style={{
           backgroundImage: `url("/images/bg-mobile.webp")`,
-          backgroundAttachment: "fixed",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover", // or 'contain' depending on your preference
+          position: "fixed",
           width: "100vw",
           height: "100vh",
         }}
-        className={`sm:hidden  animate-fade overflow-x-hidden  bg-blend-multiply bg-black/60   bg-fixed h-screen w-screen`}
       />
       <div
         className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed bg-cover  bg-blend-multiply bg-black/70  h-dvh`}

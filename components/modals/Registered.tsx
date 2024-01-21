@@ -31,6 +31,7 @@ function RegisteredModal({ currentUser }: any) {
   const [isLoading, setIsLoading] = useState(false);
 
   const closeRegisteredModal = useRegisteredModalStore();
+  const registerModal = useLoginModalStore();
   const router = useRouter();
 
   // get the current user lodden in
@@ -47,6 +48,12 @@ function RegisteredModal({ currentUser }: any) {
       password: "",
     },
   });
+
+  const handlechangeModal = () => {
+    closeRegisteredModal.onClose();
+    router.refresh();
+    registerModal.onOpen();
+  };
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
@@ -144,6 +151,12 @@ function RegisteredModal({ currentUser }: any) {
             </div>
             <Toaster />
           </div>
+          <span className="text-xs text-gray-300">
+            No account?{" "}
+            <span onClick={handlechangeModal} className="text-sky">
+              Register now.{" "}
+            </span>
+          </span>
         </div>
       </div>
     </section>
