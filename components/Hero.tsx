@@ -29,7 +29,7 @@ const Hero = ({ categories }: any) => {
         }}
       />
       <section className="mx-auto w-full sm:h-screen space-y-2 flex flex-col justify-center text-center m-auto absolute top-[8em] sm:-mt-36  md:top-0 ">
-        <h1 className="mx-auto text-7xl font-bold text-center sm:text-8xl bg-gradient-to-r from-green-500 via-sky to-red-500 sm:text-transparent text-white  bg-clip-text pb-2 animate-gradient ">
+        <h1 className="mx-auto text-6xl font-bold text-center sm:text-8xl bg-gradient-to-r from-green-500 via-sky to-red-500 sm:text-transparent text-white  bg-clip-text pb-2 animate-gradient ">
           Algarve&apos;s Travel Guide
         </h1>
         <div className=" rounded-lg w-7/12 sm:w-fit mx-auto p-2 hidden sm:block">
