@@ -16,7 +16,7 @@ const Hero = ({ categories }: any) => {
     <>
       <div
         style={{
-          backgroundImage: `url(https://gretastravels.com/wp-content/uploads/2021/09/DSC_0911.jpg.webp)`,
+          backgroundImage: "url(/images/bg-mobile.webp)",
           width: "100vw",
           height: "100vh",
           zIndex: 0,
