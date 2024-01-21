@@ -95,8 +95,7 @@ function Footer() {
         className={`"fixed sm:hidden w-full bottom-20 text-center  ${isScrollingUp ? "fixed" : "hidden"}`}
       >
         {/* Your content goes here */}
-        <aside className="bg-gray-800 rounded-full text-xs py-2 px-3 w-fit mx-auto flex items-center"></aside>
-        <BottomDrawer />
+        <BottomDrawer favouritesLength={favouritesLength} />
       </div>
 
       <section className="bg-black mt-20 overflow-x-hidden w-full">

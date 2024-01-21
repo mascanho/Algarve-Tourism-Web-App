@@ -181,3 +181,8 @@ input[type="text"] {
 .bottomDraw .mantine-ff23mu {
   border-radius: 20px 20px 0 0 !important;
 }
+
+.bottomDraw .mantine-1fholi4 {
+  outline: none !important;
+  border: 0;
+}
