@@ -84,9 +84,6 @@ export default async function Home(props: any) {
         <Hero categories={categories} />
       </div>
       <section className="pt-14 sm:pt-20 pb-6 space-y-4 text-cente-white overflow-hidden">
-        <div className="mb-28">
-          <Features />
-        </div>
         <div className="-q11/12 mx-auto text-center">
           <h3 className="text-3xl font-bold text-black sm:text-5xl">
             Discover the best of the Algarve
