@@ -9,7 +9,8 @@ export const metadata: Metadata = {
     default: "Algarve Wonders",
     template: "%s | Algarve Wonders",
   },
-  description: "Developer, writer, and creator.",
+  description:
+    "Discover the best places in the Algarve. Find the hidden gems and enjoy the culture",
   viewport: {
     initialScale: 1,
     maximumScale: 1,
@@ -32,12 +33,8 @@ export const metadata: Metadata = {
   icons: {
     icon: "/images/icon.png",
     href: "/images/icon.png",
-    shortcut: "/shortcut-icon.png",
-    apple: "/apple-icon.png",
-    other: {
-      rel: "apple-touch-icon-precomposed",
-      url: "/apple-touch-icon-precomposed.png",
-    },
+    shortcut: "/images/icon.png",
+    apple: "/images/icon.png",
   },
 
   verification: {
