@@ -1,4 +1,5 @@
 "use client";
+import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { BsArrowUp } from "react-icons/bs";
@@ -8,6 +9,9 @@ import { HiArrowUp } from "react-icons/hi2";
 function Footer() {
   const onlineUsers = Math.floor(Math.random() * 1000);
   const [showToTop, setShowToTop] = useState(false);
+  const favourites = useAddToFavourites();
+
+  console.log(favourites.length, "from the footer");
 
   useEffect(() => {
     const handleScroll = () => {
