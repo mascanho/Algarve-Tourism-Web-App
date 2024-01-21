@@ -2,6 +2,9 @@
 import { useDisclosure } from "@mantine/hooks";
 import { Drawer, Tabs, ScrollArea } from "@mantine/core";
 import { FaBell, FaHeart } from "react-icons/fa";
+import { IoHeartOutline } from "react-icons/io5";
+import { TiHeartOutline } from "react-icons/ti";
+import { AiOutlineBell } from "react-icons/ai";
 
 function BottomDrawer({ favouritesLength }: any) {
   const [opened, { open, close }] = useDisclosure(false);
@@ -31,7 +34,7 @@ function BottomDrawer({ favouritesLength }: any) {
         <Tabs defaultValue="favourites">
           <Tabs.List className="mb-6">
             <Tabs.Tab color="dark" value="favourites">
-              Favourites <FaHeart className="inline ml-2" />
+              Favourites <TiHeartOutline className="inline ml-1" />
             </Tabs.Tab>
             <Tabs.Tab
               className="flex items-center"
@@ -39,7 +42,7 @@ function BottomDrawer({ favouritesLength }: any) {
               value="notifications"
             >
               Notifications
-              <FaBell className="inline ml-2" />
+              <AiOutlineBell className="inline ml-2" />
             </Tabs.Tab>
           </Tabs.List>
 
