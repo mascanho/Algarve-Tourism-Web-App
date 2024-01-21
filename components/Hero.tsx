@@ -14,7 +14,7 @@ const Hero = ({ categories }: any) => {
 
   return (
     <>
-      <div className="border border-red-500 w-full h-full">
+      <div className="border border-red-500 w-full h-full sm:hidden">
         <img
           src="/images/bg-mobile.webp"
           className="w-screen h-screen object-cover filter brightness-50"
