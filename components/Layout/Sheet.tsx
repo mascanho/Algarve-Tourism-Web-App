@@ -105,7 +105,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
               className="w-8 h-8 bg-sky p-[5px]  rounded-md flex items-center justify-center text-white mr-2"
               size={16}
             />
-            <span className="my-auto">Search</span>
+            <span className="my-auto font-semibold">Search</span>
           </div>{" "}
           <div className="">
             <NavLinks
@@ -132,7 +132,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
               className="w-8 h-8 bg-sky p-[6px]  rounded-md flex items-center justify-center text-white mr-2"
               size={16}
             />
-            <span className="my-auto">
+            <span className="my-auto font-semibold">
               Favourites
               {favourites.favourites.length > 0 ? (
                 <span className="text-sm text-gray-400 ml-2">
@@ -154,7 +154,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
               className="w-8 h-8 bg-sky p-[7px]  rounded-md flex items-center justify-center text-white mr-2 font-semibold"
               size={16}
             />
-            <span className="my-auto">Blog</span>
+            <span className="my-auto font-semibold">Blog</span>
           </div>{" "}
           <Divider my="md" />
           <div>
