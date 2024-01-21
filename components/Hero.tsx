@@ -14,21 +14,23 @@ const Hero = ({ categories }: any) => {
 
   return (
     <>
-      <div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100vw",
-          height: "100vh",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundImage: `url('/images/bg-mobile.webp')`,
-          backgroundBlendMode: "multiply",
-          backgroundColor: "rgba(0, 0, 0, 0.3)",
-          backgroundSize: "contain",
-        }}
-      />
+      <section className="w-screen h-screen sm:hidden overflow-hidden">
+        <div
+          style={{
+            position: "fixed",
+            // top: 0,
+            // left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "cover",
+            backgroundImage: `url('/images/bg-mobile.webp')`,
+            backgroundBlendMode: "multiply",
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
+            // backgroundSize: "contain",
+          }}
+        />
+      </section>
       <div
         className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed bg-cover  bg-blend-multiply bg-black/70  h-dvh`}
         style={{

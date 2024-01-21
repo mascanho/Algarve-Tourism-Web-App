@@ -1,7 +1,7 @@
 "use client";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { BsArrowUp } from "react-icons/bs";
 import { FaArrowUp, FaHeart } from "react-icons/fa";
 import { HiArrowUp } from "react-icons/hi2";
@@ -9,9 +9,10 @@ import NotificationsModal from "./NotificationsModal";
 import MobileDrawer from "./MobileDrawer";
 
 function Footer() {
-  const onlineUsers = Math.floor(Math.random() * 1000);
   const [showToTop, setShowToTop] = useState(false);
   const { favourites } = useAddToFavourites();
+  const [favouritesLength, setFavouritesLength] = useState(0);
+  const [fakeOnlineUsers, setFakeOnlineUsers] = useState(0);
 
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -45,23 +46,39 @@ function Footer() {
     };
   }, []);
 
+  // UPDATE THE ONLINE USERS SO IT DOES NOT RERENDER EVERY TIME THE USER SCROLLS
+  useEffect(() => {
+    const handleOnlineUsers = () => {
+      setFakeOnlineUsers(Math.floor(Math.random() * 100));
+    };
+    window.addEventListener("online", handleOnlineUsers);
+    return () => {
+      window.removeEventListener("online", handleOnlineUsers);
+    };
+  }, []);
+
   // SHOW THE ELEMENT CONDITIONALY DEPENDING ON SCROLL. IF SCROLING UP SHOW THE ELEMENT, IF SCROLLING DOWN HIDE THE ELEMENT
-  const handleYposition = () => {
+  const handleYposition = useCallback(() => {
     const currentScrollPos = window.pageYOffset;
 
-    setIsScrollingUp(prevScrollPos < currentScrollPos);
+    setIsScrollingUp(
+      currentScrollPos < prevScrollPos || currentScrollPos < 100,
+    );
     setPrevScrollPos(currentScrollPos);
-  };
+  }, [prevScrollPos]);
 
   useEffect(() => {
-    // Attach the scroll event listener when the component mounts
     window.addEventListener("scroll", handleYposition);
 
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleYposition);
     };
-  }, [prevScrollPos]);
+  }, [handleYposition]);
+
+  useEffect(() => {
+    const favouritesFromLocalStorage = localStorage.getItem("favourites");
+    setFavouritesLength(JSON.parse(favouritesFromLocalStorage).length);
+  }, [favourites]);
 
   return (
     <>
@@ -79,7 +96,7 @@ function Footer() {
       >
         {/* Your content goes here */}
         <aside className="bg-gray-800 rounded-full text-xs py-2 px-3 w-fit mx-auto flex items-center">
-          <MobileDrawer /> {favourites.length}
+          <MobileDrawer /> {favouritesLength}
         </aside>
       </div>
 
@@ -187,7 +204,7 @@ function Footer() {
             <div className="grid grid-flow-col px-4 sm:px-0 w-full ">
               <div className="flex bg-gray-400/30  space-x-2 -mt-6 sm:mt-0 mb-4 sm:mb-0 mx-auto w-full items-center py-1 px-4 text-xs rounded-xl">
                 <span suppressHydrationWarning className="text-sky">
-                  {onlineUsers}
+                  {fakeOnlineUsers}
                 </span>{" "}
                 <span>users online</span>
                 <span className="w-2 h-2 rounded-full bg-green-500/60" />
