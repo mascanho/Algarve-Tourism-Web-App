@@ -17,13 +17,11 @@ const Hero = ({ categories }: any) => {
       <section className="w-screen h-screen sm:hidden overflow-hidden">
         <div
           style={{
-            // top: 0,
-            // left: 0,
             width: "100vw",
             height: "100vh",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "cover",
-            backgroundImage: `url('/images/bg-mobile.webp')`,
+            // backgroundImage: `url('/images/bg-mobile.webp')`,
             backgroundBlendMode: "multiply",
             backgroundColor: "rgba(0, 0, 0, 0.3)",
             // backgroundSize: "contain",
