@@ -28,21 +28,29 @@ function BottomDrawer({ favouritesLength }: any) {
       >
         {/* Drawer content */}
 
-        <Tabs defaultValue="favourites ">
-          <Tabs.List>
+        <Tabs defaultValue="favourites">
+          <Tabs.List className="mb-6">
             <Tabs.Tab color="dark" value="favourites">
-              Favourites
+              Favourites <FaHeart className="inline ml-2" />
+            </Tabs.Tab>
+            <Tabs.Tab
+              className="flex items-center"
+              color="dark"
+              value="notifications"
+            >
+              Notifications
+              <FaBell className="inline ml-2" />
             </Tabs.Tab>
           </Tabs.List>
 
           <Tabs.Panel value="favourites">
             {favouritesArray.map((item: any) => (
               <div
-                className="p-4 border text-sm flex flex-col mt-4 mb-2 rounded-md space-y-2"
+                className="px-4 py-3 border text-xs flex flex-col  mb-3 space-y-1  rounded-md "
                 key={item.id}
               >
-                <p>{item.title}</p>
-                <p>{item.shortDescription}</p>
+                <h5 className="my-0 font-semibold">{item.title}</h5>
+                <p className="text-gray-500">{item.shortDescription}</p>
               </div>
             ))}
           </Tabs.Panel>
