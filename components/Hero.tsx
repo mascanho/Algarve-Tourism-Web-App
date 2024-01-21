@@ -14,7 +14,7 @@ const Hero = ({ categories }: any) => {
 
   return (
     <>
-      <div className="h-screen w-screen">
+      <div>
         <img
           src="/images/bg-mobile.webp"
           className="w-screen h-screen object-cover filter brightness-50"
