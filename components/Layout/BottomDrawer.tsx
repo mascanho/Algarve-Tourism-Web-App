@@ -1,17 +1,17 @@
 "use client";
 import { useDisclosure } from "@mantine/hooks";
-import { Drawer, Button } from "@mantine/core";
+import { Drawer } from "@mantine/core";
 import { FaHeart } from "react-icons/fa";
 
 function BottomDrawer({ favouritesLength }: any) {
   const [opened, { open, close }] = useDisclosure(false);
 
-  console.log(favouritesLength);
+  const favouritesFromLocalStorage =
+    typeof localStorage !== "undefined"
+      ? localStorage.getItem("favourites")
+      : null;
 
-  const favouritesFromLocalStorage = localStorage.getItem("favourites");
   const favouritesArray = JSON.parse(favouritesFromLocalStorage) || [];
-
-  console.log(favouritesArray, "the array");
 
   return (
     <>
@@ -25,11 +25,17 @@ function BottomDrawer({ favouritesLength }: any) {
         className="bottomDraw sm:hidden"
       >
         {/* Drawer content */}
+        {favouritesArray.map((item: any) => (
+          <div className="p-4 border text-sm gap-2" key={item.id}>
+            <p>{item.title}</p>
+            <p>{item.shortDescription}</p>
+          </div>
+        ))}
       </Drawer>
 
       <div
         onClick={open}
-        className="bg-gray-700 w-fit mx-auto flex items-center gap-2 transition-all px-2 py-1 rounded-full "
+        className="bg-gray-700 w-fit mx-auto flex items-center gap-2 transition-all px-2 py-1 rounded-full"
       >
         <FaHeart className="text-red-500" />
         {favouritesLength}
