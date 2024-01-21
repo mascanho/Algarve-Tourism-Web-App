@@ -9,7 +9,7 @@ import { HiArrowUp } from "react-icons/hi2";
 function Footer() {
   const onlineUsers = Math.floor(Math.random() * 1000);
   const [showToTop, setShowToTop] = useState(false);
-  const favourites = useAddToFavourites();
+  const { favourites } = useAddToFavourites();
 
   console.log(favourites.length, "from the footer");
 
@@ -40,6 +40,8 @@ function Footer() {
     };
   }, []);
 
+  // SHOW THE ELEMENT CONDITIONALY DEPENDING ON SCROLL. IF SCROLING UP SHOW THE ELEMENT, IF SCROLLING DOWN HIDE THE ELEMENT
+
   return (
     <>
       {showToTop && (
@@ -49,6 +51,12 @@ function Footer() {
           }}
           className="text-5xl text-sky cursor-pointer fixed bottom-10 right-6 sm:right-10  bg-white border rounded-full p-1 py-2 transition-all ease-in-out delay-200"
         />
+      )}
+
+      {favourites.length > 0 && (
+        <p className="fixed bottom-10 right-6">
+          favourites: {favourites.length}
+        </p>
       )}
 
       <section className="bg-black mt-20 overflow-x-hidden w-full">
