@@ -2,18 +2,34 @@
 
 import { useForm, ValidationError } from "@formspree/react";
 import Link from "next/link";
+import useWindowSize from "react-use/lib/useWindowSize";
+import Confetti from "react-confetti";
 
 export default function Form() {
+  const { width, height } = useWindowSize();
   const [state, handleSubmit] = useForm("xeqbrndo");
   if (state.succeeded) {
     return (
-      <section className="flex flex-col items-center justify-center text-center w-full">
+      <section className="flex flex-col items-center justify-center text-center w-full overflow-hidden">
+        <Confetti width={width} height={height} />
         <h2 className="text-center text-3xl">We Got Your Place!</h2>
-        <Link href="/">
-          <button className="border bg-sky text-white w-full py-2 mt-8 px-4 rounded-md">
-            Back to Home Page
-          </button>
-        </Link>
+        <div>
+          <Link href="/">
+            <button className="border bg-sky text-white w-full py-2 mt-8 px-4 rounded-md">
+              Back to Home Page
+            </button>
+          </Link>
+          <Link href="/">
+            <button
+              onClick={() => {
+                window.location.reload();
+              }}
+              className="border bg-sky text-white w-full py-2 mt-4  px-4 rounded-md"
+            >
+              Submit Another
+            </button>
+          </Link>
+        </div>
       </section>
     );
   }
@@ -57,21 +73,28 @@ export default function Form() {
         <input
           placeholder={`https://www.toweroflondon.com`}
           className="input input-bordered border border-gray-200 text-black  w-full bg-transparent"
-          id="city"
+          id="website"
           type="text"
-          name="city"
+          name="website"
         />{" "}
-        <ValidationError prefix="city" field="city" errors={state.errors} />
+        <ValidationError
+          prefix="website"
+          field="website"
+          errors={state.errors}
+        />
         <div className="pt-2 w-full">
           <button
             type="submit"
-            className="border bg-sky text-white w-full py-2"
+            className="border bg-sky text-white w-full py-2 rounded-md"
             disabled={state.submitting}
           >
             Send
           </button>
         </div>
-      </form>
+      </form>{" "}
+      <span className="text-gray-300 text-xs pt-10">
+        Locations provided must be in the Algarve
+      </span>
     </div>
   );
 }

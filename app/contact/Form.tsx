@@ -2,12 +2,17 @@
 
 import { useForm, ValidationError } from "@formspree/react";
 import Link from "next/link";
+import Confetti from "react-confetti";
+import useWindowSize from "react-use/lib/useWindowSize";
 
 export default function Form() {
   const [state, handleSubmit] = useForm("xeqbrndo");
+  const { width, height } = useWindowSize();
+
   if (state.succeeded) {
     return (
       <section className="flex flex-col items-center justify-center text-center w-full">
+        <Confetti width={width} height={height} />
         <h2 className="text-center text-3xl">Thank You For Your Contact</h2>
         <Link href="/">
           <button className="border bg-sky text-white w-full py-2 mt-8 px-4 rounded-md">

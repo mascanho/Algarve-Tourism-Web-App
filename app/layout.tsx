@@ -86,7 +86,6 @@ export default async function RootLayout({
           <Footer />
         </body>
       </NextAuthProvider>
-      <SpeedInsights />
     </html>
   );
 }
