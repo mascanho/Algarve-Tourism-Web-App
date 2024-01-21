@@ -7,6 +7,7 @@ import { FaArrowUp, FaHeart } from "react-icons/fa";
 import { HiArrowUp } from "react-icons/hi2";
 import NotificationsModal from "./NotificationsModal";
 import MobileDrawer from "./MobileDrawer";
+import BottomDrawer from "./BottomDrawer";
 
 function Footer() {
   const [showToTop, setShowToTop] = useState(false);
@@ -94,9 +95,8 @@ function Footer() {
         className={`"fixed sm:hidden w-full bottom-20 text-center  ${isScrollingUp ? "fixed" : "hidden"}`}
       >
         {/* Your content goes here */}
-        <aside className="bg-gray-800 rounded-full text-xs py-2 px-3 w-fit mx-auto flex items-center">
-          <MobileDrawer /> {favouritesLength}
-        </aside>
+        <aside className="bg-gray-800 rounded-full text-xs py-2 px-3 w-fit mx-auto flex items-center"></aside>
+        <BottomDrawer />
       </div>
 
       <section className="bg-black mt-20 overflow-x-hidden w-full">
