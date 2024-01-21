@@ -11,6 +11,9 @@ function Footer() {
   const [showToTop, setShowToTop] = useState(false);
   const { favourites } = useAddToFavourites();
 
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
   console.log(favourites.length, "from the footer");
 
   useEffect(() => {
@@ -41,6 +44,22 @@ function Footer() {
   }, []);
 
   // SHOW THE ELEMENT CONDITIONALY DEPENDING ON SCROLL. IF SCROLING UP SHOW THE ELEMENT, IF SCROLLING DOWN HIDE THE ELEMENT
+  const handleYposition = () => {
+    const currentScrollPos = window.pageYOffset;
+
+    setIsScrollingUp(prevScrollPos > currentScrollPos);
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    // Attach the scroll event listener when the component mounts
+    window.addEventListener("scroll", handleYposition);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleYposition);
+    };
+  }, [prevScrollPos]);
 
   return (
     <>
