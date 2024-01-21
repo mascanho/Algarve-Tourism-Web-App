@@ -6,7 +6,15 @@ function BottomDrawer() {
 
   return (
     <>
-      <Drawer opened={opened} onClose={close} title="Authentication">
+      <Drawer
+        offset={8}
+        radius="md"
+        opened={opened}
+        onClose={close}
+        position="bottom"
+        title="Authentication"
+        className="bottomDraw"
+      >
         {/* Drawer content */}
       </Drawer>
 

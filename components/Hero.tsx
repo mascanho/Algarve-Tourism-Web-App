@@ -14,14 +14,8 @@ const Hero = ({ categories }: any) => {
 
   return (
     <>
-      <div className="h-screen w-screen">
-        <img
-          src="/images/bg-mobile.webp"
-          className="w-full h-full object-cover filter brightness-50"
-        />
-      </div>
       <div
-        className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed bg-cover  bg-blend-multiply bg-black/70  h-dvh`}
+        className={` overflow-x-hidden sm:block animate-fade bg-fixed bg-cover  bg-blend-multiply bg-black/70  h-dvh`}
         style={{
           backgroundImage: `url(${IMAGES_DESKTOP[1]})`,
           width: "100vw",

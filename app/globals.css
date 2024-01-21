@@ -177,3 +177,7 @@ input[type="text"] {
     background-position: 0% 50%;
   }
 }
+
+.bottomDraw .mantine-ff23mu {
+  border-radius: 20px 20px 0 0 !important;
+}
