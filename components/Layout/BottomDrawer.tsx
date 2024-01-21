@@ -25,14 +25,14 @@ function BottomDrawer({ favouritesLength }: any) {
         onClose={close}
         position="bottom"
         title=""
-        className="bottomDraw sm:hidden"
+        className="bottomDraw sm:hidden relative"
         overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
-        scrollAreaComponent={ScrollArea.Autosize}
+        // scrollAreaComponent={ScrollArea.Autosize}
       >
         {/* Drawer content */}
 
         <Tabs defaultValue="favourites">
-          <Tabs.List className="mb-6">
+          <Tabs.List className="mb-6  top-0">
             <Tabs.Tab color="dark" value="favourites">
               Favourites <TiHeartOutline className="inline ml-1" />
             </Tabs.Tab>
@@ -46,7 +46,7 @@ function BottomDrawer({ favouritesLength }: any) {
             </Tabs.Tab>
           </Tabs.List>
 
-          <Tabs.Panel value="favourites">
+          <Tabs.Panel value="favourites" className="h-64">
             {favouritesArray.map((item: any) => (
               <div
                 className="px-4 py-3 border text-xs flex flex-col  mb-3 space-y-1  rounded-md "
@@ -62,7 +62,7 @@ function BottomDrawer({ favouritesLength }: any) {
 
       <div
         onClick={open}
-        className="bg-gray-700 w-fit mx-auto flex items-center gap-2 transition-all px-2 py-1 rounded-full"
+        className="bg-gray-700 w-fit mx-auto flex items-center gap-2 transition-all px-3 py-1 rounded-full"
       >
         <FaHeart className="text-red-500" />
         {favouritesLength}

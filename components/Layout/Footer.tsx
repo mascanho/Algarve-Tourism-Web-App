@@ -92,7 +92,7 @@ function Footer() {
       )}
 
       <div
-        className={`"fixed sm:hidden w-full bottom-20 text-center  ${isScrollingUp ? "fixed" : "hidden"}`}
+        className={`"fixed sm:hidden w-full bottom-10 text-center  ${isScrollingUp ? "fixed" : "hidden"}`}
       >
         {/* Your content goes here */}
         <BottomDrawer favouritesLength={favouritesLength} />
