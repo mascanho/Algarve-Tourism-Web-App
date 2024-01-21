@@ -17,7 +17,6 @@ const Hero = ({ categories }: any) => {
       <section className="w-screen h-screen sm:hidden overflow-hidden">
         <div
           style={{
-            position: "fixed",
             // top: 0,
             // left: 0,
             width: "100vw",
