@@ -16,10 +16,10 @@ const Hero = ({ categories }: any) => {
     <>
       <div
         style={{
-          backgroundImage: "url(/images/bg-mobile.webp)",
+          backgroundImage: `url("/images/bg-mobile.webp")`,
+          backgroundAttachment: "fixed",
           width: "100vw",
           height: "100vh",
-          zIndex: 0,
         }}
         className={`sm:hidden  animate-fade overflow-x-hidden  bg-blend-multiply bg-black/60   bg-fixed h-screen w-screen`}
       />
