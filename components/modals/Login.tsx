@@ -51,7 +51,7 @@ function LoginModal({ currenUser }: any) {
     const sendTheEmail = async (message: any) => {
       if (!message || message === null) {
         await sendMail({
-          to: data.email,
+          to: data.email.toLowerCase(),
           subject: "Welcome to Algarve Wonders 🎊",
           body: registerEmailTemplate(data.email, data.password),
           name: "Algarve Wonders",

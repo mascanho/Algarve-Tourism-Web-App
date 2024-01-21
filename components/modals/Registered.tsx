@@ -96,7 +96,7 @@ function RegisteredModal({ currentUser }: any) {
                 <input
                   type="text"
                   id="email"
-                  className="p-2 bg-transparent bg-gray-300 border rounded-md"
+                  className="p-2 bg-transparent bg-gray-300 border rounded-md lowercase"
                   placeholder="Enter Your Email"
                   required
                   {...register("email")}

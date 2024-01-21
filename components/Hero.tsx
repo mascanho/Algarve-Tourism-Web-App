@@ -15,7 +15,7 @@ const Hero = ({ categories }: any) => {
   return (
     <>
       <div
-        className={`sm:hidden  animate-fade overflow-x-hidden  bg-blend-multiply bg-black/60 bg-[url("/images/bg-mobile.webp")] bg-cover bg-fixed   h-screen w-screen min-h-screen min-w-screen`}
+        className={`sm:hidden  animate-fade overflow-x-hidden  bg-blend-multiply bg-black/60 bg-[url("/images/bg-mobile.webp")] object-cover bg-fixed   h-screen w-screen min-h-screen min-w-screen`}
       />
       <div
         className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed bg-cover  bg-blend-multiply bg-black/70  h-dvh`}
