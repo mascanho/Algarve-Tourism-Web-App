@@ -47,7 +47,7 @@ function Footer() {
   const handleYposition = () => {
     const currentScrollPos = window.pageYOffset;
 
-    setIsScrollingUp(prevScrollPos > currentScrollPos);
+    setIsScrollingUp(prevScrollPos < currentScrollPos);
     setPrevScrollPos(currentScrollPos);
   };
 

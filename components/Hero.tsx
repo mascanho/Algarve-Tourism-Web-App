@@ -17,14 +17,13 @@ const Hero = ({ categories }: any) => {
       <div
         // className={`sm:hidden  animate-fade overflow-x-hidden  `}
         style={{
+          width: "100vw",
+          height: "100vh",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundImage: `url('/images/bg-mobile.webp')`,
-          backgroundColor: "black",
-          backdropFilter: "blur(10px)",
-          backgroundSize: "cover",
-          width: "100vw",
-          height: "100vh",
+          backgroundBlendMode: "multiply",
+          backgroundColor: "rgba(0, 0, 0, 0.3)",
         }}
       />
       <div
