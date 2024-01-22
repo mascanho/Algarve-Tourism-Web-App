@@ -16,7 +16,7 @@ import Acordion from "@/components/Acordion";
 import AffixScrollToTop from "@/components/Layout/Affix";
 import Features from "@/components/Features";
 import AlgarveSpecs from "@/components/AlgarveSpecs";
-import { cache } from "react";
+import { cache, lazy, Suspense } from "react";
 import Link from "next/link";
 import UsefullLinks from "@/components/UsefullLinks";
 import Agenda from "@/components/Agenda";
@@ -25,6 +25,7 @@ import BottomCarousel from "@/components/Layout/BottomCarousel";
 import Testing from "@/components/Layout/CarTesting";
 import GenericCarousel from "@/components/Layout/CarouselGeneric";
 import StaticDataCarousel from "@/components/Layout/StaticDataCarousel";
+
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
   description: "The Best Place To Find The Hidden Gems In Algarve",
@@ -80,9 +81,9 @@ export default async function Home(props: any) {
 
   return (
     <>
-      <div className="relative">
-        <Hero categories={categories} />
-      </div>
+      {/* <div className="relative"> */}
+      {/*   <Hero categories={categories} /> */}
+      {/* </div> */}
       <section className="pt-14 sm:pt-20 pb-6 space-y-4 text-cente-white overflow-hidden">
         <div className="mb-28">{/* <Features /> */}</div>
         <div className="-q11/12 mx-auto text-center">
@@ -96,28 +97,27 @@ export default async function Home(props: any) {
         <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 sm:pt-5">
           <Selection />
           <section className="sm:grid mx-auto containera items-start w-full sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center">
-            {/* Normal Cards with no search feature */}
-            {/* {categories.slice(0, 8).map((cat: any) => ( */}
-            {/*   <Card */}
-            {/*     key={cat?.fields?.title} */}
-            {/*     title={cat?.fields?.title} */}
-            {/*     description={cat?.fields?.shortDescription} */}
-            {/*     image={cat?.fields?.mainImage?.fields?.file?.url} */}
-            {/*     category={categories} */}
-            {/*     slug={cat?.fields?.slug} */}
-            {/*     id={cat?.fields?.title} */}
-            {/*     hiddenGem={cat?.fields?.hiddenGem} */}
-            {/*     city={cat?.fields?.city} */}
-            {/*     type={cat?.fields?.type} */}
-            {/*     shortDescription={cat?.fields?.shortDescription} */}
-            {/*     mainImage={cat?.fields?.mainImage?.fields?.file?.url} */}
-            {/*     rating={cat?.fields?.rating} */}
-            {/*     tags={cat?.fields?.tags} */}
-            {/*     embededMap={cat?.fields?.embededMap} */}
-            {/*     mapShare={cat?.fields?.mapShare} */}
-            {/*     price={cat?.fields?.price} */}
-            {/*   /> */}
-            {/* ))} */}
+            {categories.slice(0, 8).map((cat: any) => (
+              <Card
+                key={cat?.fields?.title}
+                title={cat?.fields?.title}
+                description={cat?.fields?.shortDescription}
+                image={cat?.fields?.mainImage?.fields?.file?.url}
+                category={categories}
+                slug={cat?.fields?.slug}
+                id={cat?.fields?.title}
+                hiddenGem={cat?.fields?.hiddenGem}
+                city={cat?.fields?.city}
+                type={cat?.fields?.type}
+                shortDescription={cat?.fields?.shortDescription}
+                mainImage={cat?.fields?.mainImage?.fields?.file?.url}
+                rating={cat?.fields?.rating}
+                tags={cat?.fields?.tags}
+                embededMap={cat?.fields?.embededMap}
+                mapShare={cat?.fields?.mapShare}
+                price={cat?.fields?.price}
+              />
+            ))}
           </section>
           <div className="flex justify-center my-10">
             <Link href="/beaches">
@@ -143,7 +143,7 @@ export default async function Home(props: any) {
           className="pt-16 sm:pt-20 sm:pb-2 w-11/12 sm:w-full mx-auto"
           id="aigenerate"
         >
-          {/* <RandomBanner categories={categories} /> */}
+          <RandomBanner categories={categories} />
         </section>
       </section>
       {/* Generic Carousel  */}
@@ -151,39 +151,31 @@ export default async function Home(props: any) {
         <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
           What to do
         </h2>
-        {/* <GenericCarousel categories={categories} /> */}
+        <GenericCarousel categories={categories} />
       </section>
       <section className="mx-auto animate-fade-in mt-20 ">
         <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
           Cities to visit
         </h2>
-        {/* <StaticDataCarousel categories={cities} /> */}
+        <StaticDataCarousel categories={cities} />
       </section>
       <section className="mx-auto animate-fade-in mt-20 ">
         <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
           Restaurants
         </h2>
-        {/* <GenericCarousel categories={restaurants} /> */}
+        <GenericCarousel categories={restaurants} />
       </section>
       <section className="mx-auto animate-fade-in mt-20 mb-14 sm:mb-32 ">
         <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
           Car rentals
         </h2>
-        {/* <StaticDataCarousel categories={carRentals} /> */}
+        <StaticDataCarousel categories={carRentals} />
       </section>
       <section className=" mx-auto pt-12 sm:pt-2 pb-24 sm:pb-1 ">
         <h4 className="max-w-7xl text-left sm:pb-6 mx-auto w-11/12 text-5xl  font-semibold text-black">
           More to explore
         </h4>
-        {/* <BottomCarousel categories={categories} /> */}
-      </section>
-      {/* POPULAR CATEGORIES */}
-      <section>
-        {/* <PopularCategories */}
-        {/*   beaches={beaches} */}
-        {/*   adventure={adventure} */}
-        {/*   events={events} */}
-        {/* /> */}
+        <BottomCarousel categories={categories} />
       </section>
       {/*BOTTOM ASSETS */}
       <section className="max-w-7xl mx-auto w-11/12 mb-20">
@@ -193,21 +185,19 @@ export default async function Home(props: any) {
       <section className="animate-fade-in pb-10">
         {/* <AlgarveSpecs /> */}
       </section>
-      {/* Bottom Carousel */}
       {/* Frequently asked questions */}
       <section className="w-11/12 md:max-w-7xl mx-auto space-y-8 animate-fade-in my-20">
-        <h4 className="text-xl">Frequently asked questions</h4>
+        {/* <h4 className="text-xl">Frequently asked questions</h4> */}
         {/* <Acordion /> */}
       </section>
-      {/* <section className="hidden sm:block w-11/12 max-w-7xl"> */}
-      {/*   <AffixScrollToTop /> */}
-      {/* </section> */}
       {/* Good To Know */}
-      <section className="sm:mb-40 max-w-7xl mx-auto w-11/12  mt-20">
-        <h3 className="text-2xl">Useful links</h3>
-        <hr className="w-32 transition-all ease-in mt-2 delay-100  group-hover:w-11/12 hover:rounded-full   bg-sky h-1 rounded-full " />
-        <div className="mt-8">{/* <UsefullLinks /> */}</div>
-      </section>
+      {/* <section className="sm:mb-40 max-w-7xl mx-auto w-11/12  mt-20"> */}
+      {/*   <h3 className="text-2xl">Useful links</h3> */}
+      {/*   <hr className="w-32 transition-all ease-in mt-2 delay-100  group-hover:w-11/12 hover:rounded-full   bg-sky h-1 rounded-full " /> */}
+      {/*   <div className="mt-8"> */}
+      {/*     {/* <UsefullLinks /> */} */}
+      {/*   </div> */}
+      {/* </section> */}
     </>
   );
 }

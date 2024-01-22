@@ -104,16 +104,11 @@ function GenericCarousel({ categories }: { categories: any[] }) {
 
   return (
     <Carousel
-      // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
       className="bottomCarousel mt-10"
       slideSize={mobile ? "63.333333%" : "23.333333%"}
       slideGap={mobile ? "md" : "md"}
-      // align="start"
       slidesToScroll={mobile ? 1 : 1}
       height={300}
-      // withControls={mobile ? false : true}
-      // withControls={false}
-      // loop
       initialSlide={1}
     >
       {slides}
