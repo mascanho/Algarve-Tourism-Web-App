@@ -14,12 +14,6 @@ const Hero = ({ categories }: any) => {
 
   return (
     <>
-      <div className="w-full h-full sm:hidden">
-        <img
-          src="/images/bg-mobile.webp"
-          className="object-cover filter brightness-50"
-        />
-      </div>
       <div
         className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed sm:bg-cover  bg-blend-multiply bg-black/70  h-dvh`}
         style={
