@@ -22,11 +22,13 @@ const Hero = ({ categories }: any) => {
       </div>
       <div
         className={` overflow-x-hidden hidden sm:block animate-fade bg-fixed sm:bg-cover  bg-blend-multiply bg-black/70  h-dvh`}
-        style={{
-          backgroundImage: `url(${IMAGES_DESKTOP[1]})`,
-          width: "100vw",
-          height: "100vh",
-        }}
+        style={
+          {
+            // backgroundImage: `url(${IMAGES_DESKTOP[1]})`,
+            // width: "100vw",
+            // height: "100vh",
+          }
+        }
       />
       <section className="mx-auto w-full sm:h-screen space-y-2 flex flex-col justify-center text-center m-auto absolute top-[8em] sm:-mt-36  md:top-0 ">
         <h1 className="mx-auto text-6xl font-bold text-center sm:text-8xl bg-gradient-to-r from-green-500 via-sky to-red-500 sm:text-transparent text-white  bg-clip-text pb-2 animate-gradient ">
