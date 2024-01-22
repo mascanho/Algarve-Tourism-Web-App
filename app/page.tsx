@@ -94,7 +94,7 @@ export default async function Home(props: any) {
           Check out this week&apos;s selection of popular places and events
         </h4>
         <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 sm:pt-5">
-          {/* <Selection /> */}
+          <Selection />
           <section className="sm:grid mx-auto containera items-start w-full sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center">
             {/* Normal Cards with no search feature */}
             {/* {categories.slice(0, 8).map((cat: any) => ( */}
