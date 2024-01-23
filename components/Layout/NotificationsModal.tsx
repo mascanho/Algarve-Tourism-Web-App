@@ -21,7 +21,7 @@ function NotificationsModal() {
       </Modal>
       <AiOutlineNotification
         onClick={open}
-        className="ml-1 mr-1 hidden sm:inline cursor-pointer active:scale-90 z-50 text-3xl"
+        className="ml-1 mr-1 hidden sm:inline cursor-pointer active:scale-90 z-50 text-2xl"
       />{" "}
     </>
   );
