@@ -77,7 +77,9 @@ export default async function RootLayout({
         <body className="bg-white w-screen overflow-x-hidden ">
           <ClientOnly>
             <ToasterProvider />
-            <Header currentUser={currentUser} weatherData={weatherData} />
+            <section className="pb-12">
+              <Header currentUser={currentUser} weatherData={weatherData} />
+            </section>
             {children}
           </ClientOnly>
           <GoogleTagManager gtmId="GTM-MHX7R9FF" />
