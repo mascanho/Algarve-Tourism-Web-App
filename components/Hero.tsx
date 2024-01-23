@@ -13,31 +13,28 @@ const Hero = ({ categories }: any) => {
   const [allTypes, setAllTypes] = useState<any[]>([]);
 
   return (
-    <>
-      <section className="mx-auto w-full space-y-2 flex flex-wrap flex-col justify-center text-center m-auto">
-        <h1 className="mx-auto text-3xl font-bold pt-24 text-center sm:text-6xl bg-gradient-to-r from-green-500 via-sky to-red-500 sm:text-transparent text-black  bg-clip-text pb-2 animate-gradient ">
-          Algarve&apos;s Travel Guide
-        </h1>
-        <div className=" rounded-lg w-7/12 sm:w-fit mx-auto p-2 hidden sm:block">
-          <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12 sm:w-10/12 lg:w-3/4 px-4">
-            Discover the breathtaking beauty of the Algarve! The ultimate guide
-            to the region&apos;s top tourism attractions and less known hidden
-            gems
-          </h2>
-        </div>
-        <h2 className="sm:hidden w-9/12 mx-auto sm:w-10/12 rounded-sm sm:p-0 mt-4 sm:mt-0 sm:max-w-lg  sm:pt-2">
-          {" "}
-          The region&apos;s top tourism attractions and less known hidden gems
+    <section className="mx-auto w-full space-y-2 flex flex-wrap flex-col justify-center text-center m-auto">
+      <h1 className="mx-auto text-3xl font-bold pt-20 sm:pt-24 text-center sm:text-6xl bg-gradient-to-r from-green-500 via-sky to-red-500 sm:text-transparent text-black  bg-clip-text pb-2 animate-gradient ">
+        Algarve&apos;s Travel Guide
+      </h1>
+      <div className=" rounded-lg w-7/12 sm:w-fit mx-auto p-2 hidden sm:block">
+        <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12 sm:w-10/12 lg:w-3/4 px-4">
+          Discover the breathtaking beauty of the Algarve! The ultimate guide to
+          the region&apos;s top tourism attractions and less known hidden gems
         </h2>
-        {/* <div className="flex justify-center m-auto pt-5"> */}
-        {/*   <Search */}
-        {/*     allTypes={allTypes} */}
-        {/*     placeholderText={"Type your destination or activity"} */}
-        {/*     categories={categories} */}
-        {/*   /> */}
-        {/* </div> */}
-      </section>
-    </>
+      </div>
+      <h2 className="sm:hidden w-9/12 mx-auto sm:w-10/12 rounded-sm sm:p-0 mt-1 sm:mt-0 sm:max-w-lg  sm:pt-2">
+        {" "}
+        The region&apos;s top tourism attractions and less known hidden gems
+      </h2>
+      <div className="flex justify-center m-auto pt-5">
+        <Search
+          allTypes={allTypes}
+          placeholderText={"Type your destination or activity"}
+          categories={categories}
+        />
+      </div>
+    </section>
   );
 };
 

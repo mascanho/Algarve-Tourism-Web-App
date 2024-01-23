@@ -97,15 +97,10 @@ function Search({ allTypes, placeholderText, categories }: any) {
           />
           <div />
         </div>
-        <div className="absolute  flex items-center justify-center w-20 active:scale-95 transition duration-500 ease-in  sm:w-32 h-[40px] sm:h-9 text-xs bg-gradient-to-r from-fuchsia-600 via-sky to-pink-600 text-white animate-gradient rounded-full cursor-pointer top-3 sm:top-[14px] right-1 sm:right-6">
-          <button
-            type="submit"
-            className="active:scale-95 font-semibold sm:text-base "
-          >
-            {/* <BsSearch className="text-xl" /> */}
-            Search
-          </button>
-        </div>
+        <button type="submit">
+          {/* <BsSearch className="text-xl" /> */}
+          Search
+        </button>
       </form>
     </section>
   );
