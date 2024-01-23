@@ -2,25 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .mantine-UnstyledButton-root {
-  background-color: white;
-} */
-
 * {
   box-sizing: border-box;
 }
 
-/* *, */
-/* html, */
-/* body { */
-/*   margin: 0; */
-/*   padding: 0; */
-/* } */
-
-/* html { */
-/*   scroll-behavior: smooth; */
-/*   scrollbar-gutter: stable; */
-/* } */
+html {
+  scroll-behavior: smooth;
+}
 
 .mantine-Carousel-control {
   background-color: white;

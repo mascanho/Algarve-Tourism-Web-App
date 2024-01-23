@@ -45,7 +45,7 @@ export const viewport: Viewport = {
 function page() {
   return (
     <div className="flex flex-col h-screen justify-center w-full -mt-16 sm:-mt-16">
-      <section className="sm:w-[90%] md:w-[90%] lg:w-[90%] max-w-5xl sm:h-[70%]  mx-auto sm:flex justify-center rounded-md overflow-hidden space-x-2 sm:border">
+      <section className="sm:w-[90%] md:w-[90%] lg:w-[90%] max-w-5xl sm:h-[70%]  mx-auto sm:flex justify-center rounded-md  space-x-2 sm:border">
         <Form />
         <section className="relative w-[100%]">
           <Image

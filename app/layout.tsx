@@ -72,14 +72,12 @@ export default async function RootLayout({
   const weatherData = await getWeatherData();
 
   return (
-    <html lang="en" className={ptsans.className}>
+    <html lang="en" className={`${ptsans.className} `}>
       <NextAuthProvider>
-        <body className="bg-white  ">
+        <body className="bg-white ">
           <ClientOnly>
             <ToasterProvider />
-            <div className="sm:pb-14">
-              <Header currentUser={currentUser} weatherData={weatherData} />
-            </div>
+            <Header currentUser={currentUser} weatherData={weatherData} />
             {children}
           </ClientOnly>
           <GoogleTagManager gtmId="GTM-MHX7R9FF" />

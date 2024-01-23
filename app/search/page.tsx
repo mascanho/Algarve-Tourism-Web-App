@@ -77,11 +77,6 @@ async function Search() {
                     Searching for:{" "}
                     <span className="text-sky">{searchData.searchInput}</span>
                   </h3>
-
-                  {/* <h4 className="w-8/12 mx-auto mt-4"> */}
-                  {/*   Check out this week&apos; selection of popular trips and */}
-                  {/*   events */}
-                  {/* </h4> */}
                 </section>
               </>
             )}
@@ -135,9 +130,6 @@ async function Search() {
 
   return (
     <>
-      {/* <section> */}
-      {/*   <Search placeholderText={"Search now..."} categories={categories} /> */}
-      {/* </section> */}
       <section className="pt-10 pb-16 space-y-4 text-center bg-white">
         <div className="w-11/12 mx-auto">
           <h3 className="text-3xl font-bold text-black sm:text-5xl" id="search">

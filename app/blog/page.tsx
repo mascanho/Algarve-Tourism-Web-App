@@ -181,7 +181,7 @@ async function page() {
                 <div key={item?.id} className="flex">
                   <Link href={item?.path}>
                     <div className="flex mb-5 space-y-1 cursor-pointer">
-                      <div className="rounded-md overflow-hidden">
+                      <div className="rounded-md">
                         <img
                           src={item?.image}
                           alt=""

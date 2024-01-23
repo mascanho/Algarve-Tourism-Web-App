@@ -10,7 +10,7 @@ export default function Form() {
   const [state, handleSubmit] = useForm("xeqbrndo");
   if (state.succeeded) {
     return (
-      <section className="flex flex-col items-center justify-center text-center w-full overflow-hidden">
+      <section className="flex flex-col items-center justify-center text-center w-full ">
         <Confetti width={width} height={height} />
         <h2 className="text-center text-3xl">We Got Your Place!</h2>
         <div>

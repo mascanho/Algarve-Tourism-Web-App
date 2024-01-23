@@ -81,7 +81,7 @@ export const Card = ({
       // data-aos="zoom-in-up"
       className="border pb-2 mb-10 sm:pb-2 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-[100%] mx-auto sm:w-full md:w-fit  hover:border-sky  hover:shadow-md"
     >
-      <div className="relative flex flex-col w-full h-[200px] sm:h-40 md:h-52 xl:h-44 overflow-hidden rounded-t-md ">
+      <div className="relative flex flex-col w-full h-[200px] sm:h-40 md:h-52 xl:h-44 rounded-t-md ">
         <Image
           fill
           loading="lazy"
@@ -114,7 +114,7 @@ export const Card = ({
         </h3>
       </div>
       <div className="w-full h-[1px] bg-gray-300" />
-      <div className="flex w-full  mt-20 py-2 overflow-hidden">
+      <div className="flex w-full  mt-20 py-2">
         <p className="line-clamp-3 textarea-xs">{description}</p>
         {/* <span className="flex-1 text-xs text-sky">Read more</span> */}
       </div>

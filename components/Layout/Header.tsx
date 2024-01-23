@@ -81,24 +81,24 @@ const Header = ({ currentUser, weatherData }: any) => {
 
   return (
     <>
-      <section className="overflow-hidden">
-        {loginModal.isOpen === true ? (
-          <LoginModal currentUser={currentUser} />
-        ) : (
-          ""
-        )}
-        {registeredModal.isOpen === true ? (
-          <RegisteredModal currentUser={currentUser} />
-        ) : (
-          ""
-        )}
-      </section>
+      {/* <section className="overflow-hidden"> */}
+      {/*   {loginModal.isOpen === true ? ( */}
+      {/*     <LoginModal currentUser={currentUser} /> */}
+      {/*   ) : ( */}
+      {/*     "" */}
+      {/*   )} */}
+      {/*   {registeredModal.isOpen === true ? ( */}
+      {/*     <RegisteredModal currentUser={currentUser} /> */}
+      {/*   ) : ( */}
+      {/*     "" */}
+      {/*   )} */}
+      {/* </section> */}
 
       <nav
         id="search"
         className={`shadow-sm sm:fixed  bg-white z-10   mx-auto  w-svw  sm:pb-0 `}
       >
-        <div className="z-10 mx-auto navbar flex justify-evenly max-w-7xl px-0 w-11/12 ">
+        <div className="z-10 mx-auto flex justify-evenly max-w-7xl px-0 w-11/12 ">
           <div className="flex justify-between w-11/12 sm:w-full items-center transition-all ease-in delay-100">
             <div className="flex justify-between w-full items-center sm:w-fit sm:mx-0 ">
               <section
@@ -159,89 +159,87 @@ const Header = ({ currentUser, weatherData }: any) => {
           <div className="space-x-4 ">
             {" "}
             {/* Weather API */}
-            <div
-              onClick={showWeather}
-              className="hidden sm:flex items-center pt-1 justify-end sm:mr-1 -mr-2 cursor-pointer hover:scale-105 transition ease-in"
-            >
-              <span className="-mr-[1px]">
-                {weatherData.current.temp_c + "°"}
-              </span>
+            {/* <div */}
+            {/*   onClick={showWeather} */}
+            {/*   className="hidden sm:flex items-center pt-1 justify-end sm:mr-1 -mr-2 cursor-pointer hover:scale-105 transition ease-in" */}
+            {/* > */}
+            {/*   <span className="-mr-[1px]"> */}
+            {/*     {weatherData.current.temp_c + "°"} */}
+            {/*   </span> */}
+            {/*   <img */}
+            {/*     src={"https:" + weatherData.current.condition.icon} */}
+            {/*     alt="weather" */}
+            {/*     width={30} */}
+            {/*     height={30} */}
+            {/*   />{" "} */}
+            {/* </div> */}
+            <div className="flex items-center  pr-2  sm:pr-2 text-xl text-black bg-white/50">
               <img
-                src={"https:" + weatherData.current.condition.icon}
-                alt="weather"
-                width={30}
+                src={
+                  currentUser?.image ||
+                  "https://heritagehill.dental/wp-content/uploads/2018/01/person-placeholder-5.png"
+                }
                 height={30}
-              />{" "}
-            </div>
-            <section className="border sm:inline hidden rounded-full mt-1 sm:w-fit">
-              <div className="flex items-center  pr-2  sm:pr-2 text-xl text-black bg-white/50">
-                <img
-                  src={
-                    currentUser?.image ||
-                    "https://heritagehill.dental/wp-content/uploads/2018/01/person-placeholder-5.png"
-                  }
-                  height={30}
-                  width={30}
-                  className="rounded-full hidden sm:inline"
-                  alt="avatar"
-                  onClick={openLoginMenu}
-                />
-                <NotificationsModal />
-                <div className="relative flex">
-                  <div
-                    className="relative flex sm:inline hidden"
-                    suppressHydrationWarning
-                  >
-                    <span className="absolute -top-1 -right-1 text-[8px] bg-sky text-white rounded-full w-3 h-3 flex justify-center items-center text-center">
-                      {favouritesLength}
-                    </span>
-                    <MdCardTravel
-                      onClick={showFavourites}
-                      className="cursor-pointer active:scale-90"
-                    />
-                  </div>
-                  {openLogin && (
-                    <div className="overflow-hidden">
-                      <ul className="absolute z-10 w-36 sm:w-36 overflow-hidden p-2 text-sm bg-white border text-right shadow-sm menu rounded-box  sm:right-10 sm:top-10 border-t-3 border-t-sky -left-24 top-10">
-                        {!currentUser ? (
-                          <>
-                            <li onClick={loginModal.onOpen} className="w-full">
-                              <a
-                                className="rounded-md active:bg-sky"
-                                onClick={() => setOpenLogin(!openLogin)}
-                              >
-                                Sign-up
-                              </a>
-                            </li>
-                            <li
-                              onClick={registeredModal.onOpen}
-                              className="w-full"
-                            >
-                              <a
-                                onClick={() => setOpenLogin(!openLogin)}
-                                className="rounded-md active:bg-sky"
-                              >
-                                Login
-                              </a>
-                            </li>
-                          </>
-                        ) : (
-                          ""
-                        )}
-
-                        {currentUser ? (
-                          <li onClick={userLogsOut}>
-                            <a className="rounded-md active:bg-sky">Logout</a>
-                          </li>
-                        ) : (
-                          ""
-                        )}
-                      </ul>
-                    </div>
-                  )}
+                width={30}
+                className="rounded-full hidden sm:inline"
+                alt="avatar"
+                onClick={openLoginMenu}
+              />
+              <NotificationsModal />
+              <div className="relative flex">
+                <div
+                  className="relative flex sm:inline hidden"
+                  suppressHydrationWarning
+                >
+                  <span className="absolute -top-1 -right-1 text-[8px] bg-sky text-white rounded-full w-3 h-3 flex justify-center items-center text-center">
+                    {favouritesLength}
+                  </span>
+                  <MdCardTravel
+                    onClick={showFavourites}
+                    className="cursor-pointer active:scale-90"
+                  />
                 </div>
+                {openLogin && (
+                  <div className="overflow-hidden">
+                    <ul className="absolute z-10 w-36 sm:w-36 overflow-hidden p-2 text-sm bg-white border text-right shadow-sm menu rounded-box  sm:right-10 sm:top-10 border-t-3 border-t-sky -left-24 top-10">
+                      {!currentUser ? (
+                        <>
+                          <li onClick={loginModal.onOpen} className="w-full">
+                            <a
+                              className="rounded-md active:bg-sky"
+                              onClick={() => setOpenLogin(!openLogin)}
+                            >
+                              Sign-up
+                            </a>
+                          </li>
+                          <li
+                            onClick={registeredModal.onOpen}
+                            className="w-full"
+                          >
+                            <a
+                              onClick={() => setOpenLogin(!openLogin)}
+                              className="rounded-md active:bg-sky"
+                            >
+                              Login
+                            </a>
+                          </li>
+                        </>
+                      ) : (
+                        ""
+                      )}
+
+                      {currentUser ? (
+                        <li onClick={userLogsOut}>
+                          <a className="rounded-md active:bg-sky">Logout</a>
+                        </li>
+                      ) : (
+                        ""
+                      )}
+                    </ul>
+                  </div>
+                )}
               </div>
-            </section>
+            </div>
           </div>
         </div>
       </nav>

@@ -13,6 +13,7 @@ import {
 } from "@mantine/core";
 import classes from "./BottomCarousel.module.css";
 import Link from "next/link";
+import { useInView } from "react-intersection-observer";
 
 interface CardProps {
   image: string;
@@ -79,6 +80,11 @@ function Card({
 }
 
 function GenericCarousel({ categories }: { categories: any[] }) {
+  const { inView, ref } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+    rootMargin: "40px 0px",
+  });
   const items = categories.map((cat: any) => {
     return {
       title: cat?.fields?.title,
@@ -103,16 +109,26 @@ function GenericCarousel({ categories }: { categories: any[] }) {
   ));
 
   return (
-    <Carousel
-      className="bottomCarousel mt-10"
-      slideSize={mobile ? "63.333333%" : "23.333333%"}
-      slideGap={mobile ? "md" : "md"}
-      slidesToScroll={mobile ? 1 : 1}
-      height={300}
-      initialSlide={1}
+    <section
+      ref={ref}
+      style={{
+        opacity: inView ? 1 : 0,
+        transition: "opacity 1s ease-in-out", // Adjust the duration as needed (e.g., 2s)
+      }}
     >
-      {slides}
-    </Carousel>
+      {inView && (
+        <Carousel
+          className="bottomCarousel mt-10"
+          slideSize={mobile ? "63.333333%" : "23.333333%"}
+          slideGap={mobile ? "md" : "md"}
+          slidesToScroll={mobile ? 1 : 1}
+          height={300}
+          initialSlide={1}
+        >
+          {slides}
+        </Carousel>
+      )}
+    </section>
   );
 }
 export default GenericCarousel;

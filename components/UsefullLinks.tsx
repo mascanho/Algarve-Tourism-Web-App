@@ -7,7 +7,7 @@ const UsefullLinks = () => {
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-4">
       {Data.map((item) => (
         <a href={item.link} target="_blank" rel="noreferrer" key={item.title}>
-          <div className="flex items-center group overflow-hidden ">
+          <div className="flex items-center group ">
             <span className="mr-3">
               <FaArrowRight className="font-thin text-sky group-hover:translate-x-1  transition ease-in delay-100 " />
             </span>
