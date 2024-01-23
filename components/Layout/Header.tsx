@@ -107,31 +107,35 @@ const Header = ({ currentUser, weatherData }: any) => {
         </Modal>
       </section>
 
-      <nav className="mx-auto border-b w-screen  border fixed flex flex-wrap bg-white  shadow-sm">
-        <section
-          className={`sm:hidden flex flex-wrap justify-between ${
-            showMobileBurger &&
-            "fixed left-6 top-4 bg-white rounded-md text-black transition-all ease-in delay-75 border z-50"
-          }`}
-        >
-          <Sheet
-            showMobileBurger={showMobileBurger}
-            favourites={favourites}
-            currentUser={currentUser}
-          />
-        </section>
-        <header className="flex flex-wrap  max-w-7xl w-full justify-between mx-auto py-2">
-          <div className="flex flex-wrap">
+      <nav className="border-b  border w-screen   fixed flex flex-wrap bg-white  shadow-sm z-10">
+        <header className="flex flex-wrap w-11/12 sm:w-full max-w-7xl sm:px-2 md:w-11/12 lg:w-full  justify-between mx-auto py-2">
+          {/* END OF BURGER MENU */}
+          <div className="flex sm:flex-wrap w-full break-keep sm:w-auto ">
+            {/* HAMBURGER MENU */}
+            <section
+              className="sm:hidden flex flex-wrap  w-full"
+              // className={`sm:hidden flex flex-wrap justify-between w-full ${
+              //   showMobileBurger &&
+              //   "fixed left-6 top-4 bg-white rounded-md text-black transition-all ease-in delay-75 border z-50"
+              // }`}
+            >
+              <Sheet
+                showMobileBurger={showMobileBurger}
+                favourites={favourites}
+                currentUser={currentUser}
+              />
+            </section>
+
             <Image
               src="/images/icon.png"
               alt="logo"
               width={50}
               height={20}
-              className="h-8 w-8"
+              className="h-8 w-8 flex-grow m-auto"
             />
             <span
               onClick={() => router.push("/")}
-              className="pl-2 sm:text-base text-center normal-case cursor-pointer font-semibold text-xl flex items-center"
+              className="pl-2 text-sm sm:text-base normal-case  cursor-pointer items-center flex-grow  m-auto sm:w-fit sm:flex font-semibold"
             >
               Algarve Wonders
             </span>
@@ -159,7 +163,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             />
           </section>
           <div
-            className="relative flex flex-wrap justify-around space-x-2 items-center 
+            className="relative hidden sm:flex flex-wrap justify-around space-x-2 items-center 
                 "
           >
             <img
