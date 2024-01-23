@@ -80,10 +80,8 @@ export default async function Home(props: any) {
   const cities = cityArr;
 
   return (
-    <section className="w-fit mx-auto">
-      {/* <div className="relative"> */}
-      {/*   <Hero categories={categories} /> */}
-      {/* </div> */}
+    <section>
+      <Hero categories={categories} />
       <section className="space-y-4 text-center-white max-w-7xl mx-auto border-red-500 border ">
         <div className="mb-28">{/* <Features /> */}</div>
         <div className="mx-auto text-center">
