@@ -28,12 +28,11 @@ const Header = ({ currentUser, weatherData }: any) => {
   const [opened, { open, close }] = useDisclosure(false);
   const favourites = useAddToFavourites();
   const [favouritesLength, setFavouritesLength] = useState(0);
-
   const openLoginMenu = () => {
     setOpenLogin(!openLogin);
   };
-
   const [showMobileBurger, setShowMobileBurger] = useState(false);
+
   const [weatherModal, setWeatherModal] = useState(false);
 
   const userLogsOut = () => {
@@ -64,7 +63,11 @@ const Header = ({ currentUser, weatherData }: any) => {
   useEffect(() => {
     // check the scroll height
     const handleScroll = () => {
-      setShowMobileBurger(window.scrollY > 150);
+      if (window.scrollY > 150) {
+        setShowMobileBurger(true);
+      } else {
+        setShowMobileBurger(false);
+      }
     };
 
     // Add scroll event listener when the component mounts
@@ -77,118 +80,141 @@ const Header = ({ currentUser, weatherData }: any) => {
   }, []);
 
   return (
-    <>
-      <nav
-        className={`shadow-sm bg-white z-10 mx-auto flex flex-wrap justify-between w-dvw fixed`}
+    <nav className="w-screen border-b border shadow-sm py-2">
+      <section>
+        {loginModal.isOpen === true ? (
+          <LoginModal currentUser={currentUser} />
+        ) : (
+          ""
+        )}
+        {registeredModal.isOpen === true ? (
+          <RegisteredModal currentUser={currentUser} />
+        ) : (
+          ""
+        )}
+      </section>
+
+      <section
+        className={`sm:hidden flex flex-wrap justify-between ${
+          showMobileBurger &&
+          "fixed left-6 top-4 bg-white rounded-md text-black transition-all ease-in delay-75 border z-50"
+        }`}
       >
-        {/* <section */}
-        {/*   className={`sm:hidden flex justify-between ${showMobileBurger && "fixed left-6 top-4 bg-white rounded-md text-black transition-all ease-in delay-75 border z-50"}`} */}
-        {/* > */}
-        {/*   <Sheet */}
-        {/*     showMobileBurger={showMobileBurger} */}
-        {/*     favourites={favourites} */}
-        {/*     currentUser={currentUser} */}
-        {/*   /> */}
-        {/* </section> */}
-        <header className="flex flex-wrap w-full max-w-7xl justify-between mx-auto">
+        <Sheet
+          showMobileBurger={showMobileBurger}
+          favourites={favourites}
+          currentUser={currentUser}
+        />
+      </section>
+      <header className="flex flex-wrap w-full max-w-7xl justify-between mx-auto">
+        <div className="flex flex-wrap space-x-2">
+          <Image src="/images/icon.png" alt="logo" width={40} height={30} />
+          <span
+            onClick={() => router.push("/")}
+            className=" sm:text-base pt-1 text-center normal-case cursor-pointer font-semibold text-xl    flex items-center"
+          >
+            Algarve Wonders
+          </span>
+        </div>
+        <section className="hidden sm:flex flex-wrap border border-red-500 ">
+          <NavMenu trigger={false} title={"Search"} url={"/"} />
+          <NavMenu
+            expandedMenu={false}
+            trigger={"hover"}
+            title={"Algarve"}
+            cities={true}
+            url={"/algarve"}
+          />
+          <NavMenu
+            trigger={"hover"}
+            title={"Categories"}
+            url={"/beaches"}
+            categories={true}
+          />
+          <NavMenu
+            trigger={false}
+            title={"Blog"}
+            url={"/blog"}
+            categories={true}
+          />
+          {/* <NavMenu trigger={false} title={"News"} url={"/news"} /> */}
+          {/* <NavMenu trigger={false} title={"Contact"} url={"/contact"} /> */}
+        </section>
+        <div
+          className="relative flex flex-wrap justify-evenly space-x-2 
+                "
+        >
+          <img
+            src={
+              currentUser?.image ||
+              "https://heritagehill.dental/wp-content/uploads/2018/01/person-placeholder-5.png"
+            }
+            height={30}
+            width={30}
+            className="rounded-full hidden sm:flex relative"
+            alt="avatar"
+            onClick={openLoginMenu}
+          />
+          {openLogin && (
+            <ul className="z-10 absolute w-36 sm:w-36 p-2 text-sm bg-white border text-right shadow-sm menu rounded-box  sm:right-10 sm:top-10 border-t-3 border-t-sky -left-24 top-10">
+              {!currentUser ? (
+                <>
+                  <li onClick={loginModal.onOpen} className="w-full">
+                    <a
+                      className="rounded-md active:bg-sky"
+                      onClick={() => setOpenLogin(!openLogin)}
+                    >
+                      Sign-up
+                    </a>
+                  </li>
+                  <li onClick={registeredModal.onOpen} className="w-full">
+                    <a
+                      onClick={() => setOpenLogin(!openLogin)}
+                      className="rounded-md active:bg-sky"
+                    >
+                      Login
+                    </a>
+                  </li>
+                </>
+              ) : (
+                ""
+              )}
+
+              {currentUser ? (
+                <li onClick={userLogsOut}>
+                  <a className="rounded-md active:bg-sky">Logout</a>
+                </li>
+              ) : (
+                ""
+              )}
+            </ul>
+          )}
+          {/* <NotificationsModal /> */}
           <div className="flex flex-wrap items-center">
-            <Image src="/images/icon.png" alt="logo" width={40} height={30} />
-            <span
-              onClick={() => router.push("/")}
-              className="sm:text-base pt-1 text-center sm:pt-0 normal-case cursor-pointer font-semibold text-xl sm:my-auto sm:mx-0 flex items-center"
-            >
-              Algarve Wonders
+            <MdCardTravel
+              onClick={showFavourites}
+              className="cursor-pointer sm:text-xl"
+            />
+            <span className="text-[8px] bg-sky text-black rounded-full top-0 w-2 h-2  flex flex-wrap justify-center items-center text-center">
+              {favouritesLength}
             </span>
           </div>
-          <section className="hidden sm:flex flex-wrap">
-            <NavMenu trigger={false} title={"Search"} url={"/"} />
-            <NavMenu
-              expandedMenu={false}
-              trigger={"hover"}
-              title={"Algarve"}
-              cities={true}
-              url={"/algarve"}
-            />
-            <NavMenu
-              trigger={"hover"}
-              title={"Categories"}
-              url={"/beaches"}
-              categories={true}
-            />
-            <NavMenu
-              trigger={false}
-              title={"Blog"}
-              url={"/blog"}
-              categories={true}
-            />
-            {/* <NavMenu trigger={false} title={"News"} url={"/news"} /> */}
-            {/* <NavMenu trigger={false} title={"Contact"} url={"/contact"} /> */}
-          </section>
-          <div className="flex items-center space-x-2 relative">
-            <img
-              src={
-                currentUser?.image ||
-                "https://heritagehill.dental/wp-content/uploads/2018/01/person-placeholder-5.png"
-              }
-              height={30}
-              width={30}
-              className="rounded-full hidden sm:flex relative"
-              alt="avatar"
-              onClick={openLoginMenu}
-            />
-            {openLogin && (
-              <ul className="z-10 absolute w-36 sm:w-36 p-2 text-sm bg-white border text-right shadow-sm menu rounded-box sm:right-10 sm:top-10 border-t-3 border-t-sky -left-24 top-10">
-                {!currentUser ? (
-                  <>
-                    <li onClick={loginModal.onOpen} className="w-full">
-                      <a
-                        className="rounded-md active:bg-sky"
-                        onClick={() => setOpenLogin(!openLogin)}
-                      >
-                        Sign-up
-                      </a>
-                    </li>
-                    <li onClick={registeredModal.onOpen} className="w-full">
-                      <a
-                        onClick={() => setOpenLogin(!openLogin)}
-                        className="rounded-md active:bg-sky"
-                      >
-                        Login
-                      </a>
-                    </li>
-                  </>
-                ) : (
-                  <li onClick={userLogsOut}>
-                    <a className="rounded-md active:bg-sky">Logout</a>
-                  </li>
-                )}
-              </ul>
-            )}
-            <div className="flex items-center">
-              <MdCardTravel
-                onClick={showFavourites}
-                className="cursor-pointer sm:text-xl"
-              />
-              <span className="text-[8px] bg-sky text-black rounded-full top-0 w-2 h-2 flex items-center justify-center text-center">
-                {favouritesLength}
-              </span>
-            </div>
-          </div>
-        </header>
-      </nav>
+        </div>
+      </header>
       <Modal
         opened={opened}
         onClose={close}
         title={weatherModal ? "Weather" : "Favourites"}
         centered
       >
+        {/* Modal content */}
         {weatherModal ? (
           <WeatherModal weatherData={weatherData} />
         ) : (
           <DrawerContent close={close} />
         )}
       </Modal>
-    </>
+    </nav>
   );
 };
 
