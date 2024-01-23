@@ -74,7 +74,7 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${ptsans.className} `}>
       <NextAuthProvider>
-        <body className="bg-white ">
+        <body className="bg-white h-full ">
           <ClientOnly>
             <ToasterProvider />
             <Header currentUser={currentUser} weatherData={weatherData} />

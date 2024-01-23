@@ -143,7 +143,7 @@ export default async function Home(props: any) {
           className="pt-16 sm:pt-20 sm:pb-2 w-11/12 sm:w-full mx-auto"
           id="aigenerate"
         >
-          {/* <RandomBanner categories={categories} /> */}
+          <RandomBanner categories={categories} />
         </section>
       </section>
       {/* Generic Carousel  */}
@@ -151,31 +151,31 @@ export default async function Home(props: any) {
         <h2 className="max-w-7xl mx-auto text-left w-11/12 w-full sm:text-5xl text-black font-semibold sm:pb-6">
           What to do
         </h2>
-        {/* <GenericCarousel categories={categories} /> */}
+        <GenericCarousel categories={categories} />
       </section>
       <section className="mx-auto animate-fade-in mt-20 max-w-7xl ">
         <h2 className="max-w-7xl mx-auto text-left w-full text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
           Cities to visit
         </h2>
-        {/* <StaticDataCarousel categories={cities} /> */}
+        <StaticDataCarousel categories={cities} />
       </section>
       <section className="mx-auto animate-fade-in mt-20 max-w-7xl  ">
         <h2 className="max-w-7xl mx-auto text-left  text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
           Restaurants
         </h2>
-        {/* <GenericCarousel categories={restaurants} /> */}
+        <GenericCarousel categories={restaurants} />
       </section>
       <section className="mx-auto animate-fade-in mt-20 mb-14 sm:mb-32 max-w-7xl ">
         <h2 className="max-w-7xl mx-auto text-left text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
           Car rentals
         </h2>
-        {/* <StaticDataCarousel categories={carRentals} /> */}
+        <StaticDataCarousel categories={carRentals} />
       </section>
       <section className=" mx-auto pt-12 sm:pt-2 pb-24 sm:pb-1 max-w-7xl ">
         <h4 className="max-w-7xl text-left sm:pb-6 mx-auto text-4xl sm:text-5xl  font-semibold text-black">
           More to explore
         </h4>
-        {/* <BottomCarousel categories={categories} /> */}
+        <BottomCarousel categories={categories} />
       </section>
       {/*BOTTOM ASSETS */}
       {/* <section className="max-w-7xl mx-auto w-11/12 mb-20"> */}
