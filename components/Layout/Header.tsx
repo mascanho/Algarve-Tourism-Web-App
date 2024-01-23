@@ -80,7 +80,7 @@ const Header = ({ currentUser, weatherData }: any) => {
   }, []);
 
   return (
-    <nav className="w-screen border-b border shadow-sm py-2">
+    <nav className="mx-auto border-b w-screen  border fixed flex flex-wrap bg-white  shadow-sm">
       <section>
         {loginModal.isOpen === true ? (
           <LoginModal currentUser={currentUser} />
@@ -106,17 +106,23 @@ const Header = ({ currentUser, weatherData }: any) => {
           currentUser={currentUser}
         />
       </section>
-      <header className="flex flex-wrap w-full max-w-7xl justify-between mx-auto">
-        <div className="flex flex-wrap space-x-2">
-          <Image src="/images/icon.png" alt="logo" width={40} height={30} />
+      <header className="flex flex-wrap  max-w-7xl w-full justify-between mx-auto py-2">
+        <div className="flex flex-wrap">
+          <Image
+            src="/images/icon.png"
+            alt="logo"
+            width={50}
+            height={20}
+            className="h-8 w-8"
+          />
           <span
             onClick={() => router.push("/")}
-            className=" sm:text-base pt-1 text-center normal-case cursor-pointer font-semibold text-xl    flex items-center"
+            className=" sm:text-base text-center normal-case cursor-pointer font-semibold text-xl flex items-center"
           >
             Algarve Wonders
           </span>
         </div>
-        <section className="hidden sm:flex flex-wrap border border-red-500 ">
+        <section className="hidden sm:flex flex-wrap">
           <NavMenu trigger={false} title={"Search"} url={"/"} />
           <NavMenu
             expandedMenu={false}
@@ -137,11 +143,9 @@ const Header = ({ currentUser, weatherData }: any) => {
             url={"/blog"}
             categories={true}
           />
-          {/* <NavMenu trigger={false} title={"News"} url={"/news"} /> */}
-          {/* <NavMenu trigger={false} title={"Contact"} url={"/contact"} /> */}
         </section>
         <div
-          className="relative flex flex-wrap justify-evenly space-x-2 
+          className="relative flex flex-wrap justify-evenly items-center 
                 "
         >
           <img
@@ -151,7 +155,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             }
             height={30}
             width={30}
-            className="rounded-full hidden sm:flex relative"
+            className="rounded-full hidden sm:flex relative object-contain w-8 h-8 cursor-pointer"
             alt="avatar"
             onClick={openLoginMenu}
           />
@@ -195,7 +199,7 @@ const Header = ({ currentUser, weatherData }: any) => {
               onClick={showFavourites}
               className="cursor-pointer sm:text-xl"
             />
-            <span className="text-[8px] bg-sky text-black rounded-full top-0 w-2 h-2  flex flex-wrap justify-center items-center text-center">
+            <span className="text-[8px] bg-sky text-black rounded-full top-0 flex flex-wrap justify-center items-center text-center">
               {favouritesLength}
             </span>
           </div>
