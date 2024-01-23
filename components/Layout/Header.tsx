@@ -131,11 +131,11 @@ const Header = ({ currentUser, weatherData }: any) => {
               alt="logo"
               width={50}
               height={20}
-              className="h-8 w-8 flex-grow m-auto"
+              className="h-6 w-6 sm:h-8 sm:w-8 flex-grow m-auto sm:flex"
             />
             <span
               onClick={() => router.push("/")}
-              className="pl-2 text-sm sm:text-base normal-case  cursor-pointer items-center flex-grow  m-auto sm:w-fit sm:flex font-semibold"
+              className="pl-1 text-sm sm:text-base normal-case w-40 text-right  cursor-pointer items-center flex-grow  m-auto sm:w-fit sm:flex font-semibold"
             >
               Algarve Wonders
             </span>
