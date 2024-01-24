@@ -64,7 +64,7 @@ function Features() {
   }, []);
 
   return (
-    <section className="max-w-7xl w-11/12 mx-auto">
+    <section className="max-w-7xl w-11/12 mx-auto mt-20 sm:mt-10">
       <div className="space-y-4 mb-10 mx-auto text-center animate-fade-in">
         <span className="bg-sky px-4 py-1 font-semibold text-white rounded-full">
           How It Works

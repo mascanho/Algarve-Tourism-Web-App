@@ -74,19 +74,19 @@ function Search({ allTypes, placeholderText, categories }: any) {
 
   return (
     <section
-      className={`relative 
+      className={`relative w-full 
     ${pathname === "/search" && "mt-10"}
     `}
     >
       <form
         onSubmit={handleSubmit}
-        className="relative sm:flex w-[350px] sm:w-[470px] mx-auto"
+        className="relative sm:flex w-full sm:w-[470px] mx-auto"
       >
-        <div className="flex bg-white/60 w-[360px] sm:w-[450px] mx-auto h-16 items-center justify-center rounded-full backdrop-blur-md">
+        <div className="flex flex-wrap  sm:w-[450px] mx-auto h-16 items-center justify-center rounded-full backdrop-blur-md">
           <input
             type="text"
             placeholder={placeholderText}
-            className={`h-12 bg-white placeholder-gray-300 rounded-full border shadow-sm relative  p-3 w-full  mx-auto text-xs outline-none border-collapse placeholder:text-[14px] pb-5 sm:pb-4  sm:text-xs
+            className={`h-10 sm:h-12 bg-white placeholder-gray-300 rounded-full border shadow-sm relative  p-4 sm:p-3 w-full  mx-auto text-xs outline-none border-collapse placeholder:text-[14px] pb-5 sm:pb-4  sm:text-xs
             ${pathname === "/search" && "border-2 border-blue-400"}
             
             `}
@@ -99,7 +99,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
         </div>
         <button
           type="submit"
-          className="bg-sky absolute right-7 top-[17px] rounded-full px-3 py-1 text-white text-sm"
+          className="bg-sky absolute right-2 text-xs sm:right-7 top-5 sm:top-[17px] rounded-full px-3 py-1 text-white sm:text-sm"
         >
           {/* <BsSearch className="text-xl" /> */}
           Search

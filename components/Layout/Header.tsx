@@ -116,7 +116,7 @@ const Header = ({ currentUser, weatherData }: any) => {
           <div className="flex sm:flex-wrap w-full break-keep sm:w-auto ">
             {/* HAMBURGER MENU */}
             <section
-              className="sm:hidden flex flex-wrap  w-full"
+              className="sm:hidden flex flex-wrap  w-[55%]"
               // className={`sm:hidden flex flex-wrap justify-between w-full ${
               //   showMobileBurger &&
               //   "fixed left-6 top-4 bg-white rounded-md text-black transition-all ease-in delay-75 border z-50"
@@ -134,11 +134,11 @@ const Header = ({ currentUser, weatherData }: any) => {
               alt="logo"
               width={50}
               height={20}
-              className="h-6 w-6 sm:h-8 sm:w-8 flex-grow m-auto sm:flex"
+              className="h-6 w-6 sm:h-8 sm:w-8 flex-wrap m-auto sm:flex hidden "
             />
             <span
               onClick={() => router.push("/")}
-              className="pl-1 text-sm sm:text-base normal-case w-40 text-right  cursor-pointer items-center flex-grow  m-auto sm:w-fit sm:flex font-semibold"
+              className="pl-1 text-sm sm:text-base normal-case flex-1 text-right  cursor-pointer items-center flex-grow  m-auto sm:w-fit sm:flex font-semibold"
             >
               Algarve Wonders
             </span>

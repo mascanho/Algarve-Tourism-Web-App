@@ -55,12 +55,12 @@ export const viewport: Viewport = {
 };
 
 // Fetch Weather data
-async function getWeatherData() {
-  const res = await fetch(
-    `https://api.weatherapi.com/v1/current.json?key=8fd5b11106094719a89115725232912&q=Algarve&aqi=no`,
-  );
-  return await res.json();
-}
+// async function getWeatherData() {
+//   const res = await fetch(
+//     `https://api.weatherapi.com/v1/current.json?key=8fd5b11106094719a89115725232912&q=Algarve&aqi=no`,
+//   );
+//   return await res.json();
+// }
 
 export default async function RootLayout({
   children,
@@ -69,7 +69,7 @@ export default async function RootLayout({
 }) {
   const currentUser = await getCurrentUser();
 
-  const weatherData = await getWeatherData();
+  // const weatherData = await getWeatherData();
 
   return (
     <html lang="en" className={`${ptsans.className} `}>
@@ -78,7 +78,7 @@ export default async function RootLayout({
           <ClientOnly>
             <ToasterProvider />
             <section className="pb-12">
-              <Header currentUser={currentUser} weatherData={weatherData} />
+              <Header currentUser={currentUser} />
             </section>
             {children}
           </ClientOnly>

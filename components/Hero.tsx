@@ -13,25 +13,32 @@ const Hero = ({ categories }: any) => {
   const [allTypes, setAllTypes] = useState<any[]>([]);
 
   return (
-    <section className="mx-auto w-full space-y-2 flex flex-wrap flex-col justify-center text-center m-auto">
-      <h1 className="mx-auto text-3xl font-bold pt-12 sm:pt-16 text-center sm:text-6xl bg-gradient-to-r from-green-500 via-sky to-red-500 sm:text-transparent text-black  bg-clip-text pb-2 animate-gradient ">
+    <section className="mx-auto w-full space-y-2 sm:h-[90vh] sm:space-y-4 flex flex-wrap flex-col justify-center text-center m-auto">
+      <h1 className="mx-auto text-4xl font-bold pt-10 sm:pt-0  text-center sm:text-6xl bg-gradient-to-r from-green-500 via-sky to-red-500 text-transparent   bg-clip-text pb-2 animate-gradient ">
         Algarve&apos;s Travel Guide
       </h1>
-      <div className=" rounded-lg w-7/12 sm:w-fit mx-auto p-2 hidden sm:block">
-        <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12 sm:w-10/12 lg:w-3/4 px-4">
-          Discover the breathtaking beauty of the Algarve! The ultimate guide to
-          the region&apos;s top tourism attractions and less known hidden gems
-        </h2>
-      </div>
-      <h2 className="sm:hidden w-9/12 mx-auto sm:w-10/12 rounded-sm sm:p-0 mt-1 sm:mt-0 sm:max-w-lg  sm:pt-2">
+      <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12 sm:w-8/12 sm:px-14 text-sm lg:w-2/4 px-4">
+        Discover the breathtaking beauty of the Algarve! The ultimate guide to
+        the region&apos;s top tourism attractions and less known hidden gems
+      </h2>
+      <h2 className="sm:hidden mx-auto w-10/12 rounded-sm sm:p-0 mt-1 sm:mt-0 sm:max-w-lg  sm:pt-2">
         {" "}
         The region&apos;s top tourism attractions and less known hidden gems
       </h2>
-      <div className="flex justify-center m-auto pt-5">
+      <div className="flex justify-center m-auto w-11/12 pb-10">
         <Search
           allTypes={allTypes}
-          placeholderText={"Type your destination or activity"}
+          placeholderText={"Destination or activity..."}
           categories={categories}
+        />
+      </div>
+      <div className="max-w-7xl sm:w-8/12 mx-auto h-96 sm:h-80  rounded-t-lg">
+        <img
+          className="rounded-t-3xl w-full h-full object-cover"
+          src={
+            IMAGES_DESKTOP[Math.floor(Math.random() * IMAGES_DESKTOP.length)]
+          }
+          alt="hero image"
         />
       </div>
     </section>
