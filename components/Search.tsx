@@ -86,7 +86,8 @@ function Search({ allTypes, placeholderText, categories }: any) {
           <input
             type="text"
             placeholder={placeholderText}
-            className={`h-10 sm:h-12 bg-white placeholder-gray-300 rounded-full border shadow-sm relative  p-4 sm:p-3 w-full  mx-auto text-xs outline-none border-collapse placeholder:text-[14px] pb-5 sm:pb-4  sm:text-xs
+            className={`h-10 sm:h-12 bg-white placeholder-gray-300 rounded-full border pl-4 shadow-sm relative sm:pl-5 sm:pb-4 pt-[13px] w-full  mx-auto text-xs outline-none border-collapse placeholder:text-[14px] py-4 sm:text-xs
+
             ${pathname === "/search" && "border-2 border-blue-400"}
             
             `}
@@ -99,7 +100,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
         </div>
         <button
           type="submit"
-          className="bg-sky absolute right-2 text-xs sm:right-7 top-5 sm:top-[17px] rounded-full px-3 py-1 text-white sm:text-sm"
+          className="bg-sky absolute right-2 text-xs sm:right-5 top-5 sm:top-[17px] rounded-full px-3 py-1 text-white sm:text-sm"
         >
           {/* <BsSearch className="text-xl" /> */}
           Search

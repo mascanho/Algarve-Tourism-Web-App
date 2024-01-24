@@ -84,7 +84,7 @@ export default async function Home(props: any) {
       <Hero categories={categories} />
       <Features />
       <Selection />
-      <section className="sm:grid mx-auto  items-start w-11/12 sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 lg:gap-x-8 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center max-w-7xl ">
+      <section className="sm:grid mx-auto  items-start sm:w-11/12 sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 lg:gap-x-8 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center max-w-7xl ">
         {categories.slice(0, 8).map((cat: any) => (
           <Card
             key={cat?.fields?.title}
