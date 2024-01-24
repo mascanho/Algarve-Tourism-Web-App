@@ -71,7 +71,7 @@ export const Card = ({
 
   // handle copying the url to share
   function handleCopyUrl() {
-    const url = `https://markwarrior.dev/${type}/${slug}`;
+    const url = `https://www.algarvewonders.com/${type}/${slug}`;
     navigator.clipboard.writeText(url);
     toast.success("URL copied to clipboard");
   }

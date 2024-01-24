@@ -69,10 +69,10 @@ function Features() {
         <span className="bg-sky px-4 py-1 font-semibold text-white rounded-full">
           How It Works
         </span>
-        <h5 className="w-10/12 sm:w-2/4 mx-auto">
+        <p className="w-10/12 sm:w-2/4 mx-auto text-gray-700">
           Discover the best places, save and share your next adventure with
           others, all in one place, no stress and no time wasted
-        </h5>
+        </p>
         <div className="w-16 h-[2px] bg-sky mx-auto" />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-8 grid-rows-2">

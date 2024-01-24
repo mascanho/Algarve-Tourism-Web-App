@@ -112,26 +112,8 @@ export default async function Home(props: any) {
         {/*   </Link> */}
         {/* </div> */}
       </section>
-      <section className="h-fit mx-auto max-w-7xl">
-        <div className="my-10 text-center sm:pt-20">
-          <h2 className="text-4xl font-semibold text-black sm:text-4xl">
-            Satisfied Visitors
-          </h2>
-          <h4 className="w-10/12 mx-auto mt-4 sm:w-6/12">
-            See what people are talking about the fantastic locations, events
-            and hidden gems in the south of Portugal
-          </h4>
-        </div>
-        <section className="w-11/12 sm:w-full mx-auto">
-          <Feedback {...quotes} />
-        </section>
-        <section
-          className="pt-16 sm:pt-20 sm:pb-2 w-11/12 sm:w-full mx-auto"
-          id="aigenerate"
-        >
-          <RandomBanner categories={categories} />
-        </section>
-      </section>
+      <Feedback {...quotes} />
+      <RandomBanner categories={categories} />
       {/* Generic Carousel  */}
       <section className="mx-auto animate-fade-in mt-20 max-w-7xl">
         <h2 className="max-w-7xl mx-auto text-left w-11/12 w-full sm:text-5xl text-black font-semibold sm:pb-6">
