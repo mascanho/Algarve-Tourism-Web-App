@@ -69,9 +69,6 @@ function Features() {
         <span className="bg-sky px-4 py-1 font-semibold text-white rounded-full">
           How It Works
         </span>
-        {/* <h4 className="sm:text-4xl text-2xl  font-semibold pt-2"> */}
-        {/*   The best of the Algarve at your fingertips */}
-        {/* </h4> */}
         <h5 className="w-10/12 sm:w-2/4 mx-auto">
           Discover the best places, save and share your next adventure with
           others, all in one place, no stress and no time wasted
@@ -92,6 +89,14 @@ function Features() {
             <div className="text-sm text-gray-400 pt-2">{item.description}</div>
           </div>
         ))}
+      </div>
+      <div className="space-y-4 my-10 sm:mt-28 mx-auto text-center animate-fade-in">
+        <h3 className="text-3xl font-bold text-black sm:text-5xl">
+          Discover the best of the Algarve
+        </h3>{" "}
+        <h4 className="w-8/12 mx-auto text-center">
+          Check out this week&apos;s selection of popular places and events
+        </h4>
       </div>
     </section>
   );

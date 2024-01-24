@@ -111,7 +111,7 @@ const Header = ({ currentUser, weatherData }: any) => {
         id="search"
         className="border-b  border w-screen   fixed flex flex-wrap bg-white  shadow-sm z-10"
       >
-        <header className="flex flex-wrap w-11/12 sm:w-full max-w-7xl sm:px-2 md:w-11/12 lg:w-full  justify-between mx-auto py-2">
+        <header className="flex flex-wrap w-11/12 sm:w-full max-w-7xl sm:px-2 md:w-full lg:w-full  justify-between mx-auto py-2">
           {/* END OF BURGER MENU */}
           <div className="flex sm:flex-wrap w-full break-keep sm:w-auto ">
             {/* HAMBURGER MENU */}

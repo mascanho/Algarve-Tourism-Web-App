@@ -79,7 +79,7 @@ export const Card = ({
   return (
     <section
       // data-aos="zoom-in-up"
-      className="border pb-2 sm:pb-2 mb-5 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-11/12  mx-auto sm:w-full md:w-fit  hover:border-sky  hover:shadow-md"
+      className="border pb-2 sm:pb-2 mb-5 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-11/12  mx-auto sm:w-full   hover:border-sky  hover:shadow-md"
     >
       <div className="relative flex flex-col w-full h-[200px] sm:h-40 md:h-52 xl:h-44 rounded-t-md ">
         <Image

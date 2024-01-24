@@ -83,16 +83,8 @@ export default async function Home(props: any) {
     <section className="w-full">
       <Hero categories={categories} />
       <Features />
-      <div className="mx-auto text-center">
-        <h3 className="text-3xl font-bold text-black sm:text-5xl">
-          Discover the best of the Algarve
-        </h3>
-      </div>
-      <h4 className="w-8/12 mx-auto text-center">
-        Check out this week&apos;s selection of popular places and events
-      </h4>
       <Selection />
-      <section className="sm:grid mx-auto containera items-start w-full sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center">
+      <section className="sm:grid mx-auto  items-start w-11/12 sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 lg:gap-x-8 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center max-w-7xl ">
         {categories.slice(0, 8).map((cat: any) => (
           <Card
             key={cat?.fields?.title}
