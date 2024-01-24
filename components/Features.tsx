@@ -90,8 +90,8 @@ function Features() {
           </div>
         ))}
       </div>
-      <div className="space-y-4 my-10 sm:mt-28 mx-auto text-center animate-fade-in">
-        <h3 className="text-3xl font-bold text-black sm:text-5xl">
+      <div className="space-y-4 my-10 mt-28 mx-auto text-center  animate-fade-in">
+        <h3 className="text-3xl font-bold text-black sm:text-5xl mt-20">
           Discover the best of the Algarve
         </h3>{" "}
         <h4 className="w-8/12 mx-auto text-center">

@@ -33,7 +33,7 @@ const Selection = ({ text }: any) => {
 
   return (
     <>
-      <div className="items-center justify-between hidden w-10/12 pb-10 m-auto space-x-3 sm:flex max-w-7xl sm:w-11/12">
+      <div className="items-center justify-between hidden w-10/12 pb-12 pt-3 m-auto space-x-3 sm:flex max-w-7xl sm:w-11/12">
         {catArr.map((cat) => (
           <div
             className="px-2 py-1 text-xs text-center transition-all ease-in delay-75 md:border md:rounded-md md:w-28  md:px-3 sm:py-2  w-14 sm:w-fit hover:cursor-pointer hover:bg-sky hover:text-white"

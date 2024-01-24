@@ -123,7 +123,7 @@ export default async function Home(props: any) {
           </h4>
         </div>
         <section className="w-11/12 sm:w-full mx-auto">
-          {/* <Feedback {...quotes} /> */}
+          <Feedback {...quotes} />
         </section>
         <section
           className="pt-16 sm:pt-20 sm:pb-2 w-11/12 sm:w-full mx-auto"
