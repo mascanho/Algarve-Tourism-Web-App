@@ -65,7 +65,7 @@ const Buttons = ({ filteredData }: any) => {
         className="w-8 h-8 outline-none fav p-[6px] border tooltip rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75 text-xs"
         onClick={addFav}
       />
-      <Link href={filteredData[0].fields.website} target="_blank">
+      <Link href={filteredData[0]?.fields?.website} target="_blank">
         <BsGlobe className="w-8 h-8 p-[6px] border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75  " />
       </Link>
       <BiMapPin

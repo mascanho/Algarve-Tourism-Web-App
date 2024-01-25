@@ -5,9 +5,12 @@ import { FaBell, FaHeart } from "react-icons/fa";
 import { IoHeartOutline } from "react-icons/io5";
 import { TiHeartOutline } from "react-icons/ti";
 import { AiOutlineBell } from "react-icons/ai";
+import { BiChevronRight } from "react-icons/bi";
+import { useRouter } from "next/navigation";
 
 function BottomDrawer({ favouritesLength }: any) {
   const [opened, { open, close }] = useDisclosure(false);
+  const router = useRouter();
 
   const favouritesFromLocalStorage =
     typeof localStorage !== "undefined"
@@ -48,17 +51,22 @@ function BottomDrawer({ favouritesLength }: any) {
           </Tabs.List>
 
           <Tabs.Panel value="favourites">
-            <section className="h-2">
+            <section>
               {favouritesArray.map((item: any) => (
                 <div
-                  className="px-4 pt-2  border text-xs flex flex-col  mb-3 space-y-1  rounded-md "
+                  className="px-4 pt-2  border text-xs relative flex flex-col  mb-2 space-y-1  rounded-md h-fit "
                   key={item.id}
+                  onClick={() => {
+                    router.push(`/${item?.type}/${item?.slug}`);
+                    close();
+                  }}
                 >
-                  <div className="flex mt-1 flex-wrap justify-between">
-                    <h5 className="my-0 font-semibold">{item.title}</h5>
-                    <span>{item.city}</span>
-                    <p className="text-gray-500 mt-1 truncate mb-0">
-                      {item.shortDescription}
+                  <BiChevronRight className="right-2 absolute text-xl top-6 text-gray-300" />
+                  <div className="flex mt-1 flex-wrap  ">
+                    <h5 className="my-0 font-semibold">{item?.title}</h5>
+                    <span className="text-gray-400 ml-2">{item?.city}</span>
+                    <p className="text-gray-500 mt-1 truncate mb-0 pr-3">
+                      {item?.shortDescription}
                     </p>
                   </div>
                 </div>
