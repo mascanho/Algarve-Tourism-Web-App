@@ -5,7 +5,7 @@ import Search from "./Search";
 const IMAGES_DESKTOP = [
   "/images/bg1.jpeg",
   "/images/bg2.webp",
-  "https://escales.ponant.com/wp-content/uploads/2023/07/iStock-621690956-1.jpg",
+  "/images/bg-3.webp",
   "https://turismo.eurodicas.com.br/wp-content/uploads/2019/07/praias-do-algarve-1.jpg",
 ];
 
@@ -32,10 +32,10 @@ const Hero = ({ categories }: any) => {
           categories={categories}
         />
       </div>
-      <div className="sm:w-8/12 mx-auto h-96 sm:h-80  flex flex-wrap flex-col rounded-t-lg max-w-4xl">
+      <div className="sm:w-8/12 mx-auto h-96 sm:h-90  flex flex-wrap flex-col rounded-t-lg max-w-3xl">
         <img
           className="rounded-t-3xl w-full h-full object-cover"
-          src={IMAGES_DESKTOP[1]}
+          src={IMAGES_DESKTOP[2]}
           alt="hero image"
         />
       </div>

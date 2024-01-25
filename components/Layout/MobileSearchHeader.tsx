@@ -1,18 +1,32 @@
+"use client";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 // Add any other necessary imports
 
 const MobileSearchHeader = () => {
   const [inputValue, setInputValue] = useState("");
+  const pathname = usePathname();
+  const router = useRouter();
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
     // Add any other logic you need for input change
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
-    // Add any logic you need for form submission
+
+    if (inputValue === "") {
+      alert("Please input something...");
+      return;
+    }
+
+    const searchQueries = inputValue.trim().toLowerCase().split(" ");
+    const filteredData: any = [];
+
+    router.push(`/search?q=${encodeURIComponent(inputValue)}`);
   };
 
   return (

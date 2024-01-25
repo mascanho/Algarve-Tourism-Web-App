@@ -13,11 +13,27 @@ import { TiArrowBack } from "react-icons/ti";
 import Link from "next/link";
 import type { Metadata } from "next";
 import Feedback from "@/components/Feedback";
+import { useSearchParams } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
 async function Search() {
   const searchData = useSearchedData();
+  const urlSearchParams = useSearchParams();
+
+  // Query Contentful data with search query
+  async function getData() {
+    const client = createClient({
+      space: "z8r91y113x4j",
+      accessToken: "mEmHEpC38vjPWaquWC2k2Qc3NzhEmti3_knDIKjf6Uc",
+    });
+    const res = await client.getEntries({});
+
+    return res;
+  }
+
+  console.log(getData(), "fiultered data");
+
   // Get all categories from contentful
   const [categories, setCategories] = useState([]);
   const [plainSearch, setPlainSearch] = useState(false);
