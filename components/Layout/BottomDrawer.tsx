@@ -25,6 +25,7 @@ function BottomDrawer({ favouritesLength }: any) {
         onClose={close}
         position="bottom"
         title=""
+        size={favouritesArray.length > 4 ? "100%" : ""}
         className="bottomDraw sm:hidden relative"
         overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
         // scrollAreaComponent={ScrollArea.Autosize}
@@ -50,11 +51,16 @@ function BottomDrawer({ favouritesLength }: any) {
             <section className="h-2">
               {favouritesArray.map((item: any) => (
                 <div
-                  className="px-4 py-3 border text-xs flex flex-col  mb-3 space-y-1  rounded-md "
+                  className="px-4 pt-2  border text-xs flex flex-col  mb-3 space-y-1  rounded-md "
                   key={item.id}
                 >
-                  <h5 className="my-0 font-semibold">{item.title}</h5>
-                  <p className="text-gray-500">{item.shortDescription}</p>
+                  <div className="flex mt-1 flex-wrap justify-between">
+                    <h5 className="my-0 font-semibold">{item.title}</h5>
+                    <span>{item.city}</span>
+                    <p className="text-gray-500 mt-1 truncate mb-0">
+                      {item.shortDescription}
+                    </p>
+                  </div>
                 </div>
               ))}
             </section>
