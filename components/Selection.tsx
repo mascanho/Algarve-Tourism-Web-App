@@ -44,15 +44,17 @@ const Selection = ({ text }: any) => {
           </div>
         ))}
       </div>
-      <section className="flex max-w-7xl w-11/12 sm:hidden mx-auto overflow-hidden">
-        <Select
-          className="w-full mb-8 h-[100%] rounded-none outline-none"
-          placeholder={placeholder}
-          data={catArr.map((cat) => cat.name)}
-          onChange={(e) => goToPage(e)}
-          searchable={false}
-        />
-      </section>
+      {pathname === "/" ? null : (
+        <section className="flex max-w-7xl w-full sm:hidden mx-auto overflow-hidden">
+          <Select
+            className="w-full mb-8 h-[100%] rounded-none outline-none"
+            placeholder={placeholder}
+            data={catArr.map((cat) => cat.name)}
+            onChange={(e) => goToPage(e)}
+            searchable={false}
+          />
+        </section>
+      )}
     </>
   );
 };

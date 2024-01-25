@@ -23,7 +23,17 @@ interface CardProps {
   categories: any;
 }
 
-function Card({ image, url, city, rating, price, type, route }: any) {
+function Card({
+  image,
+  url,
+  city,
+  rating,
+  price,
+  type,
+  route,
+  catImg,
+  cat,
+}: any) {
   return (
     <Paper
       shadow="md"
@@ -71,10 +81,10 @@ function Card({ image, url, city, rating, price, type, route }: any) {
         )}
       </div>
 
-      {type === "city" ? (
-        <Link href={`/algarve/${route}`}>
+      {type === "city" || type === "category" ? (
+        <Link href={type === "category" ? route : "/algarve" + route}>
           <Button variant="white" className="bg-white" color="dark">
-            View {city}
+            {type === "city" ? "View " + city : "View "}
           </Button>
         </Link>
       ) : (

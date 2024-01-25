@@ -25,6 +25,7 @@ import BottomCarousel from "@/components/Layout/BottomCarousel";
 import Testing from "@/components/Layout/CarTesting";
 import GenericCarousel from "@/components/Layout/CarouselGeneric";
 import StaticDataCarousel from "@/components/Layout/StaticDataCarousel";
+import { catArr } from "@/Data/Categories";
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -56,6 +57,8 @@ const getCategoriesCached = cache(
 export default async function Home(props: any) {
   const categories = await getCategoriesCached();
 
+  const catCards = catArr;
+
   // Filter restaurants from all the categories
   const restaurants = categories.filter(
     (cat: any) => cat.fields.type && cat.fields.type.includes("restaurants"),
@@ -84,16 +87,16 @@ export default async function Home(props: any) {
       <Hero categories={categories} />
       <Features />
       <div className="space-y-4 my-10 mt-28 mx-auto text-center w-11/12 max-w-7xl ">
-        <h3 className="text-3xl font-bold text-black sm:text-5xl mt-20">
-          Discover the best of the Algarve
+        <h3 className="text-4xl font-bold text-black sm:text-5xl mt-20 hidden sm:flex sm:text-center">
+          Popular Categories
         </h3>{" "}
-        <h4 className="w-8/12 mx-auto text-center text-gray-700">
+        <h4 className="w-8/12 mx-auto sm:flex flex-wrap hidden text-center text-gray-700">
           This week&apos;s selection of popular places and events
         </h4>
       </div>
 
       <Selection />
-      <section className="sm:grid mx-auto  items-start sm:w-11/12 sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 lg:gap-x-8 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center max-w-7xl ">
+      <section className="sm:grid mx-auto hidden  items-start sm:w-11/12 sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 lg:gap-x-8 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center max-w-7xl ">
         {categories.slice(0, 8).map((cat: any) => (
           <Card
             key={cat?.fields?.title}
@@ -121,6 +124,7 @@ export default async function Home(props: any) {
         {/*   </Link> */}
         {/* </div> */}
       </section>
+      <StaticDataCarousel categories={catCards} title="Popular Categories" />
       <GenericCarousel categories={categories} title="What to do" />
       <StaticDataCarousel categories={cities} title="Cities to visit" />
       <GenericCarousel categories={restaurants} title="Where to eat" />

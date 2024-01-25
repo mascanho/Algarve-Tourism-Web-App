@@ -26,7 +26,7 @@ export const quotes: any = [
     review:
       "Exceeded my expectations! The rich history, authentic culture, and mouthwatering local cuisine made it an unforgettable journey",
     image:
-      "https://mail.4kwallpapers.com/images/wallpapers/ichigo-kurosaki-bleach-2732x2732-10512.jpg",
+      "https://www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg",
   },
   {
     id: 3,
@@ -56,7 +56,7 @@ export const quotes: any = [
     review:
       "I can't stop raving about it! From the picturesque towns to the exhilarating water sports, it was an adventure-filled paradise",
     image:
-      "https://www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-01.jpg",
+      "https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fHww",
   },
   {
     id: 6,

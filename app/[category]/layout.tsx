@@ -48,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="h-full">
+    <section className="h-full ">
       <NextAuthProvider>
         <div className="w-11/12 sm:w-6/12 md:w-8/12 mx-auto pt-8 sm:pt-16  mb-8 max-w-7xl xl:max-w-4xl">
           <Breadcrumbs />
