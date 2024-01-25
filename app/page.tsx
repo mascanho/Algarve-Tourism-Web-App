@@ -83,6 +83,15 @@ export default async function Home(props: any) {
     <section className="w-full">
       <Hero categories={categories} />
       <Features />
+      <div className="space-y-4 my-10 mt-28 mx-auto text-center w-11/12 max-w-7xl ">
+        <h3 className="text-3xl font-bold text-black sm:text-5xl mt-20">
+          Discover the best of the Algarve
+        </h3>{" "}
+        <h4 className="w-8/12 mx-auto text-center text-gray-700">
+          This week&apos;s selection of popular places and events
+        </h4>
+      </div>
+
       <Selection />
       <section className="sm:grid mx-auto  items-start sm:w-11/12 sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 lg:gap-x-8 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center max-w-7xl ">
         {categories.slice(0, 8).map((cat: any) => (
@@ -112,46 +121,20 @@ export default async function Home(props: any) {
         {/*   </Link> */}
         {/* </div> */}
       </section>
-      <Feedback {...quotes} />
+      <GenericCarousel categories={categories} title="What to do" />
+      <StaticDataCarousel categories={cities} title="Cities to visit" />
+      <GenericCarousel categories={restaurants} title="Where to eat" />
+      <StaticDataCarousel categories={carRentals} title="Car rentals" />
+      <BottomCarousel categories={categories} title="More to explore" />
       <RandomBanner categories={categories} />
-      {/* Generic Carousel  */}
-      <section className="mx-auto animate-fade-in mt-20 max-w-7xl">
-        <h2 className="max-w-7xl mx-auto text-left w-11/12 w-full sm:text-5xl text-black font-semibold sm:pb-6">
-          What to do
-        </h2>
-        <GenericCarousel categories={categories} />
-      </section>
-      <section className="mx-auto animate-fade-in mt-20 max-w-7xl ">
-        <h2 className="max-w-7xl mx-auto text-left w-full text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
-          Cities to visit
-        </h2>
-        <StaticDataCarousel categories={cities} />
-      </section>
-      <section className="mx-auto animate-fade-in mt-20 max-w-7xl  ">
-        <h2 className="max-w-7xl mx-auto text-left  text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
-          Restaurants
-        </h2>
-        <GenericCarousel categories={restaurants} />
-      </section>
-      <section className="mx-auto animate-fade-in mt-20 mb-14 sm:mb-32 max-w-7xl ">
-        <h2 className="max-w-7xl mx-auto text-left text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
-          Car rentals
-        </h2>
-        <StaticDataCarousel categories={carRentals} />
-      </section>
-      <section className=" mx-auto pt-12 sm:pt-2 pb-24 sm:pb-1 max-w-7xl ">
-        <h4 className="max-w-7xl text-left sm:pb-6 mx-auto text-4xl sm:text-5xl  font-semibold text-black">
-          More to explore
-        </h4>
-        <BottomCarousel categories={categories} />
-      </section>
+      <Feedback {...quotes} />
       {/*BOTTOM ASSETS */}
       {/* <section className="max-w-7xl mx-auto w-11/12 mb-20"> */}
       {/* <BottomAssets /> */}
       {/* </section> */}
       {/* Algarve Specs */}
       {/* <section className="animate-fade-in pb-10 max-w-7xl mx-auto"> */}
-      {/* <AlgarveSpecs /> */}
+      <AlgarveSpecs />
       {/* </section> */}
       {/* Frequently asked questions */}
       {/* <section className="w-11/12 md:max-w-7xl mx-auto space-y-8 animate-fade-in my-20"> */}

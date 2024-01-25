@@ -169,7 +169,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
 
       <HiMenuAlt2
         onClick={open}
-        className={`text-2xl transition-all text-black duration-500 ease-in flex items-center m-auto ${
+        className={`text-2xl transition-all text-black duration-500 ease-in flex items-center m-auto w-fit ${
           showMobileBurger && "animate-fade  "
         }`}
       />

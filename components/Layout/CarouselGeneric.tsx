@@ -79,7 +79,13 @@ function Card({
   );
 }
 
-function GenericCarousel({ categories }: { categories: any[] }) {
+function GenericCarousel({
+  categories,
+  title,
+}: {
+  categories: any[];
+  title: string;
+}) {
   const { inView, ref } = useInView({
     threshold: 0.5,
     triggerOnce: true,
@@ -109,25 +115,30 @@ function GenericCarousel({ categories }: { categories: any[] }) {
   ));
 
   return (
-    <section
-      ref={ref}
-      style={{
-        opacity: inView ? 1 : 0,
-        transition: "opacity 1s ease-in-out", // Adjust the duration as needed (e.g., 2s)
-      }}
-    >
-      {inView && (
-        <Carousel
-          className="bottomCarousel mt-10"
-          slideSize={mobile ? "63.333333%" : "23.333333%"}
-          slideGap={mobile ? "md" : "md"}
-          slidesToScroll={mobile ? 1 : 1}
-          height={300}
-          initialSlide={1}
-        >
-          {slides}
-        </Carousel>
-      )}
+    <section className="mb-20 sm:pb-6 mt-20">
+      <h2 className="mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6 mt-20 max-w-7xl">
+        {title}
+      </h2>
+      <section
+        ref={ref}
+        style={{
+          opacity: inView ? 1 : 0,
+          transition: "opacity 1s ease-in-out", // Adjust the duration as needed (e.g., 2s)
+        }}
+      >
+        {inView && (
+          <Carousel
+            className="bottomCarousel mt-10"
+            slideSize={mobile ? "63.333333%" : "23.333333%"}
+            slideGap={mobile ? "md" : "md"}
+            slidesToScroll={mobile ? 1 : 1}
+            height={300}
+            initialSlide={1}
+          >
+            {slides}
+          </Carousel>
+        )}
+      </section>
     </section>
   );
 }

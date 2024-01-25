@@ -83,7 +83,13 @@ function Card({
   );
 }
 
-function BottomCarousel({ categories }: { categories: string[] }) {
+function BottomCarousel({
+  categories,
+  title,
+}: {
+  categories: string[];
+  title: string;
+}) {
   const { inView, ref } = useInView({
     threshold: 0.5,
     triggerOnce: true,
@@ -135,30 +141,35 @@ function BottomCarousel({ categories }: { categories: string[] }) {
   ));
 
   return (
-    <section
-      ref={ref}
-      style={{
-        opacity: inView ? 1 : 0,
-        transition: "opacity 1s ease-in-out", // Adjust the duration as needed (e.g., 2s)
-      }}
-    >
-      {inView && (
-        <Carousel
-          // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-          className="bottomCarousel mt-10"
-          slideSize={mobile ? "63.333333%" : "23.333333%"}
-          slideGap={"md"}
-          // align="start"
-          slidesToScroll={mobile ? 1 : 1}
-          height={300}
-          // withControls={mobile ? false : true}
-          // withControls={false}
-          // loop
-          initialSlide={1}
-        >
-          {slides}
-        </Carousel>
-      )}
+    <section className="mt-20">
+      <h4 className="max-w-7xl text-left sm:pb-6 mx-auto text-4xl sm:text-5xl w-11/12  font-semibold text-black">
+        {title}
+      </h4>
+      <section
+        ref={ref}
+        style={{
+          opacity: inView ? 1 : 0,
+          transition: "opacity 1s ease-in-out", // Adjust the duration as needed (e.g., 2s)
+        }}
+      >
+        {inView && (
+          <Carousel
+            // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
+            className="bottomCarousel mt-10"
+            slideSize={mobile ? "63.333333%" : "23.333333%"}
+            slideGap={"md"}
+            // align="start"
+            slidesToScroll={mobile ? 1 : 1}
+            height={300}
+            // withControls={mobile ? false : true}
+            // withControls={false}
+            // loop
+            initialSlide={1}
+          >
+            {slides}
+          </Carousel>
+        )}
+      </section>
     </section>
   );
 }

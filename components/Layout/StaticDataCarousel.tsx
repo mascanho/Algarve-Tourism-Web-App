@@ -88,7 +88,13 @@ function Card({ image, url, city, rating, price, type, route }: any) {
   );
 }
 
-function StaticDataCarousel({ categories }: { categories: any[] }) {
+function StaticDataCarousel({
+  categories,
+  title,
+}: {
+  categories: any[];
+  title: string;
+}) {
   const { inView, ref } = useInView({
     threshold: 0.5,
     triggerOnce: true,
@@ -117,30 +123,35 @@ function StaticDataCarousel({ categories }: { categories: any[] }) {
   ));
 
   return (
-    <section
-      ref={ref}
-      style={{
-        opacity: inView ? 1 : 0,
-        transition: "opacity 1s ease-in-out", // Adjust the duration as needed (e.g., 2s)
-      }}
-    >
-      {inView && (
-        <Carousel
-          // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-          className="bottomCarousel mt-10"
-          slideSize={mobile ? "63.333333%" : "21.333333%"}
-          slideGap={"md"}
-          // align="start"
-          slidesToScroll={mobile ? 1 : 1}
-          height={300}
-          // withControls={mobile ? false : true}
-          // withControls={false}
-          // loop
-          initialSlide={1}
-        >
-          {slides}
-        </Carousel>
-      )}
+    <section className="mt-20">
+      <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
+        {title}
+      </h2>
+      <section
+        ref={ref}
+        style={{
+          opacity: inView ? 1 : 0,
+          transition: "opacity 1s ease-in-out", // Adjust the duration as needed (e.g., 2s)
+        }}
+      >
+        {inView && (
+          <Carousel
+            // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
+            className="bottomCarousel mt-10"
+            slideSize={mobile ? "63.333333%" : "21.333333%"}
+            slideGap={"md"}
+            // align="start"
+            slidesToScroll={mobile ? 1 : 1}
+            height={300}
+            // withControls={mobile ? false : true}
+            // withControls={false}
+            // loop
+            initialSlide={1}
+          >
+            {slides}
+          </Carousel>
+        )}
+      </section>
     </section>
   );
 }

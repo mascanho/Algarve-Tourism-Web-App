@@ -13,15 +13,15 @@ const Hero = ({ categories }: any) => {
   const [allTypes, setAllTypes] = useState<any[]>([]);
 
   return (
-    <section className="mx-auto w-full space-y-2 sm:h-[90vh] sm:space-y-4 flex flex-wrap flex-col justify-center text-center m-auto">
-      <h1 className="mx-auto text-4xl font-bold pt-10 sm:pt-0  text-center sm:text-6xl bg-gradient-to-r from-green-500 via-sky to-red-500 text-transparent   bg-clip-text pb-2 animate-gradient ">
+    <section className="mx-auto w-full space-y-2 sm:h-[90vh] sm:space-y-4 flex flex-nowrap flex-col justify-center text-center m-auto">
+      <h1 className="mx-auto text-4xl font-bold pt-10 sm:pt-0  text-center sm:text-7xl bg-gradient-to-r from-green-500 via-sky to-red-500 text-transparent   bg-clip-text pb-2 animate-gradient ">
         Algarve&apos;s Travel Guide
       </h1>
-      <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12 sm:w-8/12 sm:px-14 text-sm lg:w-5/12 px-4">
+      <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12 sm:w-8/12 sm:px-14 text-sm lg:w-6/12 px-4 text-gray-700">
         Discover the breathtaking beauty of the Algarve! The ultimate guide to
         the region&apos;s top tourism attractions and less known hidden gems
       </h2>
-      <h2 className="sm:hidden mx-auto w-10/12 rounded-sm sm:p-0 mt-1 sm:mt-0 sm:max-w-lg  sm:pt-2">
+      <h2 className="sm:hidden mx-auto w-10/12 rounded-sm sm:p-0 mt-1 sm:mt-0 sm:max-w-lg  sm:pt-2 text-gray-700">
         {" "}
         The region&apos;s top tourism attractions and less known hidden gems
       </h2>
@@ -32,7 +32,7 @@ const Hero = ({ categories }: any) => {
           categories={categories}
         />
       </div>
-      <div className="max-w-7xl sm:w-8/12 mx-auto h-96 sm:h-80  rounded-t-lg">
+      <div className="max-w-7xl sm:w-8/12 mx-auto h-96 sm:h-80  flex flex-wrap flex-col rounded-t-lg">
         <img
           className="rounded-t-3xl w-full h-full object-cover"
           src={

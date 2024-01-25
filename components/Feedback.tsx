@@ -14,12 +14,12 @@ function Feedback({ name, job, rating, review, image }: any) {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   return (
-    <section className="max-w-7xl w-full px-4 sm:px-0 mx-auto">
-      <div className="my-10 text-center sm:pt-20">
+    <section className="max-w-7xl w-11/12 px-4 sm:px-0 mx-auto">
+      <div className="mt-20  text-center sm:pt-20">
         <h2 className="text-4xl font-semibold text-black sm:text-4xl">
           Satisfied Visitors
         </h2>
-        <h4 className="w-10/12 mx-auto mt-4 sm:w-6/12">
+        <h4 className="w-10/12 mx-auto mt-4 sm:w-6/12 text-gray-700">
           See what people are talking about the fantastic locations, events and
           hidden gems in the south of Portugal
         </h4>

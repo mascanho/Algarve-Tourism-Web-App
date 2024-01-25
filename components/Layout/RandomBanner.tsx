@@ -71,7 +71,7 @@ function RandomBanner({ categories }: any) {
       return array.filter((item) => {
         return searchValues.some((searchValue) => {
           return item.fields.type.some((val: any) =>
-            String(val).includes(searchValue)
+            String(val).includes(searchValue),
           );
         });
       });
@@ -83,7 +83,7 @@ function RandomBanner({ categories }: any) {
 
     const arrSelected = searchResult.slice(
       0,
-      Math.floor(daysSelected * totalPlacesPerDays)
+      Math.floor(daysSelected * totalPlacesPerDays),
     );
 
     setFinalChoice(arrSelected);
@@ -127,7 +127,7 @@ function RandomBanner({ categories }: any) {
   };
 
   return (
-    <div className="animate-fade-in  w-fit py-10 sm:py-16 mx-auto sm:space-y-2 text-center text-white sm:w-full rounded-xl sm:space-y-2">
+    <div className="animate-fade-in mt-20  w-full overflow-hidden bg-gray-400 max-w-7xl py-10 mx-auto sm:space-y-2 text-center text-white sm:w-full sm:space-y-2">
       <div className="-mt-4 sm:mt-0 space-y-2 sm:space-y-6">
         <h4 className="sm:text-7xl font-semibold text-black  text-4xl">
           Start your journey

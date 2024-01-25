@@ -21,6 +21,8 @@ import WeatherModal from "../modals/WeatherModal";
 import Sheet from "./Sheet";
 import NotificationsModal from "./NotificationsModal";
 import MobileDrawer from "./MobileDrawer";
+import AuthenticationModal from "./AuthenticationModal";
+import MobileSearchHeader from "./MobileSearchHeader";
 
 const Header = ({ currentUser, weatherData }: any) => {
   const router = useRouter();
@@ -28,6 +30,7 @@ const Header = ({ currentUser, weatherData }: any) => {
   const [opened, { open, close }] = useDisclosure(false);
   const favourites = useAddToFavourites();
   const [favouritesLength, setFavouritesLength] = useState(0);
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
   const openLoginMenu = () => {
     setOpenLogin(!openLogin);
   };
@@ -67,6 +70,12 @@ const Header = ({ currentUser, weatherData }: any) => {
         setShowMobileBurger(true);
       } else {
         setShowMobileBurger(false);
+      }
+
+      if (window.scrollY > 300) {
+        setShowMobileSearch(true);
+      } else {
+        setShowMobileSearch(false);
       }
     };
 
@@ -116,7 +125,7 @@ const Header = ({ currentUser, weatherData }: any) => {
           <div className="flex sm:flex-wrap w-full break-keep sm:w-auto ">
             {/* HAMBURGER MENU */}
             <section
-              className="sm:hidden flex flex-wrap  w-[55%]"
+              className="sm:hidden flex flex-wrap  w-fit"
               // className={`sm:hidden flex flex-wrap justify-between w-full ${
               //   showMobileBurger &&
               //   "fixed left-6 top-4 bg-white rounded-md text-black transition-all ease-in delay-75 border z-50"
@@ -138,10 +147,11 @@ const Header = ({ currentUser, weatherData }: any) => {
             />
             <span
               onClick={() => router.push("/")}
-              className="pl-1 text-sm sm:text-base normal-case flex-1 text-right  cursor-pointer items-center flex-grow  m-auto sm:w-fit sm:flex font-semibold"
+              className={`pl-1 text-sm sm:text-base normal-case flex-1 text-right ${showMobileSearch && "hidden"}  cursor-pointer items-center flex-grow  m-auto sm:w-fit sm:flex font-semibold`}
             >
               Algarve Wonders
             </span>
+            {showMobileSearch && <MobileSearchHeader />}
           </div>
           <section className="hidden sm:flex flex-wrap w-1/2 justify-around">
             <NavMenu trigger={false} title={"Search"} url={"/"} />
@@ -169,6 +179,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             className="relative hidden sm:flex flex-wrap justify-around space-x-2 items-center 
                 "
           >
+            {/* <AuthenticationModal /> */}
             <img
               src={
                 currentUser?.image ||
@@ -181,7 +192,7 @@ const Header = ({ currentUser, weatherData }: any) => {
               onClick={openLoginMenu}
             />
             {openLogin && (
-              <ul className="z-10 absolute w-36 sm:w-36 p-2 text-sm bg-white border text-right shadow-sm menu rounded-box  sm:right-10 sm:top-10 border-t-3 border-t-sky -left-24 top-10">
+              <ul className="z-10 absolute w-36 sm:w-36 p-2 text-sm bg-white border text-right shadow-sm menu  sm:right-10 sm:top-10 border-t-3 border-t-sky rounded-b-md -left-24 top-10">
                 {!currentUser ? (
                   <>
                     <li onClick={loginModal.onOpen} className="w-full">
@@ -215,13 +226,12 @@ const Header = ({ currentUser, weatherData }: any) => {
               </ul>
             )}
             <NotificationsModal />
-            <MdCardTravel
-              onClick={showFavourites}
-              className="cursor-pointer relative  sm:text-2xl"
-            />
-            <span className="h-3 w-3 text-[8px] bg-sky absolute right-0 top-1 text-white rounded-full flex flex-wrap justify-center items-center text-center">
-              {favouritesLength}
-            </span>
+            <div className="cursor-pointer" onClick={showFavourites}>
+              <MdCardTravel className="cursor-pointer relative  sm:text-2xl" />
+              <span className="h-3 w-3 text-[8px] bg-sky absolute right-0 top-1 text-white rounded-full flex flex-wrap justify-center items-center text-center">
+                {favouritesLength}
+              </span>
+            </div>
           </div>
         </header>
       </nav>

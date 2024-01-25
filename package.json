@@ -71,6 +71,7 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "autoprefixer": "^10.4.16",
+    "eslint-config-prettier": "^9.1.0",
     "postcss": "^8.4.31",
     "postcss-nesting": "^12.0.2",
     "prettier": "^3.2.4",
