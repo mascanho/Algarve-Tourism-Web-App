@@ -160,11 +160,29 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
           <div
             className="flex items-center mb-2"
             onClick={() => {
-              router.push("/blog");
+              router.push("/");
               close();
             }}
           >
             <span className="my-auto">Notifications</span>
+          </div>{" "}
+          <div
+            className="flex items-center mb-2"
+            onClick={() => {
+              router.push("/submit");
+              close();
+            }}
+          >
+            <span className="my-auto">Submit a place</span>
+          </div>{" "}
+          <div
+            className="flex items-center mb-2"
+            onClick={() => {
+              router.push("/contact");
+              close();
+            }}
+          >
+            <span className="my-auto">Contact us</span>
           </div>{" "}
           <div>
             {currentUser && (

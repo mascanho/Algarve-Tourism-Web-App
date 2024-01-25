@@ -2,6 +2,7 @@ import Form from "./Form";
 import Image from "next/image";
 
 import type { Metadata, Viewport } from "next";
+import BreadCrumbs from "@/components/Layout/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: {
