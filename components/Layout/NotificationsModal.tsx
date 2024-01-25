@@ -5,9 +5,9 @@ import { AiOutlineNotification } from "react-icons/ai";
 function NotificationsModal() {
   const [opened, { open, close }] = useDisclosure(false);
 
-  const content = Array(20)
-    .fill(0)
-    .map((_, index) => <p key={index}>...</p>);
+  // const content = Array(20)
+  //   .fill(0)
+  //   .map((_, index) => <p key={index}>...</p>);
 
   return (
     <>
@@ -17,7 +17,7 @@ function NotificationsModal() {
         title="Notifications"
         scrollAreaComponent={ScrollArea.Autosize}
       >
-        {content}
+        {/* {content} */}
       </Modal>
       <AiOutlineNotification
         onClick={open}

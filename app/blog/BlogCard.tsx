@@ -21,7 +21,7 @@ export const BlogCard = ({
   });
 
   return (
-    <section className="hover:scale-105 transition-all ease-in delay-75 active:scale-100">
+    <section className="sm:hover:scale-105 active:scale-95 transition-all ease-in delay-75 p-2">
       <Link href={`/blog/${slug}`}>
         <section className="flex sm:w-11/12 w-11/12 mx-auto relative">
           <div className="avatar hidden ">

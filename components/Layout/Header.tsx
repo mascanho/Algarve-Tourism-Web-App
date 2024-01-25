@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { HiBars3 } from "react-icons/hi2";
 import { MdCardTravel } from "react-icons/md";
@@ -23,6 +23,7 @@ import NotificationsModal from "./NotificationsModal";
 import MobileDrawer from "./MobileDrawer";
 import AuthenticationModal from "./AuthenticationModal";
 import MobileSearchHeader from "./MobileSearchHeader";
+import BottomDrawer from "./BottomDrawer";
 
 const Header = ({ currentUser, weatherData }: any) => {
   const router = useRouter();
@@ -33,6 +34,7 @@ const Header = ({ currentUser, weatherData }: any) => {
   const [showMobileSearch, setShowMobileSearch] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [nav, setNav] = useState(true);
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
   const openLoginMenu = () => {
     setOpenLogin(!openLogin);
   };
@@ -64,6 +66,23 @@ const Header = ({ currentUser, weatherData }: any) => {
     }
     open();
   };
+
+  const handleYposition = useCallback(() => {
+    const currentScrollPos = window.pageYOffset;
+
+    setIsScrollingUp(
+      currentScrollPos < prevScrollPos || currentScrollPos < 100,
+    );
+    setPrevScrollPos(currentScrollPos);
+  }, [prevScrollPos]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleYposition);
+
+    return () => {
+      window.removeEventListener("scroll", handleYposition);
+    };
+  }, [handleYposition]);
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
@@ -117,15 +136,15 @@ const Header = ({ currentUser, weatherData }: any) => {
 
       <nav
         id="search"
-        className={`border-b  border w-screen   fixed flex flex-wrap bg-white  shadow-sm z-10 transition-all ease-in delay-100 ${!nav && "opacity-0 "}`}
+        className={`border-b  border w-screen   fixed flex flex-wrap bg-white  shadow-sm z-10 transition-all ease-in delay-100 `}
       >
         <header
-          className={`flex flex-wrap w-11/12 sm:w-full max-w-7xl sm:px-2 md:w-full lg:w-full  justify-between mx-auto py-2 transition-all ease-in delay-150 ${!nav && "hidden"}`}
+          className={`flex flex-wrap w-11/12 sm:w-full max-w-7xl sm:px-2 md:w-full lg:w-full  justify-between mx-auto py-2 transition-all ease-in delay-150 `}
         >
           {/* END OF BURGER MENU */}
           <div className="flex sm:flex-wrap w-full break-keep sm:w-auto ">
             {/* HAMBURGER MENU */}
-            <section className="sm:hidden flex flex-wrap  w-fit">
+            <section className="sm:hidden flex flex-wrap  w-fit mr-2 ">
               <Sheet
                 showMobileBurger={showMobileBurger}
                 favourites={favourites}
@@ -140,9 +159,18 @@ const Header = ({ currentUser, weatherData }: any) => {
               height={20}
               className="h-6 w-6 sm:h-8 sm:w-8 flex-wrap m-auto sm:flex hidden "
             />
+            {favouritesLength > 0 && (
+              <div
+                className={`sm:hidden text-center transition-all ease-in-out delay-75 `}
+              >
+                {/* Your content goes here */}
+                <BottomDrawer favouritesLength={favouritesLength} />
+              </div>
+            )}
+
             <span
               onClick={() => router.push("/")}
-              className={`pl-1 text-sm sm:text-base normal-case flex-1 text-right ${showMobileSearch && "hidden"}  cursor-pointer items-center flex-grow  m-auto sm:w-fit sm:flex font-semibold`}
+              className={`pl-1 text-sm sm:text-base normal-case flex-1 text-right ${showMobileSearch && "hidden"}  cursor-pointer items-center flex-grow w-full  m-auto sm:w-fit sm:flex font-semibold`}
             >
               Algarve Wonders
             </span>

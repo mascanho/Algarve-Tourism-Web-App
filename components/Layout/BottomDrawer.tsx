@@ -67,7 +67,7 @@ function BottomDrawer({ favouritesLength }: any) {
 
       <div
         onClick={open}
-        className="bg-gray-700 w-fit mx-auto flex items-center gap-2 transition-all ease-in delay-75 px-3 py-1 rounded-full"
+        className="bg-gray-700 w-fit mx-auto flex items-center gap-2 transition-all ease-in delay-75 px-2 text-xs py-1 rounded-full"
       >
         <FaHeart className="text-red-500" />
         {favouritesLength}

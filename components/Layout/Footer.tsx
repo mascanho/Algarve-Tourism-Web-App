@@ -7,14 +7,12 @@ import { FaArrowUp, FaHeart } from "react-icons/fa";
 import { HiArrowUp } from "react-icons/hi2";
 import NotificationsModal from "./NotificationsModal";
 import MobileDrawer from "./MobileDrawer";
-import BottomDrawer from "./BottomDrawer";
 
 function Footer() {
   const [showToTop, setShowToTop] = useState(false);
   const { favourites } = useAddToFavourites();
   const [favouritesLength, setFavouritesLength] = useState(0);
 
-  const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   const [fakeOnlineUsers, setFakeOnlineUsers] = useState(() =>
@@ -49,22 +47,6 @@ function Footer() {
   }, []);
 
   // SHOW THE ELEMENT CONDITIONALY DEPENDING ON SCROLL. IF SCROLING UP SHOW THE ELEMENT, IF SCROLLING DOWN HIDE THE ELEMENT
-  const handleYposition = useCallback(() => {
-    const currentScrollPos = window.pageYOffset;
-
-    setIsScrollingUp(
-      currentScrollPos < prevScrollPos || currentScrollPos < 100,
-    );
-    setPrevScrollPos(currentScrollPos);
-  }, [prevScrollPos]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleYposition);
-
-    return () => {
-      window.removeEventListener("scroll", handleYposition);
-    };
-  }, [handleYposition]);
 
   useEffect(() => {
     const favouritesFromLocalStorage = localStorage.getItem("favourites");
@@ -91,14 +73,6 @@ function Footer() {
         />
       )}
 
-      {favouritesLength > 0 && (
-        <div
-          className={`"fixed sm:hidden w-full bottom-10 text-center transition-all ease-in-out delay-75  ${isScrollingUp ? "fixed w-fit" : "hidden"}`}
-        >
-          {/* Your content goes here */}
-          <BottomDrawer favouritesLength={favouritesLength} />
-        </div>
-      )}
       <section className="bg-black mt-20 ">
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto w-11/12 ">
           <section className="grid grid-cols-2 w-full sm:flex justify-between px-4 sm:px-0 ">

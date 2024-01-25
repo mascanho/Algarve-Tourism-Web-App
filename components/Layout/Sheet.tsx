@@ -157,6 +157,15 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
             <span className="my-auto font-semibold">Blog</span>
           </div>{" "}
           <Divider my="md" />
+          <div
+            className="flex items-center mb-2"
+            onClick={() => {
+              router.push("/blog");
+              close();
+            }}
+          >
+            <span className="my-auto">Notifications</span>
+          </div>{" "}
           <div>
             {currentUser && (
               <span className="mt-4" onClick={handleLogout}>
