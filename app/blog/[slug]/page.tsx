@@ -53,7 +53,7 @@ export async function generateMetadata({ params, searchParams }: any) {
       skip: 0,
       "fields.slug": params.slug,
     });
-    return res.items[0].fields.description;
+    return res?.items[0]?.fields?.description;
   };
 
   const description = await getDescription({ params });
@@ -107,12 +107,12 @@ const page = async (props: any) => {
 
   // Filtering the right comments to match the right slug
   const commentsFiltered = allComments?.filter(
-    (obj: any) => obj?.slug === slug
+    (obj: any) => obj?.slug === slug,
   );
 
   // Order the comments by date
   const comments = commentsFiltered?.sort(
-    (a: any, b: any) => b?.createdAt - a?.createdAt
+    (a: any, b: any) => b?.createdAt - a?.createdAt,
   );
 
   const allBlogs = await getAllBlogs();

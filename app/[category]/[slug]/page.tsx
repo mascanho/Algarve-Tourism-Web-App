@@ -159,7 +159,7 @@ export default async function Home(props: any, req: any) {
         </section>
       </section>
       <section className="mx-auto w-11/12 sm:w-full  py-10 overflow-hidden">
-        <Link href={`/${category}`} className="text-sm text-sky">
+        <Link href={`/${category}` || ""} className="text-sm text-sky">
           <button type="button" className="flex items-center ">
             <IoArrowBack className="mr-1" />
             back to {category}
