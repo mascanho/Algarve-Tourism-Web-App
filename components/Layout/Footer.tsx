@@ -91,13 +91,14 @@ function Footer() {
         />
       )}
 
-      <div
-        className={`"fixed sm:hidden w-full bottom-10 text-center  ${isScrollingUp ? "fixed w-fit" : "hidden"}`}
-      >
-        {/* Your content goes here */}
-        <BottomDrawer favouritesLength={favouritesLength} />
-      </div>
-
+      {favouritesLength > 0 && (
+        <div
+          className={`"fixed sm:hidden w-full bottom-10 text-center transition-all ease-in-out delay-75  ${isScrollingUp ? "fixed w-fit" : "hidden"}`}
+        >
+          {/* Your content goes here */}
+          <BottomDrawer favouritesLength={favouritesLength} />
+        </div>
+      )}
       <section className="bg-black mt-20 ">
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto w-11/12 ">
           <section className="grid grid-cols-2 w-full sm:flex justify-between px-4 sm:px-0 ">

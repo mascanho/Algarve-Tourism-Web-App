@@ -31,6 +31,8 @@ const Header = ({ currentUser, weatherData }: any) => {
   const favourites = useAddToFavourites();
   const [favouritesLength, setFavouritesLength] = useState(0);
   const [showMobileSearch, setShowMobileSearch] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [nav, setNav] = useState(true);
   const openLoginMenu = () => {
     setOpenLogin(!openLogin);
   };
@@ -63,31 +65,28 @@ const Header = ({ currentUser, weatherData }: any) => {
     open();
   };
 
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+
+    if (currentScrollPos > prevScrollPos) {
+      // Scrolling down
+      setNav(false);
+    } else {
+      // Scrolling up
+      setNav(true);
+    }
+
+    setPrevScrollPos(currentScrollPos);
+  };
+
   useEffect(() => {
-    // check the scroll height
-    const handleScroll = () => {
-      if (window.scrollY > 150) {
-        setShowMobileBurger(true);
-      } else {
-        setShowMobileBurger(false);
-      }
-
-      if (window.scrollY > 300) {
-        setShowMobileSearch(true);
-      } else {
-        setShowMobileSearch(false);
-      }
-    };
-
-    // Add scroll event listener when the component mounts
     window.addEventListener("scroll", handleScroll);
 
-    // Remove the scroll event listener when the component unmounts
+    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-
+  }, [prevScrollPos]);
   return (
     <>
       <section>
@@ -118,19 +117,13 @@ const Header = ({ currentUser, weatherData }: any) => {
 
       <nav
         id="search"
-        className="border-b  border w-screen   fixed flex flex-wrap bg-white  shadow-sm z-10 transition-all ease-in delay-150"
+        className={`border-b  border w-screen   fixed flex flex-wrap bg-white  shadow-sm z-10 transition-all ease-in delay-1000 opacity-100 ${!nav && "hidden transition-all ease-in"}`}
       >
         <header className="flex flex-wrap w-11/12 sm:w-full max-w-7xl sm:px-2 md:w-full lg:w-full  justify-between mx-auto py-2 transition-all ease-in delay-150">
           {/* END OF BURGER MENU */}
           <div className="flex sm:flex-wrap w-full break-keep sm:w-auto ">
             {/* HAMBURGER MENU */}
-            <section
-              className="sm:hidden flex flex-wrap  w-fit"
-              // className={`sm:hidden flex flex-wrap justify-between w-full ${
-              //   showMobileBurger &&
-              //   "fixed left-6 top-4 bg-white rounded-md text-black transition-all ease-in delay-75 border z-50"
-              // }`}
-            >
+            <section className="sm:hidden flex flex-wrap  w-fit">
               <Sheet
                 showMobileBurger={showMobileBurger}
                 favourites={favourites}
