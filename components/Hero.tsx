@@ -32,12 +32,10 @@ const Hero = ({ categories }: any) => {
           categories={categories}
         />
       </div>
-      <div className="max-w-7xl sm:w-8/12 mx-auto h-96 sm:h-80  flex flex-wrap flex-col rounded-t-lg">
+      <div className="sm:w-8/12 mx-auto h-96 sm:h-80  flex flex-wrap flex-col rounded-t-lg max-w-4xl">
         <img
           className="rounded-t-3xl w-full h-full object-cover"
-          src={
-            IMAGES_DESKTOP[Math.floor(Math.random() * IMAGES_DESKTOP.length)]
-          }
+          src={IMAGES_DESKTOP[1]}
           alt="hero image"
         />
       </div>

@@ -87,7 +87,7 @@ const data = [
 function AlgarveSpecs() {
   return (
     <>
-      <div className="max-w-7xl w-11/12 mx-auto space-y-4 mb-8">
+      <div className="max-w-7xl w-11/12 mx-auto space-y-4 mb-8 mt-20">
         <h4 className="text-xl">Good To Know</h4>
       </div>
       <section className="grid sm:grid-cols-3 gap-x-4 gap-y-10 max-w-7xl m-auto w-11/12">

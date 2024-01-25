@@ -129,13 +129,8 @@ export default async function Home(props: any) {
       <RandomBanner categories={categories} />
       <Feedback {...quotes} />
       {/*BOTTOM ASSETS */}
-      {/* <section className="max-w-7xl mx-auto w-11/12 mb-20"> */}
       {/* <BottomAssets /> */}
-      {/* </section> */}
-      {/* Algarve Specs */}
-      {/* <section className="animate-fade-in pb-10 max-w-7xl mx-auto"> */}
       <AlgarveSpecs />
-      {/* </section> */}
       {/* Frequently asked questions */}
       {/* <section className="w-11/12 md:max-w-7xl mx-auto space-y-8 animate-fade-in my-20"> */}
       {/* <h4 className="text-xl">Frequently asked questions</h4> */}

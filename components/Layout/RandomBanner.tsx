@@ -132,7 +132,7 @@ function RandomBanner({ categories }: any) {
         <h4 className="sm:text-7xl font-semibold text-black  text-4xl">
           Start your journey
         </h4>
-        <h3 className="sm:text-4xl hidden sm:block text-gray-400">
+        <h3 className="sm:text-4xl hidden sm:block text-black">
           Generate your new journey with AI
         </h3>
       </div>
