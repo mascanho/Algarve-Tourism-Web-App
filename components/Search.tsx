@@ -83,7 +83,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
         onSubmit={handleSubmit}
         className="relative sm:flex w-full sm:w-[470px] mx-auto"
       >
-        <div className="flex flex-wrap  sm:w-[450px] mx-auto h-16 items-center justify-center  backdrop-blur-md">
+        <div className="flex flex-wrap w-11/12  sm:w-[450px] mx-auto h-16 items-center justify-center  backdrop-blur-md">
           <input
             type="text"
             placeholder={placeholderText}
@@ -99,14 +99,14 @@ function Search({ allTypes, placeholderText, categories }: any) {
           />
           <IoIosSearch className="absolute top-6 left-3" />
           <div />
+          <button
+            type="submit"
+            className="bg-sky absolute active:bg-gray-400 right-1 text-xs sm:right-2 top-4 sm:top-[14px] rounded-full sm:px-6 px-5 font-semibold py-2 sm:py-2 text-white sm:text-sm"
+          >
+            {/* <BsSearch className="text-xl" /> */}
+            Search
+          </button>
         </div>
-        <button
-          type="submit"
-          className="bg-sky absolute active:bg-gray-400 right-2 text-xs sm:right-4 top-5 sm:top-[14px] rounded-full sm:px-6 px-4 py-1 sm:py-2 text-white sm:text-sm"
-        >
-          {/* <BsSearch className="text-xl" /> */}
-          Search
-        </button>
       </form>
     </section>
   );

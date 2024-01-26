@@ -21,7 +21,7 @@ const Hero = ({ categories }: any) => {
         Discover the breathtaking beauty of the Algarve! The ultimate guide to
         the region&apos;s top tourism attractions and less known hidden gems
       </h2>
-      <h2 className="sm:hidden mx-auto w-10/12 rounded-sm sm:p-0 mt-1 sm:mt-0 sm:max-w-lg  sm:pt-2 text-gray-700">
+      <h2 className="sm:hidden mx-auto w-9/12 rounded-sm sm:p-0 mt-1 sm:mt-0 sm:max-w-lg  sm:pt-2 text-gray-700">
         {" "}
         The region&apos;s top tourism attractions and less known hidden gems
       </h2>
