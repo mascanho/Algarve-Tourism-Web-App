@@ -57,7 +57,7 @@ function page() {
         setFavourites(JSON.parse(favourites));
       }
     }
-  }, [removeFavourite, favourites.length, localStorage.length]);
+  }, [removeFavourite, favourites.length, localStorage?.length]);
 
   const sendFavEmail = async () => {
     if (userEmail.length < 1) {
