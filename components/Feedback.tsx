@@ -15,12 +15,6 @@ function Feedback({ name, job, rating, review, image }: any) {
 
   return (
     <section className="max-w-7xl w-11/12 px-4 sm:px-0 mx-auto">
-      <div className="mt-20">
-        <h4 className="w-full mx-auto mt-4 text-2xl  text-gray-400 sm:mb-10">
-          What people say
-        </h4>
-      </div>
-
       <Carousel
         align={mobile ? "start" : "center"}
         slideSize={mobile ? "100%" : "26%"}
