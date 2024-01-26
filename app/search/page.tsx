@@ -21,19 +21,6 @@ async function Search() {
   const searchData = useSearchedData();
   const urlSearchParams = useSearchParams();
 
-  // Query Contentful data with search query
-  async function getData() {
-    const client = createClient({
-      space: "z8r91y113x4j",
-      accessToken: "mEmHEpC38vjPWaquWC2k2Qc3NzhEmti3_knDIKjf6Uc",
-    });
-    const res = await client.getEntries({});
-
-    return res;
-  }
-
-  console.log(getData(), "fiultered data");
-
   // Get all categories from contentful
   const [categories, setCategories] = useState([]);
   const [plainSearch, setPlainSearch] = useState(false);
