@@ -1,7 +1,7 @@
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Button, ScrollArea } from "@mantine/core";
 import { AiOutlineNotification } from "react-icons/ai";
-
+import Notification from "../Notification";
 function NotificationsModal() {
   const [opened, { open, close }] = useDisclosure(false);
 
@@ -17,7 +17,7 @@ function NotificationsModal() {
         title="Notifications"
         scrollAreaComponent={ScrollArea.Autosize}
       >
-        {/* {content} */}
+        <Notification />
       </Modal>
       <AiOutlineNotification
         onClick={open}

@@ -90,7 +90,7 @@ function page() {
 
     await sendMail({
       to: userEmail,
-      subject: "Algarve Wonders - Your Favourites",
+      subject: "🔥 Algarve Wonders - Your Favourites 🔥",
       body: favouritesEmail(userEmail, favourites),
       name: "Algarve Wonders",
       bcc: "mascanho@sapo.pt",

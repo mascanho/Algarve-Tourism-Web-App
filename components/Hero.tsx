@@ -5,7 +5,7 @@ import Search from "./Search";
 const IMAGES_DESKTOP = [
   "/images/bg1.jpeg",
   "/images/bg2.webp",
-  "/images/bg-3.webp",
+  "https://cfimg.wowcher.co.uk/cdn-cgi/image/height=520,width=777,quality=85,format=auto/https://static.wowcher.co.uk/images/deal/27289893/1078075.jpg",
   "https://turismo.eurodicas.com.br/wp-content/uploads/2019/07/praias-do-algarve-1.jpg",
 ];
 
@@ -17,7 +17,7 @@ const Hero = ({ categories }: any) => {
       <h1 className="mx-auto text-4xl font-bold pt-10 sm:pt-0  text-center sm:text-7xl bg-gradient-to-r from-green-500 via-sky to-red-500 text-transparent   bg-clip-text pb-2 animate-gradient ">
         Algarve&apos;s Travel Guide
       </h1>
-      <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12 sm:w-8/12 sm:px-14 text-sm lg:w-2/6  px-4 text-gray-700">
+      <h2 className="hidden sm:block  mx-auto rounded-sm w-9/12 sm:w-8/12 sm:px-14 text-sm lg:max-w-2xl   text-gray-700">
         Discover the breathtaking beauty of the Algarve! The ultimate guide to
         the region&apos;s top tourism attractions and less known hidden gems
       </h2>
