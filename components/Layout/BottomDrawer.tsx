@@ -30,23 +30,22 @@ function BottomDrawer({ favouritesLength }: any) {
     const updatedFavourites = favourites.filter((fav: any) => fav.id !== id);
     removeFavourite(id);
     setFavourites(updatedFavourites);
-    console.log(id, "from the drawer");
 
     // Update local storage
     localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
   };
 
-  useEffect(() => {
-    document.title = "Algarve Wonders - Your Favourites";
-    let link: HTMLLinkElement | null =
-      document.querySelector("link[rel~='icon']");
-    if (!link) {
-      link = document.createElement("link");
-      link.rel = "icon";
-      document.head.appendChild(link);
-    }
-    link.href = "/images/icon.png";
+  const removeAllavourites = () => {
+    // remove all favourites
+    removeFavourite(0);
+    setFavourites([]);
 
+    // UPDATE LOCAL storage
+    localStorage.clear();
+    localStorage.setItem("favourites", JSON.stringify([]));
+  };
+
+  useEffect(() => {
     // Initialization logic outside the store creation
     if (typeof window !== "undefined") {
       const favourites = localStorage?.getItem("favourites");
@@ -55,7 +54,7 @@ function BottomDrawer({ favouritesLength }: any) {
         setFavourites(JSON.parse(favourites));
       }
     }
-  }, [removeFavourite]);
+  }, [removeFavourite, favourites.length]);
 
   return (
     <>
@@ -129,7 +128,12 @@ function BottomDrawer({ favouritesLength }: any) {
                 >
                   Export all
                 </span>
-                <span className="text-xs text-gray-500">delete all</span>
+                <span
+                  onClick={() => removeAllavourites()}
+                  className="text-xs text-gray-500"
+                >
+                  delete all
+                </span>
               </div>
             </section>
           </Tabs.Panel>
