@@ -19,14 +19,14 @@ const LinksSubMenu = ({ data, close }: any) => {
   };
 
   return (
-    <section className="ml-4 pl-2 border-l-[1px] border-gray-200 mb-1 mt-2">
+    <section className="ml-2 pl-2 border-l-[1px] border-gray-200 mb-1 mt-2">
       {data.map((item: any) => (
         <Text
           component="a"
           href={item.href}
           key={item.name}
           size="lg"
-          className="text-gray-400 pl-2 mb-3 flex items-center mr-1 rounded-md transition duration-300 ease-in-out text-lg"
+          className="text-gray-500 pl-3 mb-2 flex items-center mr-1 rounded-md transition duration-300 ease-in-out text-base"
           onClick={() => {
             if (cityArr.map((c: any) => c.route).includes(item.route)) {
               router.push("/algarve/" + item.route);

@@ -88,11 +88,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
               close();
             }}
           >
-            <FaHome
-              className="w-8 h-8 bg-sky p-[5px]  rounded-md flex items-center justify-center text-white mr-2"
-              size={16}
-            />
-            <span className="my-auto font-semibold">Home</span>
+            <span className="my-auto">Home</span>
           </div>{" "}
           <div
             className="flex items-center mb-2"
@@ -101,16 +97,12 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
               close();
             }}
           >
-            <HiMagnifyingGlass
-              className="w-8 h-8 bg-sky p-[5px]  rounded-md flex items-center justify-center text-white mr-2"
-              size={16}
-            />
-            <span className="my-auto font-semibold">Search</span>
+            <span className="my-auto ">Search</span>
           </div>{" "}
           <div className="">
             <NavLinks
               data={cityArr}
-              icon={<FaLocationCrosshairs size={20} />}
+              // icon={<FaLocationCrosshairs size={20} />}
               title="Algarve"
               close={close}
             />
@@ -128,11 +120,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
               close();
             }}
           >
-            <MdFavorite
-              className="w-8 h-8 bg-sky p-[6px]  rounded-md flex items-center justify-center text-white mr-2"
-              size={16}
-            />
-            <span className="my-auto font-semibold">
+            <span className="my-auto">
               Favourites
               {favourites.favourites.length > 0 ? (
                 <span className="text-sm text-gray-400 ml-2">
@@ -150,11 +138,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
               close();
             }}
           >
-            <FaBookOpen
-              className="w-8 h-8 bg-sky p-[7px]  rounded-md flex items-center justify-center text-white mr-2 font-semibold"
-              size={16}
-            />
-            <span className="my-auto font-semibold">Blog</span>
+            <span className="my-auto">Blog</span>
           </div>{" "}
           <Divider my="md" />
           <div

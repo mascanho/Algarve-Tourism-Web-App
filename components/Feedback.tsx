@@ -15,8 +15,8 @@ function Feedback({ name, job, rating, review, image }: any) {
 
   return (
     <section className="max-w-7xl w-11/12 px-4 sm:px-0 mx-auto">
-      <div className="mt-20  text-center ">
-        <h4 className="w-10/12 mx-auto mt-4 sm:w-6/12  text-2xl  text-gray-400 sm:mb-10">
+      <div className="mt-20">
+        <h4 className="w-full mx-auto mt-4 text-2xl  text-gray-400 sm:mb-10">
           What people say
         </h4>
       </div>

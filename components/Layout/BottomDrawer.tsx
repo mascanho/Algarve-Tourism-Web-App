@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import Notification from "../Notification";
 
 function BottomDrawer({ favouritesLength }: any) {
-  const [opened, { open, close }] = useDisclosure(true);
+  const [opened, { open, close }] = useDisclosure();
   const router = useRouter();
   const [favourites, setFavourites] = useState<any[]>([]);
   const { removeFavourite } = useAddToFavourites();
@@ -120,7 +120,13 @@ function BottomDrawer({ favouritesLength }: any) {
                 </section>
               ))}
               <div className="space-x-4 flex pt-1">
-                <span className="text-xs text-gray-500 flex items-center">
+                <span
+                  onClick={() => {
+                    router.push("/favourites");
+                    close();
+                  }}
+                  className="text-xs text-gray-500 flex items-center underline"
+                >
                   Export all
                 </span>
                 <span className="text-xs text-gray-500">delete all</span>
