@@ -118,7 +118,7 @@ async function Search() {
           </section>
         </section>
         <section className="h-full mx-auto max-w-7xl">
-          <section className="w-11/12 mx-auto max-w-7xl  w-full pt-10">
+          <section className="mx-auto max-w-7xl  w-full pt-10">
             <Link href="/#search">
               <div className="flex items-center  space-x-1 w-11/12 sm:w-full mx-auto  -mt-4 mb-8 sm:mb-0 sm:mt-0">
                 <TiArrowBack />

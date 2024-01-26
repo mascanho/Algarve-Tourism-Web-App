@@ -131,11 +131,7 @@ export const Card = ({
         </div>
         <div className="w-full h-[1px] bg-gray-300 px-2 " />
         <section className="flex justify-between w-full py-2 items-center">
-          <div className="flex items-center  w-full px-2 align-middl space-x-2">
-            <BsBookmarkHeart
-              onClick={addToFavourites}
-              className="hover:scale-110 cursor-pointer "
-            />
+          <div className="flex items-center  w-full px-2 align-middl space-x-3">
             {/* <BsQrCodeScan className="hover:scale-110 cursor-pointer" /> */}
             <a href={mapShare} target="_blank">
               <BiMap className="hover:scale-110 cursor-pointer" />

@@ -133,28 +133,6 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
               <div className="w-full h-[1px] bg-gray-300 " />
               <div className="flex justify-between  text-right py-2 sm:py-0 w-full pr-4 ">
                 <div className="flex items-center  px-2 align-middl space-x-2">
-                  <BsBookmarkHeart
-                    onClick={() =>
-                      addToFavourites({
-                        id: cat?.fields?.title,
-                        title: cat?.fields?.title,
-                        slug: cat?.fields?.slug,
-                        mainImage:
-                          "https:" + cat?.fields?.mainImage?.fields?.file?.url,
-                        city: cat?.fields?.city,
-                        image:
-                          "https:" + cat?.fields?.mainImage?.fields?.file?.url,
-                        tags: cat?.fields?.tags,
-                        hiddenGem: cat?.fields?.hiddenGem,
-                        rating: cat?.fields?.rating,
-                        mapShare: cat?.fields?.mapShare,
-                        embededMap: cat?.fields?.embededMap,
-                        description: cat?.fields?.description,
-                        shortDescription: cat?.fields?.shortDescription,
-                      })
-                    }
-                    className="hover:scale-110 cursor-pointer"
-                  />
                   <BsQrCodeScan className="hover:scale-110 cursor-pointer" />
                   <a href={cat?.fields?.mapShare} target="_blank">
                     <BiMap className="hover:scale-110" />
