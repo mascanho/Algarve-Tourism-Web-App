@@ -72,7 +72,7 @@ export default async function RootLayout({
   // const weatherData = await getWeatherData();
 
   return (
-    <html lang="en" className={`${ptsans.className} h-full overflow-hidden `}>
+    <html lang="en" className={`${ptsans.className} h-full overflow-x-hidden `}>
       <NextAuthProvider>
         <body className="bg-white w-screen">
           <ClientOnly>
