@@ -26,7 +26,7 @@ const Hero = ({ categories }: any) => {
       </h2>
       <h2 className="sm:hidden mx-auto w-9/12 rounded-sm sm:p-0 mt-1 sm:mt-0 sm:max-w-lg  sm:pt-2 text-gray-700">
         {" "}
-        The region&apos;s top tourism attractions and less known hidden gems
+        The region&apos;s top attractions and less known hidden gems
       </h2>
       <div className="flex justify-center m-auto w-11/12 pb-10 ">
         <Search
