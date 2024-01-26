@@ -97,7 +97,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
             id="search"
             name="search"
           />
-          <IoIosSearch className="absolute top-6 sm:left-2 left-8" />
+          <IoIosSearch className="absolute top-6 sm:left-2 left-7" />
           <div />
           <button
             type="submit"

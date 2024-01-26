@@ -95,8 +95,8 @@ export default async function Home(props: any) {
         </h4>
       </div>
 
-      <Selection />
-      <section className="sm:grid mx-auto hidden  items-start sm:w-11/12 sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 lg:gap-x-8 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center max-w-7xl ">
+      {/* <Selection /> */}
+      <section className="sm:grid mx-auto hidden  items-start sm:w-11/12 sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 lg:gap-x-8 md:grid-cols-3 sm:pt-10 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center max-w-7xl ">
         {categories.slice(0, 8).map((cat: any) => (
           <Card
             key={cat?.fields?.title}
@@ -124,12 +124,14 @@ export default async function Home(props: any) {
         {/*   </Link> */}
         {/* </div> */}
       </section>
-      <button
-        className="border text-gray-700 mt-10 rounded-md active:bg-sky active:text-white transition-all hidden ease-in px-5 py-2 mx-auto sm:flex text-center"
-        type="button"
-      >
-        View more
-      </button>
+      <Link href={"/beaches"}>
+        <button
+          className="border text-gray-700 mt-10 rounded-md active:bg-sky active:text-white transition-all hidden ease-in px-5 py-2 mx-auto sm:flex text-center"
+          type="button"
+        >
+          View more
+        </button>
+      </Link>
       <StaticDataCarousel categories={catCards} title="Popular Categories" />
       <GenericCarousel categories={categories} title="What to do" />
       <StaticDataCarousel categories={cities} title="Cities to visit" />

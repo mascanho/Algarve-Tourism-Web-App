@@ -128,11 +128,11 @@ function RandomBanner({ categories }: any) {
 
   return (
     <div className="animate-fade-in mt-20  w-full overflow-hidden  max-w-7xl py-10 mx-auto sm:space-y-2 text-center text-white sm:w-full sm:space-y-2">
-      <div className="-mt-4 sm:mt-0 space-y-2 sm:space-y-6">
-        <h4 className="sm:text-7xl font-semibold text-black  text-4xl">
+      <div className=" sm:mt-0 space-y-2 sm:space-y-6">
+        <h4 className="sm:text-7xl font-semibold text-black  text-5xl">
           Start your journey
         </h4>
-        <h3 className="sm:text-4xl hidden sm:block text-black">
+        <h3 className="sm:text-4xl  sm:block text-gray-500 pt-4 sm:mt-0">
           Generate your new journey with AI
         </h3>
       </div>
@@ -140,13 +140,13 @@ function RandomBanner({ categories }: any) {
         <div className="sm:space-x-8 space-y-4 mt-8 sm:mt-2 sm:-pt-2  m-auto ">
           <button
             onClick={handleClickRandom}
-            className="px-4 w-52 text-sm border sm:w-fit sm:text-base py-2 text-black hover:text-white hover:bg-black transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
+            className="px-6 w-52 text-sm border sm:w-fit sm:text-base py-3 text-black hover:text-white hover:bg-black transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
           >
             Discover The Best Places
           </button>
           <button
             onClick={GenerateRandomChoice}
-            className="px-8 py-2 w-52 sm:w-fit text-sm sm:text-base  text-white bg-sky hover:bg-black hover:text-white transition-all ease-in delay-75 rounded-md active:scale-95"
+            className="px-8 py-3 w-52 sm:w-fit text-sm sm:text-base  text-white bg-sky hover:bg-black hover:text-white transition-all ease-in delay-75 rounded-md active:scale-95"
           >
             Generate AI Journey
           </button>
