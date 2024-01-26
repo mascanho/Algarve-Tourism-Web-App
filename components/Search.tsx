@@ -97,10 +97,10 @@ function Search({ allTypes, placeholderText, categories }: any) {
             id="search"
             name="search"
           />
-          <IoIosSearch className="absolute top-6 sm:left-2 left-7" />
+          <IoIosSearch className="absolute top-6 sm:left-3 left-3" />
           <button
             type="submit"
-            className="bg-sky absolute  active:bg-gray-400 right-5 text-xs sm:right-2 top-4 sm:top-[14px] rounded-full sm:px-6 px-5 font-semibold py-2 sm:py-2 text-white sm:text-sm"
+            className="bg-sky absolute  active:bg-gray-400 right-1  text-xs sm:right-2 top-4 sm:top-[14px] rounded-full sm:px-6 px-5 font-semibold py-2 sm:py-2 text-white sm:text-sm"
           >
             {/* <BsSearch className="text-xl" /> */}
             Search
