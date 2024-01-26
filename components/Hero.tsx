@@ -13,7 +13,10 @@ const Hero = ({ categories }: any) => {
   const [allTypes, setAllTypes] = useState<any[]>([]);
 
   return (
-    <section className="mx-auto w-full space-y-2 sm:h-full sm:pt-10 sm:space-y-4 flex flex-nowrap flex-col justify-center text-center m-auto">
+    <section
+      id="search"
+      className="mx-auto w-full space-y-2 sm:h-full sm:pt-10 sm:space-y-4 flex flex-nowrap flex-col justify-center text-center m-auto"
+    >
       <h1 className="mx-auto text-4xl font-bold pt-10 sm:pt-0  text-center sm:text-7xl bg-gradient-to-r from-green-500 via-sky to-red-500 text-transparent   bg-clip-text pb-2 animate-gradient ">
         Algarve&apos;s Travel Guide
       </h1>

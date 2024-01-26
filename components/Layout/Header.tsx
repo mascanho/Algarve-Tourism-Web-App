@@ -135,7 +135,6 @@ const Header = ({ currentUser, weatherData }: any) => {
       </section>
 
       <nav
-        id="search"
         className={`border-b  border w-screen   fixed flex flex-wrap bg-white  shadow-sm z-10 transition-all ease-in delay-100 `}
       >
         <header

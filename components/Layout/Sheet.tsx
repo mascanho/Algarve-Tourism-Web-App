@@ -93,7 +93,8 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
           <div
             className="flex items-center mb-2"
             onClick={() => {
-              router.push("/#search");
+              window.scrollTo(0, 0);
+              router.push("/");
               close();
             }}
           >
