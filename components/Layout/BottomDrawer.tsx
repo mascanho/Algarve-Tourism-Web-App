@@ -3,13 +3,14 @@ import { useDisclosure } from "@mantine/hooks";
 import { Drawer, Tabs, ScrollArea } from "@mantine/core";
 import { FaBell, FaHeart } from "react-icons/fa";
 import { IoHeartOutline } from "react-icons/io5";
-import { TiHeartOutline } from "react-icons/ti";
+import { TiExport, TiHeartOutline } from "react-icons/ti";
 import { AiOutlineBell } from "react-icons/ai";
 import { BiChevronRight } from "react-icons/bi";
 import { useRouter } from "next/navigation";
 import { IoIosClose } from "react-icons/io";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { useEffect, useState } from "react";
+import Notification from "../Notification";
 
 function BottomDrawer({ favouritesLength }: any) {
   const [opened, { open, close }] = useDisclosure(true);
@@ -91,37 +92,43 @@ function BottomDrawer({ favouritesLength }: any) {
             <section>
               {favouritesArray.map((item: any) => (
                 <section
-                  className="border text-xs relative flex mb-2  h-full rounded-md items-center"
+                  className="border text-xs relative flex  mb-2  h-full rounded-md items-center"
                   key={item.id}
                 >
                   <div
                     onClick={() => removeFavouriteGlobal(item?.id)}
-                    className="flex flex-wrap  bg-gray-200 h-10 px-1 "
+                    className="flex flex-wrap  bg-gray-200 h-12 px-2"
                   >
-                    <IoIosClose className="h-full" />
+                    <IoIosClose className="h-full text-lg" />
                   </div>
                   <div
                     onClick={() => {
                       router.push(`/${item?.type}/${item?.slug}`);
                       close();
                     }}
-                    className="flex flex-col  mt-1 flex-wrap w-full ml-2 justify-around "
+                    className="flex flex-col  mt-1 flex-wrap w-full ml-3 justify-around "
                   >
                     <span className="font-semibold text-black">
                       {" "}
                       {item?.title}
                     </span>
-                    <span className="text-gray-600"> {item?.city}</span>
+                    <span className="text-gray-600 pb-1"> {item?.city}</span>
                   </div>
                   <div className="flex mt-1 flex-wrap pr-2  ">
                     <BiChevronRight className="text-gray-500" />
                   </div>
                 </section>
               ))}
+              <div className="space-x-4 flex pt-1">
+                <span className="text-xs text-gray-500 flex items-center">
+                  Export all
+                </span>
+                <span className="text-xs text-gray-500">delete all</span>
+              </div>
             </section>
           </Tabs.Panel>
           <Tabs.Panel value="notifications">
-            <p>Notifications</p>
+            <Notification />
           </Tabs.Panel>
         </Tabs>
       </Drawer>
