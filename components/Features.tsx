@@ -2,13 +2,13 @@
 
 import { AiFillApple } from "react-icons/ai";
 import { MdOutlinePlace } from "react-icons/md";
-import AOS from "aos";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { RiMoneyEuroCircleLine } from "react-icons/ri";
 import { MdFavoriteBorder } from "react-icons/md";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { RxUpdate } from "react-icons/rx";
 import { MdOutlineTipsAndUpdates } from "react-icons/md";
+import { useInView } from "react-intersection-observer";
 
 const mockData = [
   {
@@ -58,29 +58,30 @@ const mockData = [
 ];
 
 function Features() {
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
+  const [showEl, setShowEl] = useState(false);
 
   return (
-    <section className="max-w-7xl w-11/12 mx-auto mt-20 sm:mt-10">
-      <div className="space-y-4 mb-10 mx-auto text-center animate-fade-in">
-        <span className="bg-sky px-4 py-1 font-semibold text-white rounded-full">
+    <section className="max-w-7xl w-11/12 mx-auto mt-24 sm:mt-28">
+      <div
+        onClick={() => setShowEl(!showEl)} // Toggle the state on click
+        className="space-y-4 mb-10 mx-auto text-center animate-fade-in cursor-pointer"
+      >
+        <span className="bg-sky px-4 py-1 font-semibold text-white rounded-full cursor-pointer">
           How It Works
         </span>
-        <p className="w-10/12 sm:w-2/4 mx-auto text-gray-700">
+        <p className="w-10/12 sm:w-2/4 lg:w-2/6 mx-auto text-gray-700">
           Discover the best places, save and share your next adventure with
-          others, all in one place, no stress and no time wasted
+          others, no stress, no ads and no time wasted
         </p>
         <div className="w-16 h-[2px] bg-sky mx-auto" />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-8 grid-rows-2">
+      <div
+        className={`grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-8 grid-rows-2 animate-fade-up ${showEl ? "" : "hidden"}`}
+      >
         {mockData.map((item) => (
           <div
             key={item?.id}
-            className="flex-col justify-start text-left rounded-md items-center space-y-2 p-8 border "
-            data-aos="zoom-in-up"
+            className="flex-col justify-start text-left rounded-md items-center space-y-2 p-8 border"
           >
             <div className="text-5xl text-sky">{item.icon}</div>
 
