@@ -87,10 +87,10 @@ export default async function Home(props: any) {
       <Hero categories={categories} />
       <Features />
       <div className="space-y-4 my-10 mt-28 mx-auto text-center w-11/12 max-w-7xl ">
-        <h3 className="text-4xl font-bold text-black sm:text-5xl mt-20 hidden sm:flex sm:text-center">
+        <h3 className="text-4xl font-bold text-black sm:text-5xl mt-20 hidden sm:flex sm:text-center sm:mx-auto">
           Popular Categories
         </h3>{" "}
-        <h4 className="w-8/12 mx-auto sm:flex flex-wrap hidden text-center text-gray-700">
+        <h4 className="w-8/12 mx-auto sm:flex flex-wrap hidden text-center text-gray-700 sm:mx-auto sm:text-center">
           This week&apos;s selection of popular places and events
         </h4>
       </div>
