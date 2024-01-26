@@ -86,7 +86,7 @@ export default async function Home(props: any) {
     <section className="w-full">
       <Hero categories={categories} />
       <Features />
-      <div className="space-y-4 my-10 mt-28 mx-auto text-center sm:flex sm:justify-center w-11/12 max-w-7xl ">
+      <div className="space-y-4 my-10 mt-28 mx-auto text-center sm:flex sm:flex-col sm:justify-center w-11/12 max-w-7xl ">
         <h3 className="text-4xl font-bold text-black sm:text-5xl mt-20 hidden sm:flex sm:text-center sm:justify-center sm:mx-auto">
           Just Added
         </h3>{" "}
