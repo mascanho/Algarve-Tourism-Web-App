@@ -82,7 +82,7 @@ function Card({
       </div>
 
       {type === "city" || type === "category" ? (
-        <Link href={type === "category" ? route : "/algarve" + route}>
+        <Link href={type === "category" ? route : "/algarve/" + route}>
           <Button variant="white" className="bg-white" color="dark">
             {type === "city" ? "View " + city : "View "}
           </Button>
