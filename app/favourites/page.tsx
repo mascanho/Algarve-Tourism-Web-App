@@ -57,7 +57,26 @@ function page() {
         setFavourites(JSON.parse(favourites));
       }
     }
-  }, [removeFavourite, favourites.length, localStorage?.length]);
+  }, [removeFavourite, favourites.length]);
+
+  useEffect(() => {
+    const handleStorageChange = (event: any) => {
+      if (event.key === "favourites") {
+        // The "favourites" key in localStorage has changed
+        const updatedFavourites = JSON.parse(event.newValue);
+        console.log("LocalStorage has changed:", updatedFavourites);
+        // Do something with the updated data
+      }
+    };
+
+    // Attach the event listener
+    window.addEventListener("storage", handleStorageChange);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   const sendFavEmail = async () => {
     if (userEmail.length < 1) {
