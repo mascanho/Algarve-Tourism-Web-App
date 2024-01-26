@@ -132,7 +132,7 @@ export default async function Home(props: any) {
           View more
         </button>
       </Link>
-      <StaticDataCarousel categories={catCards} title="Popular Categories" />
+      <StaticDataCarousel categories={catCards} title="Popular categories" />
       <GenericCarousel categories={categories} title="What to do" />
       <StaticDataCarousel categories={cities} title="Cities to visit" />
       <GenericCarousel categories={restaurants} title="Where to eat" />

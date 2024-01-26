@@ -75,21 +75,21 @@ function Search({ allTypes, placeholderText, categories }: any) {
 
   return (
     <section
-      className={`relative w-full 
+      className={`w-full 
     ${pathname === "/search" && "mt-10"}
     `}
     >
       <form
         onSubmit={handleSubmit}
-        className="relative sm:flex w-full sm:w-[470px] mx-auto"
+        className="sm:flex w-full sm:w-[470px] mx-auto"
       >
-        <div className="flex flex-wrap w-11/12  sm:w-[450px] mx-auto h-16 items-center justify-center  backdrop-blur-md">
+        <div className="flex flex-wrap w-11/12 relative   sm:w-[450px] mx-auto h-16 items-center justify-center  backdrop-blur-md">
           <input
             type="text"
             placeholder={placeholderText}
-            className={`h-10 sm:h-12 bg-white placeholder-gray-300 rounded-full border  shadow-sm relative pl-9 sm:pb-4 pt-[13px] w-full  mx-auto text-xs outline-none border-collapse placeholder:text-[14px] py-4 sm:text-xs
+            className={`h-10 sm:h-12 bg-white placeholder-gray-300 rounded-full border  shadow-sm pl-9 sm:pb-4 pt-[13px] w-full  mx-auto text-xs outline-none border-collapse placeholder:text-[14px] py-4 sm:text-xs
 
-            ${pathname === "/search" && "border-2 border-blue-400"}
+            ${pathname === "/search" && "border-2 border-blue-400 relative"}
             
             `}
             value={inputValue}
@@ -98,10 +98,9 @@ function Search({ allTypes, placeholderText, categories }: any) {
             name="search"
           />
           <IoIosSearch className="absolute top-6 sm:left-2 left-7" />
-          <div />
           <button
             type="submit"
-            className="bg-sky absolute active:bg-gray-400 right-5 text-xs sm:right-2 top-4 sm:top-[14px] rounded-full sm:px-6 px-5 font-semibold py-2 sm:py-2 text-white sm:text-sm"
+            className="bg-sky absolute  active:bg-gray-400 right-5 text-xs sm:right-2 top-4 sm:top-[14px] rounded-full sm:px-6 px-5 font-semibold py-2 sm:py-2 text-white sm:text-sm"
           >
             {/* <BsSearch className="text-xl" /> */}
             Search

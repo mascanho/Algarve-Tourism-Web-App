@@ -28,7 +28,7 @@ const Hero = ({ categories }: any) => {
         {" "}
         The region&apos;s top tourism attractions and less known hidden gems
       </h2>
-      <div className="flex justify-center m-auto w-11/12 pb-10">
+      <div className="flex justify-center m-auto w-11/12 pb-10 ">
         <Search
           allTypes={allTypes}
           placeholderText={"Destination or activity..."}
