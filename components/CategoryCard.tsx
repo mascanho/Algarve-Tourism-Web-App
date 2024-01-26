@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Selection from "@/components/Selection";
 import { AiFillHeart } from "react-icons/ai";
@@ -46,6 +46,10 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
   function addToFavourites(item: any) {
     addFav.addFavourite(item);
   }
+
+  useEffect(() => {
+    window?.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <>
