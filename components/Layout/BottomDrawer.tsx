@@ -7,9 +7,10 @@ import { TiHeartOutline } from "react-icons/ti";
 import { AiOutlineBell } from "react-icons/ai";
 import { BiChevronRight } from "react-icons/bi";
 import { useRouter } from "next/navigation";
+import { IoIosClose } from "react-icons/io";
 
 function BottomDrawer({ favouritesLength }: any) {
-  const [opened, { open, close }] = useDisclosure(false);
+  const [opened, { open, close }] = useDisclosure(true);
   const router = useRouter();
 
   const favouritesFromLocalStorage =
@@ -53,23 +54,28 @@ function BottomDrawer({ favouritesLength }: any) {
           <Tabs.Panel value="favourites">
             <section>
               {favouritesArray.map((item: any) => (
-                <div
-                  className="px-4 pt-2  border text-xs relative flex flex-col  mb-2 space-y-1  rounded-md h-fit "
+                <section
+                  className="border text-xs relative flex mb-2  h-full rounded-md items-center"
                   key={item.id}
                   onClick={() => {
                     router.push(`/${item?.type}/${item?.slug}`);
                     close();
                   }}
                 >
-                  <BiChevronRight className="right-2 absolute text-xl top-6 text-gray-300" />
-                  <div className="flex mt-1 flex-wrap  ">
-                    <h5 className="my-0 font-semibold">{item?.title}</h5>
-                    <span className="text-gray-400 ml-2">{item?.city}</span>
-                    <p className="text-gray-500 mt-1 truncate mb-0 pr-3">
-                      {item?.shortDescription}
-                    </p>
+                  <div className="flex flex-wrap  bg-gray-200 h-10 px-1 ">
+                    <IoIosClose className="h-full" />
                   </div>
-                </div>
+                  <div className="flex flex-col  mt-1 flex-wrap w-full ml-2 justify-around ">
+                    <span className="font-semibold text-black">
+                      {" "}
+                      {item?.title}
+                    </span>
+                    <span className="text-gray-600"> {item?.city}</span>
+                  </div>
+                  <div className="flex mt-1 flex-wrap pr-2  ">
+                    <BiChevronRight className="text-gray-500" />
+                  </div>
+                </section>
               ))}
             </section>
           </Tabs.Panel>
