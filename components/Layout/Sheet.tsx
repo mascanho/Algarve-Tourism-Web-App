@@ -69,16 +69,6 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
                 Login
               </button>
             )}
-
-            {/* <button */}
-            {/*   onClick={() => { */}
-            {/*     router.push("/#aigenerate"); */}
-            {/*     close(); */}
-            {/*   }} */}
-            {/*   className="border px-3 py-2 w-full border-sky" */}
-            {/* > */}
-            {/*   AI Generate */}
-            {/* </button> */}
           </div>
           <Divider my="md" />
           <div
@@ -125,7 +115,9 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
               Favourites
               {favourites.favourites.length > 0 ? (
                 <span className="text-sm text-gray-700 ml-2">
-                  ({favourites.favourites.length})
+                  <span className="font-semibold">
+                    ({favourites.favourites.length})
+                  </span>
                 </span>
               ) : (
                 ""
