@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Mascanho",
+    title: "Algarve Wonders - The best places to visit",
     card: "summary_large_image",
   },
   icons: {
