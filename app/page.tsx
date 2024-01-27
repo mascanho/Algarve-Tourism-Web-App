@@ -119,11 +119,11 @@ export default async function Home(props: any) {
         </button>
       </Link>
       <StaticDataCarousel categories={catCards} title="Popular categories" />
-      <GenericCarousel categories={categories} title="What to do" />
+      <GenericCarousel categories={adventure} title="What to do" />
       <StaticDataCarousel categories={cities} title="Cities to visit" />
       <GenericCarousel categories={restaurants} title="Where to eat" />
       <StaticDataCarousel categories={carRentals} title="Car rentals" />
-      <BottomCarousel categories={categories} title="More to explore" />
+      <BottomCarousel categories={beaches} title="More to explore" />
       <RandomBanner categories={categories} />
       <Feedback {...quotes} />
       {/*BOTTOM ASSETS */}
