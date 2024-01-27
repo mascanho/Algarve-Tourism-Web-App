@@ -38,6 +38,7 @@ function page() {
     // Update local storage
     localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
   };
+
   useEffect(() => {
     document.title = "Algarve Wonders - Your Favourites";
     let link: HTMLLinkElement | null =
@@ -57,7 +58,11 @@ function page() {
         setFavourites(JSON.parse(favourites));
       }
     }
-  }, [removeFavourite, favourites.length]);
+  }, [
+    removeFavourite,
+    favourites.length,
+    localStorage?.getItem("favourites")?.length,
+  ]);
 
   useEffect(() => {
     const handleStorageChange = (event: any) => {
@@ -228,7 +233,7 @@ function page() {
               <div className="mt-10 sm:hidden grid grid-col-1 gap-y-6">
                 {favourites.map((el: any) => (
                   <FavMobileCard
-                    key={JSON.stringify(localStorage.getItem("favourites"))}
+                    key={el.title}
                     {...el}
                     removeFavouriteGlobal={removeFavouriteGlobal}
                   />
