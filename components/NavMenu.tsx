@@ -32,7 +32,7 @@ export function NavMenu({ title, trigger, url, cities, mobile }: any | null) {
               )}
               {!mobile && title}{" "}
               {!mobile && trigger ? (
-                <IoChevronDownSharp className="md:mt-1 md:pl-1" />
+                <IoChevronDownSharp className="md:pl-1" />
               ) : (
                 ""
               )}

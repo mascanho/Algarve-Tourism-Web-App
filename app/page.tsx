@@ -46,7 +46,7 @@ const getCategoriesCached = cache(
     });
     const res = await client.getEntries({
       content_type: ["beaches", "events", "restaurants", "adventure"],
-      limit: 100,
+      limit: 40,
       order: "-sys.createdAt",
     });
 
@@ -56,6 +56,8 @@ const getCategoriesCached = cache(
 
 export default async function Home(props: any) {
   const categories = await getCategoriesCached();
+
+  console.log(categories.length, "from the Home");
 
   const catCards = catArr;
 
