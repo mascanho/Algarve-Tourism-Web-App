@@ -3,6 +3,7 @@ import { Breadcrumbs as Bread, Anchor } from "@mantine/core";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { AiFillHome } from "react-icons/ai";
+import { IoChevronBack } from "react-icons/io5";
 
 function Breadcrumbs() {
   const pathname = usePathname();
@@ -28,10 +29,11 @@ function Breadcrumbs() {
       <Bread
         separator="/"
         mt="xs"
-        className="text-gray-400 m-auto cursor-pointer z-50 "
+        className="text-gray-400 m-auto cursor-pointer z-50 hidden sm:flex"
       >
         {items}
       </Bread>
+      <IoChevronBack className="bg-black rounded-full w-6 h-6 p-1 sm:hidden" />
     </>
   );
 }

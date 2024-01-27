@@ -124,8 +124,8 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
             <span className="my-auto">
               Favourites
               {favourites.favourites.length > 0 ? (
-                <span className="text-sm text-gray-400 ml-2">
-                  {favourites.favourites.length}
+                <span className="text-sm text-gray-700 ml-2">
+                  ({favourites.favourites.length})
                 </span>
               ) : (
                 ""

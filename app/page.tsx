@@ -98,34 +98,17 @@ export default async function Home(props: any) {
 
       {/* <Selection /> */}
       <Suspense fallback={<p>Loading...</p>}>
-        <section className="sm:grid mx-auto hidden  items-start sm:w-11/12 sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 lg:gap-x-8 md:grid-cols-3 sm:pt-10 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center max-w-7xl ">
-          {categories.slice(0, 8).map((cat: any) => (
-            <Card
-              key={cat?.fields?.title}
-              title={cat?.fields?.title}
-              description={cat?.fields?.shortDescription}
-              image={cat?.fields?.mainImage?.fields?.file?.url}
-              category={categories}
-              slug={cat?.fields?.slug}
-              id={cat?.fields?.title}
-              hiddenGem={cat?.fields?.hiddenGem}
-              city={cat?.fields?.city}
-              type={cat?.fields?.type}
-              shortDescription={cat?.fields?.shortDescription}
-              mainImage={cat?.fields?.mainImage?.fields?.file?.url}
-              rating={cat?.fields?.rating}
-              tags={cat?.fields?.tags}
-              embededMap={cat?.fields?.embededMap}
-              mapShare={cat?.fields?.mapShare}
-              price={cat?.fields?.price}
-            />
-          ))}
-          {/* <div className="flex justify-center my-10"> */}
-          {/*   <Link href="/beaches"> */}
-          {/*     <button className="border px-5 py-2 rounded-md">View more</button> */}
-          {/*   </Link> */}
-          {/* </div> */}
-        </section>
+        {/* {categories.slice(0, 7).map((cat: any) => ( */}
+        <Card categories={categories} />
+        {/* ))} */}
+        {/* <div className="flex justify-center my-10"> */}
+        {/*   <Link href="/beaches"> */}
+        {/*     <button className="border px-5 py-2 rounded-md">View more</button> */}
+        {/*   </Link> */}
+        {/* </div> */}
+        {/* <div className=" border border-dashed rounded-md h-[398px] w-full flex justify-center items-center shadow-sm"> */}
+        {/*   <span>hello</span> */}
+        {/* </div> */}
       </Suspense>
       <Link href={"/beaches"}>
         <button
