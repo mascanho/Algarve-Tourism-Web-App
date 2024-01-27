@@ -116,7 +116,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
               <div className="w-full h-[1px] bg-gray-300" />
 
               <div className="mt-20 flex w-full px-2 py-2">
-                <p className="line-clamp-3 text-xs">
+                <p className="line-clamp-3 text-xs text-gray-700">
                   {cat?.fields?.shortDescription}
                 </p>
               </div>

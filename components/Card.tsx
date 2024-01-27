@@ -116,7 +116,9 @@ export const Card = ({
         </div>
         <div className="w-full h-[1px] bg-gray-300" />
         <div className="flex w-full  mt-20 py-2">
-          <p className="line-clamp-3 textarea-xs">{description}</p>
+          <p className="line-clamp-3 textarea-xs text-gray-700">
+            {description}
+          </p>
           {/* <span className="flex-1 text-xs text-sky">Read more</span> */}
         </div>
         <div className="text-[9px] space-x-2 space-y-3 pb-4 px-2">
