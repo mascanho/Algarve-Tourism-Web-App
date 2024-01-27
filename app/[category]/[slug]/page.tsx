@@ -103,7 +103,7 @@ export default async function Home(props: any, req: any) {
           <div className="flex justify-between space-y-6 sm:space-y-2 w-full sm:pt-4  items-end ">
             <div className="sm:flex md:block lg:flex items-center mt-2 sm:mt-0">
               <div>
-                <h1 className="text-2xl sm:text-4xl text-sky w-auto font-semibold min-w-fit sm:mr-4">
+                <h1 className="text-2xl sm:text-4xl w-auto font-semibold min-w-fit sm:mr-4 text-black">
                   {filteredData[0]?.fields?.title}
                 </h1>
               </div>

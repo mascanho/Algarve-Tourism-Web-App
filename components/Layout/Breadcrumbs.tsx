@@ -24,18 +24,19 @@ function Breadcrumbs() {
   ));
 
   return (
-    <>
+    <section className="flex items-center">
       {/* <Bread>{items}</Bread> */}
+      <IoChevronBack className="bg-black rounded-full w-6 h-6    sm:hidden hidden" />
       <Bread
         separator="/"
         mt="xs"
-        className="text-gray-400 m-auto cursor-pointer z-50 hidden sm:flex"
+        className="text-gray-400  cursor-pointer z-50 sm:flex my-auto sm:m-0 text-xs"
+        color="dimmed"
       >
         {items}
       </Bread>
       {/* Turn bavk */}
-      <IoChevronBack className="bg-black rounded-full w-6 h-6 p-1 sm:hidden" />
-    </>
+    </section>
   );
 }
 

@@ -45,7 +45,7 @@ const Selection = ({ text }: any) => {
         ))}
       </div>
       {pathname === "/" ? null : (
-        <section className="flex max-w-7xl w-full sm:hidden mx-auto overflow-hidden">
+        <section className="flex max-w-7xl w-full sm:hidden mx-auto pt-5 overflow-hidden">
           <Select
             className="w-full mb-8 h-[100%] rounded-none outline-none"
             placeholder={placeholder}
