@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Selection from "@/components/Selection";
-import { Card } from "@/components/Card";
 import Pagination from "@/components/Pagination";
 import BottomAssets from "@/components/BottomAssets";
 import Hero from "@/components/Hero";
@@ -16,16 +15,18 @@ import Acordion from "@/components/Acordion";
 import AffixScrollToTop from "@/components/Layout/Affix";
 import Features from "@/components/Features";
 import AlgarveSpecs from "@/components/AlgarveSpecs";
-import { cache, lazy, Suspense } from "react";
+import { Suspense, cache, lazy } from "react";
 import Link from "next/link";
 import UsefullLinks from "@/components/UsefullLinks";
 import Agenda from "@/components/Agenda";
 import MosaicCategories from "@/components/MosaicCategories";
 import BottomCarousel from "@/components/Layout/BottomCarousel";
-import Testing from "@/components/Layout/CarTesting";
 import GenericCarousel from "@/components/Layout/CarouselGeneric";
 import StaticDataCarousel from "@/components/Layout/StaticDataCarousel";
 import { catArr } from "@/Data/Categories";
+import dynamic from "next/dynamic";
+
+const Card = lazy(() => import("@/components/Card"));
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -56,8 +57,6 @@ const getCategoriesCached = cache(
 
 export default async function Home(props: any) {
   const categories = await getCategoriesCached();
-
-  console.log(categories.length, "from the Home");
 
   const catCards = catArr;
 
@@ -98,34 +97,36 @@ export default async function Home(props: any) {
       </div>
 
       {/* <Selection /> */}
-      <section className="sm:grid mx-auto hidden  items-start sm:w-11/12 sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 lg:gap-x-8 md:grid-cols-3 sm:pt-10 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center max-w-7xl ">
-        {categories.slice(0, 8).map((cat: any) => (
-          <Card
-            key={cat?.fields?.title}
-            title={cat?.fields?.title}
-            description={cat?.fields?.shortDescription}
-            image={cat?.fields?.mainImage?.fields?.file?.url}
-            category={categories}
-            slug={cat?.fields?.slug}
-            id={cat?.fields?.title}
-            hiddenGem={cat?.fields?.hiddenGem}
-            city={cat?.fields?.city}
-            type={cat?.fields?.type}
-            shortDescription={cat?.fields?.shortDescription}
-            mainImage={cat?.fields?.mainImage?.fields?.file?.url}
-            rating={cat?.fields?.rating}
-            tags={cat?.fields?.tags}
-            embededMap={cat?.fields?.embededMap}
-            mapShare={cat?.fields?.mapShare}
-            price={cat?.fields?.price}
-          />
-        ))}
-        {/* <div className="flex justify-center my-10"> */}
-        {/*   <Link href="/beaches"> */}
-        {/*     <button className="border px-5 py-2 rounded-md">View more</button> */}
-        {/*   </Link> */}
-        {/* </div> */}
-      </section>
+      <Suspense fallback={<p>Loading...</p>}>
+        <section className="sm:grid mx-auto hidden  items-start sm:w-11/12 sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 lg:gap-x-8 md:grid-cols-3 sm:pt-10 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center max-w-7xl ">
+          {categories.slice(0, 8).map((cat: any) => (
+            <Card
+              key={cat?.fields?.title}
+              title={cat?.fields?.title}
+              description={cat?.fields?.shortDescription}
+              image={cat?.fields?.mainImage?.fields?.file?.url}
+              category={categories}
+              slug={cat?.fields?.slug}
+              id={cat?.fields?.title}
+              hiddenGem={cat?.fields?.hiddenGem}
+              city={cat?.fields?.city}
+              type={cat?.fields?.type}
+              shortDescription={cat?.fields?.shortDescription}
+              mainImage={cat?.fields?.mainImage?.fields?.file?.url}
+              rating={cat?.fields?.rating}
+              tags={cat?.fields?.tags}
+              embededMap={cat?.fields?.embededMap}
+              mapShare={cat?.fields?.mapShare}
+              price={cat?.fields?.price}
+            />
+          ))}
+          {/* <div className="flex justify-center my-10"> */}
+          {/*   <Link href="/beaches"> */}
+          {/*     <button className="border px-5 py-2 rounded-md">View more</button> */}
+          {/*   </Link> */}
+          {/* </div> */}
+        </section>
+      </Suspense>
       <Link href={"/beaches"}>
         <button
           className="border text-gray-700 mt-10 rounded-md active:bg-sky active:text-white transition-all hidden ease-in px-5 py-2 mx-auto sm:flex text-center"

@@ -1,11 +1,11 @@
 export const notes = [
   {
     id: 1,
-    title: "This is a notification",
-    msg: "this will be the message",
+    title: "New Entries",
+    msg: "New Restaurants have been added to the section",
     img: "",
     icon: "",
-    isRead: false,
+    isRead: true,
     link: "",
   },
   {
