@@ -24,7 +24,7 @@ export function LeadGrid({ filteredData }: any) {
 
   return (
     <section className=" ml-0">
-      <Container my="xl" className=" min-w-full ml-0 mt-0 sm:pt-0 sm:pl-0 ">
+      <Container my="xl" className=" min-w-full ml-0  sm:pt-0 sm:pl-0 ">
         <SimpleGrid
           cols={2}
           spacing="md"
