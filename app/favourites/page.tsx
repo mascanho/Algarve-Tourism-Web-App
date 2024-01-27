@@ -228,7 +228,7 @@ function page() {
               <div className="mt-10 sm:hidden grid grid-col-1 gap-y-6">
                 {favourites.map((el: any) => (
                   <FavMobileCard
-                    key={el.title}
+                    key={JSON.stringify(localStorage.getItem("favourites"))}
                     {...el}
                     removeFavouriteGlobal={removeFavouriteGlobal}
                   />
