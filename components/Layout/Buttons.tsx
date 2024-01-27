@@ -11,6 +11,8 @@ import { toast } from "react-hot-toast";
 import { BsFillSuitHeartFill, BsGlobe } from "react-icons/bs";
 import { FiPrinter } from "react-icons/fi";
 import Link from "next/link";
+import { FaEnvelope, FaEnvelopeSquare } from "react-icons/fa";
+import { MdAttachEmail, MdOutlineEmail } from "react-icons/md";
 
 const Buttons = ({ filteredData }: any) => {
   const [isCopied, setIsCopied] = useState(false);
@@ -80,8 +82,14 @@ const Buttons = ({ filteredData }: any) => {
       {/* <HiQrCode className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" /> */}
       <FiPrinter
         onClick={() => window.print()}
-        className="urlCopy w-8 h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"
+        className="urlCopy hidden sm:flex w-8 h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75"
       />
+      <a
+        target="_blank"
+        href={`mailto:?subject=Check%20this%20place%20I%20found%20in%20the%20Algarve&body=${window?.location?.href}`}
+      >
+        <MdOutlineEmail className="urlCopy w-8 h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" />
+      </a>
     </section>
   );
 };
