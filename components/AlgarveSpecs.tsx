@@ -93,7 +93,7 @@ function AlgarveSpecs() {
       <section className="grid sm:grid-cols-3 gap-x-4 gap-y-10 max-w-7xl m-auto w-11/12">
         {data.map((item, index) => {
           return (
-            <div key={item.id} className="flex">
+            <div key={item.title} className="flex">
               <div>
                 <div className="flex justify-center items-center text-4xl text-white mr-3 bg-sky w-12 h-12 rounded-xl">
                   {item.image}
