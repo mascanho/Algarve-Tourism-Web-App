@@ -39,6 +39,8 @@ function page() {
     localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
   };
 
+  const localStorageLength = localStorage.getItem("favourites")?.length;
+
   useEffect(() => {
     document.title = "Algarve Wonders - Your Favourites";
     let link: HTMLLinkElement | null =
@@ -58,11 +60,7 @@ function page() {
         setFavourites(JSON.parse(favourites));
       }
     }
-  }, [
-    removeFavourite,
-    favourites.length,
-    localStorage?.getItem("favourites")?.length || null,
-  ]);
+  }, [removeFavourite, favourites.length, localStorageLength]);
 
   useEffect(() => {
     const handleStorageChange = (event: any) => {
