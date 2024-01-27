@@ -38,7 +38,7 @@ function Card({
   return (
     <Paper
       shadow="md"
-      p="md"
+      p="xl"
       radius="md"
       style={{
         backgroundImage: `url(https:${image && (image[0] || image)})`,

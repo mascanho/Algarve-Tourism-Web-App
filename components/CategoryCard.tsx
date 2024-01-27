@@ -120,6 +120,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
                   {cat?.fields?.shortDescription}
                 </p>
               </div>
+
               <div className="text-[9px] space-x-2 pb-3 px-2 my-2">
                 {cat?.fields?.tags?.map((tag: any) => (
                   <span

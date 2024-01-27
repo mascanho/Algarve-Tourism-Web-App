@@ -16,7 +16,7 @@ const Notification = () => {
             </div>
             <div className="w-full flex flex-col justify-center pl-3">
               <span className="font-semibold">{item.title}</span>
-              <span className="text-xs">{item.msg}</span>
+              <span className="text-xs line-clamp-2">{item.msg}</span>
             </div>
           </li>
         ) : null,

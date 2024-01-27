@@ -74,7 +74,7 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${ptsans.className} h-full overflow-x-hidden `}>
       <NextAuthProvider>
-        <body className="bg-white w-screen">
+        <body className="bg-white w-screen min-w-[350px]">
           <ClientOnly>
             <ToasterProvider />
             <section className="pb-12">

@@ -93,7 +93,9 @@ export const SearchCard = ({
       </div>
       <div className="w-full h-[1px] bg-gray-300" />
       <div className="flex w-full px-2 mt-20 py-2">
-        <p className="line-clamp-3 text-xs">{shortDescription} </p>
+        <p className="line-clamp-3 text-xs text-gray-700">
+          {shortDescription}{" "}
+        </p>
         {/* <span className="flex-1 text-xs text-sky">Read more</span> */}
       </div>
       <div className="text-[9px] space-x-2 pb-2 px-2">
