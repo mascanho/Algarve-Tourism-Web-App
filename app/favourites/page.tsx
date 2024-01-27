@@ -61,7 +61,7 @@ function page() {
   }, [
     removeFavourite,
     favourites.length,
-    localStorage?.getItem("favourites")?.length,
+    localStorage?.getItem("favourites")?.length || null,
   ]);
 
   useEffect(() => {
@@ -184,17 +184,6 @@ function page() {
       </div>
       <div className="mt-2 mb-2 sm:mb-0 sm:mt-5 w-full ">
         <div className="flex text-xl space-x-3 w-full justify-end hiddenRow">
-          {/* {!changeTable ? ( */}
-          {/*   <BsGridFill */}
-          {/*     onClick={() => setChangeTable(!changeTable)} */}
-          {/*     className="cursor-pointer" */}
-          {/*   /> */}
-          {/* ) : ( */}
-          {/*   <BsLayoutTextSidebarReverse */}
-          {/*     className="font-bold text-xl cursor-pointer" */}
-          {/*     onClick={() => setChangeTable(!changeTable)} */}
-          {/*   /> */}
-          {/* )} */}
           <AiOutlineMail
             className="cursor-pointer text-2xl"
             onClick={(e) => {
