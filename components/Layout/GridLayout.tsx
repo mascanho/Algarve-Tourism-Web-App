@@ -9,7 +9,8 @@ import {
   rem,
 } from "@mantine/core";
 import { useEffect } from "react";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaChevronLeft } from "react-icons/fa";
+import { IoChevronBack } from "react-icons/io5";
 
 const PRIMARY_COL_HEIGHT = rem(300);
 
@@ -34,7 +35,7 @@ export function LeadGrid({ filteredData }: any) {
             className="relative overflow-hidden rounded-lg  sm:max-h-full 
             "
           >
-            <FaArrowLeft className="absolute top-2 left-2 sm:hidden   bg-white rounded-full w-8 h-8 font-thin p-1" />
+            <IoChevronBack className="absolute top-2 left-2 sm:hidden   bg-white rounded-full w-8 h-8 font-thin p-1" />
             <img
               alt={filteredData[0]?.fields?.title}
               src={`https://${filteredData[0]?.fields?.images[0]?.fields?.file?.url}`}
