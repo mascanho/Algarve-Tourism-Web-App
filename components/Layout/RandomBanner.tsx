@@ -127,7 +127,7 @@ function RandomBanner({ categories }: any) {
   };
 
   return (
-    <div className="animate-fade-in mt-20 sm:my-28  w-full overflow-hidden  max-w-7xl py-10 mx-auto sm:space-y-2 text-center text-white sm:w-full sm:space-y-2">
+    <div className="animate-fade-in mt-20 sm:my-28  w-11/12 overflow-hidden  max-w-7xl py-10 mx-auto sm:space-y-2 text-center text-white sm:w-full sm:space-y-2">
       <div className=" sm:mt-0 space-y-2 sm:space-y-6">
         <h4 className="sm:text-7xl font-semibold text-black  text-5xl">
           Start your journey
@@ -137,7 +137,7 @@ function RandomBanner({ categories }: any) {
         </h3>
       </div>
       <div className="w-full flex sm:justify-center mx-auto px-2">
-        <div className="sm:space-x-8 space-y-4 mt-8 sm:mt-2 sm:-pt-2  m-auto space-x-2 ">
+        <div className="sm:space-x-8 space-y-4 mt-8 sm:mt-2 sm:-pt-2  m-auto  ">
           <button
             onClick={handleClickRandom}
             className="px-6 w-52 text-sm border sm:w-fit sm:text-base py-3 text-black hover:text-white hover:bg-black transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
