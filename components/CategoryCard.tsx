@@ -47,9 +47,9 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
     addFav.addFavourite(item);
   }
 
-  useEffect(() => {
-    window?.scrollTo(0, 0);
-  }, [pathname]);
+  // useEffect(() => {
+  //   window?.scrollTo(0, 0);
+  // }, [pathname]);
 
   return (
     <>
@@ -63,7 +63,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
               key={cat?.id}
               className="space-y-2 text-left lg:w-full shadow-sm rounded-md pb-2 border hover:border-sky transition-all ease-in delay-75"
             >
-              <div className="w-full h-52 sm:h-56 md:h-48 xl:h-36 flex  rounded-t-md overflow-hidden relative">
+              <div className="w-full h-48 sm:h-56 md:h-48 xl:h-36 flex  rounded-t-md overflow-hidden relative">
                 <img
                   src={
                     cat?.fields?.mainImage?.fields?.file?.url
@@ -71,7 +71,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
                       : "/placeholder.jpg"
                   }
                   alt="image"
-                  className="block h-full w-full"
+                  className="block h-full w-full object-cover"
                 />
                 <div
                   onClick={() =>

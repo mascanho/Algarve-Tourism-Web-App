@@ -27,11 +27,11 @@ function Footer() {
       // Calculate the distance from the bottom of the page
       const distanceFromBottom =
         document.documentElement.scrollHeight -
-        (window.scrollY + window.innerHeight);
+        (window?.scrollY + window?.innerHeight);
 
       // Check if the distance is less than or equal to 200 pixels
       // and the scroll position is not within the first 200 pixels from the top
-      if (window.scrollY > 1000) {
+      if (window?.scrollY > 1000) {
         // If true, set setShowToTop to true
         setShowToTop(true);
       } else {
