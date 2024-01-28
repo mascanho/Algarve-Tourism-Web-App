@@ -17,6 +17,7 @@ import { TiWeatherSunny } from "react-icons/ti";
 import { BsGeoAlt } from "react-icons/bs";
 import { MdOutlineFactory } from "react-icons/md";
 import { MdOutlineLocalPolice } from "react-icons/md";
+import { useInView } from "react-intersection-observer";
 
 const data = [
   {
@@ -41,7 +42,7 @@ const data = [
       "The country code for Portugal, including the Algarve, is +351. For any urgencies suchs as police or ambulance services, the phone number is simply 112.",
   },
   {
-    oid: 2323,
+    id: 2323,
     image: <TbMessageLanguage />,
     title: "Language",
     description:
@@ -85,12 +86,25 @@ const data = [
 ];
 
 function AlgarveSpecs() {
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+    rootMargin: "40px 0px",
+  });
+
   return (
-    <>
-      <div className="max-w-7xl w-11/12 mx-auto space-y-4 mb-8 mt-20">
+    <section style={{}}>
+      <div className="max-w-7xl w-11/12 mx-auto space-y-4 mb-8 mt-20 sm:mt-28">
         <h4 className="text-xl">Good To Know</h4>
       </div>
-      <section className="grid sm:grid-cols-3 gap-x-4 gap-y-10 max-w-7xl m-auto w-11/12">
+      <section
+        ref={ref}
+        style={{
+          opacity: inView ? 1 : 0,
+          transition: "opacity 0.5s ease-in-out",
+        }}
+        className="grid sm:grid-cols-3 gap-x-4 gap-y-10 max-w-7xl m-auto w-11/12"
+      >
         {data.map((item, index) => {
           return (
             <div key={item.title} className="flex">
@@ -113,7 +127,7 @@ function AlgarveSpecs() {
           );
         })}
       </section>
-    </>
+    </section>
   );
 }
 

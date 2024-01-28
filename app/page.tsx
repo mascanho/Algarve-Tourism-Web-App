@@ -96,28 +96,9 @@ export default async function Home(props: any) {
         </h4>
       </div>
 
-      {/* <Selection /> */}
       <Suspense fallback={<p>Loading...</p>}>
-        {/* {categories.slice(0, 7).map((cat: any) => ( */}
         <Card categories={categories} />
-        {/* ))} */}
-        {/* <div className="flex justify-center my-10"> */}
-        {/*   <Link href="/beaches"> */}
-        {/*     <button className="border px-5 py-2 rounded-md">View more</button> */}
-        {/*   </Link> */}
-        {/* </div> */}
-        {/* <div className=" border border-dashed rounded-md h-[398px] w-full flex justify-center items-center shadow-sm"> */}
-        {/*   <span>hello</span> */}
-        {/* </div> */}
       </Suspense>
-      <Link href={"/beaches"}>
-        <button
-          className="border text-gray-700 mt-10 rounded-md active:bg-sky active:text-white transition-all hidden ease-in px-5 py-2 mx-auto sm:flex text-center"
-          type="button"
-        >
-          View more
-        </button>
-      </Link>
       <StaticDataCarousel categories={catCards} title="Popular categories" />
       <GenericCarousel categories={adventure} title="What to do" />
       <StaticDataCarousel categories={cities} title="Cities to visit" />
@@ -126,22 +107,8 @@ export default async function Home(props: any) {
       <BottomCarousel categories={beaches} title="More to explore" />
       <RandomBanner categories={categories} />
       <Feedback {...quotes} />
-      {/*BOTTOM ASSETS */}
-      {/* <BottomAssets /> */}
       <AlgarveSpecs />
-      {/* Frequently asked questions */}
-      {/* <section className="w-11/12 md:max-w-7xl mx-auto space-y-8 animate-fade-in my-20"> */}
-      {/* <h4 className="text-xl">Frequently asked questions</h4> */}
-      {/* <Acordion /> */}
-      {/* </section> */}
-      {/* Good To Know */}
-      {/* <section className="sm:mb-40 max-w-7xl mx-auto w-11/12  mt-20"> */}
-      {/*   <h3 className="text-2xl">Useful links</h3> */}
-      {/*   <hr className="w-32 transition-all ease-in mt-2 delay-100  group-hover:w-11/12 hover:rounded-full   bg-sky h-1 rounded-full " /> */}
-      {/*   <div className="mt-8"> */}
-      {/*    
-      {/*   </div> */}
-      {/* </section> */}
+      <Acordion />
     </section>
   );
 }
