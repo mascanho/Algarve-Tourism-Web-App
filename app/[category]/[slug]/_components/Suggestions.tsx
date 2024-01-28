@@ -12,7 +12,7 @@ function Suggestions({ recomended }: any) {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   return (
-    <Carousel height={300} slideSize={mobile ? "50%" : "24%"} align={"start"}>
+    <Carousel height={300} slideSize={mobile ? "55%" : "24%"} align={"start"}>
       {recomended.map((item: any) => (
         <Carousel.Slide key={item?.fields?.title} className="mr-2 relative">
           <div

@@ -67,20 +67,23 @@ function Footer() {
 
   return (
     <>
-      {!pathname?.includes("restaurants/" || "beaches/") && showToTop && (
-        <HiArrowUp
-          onClick={() => {
-            window?.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-          className="text-5xl text-sky cursor-pointer fixed bottom-10 right-6 sm:right-10  bg-white border rounded-full p-1 py-2 transition-all ease-in-out delay-200"
-        />
-      )}
+      {!pathname?.match(/\/(?:restaurants|beaches|adventure)\//) &&
+        showToTop && (
+          <HiArrowUp
+            onClick={() => {
+              window?.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="text-5xl text-sky cursor-pointer fixed bottom-10 right-6 sm:right-10  bg-white border rounded-full p-1 py-2 transition-all ease-in-out delay-200"
+          />
+        )}
 
-      <section className="bg-black mt-20 ">
+      <section className="bg-black mt-20 z-0 ">
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto w-11/12 ">
           <section className="grid grid-cols-2 w-full sm:flex justify-between px-4 sm:px-0 ">
             <div className="flex flex-col space-y-1">
-              <span className="footer-title">About</span>
+              <span className="uppercase font-semibold text-white/30">
+                About
+              </span>
               <Link href="/about">
                 <p className="link link-hover">About us</p>
               </Link>
@@ -93,7 +96,9 @@ function Footer() {
             </div>
             <div className="flex flex-col space-y-1">
               <Link href={"/about"}>
-                <span className="footer-title">Company</span>
+                <span className="font-semibold text-white/30 uppercase">
+                  Company
+                </span>
               </Link>
               <Link href="/legal">
                 <p className="link link-hover pt-2">The Boring Stuff</p>
@@ -106,7 +111,9 @@ function Footer() {
               </Link>
             </div>
             <div className="flex flex-col space-y-1 mt-5 sm:mt-0">
-              <span className="footer-title">Quick Links</span>
+              <span className="uppercase text-white/30 font-semibold">
+                Quick Links
+              </span>
               {/* <Link href="/submit"> */}
               {/*   <p className="link link-hover">Submissions</p> */}
               {/* </Link> */}
@@ -125,7 +132,9 @@ function Footer() {
               </Link>
             </div>
             <div className="flex flex-col space-y-1 mt-5 sm:mt-0">
-              <span className="footer-title">Partners</span>
+              <span className="font-semibold text-white/30 uppercase">
+                Partners
+              </span>
               <a href="https://markwarrior.dev" target="_blank">
                 <p className="link link-hover">Mark Warrior</p>
               </a>
