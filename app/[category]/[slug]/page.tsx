@@ -187,6 +187,22 @@ export default async function Home(props: any, req: any) {
             </div>
           </section>
 
+          <section className="border-b mt-4 pb-4 w-11/12 mx-auto">
+            <div className=" flex  flex-wrap justify-between items-center line-clamp-4">
+              <div className="inline w-full">
+                <h5 className="text-sm mb-1">Tags</h5>
+                {filteredData[0]?.fields?.tags.map((item: any) => (
+                  <span
+                    key={item.title}
+                    className="bg-gray-200 rounded-md px-2 mr-2 text-xs sm:text-xs py-1 items-center m-auto "
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+
           <section className="mx-auto w-11/12 border-b my-2 pb-3">
             <MobileButtons {...filteredData} />
           </section>
