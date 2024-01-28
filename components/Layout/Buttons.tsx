@@ -38,7 +38,6 @@ const Buttons = ({ filteredData }: any) => {
       tags: filteredData[0]?.fields?.tags,
       date: filteredData[0]?.fields?.date,
     });
-    console.log(filteredData[0], "from the favourites");
   }
 
   // handle the GPS to open on a new tab
@@ -56,10 +55,30 @@ const Buttons = ({ filteredData }: any) => {
 
   // handle copying the url to share
   function handleCopyUrl() {
-    const url = `https://markwarrior.dev${pathname}`;
+    const url = `https://www.algarvewonders.com${pathname}`;
     navigator.clipboard.writeText(url);
     toast.success("URL copied to clipboard");
   }
+
+  const handleShare = () => {
+    const shareURL = "https://example.com"; // Replace with your content
+    const shareText = "Check out this awesome content!"; // Replace with your content
+
+    const shareLink = `https://share.example.com?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareURL)}`;
+
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "Share Title",
+          text: "Check out this awesome content!",
+          url: "https://example.com",
+        })
+        .then(() => console.log("Successfully shared."))
+        .catch((error) => console.error("Error sharing:", error.message));
+    } else {
+      window.location.href = shareLink;
+    }
+  };
 
   return (
     <section className="text-gray-500 flex space-x-2">

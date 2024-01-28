@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { LeadGrid } from "@/components/Layout/GridLayout";
-import { FaRegGem } from "react-icons/fa";
+import { FaGem, FaRegGem } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import TabsRow from "@/components/Layout/Tabs";
 import { createClient } from "contentful";
@@ -13,6 +13,15 @@ import GenericCarousel from "@/components/Layout/CarouselGeneric";
 import { Carousel } from "@mantine/carousel";
 import Suggestions from "./_components/Suggestions";
 import { getContentfulData } from "@/libs/getContentfulData";
+import { Divider, Rating } from "@mantine/core";
+import { TiInfoLargeOutline } from "react-icons/ti";
+import Categorydrawer from "./_components/CategoryDrawer";
+import { MdVerifiedUser } from "react-icons/md";
+import StartRationg from "@/components/Layout/StartRationg";
+import MobileRating from "./_components/MobileRating";
+import MobileBottomCategoryBanner from "./_components/MobileBottomCategoryBanner";
+import MobileButtons from "./_components/MobileButtons";
+import { RiMoneyEuroCircleLine } from "react-icons/ri";
 
 // TODO: Check this stuff
 export async function generateMetadata({ params, searchParams }: any) {
@@ -88,7 +97,7 @@ export default async function Home(props: any, req: any) {
           <LeadGrid filteredData={filteredData} />
         </section>
         <div className="space-y-2 w-11/12 sm:w-full mx-auto">
-          <div className="flex items-centert space-x-2">
+          <div className="hidden sm:flex items-centert space-x-2">
             {filteredData[0]?.fields?.hiddenGem ? (
               <div className="flex items-center space-x-1 bg-gray-200 w-fit px-2 rounded-md text-green-500 text-xs py-1">
                 <div className="flex items-center space-x-2">
@@ -100,8 +109,8 @@ export default async function Home(props: any, req: any) {
               ""
             )}
           </div>
-          <div className="flex justify-between space-y-6 sm:space-y-2 w-full sm:pt-4  items-end ">
-            <div className="sm:flex md:block lg:flex items-center mt-2 sm:mt-0">
+          <div className="flex justify-between  sm:space-y-2 w-full sm:pt-4  items-end ">
+            <div className="sm:flex md:block lg:flex items-center sm:mt-0">
               <div>
                 <h1 className="text-2xl sm:text-4xl w-auto font-semibold min-w-fit sm:mr-4 text-black">
                   {filteredData[0]?.fields?.title}
@@ -122,12 +131,6 @@ export default async function Home(props: any, req: any) {
             <FaMapMarkerAlt />
             <span className="ml-1">{filteredData[0]?.fields?.city}</span>
           </span>
-          <div className="flex justify-between sm:hidden">
-            <StarRating rating={filteredData[0]?.fields?.rating} />
-            <div className="sm:pr-4 space-x-2 items-center sm:hidden flex  ">
-              <Buttons filteredData={filteredData} />
-            </div>
-          </div>
           <div className="flex">
             <div className="flex-1 sm:pt-2">
               <div className="space-x-2 mt-4 sm:mt-0 hidden sm:inline">
@@ -143,7 +146,75 @@ export default async function Home(props: any, req: any) {
             </div>
           </div>
         </div>
-        <div className="pt-5 sm:pt-10 w-11/12 sm:w-full mx-auto ">
+
+        {/* MOBILE SECTION */}
+
+        <main className="w-full m-0 sm:hidden">
+          <section className="border rounded-lg items-center text-sm sm:hidden  mx-auto px-2 py-2 flex w-11/12  justify-around">
+            <div className="w-14 flex flex-col items-center text-center">
+              <span className="text-xs">{filteredData[0]?.fields?.rating}</span>
+              <MobileRating value={filteredData[0]?.fields?.rating} />
+            </div>
+            <div className="border-r border-l px-8 text-center flex  flex-col items-center">
+              {filteredData[0]?.fields?.hiddenGem ? (
+                <>
+                  <FaRegGem className="text-2xl text-green-400" />
+                  <span className="mt-1 text-xs text-gray-500">Hidden Gem</span>
+                </>
+              ) : (
+                <div className="flex flex-col text-2xl text-sky items-center justify-center">
+                  <MdVerifiedUser />
+                  <span className="text-gray-500 mt-1 text-xs">
+                    Verified location
+                  </span>
+                </div>
+              )}
+            </div>
+            <div className="flex flex-col w-14 text-xs items-center justify-center text-center">
+              <RiMoneyEuroCircleLine className="text-lg" />
+              <span>{filteredData[0]?.fields?.price}</span>
+            </div>
+          </section>
+
+          <section className="border-b mt-4 pb-4 w-11/12 mx-auto">
+            <div className=" flex  flex-wrap justify-between items-center line-clamp-4">
+              <div className="inline w-full">
+                <p className="text-xs inline leading-[1px] ">
+                  {filteredData[0]?.fields?.shortDescription}
+                </p>
+                <Categorydrawer {...filteredData} />
+              </div>
+            </div>
+          </section>
+
+          <section className="mx-auto w-11/12 border-b my-2 pb-3">
+            <MobileButtons {...filteredData} />
+          </section>
+
+          {/* <section className="border-b w-11/12 mx-auto"></section> */}
+
+          <section>
+            <div className="w-11/12 mx-auto mt-1">
+              <h5 className="font-semibold mb-4 mt-2">Where to find it</h5>
+              {filteredData[0]?.fields?.embededMap === undefined ? (
+                <p>No map to display</p>
+              ) : (
+                <iframe
+                  src={filteredData[0]?.fields?.embededMap}
+                  width="600"
+                  height="450"
+                  // allowfullscreen=""
+                  loading="lazy"
+                  // referrerpolicy="no-referrer-when-downgrade"
+                  className="w-full"
+                ></iframe>
+              )}
+            </div>
+          </section>
+        </main>
+
+        {/* DESKTOP TABS START HERE */}
+        <div className="pt-5 sm:pt-10 w-11/12 sm:w-full mx-auto hidden sm:flex  ">
           <TabsRow
             filteredData={filteredData}
             slug={slug}
@@ -165,6 +236,7 @@ export default async function Home(props: any, req: any) {
             back to {category}
           </button>
         </Link>
+        <MobileBottomCategoryBanner {...filteredData} />
       </section>
     </>
   );

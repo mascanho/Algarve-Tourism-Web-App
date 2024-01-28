@@ -7,11 +7,14 @@ import { FaArrowUp, FaHeart } from "react-icons/fa";
 import { HiArrowUp } from "react-icons/hi2";
 import NotificationsModal from "./NotificationsModal";
 import MobileDrawer from "./MobileDrawer";
+import { usePathname } from "next/navigation";
+import { catArr } from "@/Data/Categories";
 
 function Footer() {
   const [showToTop, setShowToTop] = useState(false);
   const { favourites } = useAddToFavourites();
   const [favouritesLength, setFavouritesLength] = useState(0);
+  const pathname = usePathname();
 
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
@@ -64,10 +67,10 @@ function Footer() {
 
   return (
     <>
-      {showToTop && (
+      {!pathname?.includes("restaurants/" || "beaches/") && showToTop && (
         <HiArrowUp
           onClick={() => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            window?.scrollTo({ top: 0, behavior: "smooth" });
           }}
           className="text-5xl text-sky cursor-pointer fixed bottom-10 right-6 sm:right-10  bg-white border rounded-full p-1 py-2 transition-all ease-in-out delay-200"
         />

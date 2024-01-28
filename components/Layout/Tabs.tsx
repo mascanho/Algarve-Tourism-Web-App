@@ -26,7 +26,7 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
 
   const parsedContent = documentToReactComponents(
     filteredData[0]?.fields?.description,
-    options
+    options,
   );
 
   // Protect the app in case this is null || false
@@ -41,7 +41,7 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
     <Tabs
       color="teal"
       defaultValue={activeTab === "" ? "first" : activeTab}
-      className=""
+      className="bg-transparent"
     >
       <Tabs.List justify="center" className="text-center">
         <Tabs.Tab className="ml-0 pl-0" value="first" color="blue">
