@@ -6,10 +6,40 @@ import { LuClipboardCheck } from "react-icons/lu";
 import { FaPaperPlane } from "react-icons/fa";
 import { BiHeart } from "react-icons/bi";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
+import { usePathname } from "next/navigation";
+import { toast } from "react-hot-toast";
 
 const MobileButtons = (filteredData: any) => {
   const addFavourites = useAddToFavourites();
   const favourites = useAddToFavourites();
+  const pathname = usePathname();
+
+  // handle copying the url to share
+  function handleCopyUrl() {
+    const url = `https://www.algarvewonders.com${pathname}`;
+    navigator.clipboard.writeText(url);
+    toast.success("URL copied to clipboard");
+  }
+
+  const handleShare = () => {
+    const shareURL = "https://example.com"; // Replace with your content
+    const shareText = "Check out this awesome content!"; // Replace with your content
+
+    const shareLink = `https://share.example.com?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareURL)}`;
+
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "Share Title",
+          text: "Check out this awesome content!",
+          url: "https://example.com",
+        })
+        .then(() => console.log("Successfully shared."))
+        .catch((error) => console.error("Error sharing:", error.message));
+    } else {
+      window.location.href = shareLink;
+    }
+  };
 
   function addFav() {
     addFavourites.addFavourite({
@@ -45,9 +75,9 @@ const MobileButtons = (filteredData: any) => {
       </div>
       <div className="flex space-x-3 items-start justify-center my-2">
         <FaPaperPlane className="mt-1" />
-        <div className="flex flex-col flex-wrap w-full space-y-1">
+        <div className="flex flex-col flex-wrap w-full space-y-1 ">
           <a
-            className="mb-1"
+            className="-mt-1"
             href={`mailto:?subject=Check%20this%20place%20I%20found%20in%20the%20Algarve&body=${window?.location?.href}`}
             target="_blank"
           >
@@ -61,7 +91,13 @@ const MobileButtons = (filteredData: any) => {
       <div className="flex space-x-3 items-start justify-center my-2">
         <BsGlobe className="mt-1" />
         <div className="flex flex-col flex-wrap w-full space-y-1">
-          <span className="text-sm underline">Visit the website</span>
+          <a
+            className="-mt-1"
+            href={filteredData[0]?.fields?.website}
+            target="_blank"
+          >
+            <span className="text-sm underline">Visit the website</span>
+          </a>
           <span className="text-xs text-gray-500">
             Open {filteredData[0]?.fields?.title} website on a new tab
           </span>
@@ -79,7 +115,9 @@ const MobileButtons = (filteredData: any) => {
       <div className="flex space-x-3 items-start justify-center my-2">
         <LuClipboardCheck className="mt-1 " />
         <div className="flex flex-col flex-wrap w-full space-y-1">
-          <span className="text-sm underline">Copy to clipboard</span>
+          <span onClick={handleShare} className="text-sm underline">
+            Copy to clipboard
+          </span>
           <span className="text-xs text-gray-500">
             Share this link with your friends and family
           </span>
