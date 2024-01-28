@@ -2,6 +2,7 @@
 import { useDisclosure } from "@mantine/hooks";
 import { Drawer, Button } from "@mantine/core";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { MdOutlineChevronRight } from "react-icons/md";
 
 export default function Categorydrawer(filteredData: any, { text }: any) {
   console.log(filteredData, "From the new stuff");
@@ -43,9 +44,9 @@ export default function Categorydrawer(filteredData: any, { text }: any) {
 
       <span
         onClick={open}
-        className="cursor-pointer text-xs underline inline pl-1"
+        className="cursor-pointer text-xs underline flex items-center mt-2"
       >
-        view more
+        view more <MdOutlineChevronRight />
       </span>
     </>
   );
