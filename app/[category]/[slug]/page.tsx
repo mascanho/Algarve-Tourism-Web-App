@@ -189,7 +189,7 @@ export default async function Home(props: any, req: any) {
 
           <section className="border-b mt-4 pb-4 w-11/12 mx-auto">
             <div>
-              <h5 className="text-sm mb-1">Tags</h5>
+              <h5 className="text-sm mb-2">Tags</h5>
               <div className="flex w-full">
                 {filteredData[0]?.fields?.tags.map((item: any) => (
                   <span className="bg-gray-200 rounded-md px-2 py-1 mr-3 text-xs">
