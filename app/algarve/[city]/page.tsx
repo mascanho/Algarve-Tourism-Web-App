@@ -60,7 +60,7 @@ const getCities = async () => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN2!,
   });
   const res = await client.getEntries({
-    content_type: ["cities"],
+    content_type: "cities",
   });
 
   return await res.items;
@@ -131,7 +131,13 @@ async function page(props: any) {
   }
 
   let filteredCity = categories.filter((cat: any) => {
-    if (cat?.fields?.city?.toLowerCase() === city.toLowerCase()) {
+    if (
+      cat?.fields.city
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase() === city
+    ) {
       return cat.fields;
     }
   });
@@ -140,7 +146,15 @@ async function page(props: any) {
     return cat.fields;
   });
 
-  console.warn(categories.length, "length");
+  const test = categories.map((cat: any) => {
+    return cat?.fields.city
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+  });
+
+  console.log(test, "testing");
 
   //Shuffle the array with the cards
   function shuffleArray(array: any) {
