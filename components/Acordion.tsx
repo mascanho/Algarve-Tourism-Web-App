@@ -5,7 +5,6 @@ import { InView, useInView } from "react-intersection-observer";
 
 const Acordion = () => {
   const { ref, inView: InView } = useInView({
-    threshold: 0.5,
     triggerOnce: true,
     rootMargin: "40px 0px",
   });
