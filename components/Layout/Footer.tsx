@@ -77,7 +77,7 @@ function Footer() {
           />
         )}
 
-      <section className="bg-black mt-20 z-0 ">
+      <section className="bg-black  z-0 -mt-[1px] ">
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto w-11/12 ">
           <section className="grid grid-cols-2 w-full sm:flex justify-between px-4 sm:px-0 ">
             <div className="flex flex-col space-y-1">

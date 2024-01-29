@@ -18,7 +18,7 @@ const Acordion = () => {
   ));
 
   return (
-    <section className="w-11/12 mx-auto max-w-7xl mt-20" ref={ref}>
+    <section className="w-11/12 mx-auto max-w-7xl mt-20 pb-20" ref={ref}>
       <h5 className="mt-4 mb-10 text-xl">FAQs</h5>
       <Accordion
         variant="contained"
