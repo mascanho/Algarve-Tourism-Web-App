@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 
@@ -11,7 +12,6 @@ const CardCity = ({
   city,
   route,
 }: any) => {
-  console.log(type, slug, "from the card city");
   return (
     <Link href={`/${type || "algarve"}/${slug || route}`}>
       <div className="card sm:w-[100%] sm:h-52 md:w-11/12 lg:w-[360px]  xl:w-[300px] xl:h-64  lg:h-60  mx-auto bg-base-100 shadow-xl  overflow-hidden group">

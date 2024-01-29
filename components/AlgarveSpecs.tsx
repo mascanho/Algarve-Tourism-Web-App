@@ -93,12 +93,11 @@ function AlgarveSpecs() {
   });
 
   return (
-    <section style={{}}>
+    <section ref={ref}>
       <div className="max-w-7xl w-11/12 mx-auto space-y-4 mb-8 mt-20 sm:mt-28">
         <h4 className="text-xl">Good To Know</h4>
       </div>
       <section
-        ref={ref}
         style={{
           opacity: inView ? 1 : 0,
           transition: "opacity 0.5s ease-in-out",

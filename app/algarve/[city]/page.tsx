@@ -60,7 +60,7 @@ const getCities = async () => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN2!,
   });
   const res = await client.getEntries({
-    content_type: ["beaches", "events", "restaurants"],
+    content_type: ["cities"],
   });
 
   return await res.items;
@@ -105,15 +105,13 @@ const tableData: any = [
 ];
 
 async function page(props: any) {
-  console.log(props, "from the city");
-
   const categories = await getAllCategories();
   const cities = await getCities();
 
   let city = props.params.city;
 
   const filteredData: any = cities.filter(
-    (obj: any) => obj.fields.slug === city
+    (obj: any) => obj.fields.slug === city,
   );
 
   // conditionally route the user if the city is not included in the cityArr
@@ -130,7 +128,6 @@ async function page(props: any) {
   }
   if (!cityIsPresent) {
     notFound();
-    redirect("/algarve");
   }
 
   let filteredCity = categories.filter((cat: any) => {
@@ -142,6 +139,8 @@ async function page(props: any) {
   const cityImages = filteredCity.map((cat: any) => {
     return cat.fields;
   });
+
+  console.warn(categories.length, "length");
 
   //Shuffle the array with the cards
   function shuffleArray(array: any) {
@@ -155,18 +154,18 @@ async function page(props: any) {
   // Contentful Rich Text Renderer
   const aboutCity = documentToReactComponents(
     filteredData[0]?.fields?.about,
-    options
+    options,
   );
 
   const whatToDo = documentToReactComponents(
     filteredData[0]?.fields?.whatToDo,
-    options
+    options,
   );
 
   const history = documentToReactComponents(
     filteredData[0]?.fields?.history,
 
-    options
+    options,
   );
 
   const weather = documentToReactComponents(filteredData[0]?.fields?.weather);

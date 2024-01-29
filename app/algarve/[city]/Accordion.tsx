@@ -11,7 +11,7 @@ function TableAccordion({ tableData }: any) {
   });
 
   return (
-    <section className="bg-red-950">
+    <section>
       <Accordion
         // chevron=/* {<IconPlus size="1rem" />} */
         styles={{
