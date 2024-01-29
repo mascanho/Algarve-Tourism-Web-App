@@ -33,7 +33,7 @@ const MobileBottomCategoryBanner = (filteredData: any) => {
           <p className="text-xs text-black font-semibold">
             {filteredData[0]?.fields?.title}
           </p>
-          <span className="text-gray-500 text-xs">
+          <span className="text-gray-500 text-xs ">
             {filteredData[0]?.fields?.city}
           </span>
         </div>

@@ -30,7 +30,7 @@ function Breadcrumbs() {
       <Bread
         separator="/"
         mt="xs"
-        className="text-gray-400  cursor-pointer z-50 sm:flex my-auto sm:m-0 text-xs"
+        className="text-gray-400  cursor-pointer z-0 sm:flex my-auto sm:m-0 text-xs"
         color="dimmed"
       >
         {items}

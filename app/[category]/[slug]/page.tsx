@@ -208,9 +208,7 @@ export default async function Home(props: any, req: any) {
 
           <section className="border-b pb-6 w-11/12 mx-auto">
             <div className="mx-auto mt-1">
-              <h5 className="font-semibold text-sm mb-4 mt-3">
-                Where to find it
-              </h5>
+              <h5 className="text-sm mb-4 mt-3">Where to find it</h5>
 
               {filteredData[0]?.fields?.embededMap === undefined ? (
                 <p>No map to display</p>
