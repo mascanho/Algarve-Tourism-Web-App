@@ -13,7 +13,7 @@ import GenericCarousel from "@/components/Layout/CarouselGeneric";
 import { Carousel } from "@mantine/carousel";
 import Suggestions from "./_components/Suggestions";
 import { getContentfulData } from "@/libs/getContentfulData";
-import { Divider, Rating } from "@mantine/core";
+import { Box, Collapse, Divider, Rating } from "@mantine/core";
 import { TiInfoLargeOutline } from "react-icons/ti";
 import Categorydrawer from "./_components/CategoryDrawer";
 import { MdVerifiedUser } from "react-icons/md";
@@ -92,7 +92,7 @@ export default async function Home(props: any, req: any) {
 
   return (
     <>
-      <section className="overflow-hidden bg-white text-left pb-16 sm:px-4 md:w-full md:px-6 lg:px-6 xl:pr-0 space-y-4  md:max-w-4xl lg:max-w-7xl lg:pl-6  mb-2 text-black">
+      <section className="overflow-hidden bg-transparent rounded-lg text-left pb-16 sm:px-4 md:w-full md:px-6 lg:px-6 xl:pr-0 space-y-4  md:max-w-4xl lg:max-w-7xl lg:pl-6  mb-2 text-black">
         <section className="w-full">
           <LeadGrid filteredData={filteredData} />
         </section>
@@ -179,9 +179,9 @@ export default async function Home(props: any, req: any) {
           <section className="border-b mt-4 pb-4 w-11/12 mx-auto">
             <div className=" flex  flex-wrap justify-between items-center line-clamp-4">
               <div className="inline w-full">
-                <p className="text-xs inline leading-[1px] ">
+                <span className="text-xs leading-snug  ">
                   {filteredData[0]?.fields?.shortDescription}
-                </p>
+                </span>
                 <Categorydrawer {...filteredData} />
               </div>
             </div>
@@ -206,20 +206,23 @@ export default async function Home(props: any, req: any) {
 
           {/* <section className="border-b w-11/12 mx-auto"></section> */}
 
-          <section>
-            <div className="w-11/12 mx-auto mt-1">
-              <h5 className="font-semibold mb-4 mt-2">Where to find it</h5>
+          <section className="border-b pb-6 w-11/12 mx-auto">
+            <div className="mx-auto mt-1">
+              <h5 className="font-semibold text-sm mb-4 mt-3">
+                Where to find it
+              </h5>
+
               {filteredData[0]?.fields?.embededMap === undefined ? (
                 <p>No map to display</p>
               ) : (
                 <iframe
                   src={filteredData[0]?.fields?.embededMap}
                   width="600"
-                  height="450"
+                  height="250"
                   // allowfullscreen=""
                   loading="lazy"
                   // referrerpolicy="no-referrer-when-downgrade"
-                  className="w-full"
+                  className="w-full rounded-lg"
                 ></iframe>
               )}
             </div>

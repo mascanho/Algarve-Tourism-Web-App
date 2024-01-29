@@ -41,9 +41,9 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
     <Tabs
       color="teal"
       defaultValue={activeTab === "" ? "first" : activeTab}
-      className="bg-transparent"
+      className="bg-transparent w-full pr-4"
     >
-      <Tabs.List justify="center" className="text-center">
+      <Tabs.List justify="center" className="text-center ">
         <Tabs.Tab className="ml-0 pl-0" value="first" color="blue">
           Description
         </Tabs.Tab>
