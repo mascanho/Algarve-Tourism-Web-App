@@ -178,3 +178,8 @@ input[type="text"] {
 .mantine-Carousel-indicator {
   background-color: white;
 }
+
+.mantine-ff23mu,
+.mantine-19vej1h {
+  border-radius: 20px 20px 0 0 !important;
+}

@@ -1,8 +1,10 @@
 import { createClient } from "contentful";
-import { CategoryCard } from "@/components/CategoryCard";
 import { catArr } from "@/Data/Categories";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import dynamic from "next/dynamic";
+
+const CategoryCard = dynamic(() => import("@/components/CategoryCard"), {});
 
 export const metadata: Metadata = {
   title: "The Best Places",

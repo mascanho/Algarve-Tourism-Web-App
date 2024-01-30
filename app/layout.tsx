@@ -82,6 +82,7 @@ export default async function RootLayout({
             <section className="pb-12">
               <Header currentUser={currentUser} />
             </section>
+            <SpeedInsights />
             {children}
           </ClientOnly>
           <GoogleTagManager gtmId="GTM-MHX7R9FF" />

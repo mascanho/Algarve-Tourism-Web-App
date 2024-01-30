@@ -1,7 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Search from "./Search";
+import React, { useState } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const Search = dynamic(() => import("./Search"));
 
 const IMAGES_DESKTOP = [
   "/images/bg1.jpeg",

@@ -16,11 +16,11 @@ function Review({ review }: any) {
         <img
           alt={review?.email}
           src={review?.image}
-          className="w-12 h-12 rounded-full"
+          className="w-8 h-8 sm:w-12 sm:h-12 rounded-full"
         />
         <div className="flex flex-col items-center justify-center ml-2 w-full">
           <div className="flex items-center  m-auto pt-1 my-2 w-full">
-            <span className="text-black sm:text-lg  flex-1 font-semibold text-left">
+            <span className="text-black sm:text-lg text-sm  flex-1 font-semibold text-left">
               {review?.name}
             </span>
             <div>

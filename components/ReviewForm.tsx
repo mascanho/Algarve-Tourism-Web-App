@@ -72,7 +72,7 @@ function ReviewForm() {
     <div className="w-full">
       {session.status === "unauthenticated" ? (
         <button
-          className="border px-4 py-2 rounded-md"
+          className="border sm:px-4 sm:py-2 rounded-md text-xs px-3 py-1 sm:text-base"
           onClick={handleCommentAuthentication}
         >
           Leave a review

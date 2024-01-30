@@ -1,27 +1,32 @@
 import type { Metadata } from "next";
 import { LeadGrid } from "@/components/Layout/GridLayout";
-import { FaGem, FaRegGem } from "react-icons/fa";
+import { FaDog, FaGem, FaRegGem } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import TabsRow from "@/components/Layout/Tabs";
 import { createClient } from "contentful";
 import Buttons from "@/components/Layout/Buttons";
 import StarRating from "@/components/Layout/StarRating";
 import getReviews from "@/app/libs/getReviews";
-import { IoArrowBack } from "react-icons/io5";
+import {
+  IoArrowBack,
+  IoCalendarNumberOutline,
+  IoFastFoodOutline,
+  IoRestaurant,
+} from "react-icons/io5";
 import Link from "next/link";
-import GenericCarousel from "@/components/Layout/CarouselGeneric";
-import { Carousel } from "@mantine/carousel";
 import Suggestions from "./_components/Suggestions";
-import { getContentfulData } from "@/libs/getContentfulData";
-import { Box, Collapse, Divider, Rating } from "@mantine/core";
-import { TiInfoLargeOutline } from "react-icons/ti";
 import Categorydrawer from "./_components/CategoryDrawer";
-import { MdVerifiedUser } from "react-icons/md";
-import StartRationg from "@/components/Layout/StartRationg";
+import { MdBeachAccess, MdVerifiedUser } from "react-icons/md";
 import MobileRating from "./_components/MobileRating";
 import MobileBottomCategoryBanner from "./_components/MobileBottomCategoryBanner";
 import MobileButtons from "./_components/MobileButtons";
 import { RiMoneyEuroCircleLine } from "react-icons/ri";
+import dynamic from "next/dynamic";
+import { BiCar, BiFoodMenu, BiHealth } from "react-icons/bi";
+import DailyMenusDrawer from "./_components/DailyMenusDrawer";
+import { GrOverview } from "react-icons/gr";
+
+const Reviews = dynamic(() => import("../../../components/Layout/Reviews"), {});
 
 // TODO: Check this stuff
 export async function generateMetadata({ params, searchParams }: any) {
@@ -51,7 +56,6 @@ export async function generateMetadata({ params, searchParams }: any) {
 
   try {
     const description = await getDATA();
-    console.log(description);
 
     return {
       // Remove the "-" from the title, separate words with spaces and uppercase the first letter
@@ -71,6 +75,7 @@ export async function generateMetadata({ params, searchParams }: any) {
     };
   }
 }
+
 export default async function Home(props: any, req: any) {
   const { category, slug } = props.params;
 
@@ -152,8 +157,43 @@ export default async function Home(props: any, req: any) {
         <main className="w-full m-0 sm:hidden">
           <section className="border rounded-lg items-center text-sm sm:hidden  mx-auto px-2 py-2 flex w-11/12  justify-around">
             <div className="w-14 flex flex-col items-center text-center">
-              <span className="text-xs">{filteredData[0]?.fields?.rating}</span>
-              <MobileRating value={filteredData[0]?.fields?.rating} />
+              {filteredData[0]?.fields?.type[0] === "restaurants" && (
+                <>
+                  <IoRestaurant />
+                  <span className="text-xs">Restaurant</span>
+                </>
+              )}
+              {filteredData[0]?.fields?.type[0] === "beaches" && (
+                <>
+                  <FaDog />
+                  <span className="text-xs">Friendly</span>
+                </>
+              )}
+
+              {filteredData[0]?.fields?.type[0] === "hiking" && (
+                <>
+                  <GrOverview />
+                  <span className="text-xs">Sightseeing</span>
+                </>
+              )}
+              {filteredData[0]?.fields?.type[0] === "sports" && (
+                <>
+                  <BiHealth />
+                  <span className="text-xs">Healthy</span>
+                </>
+              )}
+              {filteredData[0]?.fields?.type[0] === "stays" && (
+                <>
+                  <MdBeachAccess />
+                  <span className="text-xs">Sea view</span>
+                </>
+              )}
+              {filteredData[0]?.fields?.type[0] === "events" && (
+                <>
+                  <IoCalendarNumberOutline />
+                  <span className="text-xs">Seasonal</span>
+                </>
+              )}
             </div>
             <div className="border-r border-l px-8 text-center flex  flex-col items-center">
               {filteredData[0]?.fields?.hiddenGem ? (
@@ -189,6 +229,14 @@ export default async function Home(props: any, req: any) {
 
           <section className="border-b mt-4 pb-4 w-11/12 mx-auto">
             <div>
+              <h5 className="text-sm mb-2">Rating</h5>
+              <div className="flex w-full">
+                <MobileRating value={filteredData[0]?.fields?.rating} />
+              </div>
+            </div>
+          </section>
+          <section className="border-b mt-4 pb-4 w-11/12 mx-auto">
+            <div>
               <h5 className="text-sm mb-2">Tags</h5>
               <div className="flex w-full">
                 {filteredData[0]?.fields?.tags.map((item: any) => (
@@ -206,6 +254,18 @@ export default async function Home(props: any, req: any) {
 
           {/* <section className="border-b w-11/12 mx-auto"></section> */}
 
+          {filteredData[0]?.fields?.type[0] === "restaurants" && (
+            <section className="w-11/12 border-b pb-5 mx-auto">
+              <h5 className="text-sm">Eat in</h5>
+              <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
+                <IoFastFoodOutline className="text-2xl" />
+                <div className="flex space-y-1 flex-col">
+                  <DailyMenusDrawer />
+                  <span className="text-xs text-gray-500">Menu Availalbe</span>
+                </div>
+              </div>
+            </section>
+          )}
           <section className="border-b pb-6 w-11/12 mx-auto">
             <div className="mx-auto mt-1">
               <h5 className="text-sm mb-4 mt-3">Where to find it</h5>
@@ -223,6 +283,13 @@ export default async function Home(props: any, req: any) {
                   className="w-full rounded-lg"
                 ></iframe>
               )}
+            </div>
+          </section>
+
+          <section className="border-b pb-6 w-11/12 mx-auto">
+            <div className="mx-auto mt-1">
+              <h5 className="text-sm mb-4 mt-3">Reviews</h5>
+              <Reviews reviews={reviewsArr} slug={slug} />
             </div>
           </section>
         </main>

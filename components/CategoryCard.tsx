@@ -36,7 +36,7 @@ interface CategoryCardProps {
   category: Category[];
 }
 
-export const CategoryCard: React.FC<CategoryCardProps> = ({
+const CategoryCard: React.FC<CategoryCardProps> = ({
   category,
   session,
 }: any) => {
@@ -153,3 +153,4 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
     </>
   );
 };
+export default CategoryCard;
