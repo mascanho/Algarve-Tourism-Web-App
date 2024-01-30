@@ -25,6 +25,7 @@ import dynamic from "next/dynamic";
 import { BiCar, BiFoodMenu, BiHealth } from "react-icons/bi";
 import DailyMenusDrawer from "./_components/DailyMenusDrawer";
 import { GrOverview } from "react-icons/gr";
+import { IoIosLeaf } from "react-icons/io";
 
 const Reviews = dynamic(() => import("../../../components/Layout/Reviews"), {});
 
@@ -194,6 +195,12 @@ export default async function Home(props: any, req: any) {
                   <span className="text-xs">Seasonal</span>
                 </>
               )}
+              {filteredData[0]?.fields?.type[0] === "business" && (
+                <>
+                  <IoIosLeaf className="text-green-800" />
+                  <span className="text-xs">Sustainable</span>
+                </>
+              )}
             </div>
             <div className="border-r border-l px-8 text-center flex  flex-col items-center">
               {filteredData[0]?.fields?.hiddenGem ? (
@@ -211,7 +218,7 @@ export default async function Home(props: any, req: any) {
               )}
             </div>
             <div className="flex flex-col w-14 text-xs items-center justify-center  text-center">
-              <RiMoneyEuroCircleLine className="text-lg" />
+              <RiMoneyEuroCircleLine className="text-lg text-yellow-800" />
               <span className="text-xs">{filteredData[0]?.fields?.price}</span>
             </div>
           </section>
