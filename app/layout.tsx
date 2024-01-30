@@ -1,7 +1,6 @@
 import "@mantine/carousel/esm/index";
 import Header from "@/components/Layout/Header";
 import "./globals.css";
-import Footer from "@/components/Layout/Footer";
 import type { Metadata, Viewport } from "next";
 import ClientOnly from "@/components/ClientOnly";
 import "react-toastify/dist/ReactToastify.css";
@@ -11,6 +10,9 @@ import { NextAuthProvider } from "./providers/AuthProvider";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { PT_Sans } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import dynamic from "next/dynamic";
+
+const Footer = dynamic(() => import("@/components/Layout/Footer"), {});
 
 const ptsans = PT_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 

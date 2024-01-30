@@ -2,13 +2,9 @@
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import Link from "next/link";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { BsArrowUp } from "react-icons/bs";
-import { FaArrowUp, FaHeart } from "react-icons/fa";
 import { HiArrowUp } from "react-icons/hi2";
-import NotificationsModal from "./NotificationsModal";
-import MobileDrawer from "./MobileDrawer";
 import { usePathname } from "next/navigation";
-import { catArr } from "@/Data/Categories";
+import { useInView } from "react-intersection-observer";
 
 function Footer() {
   const [showToTop, setShowToTop] = useState(false);
@@ -16,6 +12,10 @@ function Footer() {
   const [favouritesLength, setFavouritesLength] = useState(0);
   const pathname = usePathname();
 
+  const { ref, InView }: any = useInView({
+    triggerOnce: true,
+    rootMargin: "140px 0px",
+  });
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   const [fakeOnlineUsers, setFakeOnlineUsers] = useState(() =>
@@ -77,7 +77,7 @@ function Footer() {
           />
         )}
 
-      <section className="bg-black  z-0 -mt-[1px] ">
+      <section ref={ref} className="bg-black  z-0 -mt-[1px] ">
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto w-11/12 ">
           <section className="grid grid-cols-2 w-full sm:flex justify-between px-4 sm:px-0 ">
             <div className="flex flex-col space-y-1">

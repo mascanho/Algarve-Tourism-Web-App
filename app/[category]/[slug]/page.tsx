@@ -170,9 +170,9 @@ export default async function Home(props: any, req: any) {
                 </div>
               )}
             </div>
-            <div className="flex flex-col w-14 text-xs items-center justify-center text-center">
+            <div className="flex flex-col w-14 text-xs items-center justify-center  text-center">
               <RiMoneyEuroCircleLine className="text-lg" />
-              <span>{filteredData[0]?.fields?.price}</span>
+              <span className="text-xs">{filteredData[0]?.fields?.price}</span>
             </div>
           </section>
 

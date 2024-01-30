@@ -1,11 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Search from "./Search";
+import Image from "next/image";
 
 const IMAGES_DESKTOP = [
   "/images/bg1.jpeg",
   "/images/bg2.webp",
-  "https://cfimg.wowcher.co.uk/cdn-cgi/image/height=520,width=777,quality=85,format=auto/https://static.wowcher.co.uk/images/deal/27289893/1078075.jpg",
+  "/images/bg-aw.webp",
   "https://turismo.eurodicas.com.br/wp-content/uploads/2019/07/praias-do-algarve-1.jpg",
 ];
 
@@ -35,11 +36,14 @@ const Hero = ({ categories }: any) => {
           categories={categories}
         />
       </div>
-      <div className="sm:w-8/12 mx-auto h-96 sm:h-90  flex flex-wrap flex-col rounded-t-lg max-w-3xl">
-        <img
-          className="rounded-t-3xl w-full h-full object-cover"
+      <div className="sm:w-8/12 mx-auto h-96 sm:h-90  flex flex-wrap flex-col rounded-t-lg relative max-w-3xl">
+        <Image
+          className="rounded-t-3xl w-full h-full object-fill obcject-cover"
           src={IMAGES_DESKTOP[2]}
           alt="hero image"
+          width={900}
+          height={400}
+          // sizes="(max-width: 868px) 100vw, 33vw"
         />
       </div>
     </section>

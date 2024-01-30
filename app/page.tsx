@@ -1,32 +1,28 @@
-import Image from "next/image";
-import Selection from "@/components/Selection";
-import Pagination from "@/components/Pagination";
-import BottomAssets from "@/components/BottomAssets";
-import Hero from "@/components/Hero";
 import Feedback from "@/components/Feedback";
 import { quotes } from "@/Data/Quotes";
-import PopularCategories from "@/components/PopularCategories";
 import { createClient } from "contentful";
-import CarouselHero from "@/components/Carousel";
-import RandomBanner from "@/components/Layout/RandomBanner";
 import { cityArr } from "@/Data/Cities";
 import { carRentals } from "@/Data/CarRentals";
-import Acordion from "@/components/Acordion";
-import AffixScrollToTop from "@/components/Layout/Affix";
-import Features from "@/components/Features";
-import AlgarveSpecs from "@/components/AlgarveSpecs";
 import { Suspense, cache, lazy } from "react";
-import Link from "next/link";
-import UsefullLinks from "@/components/UsefullLinks";
-import Agenda from "@/components/Agenda";
-import MosaicCategories from "@/components/MosaicCategories";
-import BottomCarousel from "@/components/Layout/BottomCarousel";
-import GenericCarousel from "@/components/Layout/CarouselGeneric";
-import StaticDataCarousel from "@/components/Layout/StaticDataCarousel";
 import { catArr } from "@/Data/Categories";
 import dynamic from "next/dynamic";
 
+// Lazy loaded
+const Hero = dynamic(() => import("@/components/Hero"));
 const Card = lazy(() => import("@/components/Card"));
+const RandomBanner = dynamic(() => import("@/components/Layout/RandomBanner"));
+const Acordion = dynamic(() => import("@/components/Acordion"));
+const AlgarveSpecs = dynamic(() => import("@/components/AlgarveSpecs"));
+const BottomCarousel = dynamic(
+  () => import("@/components/Layout/BottomCarousel"),
+);
+const GenericCarousel = dynamic(
+  () => import("@/components/Layout/CarouselGeneric"),
+);
+const StaticDataCarousel = dynamic(
+  () => import("@/components/Layout/StaticDataCarousel"),
+);
+const Features = dynamic(() => import("@/components/Features"));
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
