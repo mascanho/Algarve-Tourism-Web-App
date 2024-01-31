@@ -8,7 +8,7 @@ function Reviews(reviews: any) {
       <div className="flex items-center flex-col justify-start text-left w-full space-y-3">
         <ReviewForm />
 
-        <div className="flex justify-start w-full pt-2 pb-2">
+        <div className="flex justify-start w-full sm:pt-2 pb-2">
           <span className="font font-semibold text-xs text-left ml-0">
             {
               reviews.reviews.filter((obj: any) => obj.slug === reviews.slug)
