@@ -260,16 +260,20 @@ export default async function Home(props: any, req: any) {
           {filteredData[0]?.fields.booking && (
             <section className="w-11/12 border-b pb-5 mx-auto">
               <h5 className="text-sm">Bookings</h5>
+
               <section className="flex space-x-4">
-                <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
-                  <IoFastFoodOutline className="text-2xl" />
-                  <div className="flex space-y-1 flex-col">
-                    <DailyMenusDrawer />
-                    <span className="text-xs text-gray-500">
-                      Menu Availalbe
-                    </span>
+                {filteredData[0]?.fields?.type[0] === "restaurants" && (
+                  <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
+                    <IoFastFoodOutline className="text-2xl" />
+                    <div className="flex space-y-1 flex-col">
+                      <DailyMenusDrawer />
+                      <span className="text-xs text-gray-500">
+                        Menu Availalbe
+                      </span>
+                    </div>
                   </div>
-                </div>
+                )}
+
                 <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
                   <FaRegAddressBook className="text-2xl" />
                   <div className="flex space-y-1 flex-col">
