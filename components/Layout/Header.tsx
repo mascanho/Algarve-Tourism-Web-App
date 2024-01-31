@@ -167,12 +167,13 @@ const Header = ({ currentUser, weatherData }: any) => {
               </div>
             )}
 
-            <span
-              onClick={() => router.push("/")}
+            <div
               className={`pl-1 text-sm sm:text-base normal-case flex-1 text-right ${showMobileSearch && "hidden"}  cursor-pointer items-center flex-grow w-full  m-auto sm:w-fit sm:flex font-semibold`}
             >
-              Algarve Wonders
-            </span>
+              <span onClick={() => router.push("/")} className="w-fit">
+                Algarve Wonders
+              </span>
+            </div>
             {/* {showMobileSearch && <MobileSearchHeader />} */}
           </div>
           <section className="hidden sm:flex flex-wrap w-1/2 justify-around">

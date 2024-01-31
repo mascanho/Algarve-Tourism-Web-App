@@ -92,9 +92,7 @@ export default async function Home(props: any) {
         </h4>
       </div>
 
-      <Suspense fallback={<p>Loading...</p>}>
-        <Card categories={categories} />
-      </Suspense>
+      <Card categories={categories} />
       <StaticDataCarousel categories={catCards} title="Popular categories" />
       <GenericCarousel categories={adventure} title="What to do" />
       <StaticDataCarousel categories={cities} title="Cities to visit" />

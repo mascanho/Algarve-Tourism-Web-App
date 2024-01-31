@@ -66,7 +66,7 @@ function Features() {
         onClick={() => setShowEl(!showEl)} // Toggle the state on click
         className="space-y-4 mb-10 mx-auto text-center animate-fade-in cursor-pointer"
       >
-        <span className="bg-sky px-4 py-1 font-semibold text-white rounded-full cursor-pointer">
+        <span className="bg-black px-4 py-1 font-semibold text-white rounded-full cursor-pointer">
           How It Works
         </span>
         <p className="w-10/12 sm:w-2/4 lg:w-2/6 mx-auto text-gray-700">
