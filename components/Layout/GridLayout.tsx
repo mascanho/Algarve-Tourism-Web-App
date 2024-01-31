@@ -19,10 +19,13 @@ export function LeadGrid({ filteredData }: any) {
   const theme = useMantineTheme();
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - ${theme.spacing.md} / 2)`;
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+  // useEffect(() => {
+  //   // Check if the window object is defined before using it
+  //   if (typeof window !== "undefined") {
+  //     window.scrollTo(0, 0);
+  //   }
+  // }, []);
+  //
   return (
     <section className=" ml-0">
       <Container my="xs" className=" min-w-full ml-0  sm:pt-0 sm:pl-0 ">

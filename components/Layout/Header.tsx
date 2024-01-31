@@ -140,7 +140,6 @@ const Header = ({ currentUser, weatherData }: any) => {
         <header
           className={`flex flex-wrap w-11/12 sm:w-full max-w-7xl sm:px-2 md:w-full lg:w-full  justify-between mx-auto py-2 transition-all ease-in delay-150 `}
         >
-          {/* END OF BURGER MENU */}
           <div className="flex sm:flex-wrap w-full break-keep sm:w-auto ">
             {/* HAMBURGER MENU */}
             <section className="sm:hidden flex flex-wrap  w-fit mr-2 ">

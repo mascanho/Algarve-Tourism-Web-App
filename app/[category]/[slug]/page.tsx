@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
 import { LeadGrid } from "@/components/Layout/GridLayout";
-import {
-  FaAddressBook,
-  FaDog,
-  FaGem,
-  FaRegAddressBook,
-  FaRegGem,
-} from "react-icons/fa";
+import { FaDog, FaRegAddressBook, FaRegGem } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import TabsRow from "@/components/Layout/Tabs";
 import { createClient } from "contentful";
@@ -76,7 +70,6 @@ export async function generateMetadata({ params, searchParams }: any) {
     };
   } catch (error) {
     // Handle errors that might occur during metadata generation
-    console.error("Error generating metadata:", error);
 
     return {
       description: "",
@@ -102,8 +95,6 @@ export default async function Home(props: any, req: any) {
 
   const filteredData: any = data.filter((obj: any) => obj.fields.slug === slug);
   const recomended: any = data.filter((obj: any) => obj.fields.slug !== slug);
-
-  console.log(filteredData[0]?.fields?.booking);
 
   return (
     <>
@@ -277,7 +268,7 @@ export default async function Home(props: any, req: any) {
                     url={filteredData[0]?.fields?.booking}
                   />
                   <span className="text-xs text-gray-500">
-                    Don&apos;s miss it
+                    Don&apos;t miss it
                   </span>
                 </div>
               </div>

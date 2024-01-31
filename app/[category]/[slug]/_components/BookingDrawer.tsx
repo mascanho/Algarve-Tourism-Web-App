@@ -2,10 +2,8 @@
 import { Drawer } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
-const BookingDrawer = ({ url, title }: string) => {
+const BookingDrawer = ({ url, title }: any) => {
   const [opened, { open, close }] = useDisclosure(false);
-
-  console.log(url);
 
   return (
     <>

@@ -4,6 +4,8 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Reviews from "./Reviews";
 import { usePathname } from "next/navigation";
 import { useSearchParams } from "next/navigation";
+import BookingDrawer from "@/app/[category]/[slug]/_components/BookingDrawer";
+import { Suspense } from "react";
 
 function TabsRow({ filteredData, reviews, slug, props }: any) {
   const pathname = usePathname();
@@ -56,6 +58,11 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
         <Tabs.Tab value="reviews" color="blue">
           Reviews
         </Tabs.Tab>
+        {filteredData[0]?.fields?.booking && (
+          <Tabs.Tab value="booking" color="blue">
+            Booking
+          </Tabs.Tab>
+        )}
       </Tabs.List>
 
       <Tabs.Panel
@@ -91,6 +98,16 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
         <section>
           <Reviews slug={slug} reviews={reviews} />
         </section>
+      </Tabs.Panel>
+      <Tabs.Panel value="booking" pt="xs" className="min-h-[400px]">
+        <Suspense fallback={<div className="h-screen">Loading...</div>}>
+          <iframe
+            src={filteredData[0]?.fields?.booking}
+            width="100%"
+            height="1000px"
+            className="border-none mt-10"
+          />
+        </Suspense>
       </Tabs.Panel>
     </Tabs>
   );
