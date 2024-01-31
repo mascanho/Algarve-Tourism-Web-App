@@ -65,7 +65,6 @@ function page() {
       if (event.key === "favourites") {
         // The "favourites" key in localStorage has changed
         const updatedFavourites = JSON.parse(event.newValue);
-        console.log("LocalStorage has changed:", updatedFavourites);
         // Do something with the updated data
       }
     };

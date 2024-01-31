@@ -8,10 +8,7 @@ export default async function getReviews(): Promise<any> {
     //     slug: slug,
     //   },
     // });
-    // console.log(comments, "from the GetComments");
     ();
-
-  console.log("reviews: ", reviews);
 
   return reviews;
 }

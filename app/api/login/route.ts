@@ -11,9 +11,5 @@ export async function handler(request: NextApiRequest) {
     select: { id: true, name: true, email: true },
   });
 
-  if (user) {
-    console.log("\x1b[36m%s\x1b[0m", user, "This text is in cyan");
-  }
-
   return NextResponse.json(user);
 }

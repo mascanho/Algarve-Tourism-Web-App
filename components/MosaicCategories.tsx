@@ -1,8 +1,6 @@
 import React from "react";
 
 const MosaicCategories = ({ categories }: any) => {
-  console.log(categories[0], "from the categories");
-
   // return the categories randomized in a grid
   const randomCategories = categories.sort(() => Math.random() - 0.5);
 

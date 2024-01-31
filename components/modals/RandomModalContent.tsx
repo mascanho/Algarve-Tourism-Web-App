@@ -36,7 +36,6 @@ function RandomModalContent() {
               color="blue"
               data={["React", "Angular", "Vue", "marco"]}
               fullWidth
-              onClick={(e: any) => console.log(e.target.innerText)}
             />
           </div>
         </>

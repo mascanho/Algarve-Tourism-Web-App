@@ -44,7 +44,5 @@ export async function POST(request: Request) {
     },
   });
 
-  console.log("Review: ", review);
-
   return NextResponse.json(reviews);
 }

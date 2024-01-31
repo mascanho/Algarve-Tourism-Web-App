@@ -193,7 +193,6 @@ function RandomBanner({ categories }: any) {
                         className="mb-2 mr-2"
                         key={item.id}
                         value={item.name}
-                        onClick={(e: any) => console.log(e)}
                       >
                         {item.name}
                       </Chip>

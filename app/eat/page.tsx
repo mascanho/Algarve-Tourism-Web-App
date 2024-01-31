@@ -103,8 +103,6 @@ async function page() {
 
   async function handleForm(FormData: FormData) {
     "use server";
-
-    console.log(FormData.get("city"));
   }
 
   return (

@@ -56,8 +56,6 @@ function ReviewForm() {
     axios
       .post("/api/review", data)
       .then((res) => {
-        console.log(res);
-
         reset();
       })
       .catch((err) => {

@@ -54,7 +54,6 @@ export const SearchCard = ({
       type,
     };
     addFav.addFavourite(data);
-    console.log(data, "from the favourites");
   }
 
   // handle copying the url to share

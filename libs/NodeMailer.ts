@@ -27,9 +27,7 @@ export async function sendMail({
 
   try {
     const testResult = await transport.verify();
-    console.log(testResult);
   } catch (error) {
-    console.log(error);
     return;
   }
 
@@ -41,10 +39,7 @@ export async function sendMail({
       html: body,
       bcc,
     });
-    console.log(sendResult);
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export async function compileMailTemplate(body: any) {
@@ -54,9 +49,7 @@ export async function compileMailTemplate(body: any) {
   const { JSDOM } = jsdom;
 
   // Logging to inspect the objects
-  arrObj.forEach((item: any, index: any) => {
-    console.log(`Object ${index + 1}:`, item);
-  });
+  arrObj.forEach((item: any, index: any) => {});
 
   // Convert the array of objects to HTML elements
   const createHTMLElements = (array: any[]) => {
