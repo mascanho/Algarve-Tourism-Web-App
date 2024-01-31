@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { LeadGrid } from "@/components/Layout/GridLayout";
-import { FaDog, FaGem, FaRegGem } from "react-icons/fa";
+import {
+  FaAddressBook,
+  FaDog,
+  FaGem,
+  FaRegAddressBook,
+  FaRegGem,
+} from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import TabsRow from "@/components/Layout/Tabs";
 import { createClient } from "contentful";
@@ -26,6 +32,7 @@ import { BiCar, BiFoodMenu, BiHealth } from "react-icons/bi";
 import DailyMenusDrawer from "./_components/DailyMenusDrawer";
 import { GrOverview } from "react-icons/gr";
 import { IoIosLeaf } from "react-icons/io";
+import BookingDrawer from "./_components/BookingDrawer";
 
 const Reviews = dynamic(() => import("../../../components/Layout/Reviews"), {});
 
@@ -95,6 +102,8 @@ export default async function Home(props: any, req: any) {
 
   const filteredData: any = data.filter((obj: any) => obj.fields.slug === slug);
   const recomended: any = data.filter((obj: any) => obj.fields.slug !== slug);
+
+  console.log(filteredData[0]?.fields?.booking);
 
   return (
     <>
@@ -201,6 +210,12 @@ export default async function Home(props: any, req: any) {
                   <span className="text-xs">Sustainable</span>
                 </>
               )}
+              {filteredData[0]?.fields?.type[0] === "adventure" && (
+                <>
+                  <IoIosLeaf className="text-green-800" />
+                  <span className="text-xs">Outdoors</span>
+                </>
+              )}
             </div>
             <div className="border-r border-l px-8 text-center flex  flex-col items-center">
               {filteredData[0]?.fields?.hiddenGem ? (
@@ -218,7 +233,7 @@ export default async function Home(props: any, req: any) {
               )}
             </div>
             <div className="flex flex-col w-14 text-xs items-center justify-center  text-center">
-              <RiMoneyEuroCircleLine className="text-lg text-yellow-800" />
+              <RiMoneyEuroCircleLine className="text-lg" />
               <span className="text-xs">{filteredData[0]?.fields?.price}</span>
             </div>
           </section>
@@ -242,18 +257,6 @@ export default async function Home(props: any, req: any) {
               </div>
             </div>
           </section>
-          <section className="border-b mt-4 pb-4 w-11/12 mx-auto">
-            <div>
-              <h5 className="text-sm mb-2">Tags</h5>
-              <div className="flex w-full">
-                {filteredData[0]?.fields?.tags.map((item: any) => (
-                  <span className="bg-gray-200 rounded-md px-2 py-1 mr-3 text-xs">
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </section>
 
           <section className="mx-auto w-11/12 border-b my-2 pb-3">
             <MobileButtons {...filteredData} />
@@ -261,6 +264,25 @@ export default async function Home(props: any, req: any) {
 
           {/* <section className="border-b w-11/12 mx-auto"></section> */}
 
+          {/* Handles the bookings in the UI */}
+
+          {filteredData[0]?.fields.booking && (
+            <section className="w-11/12 border-b pb-5 mx-auto">
+              <h5 className="text-sm">Bookings</h5>
+              <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
+                <FaRegAddressBook className="text-2xl" />
+                <div className="flex space-y-1 flex-col">
+                  <BookingDrawer
+                    title="Book Now"
+                    url={filteredData[0]?.fields?.booking}
+                  />
+                  <span className="text-xs text-gray-500">
+                    Don&apos;s miss it
+                  </span>
+                </div>
+              </div>
+            </section>
+          )}
           {filteredData[0]?.fields?.type[0] === "restaurants" && (
             <section className="w-11/12 border-b pb-5 mx-auto">
               <h5 className="text-sm">Eat in</h5>
@@ -273,6 +295,18 @@ export default async function Home(props: any, req: any) {
               </div>
             </section>
           )}
+          <section className="border-b mt-4 pb-4 w-11/12 mx-auto">
+            <div>
+              <h5 className="text-sm mb-2">Tags</h5>
+              <div className="flex w-full">
+                {filteredData[0]?.fields?.tags.map((item: any) => (
+                  <span className="bg-gray-200 rounded-md px-2 py-1 mr-3 text-xs">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
           <section className="border-b pb-6 w-11/12 mx-auto">
             <div className="mx-auto mt-1">
               <h5 className="text-sm mb-4 mt-3">Where to find it</h5>
@@ -295,7 +329,7 @@ export default async function Home(props: any, req: any) {
 
           <section className="border-b pb-6 w-11/12 mx-auto">
             <div className="mx-auto mt-1">
-              <h5 className="text-sm mb-4 mt-3">Reviews</h5>
+              <h5 className="text-sm  mt-3">Reviews</h5>
               <Reviews reviews={reviewsArr} slug={slug} />
             </div>
           </section>
