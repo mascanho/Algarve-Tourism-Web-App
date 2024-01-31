@@ -22,17 +22,17 @@ const MobileButtons = (filteredData: any) => {
   }
 
   const handleShare = () => {
-    const shareURL = "https://example.com"; // Replace with your content
+    const shareURL = `https://www.algarvewonders.com${pathname}`;
     const shareText = "Check out this awesome content!"; // Replace with your content
 
-    const shareLink = `https://share.example.com?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareURL)}`;
+    const shareLink = window.location.href;
 
     if (navigator.share) {
       navigator
         .share({
-          title: "Share Title",
-          text: "Check out this awesome content!",
-          url: "https://example.com",
+          title: "algarve Wonders - The best plces to visit",
+          text: "Check out this awesome place in the algarve",
+          url: window.location.href,
         })
         .then(() => console.log("Successfully shared."))
         .catch((error) => console.error("Error sharing:", error.message));

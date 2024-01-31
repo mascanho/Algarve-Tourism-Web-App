@@ -14,7 +14,7 @@ function Reviews(reviews: any) {
               reviews.reviews.filter((obj: any) => obj.slug === reviews.slug)
                 .length
             }{" "}
-            comments
+            reviews
           </span>
         </div>
         <section className="w-full">

@@ -9,9 +9,18 @@ import {
   rem,
 } from "@mantine/core";
 import { useEffect } from "react";
-import { FaArrowLeft, FaChevronLeft } from "react-icons/fa";
+import {
+  FaArrowLeft,
+  FaChevronLeft,
+  FaHeart,
+  FaRegHeart,
+  FaShare,
+} from "react-icons/fa";
 import { IoChevronBack } from "react-icons/io5";
 import { Carousel } from "@mantine/carousel";
+import { LuShare } from "react-icons/lu";
+import { FaHeartCirclePlus } from "react-icons/fa6";
+import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 
 const PRIMARY_COL_HEIGHT = rem(300);
 
@@ -19,13 +28,28 @@ export function LeadGrid({ filteredData }: any) {
   const theme = useMantineTheme();
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - ${theme.spacing.md} / 2)`;
 
-  // useEffect(() => {
-  //   // Check if the window object is defined before using it
-  //   if (typeof window !== "undefined") {
-  //     window.scrollTo(0, 0);
-  //   }
-  // }, []);
-  //
+  const addFavourites = useAddToFavourites();
+
+  function addFav() {
+    addFavourites.addFavourite({
+      id: filteredData[0]?.fields?.title,
+      title: filteredData[0]?.fields?.title,
+      description: filteredData[0]?.fields?.description,
+      image: filteredData[0]?.fields?.mainImage?.fields?.file?.url,
+      slug: filteredData[0]?.fields?.slug,
+      rating: filteredData[0]?.fields?.rating,
+      city: filteredData[0]?.fields?.city,
+      type: filteredData[0]?.fields?.type,
+      price: filteredData[0]?.fields?.price,
+      pathname: window?.location?.pathname,
+      shortDescription: filteredData[0]?.fields?.shortDescription,
+      embededMap: filteredData[0]?.fields?.embededMap,
+      mapShare: filteredData[0]?.fields?.mapShare,
+      tags: filteredData[0]?.fields?.tags,
+      date: filteredData[0]?.fields?.date,
+    });
+  }
+
   return (
     <section className=" ml-0">
       <Container my="xs" className=" min-w-full ml-0  sm:pt-0 sm:pl-0 ">
@@ -39,6 +63,14 @@ export function LeadGrid({ filteredData }: any) {
           <IoChevronBack
             onClick={() => window.history.back()}
             className="absolute top-2 z-10 left-2 sm:hidden text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
+          />
+          <FaRegHeart
+            onClick={addFav}
+            className="absolute top-2 z-10 right-12 sm:hidden flex items-center justify-center pl-[6px] p-[6px] text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
+          />
+          <LuShare
+            onClick={() => window.history.back()}
+            className="absolute top-2  right-3 z-10 sm:hidden flex items-center justify-center pl-[6px] p-[6px] text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
           />
           <Carousel
             className="sm:hidden h-full w-full rounded-lg relative overflow-hidden car"

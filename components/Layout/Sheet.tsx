@@ -64,7 +64,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
             {!currentUser && (
               <button
                 onClick={handleLogin}
-                className="border px-3 py-2 w-full border-gray-100 bg-gray-700 rounded-full text-sm text-white"
+                className="border px-3 py-2 w-full border-gray-100 bg-black rounded-full text-sm text-white"
               >
                 Login
               </button>
@@ -134,15 +134,15 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
             <span className="my-auto">Blog</span>
           </div>{" "}
           <Divider my="md" />
-          <div
-            className="flex items-center mb-2"
-            onClick={() => {
-              router.push("/");
-              close();
-            }}
-          >
-            <span className="my-auto">Notifications</span>
-          </div>{" "}
+          {/* <div */}
+          {/*   className="flex items-center mb-2" */}
+          {/*   onClick={() => { */}
+          {/*     router.push("/"); */}
+          {/*     close(); */}
+          {/*   }} */}
+          {/* > */}
+          {/*   <span className="my-auto">Notifications</span> */}
+          {/* </div>{" "} */}
           <div
             className="flex items-center mb-2"
             onClick={() => {

@@ -37,7 +37,7 @@ function Suggestions({ recomended }: any) {
               className="absolute bottom-4 right-4 text-white text-4xl font-bold"
               onClick={() => {
                 // scroll to the top
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                // window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             />
           </Link>
