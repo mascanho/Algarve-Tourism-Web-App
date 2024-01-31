@@ -42,8 +42,8 @@ const getCategoriesCached = cache(
       accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
     });
     const res = await client.getEntries({
-      content_type: ["beaches", "events", "restaurants", "adventure"],
-      limit: 40,
+      // content_type: ["beaches", "events", "restaurants", "adventure"],
+      limit: 20,
       order: "-sys.createdAt",
     });
 

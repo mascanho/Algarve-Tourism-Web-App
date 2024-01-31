@@ -71,14 +71,12 @@ function Card({
         </div>
         <Title
           order={3}
-          className={classes.title}
-          style={type === "city" ? { fontSize: "3rem" } : { fontSize: "" }}
+          className={
+            type === "city" ? "text-4xl text-white" : "text-white text-2xl"
+          }
         >
           {city}
         </Title>
-        {rating && (
-          <Rating value={rating} size="xs" readOnly className="mt-2" />
-        )}
       </div>
 
       {type === "city" || type === "category" ? (

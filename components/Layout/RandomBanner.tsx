@@ -146,7 +146,7 @@ function RandomBanner({ categories }: any) {
           </button>
           <button
             onClick={GenerateRandomChoice}
-            className="px-8 py-3 w-52 sm:w-fit text-sm sm:text-base  text-white bg-sky hover:bg-black hover:text-white transition-all ease-in delay-75 rounded-md active:scale-95"
+            className="px-8 py-3 w-52 sm:w-fit text-sm sm:text-base  text-white bg-black hover:bg-black hover:text-white transition-all ease-in delay-75 rounded-md active:scale-95"
           >
             Generate AI Journey
           </button>
@@ -232,7 +232,7 @@ function RandomBanner({ categories }: any) {
             <div className="w-full flex justify-between mt-4">
               {page === 0 ? (
                 <button
-                  className="bg-sky text-white text-xs disabled:bg-gray-300 sm:text-base px-4 w-full py-2 font-semibold text-center justify-center rounded-md items-center flex"
+                  className="bg-black text-white text-xs disabled:bg-gray-300 sm:text-base px-4 w-full py-2 font-semibold text-center justify-center rounded-md items-center flex"
                   onClick={() => setPage(1)}
                   disabled={!validated}
                 >

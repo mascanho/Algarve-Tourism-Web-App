@@ -63,10 +63,9 @@ function Card({
             </Badge>
           </Text>
         </div>
-        <Title order={3} className={classes.title}>
+        <Title order={3} className={`${classes.title} sm:text-3xl`}>
           {title}
         </Title>
-        <Rating value={rating} size="xs" readOnly className="mt-2" />
       </div>
       <div>
         <Link href={`/${type}/${slug}`} className="w-full h-full">

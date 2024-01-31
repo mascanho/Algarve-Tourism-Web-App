@@ -43,8 +43,8 @@ const Hero = ({ categories }: any) => {
           className="rounded-t-3xl w-full h-full "
           src={IMAGES_DESKTOP[2]}
           alt="hero image"
-          width={600}
-          height={400}
+          width={400}
+          height={500}
           loading="eager"
           // sizes="(max-width: 868px) 100vw, 33vw"
         />
