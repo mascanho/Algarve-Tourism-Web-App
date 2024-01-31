@@ -260,32 +260,46 @@ export default async function Home(props: any, req: any) {
           {filteredData[0]?.fields.booking && (
             <section className="w-11/12 border-b pb-5 mx-auto">
               <h5 className="text-sm">Bookings</h5>
-              <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
-                <FaRegAddressBook className="text-2xl" />
-                <div className="flex space-y-1 flex-col">
-                  <BookingDrawer
-                    title="Book Now"
-                    url={filteredData[0]?.fields?.booking}
-                  />
-                  <span className="text-xs text-gray-500">
-                    Don&apos;t miss it
-                  </span>
+              <section className="flex space-x-4">
+                <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
+                  <IoFastFoodOutline className="text-2xl" />
+                  <div className="flex space-y-1 flex-col">
+                    <DailyMenusDrawer />
+                    <span className="text-xs text-gray-500">
+                      Menu Availalbe
+                    </span>
+                  </div>
                 </div>
-              </div>
+                <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
+                  <FaRegAddressBook className="text-2xl" />
+                  <div className="flex space-y-1 flex-col">
+                    <BookingDrawer
+                      title="Book Now"
+                      url={filteredData[0]?.fields?.booking}
+                    />
+                    <span className="text-xs text-gray-500">
+                      Don&apos;t miss it
+                    </span>
+                  </div>
+                </div>
+              </section>
             </section>
           )}
-          {filteredData[0]?.fields?.type[0] === "restaurants" && (
-            <section className="w-11/12 border-b pb-5 mx-auto">
-              <h5 className="text-sm">Eat in</h5>
-              <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
-                <IoFastFoodOutline className="text-2xl" />
-                <div className="flex space-y-1 flex-col">
-                  <DailyMenusDrawer />
-                  <span className="text-xs text-gray-500">Menu Availalbe</span>
+          {filteredData[0]?.fields?.type[0] === "restaurants" &&
+            !filteredData[0]?.fields.booking && (
+              <section className="w-11/12 border-b pb-5 mx-auto">
+                <h5 className="text-sm">Eat in</h5>
+                <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
+                  <IoFastFoodOutline className="text-2xl" />
+                  <div className="flex space-y-1 flex-col">
+                    <DailyMenusDrawer />
+                    <span className="text-xs text-gray-500">
+                      Menu Availalbe
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </section>
-          )}
+              </section>
+            )}
           <section className="border-b mt-4 pb-4 w-11/12 mx-auto">
             <div>
               <h5 className="text-sm mb-2">Tags</h5>
