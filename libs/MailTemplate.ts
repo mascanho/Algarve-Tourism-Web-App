@@ -9,8 +9,6 @@ export const registerEmailTemplate = (email: any, password: any) => {
 };
 
 export const favouritesEmail = (email: any, favourites: any) => {
-  console.log(email, favourites[0], "from the email in the templates");
-
   // for every favourite add a list item
   let listItems = "";
   let images = "";

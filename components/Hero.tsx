@@ -45,6 +45,7 @@ const Hero = ({ categories }: any) => {
           alt="hero image"
           width={600}
           height={400}
+          loading="eager"
           // sizes="(max-width: 868px) 100vw, 33vw"
         />
       </div>

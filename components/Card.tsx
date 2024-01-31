@@ -50,7 +50,6 @@ const Card = ({
 
   function addToFavourites(e: any) {
     e.stopPropagation();
-    console.log(e);
 
     const data = {
       // category,

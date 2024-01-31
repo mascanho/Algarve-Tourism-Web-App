@@ -1,5 +1,9 @@
 // This is a generic config file for nextJS
 
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+
 const withMDX = require("@next/mdx")();
 const nextConfig = {
   images: {

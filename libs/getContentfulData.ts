@@ -16,7 +16,6 @@ export const getContentfulData = cache(
       order: "sys.createdAt",
       // select: "fields.slug,fields.title",
     });
-    console.log(res.items);
     return await res.items;
   },
 );
