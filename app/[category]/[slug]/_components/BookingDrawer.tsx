@@ -22,6 +22,7 @@ const BookingDrawer = ({ url, title }: any) => {
           width="100%"
           height="800px"
           title={title}
+          onLoad={() => console.log("loaded")}
           className="h-[100vh] scrollbar-hide"
         />
       </Drawer>
