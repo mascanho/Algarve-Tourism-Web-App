@@ -67,7 +67,9 @@ function Footer() {
 
   return (
     <>
-      {!pathname?.match(/\/(?:restaurants|beaches|adventure)\//) &&
+      {!pathname?.match(
+        /\/(?:restaurants|beaches|adventure|events|business|hiking|sports|stays)\//,
+      ) &&
         showToTop && (
           <HiArrowUp
             onClick={() => {

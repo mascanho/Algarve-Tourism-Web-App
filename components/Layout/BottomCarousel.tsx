@@ -67,10 +67,6 @@ function Card({
         <Title order={3} className={classes.title}>
           {title}
         </Title>
-        {/* <Text className="text-white/50 mt-2 text-xs line-clamp-3"> */}
-        {/*   {description} */}
-        {/* </Text> */}
-        <Rating value={rating} size="xs" readOnly className="mt-2" />
       </div>
       <div>
         <Link href={`/${type}/${slug}`} className="w-full h-full">
@@ -167,6 +163,16 @@ function BottomCarousel({
             initialSlide={1}
           >
             {slides}
+            <div className=" w-[310px]  h-full border flex justify-center items-center  rounded-md">
+              <Link
+                className="h-[300px]"
+                href={`/${categories[0]?.fields?.type}`}
+              >
+                <button className=" w-[260px] rounded-md underline h-full px-3 py-2 bg-black text-white">
+                  View all
+                </button>
+              </Link>
+            </div>
           </Carousel>
         )}
       </section>

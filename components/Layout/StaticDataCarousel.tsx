@@ -157,6 +157,16 @@ function StaticDataCarousel({
             initialSlide={1}
           >
             {slides}
+            <div className=" w-[310px]  h-full border flex justify-center items-center  rounded-md">
+              <Link
+                className="h-[300px]"
+                href={`/${categories[0]?.fields?.type}`}
+              >
+                <button className=" w-[260px] rounded-md underline h-full px-3 py-2 bg-black text-white">
+                  View all
+                </button>
+              </Link>
+            </div>
           </Carousel>
         )}
       </section>

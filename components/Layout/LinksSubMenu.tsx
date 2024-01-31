@@ -25,7 +25,7 @@ const LinksSubMenu = ({ data, close }: any) => {
           component="a"
           href={item.href}
           key={item.name}
-          size="lg"
+          size="xl"
           className="text-gray-500 pl-3 mb-2 flex items-center mr-1 rounded-md transition duration-300 ease-in-out text-sm"
           onClick={() => {
             if (cityArr.map((c: any) => c.route).includes(item.route)) {
