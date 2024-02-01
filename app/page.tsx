@@ -53,10 +53,11 @@ export default async function Home(props: any) {
   const catCards = catArr;
 
   // Filter cats from all the categories
-  const restaurants = await getCategory("restaurants", 6);
-  const beaches = await getCategory("beaches", 6);
-  const adventure = await getCategory("adventure", 6);
-  // const events = await getCategory("events", 7);
+
+  const restaurants = await getCategory("restaurants", 5);
+  const beaches = await getCategory("beaches", 5);
+  const adventure = await getCategory("adventure", 7);
+  // const events = await getCategory("events", 5);
   const cities = cityArr;
   const categories = await getCategory(["beaches", "events", "restaurants"], 7);
 

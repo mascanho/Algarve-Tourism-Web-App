@@ -261,7 +261,7 @@ async function page(props: any) {
           <h2 className="sm:text-3xl text-3xl text-black font-bold">Weather</h2>
           <div className="richText">{weather}</div>
         </div>
-        <div className="pt-10">
+        <div className="py-10">
           <Link href="/algarve">
             <button type="button" className="flex items-center btn">
               <IoArrowBack className="mr-1" />

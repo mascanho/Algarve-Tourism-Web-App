@@ -121,7 +121,7 @@ function page(props: any) {
           coastal paradise.
         </p>
       </div>
-      <div className="pt-10  mx-auto max-w-7xl px-3">
+      <div className="py-10  mx-auto max-w-7xl px-3">
         <Link href="/">
           <button type="button" className="btn hover:text-white flex">
             <IoArrowBack className="mr-1" />
