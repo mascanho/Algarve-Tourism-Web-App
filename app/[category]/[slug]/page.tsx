@@ -102,7 +102,7 @@ export default async function Home(props: any, req: any) {
         <section className="w-full">
           <LeadGrid filteredData={filteredData} />
         </section>
-        <div className="space-y-2 w-11/12 sm:w-full mx-auto">
+        <div className="space-y-1 w-11/12 sm:w-full mx-auto">
           <div className="hidden sm:flex items-centert space-x-2">
             {filteredData[0]?.fields?.hiddenGem ? (
               <div className="flex items-center space-x-1 bg-gray-200 w-fit px-2 rounded-md text-green-500 text-xs py-1">
@@ -263,17 +263,18 @@ export default async function Home(props: any, req: any) {
                 <h5 className="text-sm">Bookings</h5>
 
                 <section className="flex space-x-4">
-                  {filteredData[0]?.fields?.type[0] === "restaurants" && (
-                    <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
-                      <IoFastFoodOutline className="text-2xl" />
-                      <div className="flex space-y-1 flex-col">
-                        <DailyMenusDrawer />
-                        <span className="text-xs text-gray-500">
-                          Menu Availalbe
-                        </span>
+                  {filteredData[0]?.fields?.type[0] === "restaurants" &&
+                    filteredData[0]?.fields?.type[0] === "adventure" && (
+                      <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
+                        <IoFastFoodOutline className="text-2xl" />
+                        <div className="flex space-y-1 flex-col">
+                          <DailyMenusDrawer />
+                          <span className="text-xs text-gray-500">
+                            Menu Availalbe
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
 
                   <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
                     <FaRegAddressBook className="text-2xl" />

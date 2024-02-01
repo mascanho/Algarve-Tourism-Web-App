@@ -18,7 +18,7 @@ import {
 } from "react-icons/fa";
 import { IoChevronBack } from "react-icons/io5";
 import { Carousel } from "@mantine/carousel";
-import { LuShare } from "react-icons/lu";
+import { LuHeart, LuShare } from "react-icons/lu";
 import { FaHeartCirclePlus } from "react-icons/fa6";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 
@@ -57,16 +57,16 @@ export function LeadGrid({ filteredData }: any) {
           cols={2}
           spacing="md"
           breakpoints={[{ maxWidth: "sm", cols: 1 }]}
-          className={`w-full sm:h-full min-h-full h-fit relative overflow-hidden `}
+          className={`w-full sm:h-fit min-h-full h-fit relative  overflow-hidden `}
         >
           {/* SHOW CAROUSEL IMAGES ON MOBILE */}
           <IoChevronBack
             onClick={() => window.history.back()}
-            className="absolute top-2 z-10 left-2 sm:hidden text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
+            className="absolute top-2 z-10 left-3 sm:hidden text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
           />
-          <FaRegHeart
+          <LuHeart
             onClick={addFav}
-            className="absolute top-2 z-10 right-12 sm:hidden flex items-center justify-center pl-[6px] p-[6px] text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
+            className="absolute top-2 z-10 right-12 sm:hidden flex items-center justify-center pl-[6px] p-[6px] text-xs shadow-sm font-semibold  bg-white rounded-full w-7 h-7 "
           />
           <LuShare
             onClick={() => window.history.back()}
@@ -95,13 +95,13 @@ export function LeadGrid({ filteredData }: any) {
           </Carousel>
 
           <div
-            className="relative overflow-hidden rounded-lg  sm:max-h-full hidden sm:flex 
+            className="relative overflow-hidden rounded-lg  sm:max-h-[340px] hidden sm:flex 
             "
           >
             <img
               alt={filteredData[0]?.fields?.title}
               src={`https://${filteredData[0]?.fields?.images[0]?.fields?.file?.url}`}
-              className="sm:h-[100%] w-[100%] sm:w-full sm:block"
+              className="sm:h-[100%] object-fill w-[100%] sm:w-full sm:block"
             />
           </div>
           <Grid
@@ -112,7 +112,7 @@ export function LeadGrid({ filteredData }: any) {
               <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[1]?.fields?.file?.url}`}
-                className={`sm:h-[100%] h-full w-full max-h-[130px] sm:max-h-full rounded-lg favBanner object-cover`}
+                className={`sm:h-full sm:max-h-[160px] sm:min-h-[160px] h-full w-full max-h-[130px]  rounded-lg favBanner object-cover`}
                 // height={80}
                 // width={260}
               />
@@ -121,7 +121,7 @@ export function LeadGrid({ filteredData }: any) {
               <img
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[2]?.fields?.file?.url}`}
-                className={`sm:h-full w-full h-full max-h-[130px] sm:max-h-full rounded-lg favBanner object-cover`}
+                className={`sm:h-full w-full h-full max-h-[130px] sm:max-h-[160px] rounded-lg favBanner object-fill`}
                 // height={80}
                 // width={260}
               />
@@ -132,7 +132,7 @@ export function LeadGrid({ filteredData }: any) {
                 height={100}
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[3]?.fields?.file?.url}`}
-                className={`sm:h-full h-full max-h-[130px] sm:max-h-full rounded-lg favBanner object-cover`}
+                className={`sm:h-full sm:max-h-[260px] rounded-lg favBanner object-cover`}
                 // height={80}
                 // width={260}
               />
