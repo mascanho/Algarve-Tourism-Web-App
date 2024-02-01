@@ -62,15 +62,15 @@ export function LeadGrid({ filteredData }: any) {
           {/* SHOW CAROUSEL IMAGES ON MOBILE */}
           <IoChevronBack
             onClick={() => window.history.back()}
-            className="absolute top-2 z-10 left-3 sm:hidden text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
+            className="absolute top-2 z-10 left-2 sm:hidden text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
           />
           <LuHeart
             onClick={addFav}
-            className="absolute top-2 z-10 right-12 sm:hidden flex items-center justify-center pl-[6px] p-[6px] text-xs shadow-sm font-semibold  bg-white rounded-full w-7 h-7 "
+            className="absolute top-2 z-10 right-11 sm:hidden flex items-center justify-center pl-[6px] p-[6px] text-xs shadow-sm font-semibold  bg-white rounded-full w-7 h-7 "
           />
           <LuShare
             onClick={() => window.history.back()}
-            className="absolute top-2  right-3 z-10 sm:hidden flex items-center justify-center pl-[6px] p-[6px] text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
+            className="absolute top-2  right-2 z-10 sm:hidden flex items-center justify-center pl-[6px] p-[6px] text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
           />
           <Carousel
             className="sm:hidden h-full w-full rounded-lg relative overflow-hidden car"

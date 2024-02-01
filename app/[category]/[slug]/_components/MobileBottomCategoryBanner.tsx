@@ -39,7 +39,7 @@ const MobileBottomCategoryBanner = (filteredData: any) => {
         </div>
         <div className="w-1/4 flex items-center">
           <button
-            className="bg-sky text-white  py-2 text-xs rounded-md w-full font-semibold "
+            className="bg-black text-white  py-2 text-xs rounded-md w-full font-semibold "
             type="button"
             onClick={addFav}
           >

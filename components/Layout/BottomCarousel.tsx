@@ -145,7 +145,7 @@ function BottomCarousel({
         ref={ref}
         style={{
           opacity: inView ? 1 : 0,
-          transition: "opacity 1s ease-in-out", // Adjust the duration as needed (e.g., 2s)
+          transition: "opacity 1ms ease-in-out", // Adjust the duration as needed (e.g., 2s)
         }}
       >
         {inView && (
@@ -163,14 +163,19 @@ function BottomCarousel({
             initialSlide={1}
           >
             {slides}
+
             <div className=" w-[310px]  h-full border flex justify-center items-center  rounded-md">
-              <Link
-                className="h-[300px]"
-                href={`/${categories[0]?.fields?.type}`}
-              >
-                <button className=" w-[260px] rounded-md underline h-full px-3 py-2 bg-black text-white">
-                  View all
-                </button>
+              <Link className="h-[300px]" href={`${"/beache"}`}>
+                <div className=" w-[280px] relative  flex justify-center  items-center rounded-md underline h-full overflow-clip   text-white">
+                  <img
+                    src="/images/bg-3.webp"
+                    alt=""
+                    className="object-fil blur-sm w-full h-full bg-black brightness-50 "
+                  />
+                  <span className="text-black bg-white absolute top-30 px-5 py-1 rounded-lg">
+                    View more...
+                  </span>
+                </div>
               </Link>
             </div>
           </Carousel>
