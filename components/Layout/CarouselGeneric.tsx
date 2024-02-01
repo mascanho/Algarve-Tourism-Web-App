@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { Carousel } from "@mantine/carousel";
 import { useMediaQuery } from "@mantine/hooks";
 import {
@@ -14,12 +14,15 @@ import {
 import classes from "./BottomCarousel.module.css";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
+import { PT_Sans } from "next/font/google";
 
 interface CardProps {
   image: string;
   category: string;
   categories: any;
 }
+
+const ptsans = PT_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
 function Card({
   image,
@@ -43,7 +46,7 @@ function Card({
           backgroundBlendMode: "multiply",
           backgroundColor: "rgba(0, 0, 0, 0.3)",
         }}
-        className="h-[300px] sm:h-full w-full sm:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+        className={`h-[300px] sm:h-full w-full sm:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in ${ptsans.className}`}
       >
         <div className="w-full">
           <div className="flex items-center justify-between w-full">
@@ -127,7 +130,7 @@ function GenericCarousel({
       >
         {inView && (
           <Carousel
-            className="bottomCarousel mt-10"
+            className={`bottomCarousel mt-10 ${ptsans.className}`}
             slideSize={mobile ? "63.333333%" : "23.333333%"}
             slideGap={mobile ? "md" : "md"}
             slidesToScroll={mobile ? 1 : 1}
@@ -135,16 +138,22 @@ function GenericCarousel({
             initialSlide={1}
           >
             {slides}
-            <div className=" w-[310px]  h-full border flex justify-center items-center  rounded-md">
-              <Link
-                className="h-[300px]"
-                href={`/${categories[0]?.fields?.type}`}
-              >
-                <button className=" w-[260px] rounded-md underline h-full px-3 py-2 bg-black text-white">
-                  View all
-                </button>
-              </Link>
-            </div>
+            {title === "Where to eat" && (
+              <div className=" w-[310px]  h-full border flex justify-center items-center  rounded-md">
+                <Link className="h-[300px]" href={`/algarve`}>
+                  <div className=" w-[280px] relative  flex justify-center  items-center rounded-md underline h-full overflow-clip   text-white">
+                    <img
+                      src="/images/bg-3.webp"
+                      alt=""
+                      className="object-fil blur-sm w-full h-full bg-black brightness-50 "
+                    />
+                    <span className="text-black bg-white absolute top-30 px-5 py-1 rounded-lg">
+                      View all
+                    </span>
+                  </div>
+                </Link>
+              </div>
+            )}
           </Carousel>
         )}
       </section>

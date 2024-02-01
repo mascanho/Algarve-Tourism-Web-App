@@ -34,50 +34,31 @@ export const metadata = {
   },
 };
 
-const getCategoriesCached = cache(
-  // Get all categories from contentful
-  async function getAllCategories() {
-    const client: any = createClient({
-      space: process.env.CONTENTFUL_SPACE_ID!,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
-    });
-    const res = await client.getEntries({
-      // content_type: ["beaches", "events", "restaurants", "adventure"],
-      limit: 40,
-      order: "-sys.createdAt",
-    });
+const allCategories = async (catType: any, catLimit: number) => {
+  const client: any = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID!,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+  });
+  const res = await client.getEntries({
+    content_type: catType,
+    limit: catLimit,
+    order: "-sys.createdAt",
+  });
+  return await res.items;
+};
 
-    return await res.items;
-  },
-);
+const getCategory = cache(allCategories);
 
 export default async function Home(props: any) {
-  const categories = await getCategoriesCached();
-
   const catCards = catArr;
 
-  // Filter restaurants from all the categories
-  const restaurants = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("restaurants"),
-  );
-
-  // filter beaches from all the PopularCategories
-  const beaches = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("beaches"),
-  );
-
-  // filter adventure from all the PopularCategories
-  const adventure = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("adventure"),
-  );
-
-  // filter all events from PopularCategories
-  const events = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("events"),
-  );
-
-  // Filter the cities
+  // Filter cats from all the categories
+  const restaurants = await getCategory("restaurants", 6);
+  const beaches = await getCategory("beaches", 6);
+  const adventure = await getCategory("adventure", 6);
+  // const events = await getCategory("events", 7);
   const cities = cityArr;
+  const categories = await getCategory(["beaches", "events", "restaurants"], 7);
 
   return (
     <section className="w-full">
