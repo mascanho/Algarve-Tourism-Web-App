@@ -135,7 +135,7 @@ const Header = ({ currentUser, weatherData }: any) => {
       </section>
 
       <nav
-        className={`border-b text-black  border rounded-b-2xl sm:rounded-b-3xl w-full   fixed flex flex-wrap bg-white  shadow-sm z-10 transition-all ease-in delay-100 `}
+        className={`border-b  border rounded-b-2xl sm:rounded-b-3xl w-full   fixed flex flex-wrap bg-white  shadow-sm z-10 transition-all ease-in delay-100 `}
       >
         <header
           className={`flex flex-wrap w-11/12 sm:w-full max-w-7xl sm:px-2 md:w-full lg:w-full  justify-between mx-auto py-2 transition-all ease-in delay-150 `}
@@ -169,7 +169,10 @@ const Header = ({ currentUser, weatherData }: any) => {
             <div
               className={`pl-1 text-sm sm:text-base normal-case flex-1 text-right ${showMobileSearch && "hidden"}  cursor-pointer items-center flex-grow w-full  m-auto sm:w-fit sm:flex font-semibold`}
             >
-              <span onClick={() => router.push("/")} className="w-fit">
+              <span
+                onClick={() => router.push("/")}
+                className="w-fit text-black"
+              >
                 Algarve Wonders
               </span>
             </div>
@@ -202,11 +205,8 @@ const Header = ({ currentUser, weatherData }: any) => {
                 "
           >
             {/* <AuthenticationModal /> */}
-            <img
-              src={
-                currentUser?.image ||
-                "https://heritagehill.dental/wp-content/uploads/2018/01/person-placeholder-5.png"
-              }
+            <Image
+              src={currentUser?.image || "/images/person-placeholder.png"}
               height={30}
               width={30}
               className="rounded-full hidden sm:flex relative object-contain w-8 h-8 cursor-pointer"
@@ -248,7 +248,7 @@ const Header = ({ currentUser, weatherData }: any) => {
               </ul>
             )}
             <NotificationsModal />
-            <div className="cursor-pointer" onClick={showFavourites}>
+            <div className="cursor-pointer text-black" onClick={showFavourites}>
               <MdCardTravel className="cursor-pointer relative  sm:text-2xl" />
               <span className="h-3 w-3 text-[8px] bg-sky absolute right-0 top-1 text-white rounded-full flex flex-wrap justify-center items-center text-center">
                 {favouritesLength}
