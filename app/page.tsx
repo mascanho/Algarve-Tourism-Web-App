@@ -1,32 +1,44 @@
 import Image from "next/image";
-import Selection from "@/components/Selection";
-import Pagination from "@/components/Pagination";
-import BottomAssets from "@/components/BottomAssets";
-import Hero from "@/components/Hero";
-import Feedback from "@/components/Feedback";
 import { quotes } from "@/Data/Quotes";
-import PopularCategories from "@/components/PopularCategories";
 import { createClient } from "contentful";
-import CarouselHero from "@/components/Carousel";
-import RandomBanner from "@/components/Layout/RandomBanner";
 import { cityArr } from "@/Data/Cities";
 import { carRentals } from "@/Data/CarRentals";
-import Acordion from "@/components/Acordion";
-import AffixScrollToTop from "@/components/Layout/Affix";
-import Features from "@/components/Features";
-import AlgarveSpecs from "@/components/AlgarveSpecs";
-import { Suspense, cache, lazy } from "react";
 import Link from "next/link";
-import UsefullLinks from "@/components/UsefullLinks";
-import Agenda from "@/components/Agenda";
-import MosaicCategories from "@/components/MosaicCategories";
-import BottomCarousel from "@/components/Layout/BottomCarousel";
-import GenericCarousel from "@/components/Layout/CarouselGeneric";
-import StaticDataCarousel from "@/components/Layout/StaticDataCarousel";
 import { catArr } from "@/Data/Categories";
 import dynamic from "next/dynamic";
 
-const Card = lazy(() => import("@/components/Card"));
+const Card = dynamic(() => import("@/components/Card"));
+const Hero = dynamic(() => import("@/components/Hero"), { suspense: true });
+const Feedback = dynamic(() => import("@/components/Feedback"), {
+  suspense: true,
+});
+const RandomBanner = dynamic(() => import("@/components/Layout/RandomBanner"), {
+  suspense: true,
+});
+const Acordion = dynamic(() => import("@/components/Acordion"), {
+  suspense: true,
+});
+const BottomCarousel = dynamic(
+  () => import("@/components/Layout/BottomCarousel"),
+  { suspense: true },
+);
+const GenericCarousel = dynamic(
+  () => import("@/components/Layout/CarouselGeneric"),
+  { suspense: true },
+);
+
+const StaticDataCarousel = dynamic(
+  () => import("@/components/Layout/StaticDataCarousel"),
+  { suspense: true },
+);
+
+const AlgarveSpecs = dynamic(() => import("@/components/AlgarveSpecs"), {
+  suspense: true,
+});
+
+const Features = dynamic(() => import("@/components/Features"), {
+  suspense: true,
+});
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -38,47 +50,34 @@ export const metadata = {
   },
 };
 
-const getCategoriesCached = cache(
-  // Get all categories from contentful
-  async function getAllCategories() {
-    const client: any = createClient({
-      space: process.env.CONTENTFUL_SPACE_ID!,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
-    });
-    const res = await client.getEntries({
-      content_type: ["beaches", "events", "restaurants", "adventure"],
-      limit: 40,
-      order: "-sys.createdAt",
-    });
+async function getCategories(catNumber: number, catType: any) {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID!,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+  });
+  const res = await client.getEntries({
+    content_type: catType,
+    limit: catNumber,
+    order: "-sys.createdAt",
+  });
+  return res.items;
+}
 
-    return await res.items;
-  },
-);
+const getCategory = cache(getCategories);
 
 export default async function Home(props: any) {
-  const categories = await getCategoriesCached();
+  const categories = await getCategory(7, ["beaches", "restaurants"]);
 
   const catCards = catArr;
 
   // Filter restaurants from all the categories
-  const restaurants = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("restaurants"),
-  );
+  const restaurants = await getCategory(6, "restaurants");
 
   // filter beaches from all the PopularCategories
-  const beaches = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("beaches"),
-  );
+  const beaches = await getCategory(6, "beaches");
 
   // filter adventure from all the PopularCategories
-  const adventure = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("adventure"),
-  );
-
-  // filter all events from PopularCategories
-  const events = categories.filter(
-    (cat: any) => cat.fields.type && cat.fields.type.includes("events"),
-  );
+  const adventure = await getCategory(6, "adventure");
 
   // Filter the cities
   const cities = cityArr;

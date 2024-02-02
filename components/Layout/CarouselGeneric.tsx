@@ -123,7 +123,7 @@ function GenericCarousel({
         ref={ref}
         style={{
           opacity: inView ? 1 : 0,
-          transition: "opacity 1s ease-in-out", // Adjust the duration as needed (e.g., 2s)
+          transition: "opacity 1ms ease-in-out", // Adjust the duration as needed (e.g., 2s)
         }}
       >
         {inView && (
