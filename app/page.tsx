@@ -1,28 +1,44 @@
-import Feedback from "@/components/Feedback";
+import Image from "next/image";
 import { quotes } from "@/Data/Quotes";
 import { createClient } from "contentful";
 import { cityArr } from "@/Data/Cities";
 import { carRentals } from "@/Data/CarRentals";
-import { Suspense, cache, lazy } from "react";
+import Link from "next/link";
 import { catArr } from "@/Data/Categories";
 import dynamic from "next/dynamic";
 
-// Lazy loaded
-const Hero = dynamic(() => import("@/components/Hero"));
-const Card = lazy(() => import("@/components/Card"));
-const RandomBanner = dynamic(() => import("@/components/Layout/RandomBanner"));
-const Acordion = dynamic(() => import("@/components/Acordion"));
-const AlgarveSpecs = dynamic(() => import("@/components/AlgarveSpecs"));
+const Card = dynamic(() => import("@/components/Card"));
+const Hero = dynamic(() => import("@/components/Hero"), { suspense: true });
+const Feedback = dynamic(() => import("@/components/Feedback"), {
+  suspense: true,
+});
+const RandomBanner = dynamic(() => import("@/components/Layout/RandomBanner"), {
+  suspense: true,
+});
+const Acordion = dynamic(() => import("@/components/Acordion"), {
+  suspense: true,
+});
 const BottomCarousel = dynamic(
   () => import("@/components/Layout/BottomCarousel"),
+  { suspense: true },
 );
 const GenericCarousel = dynamic(
   () => import("@/components/Layout/CarouselGeneric"),
+  { suspense: true },
 );
+
 const StaticDataCarousel = dynamic(
   () => import("@/components/Layout/StaticDataCarousel"),
+  { suspense: true },
 );
-const Features = dynamic(() => import("@/components/Features"));
+
+const AlgarveSpecs = dynamic(() => import("@/components/AlgarveSpecs"), {
+  suspense: true,
+});
+
+const Features = dynamic(() => import("@/components/Features"), {
+  suspense: true,
+});
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -34,32 +50,37 @@ export const metadata = {
   },
 };
 
-const allCategories = async (catType: any, catLimit: number) => {
-  const client: any = createClient({
+async function getCategories(catNumber: number, catType: any) {
+  const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID!,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
   });
   const res = await client.getEntries({
     content_type: catType,
-    limit: catLimit,
+    limit: catNumber,
     order: "-sys.createdAt",
   });
-  return await res.items;
-};
+  return res.items;
+}
 
-const getCategory = cache(allCategories);
+const getCategory = cache(getCategories);
 
 export default async function Home(props: any) {
+  const categories = await getCategory(7, ["beaches", "restaurants"]);
+
   const catCards = catArr;
 
-  // Filter cats from all the categories
+  // Filter restaurants from all the categories
+  const restaurants = await getCategory(6, "restaurants");
 
-  const restaurants = await getCategory("restaurants", 5);
-  const beaches = await getCategory("beaches", 5);
-  const adventure = await getCategory("adventure", 7);
-  // const events = await getCategory("events", 5);
+  // filter beaches from all the PopularCategories
+  const beaches = await getCategory(6, "beaches");
+
+  // filter adventure from all the PopularCategories
+  const adventure = await getCategory(6, "adventure");
+
+  // Filter the cities
   const cities = cityArr;
-  const categories = await getCategory(["beaches", "events", "restaurants"], 7);
 
   return (
     <section className="w-full">
@@ -74,13 +95,15 @@ export default async function Home(props: any) {
         </h4>
       </div>
 
-      <Card categories={categories} />
+      <Suspense fallback={<p>Loading...</p>}>
+        <Card categories={categories} />
+      </Suspense>
       <StaticDataCarousel categories={catCards} title="Popular categories" />
       <GenericCarousel categories={adventure} title="What to do" />
       <StaticDataCarousel categories={cities} title="Cities to visit" />
       <GenericCarousel categories={restaurants} title="Where to eat" />
-      <BottomCarousel categories={beaches} title="More to explore" />
       <StaticDataCarousel categories={carRentals} title="Car rentals" />
+      <BottomCarousel categories={beaches} title="More to explore" />
       <RandomBanner categories={categories} />
       <Feedback {...quotes} />
       <AlgarveSpecs />
