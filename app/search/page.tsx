@@ -21,8 +21,6 @@ async function Search(searchParams: any) {
   const [searchResults, setSearchResults] = useState<any[]>([]);
   const searchKey = searchParams.searchParams.q;
 
-  console.log(process.env, "envs");
-
   const searchContentFull = async () => {
     const query = searchParams.searchParams.q;
 
