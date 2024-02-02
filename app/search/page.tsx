@@ -68,7 +68,7 @@ async function Search(searchParams: any) {
 
   // Making sure the pages renders condicionally based on the url search params
   return (
-    <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 pt-5">
+    <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 pt-5 mb-28">
       <section className="max-w-7xl mx-auto">
         <Link href="/#search">
           <div className="flex items-center w-full space-x-1  -mt-4 mb-8 sm:mb-0 sm:mt-0">
