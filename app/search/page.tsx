@@ -17,189 +17,84 @@ import { useSearchParams } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
-async function Search() {
-  const searchData = useSearchedData();
-  const urlSearchParams = useSearchParams();
+async function Search(searchParams: any) {
+  const [searchResults, setSearchResults] = useState<any[]>([]);
 
-  // Get all categories from contentful
-  const [categories, setCategories] = useState([]);
-  const [plainSearch, setPlainSearch] = useState(false);
+  const searchContentFull = async () => {
+    const query = searchParams.searchParams.q;
+
+    if (query) {
+      const fetchSearchQuery = async () => {
+        const client = createClient({
+          space: "z8r91y113x4j",
+          accessToken: "mEmHEpC38vjPWaquWC2k2Qc3NzhEmti3_knDIKjf6Uc",
+        });
+
+        try {
+          const res = await client.getEntries({
+            content_type: ["beaches", "events", "restaurants", "adventure"],
+            query: query,
+            limit: 40,
+            include: 10,
+            skip: 0,
+          });
+
+          const data = res.items;
+          console.log(data);
+          return data; // Return the data
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          return []; // Return an empty array in case of an error
+        }
+      };
+
+      const data = await fetchSearchQuery(); // Wait for the asynchronous function to complete
+      setSearchResults(data); // Update the state with the fetched data
+    } else {
+      console.log("Nothing to search");
+    }
+  };
 
   useEffect(() => {
-    if (window.location.href.endsWith("/search")) {
-      setPlainSearch(true);
+    if (searchParams) {
+      searchContentFull();
     }
-    async function data() {
-      // const res = await ContentfullData;
-      // setCategories(res);
-    }
+  }, [searchParams]);
 
-    data();
-  }, [searchData]);
+  console.log(searchResults, "searchResults");
+  const searchData = useSearchedData();
 
   // Making sure the pages renders condicionally based on the url search params
-  if (!plainSearch) {
-    return (
-      <>
-        <section className="pt-10 pb-16 space-y-4 text-center bg-white">
-          <div className="w-11/12 sm:w-11/12 mx-auto">
-            {searchData.data.length === 0 ? (
-              <>
-                <section className="max-w-7xl mx-auto">
-                  <Link href="/#search">
-                    <div className="flex items-center w-full space-x-1  -mt-4 mb-8 sm:mb-0 sm:mt-0">
-                      <TiArrowBack />
-                      <span>Back to search</span>
-                    </div>
-                  </Link>
-                  <h3
-                    className="text-xl pt-10  font-bold text-black sm:text-5xl"
-                    id="search"
-                  >
-                    Searching for:{" "}
-                    <span className="text-sky">{searchData.searchInput}</span>
-                  </h3>
-                  <p className="text-gray-400 mt-4">
-                    There are no results for this query{" "}
-                  </p>
-                </section>
-              </>
-            ) : (
-              <>
-                <section className="max-w-7xl mx-auto">
-                  <Link href="/#search">
-                    <div className="flex items-center w-full space-x-1  -mt-4 mb-8 sm:mb-0 sm:mt-0">
-                      <TiArrowBack />
-                      <span>Back to search</span>
-                    </div>
-                  </Link>
-                  <h3
-                    className="text-xl font-bold text-black sm:text-5xl mt-5 text-left"
-                    id="search"
-                  >
-                    Searching for:{" "}
-                    <span className="text-sky">{searchData.searchInput}</span>
-                  </h3>
-                </section>
-              </>
-            )}
-          </div>
-
-          <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 pt-5">
-            <section className="grid items-start w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-x-8 place-items-start">
-              {/* Normal Cards with no search feature */}
-              {searchData.data?.map((item: any) => (
-                <SearchCard
-                  key={item?.title}
-                  title={item?.title}
-                  category={item?.category}
-                  slug={item?.slug}
-                  tags={item?.tags}
-                  hiddenGem={item?.hiddenGem}
-                  mainImage={item?.mainImage}
-                  city={item?.city}
-                  type={item?.type}
-                  shortDescription={item?.shortDescription}
-                  rating={item?.rating}
-                  price={item?.price}
-                  id={item?.title}
-                  date={item?.date}
-                  embededMap={item?.embededMap}
-                  mapShare={item?.mapShare}
-                  description={item?.description}
-                />
-              ))}
-            </section>
-            {/* <Pagination /> */}
-            <div className="mt-10 divider">
-              <span className="text-xl">Some of our suggestions</span>
-            </div>
-            <BottomAssets />
-          </section>
-        </section>
-        <section className="h-full mx-auto max-w-7xl">
-          <section className="mx-auto max-w-7xl  w-full pt-10">
-            <Link href="/#search">
-              <div className="flex items-center  space-x-1 w-11/12 sm:w-full mx-auto  -mt-4 mb-8 sm:mb-0 sm:mt-0">
-                <TiArrowBack />
-                <span>Back to search</span>
-              </div>
-            </Link>
-          </section>
-        </section>
-      </>
-    );
-  }
-
   return (
-    <>
-      <section className="pt-10 pb-16 space-y-4 text-center bg-white">
-        <div className="w-11/12 mx-auto">
-          <h3 className="text-3xl font-bold text-black sm:text-5xl" id="search">
-            Plain Search
-          </h3>
-
-          <h4 className="w-8/12 mx-auto mt-4">
-            Check out this week&apos; selection of popular trips and events
-          </h4>
-        </div>
-
-        <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12">
-          <section className="grid items-center w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-y-10 place-items-start">
-            {/* Normal Cards with no search feature */}
-            {searchData?.data?.map((item: any) => (
-              <SearchCard
-                key={item?.id}
-                title={item?.title}
-                category={item?.category}
-                slug={item?.slug}
-                tags={item?.tags}
-                hiddenGem={item?.hiddenGem}
-                mainImage={item?.mainImage}
-                city={item?.city}
-                type={item?.type}
-                shortDescription={item.shortDescription}
-                rating={item?.rating}
-                id={item?.title}
-                price={item?.price}
-                image={item?.image}
-              />
-            ))}
-          </section>
-          {/* <Pagination /> */}
-          <div className="mt-32 divider">
-            <span className="text-xl">Some of our suggestions</span>
+    <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 pt-5">
+      <section className="max-w-7xl mx-auto">
+        <Link href="/#search">
+          <div className="flex items-center w-full space-x-1  -mt-4 mb-8 sm:mb-0 sm:mt-0">
+            <TiArrowBack />
+            <span>Back to search</span>
           </div>
-          <BottomAssets />
-        </section>
+        </Link>
+        <h3
+          className="text-xl pt-10  font-bold text-black sm:text-5xl"
+          id="search"
+        >
+          Searching for:{" "}
+          <span className="text-sky">{searchData.searchInput}</span>
+        </h3>
+        <p className="text-gray-400 mt-4">
+          There are no results for this query{" "}
+        </p>
       </section>
-      <section className="h-full mx-auto max-w-7xl">
-        <div className="my-10 text-center sm:pt-20">
-          <h2 className="text-4xl font-semibold text-black sm:text-4xl">
-            Satisfied customers
-          </h2>
-          <h4 className="w-10/12 mx-auto mt-4 sm:w-6/12">
-            See what people are talking about the fantastic locations, events
-            and hidden gems in the south of Portugal
-          </h4>
-        </div>
-        <section className="pt-16 sm:py-28">
-          <div className="w-11/12 py-8 sm:py-0 mx-auto space-y-2 text-center text-white bg-sky sm:w-full rounded-xl ">
-            <h4>Start exploring</h4>
-            <h3 className="text-2xl sm:text-3xl">
-              Prepare yourself and lets explore
-            </h3>
-            <h5>Explore the beauty of these hidden places</h5>
-            <div className="pt-3">
-              <button className="px-3 py-1 text-black transition-all ease-in delay-75 bg-white rounded-md active:scale-95">
-                Discover The Best Places
-              </button>
-            </div>
-          </div>
-          <PopularCategories />
-        </section>
+      <section className="grid items-start w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-x-8 place-items-start">
+        {/* Normal Cards with no search feature */}
+        {searchResults?.map((item: any) => <SearchCard {...item} />)}
       </section>
-    </>
+      {/* <Pagination /> */}
+      <div className="mt-10 divider">
+        <span className="text-xl">Some of our suggestions</span>
+      </div>
+      <BottomAssets />
+    </section>
   );
 }
 export default Search;

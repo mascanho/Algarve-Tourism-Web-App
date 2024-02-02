@@ -12,25 +12,26 @@ import { toast } from "react-hot-toast";
 import StarRating from "./Layout/StarRating";
 import { usePathname } from "next/navigation";
 
-export const SearchCard = ({
-  // category,
-  title,
-  slug,
-  date,
-  mainImage,
-  city,
-  tags,
-  hiddenGem,
-  type,
-  description,
-  shortDescription,
-  mapShare,
-  embededMap,
-  image,
-  price,
-  rating,
-  id,
-}: any) => {
+export const SearchCard = (item: any) => {
+  const {
+    title,
+    slug,
+    date,
+    mainImage,
+    city,
+    image,
+    tags,
+    description,
+    hiddenGem,
+    rating,
+    embededMap,
+    mapShare,
+    id,
+    price,
+    shortDescription,
+    type,
+  } = item.fields;
+
   const addFav = useAddToFavourites();
 
   function addToFavourites(e: any) {
