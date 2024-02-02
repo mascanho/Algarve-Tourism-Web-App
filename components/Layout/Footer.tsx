@@ -75,7 +75,7 @@ function Footer() {
             onClick={() => {
               window?.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="text-5xl text-sky cursor-pointer fixed bottom-10 right-6 sm:right-10  bg-white border rounded-full p-1 py-2 transition-all ease-in-out delay-200"
+            className="text-5xl text-black cursor-pointer fixed bottom-10 right-6 sm:right-10  bg-white border rounded-full p-1 py-2 transition-all ease-in-out delay-200"
           />
         )}
 

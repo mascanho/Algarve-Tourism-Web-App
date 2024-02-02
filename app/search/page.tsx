@@ -19,6 +19,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 async function Search(searchParams: any) {
   const [searchResults, setSearchResults] = useState<any[]>([]);
+  const searchKey = searchParams.searchParams.q;
 
   console.log(process.env, "envs");
 
@@ -68,23 +69,19 @@ async function Search(searchParams: any) {
   // Making sure the pages renders condicionally based on the url search params
   return (
     <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 pt-5 mb-28">
-      <section className="max-w-7xl mx-auto">
+      <section className="max-w-7xl mx-auto sm:mb-10">
         <Link href="/#search">
-          <div className="flex items-center w-full space-x-1  -mt-4 mb-8 sm:mb-0 sm:mt-0">
+          <div className="flex items-center w-full space-x-1  -mt-4 mb-4 sm:mb-0 sm:mt-0">
             <TiArrowBack />
             <span>Back to search</span>
           </div>
         </Link>
         <h3
-          className="text-xl pt-10  font-bold text-black sm:text-5xl"
+          className="text-xl py-2 sm:py-4 font-bold text-black sm:text-3xl"
           id="search"
         >
-          Searching for:{" "}
-          <span className="text-sky">{searchData.searchInput}</span>
+          Searching for: <span className="text-sky">{searchKey}</span>
         </h3>
-        <p className="text-gray-400 mt-4">
-          There are no results for this query{" "}
-        </p>
       </section>
       <section className="grid items-start w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-x-8 place-items-start">
         {/* Normal Cards with no search feature */}

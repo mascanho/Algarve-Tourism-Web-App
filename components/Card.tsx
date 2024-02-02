@@ -199,7 +199,7 @@ const Card = ({
       <div className="w-fit mx-auto flex justify-center">
         <Link href={"/beaches"}>
           <button
-            className="border text-gray-700 mt-10 rounded-md active:bg-sky active:text-white transition-all hidden ease-in px-5 py-2 mx-auto sm:flex justify-center text-center"
+            className="border text-gray-700 mt-10 rounded-md active:bg-sky active:text-white transition-all hidden ease-in px-7 hover:bg-black hover:text-white py-2 mx-auto sm:flex justify-center text-center"
             type="button"
           >
             View more

@@ -138,17 +138,18 @@ function GenericCarousel({
             initialSlide={1}
           >
             {slides}
-            {title === "Where to eat" ||
+            {title === "What to do" ||
+              title === "Where to eat" ||
               (title === "What to do" && (
-                <div className=" w-[310px]  h-full border flex justify-center items-center  rounded-md">
+                <div className=" sm:w-[310px]  h-full border flex justify-center items-center  rounded-md">
                   <Link className="h-[300px]" href={`${"/adventure"}`}>
-                    <div className=" w-[280px] relative  flex justify-center  items-center rounded-md underline h-full overflow-clip   text-white">
+                    <div className=" sm:w-[280px] w-[250px] relative  flex justify-center  items-center rounded-md underline h-full overflow-clip   text-white">
                       <img
                         src="/images/wp.webp"
                         alt=""
                         className="object-scale blur-sm  w-full h-full bg-black brightness-50 "
                       />
-                      <span className="text-black bg-white absolute top-30 px-5 py-1 rounded-lg">
+                      <span className="text-black bg-white font-semibold absolute top-30 px-5 py-1 rounded-lg">
                         View more...
                       </span>
                     </div>

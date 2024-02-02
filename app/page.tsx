@@ -75,7 +75,7 @@ export default async function Home(props: any) {
   const restaurants = await getCategory(6, "restaurants");
 
   // filter beaches from all the PopularCategories
-  const beaches = await getCategory(6, "beaches");
+  const beaches: any = await getCategory(6, "beaches");
 
   // filter adventure from all the PopularCategories
   const adventure = await getCategory(6, "adventure");

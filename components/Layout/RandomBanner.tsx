@@ -132,12 +132,12 @@ function RandomBanner({ categories }: any) {
         <h4 className="sm:text-7xl font-semibold text-black  text-5xl">
           Start your journey
         </h4>
-        <h3 className="sm:text-4xl  sm:block text-gray-500 pt-4 sm:mt-0">
-          Generate your new journey with AI
+        <h3 className="sm:text-4xl  sm:block text-gray-500 pt-4 sm:pt-0 sm:mt-0">
+          Generate your new journey
         </h3>
       </div>
       <div className="w-full flex sm:justify-center mx-auto px-2">
-        <div className="sm:space-x-8 space-y-4 mt-8 sm:mt-2 sm:-pt-2  m-auto  ">
+        <div className="sm:space-x-8 space-y-4 mt-8 sm:mt-4   m-auto  ">
           <button
             onClick={handleClickRandom}
             className="px-6 w-52 text-sm border sm:w-fit sm:text-base py-3 text-black hover:text-white hover:bg-black transition-all ease-in delay-75 bg-white rounded-md active:scale-95"
