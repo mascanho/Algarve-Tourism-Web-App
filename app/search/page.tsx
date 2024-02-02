@@ -20,14 +20,16 @@ const inter = Inter({ subsets: ["latin"] });
 async function Search(searchParams: any) {
   const [searchResults, setSearchResults] = useState<any[]>([]);
 
+  console.log(process.env, "envs");
+
   const searchContentFull = async () => {
     const query = searchParams.searchParams.q;
 
     if (query) {
       const fetchSearchQuery = async () => {
         const client = createClient({
-          space: "z8r91y113x4j",
-          accessToken: "mEmHEpC38vjPWaquWC2k2Qc3NzhEmti3_knDIKjf6Uc",
+          space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
+          accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
         });
 
         try {
