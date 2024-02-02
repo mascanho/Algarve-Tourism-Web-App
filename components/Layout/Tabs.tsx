@@ -63,6 +63,11 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
             Booking
           </Tabs.Tab>
         )}
+        {filteredData[0]?.fields?.bookingUrl && (
+          <Tabs.Tab value="bookingURL" color="blue">
+            Booking
+          </Tabs.Tab>
+        )}
       </Tabs.List>
 
       <Tabs.Panel
@@ -108,6 +113,16 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
             className="border-none mt-10"
           />
         </Suspense>
+        <Tabs.Panel value="bookingURL" pt="xs" className="min-h-[400px]">
+          <Suspense fallback={<div className="h-screen">Loading...</div>}>
+            <iframe
+              src={filteredData[0]?.fields?.booking}
+              width="100%"
+              height="1000px"
+              className="border-none mt-10"
+            />
+          </Suspense>
+        </Tabs.Panel>
       </Tabs.Panel>
     </Tabs>
   );

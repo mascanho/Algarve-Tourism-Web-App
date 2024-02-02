@@ -17,17 +17,18 @@ export default function SidePanel() {
             key={item.id}
             className={`
             border 
+border-gray-300
             p-2 
             rounded-md 
-            hover:bg-sky 
+            hover:bg-black 
             hover:text-white 
             transition-all 
             ease-in 
             delay-75  
             ${
               pathname?.includes(item?.route)
-                ? "bg-sky text-white border-gray-400"
-                : ""
+                ? "bg-black text-white border-gray-400"
+                : "text-black"
             }
             `}
           >

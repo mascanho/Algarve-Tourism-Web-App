@@ -53,7 +53,6 @@ async function Search(searchParams: any) {
       const data = await fetchSearchQuery(); // Wait for the asynchronous function to complete
       setSearchResults(data); // Update the state with the fetched data
     } else {
-      console.log("Nothing to search");
     }
   };
 

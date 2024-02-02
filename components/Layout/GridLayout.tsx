@@ -101,7 +101,7 @@ export function LeadGrid({ filteredData }: any) {
             <img
               alt={filteredData[0]?.fields?.title}
               src={`https://${filteredData[0]?.fields?.images[0]?.fields?.file?.url}`}
-              className="sm:h-[100%] object-fill w-[100%] sm:w-full sm:block"
+              className="sm:h-[100%] object-cover w-[100%] sm:w-full sm:block"
             />
           </div>
           <Grid
@@ -132,7 +132,7 @@ export function LeadGrid({ filteredData }: any) {
                 height={100}
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[3]?.fields?.file?.url}`}
-                className={`sm:h-full sm:max-h-[260px] rounded-lg favBanner object-cover`}
+                className={`sm:h-full sm:max-h-[160px] rounded-lg favBanner object-cover`}
                 // height={80}
                 // width={260}
               />
@@ -143,7 +143,7 @@ export function LeadGrid({ filteredData }: any) {
                 height={100}
                 alt={filteredData[0]?.fields?.title}
                 src={`https://${filteredData[0]?.fields?.images[4]?.fields?.file?.url}`}
-                className={` h-full w-full max-h-[130px] sm:max-h-full rounded-lg favBanner object-cover`}
+                className={` h-full w-full max-h-[130px] sm:max-h-[160px] rounded-lg favBanner object-cover`}
                 // height={100}
                 // width={260}
               />
