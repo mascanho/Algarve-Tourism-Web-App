@@ -1,21 +1,11 @@
 "use client";
 
-import { Inter } from "next/font/google";
 import BottomAssets from "@/components/BottomAssets";
-import Review from "@/components/Review";
-import { quotes } from "@/Data/Quotes";
-import PopularCategories from "@/components/PopularCategories";
-import useSearchedData from "../hooks/useSearchedData";
 import { SearchCard } from "@/components/SearchCard";
 import { createClient } from "contentful";
 import { useEffect, useState } from "react";
 import { TiArrowBack } from "react-icons/ti";
 import Link from "next/link";
-import type { Metadata } from "next";
-import Feedback from "@/components/Feedback";
-import { useSearchParams } from "next/navigation";
-
-const inter = Inter({ subsets: ["latin"] });
 
 async function Search(searchParams: any) {
   const [searchResults, setSearchResults] = useState<any[]>([]);
@@ -62,7 +52,6 @@ async function Search(searchParams: any) {
   }, [searchParams]);
 
   console.log(searchResults, "searchResults");
-  const searchData = useSearchedData();
 
   // Making sure the pages renders condicionally based on the url search params
   return (
