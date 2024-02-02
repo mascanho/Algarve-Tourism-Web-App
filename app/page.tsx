@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cache } from "react";
+import { cache, Suspense } from "react";
 import { quotes } from "@/Data/Quotes";
 import { createClient } from "contentful";
 import { cityArr } from "@/Data/Cities";
