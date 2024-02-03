@@ -132,9 +132,9 @@ function StaticDataCarousel({
 
   return (
     <section className="mt-16 sm:mt-20">
-      <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
+      <h5 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
         {title}
-      </h2>
+      </h5>
       <section
         ref={ref}
         style={{

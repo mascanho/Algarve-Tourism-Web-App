@@ -118,9 +118,9 @@ function GenericCarousel({
 
   return (
     <section className="mb-20 sm:pb-6 mt-20">
-      <h2 className="mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6 mt-20 max-w-7xl">
+      <h5 className="mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6 mt-20 max-w-7xl">
         {title}
-      </h2>
+      </h5>
       <section
         ref={ref}
         style={{
