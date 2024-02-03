@@ -48,12 +48,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
         />
         <IoIosSearch className="absolute top-6 sm:left-3 left-3" />
         <button
-<<<<<<< Updated upstream
-          className="bg-sky absolute  active:bg-gray-400 right-1  text-xs sm:right-2 top-4 sm:top-[14px] rounded-full sm:px-6 px-5 font-semibold py-2 sm:py-2 text-white sm:text-sm"
-          onClick={(e) => handleSearch(e)}
-=======
           className="bg-black absolute  active:bg-gray-400 right-1  text-xs sm:right-2 top-4 sm:top-[14px] rounded-full sm:px-6 px-5 font-semibold py-2 sm:py-2 text-white sm:text-sm"
->>>>>>> Stashed changes
           type="submit"
         >
           {/* <BsSearch className="text-xl" /> */}
