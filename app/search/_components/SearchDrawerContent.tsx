@@ -51,8 +51,6 @@ const SearchDrawerContent = () => {
     }
   }, []);
 
-  console.log(pathname);
-
   return (
     <div className="w-full flex justify-start items-start">
       <section
