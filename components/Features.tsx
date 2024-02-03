@@ -1,14 +1,12 @@
 "use client";
 
-import { AiFillApple } from "react-icons/ai";
 import { MdOutlinePlace } from "react-icons/md";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { RiMoneyEuroCircleLine } from "react-icons/ri";
 import { MdFavoriteBorder } from "react-icons/md";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { RxUpdate } from "react-icons/rx";
 import { MdOutlineTipsAndUpdates } from "react-icons/md";
-import { useInView } from "react-intersection-observer";
 
 const mockData = [
   {

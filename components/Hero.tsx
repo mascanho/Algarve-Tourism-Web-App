@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import SearchDrawer from "@/app/s/_components/SearchDrawer";
 
 const Search = dynamic(() => import("./Search"));
 
