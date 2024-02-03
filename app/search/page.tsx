@@ -39,7 +39,6 @@ async function Search(searchParams: any) {
 
   return (
     <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 pt-5 mb-28">
-      <SearchDrawerContent />
       <section className="max-w-7xl mx-auto sm:mb-10">
         <Link href="/#search">
           <div className="flex items-center w-full space-x-1 -mt-4 mb-4 sm:mb-0 sm:mt-0">
@@ -47,6 +46,9 @@ async function Search(searchParams: any) {
             <span>Back to search</span>
           </div>
         </Link>
+        <div className="my-4">
+          <SearchDrawerContent />
+        </div>
         <h3
           className="text-xl py-2 sm:py-4 font-bold text-black sm:text-3xl"
           id="search"

@@ -3,6 +3,7 @@ import { catArr } from "@/Data/Categories";
 import { useEffect, useState, useRef } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { TextInput } from "@mantine/core";
 
 const SearchDrawerContent = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -47,19 +48,26 @@ const SearchDrawerContent = () => {
       console.log("Setting focus on:", inputRef.current);
       inputRef.current.focus();
     } else {
-      console.log("Element ref is null");
+      return;
     }
   }, []);
 
   return (
-    <div className="w-full flex justify-start items-start">
+    <div className="w-full sm:max-w-xl sm:mx-auto flex justify-start items-start sm:relative">
       <section
-        className={`p-4 overflow-hidden flex flex-col flex-wrap w-full slide-up space-y-4 border rounded-md shadow-lg ${isVisible ? "visible" : ""}`}
+        className={`p-4 overflow-hidden flex flex-col flex-wrap shadow-lg w-full slide-up space-y-4 border rounded-md   ${isVisible ? "visible" : ""}`}
       >
         <div className="w-full relative">
           <span>Where to?</span>
+          {/* <TextInput */}
+          {/*   data-autofocus */}
+          {/*   label="Input with initial focus" */}
+          {/*   placeholder="It has data-autofocus attribute" */}
+          {/*   mt="md" */}
+          {/* /> */}
           <input
-            ref={inputRef}
+            ref={pathname === "/search" ? null : inputRef}
+            data-autofocus
             id="search"
             className="bg-transparent w-full text-black pl-9 border p-2 mt-4 rounded-md"
             placeholder="Search for city or activities"
@@ -69,10 +77,10 @@ const SearchDrawerContent = () => {
           <IoIosSearch className="absolute left-3 bottom-3" />
         </div>
         {pathname !== "/search" && (
-          <div className="flex flex-wrap mt-4">
+          <div className="flex flex-wrap mt-4 justify-start sm:justify-stretch">
             {catArr.map((cat: any) => (
               <span
-                className={`py-2 ${activeCategory === cat ? "bg-black text-white" : ""} px-3 text-xs mr-2 my-1 text-right flex justify-end h-20 w-[81px] border rounded-md`}
+                className={`py-2 ${activeCategory === cat ? "bg-black text-white" : ""} px-3 text-xs mr-2  my-1 text-right flex justify-end h-20 w-[81px] border rounded-md`}
                 key={cat}
                 onClick={() => handleClick(cat)}
               >
@@ -84,7 +92,7 @@ const SearchDrawerContent = () => {
         <button
           type="button"
           onClick={(e) => handleSearch(e)}
-          className="w-full text-white rounded-md py-2 bg-black active:bg-gray-500 active:text-black"
+          className={`overflow-clipw-full text-white rounded-md sm:absolute sm:w-20 sm:right-[22px] sm:py-1  sm:bottom-[22px]   py-2 bg-black active:bg-gray-500 active:text-black`}
         >
           Search
         </button>
