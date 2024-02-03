@@ -187,3 +187,13 @@ input[type="text"] {
 .mantine-1ryt1ht {
   font-family: "PT Sans" !important;
 }
+
+/* Search Drawer animations */
+/* .slide-up { */
+/*   transform: translateY(100%); */
+/*   transition: transform 0.75s ease-in-out; */
+/* } */
+/**/
+/* .slide-up.visible { */
+/*   transform: translateY(0px); */
+/* } */
