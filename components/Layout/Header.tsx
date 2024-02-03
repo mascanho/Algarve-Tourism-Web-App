@@ -24,6 +24,7 @@ import MobileDrawer from "./MobileDrawer";
 import AuthenticationModal from "./AuthenticationModal";
 import MobileSearchHeader from "./MobileSearchHeader";
 import BottomDrawer from "./BottomDrawer";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Header = ({ currentUser, weatherData }: any) => {
   const router = useRouter();
@@ -205,16 +206,31 @@ const Header = ({ currentUser, weatherData }: any) => {
                 "
           >
             {/* <AuthenticationModal /> */}
-            <Image
-              src={currentUser?.image || "/images/person-placeholder.png"}
-              height={30}
-              width={30}
-              className="rounded-full hidden sm:flex relative object-contain w-8 h-8 cursor-pointer"
-              alt="avatar"
+            <NotificationsModal />
+            <div
+              className="cursor-pointer text-black relative"
+              onClick={showFavourites}
+            >
+              <MdCardTravel className="cursor-pointer relative  sm:text-2xl" />
+              <span className="h-3 w-3 text-[8px] bg-sky absolute right-0 -top-1  text-white rounded-full flex flex-wrap justify-center items-center text-center">
+                {favouritesLength}
+              </span>
+            </div>
+            <div
               onClick={openLoginMenu}
-            />
+              className="border rounded-full cursor-pointer flex flex-wrap items-center px-1 border-gray-500"
+            >
+              <RxHamburgerMenu className="font-semibold" />
+              <img
+                src={currentUser?.image || "/images/person-placeholder.png"}
+                height={30}
+                width={30}
+                className="rounded-full hidden sm:flex relative object-contain p-1 w-8 h-8 cursor-pointer"
+                alt="avatar"
+              />
+            </div>
             {openLogin && (
-              <ul className="z-10 absolute w-36 sm:w-36 p-2 text-sm bg-white border text-right shadow-sm menu  sm:right-10 sm:top-10 border-t-3 border-t-sky rounded-b-md -left-24 top-10">
+              <ul className="z-10 absolute w-36 sm:w-36 p-2 text-sm bg-white border text-right shadow-sm menu  sm:-left-3 sm:top-11 border-t-3 border-t-sky rounded-b-md -left-24 top-10">
                 {!currentUser ? (
                   <>
                     <li onClick={loginModal.onOpen} className="w-full">
@@ -247,13 +263,6 @@ const Header = ({ currentUser, weatherData }: any) => {
                 )}
               </ul>
             )}
-            <NotificationsModal />
-            <div className="cursor-pointer text-black" onClick={showFavourites}>
-              <MdCardTravel className="cursor-pointer relative  sm:text-2xl" />
-              <span className="h-3 w-3 text-[8px] bg-sky absolute right-0 top-1 text-white rounded-full flex flex-wrap justify-center items-center text-center">
-                {favouritesLength}
-              </span>
-            </div>
           </div>
         </header>
       </nav>
