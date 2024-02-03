@@ -46,15 +46,16 @@ async function Search(searchParams: any) {
             <span>Back to search</span>
           </div>
         </Link>
-        <div className="my-4">
-          <SearchDrawerContent />
+        <SearchDrawerContent />
+        <div className="w-full flex justify-between items-center flex-wrap mt-10 mb-2 overflow-hidden">
+          <h3
+            className="text-xl py-2  font-bold text-black sm:text-3xl"
+            id="search"
+          >
+            Searching for: <span className="text-sky">{searchKey}</span>
+          </h3>
+          <span className="text-xs">Found: {searchResults.length}</span>
         </div>
-        <h3
-          className="text-xl py-2 sm:py-4 font-bold text-black sm:text-3xl"
-          id="search"
-        >
-          Searching for: <span className="text-sky">{searchKey}</span>
-        </h3>
       </section>
       <section className="grid items-start w-full grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 place-items-start">
         {/* Normal Cards with no search feature */}

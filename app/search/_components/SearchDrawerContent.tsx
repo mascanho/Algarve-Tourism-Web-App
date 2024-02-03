@@ -3,7 +3,15 @@ import { catArr } from "@/Data/Categories";
 import { useEffect, useState, useRef } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
-import { TextInput } from "@mantine/core";
+import { GiBeachBucket, GiWoodCabin } from "react-icons/gi";
+import { FaHiking, FaUtensils } from "react-icons/fa";
+import {
+  MdBusiness,
+  MdBusinessCenter,
+  MdEvent,
+  MdSportsHandball,
+} from "react-icons/md";
+import { PiMountainsLight } from "react-icons/pi";
 
 const SearchDrawerContent = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,10 +24,22 @@ const SearchDrawerContent = () => {
 
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
   useEffect(() => {
     // Trigger the fade-in effect when the component mounts
     setIsVisible(true);
   }, []);
+
+  const categoryIcons: any = {
+    Beaches: <GiBeachBucket />,
+    Restaurants: <FaUtensils />,
+    Events: <MdEvent />,
+    Adventure: <PiMountainsLight />,
+    Business: <MdBusinessCenter />,
+    Hiking: <FaHiking />,
+    Sports: <MdSportsHandball />,
+    Stays: <GiWoodCabin />,
+  };
 
   const handleClick = (cat: any) => {
     setActiveCategory(cat);
@@ -53,23 +73,19 @@ const SearchDrawerContent = () => {
   }, []);
 
   return (
-    <div className="w-full sm:max-w-xl sm:mx-auto flex justify-start items-start sm:relative">
+    <div
+      className={`w-full sm:max-w-xl sm:mx-auto flex justify-start items-start sm:relative`}
+    >
       <section
         className={`p-4 overflow-hidden flex flex-col flex-wrap shadow-lg w-full slide-up space-y-4 border rounded-md   ${isVisible ? "visible" : ""}`}
       >
         <div className="w-full relative">
-          <span>Where to?</span>
-          {/* <TextInput */}
-          {/*   data-autofocus */}
-          {/*   label="Input with initial focus" */}
-          {/*   placeholder="It has data-autofocus attribute" */}
-          {/*   mt="md" */}
-          {/* /> */}
+          <span className="text-gray-600">Where to?</span>
           <input
             ref={pathname === "/search" ? null : inputRef}
             data-autofocus
             id="search"
-            className="bg-transparent w-full text-black pl-9 border p-2 mt-4 rounded-md"
+            className="bg-transparent w-full text-black pl-9 border p-2 mt-4 rounded-md outline-red-500"
             placeholder="Search for city or activities"
             type="text"
             onChange={(e) => setInputValue(e.target.value)}
@@ -78,14 +94,19 @@ const SearchDrawerContent = () => {
         </div>
         {pathname !== "/search" && (
           <div className="flex flex-wrap mt-4 justify-start sm:justify-stretch">
-            {catArr.map((cat: any) => (
-              <span
-                className={`py-2 ${activeCategory === cat ? "bg-black text-white" : ""} px-3 text-xs mr-2  my-1 text-right flex justify-end h-20 w-[81px] border rounded-md`}
+            {catArr.map((cat: any, index) => (
+              <div
+                className={`py-2  ${
+                  activeCategory === cat ? "bg-black text-white" : ""
+                } px-3 text-xs mr-2  my-1 text-right flex justify-end h-20 w-[81px] border rounded-md`}
                 key={cat}
                 onClick={() => handleClick(cat)}
               >
-                {cat?.name}
-              </span>
+                <div className="flex flex-col items-end justify-end ">
+                  <span className="text-4xl"> {categoryIcons[cat.name]}</span>
+                  <span className="ml-1">{cat?.name}</span>
+                </div>
+              </div>
             ))}
           </div>
         )}

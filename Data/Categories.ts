@@ -1,3 +1,5 @@
+import { GiBeachBucket } from "react-icons/gi";
+
 export const catArr = [
   {
     id: 4,
