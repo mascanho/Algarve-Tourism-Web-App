@@ -42,7 +42,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
             
             `}
           // value={inputValue}
-          id="search"
+          id="search_input"
           name="search"
           required
         />
