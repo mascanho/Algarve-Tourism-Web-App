@@ -1,7 +1,6 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { HiBars3 } from "react-icons/hi2";
 import { MdCardTravel } from "react-icons/md";
 import { useDisclosure } from "@mantine/hooks";
 import LoginModal from "../modals/Login";
@@ -20,9 +19,6 @@ import Image from "next/image";
 import WeatherModal from "../modals/WeatherModal";
 import Sheet from "./Sheet";
 import NotificationsModal from "./NotificationsModal";
-import MobileDrawer from "./MobileDrawer";
-import AuthenticationModal from "./AuthenticationModal";
-import MobileSearchHeader from "./MobileSearchHeader";
 import BottomDrawer from "./BottomDrawer";
 import { RxHamburgerMenu } from "react-icons/rx";
 
@@ -56,11 +52,6 @@ const Header = ({ currentUser, weatherData }: any) => {
     setFavouritesLength(favourites.favourites.length);
   }, [favourites]);
 
-  const showWeather = () => {
-    setWeatherModal(true);
-    open();
-  };
-
   const showFavourites = () => {
     if (weatherModal) {
       setWeatherModal(false);
@@ -78,15 +69,15 @@ const Header = ({ currentUser, weatherData }: any) => {
   }, [prevScrollPos]);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleYposition);
+    window?.addEventListener("scroll", handleYposition);
 
     return () => {
-      window.removeEventListener("scroll", handleYposition);
+      window?.removeEventListener("scroll", handleYposition);
     };
   }, [handleYposition]);
 
   const handleScroll = () => {
-    const currentScrollPos = window.scrollY;
+    const currentScrollPos = window?.scrollY;
 
     if (currentScrollPos > prevScrollPos) {
       // Scrolling down
@@ -100,13 +91,14 @@ const Header = ({ currentUser, weatherData }: any) => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window?.addEventListener("scroll", handleScroll);
 
     // Cleanup the event listener on component unmount
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window?.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollPos]);
+
   return (
     <>
       <section>

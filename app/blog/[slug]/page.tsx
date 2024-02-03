@@ -160,14 +160,15 @@ const page = async (props: any) => {
               {blog[0]?.fields?.title}
             </h1>
           </div>
-
-          <Image
-            width={900}
-            height={700}
-            src={"https:" + blog[0]?.fields?.image?.fields?.file.url}
-            alt={blog[0]?.fields?.title}
-            className="mb-4 sm:mb-0 object-contain w-full h-full rounded-md"
-          />
+          <div className="w-full max-h-[300px] rounded-md overflow-hidden">
+            <Image
+              width={900}
+              height={700}
+              src={"https:" + blog[0]?.fields?.image?.fields?.file.url}
+              alt={blog[0]?.fields?.title}
+              className="mb-4 sm:mb-0 object-fill w-full h-full rounded-md"
+            />
+          </div>
           <section className="hidden">
             <div className="w-full absolute hidden sm:block sm:bottom-28 h-[100px] bg-gradient-to-b from-transparent to-white" />
             <div className="w-full absolute hidden sm:block sm:bottom-28 h-[200px] bg-gradient-to-b from-transparent to-white" />

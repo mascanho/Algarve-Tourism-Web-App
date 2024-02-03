@@ -1,7 +1,7 @@
 "use client";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import Link from "next/link";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HiArrowUp } from "react-icons/hi2";
 import { usePathname } from "next/navigation";
 import { useInView } from "react-intersection-observer";

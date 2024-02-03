@@ -9,10 +9,8 @@ import { catArr } from "@/Data/Categories";
 import dynamic from "next/dynamic";
 
 const Card = dynamic(() => import("@/components/Card"));
-const Hero = dynamic(() => import("@/components/Hero"), { suspense: true });
-const Feedback = dynamic(() => import("@/components/Feedback"), {
-  suspense: true,
-});
+const Hero = dynamic(() => import("@/components/Hero"));
+const Feedback = dynamic(() => import("@/components/Feedback"));
 const RandomBanner = dynamic(() => import("@/components/Layout/RandomBanner"));
 const Acordion = dynamic(() => import("@/components/Acordion"));
 const BottomCarousel = dynamic(

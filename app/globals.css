@@ -43,6 +43,12 @@ b {
   @apply underline text-sky !important;
 }
 
+.richText h3 {
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
 @media print {
   footer,
   .footer,
