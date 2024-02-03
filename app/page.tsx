@@ -13,33 +13,22 @@ const Hero = dynamic(() => import("@/components/Hero"), { suspense: true });
 const Feedback = dynamic(() => import("@/components/Feedback"), {
   suspense: true,
 });
-const RandomBanner = dynamic(() => import("@/components/Layout/RandomBanner"), {
-  suspense: true,
-});
-const Acordion = dynamic(() => import("@/components/Acordion"), {
-  suspense: true,
-});
+const RandomBanner = dynamic(() => import("@/components/Layout/RandomBanner"));
+const Acordion = dynamic(() => import("@/components/Acordion"));
 const BottomCarousel = dynamic(
   () => import("@/components/Layout/BottomCarousel"),
-  { suspense: true },
 );
 const GenericCarousel = dynamic(
   () => import("@/components/Layout/CarouselGeneric"),
-  { suspense: true },
 );
 
 const StaticDataCarousel = dynamic(
   () => import("@/components/Layout/StaticDataCarousel"),
-  { suspense: true },
 );
 
-const AlgarveSpecs = dynamic(() => import("@/components/AlgarveSpecs"), {
-  suspense: true,
-});
+const AlgarveSpecs = dynamic(() => import("@/components/AlgarveSpecs"));
 
-const Features = dynamic(() => import("@/components/Features"), {
-  suspense: true,
-});
+const Features = dynamic(() => import("@/components/Features"));
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
