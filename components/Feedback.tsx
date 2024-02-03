@@ -29,8 +29,8 @@ function Feedback({ name, job, rating, review, image }: any) {
         {quotes.map((q: any) => (
           <Carousel.Slide key={q.review} className="w-full h-full">
             <section className="h-full pb-10 pt-8">
-              <div className="bg-white pb-8 space-y-2 shadow-md rounded-l-md rounded-tr-md pt-2  relative h-full sm:w-full flex flex-col justify-between">
-                <Blockquote cite={q.review} className="text-gray-600" />
+              <div className="bg-white pb-8  space-y-2 shadow-md rounded-l-md rounded-tr-md pt-2  relative h-full sm:w-full flex flex-col justify-between">
+                <Blockquote cite={q.review} className="text-gray-900" />
                 <div className="flex items-center justify-between mx-10">
                   <span className="block text-sm w-7/12 sm:w-fit sm:pl-2">
                     - {q.name}

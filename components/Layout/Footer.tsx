@@ -83,7 +83,7 @@ function Footer() {
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto w-11/12 ">
           <section className="grid grid-cols-2 w-full sm:flex justify-between px-4 sm:px-0 ">
             <div className="flex flex-col space-y-1 text-white">
-              <span className="uppercase font-semibold text-white/30">
+              <span className="uppercase font-semibold text-white/60">
                 About
               </span>
               <Link href="/about">
@@ -98,7 +98,7 @@ function Footer() {
             </div>
             <div className="flex flex-col space-y-1 text-white">
               <Link href={"/about"}>
-                <span className="font-semibold text-white/30 uppercase">
+                <span className="font-semibold text-white/60 uppercase">
                   Company
                 </span>
               </Link>
@@ -113,7 +113,7 @@ function Footer() {
               </Link>
             </div>
             <div className="flex flex-col space-y-1 mt-5 sm:mt-0 text-white">
-              <span className="uppercase text-white/30 font-semibold">
+              <span className="uppercase text-white/60 font-semibold">
                 Quick Links
               </span>
               {/* <Link href="/submit"> */}
@@ -134,7 +134,7 @@ function Footer() {
               </Link>
             </div>
             <div className="flex flex-col space-y-1 mt-5 sm:mt-0 text-white">
-              <span className="font-semibold text-white/30 uppercase">
+              <span className="font-semibold text-white/60 uppercase">
                 Partners
               </span>
               <a href="https://markwarrior.dev" target="_blank">
