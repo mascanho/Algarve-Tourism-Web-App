@@ -138,12 +138,12 @@ function GenericCarousel({
             initialSlide={1}
           >
             {slides}
-            <div className=" sm:w-[310px]  h-full border flex justify-center items-center  rounded-md">
+            <div className=" sm:w-[310px] md:w-[420px] h-full border flex justify-center items-center  rounded-md">
               <Link
                 className="h-[300px]"
                 href={`${title === "Where to eat" ? "/restaurants" : "/adventure"}`}
               >
-                <div className=" sm:w-[280px] w-[250px] relative  flex justify-center  items-center rounded-md underline h-full overflow-clip   text-white">
+                <div className=" sm:w-[280px] md:w-[400px] w-[250px] relative  flex justify-center  items-center rounded-md underline h-full overflow-clip   text-white">
                   <img
                     src={
                       title === "Where to eat"

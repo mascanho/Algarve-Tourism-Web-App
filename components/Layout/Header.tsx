@@ -220,7 +220,7 @@ const Header = ({ currentUser, weatherData }: any) => {
               onClick={openLoginMenu}
               className="border rounded-full cursor-pointer flex flex-wrap items-center px-1 border-gray-500"
             >
-              <RxHamburgerMenu className="font-semibold" />
+              <RxHamburgerMenu className="font-semibold pl-1" />
               <img
                 src={currentUser?.image || "/images/person-placeholder.png"}
                 height={30}

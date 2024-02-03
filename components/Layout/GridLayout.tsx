@@ -8,23 +8,36 @@ import {
   useMantineTheme,
   rem,
 } from "@mantine/core";
-import { useEffect } from "react";
-import {
-  FaArrowLeft,
-  FaChevronLeft,
-  FaHeart,
-  FaRegHeart,
-  FaShare,
-} from "react-icons/fa";
 import { IoChevronBack } from "react-icons/io5";
 import { Carousel } from "@mantine/carousel";
 import { LuHeart, LuShare } from "react-icons/lu";
-import { FaHeartCirclePlus } from "react-icons/fa6";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
+import { usePathname } from "next/navigation";
 
 const PRIMARY_COL_HEIGHT = rem(300);
 
 export function LeadGrid({ filteredData }: any) {
+  const pathname = usePathname();
+
+  const handleShare = () => {
+    const shareURL = `https://www.algarvewonders.com${pathname}`;
+    const shareText = "Check out this awesome content!"; // Replace with your content
+
+    const shareLink = window.location.href;
+
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "algarve Wonders - The best plces to visit",
+          text: "Check out this awesome place in the algarve",
+          url: window.location.href,
+        })
+        .then(() => console.log("Successfully shared."))
+        .catch((error) => console.error("Error sharing:", error.message));
+    } else {
+      window.location.href = shareLink;
+    }
+  };
   const theme = useMantineTheme();
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - ${theme.spacing.md} / 2)`;
 
@@ -69,7 +82,7 @@ export function LeadGrid({ filteredData }: any) {
             className="absolute top-2 z-10 right-11 sm:hidden flex items-center justify-center pl-[6px] p-[6px] text-xs shadow-sm font-semibold  bg-white rounded-full w-7 h-7 "
           />
           <LuShare
-            onClick={() => window.history.back()}
+            onClick={handleShare}
             className="absolute top-2  right-2 z-10 sm:hidden flex items-center justify-center pl-[6px] p-[6px] text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
           />
           <Carousel
