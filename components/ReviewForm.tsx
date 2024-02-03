@@ -1,12 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { IoSend } from "react-icons/io5";
-import {
-  FieldValues,
-  SubmitHandler,
-  useForm,
-  FieldErrors,
-} from "react-hook-form";
+import { FieldValues, useForm, FieldErrors } from "react-hook-form";
 import axios from "axios";
 import { usePathname, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
@@ -26,7 +21,7 @@ interface InputProps {
   formaState: FieldValues;
 }
 
-function ReviewForm() {
+function ReviewForm(formData: FormData) {
   const router = useRouter();
   const {
     register,
@@ -38,6 +33,7 @@ function ReviewForm() {
   });
   const [signedIn, setsignedIn] = useState(false);
   const pathname = usePathname();
+  const [loading, setLoading] = useState(false);
 
   // Modals using Zustand
   const loginModal = useLoginModalStore();
@@ -53,6 +49,7 @@ function ReviewForm() {
   };
 
   const handleMessage = (data: any) => {
+    setLoading(true);
     axios
       .post("/api/review", data)
       .then((res) => {
@@ -63,6 +60,7 @@ function ReviewForm() {
       })
       .finally(() => {
         router.refresh();
+        setLoading(false);
       });
   };
 
@@ -90,10 +88,15 @@ function ReviewForm() {
             required
           />
           <button
+            disabled={loading}
             type="submit"
             className="bg-sky w-10 h-10 justify-center rounded-md relative flex -ml-4 items-center"
           >
-            <IoSend className=" text-white mx-auto active:scale-95 " />
+            {loading ? (
+              <div className="w-5 h-5 border-t-2 border-white border-solid rounded-full animate-spin"></div>
+            ) : (
+              <IoSend className="text-white" />
+            )}
           </button>
         </form>
       )}
