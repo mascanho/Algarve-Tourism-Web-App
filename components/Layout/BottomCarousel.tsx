@@ -138,9 +138,9 @@ function BottomCarousel({
 
   return (
     <section className="mt-20">
-      <h4 className="max-w-7xl text-left sm:pb-6 mx-auto text-4xl sm:text-5xl w-11/12  font-semibold text-black">
+      <h5 className="max-w-7xl text-left sm:pb-6 mx-auto text-4xl sm:text-5xl w-11/12  font-semibold text-black">
         {title}
-      </h4>
+      </h5>
       <section
         ref={ref}
         style={{

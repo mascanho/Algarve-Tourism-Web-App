@@ -82,7 +82,7 @@ function Footer() {
       <section ref={ref} className="bg-black  z-0 -mt-[1px] ">
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto w-11/12 ">
           <section className="grid grid-cols-2 w-full sm:flex justify-between px-4 sm:px-0 ">
-            <div className="flex flex-col space-y-1">
+            <div className="flex flex-col space-y-1 text-white">
               <span className="uppercase font-semibold text-white/30">
                 About
               </span>
@@ -96,7 +96,7 @@ function Footer() {
                 <p className="link link-hover">Changelog</p>
               </Link>
             </div>
-            <div className="flex flex-col space-y-1">
+            <div className="flex flex-col space-y-1 text-white">
               <Link href={"/about"}>
                 <span className="font-semibold text-white/30 uppercase">
                   Company
@@ -112,7 +112,7 @@ function Footer() {
                 <p className="link link-hover">Contact</p>
               </Link>
             </div>
-            <div className="flex flex-col space-y-1 mt-5 sm:mt-0">
+            <div className="flex flex-col space-y-1 mt-5 sm:mt-0 text-white">
               <span className="uppercase text-white/30 font-semibold">
                 Quick Links
               </span>
@@ -133,7 +133,7 @@ function Footer() {
                 <p className="link link-hover">Submit Places</p>
               </Link>
             </div>
-            <div className="flex flex-col space-y-1 mt-5 sm:mt-0">
+            <div className="flex flex-col space-y-1 mt-5 sm:mt-0 text-white">
               <span className="font-semibold text-white/30 uppercase">
                 Partners
               </span>
