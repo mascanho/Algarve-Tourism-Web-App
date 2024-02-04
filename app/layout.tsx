@@ -12,7 +12,7 @@ import { PT_Sans } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import dynamic from "next/dynamic";
 
-const Footer = dynamic(() => import("@/components/Layout/Footer"), {});
+const Footer = dynamic(() => import("@/components/Layout/Footer"));
 
 const ptsans = PT_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -50,19 +50,6 @@ export const metadata: Metadata = {
   },
 };
 
-// export const viewport: Viewport = {
-//   initialScale: 1,
-//   maximumScale: 1,
-//   width: "device-width",
-// };
-
-// Fetch Weather data
-// async function getWeatherData() {
-//   const res = await fetch(
-//     `https://api.weatherapi.com/v1/current.json?key=8fd5b11106094719a89115725232912&q=Algarve&aqi=no`,
-//   );
-//   return await res.json();
-// }
 
 export default async function RootLayout({
   children,
@@ -71,7 +58,6 @@ export default async function RootLayout({
 }) {
   const currentUser = await getCurrentUser();
 
-  // const weatherData = await getWeatherData();
 
   return (
     <html lang="en" className={`${ptsans.className} h-full overflow-x-hidden `}>

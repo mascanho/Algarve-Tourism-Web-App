@@ -54,6 +54,7 @@ export const SearchCard = (item: any) => {
       shortDescription,
       type,
     };
+    console.log(data);
     addFav.addFavourite(data);
   }
 

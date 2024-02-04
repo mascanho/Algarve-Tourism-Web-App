@@ -74,7 +74,7 @@ const SearchDrawerContent = () => {
 
   return (
     <div
-      className={`w-full sm:max-w-xl sm:mx-auto flex justify-start items-start sm:relative`}
+      className={`w-full sm:max-w-xl sm:mx-auto flex justify-start items-start`}
     >
       <section
         className={`p-4 overflow-hidden flex flex-col flex-wrap shadow-lg w-full slide-up space-y-4 border rounded-md   ${isVisible ? "visible" : ""}`}
@@ -84,8 +84,8 @@ const SearchDrawerContent = () => {
           <input
             ref={pathname === "/search" ? null : inputRef}
             data-autofocus
-            id="search"
-            className="bg-transparent w-full text-black ring-black pl-9 border p-2 mt-4 rounded-md outline-black inset-0"
+            id="search_modal"
+            className="bg-transparent w-full text-black ring-black pl-9 border p-2 mt-4 rounded-md "
             placeholder="Search for city or activities"
             type="text"
             onChange={(e) => setInputValue(e.target.value)}
