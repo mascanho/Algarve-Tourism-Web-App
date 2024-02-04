@@ -40,7 +40,7 @@ b {
 }
 
 .richText a {
-  @apply underline text-key !important;
+  @apply underline text-sky !important;
 }
 
 .richText h3 {
@@ -146,7 +146,7 @@ input[type="text"] {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  @apply bg-key rounded-xl;
+  @apply bg-sky rounded-xl;
 }
 
 .bottomCarousel .mantine-vcl0d1 {
@@ -207,7 +207,3 @@ button {
 /* .slide-up.visible { */
 /*   transform: translateY(0px); */
 /* } */
-
-.custom-shape-divider-bottom-1707076088 .shape-fill {
-  fill: #66bfc7;
-}

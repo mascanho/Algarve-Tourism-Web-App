@@ -63,7 +63,7 @@ const DrawerContent = ({ close, title }: any) => {
             <Link href="/beaches">
               <button
                 onClick={close}
-                className="w-full bg-key text-white px-3 py-2 font-semibold rounded-md"
+                className="w-full bg-sky text-white px-3 py-2 font-semibold rounded-md"
               >
                 View categories
               </button>
@@ -74,7 +74,7 @@ const DrawerContent = ({ close, title }: any) => {
         <Link href="/favourites/">
           <button
             onClick={close}
-            className="w-full bg-key text-white px-3 py-2 mt-4 rounded-md font-semibold"
+            className="w-full bg-sky text-white px-3 py-2 mt-4 rounded-md font-semibold"
           >
             View favourites
           </button>

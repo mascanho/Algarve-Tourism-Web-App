@@ -15,7 +15,7 @@ export default function Form() {
         <h2 className="text-center text-3xl">We Got Your Place!</h2>
         <div>
           <Link href="/">
-            <button className="border bg-key text-white w-full py-2 mt-8 px-4 rounded-md">
+            <button className="border bg-sky text-white w-full py-2 mt-8 px-4 rounded-md">
               Back to Home Page
             </button>
           </Link>
@@ -24,7 +24,7 @@ export default function Form() {
               onClick={() => {
                 window.location.reload();
               }}
-              className="border bg-key text-white w-full py-2 mt-4  px-4 rounded-md"
+              className="border bg-sky text-white w-full py-2 mt-4  px-4 rounded-md"
             >
               Submit Another
             </button>
@@ -37,7 +37,7 @@ export default function Form() {
   return (
     <div className="px-10 w-full flex flex-col items-center justify-center">
       <section className="flex flex-col items-center justify-center text-center">
-        <h1 className="w-full sm:text-4xl text-3xl font-bold text-key text-center">
+        <h1 className="w-full sm:text-4xl text-3xl font-bold text-sky text-center">
           Send us your place
         </h1>
         <h2 className="w-10/12 my-8 mx-auto text-sm">
@@ -85,7 +85,7 @@ export default function Form() {
         <div className="pt-2 w-full">
           <button
             type="submit"
-            className="border bg-key text-white w-full py-2 rounded-md"
+            className="border bg-sky text-white w-full py-2 rounded-md"
             disabled={state.submitting}
           >
             Send

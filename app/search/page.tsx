@@ -51,7 +51,7 @@ async function Search(searchParams: any) {
             className="text-xl py-2  font-bold text-black sm:text-3xl"
             id="search"
           >
-            Searching for: <span className="text-key">{searchKey}</span>
+            Searching for: <span className="text-sky">{searchKey}</span>
           </h3>
           <span className="text-xs">Found: {searchResults.length}</span>
         </div>

@@ -58,7 +58,7 @@ export const BlogCard = ({
           </div>
           <div className="flex sm:w-full w-11/12 mx-auto pb-3">
             {tags.map((item: any) => (
-              <span className="border mr-1 px-2 rounded-2xl text-[10px] bg-key text-white font-semibold">
+              <span className="border mr-1 px-2 rounded-2xl text-[10px] bg-sky text-white font-semibold">
                 {item}
               </span>
             ))}

@@ -49,7 +49,7 @@ const MobileSearchHeader = () => {
         </div>
         <button
           type="submit"
-          className="bg-key absolute active:bg-gray-400 right-1 text-xs sm:right-4 bottom-1  sm:top-[14px] rounded-full sm:px-6 px-4 py-1 sm:py-2 text-white sm:text-sm"
+          className="bg-sky absolute active:bg-gray-400 right-1 text-xs sm:right-4 bottom-1  sm:top-[14px] rounded-full sm:px-6 px-4 py-1 sm:py-2 text-white sm:text-sm"
         >
           Search
         </button>

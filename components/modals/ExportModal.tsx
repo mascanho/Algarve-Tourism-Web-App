@@ -23,7 +23,7 @@ function ExportModal(title: any, closeDrawer: any) {
       </Modal>
 
       <Group position="center" className="w-full">
-        <Button className="bg-key w-[100%]" onClick={open}>
+        <Button className="bg-sky w-[100%]" onClick={open}>
           Export Favourites
         </Button>
       </Group>

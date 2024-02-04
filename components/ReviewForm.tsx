@@ -90,7 +90,7 @@ function ReviewForm(formData: FormData) {
           <button
             disabled={loading}
             type="submit"
-            className="bg-key w-10 h-10 justify-center rounded-md relative flex -ml-4 items-center"
+            className="bg-sky w-10 h-10 justify-center rounded-md relative flex -ml-4 items-center"
           >
             {loading ? (
               <div className="w-5 h-5 border-t-2 border-white border-solid rounded-full animate-spin"></div>

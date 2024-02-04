@@ -61,7 +61,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
           {category.map((cat: any) => (
             <section
               key={cat?.id}
-              className="space-y-2 text-left lg:w-full shadow-sm rounded-md pb-2 border hover:border-key transition-all ease-in delay-75"
+              className="space-y-2 text-left lg:w-full shadow-sm rounded-md pb-2 border hover:border-sky transition-all ease-in delay-75"
             >
               <div className="w-full h-48 sm:h-56 md:h-48 xl:h-36 flex  rounded-t-md overflow-hidden relative">
                 <img
@@ -141,7 +141,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
                   <BsShareFill className="text-xs hover:scale-110 cursor-pointer" />
                 </div>
                 <Link href={`${pathname}/${cat.fields.slug}`}>
-                  <span className="text-xs text-key cursor-pointer">
+                  <span className="text-xs text-sky cursor-pointer">
                     Read More
                   </span>
                 </Link>
