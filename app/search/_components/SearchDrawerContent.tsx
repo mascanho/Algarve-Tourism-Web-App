@@ -77,20 +77,18 @@ const SearchDrawerContent = () => {
       className={`w-full sm:max-w-xl sm:mx-auto flex justify-start items-start`}
     >
       <section
-        className={`p-4 overflow-hidden flex flex-col flex-wrap shadow-lg w-full h-88 slide-up space-y-4 border rounded-md   ${isVisible ? "visible" : ""}`}
+        className={`p-4 relative overflow-hidden flex flex-col flex-wrap shadow-lg w-full h-88 slide-up space-y-4 border rounded-md   ${isVisible ? "visible" : ""}`}
       >
-        <div className="w-full h-fit overflow-hidden">
-          <IoIosSearch className="absolute mt-3 ml-3" />
-          <input
-            className="relative bg-transparent w-full h-10 text-black ring-4 focus:outline-none focus:ring-black focus:ring-0ffset-0 pl-9 border rounded-md "
-            ref={pathname === "/search" ? null : inputRef}
-            data-autofocus
-            id="search_modal"
-            placeholder="Search for city or activities"
-            type="text"
-            onChange={(e) => setInputValue(e.target.value)}
-          />
-        </div>
+        <input
+          className="bg-transparent w-full h-10 text-black ring-0 focus:ring-0 focus:outline-none focus:ring-black focus:ring-0ffset-0 pl-9 border rounded-md "
+          ref={pathname === "/search" ? null : inputRef}
+          data-autofocus
+          id="search_modal"
+          placeholder="Search for city or activities"
+          type="text"
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <IoIosSearch className="absolute top-3 ml-3" />
         {pathname !== "/search" && (
           <div className="flex flex-wrap mt-4 justify-start sm:justify-stretch">
             {catArr.map((cat: any) => (
