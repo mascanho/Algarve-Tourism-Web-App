@@ -12,6 +12,7 @@ import {
   MdSportsHandball,
 } from "react-icons/md";
 import { PiMountainsLight } from "react-icons/pi";
+import { Input } from "@mantine/core";
 
 const SearchDrawerContent = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -77,24 +78,23 @@ const SearchDrawerContent = () => {
       className={`w-full sm:max-w-xl sm:mx-auto flex justify-start items-start`}
     >
       <section
-        className={`p-4 overflow-hidden flex flex-col flex-wrap shadow-lg w-full slide-up space-y-4 border rounded-md   ${isVisible ? "visible" : ""}`}
+        className={`p-4 orerflow-hidden flex flex-col flex-wrap shadow-lg w-full slide-up space-y-4    ${isVisible ? "visible" : ""}`}
       >
         <div className="w-full relative">
           <span className="text-gray-600">Where to?</span>
-          <input
+          <Input
             ref={pathname === "/search" ? null : inputRef}
             data-autofocus
             id="search_modal"
-            className="bg-transparent w-full text-black ring-black pl-9 border p-2 mt-4 rounded-md "
+            className="bg-transparent w-full "
             placeholder="Search for city or activities"
             type="text"
             onChange={(e) => setInputValue(e.target.value)}
           />
-          <IoIosSearch className="absolute left-3 bottom-3" />
         </div>
         {pathname !== "/search" && (
           <div className="flex flex-wrap mt-4 justify-start sm:justify-stretch">
-            {catArr.map((cat: any, index) => (
+            {catArr.map((cat: any) => (
               <div
                 className={`py-2  ${
                   activeCategory === cat ? "bg-black text-white" : ""
