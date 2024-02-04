@@ -188,7 +188,7 @@ const Card = ({
           <span className="text-xs text-gray-700">We saved a spot for you</span>
           <Link href="/submit">
             <button
-              className="px-3 py-1 bg-black text-white mt-4 rounded-full text-xs"
+              className="px-3 py-1 bg-key text-white mt-4 rounded-full text-xs"
               type="button"
             >
               Upload a place

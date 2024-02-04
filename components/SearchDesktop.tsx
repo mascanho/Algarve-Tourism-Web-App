@@ -22,7 +22,7 @@ function SearchDesktop({ allTypes, placeholderText, categories }: any) {
       <div className="hidden sm:flex items-center justify-center mx-auto space-x-6 w-10/12 mt-5 mb-10">
         <button
           onClick={open}
-          className="p-5 text-white flex space-x-2 items-center justify-center bg-sky  text-sm w-48 h-12 rounded-lg"
+          className="p-5 text-white flex space-x-2 items-center justify-center bg-key  text-sm w-48 h-12 rounded-lg"
         >
           <FaSearch className="w-5 h-5 p-1 bg-white rounded-full text-black" />
           <span> search</span>
