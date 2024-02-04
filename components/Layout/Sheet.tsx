@@ -134,15 +134,6 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
             <span className="my-auto">Blog</span>
           </div>{" "}
           <Divider my="md" />
-          {/* <div */}
-          {/*   className="flex items-center mb-2" */}
-          {/*   onClick={() => { */}
-          {/*     router.push("/"); */}
-          {/*     close(); */}
-          {/*   }} */}
-          {/* > */}
-          {/*   <span className="my-auto">Notifications</span> */}
-          {/* </div>{" "} */}
           <div
             className="flex items-center mb-2"
             onClick={() => {
@@ -173,9 +164,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
 
       <HiMenuAlt2
         onClick={open}
-        className={`text-2xl transition-all text-black duration-500 ease-in flex items-center m-auto w-fit ${
-          showMobileBurger && "animate-fade  "
-        }`}
+        className={`text-2xl text-black duration-500 ease-in flex items-center m-auto w-fit`}
       />
     </section>
   );

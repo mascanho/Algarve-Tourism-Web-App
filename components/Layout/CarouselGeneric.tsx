@@ -143,7 +143,7 @@ function GenericCarousel({
                 className="h-[300px]"
                 href={`${title === "Where to eat" ? "/restaurants" : "/adventure"}`}
               >
-                <div className=" sm:w-[280px] md:w-[400px] w-[250px] relative  flex justify-center  items-center rounded-md underline h-full overflow-clip   text-white">
+                <div className=" sm:w-[280px] xl:w-[400px] w-[250px] relative  flex justify-center  items-center rounded-md underline h-full overflow-clip   text-white">
                   <img
                     src={
                       title === "Where to eat"

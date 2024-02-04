@@ -148,7 +148,7 @@ const Header = ({ currentUser, weatherData }: any) => {
               alt="logo"
               width={50}
               height={20}
-              className="h-6 w-6 sm:h-8 sm:w-8 flex-wrap m-auto sm:flex hidden "
+              className="sm:h-6 sm:w-6 mr-1 flex-wrap m-auto sm:flex hidden "
             />
             {favouritesLength > 0 && (
               <div
@@ -169,7 +169,6 @@ const Header = ({ currentUser, weatherData }: any) => {
                 Algarve Wonders
               </span>
             </div>
-            {/* {showMobileSearch && <MobileSearchHeader />} */}
           </div>
           <section className="hidden sm:flex flex-wrap w-1/2 justify-around">
             <NavMenu trigger={false} title={"Search"} url={"/"} />
