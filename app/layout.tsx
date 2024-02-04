@@ -70,7 +70,7 @@ export default async function RootLayout({
             {children}
           </ClientOnly>
           <GoogleTagManager gtmId="GTM-MHX7R9FF" />
-          <div className="custom-shape-divider-bottom-1707076088">
+          <div className="custom-shape-divider-bottom-1707076088 hiddenRow">
             <svg
               data-name="Layer 1"
               xmlns="http://www.w3.org/2000/svg"
