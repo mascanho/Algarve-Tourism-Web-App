@@ -176,16 +176,11 @@ input[type="text"] {
   border-radius: 20px 20px 0 0 !important;
 }
 
-.bottomDraw .mantine-1fholi4 button,
-.mantine-19pz3dh button {
+.bottomDraw .mantine-1fholi4 button {
   outline: none !important;
   border: 0;
 }
 
-.mantine-19pz3dh button {
-  outline: none !important;
-  border: 0;
-}
 .mantine-Carousel-indicator {
   background-color: white;
 }
@@ -199,11 +194,12 @@ input[type="text"] {
   font-family: "PT Sans" !important;
 }
 
-.Search Drawer animations .slide-up {
-  transform: translateY(100%);
-  transition: transform 0.75s ease-in-out;
-}
-
-.slide-up.visible {
-  transform: translateY(20px);
-}
+/* Search Drawer animations */
+/* .slide-up { */
+/*   transform: translateY(100%); */
+/*   transition: transform 0.75s ease-in-out; */
+/* } */
+/**/
+/* .slide-up.visible { */
+/*   transform: translateY(0px); */
+/* } */
