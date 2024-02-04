@@ -181,7 +181,7 @@ function Footer() {
               </p>
               <span className="block text-xs">
                 Developed by{" "}
-                <a className="text-black" href="https://markwarrior.dev">
+                <a className="text-highlight" href="https://markwarrior.dev">
                   MarkWarrior.dev
                 </a>
               </span>
