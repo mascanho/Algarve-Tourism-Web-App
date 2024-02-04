@@ -79,14 +79,14 @@ const SearchDrawerContent = () => {
       <section
         className={`p-4 overflow-hidden flex flex-col flex-wrap shadow-lg w-full slide-up space-y-4 border rounded-md   ${isVisible ? "visible" : ""}`}
       >
-        <div className="w-full relative">
+        <div className="w-full">
           <span className="text-gray-600">Where to?</span>
-          <IoIosSearch className="absolute left-3 bottom-3" />
+          <IoIosSearch className="absolute mt-1 ml-2" />
           <input
             ref={pathname === "/search" ? null : inputRef}
             data-autofocus
             id="search_modal"
-            className="bg-transparent w-full text-black ring-black pl-9 border rounded-md "
+            className="relative bg-transparent w-full text-black ring-black pl-9 border rounded-md "
             placeholder="Search for city or activities"
             type="text"
             onChange={(e) => setInputValue(e.target.value)}
