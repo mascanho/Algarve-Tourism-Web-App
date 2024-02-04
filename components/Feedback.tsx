@@ -31,18 +31,16 @@ function Feedback({ name, job, rating, review, image }: any) {
             <section className="h-full pb-10 pt-8">
               <div className="bg-white pb-8  space-y-2 shadow-md rounded-l-md rounded-tr-md pt-2  relative h-full sm:w-full flex flex-col justify-between">
                 <Blockquote cite={q.review} className="text-gray-900" />
-                <div className="flex items-center justify-between mx-10">
-                  <span className="block text-sm w-7/12 sm:w-fit sm:pl-2">
-                    - {q.name}
+                <div className="pl-6 flex">
+                  <img
+                    src={q.image}
+                    className="w-12 p-1 items-center h-12   border-black border object-cover rounded-full"
+                    alt="avatar"
+                    loading="lazy"
+                  />
+                  <span className="inline ml-3 m-auto text-sm w-11/12 text-left sm:pl-2">
+                    {q.name}
                   </span>
-                  <div className="pl-6">
-                    <img
-                      src={q.image}
-                      className="w-12 p-1 h-12   border-sky border  rounded-full"
-                      alt="avatar"
-                      loading="lazy"
-                    />
-                  </div>
                 </div>
               </div>
               <div className="mt-1  w-full  py-1 rounded-r-md rounded-bl-md text-right flex items-center justify-end">
