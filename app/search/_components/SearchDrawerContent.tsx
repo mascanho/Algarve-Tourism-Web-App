@@ -77,9 +77,9 @@ const SearchDrawerContent = () => {
       className={`w-full sm:max-w-xl sm:mx-auto flex justify-start items-start`}
     >
       <section
-        className={`p-4 overflow-hidden flex flex-col flex-wrap shadow-lg w-full slide-up space-y-4 border rounded-md   ${isVisible ? "visible" : ""}`}
+        className={`p-4 overflow-hidden flex flex-col flex-wrap shadow-lg w-full h-88 slide-up space-y-4 border rounded-md   ${isVisible ? "visible" : ""}`}
       >
-        <div className="w-full">
+        <div className="w-full h-fit overflow-hidden">
           <span className="text-gray-600">Where to?</span>
           <IoIosSearch className="absolute mt-1 ml-2" />
           <input
