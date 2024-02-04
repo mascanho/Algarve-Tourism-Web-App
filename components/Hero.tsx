@@ -34,11 +34,11 @@ const Hero = ({ categories }: any) => {
       <Search placeholderText={"Destination or activity..."} />
       <div className="sm:w-11/12 mx-auto h-96 sm:h-[420px] w-full flex flex-wrap flex-col rounded-t-lg relative max-w-3xl">
         <Image
-          className="rounded-t-3xl w-full h-full mx-auto object-cover sm:object-fill"
+          className="rounded-t-3xl w-full h-full mx-auto object-cover  sm:object-fill"
           src={IMAGES_DESKTOP[2]}
           alt="hero image"
           width={800}
-          height={500}
+          height={100}
           loading="eager"
           // sizes="(max-width: 868px) 100vw, 33vw"
         />

@@ -38,7 +38,7 @@ function Card({
     <Paper
       shadow="md"
       p="xl"
-      radius="md"
+      radius="lg"
       style={{
         backgroundImage: `url(${image})`,
         backgroundBlendMode: "multiply",
