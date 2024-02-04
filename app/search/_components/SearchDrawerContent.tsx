@@ -71,7 +71,7 @@ const SearchDrawerContent = () => {
       >
         <input
           className="bg-transparent w-full h-10 text-black ring-0 focus:ring-0 focus:outline-none focus:ring-black focus:ring-0ffset-0 pl-9 border rounded-md "
-          data-autofocus
+          // data-autofocus
           id="search_modal"
           placeholder="Search for city or activities"
           type="text"
