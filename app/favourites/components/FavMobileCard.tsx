@@ -53,7 +53,7 @@ function FavMobileCard({
       <Text size="sm" c="dimmed" className="mt-4"></Text>
       <div className="flex items-center space-x-3">
         <Link href={`/${type}/${slug}`} className="w-full">
-          <button className="px-3 w-full  bg-sky py-2 rounded-lg text-white font-semibold">
+          <button className="px-3 w-full  bg-key py-2 rounded-lg text-white font-semibold">
             View
           </button>
         </Link>

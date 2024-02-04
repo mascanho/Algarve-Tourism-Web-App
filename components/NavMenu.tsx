@@ -43,7 +43,7 @@ export function NavMenu({ title, trigger, url, cities, mobile }: any | null) {
         </button>
       </Menu.Target>
 
-      <Menu.Dropdown className="ml-1  border-t-sky border-3">
+      <Menu.Dropdown className="ml-1  border-t-key border-3">
         {cities && trigger
           ? cityArr.map((city: any) => (
               <Menu.Item

@@ -9,9 +9,9 @@ const UsefullLinks = () => {
         <a href={item.link} target="_blank" rel="noreferrer" key={item.title}>
           <div className="flex items-center group ">
             <span className="mr-3">
-              <FaArrowRight className="font-thin text-sky group-hover:translate-x-1  transition ease-in delay-100 " />
+              <FaArrowRight className="font-thin text-key group-hover:translate-x-1  transition ease-in delay-100 " />
             </span>
-            <span className="font-thin transition-all ease-in delay-100 group-hover:text-sky  ">
+            <span className="font-thin transition-all ease-in delay-100 group-hover:text-key  ">
               {item.title}
             </span>
           </div>

@@ -18,14 +18,14 @@ export default function SidePanel() {
             className={`
             p-2 
             rounded-md 
-            hover:bg-black 
+            hover:bg-key 
             hover:text-white 
             transition-all 
             ease-in 
             delay-75  
             ${
               pathname?.includes(item?.route)
-                ? "bg-black text-white border-gray-400"
+                ? "bg-key text-white border-gray-400"
                 : "text-black"
             }
             `}
