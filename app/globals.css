@@ -181,6 +181,10 @@ input[type="text"] {
   border: 0;
 }
 
+button {
+  outline: none !important;
+}
+
 .mantine-Carousel-indicator {
   background-color: white;
 }

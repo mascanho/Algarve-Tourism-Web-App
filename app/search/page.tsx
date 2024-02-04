@@ -42,8 +42,7 @@ async function Search(searchParams: any) {
       <section className="max-w-7xl mx-auto sm:mb-10">
         <Link href="/#search">
           <div className="flex items-center w-full space-x-1 -mt-4 mb-4 sm:mb-0 sm:mt-0">
-            <TiArrowBack />
-            <span>Back to search</span>
+            <TiArrowBack className="bg-black text-white rounded-full w-6 p-1 h-6" />
           </div>
         </Link>
         <SearchDrawerContent />
