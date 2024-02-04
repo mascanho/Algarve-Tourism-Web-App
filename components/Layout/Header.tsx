@@ -164,7 +164,7 @@ const Header = ({ currentUser, weatherData }: any) => {
               className={`pl-1 text-sm sm:text-base normal-case flex-1 text-right ${showMobileSearch && "hidden"}  cursor-pointer items-center flex-grow w-full  m-auto sm:w-fit sm:flex font-semibold`}
             >
               <Link href="/">
-                <span className="w-fit text-black">Algarve Wonders</span>
+                <span className="w-fit text-key">Algarve Wonders</span>
               </Link>
             </div>
           </div>
