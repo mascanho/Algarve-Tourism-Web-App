@@ -209,5 +209,5 @@ button {
 /* } */
 
 .custom-shape-divider-bottom-1707076088 .shape-fill {
-  fill: #66bfc7;
+  @apply fill-key;
 }

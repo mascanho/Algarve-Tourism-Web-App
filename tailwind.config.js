@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {
         sky: "#1ca0e3",
-        key: "#66bfc7",
+        key: "#000000",
       },
       keyframes: {
         animatedgradient: {

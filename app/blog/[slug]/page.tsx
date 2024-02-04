@@ -155,11 +155,6 @@ const page = async (props: any) => {
           <BreadCrumbs />
         </section>
         <div className="sm:w-full mb-8 relative ">
-          <div className="w-11/12 sm:w-full my-4">
-            <h1 className="text-black sm:text-4xl text-2xl sm:mt-4 font-semibold ">
-              {blog[0]?.fields?.title}
-            </h1>
-          </div>
           <div className="w-full max-h-[300px] rounded-md overflow-hidden">
             <Image
               width={900}
@@ -207,7 +202,12 @@ const page = async (props: any) => {
             </div>
           </div>
         </div>
-        <section className="mt-10 sm:mt-20 richText">{post}</section>
+        <div className="w-11/12 sm:w-full my-4">
+          <h1 className="text-black sm:text-4xl text-2xl sm:mt-4 font-semibold ">
+            {blog[0]?.fields?.title}
+          </h1>
+        </div>
+        <section className="mt-10 sm:mt-10 richText">{post}</section>
         <section className="text-black mt-20">
           <hr />
           <div className="mt-20">
