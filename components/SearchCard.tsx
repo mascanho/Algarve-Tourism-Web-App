@@ -49,7 +49,7 @@ export const SearchCard = (item: any) => {
       rating,
       embededMap,
       mapShare,
-      id,
+      id: title,
       price,
       shortDescription,
       type,
