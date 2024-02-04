@@ -173,7 +173,7 @@ function BottomCarousel({
                     className="object-fil blur-sm w-full h-full bg-black brightness-50 "
                   />
                   <span className="text-black bg-white absolute font-semibold top-30 px-5 py-1 rounded-lg">
-                    View more..o.
+                    View more...
                   </span>
                 </div>
               </Link>
