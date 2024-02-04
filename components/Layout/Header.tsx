@@ -21,6 +21,7 @@ import Sheet from "./Sheet";
 import NotificationsModal from "./NotificationsModal";
 import BottomDrawer from "./BottomDrawer";
 import { RxHamburgerMenu } from "react-icons/rx";
+import Link from "next/link";
 
 const Header = ({ currentUser, weatherData }: any) => {
   const router = useRouter();
@@ -162,12 +163,9 @@ const Header = ({ currentUser, weatherData }: any) => {
             <div
               className={`pl-1 text-sm sm:text-base normal-case flex-1 text-right ${showMobileSearch && "hidden"}  cursor-pointer items-center flex-grow w-full  m-auto sm:w-fit sm:flex font-semibold`}
             >
-              <span
-                onClick={() => router.push("/")}
-                className="w-fit text-black"
-              >
-                Algarve Wonders
-              </span>
+              <Link href="/">
+                <span className="w-fit text-black">Algarve Wonders</span>
+              </Link>
             </div>
           </div>
           <section className="hidden sm:flex flex-wrap w-1/2 justify-around">
