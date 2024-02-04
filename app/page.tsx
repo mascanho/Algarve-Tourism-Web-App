@@ -9,37 +9,24 @@ import { catArr } from "@/Data/Categories";
 import dynamic from "next/dynamic";
 
 const Card = dynamic(() => import("@/components/Card"));
-const Hero = dynamic(() => import("@/components/Hero"), { suspense: true });
-const Feedback = dynamic(() => import("@/components/Feedback"), {
-  suspense: true,
-});
-const RandomBanner = dynamic(() => import("@/components/Layout/RandomBanner"), {
-  suspense: true,
-});
-const Acordion = dynamic(() => import("@/components/Acordion"), {
-  suspense: true,
-});
+const Hero = dynamic(() => import("@/components/Hero"));
+const Feedback = dynamic(() => import("@/components/Feedback"));
+const RandomBanner = dynamic(() => import("@/components/Layout/RandomBanner"));
+const Acordion = dynamic(() => import("@/components/Acordion"));
 const BottomCarousel = dynamic(
   () => import("@/components/Layout/BottomCarousel"),
-  { suspense: true },
 );
 const GenericCarousel = dynamic(
   () => import("@/components/Layout/CarouselGeneric"),
-  { suspense: true },
 );
 
 const StaticDataCarousel = dynamic(
   () => import("@/components/Layout/StaticDataCarousel"),
-  { suspense: true },
 );
 
-const AlgarveSpecs = dynamic(() => import("@/components/AlgarveSpecs"), {
-  suspense: true,
-});
+const AlgarveSpecs = dynamic(() => import("@/components/AlgarveSpecs"));
 
-const Features = dynamic(() => import("@/components/Features"), {
-  suspense: true,
-});
+const Features = dynamic(() => import("@/components/Features"));
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
@@ -85,7 +72,7 @@ export default async function Home(props: any) {
 
   return (
     <section className="w-full">
-      <Hero categories={categories} />
+      {/* <Hero categories={categories} /> */}
       <Features />
       <div className="space-y-4 my-10 hidden mt-12 sm:mt-10 mx-auto text-center sm:flex sm:flex-col sm:justify-center w-11/12 max-w-7xl ">
         <h3 className="text-4xl font-bold text-black sm:text-5xl mt-20 hidden sm:flex sm:text-center sm:justify-center sm:mx-auto">
