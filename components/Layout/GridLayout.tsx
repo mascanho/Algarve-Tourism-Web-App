@@ -86,7 +86,7 @@ export function LeadGrid({ filteredData }: any) {
             className="absolute top-2  right-2 z-10 sm:hidden flex items-center justify-center pl-[6px] p-[6px] text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
           />
           <Carousel
-            className="sm:hidden h-full w-full rounded-lg relative overflow-hidden car"
+            className="sm:hidden h-full max-h-72 w-full rounded-lg relative overflow-hidden car"
             loop
             slideSize="100%"
             withControls={false}

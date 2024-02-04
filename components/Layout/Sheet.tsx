@@ -84,7 +84,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
             className="flex items-center mb-2"
             onClick={() => {
               window.scrollTo(0, 0);
-              router.push("/");
+              router.push("/search");
               close();
             }}
           >

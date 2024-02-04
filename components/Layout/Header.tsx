@@ -21,6 +21,7 @@ import Sheet from "./Sheet";
 import NotificationsModal from "./NotificationsModal";
 import BottomDrawer from "./BottomDrawer";
 import { RxHamburgerMenu } from "react-icons/rx";
+import Search from "../Search";
 
 const Header = ({ currentUser, weatherData }: any) => {
   const router = useRouter();
@@ -171,7 +172,8 @@ const Header = ({ currentUser, weatherData }: any) => {
             </div>
           </div>
           <section className="hidden sm:flex flex-wrap w-1/2 justify-around">
-            <NavMenu trigger={false} title={"Search"} url={"/"} />
+            {/* <NavMenu trigger={false} title={"Search"} url={"/search"} /> */}
+            <Search title={"Search"} />
             <NavMenu
               expandedMenu={false}
               trigger={"hover"}

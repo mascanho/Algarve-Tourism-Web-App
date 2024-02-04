@@ -64,7 +64,7 @@ const SearchDrawerContent = () => {
 
   return (
     <div
-      className={`w-full sm:max-w-xl sm:mx-auto flex justify-start items-start`}
+      className={`w-full sm:max-w-xl sm:mx-auto flex justify-start  delay-75 items-start`}
     >
       <section
         className={`p-4 relative overflow-hidden flex flex-col flex-wrap shadow-lg  w-full slide-up space-y-4 border rounded-md   ${isVisible ? "visible" : ""}`}
@@ -99,7 +99,7 @@ const SearchDrawerContent = () => {
         <button
           type="button"
           onClick={(e) => handleSearch(e)}
-          className={`overflow-clipw-full text-white rounded-md sm:absolute sm:w-20 sm:right-[22px] sm:py-1  sm:bottom-[22px]   py-2 bg-black active:bg-gray-500 active:text-black`}
+          className={`overflow-clipw-full text-white rounded-md sm:absolute sm:w-20 sm:right-[22px] sm:py-[3px] font-semibold  sm:bottom-[20px]   py-2 bg-black active:bg-gray-500 active:text-black`}
         >
           Search
         </button>
