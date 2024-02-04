@@ -215,7 +215,7 @@ export default async function Home(props: any, req: any) {
                   <span className="mt-1 text-xs text-gray-500">Hidden Gem</span>
                 </>
               ) : (
-                <div className="flex flex-col text-2xl text-sky items-center justify-center">
+                <div className="flex flex-col text-2xl text-key items-center justify-center">
                   <MdVerifiedUser />
                   <span className="text-gray-500 mt-1 text-xs">
                     Verified location
@@ -374,7 +374,7 @@ export default async function Home(props: any, req: any) {
         </section>
       </section>
       <section className="mx-auto w-11/12 sm:w-full  py-10 overflow-hidden">
-        <Link href={`/${category}` || ""} className="text-sm text-sky">
+        <Link href={`/${category}` || ""} className="text-sm text-key">
           <button type="button" className="flex btn items-center ">
             <IoArrowBack className="mr-1" />
             back to {category}

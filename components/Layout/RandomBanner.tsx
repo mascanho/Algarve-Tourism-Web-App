@@ -212,7 +212,7 @@ function RandomBanner({ categories }: any) {
                       <div className="flex items-center">
                         <img
                           src={item?.fields?.mainImage?.fields?.file?.url}
-                          className="w-8 h-8 rounded-full bg-sky  mr-2"
+                          className="w-8 h-8 rounded-full bg-key  mr-2"
                           loading="lazy"
                         />
                         {item?.fields?.title}
@@ -224,7 +224,7 @@ function RandomBanner({ categories }: any) {
 
                 <button
                   onClick={addToFavourites}
-                  className="mt-6 mb-4 mx-auto px-4 py-2 bg-sky text-white hover:bg-sky hover:text-white transition-all ease-in delay-75  rounded-md active:scale-95 flex justify-center"
+                  className="mt-6 mb-4 mx-auto px-4 py-2 bg-key text-white hover:bg-key hover:text-white transition-all ease-in delay-75  rounded-md active:scale-95 flex justify-center"
                 >
                   Add Choices to Your Adventure
                 </button>
@@ -241,7 +241,7 @@ function RandomBanner({ categories }: any) {
                 </button>
               ) : (
                 <button
-                  className="text-sky  flex text-xs sm:text-base items-center space-x-2 py-1   rounded-md "
+                  className="text-key  flex text-xs sm:text-base items-center space-x-2 py-1   rounded-md "
                   onClick={() => setPage(0)}
                 >
                   <AiOutlineArrowLeft className="mr-1" />

@@ -201,7 +201,7 @@ const Header = ({ currentUser, weatherData }: any) => {
               onClick={showFavourites}
             >
               <MdCardTravel className="cursor-pointer relative  sm:text-2xl" />
-              <span className="h-3 w-3 text-[8px] bg-sky absolute right-0 -top-1  text-white rounded-full flex flex-wrap justify-center items-center text-center">
+              <span className="h-3 w-3 text-[8px] bg-key absolute right-0 -top-1  text-white rounded-full flex flex-wrap justify-center items-center text-center">
                 {favouritesLength}
               </span>
             </div>
@@ -219,12 +219,12 @@ const Header = ({ currentUser, weatherData }: any) => {
               />
             </div>
             {openLogin && (
-              <ul className="z-10 absolute w-36 sm:w-36 p-2 text-sm bg-white border text-right shadow-sm menu  sm:-left-3 sm:top-11 border-t-3 border-t-sky rounded-b-md -left-24 top-10">
+              <ul className="z-10 absolute w-36 sm:w-36 p-2 text-sm bg-white border text-right shadow-sm menu  sm:-left-3 sm:top-11 border-t-3 border-t-key rounded-b-md -left-24 top-10">
                 {!currentUser ? (
                   <>
                     <li onClick={loginModal.onOpen} className="w-full">
                       <a
-                        className="rounded-md active:bg-sky"
+                        className="rounded-md active:bg-key"
                         onClick={() => setOpenLogin(!openLogin)}
                       >
                         Sign-up
@@ -233,7 +233,7 @@ const Header = ({ currentUser, weatherData }: any) => {
                     <li onClick={registeredModal.onOpen} className="w-full">
                       <a
                         onClick={() => setOpenLogin(!openLogin)}
-                        className="rounded-md active:bg-sky"
+                        className="rounded-md active:bg-key"
                       >
                         Login
                       </a>
@@ -245,7 +245,7 @@ const Header = ({ currentUser, weatherData }: any) => {
 
                 {currentUser ? (
                   <li onClick={userLogsOut}>
-                    <a className="rounded-md active:bg-sky">Logout</a>
+                    <a className="rounded-md active:bg-key">Logout</a>
                   </li>
                 ) : (
                   ""

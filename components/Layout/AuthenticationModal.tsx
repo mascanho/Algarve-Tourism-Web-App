@@ -46,7 +46,7 @@ const AuthenticationModal = ({ currentUser }: any) => {
                   className="w-full border py-4 border"
                 >
                   <a
-                    className="rounded-md active:bg-sky"
+                    className="rounded-md active:bg-key"
                     onClick={() => setOpenLogin(!openLogin)}
                   >
                     Sign-up
@@ -55,7 +55,7 @@ const AuthenticationModal = ({ currentUser }: any) => {
                 <li onClick={registeredModal.onOpen} className="w-full">
                   <a
                     onClick={() => setOpenLogin(!openLogin)}
-                    className="rounded-md active:bg-sky"
+                    className="rounded-md active:bg-key"
                   >
                     Login
                   </a>
@@ -67,7 +67,7 @@ const AuthenticationModal = ({ currentUser }: any) => {
 
             {currentUser ? (
               <li onClick={userLogsOut}>
-                <a className="rounded-md active:bg-sky">Logout</a>
+                <a className="rounded-md active:bg-key">Logout</a>
               </li>
             ) : (
               ""
