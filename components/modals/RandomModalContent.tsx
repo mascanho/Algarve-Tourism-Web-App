@@ -44,13 +44,13 @@ function RandomModalContent() {
       )}
       <div className="w-full flex justify-between mt-4">
         <button
-          className="bg-sky px-4 flex items-center w-28 space-x-2 py-1 text-white  rounded-md "
+          className="bg-key px-4 flex items-center w-28 space-x-2 py-1 text-white  rounded-md "
           onClick={() => setPage(0)}
         >
           <AiOutlineArrowLeft className="mr-1" /> Previous
         </button>
         <button
-          className="bg-sky text-white px-4 w-28 py-1 text-center justify-center rounded-md items-center flex"
+          className="bg-key text-white px-4 w-28 py-1 text-center justify-center rounded-md items-center flex"
           onClick={() => setPage(1)}
         >
           Next

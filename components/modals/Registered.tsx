@@ -120,7 +120,7 @@ function RegisteredModal({ currentUser }: any) {
               </div>
 
               <button
-                className="flex items-center justify-center w-full py-4 pb-4 text-base text-white rounded-md bg-sky"
+                className="flex items-center justify-center w-full py-4 pb-4 text-base text-white rounded-md bg-key"
                 type="submit"
               >
                 Submit
@@ -153,7 +153,7 @@ function RegisteredModal({ currentUser }: any) {
           </div>
           <span className="text-xs text-gray-300">
             No account?{" "}
-            <span onClick={handlechangeModal} className="text-sky">
+            <span onClick={handlechangeModal} className="text-key">
               Register now.{" "}
             </span>
           </span>

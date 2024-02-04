@@ -15,7 +15,7 @@ export default function Form() {
         <Confetti width={width} height={height} />
         <h2 className="text-center text-3xl">Thank You For Your Contact</h2>
         <Link href="/">
-          <button className="border bg-sky text-white w-full py-2 mt-8 px-4 rounded-md">
+          <button className="border bg-key text-white w-full py-2 mt-8 px-4 rounded-md">
             Back to Home Page
           </button>
         </Link>
@@ -26,7 +26,7 @@ export default function Form() {
   return (
     <div className="px-10 w-full flex flex-col items-center justify-center">
       <section className="flex flex-col items-center justify-center text-center">
-        <h1 className="w-full sm:text-4xl text-3xl font-bold text-sky text-center">
+        <h1 className="w-full sm:text-4xl text-3xl font-bold text-key text-center">
           Let's Get In Touch
         </h1>
         <h2 className="w-10/12 my-6 mx-auto text-sm">
@@ -64,7 +64,7 @@ export default function Form() {
         <div className="pt-2 w-full">
           <button
             type="submit"
-            className="border bg-sky text-white w-full py-2"
+            className="border bg-key text-white w-full py-2"
             disabled={state.submitting}
           >
             Send

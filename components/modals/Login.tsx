@@ -121,7 +121,7 @@ function LoginModal({ currenUser }: any) {
               </div>
 
               <button
-                className="flex font-semibold items-center justify-center w-full py-4 pb-4 text-base text-white rounded-md bg-sky sm:text-xl"
+                className="flex font-semibold items-center justify-center w-full py-4 pb-4 text-base text-white rounded-md bg-key sm:text-xl"
                 type="submit"
               >
                 Submit
