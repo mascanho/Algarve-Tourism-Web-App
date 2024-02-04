@@ -99,7 +99,7 @@ const SearchDrawerContent = () => {
         <button
           type="button"
           onClick={(e) => handleSearch(e)}
-          className={`overflow-clipw-full text-white rounded-md sm:absolute sm:w-20 sm:right-[22px] sm:py-1  sm:bottom-[22px]   py-2 bg-black active:bg-gray-500 active:text-black`}
+          className={`overflow-clipw-full text-white rounded-md sm:absolute sm:w-20 sm:right-[22px] sm:py-1  sm:bottom-[20px]   py-2 bg-black active:bg-gray-500 active:text-black`}
         >
           Search
         </button>
