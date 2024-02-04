@@ -21,6 +21,28 @@ export async function getComments() {
   return comments;
 }
 
+export async function generateStaticParams() {
+  async function getAllBlogs() {
+    const client: any = createClient({
+      space: process.env.CONTENTFUL_SPACE_ID3!,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN3!,
+    });
+    const res = await client.getEntries({
+      content_type: "blog",
+      limit: 10,
+      include: 10,
+      skip: 0,
+    });
+
+    return await res.items;
+  }
+
+  const blogs = await getAllBlogs();
+
+  return blogs.map((blog: any) => ({
+    slug: blog.fields.slug,
+  }));
+}
 async function getAllBlogs() {
   const client: any = createClient({
     space: process.env.CONTENTFUL_SPACE_ID3!,
