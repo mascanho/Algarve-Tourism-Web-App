@@ -77,7 +77,7 @@ const SearchDrawerContent = () => {
       className={`w-full sm:max-w-xl sm:mx-auto flex justify-start items-start`}
     >
       <section
-        className={`p-4 relative overflow-hidden flex flex-col flex-wrap shadow-lg w-full h-88 slide-up space-y-4 border rounded-md   ${isVisible ? "visible" : ""}`}
+        className={`p-4 relative overflow-hidden flex flex-col flex-wrap shadow-lg  h-full slide-up space-y-4 border rounded-md   ${isVisible ? "visible" : ""}`}
       >
         <input
           className="bg-transparent w-full h-10 text-black ring-0 focus:ring-0 focus:outline-none focus:ring-black focus:ring-0ffset-0 pl-9 border rounded-md "

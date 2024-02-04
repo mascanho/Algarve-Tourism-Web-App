@@ -206,5 +206,5 @@ input[type="text"] {
 
 /* styles the search Drawer */
 .mantine-8a5c2a input {
-  border: 2px solid red;
+  /* border: 1px solid black; */
 }
