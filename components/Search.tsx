@@ -36,7 +36,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
           type="text"
           placeholder={placeholderText}
           onClick={open}
-          className={`h-10 sm:h-12 bg-white placeholder-gray-300 rounded-full border  shadow-sm pl-9 sm:pb-4 pt-[13px] w-full  mx-auto text-xs outline-none border-collapse placeholder:text-[14px] py-4 sm:text-xs
+          className={`h-10 sm:h-12 bg-white placeholder-gray-300 rounded-full border  shadow-sm pl-9 sm:pb-4 pt-[17px] w-full  mx-auto text-xs outline-none border-collapse placeholder:text-[14px] py-4 sm:text-xs
 
             ${pathname === "/search" && "border-2 border-blue-400 relative"}
             

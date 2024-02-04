@@ -31,9 +31,7 @@ const Hero = ({ categories }: any) => {
         {" "}
         The region&apos;s top attractions and less known hidden gems
       </h2>
-      <div className="flex justify-center m-auto  overflow-hidden pb-10 w-full ">
-        <Search placeholderText={"Destination or activity..."} />
-      </div>
+      <Search placeholderText={"Destination or activity..."} />
       <div className="sm:w-11/12 mx-auto h-96 sm:h-[420px] w-full  flex flex-wrap flex-col rounded-t-lg relative max-w-3xl">
         <Image
           className="rounded-t-3xl w-full h-full mx-auto sm:object-fill"
