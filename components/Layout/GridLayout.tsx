@@ -86,7 +86,7 @@ export function LeadGrid({ filteredData }: any) {
             className="absolute top-2  right-2 z-10 sm:hidden flex items-center justify-center pl-[6px] p-[6px] text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
           />
           <Carousel
-            className="sm:hidden h-full w-full max-h-64 rounded-lg relative overflow-hidden car"
+            className="sm:hidden h-full w-full max-h-64 rounded-xl relative overflow-hidden car"
             loop
             slideSize="100%"
             withControls={false}
@@ -96,7 +96,7 @@ export function LeadGrid({ filteredData }: any) {
             {filteredData[0]?.fields?.images?.map((image: any) => (
               <Carousel.Slide
                 key={image?.fields?.file?.url}
-                className="rounded-lg car"
+                className="rounded-xl car"
               >
                 <img
                   alt={filteredData[0]?.fields?.title}

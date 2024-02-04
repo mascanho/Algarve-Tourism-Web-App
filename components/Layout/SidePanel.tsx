@@ -10,14 +10,12 @@ export default function SidePanel() {
 
   return (
     <div className="hidden sm:block mb-40 relative">
-      <div className="w-40 space-y-4 cursor-pointer pr-6 border-r-[1.5px] border-gray-100 h-full sticky bottom-4  transition-all ease-in delay-75 overflow-hidden  ">
+      <div className="w-32 space-y-4 cursor-pointer pr-6 sm:mt-1  h-full sticky bottom-4  transition-all ease-in delay-75 overflow-hidden  ">
         {catArr.map((item) => (
           <div
             onClick={() => router.push(`${item.route}`)}
             key={item.id}
             className={`
-            border 
-border-gray-300
             p-2 
             rounded-md 
             hover:bg-black 
