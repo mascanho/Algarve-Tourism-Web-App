@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { Box, ScrollArea } from "@mantine/core";
+import { catArr } from "@/Data/Categories";
 
 const Search = dynamic(() => import("./Search"));
 
@@ -31,7 +33,13 @@ const Hero = ({ categories }: any) => {
         {" "}
         The region&apos;s top attractions and less known hidden gems
       </h2>
-      <Search placeholderText={"Destination or activity..."} />
+      <ScrollArea h={90} w={300} className="mx-auto w-full" scrollbars="x">
+        <Box className="flex" w={600}>
+          {catArr.map((cat: any) => (
+            <div key={cat.id}>{cat.name}</div>
+          ))}
+        </Box>
+      </ScrollArea>{" "}
       <div className="sm:w-11/12 mx-auto h-96 sm:h-[420px] w-full flex flex-wrap flex-col rounded-t-lg relative max-w-3xl">
         <Image
           className="rounded-t-3xl w-full h-full mx-auto object-cover sm:object-fill"
