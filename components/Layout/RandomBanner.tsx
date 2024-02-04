@@ -147,7 +147,7 @@ function RandomBanner({ categories }: any) {
           </button>
           <button
             onClick={GenerateRandomChoice}
-            className="px-8 py-3 w-52 sm:w-fit text-sm sm:text-base m-auto text-white bg-black hover:bg-black hover:text-white transition-all ease-in delay-75 rounded-md active:scale-95"
+            className="px-8 py-3 w-52 sm:w-fit text-sm sm:text-base m-auto text-white bg-key hover:bg-black hover:text-white transition-all ease-in delay-75 rounded-md active:scale-95"
           >
             Generate AI Journey
           </button>

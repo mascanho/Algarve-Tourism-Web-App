@@ -87,7 +87,7 @@ const Card = ({
       <section className="sm:grid mx-auto hidden  items-start sm:w-11/12 sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 lg:gap-x-8 md:grid-cols-3 sm:pt-10 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center max-w-7xl ">
         {categories?.slice(0, 7).map((cat: any) => {
           return (
-            <div className="border pb-2 sm:pb-2 mb-5 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-11/12  mx-auto sm:w-full   hover:border-sky  hover:shadow-md">
+            <div className="border pb-2 sm:pb-2 mb-5 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-11/12  mx-auto sm:w-full   hover:border-key  hover:shadow-md">
               <div className="relative flex flex-col w-full h-[200px] sm:h-40 md:h-52 xl:h-44 rounded-t-md ">
                 <Image
                   fill
@@ -175,7 +175,7 @@ const Card = ({
                 </div>
                 <div className="flex items-center justify-end text-sm w-full pr-2 ">
                   <Link href={`/${cat?.fields?.type}/${cat?.fields?.slug}`}>
-                    <span className="flex text-xs text-sky mr-2">
+                    <span className="flex text-xs text-key mr-2">
                       Read More
                     </span>
                   </Link>
@@ -199,7 +199,7 @@ const Card = ({
       <div className="w-fit mx-auto flex justify-center">
         <Link href={"/beaches"}>
           <button
-            className="border text-gray-700 mt-10 rounded-md active:bg-sky active:text-white transition-all hidden ease-in px-7 hover:bg-black hover:text-white py-2 mx-auto sm:flex justify-center text-center"
+            className="border text-gray-700 mt-10 rounded-md active:bg-key active:text-white transition-all hidden ease-in px-7 hover:bg-black hover:text-white py-2 mx-auto sm:flex justify-center text-center"
             type="button"
           >
             View more

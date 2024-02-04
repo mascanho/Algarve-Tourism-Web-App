@@ -107,7 +107,7 @@ function AlgarveSpecs() {
           return (
             <div key={item.title} className="flex">
               <div>
-                <div className="flex justify-center items-center text-4xl text-white mr-3 bg-black w-12 h-12 rounded-xl">
+                <div className="flex justify-center items-center text-4xl text-white mr-3 bg-key w-12 h-12 rounded-xl">
                   {item.image}
                 </div>
               </div>

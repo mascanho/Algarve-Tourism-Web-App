@@ -64,14 +64,14 @@ function Features() {
         onClick={() => setShowEl(!showEl)} // Toggle the state on click
         className="space-y-4 mb-10 mx-auto text-center animate-fade-in cursor-pointer"
       >
-        <span className="bg-black px-4 py-1 font-semibold text-white rounded-full cursor-pointer">
+        <span className="bg-key px-4 py-1 font-semibold text-white rounded-full cursor-pointer">
           How It Works
         </span>
         <p className="w-10/12 sm:w-2/4 lg:w-2/6 mx-auto text-gray-700">
           Discover the best places, save and share your next adventure with
           others, no stress, no ads and no time wasted
         </p>
-        <div className="w-16 h-[2px] bg-sky mx-auto" />
+        <div className="w-16 h-[2px] bg-key mx-auto" />
       </div>
       <div
         className={`grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-8 grid-rows-2 animate-fade-up ${showEl ? "" : "hidden"}`}
@@ -81,10 +81,10 @@ function Features() {
             key={item?.id}
             className="flex-col justify-start text-left rounded-md items-center space-y-2 p-8 border"
           >
-            <div className="text-5xl text-sky">{item.icon}</div>
+            <div className="text-5xl text-key">{item.icon}</div>
 
             <div className="font-semibold text-gray-700">{item.name}</div>
-            <div className="w-16 h-[2px] bg-sky" />
+            <div className="w-16 h-[2px] bg-key" />
             <div className="text-sm text-gray-400 pt-2">{item.description}</div>
           </div>
         ))}
