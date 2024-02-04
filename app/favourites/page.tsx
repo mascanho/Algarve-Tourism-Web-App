@@ -28,6 +28,7 @@ function page() {
   const session = useSession();
   const loginModal = useLoginModalStore();
   const { removeFavourite } = useAddToFavourites();
+  const [localStorageItems, setLocalStorageItems] = useState([]);
 
   const removeFavouriteGlobal = (id: number) => {
     // Remove the favorite from the local state
@@ -58,23 +59,24 @@ function page() {
         setFavourites(JSON.parse(favourites));
       }
     }
-  }, [removeFavourite, favourites.length]);
+  }, [removeFavourite]);
 
+  const getLocalStorageItems = () => {
+    const storedItems = JSON.parse(localStorage.getItem("yourKey") || "[]");
+    setLocalStorageItems(storedItems);
+  };
+
+  // Initial load from local storage
   useEffect(() => {
-    const handleStorageChange = (event: any) => {
-      if (event.key === "favourites") {
-        // The "favourites" key in localStorage has changed
-        const updatedFavourites = JSON.parse(event.newValue);
-        // Do something with the updated data
-      }
-    };
+    getLocalStorageItems();
+  }, []);
 
-    // Attach the event listener
-    window.addEventListener("storage", handleStorageChange);
+  // Update the state when local storage changes
+  useEffect(() => {
+    window.addEventListener("storage", getLocalStorageItems);
 
-    // Clean up the event listener when the component unmounts
     return () => {
-      window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener("storage", getLocalStorageItems);
     };
   }, []);
 

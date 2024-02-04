@@ -16,6 +16,7 @@ import {
   useLoginModalStore,
   useRegisteredModalStore,
 } from "@/app/hooks/useLoginModal";
+import Link from "next/link";
 
 function Sheet({ showMobileBurger, favourites, currentUser }: any) {
   const [opened, { open, close }] = useDisclosure(false);
@@ -107,22 +108,23 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
           <div
             className="flex items-center mb-2"
             onClick={() => {
-              router.push("/favourites");
               close();
             }}
           >
-            <span className="my-auto">
-              Favourites
-              {favourites.favourites.length > 0 ? (
-                <span className="text-sm text-gray-700 ml-2">
-                  <span className="font-semibold text-white">
-                    ({favourites.favourites.length})
+            <Link href="/favourites">
+              <span className="my-auto">
+                Favourites
+                {favourites.favourites.length > 0 ? (
+                  <span className="text-sm text-gray-700 ml-2">
+                    <span className="font-semibold text-white">
+                      ({favourites.favourites.length})
+                    </span>
                   </span>
-                </span>
-              ) : (
-                ""
-              )}
-            </span>
+                ) : (
+                  ""
+                )}
+              </span>
+            </Link>
           </div>{" "}
           <div
             className="flex items-center mb-2"

@@ -29,11 +29,8 @@ function BottomDrawer({ favouritesLength }: any) {
     console.log(id);
     // Remove the favorite from the local state
     removeFavourite(id);
-    const updatedFavourites = favourites.filter((fav: any) => fav.id !== id);
+    const updatedFavourites = favourites.filter((fav: any) => fav.id === id);
     setFavourites(updatedFavourites);
-
-    // Update local storage
-    // localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
   };
 
   const removeAllavourites = () => {
