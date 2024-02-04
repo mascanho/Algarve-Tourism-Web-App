@@ -18,7 +18,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
 
   return (
     <section
-      className={`w-full 
+      className={`w-full pb-10 
     ${pathname === "/search" && "mt-10"}
     `}
     >

@@ -86,7 +86,7 @@ const SearchDrawerContent = () => {
             ref={pathname === "/search" ? null : inputRef}
             data-autofocus
             id="search_modal"
-            className="bg-transparent w-full text-black ring-black pl-9 border p-2 mt-4 rounded-md "
+            className="bg-transparent w-full text-black ring-black pl-9 border rounded-md "
             placeholder="Search for city or activities"
             type="text"
             onChange={(e) => setInputValue(e.target.value)}
