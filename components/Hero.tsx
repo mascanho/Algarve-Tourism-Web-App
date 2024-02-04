@@ -40,7 +40,7 @@ const Hero = ({ categories }: any) => {
         </div>
         <img
           className="rounded-t-3xl z-0  sm:hidden rounded-2xl w-full h-full mx-auto shadow-lg object-fill brightness-75"
-          src="https://gretastravels.com/wp-content/uploads/2021/09/DSC_0911.jpg.webp"
+          src="/images/mobile-bg.webp"
           alt="hero image"
           width={800}
           height={100}
