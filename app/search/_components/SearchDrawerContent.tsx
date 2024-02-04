@@ -11,7 +11,7 @@ import {
   MdEvent,
   MdSportsHandball,
 } from "react-icons/md";
-import { PiMountainsLight } from "react-icons/pi";
+import { PiMountainsFill } from "react-icons/pi";
 
 const SearchDrawerContent = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,7 +34,7 @@ const SearchDrawerContent = () => {
     Beaches: <GiBeachBucket />,
     Restaurants: <FaUtensils />,
     Events: <MdEvent />,
-    Adventure: <PiMountainsLight />,
+    Adventure: <PiMountainsFill />,
     Business: <MdBusinessCenter />,
     Hiking: <FaHiking />,
     Sports: <MdSportsHandball />,
