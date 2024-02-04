@@ -1,3 +1,205 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.mantine-Carousel-control {
+  background-color: white;
+}
+
+.mantine-1v3yzoy {
+  background-color: white;
+}
+
+.mantine-1xx95jg {
+  @apply text-gray-400 !important;
+}
+
+.mantine-Tabs-panel p {
+  @apply mb-4;
+}
+
+.mantine-137wxqm {
+  @apply sm:mt-0 sm:mb-0 sm:p-0 !important;
+}
+
+.richText p,
+b {
+  @apply text-black mb-4 font-normal !important;
+}
+
+.richText li {
+  @apply list-decimal ml-4 !important;
+}
+
+.richText a {
+  @apply underline text-sky !important;
+}
+
+.richText h3 {
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+@media print {
+  footer,
+  .footer,
+  .favBanner,
+  .header,
+  .hiddenRow,
+  header,
+  nav {
+    display: none !important;
+  }
+}
+
+@media print {
+  .cardFavs {
+    @apply w-[300px] flex;
+  }
+  .gridFavs {
+    @apply grid-cols-2 gap-y-4;
+  }
+}
+
+.days input[type="text"],
+.atractions input[type="text"] {
+  @apply text-xs sm:text-base;
+}
+
+input[type="text"] {
+  font-size: 16px;
+}
+
+.mantine-1cn2mlo {
+  @apply rounded-none outline-none active:outline-none active:rounded-none;
+}
+
+/* Animations and preferences */
+/* @media (prefers-reduced-motion: no-preference) { */
+/*   .animate-fade { */
+/*     animation: fade-out linear; */
+/*     animation-timeline: view(); */
+/*     animation-range: exit -200px; */
+/*   } */
+/**/
+/*   .animate-fade-in { */
+/*     animation: fade-in linear forwards; */
+/*     animation-timeline: view(); */
+/*     animation-range-start: cover; */
+/*     animation-range-end: 550px; */
+/*   } */
+/**/
+/*   @keyframes fade-out { */
+/*     to { */
+/*       opacity: 0; */
+/*     } */
+/*   } */
+/**/
+/*   @keyframes fade-in { */
+/*     from { */
+/*       scale: 0.8; */
+/*       opacity: 0; */
+/*     } */
+/*     to { */
+/*       scale: 1; */
+/*       opacity: 1; */
+/*     } */
+/*   } */
+/* } */
+
+.changelog {
+  @apply font-bold mt-12;
+
+  p,
+  li {
+    @apply font-normal m-0;
+  }
+
+  h1 {
+    @apply text-5xl mb-16 text-center;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-sky rounded-xl;
+}
+
+.bottomCarousel .mantine-vcl0d1 {
+  @apply sm:flex hidden flex -top-16 justify-end w-11/12 mx-auto space-x-2 !important;
+}
+
+.animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 10s ease infinite alternate;
+  -moz-animation: animatedgradient 10s ease infinite alternate;
+  animation: animatedgradient 10s ease infinite alternate;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bottomDraw .mantine-ff23mu {
+  border-radius: 20px 20px 0 0 !important;
+}
+
+.bottomDraw .mantine-1fholi4 {
+  outline: none !important;
+  border: 0;
+}
+
+.mantine-Carousel-indicator {
+  background-color: white;
+}
+
+.mantine-ff23mu,
+.mantine-19vej1h {
+  border-radius: 20px 20px 0 0 !important;
+}
+
+.mantine-1ryt1ht {
+  font-family: "PT Sans" !important;
+}
+
+/* Search Drawer animations */
+/* .slide-up { */
+/*   transform: translateY(100%); */
+/*   transition: transform 0.75s ease-in-out; */
+/* } */
+/**/
+/* .slide-up.visible { */
+/*   transform: translateY(0px); */
+/* } */
