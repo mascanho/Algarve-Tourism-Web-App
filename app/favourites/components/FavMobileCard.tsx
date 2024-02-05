@@ -32,12 +32,12 @@ function FavMobileCard({
 
   return (
     <section className="w-11/12 mx-auto mt-4 ">
-      <section className="flex flex-col rounded-xl justify-between  ">
-        <div className=" rounded-xl mx-auto h-full relative overflow-hidden mt-5">
+      <section className="flex flex-col rounded-xl justify-between px-1  ">
+        <div className=" rounded-xl mx-auto h-full w-full relative overflow-hidden mt-5">
           <Image
             src={image}
             alt={title}
-            className="rounded-xl w-full relative border object-cover max-h-52"
+            className="rounded-xl w-full  relative border object-cover max-h-52"
           />
           <FaRegTrashAlt
             onClick={() => removeFavouriteGlobal(id)}

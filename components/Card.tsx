@@ -89,14 +89,14 @@ const Card = ({
       <section className="sm:grid mx-auto hidden  items-start sm:w-11/12 sm:grid-cols-2 sm:gap-x-10 md:gap-x-4 lg:gap-x-8 md:grid-cols-3 sm:pt-10 lg:grid-cols-3 xl:grid-cols-4 sm:gap-y-2 place-items-center max-w-7xl ">
         {categories?.slice(0, 7).map((cat: any) => {
           return (
-            <div className="pb-2 group sm:pb-2 mb-5 space-y-3 p-4 sm:space-y-1 text-left transition-all ease-in delay-75 rounded-lg max-w-7xl w-11/12  mx-auto sm:w-full">
-              <div className="relative flex flex-col w-full  h-[200px] sm:h-40 md:h-52 xl:h-44 rounded-t-md ">
+            <div className="pb-2 group sm:pb-2 mb-5 space-y-3 p-4 sm:space-y-1 text-left transition-all ease-in delay-75 rounded-xl max-w-7xl w-11/12  mx-auto sm:w-full">
+              <div className="relative flex flex-col w-full px-1  h-[200px] sm:h-40 md:h-52 xl:h-44 rounded-t-md ">
                 <Image
                   fill
                   loading="lazy"
                   src={`https:${cat?.fields?.images[0]?.fields?.file?.url}`}
                   alt="image"
-                  className="block h-full w-full object-cover rounded-lg "
+                  className="block h-full px-1 w-full object-cover rounded-xl "
                 />
                 <div
                   onClick={(e) => {
@@ -125,7 +125,7 @@ const Card = ({
                 >
                   <FaRegHeart className="text-xl group-hover:scale-110 transition-all ease-in-out  text-red-500 hover:pt-[2px] pt-[1px]" />
                 </div>
-                <span className="absolute left-0 py-1 pr-2 text-xs text-black bg-white rounded-r-full top-4 ">
+                <span className="absolute left-1 py-1 pr-2 text-xs text-highlight bg-key rounded-r-full top-4 ">
                   📍 {cat?.fields?.city}
                 </span>
               </div>

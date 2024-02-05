@@ -65,7 +65,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
               key={cat?.id}
               className="space-y-1 text-left p-2 group lg:w-full pb-2 transition-all ease-in delay-75"
             >
-              <div className="w-full h-48 sm:h-56 md:h-48 xl:h-36 flex   overflow-hidden relative">
+              <div className="w-full h-48 sm:h-56 md:h-48 xl:h-36 flex px-1   overflow-hidden relative">
                 <img
                   src={
                     cat?.fields?.mainImage?.fields?.file?.url
@@ -101,7 +101,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
                 >
                   <FaRegHeart className="text-lg group-hover:scale-110 pt-[1px]  text-red-500" />
                 </div>
-                <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-highlight bg-key  ">
+                <span className="absolute left-1 top-4 pr-2 py-1 rounded-r-full text-xs text-highlight bg-key  ">
                   📍 {cat?.fields?.city}
                 </span>
               </div>
