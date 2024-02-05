@@ -97,7 +97,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
                       pathname: window?.location?.href,
                     })
                   }
-                  className="absolute cursor-pointer active:scale-90 w-8 h-8 flex items-center justify-center rounded-full  bg-key top-2 right-2"
+                  className="absolute cursor-pointer active:scale-90 w-8 h-8 flex items-center justify-center rounded-full  bg-key top-3 right-3"
                 >
                   <FaRegHeart className="text-lg group-hover:scale-110 pt-[1px]  text-red-500" />
                 </div>
