@@ -31,8 +31,8 @@ function FavMobileCard({
   // const { removeFavourite } = useAddToFavourites();
 
   return (
-    <section className="w-11/12 mx-auto">
-      <section className="flex flex-col rounded-xl pt-8 justify-between  ">
+    <section className="w-11/12 mx-auto mt-4 ">
+      <section className="flex flex-col rounded-xl justify-between  ">
         <div className=" rounded-xl mx-auto h-full relative overflow-hidden mt-5">
           <Image
             src={image}

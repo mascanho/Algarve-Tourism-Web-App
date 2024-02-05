@@ -216,7 +216,7 @@ function page() {
                 </thead>
                 <tbody suppressHydrationWarning={true}>{rows}</tbody>
               </Table>
-              <div className="my-5 sm:hidden grid grid-col-1  ">
+              <div className="mb-5 sm:hidden grid grid-col-1  ">
                 {favourites.map((el: any) => (
                   <FavMobileCard
                     key={el.title}

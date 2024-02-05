@@ -161,14 +161,13 @@ const page = async (props: any) => {
               height={700}
               src={"https:" + blog[0]?.fields?.image?.fields?.file.url}
               alt={blog[0]?.fields?.title}
-              className="mb-4 sm:mb-0 object-fill w-full h-full rounded-md"
+              className="sm:mb-0 object-fill w-full h-full rounded-md"
             />
           </div>
           <section className="hidden">
-            <div className="w-full absolute hidden sm:block sm:bottom-28 h-[100px] bg-gradient-to-b from-transparent to-white" />
             <div className="w-full absolute hidden sm:block sm:bottom-28 h-[200px] bg-gradient-to-b from-transparent to-white" />
           </section>
-          <div className="relative w-full space-x-2 mt-4 flex items-center justify-between">
+          <div className="relative w-full mt-1 flex items-center justify-between">
             <div className="w-full flex items-center">
               <div className="relative w-10 h-10 mr-2 flex items-center">
                 <Image
@@ -202,12 +201,12 @@ const page = async (props: any) => {
             </div>
           </div>
         </div>
-        <div className="w-11/12 sm:w-full my-4">
+        <div className="w-11/12 sm:w-full mt-4">
           <h1 className="text-black sm:text-4xl text-2xl sm:mt-4 font-semibold ">
             {blog[0]?.fields?.title}
           </h1>
         </div>
-        <section className="mt-10 sm:mt-10 richText">{post}</section>
+        <section className="mt-5 richText">{post}</section>
         <section className="text-black mt-20">
           <hr />
           <div className="mt-20">
@@ -225,7 +224,7 @@ const page = async (props: any) => {
           </div>
         </section>
 
-        <section className="pt-11 block">
+        <section className="py-11 block">
           <hr className="mt-8 mb-16" />
           <Link href="/blog">
             <button
