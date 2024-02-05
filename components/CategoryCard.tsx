@@ -112,7 +112,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
                 </h3>
                 <div className="flex items-center">
                   <IoIosStar className="text-key" />
-                  <span className="text-xs ml-1 mt-[1px] text-key">
+                  <span className="text-xs ml-1 pt-[1px] sm:pt-[2px] text-key">
                     {cat?.fields?.rating}
                   </span>
                 </div>
