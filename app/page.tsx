@@ -92,7 +92,7 @@ export default async function Home(props: any) {
       <StaticDataCarousel categories={cities} title="Cities to visit" />
       <GenericCarousel categories={restaurants} title="Where to eat" />
       <BottomCarousel categories={beaches} title="More to explore" />
-      <StaticDataCarousel categories={carRentals} title="Car rentals" />
+      {/* <StaticDataCarousel categories={carRentals} title="Car rentals" /> */}
       <RandomBanner categories={categories} />
       <Feedback {...quotes} />
       <AlgarveSpecs />

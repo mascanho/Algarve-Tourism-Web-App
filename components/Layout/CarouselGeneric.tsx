@@ -118,9 +118,9 @@ function GenericCarousel({
 
   return (
     <section className="mb-20 sm:pb-6 mt-20">
-      <h5 className="mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6 mt-20 max-w-7xl">
+      <h2 className="mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6 mt-20 max-w-7xl">
         {title}
-      </h5>
+      </h2>
       <section
         ref={ref}
         style={{
@@ -138,12 +138,12 @@ function GenericCarousel({
             initialSlide={1}
           >
             {slides}
-            <div className=" sm:w-[310px] md:w-[420px] w-[380px] h-full border flex justify-center items-center  rounded-2xl">
+            <div className=" sm:w-[310px] md:w-[420px] h-full border flex justify-center items-center  rounded-2xl">
               <Link
                 className="h-[300px]"
                 href={`${title === "Where to eat" ? "/restaurants" : "/adventure"}`}
               >
-                <div className=" sm:w-[280px] xl:w-[400px] w-[380px] relative  flex justify-center  items-center rounded-2xl underline h-full overflow-clip   text-white">
+                <div className=" sm:w-[280px] xl:w-[400px] w-[250px] relative  flex justify-center  items-center rounded-2xl underline h-full overflow-clip   text-white">
                   <img
                     src={
                       title === "Where to eat"
