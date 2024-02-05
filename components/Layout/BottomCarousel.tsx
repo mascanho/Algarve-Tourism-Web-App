@@ -166,7 +166,7 @@ function BottomCarousel({
 
             <div className=" w-[210px] lg:w-[420px]  h-full border flex justify-center items-center  rounded-2xl">
               <Link className="h-[300px]" href={`${"/beache"}`}>
-                <div className="lg:w-[280px] w-[210px] relative  flex justify-center  items-center rounded-2xl underline h-full overflow-clip   text-white">
+                <div className="lg:w-[380px] w-[210px] relative  flex justify-center  items-center rounded-2xl underline h-full overflow-clip   text-white">
                   <img
                     src="/images/bg-3.webp"
                     alt=""
