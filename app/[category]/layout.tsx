@@ -54,7 +54,7 @@ export default function RootLayout({
         <div className="w-11/12 sm:w-6/12 md:w-8/12 mx-auto pt-2 sm:mt-4  pb-4 sm:mb-0 hidden  sm:flex  max-w-7xl xl:max-w-4xl">
           <Breadcrumbs />
         </div>
-        <section className="sm:pl-4 xl:pl-0    max-w-7xl mx-auto flex   justify-start transition-all ease-in delay-75 sticky top-11  ">
+        <section className="sm:pl-4 xl:pl-0    max-w-7xl mx-auto flex   justify-start transition-all ease-in delay-75 top-11  ">
           <SidePanel />
           <div className="flex-1 sm:bg-gray-50 sm:rounded-xl sm:pt-2 mb-20">
             {children}

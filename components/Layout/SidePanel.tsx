@@ -10,7 +10,7 @@ export default function SidePanel() {
 
   return (
     <div className="hidden sm:block mb-40 relative">
-      <div className="w-32 space-y-4 cursor-pointer pr-6 sm:mt-1  h-full sticky bottom-4  transition-all ease-in delay-75 overflow-hidden  ">
+      <div className="w-36 space-y-4 cursor-pointer pr-4 sm:mt-1  h-full sticky bottom-4  transition-all ease-in delay-75 overflow-hidden  ">
         {catArr.map((item) => (
           <div
             onClick={() => router.push(`${item.route}`)}
@@ -21,12 +21,12 @@ export default function SidePanel() {
             hover:bg-key 
             hover:text-white 
             transition-all 
-            ease-in 
-            delay-75  
+            ease-in-out 
+            delay-100  
             ${
               pathname?.includes(item?.route)
-                ? "bg-key text-white border-gray-400"
-                : "text-black"
+                ? "bg-key text-white border-gray-400 transition-all"
+                : "text-black transition-all"
             }
             `}
           >

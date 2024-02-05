@@ -12,6 +12,8 @@ import {
 import { IoLocation } from "react-icons/io5";
 import Link from "next/link";
 import { useEffect } from "react";
+import { IoIosStar } from "react-icons/io";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 function FavMobileCard({
   title,
@@ -22,49 +24,64 @@ function FavMobileCard({
   type,
   id,
   city,
+  tags,
   shortDescription,
   removeFavouriteGlobal,
 }: any) {
   // const { removeFavourite } = useAddToFavourites();
 
   return (
-    <Card shadow="sm" padding="lg" withBorder>
-      <Card.Section component="a" href="https://mantine.dev/">
-        <Image src={image} height={180} alt={title} />
-      </Card.Section>
-
-      <section className="flex mt-4 justify-between items-center space-y-1">
-        <Group className="">{title}</Group>
-        <Rating value={rating} fractions={2} readOnly size="xs" />
+    <section className="w-11/12 mx-auto">
+      <section className="flex flex-col rounded-xl pt-8 justify-between  ">
+        <div className=" rounded-xl mx-auto h-full relative overflow-hidden mt-5">
+          <Image
+            src={image}
+            alt={title}
+            className="rounded-xl w-full relative border object-cover max-h-52"
+          />
+          <FaRegTrashAlt
+            onClick={() => removeFavouriteGlobal(id)}
+            className="text-xl absolute top-4 right-4 group-hover:scale-110 transition-all ease-in-out  text-red-500 hover:pt-[2px] pt-[1px]"
+          />
+        </div>
+        <div className="flex flex-wrap justify-between pt-2 px-3 items-center ">
+          <h3 className="text-left text-key ">{title}</h3>
+          <div className="flex items-center">
+            <IoIosStar className="text-key text-xs" />
+            <span className="text-xs text-key">{rating}</span>{" "}
+          </div>
+        </div>
       </section>
-      <section className="flex justify-between space-x-6 pb-1 mt-1 items-center">
-        <Group className="flex font-normal  text-gray-400">
-          <IoLocation className="w-4 h-4 -ml-1" />
-          <Text className="-ml-[14px] text-sm">{city}</Text>
-        </Group>
+      <section className="flex justify-between px-2 mt-2 items-center">
+        <div className="flex font-normal items-center space-x-1  text-gray-400">
+          <IoLocation />
+          <span className="text-sm my-auto">{city}</span>
+        </div>
         <Badge color={price === "Free" ? "green" : "red"} variant="light">
           {price}
         </Badge>
       </section>
-      <Divider my={"sm"} />
-      <Text size="sm" c="dimmed" className="text-black font-thin">
+      <Text size="sm" c="dimmed" className="px-3 mt-2 text-black font-thin">
         {shortDescription}
       </Text>
-      <Text size="sm" c="dimmed" className="mt-4"></Text>
+      <div className="text-[9px] space-x-2 space-y-3 pt-4 px-2 pb-6">
+        {tags?.map((cat: any) => (
+          <span
+            key={cat}
+            className="items-center justify-center px-2 py-1 my-auto align-middle border rounded-full item"
+          >
+            {cat}
+          </span>
+        ))}
+      </div>
       <div className="flex items-center space-x-3">
         <Link href={`/${type}/${slug}`} className="w-full">
-          <button className="px-3 w-full  bg-key py-2 rounded-lg text-white font-semibold">
+          <button className="px-3 w-full  bg-key py-2 rounded-b-xl text-white font-semibold">
             View
           </button>
         </Link>
-        <button
-          onClick={() => removeFavouriteGlobal(id)}
-          className="px-3  bg-red-500 py-2  rounded-lg text-white font-semibold"
-        >
-          Delete
-        </button>
       </div>
-    </Card>
+    </section>
   );
 }
 export default FavMobileCard;

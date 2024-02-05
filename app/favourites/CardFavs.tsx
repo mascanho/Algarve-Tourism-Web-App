@@ -21,7 +21,7 @@ const CardFavs = ({
   const { removeFavourite } = useAddToFavourites();
 
   return (
-    <div className="card w-full sm:w-[300px] mx-auto bg-base-100  overflow-hidden group cardFavs">
+    <div className="card w-full  sm:w-[300px] mx-auto bg-base-100  overflow-hidden group cardFavs">
       <div className=" h-12 p-4  text-left sm:w-full w-full relative overflow-hidden">
         <h2 className="card-title text-left w-full group-hover:text-white text-sm">
           {title || "name"}

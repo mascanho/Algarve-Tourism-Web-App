@@ -10,6 +10,8 @@ import { BiMap } from "react-icons/bi";
 import { BsShareFill } from "react-icons/bs";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import StarRating from "./Layout/StarRating";
+import { FaRegHeart } from "react-icons/fa";
+import { IoIosStar } from "react-icons/io";
 
 interface Category {
   id: number;
@@ -61,9 +63,9 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
           {category.map((cat: any) => (
             <section
               key={cat?.id}
-              className="space-y-2 text-left lg:w-full shadow-sm rounded-md pb-2 border hover:border-key transition-all ease-in delay-75"
+              className="space-y-1 text-left p-2 group lg:w-full pb-2 transition-all ease-in delay-75"
             >
-              <div className="w-full h-48 sm:h-56 md:h-48 xl:h-36 flex  rounded-t-md overflow-hidden relative">
+              <div className="w-full h-48 sm:h-56 md:h-48 xl:h-36 flex   overflow-hidden relative">
                 <img
                   src={
                     cat?.fields?.mainImage?.fields?.file?.url
@@ -71,7 +73,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
                       : "/placeholder.jpg"
                   }
                   alt="image"
-                  className="block h-full w-full object-cover"
+                  className="block h-full w-full object-cover rounded-lg"
                 />
                 <div
                   onClick={() =>
@@ -95,33 +97,34 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
                       pathname: window?.location?.href,
                     })
                   }
-                  className="absolute cursor-pointer active:scale-90 w-8 h-8 flex items-center justify-center rounded-full  bg-white top-2 right-2"
+                  className="absolute cursor-pointer active:scale-90 w-8 h-8 flex items-center justify-center rounded-full  bg-key top-2 right-2"
                 >
-                  <AiFillHeart className="text-lg  text-red-500" />
+                  <FaRegHeart className="text-lg group-hover:scale-110 pt-[1px]  text-red-500" />
                 </div>
-                <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-black bg-white  ">
+                <span className="absolute left-0 top-4 pr-2 py-1 rounded-r-full text-xs text-highlight bg-key  ">
                   📍 {cat?.fields?.city}
                 </span>
-
-                <span className="text-gray-500 text-sm absolute right-0 bottom-0 bg-white p-1 rounded-tl-xl">
-                  <StarRating clas rating={cat?.fields?.rating} />
-                </span>
               </div>
-              <div className="flex w-full  text-left justify-between px-2 items-center">
+              <div className="flex w-full text-left justify-between px-2 pt-2 items-center">
                 <h3 className="w-full text-left text-black text-sm items-center font-semibold">
                   {" "}
                   {cat.fields.title}
                 </h3>
+                <div className="flex items-center">
+                  <IoIosStar className="text-key" />
+                  <span className="text-xs ml-1 mt-[1px] text-key">
+                    {cat?.fields?.rating}
+                  </span>
+                </div>
               </div>
-              <div className="w-full h-[1px] bg-gray-300" />
 
-              <div className="mt-20 flex w-full px-2 py-2">
+              <div className="mt-20 flex w-full px-2 pt-2 pb-3">
                 <p className="line-clamp-3 text-xs text-gray-700">
                   {cat?.fields?.shortDescription}
                 </p>
               </div>
 
-              <div className="text-[9px] space-x-2 pb-3 px-2 my-2">
+              <div className="text-[9px] space-x-2 pb-4  px-2 ">
                 {cat?.fields?.tags?.map((tag: any) => (
                   <span
                     key={tag}
@@ -131,17 +134,19 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
                   </span>
                 ))}
               </div>
-              <div className="w-full h-[1px] bg-gray-300 " />
-              <div className="flex justify-between  text-right py-2 sm:py-0 w-full pr-4 ">
-                <div className="flex items-center  px-2 align-middl space-x-2">
-                  <BsQrCodeScan className="hover:scale-110 cursor-pointer" />
+              <div className="flex justify-between pl-1  text-right py-2 bg-key rounded-b-xl sm:py-1  w-full pr-4 ">
+                <div className="flex items-center  px-2 align-middle space-x-2">
+                  <BsQrCodeScan className=" cursor-pointer" />
                   <a href={cat?.fields?.mapShare} target="_blank">
-                    <BiMap className="hover:scale-110" />
+                    <BiMap className="cursor-pointer" />
                   </a>
-                  <BsShareFill className="text-xs hover:scale-110 cursor-pointer" />
+                  <BsShareFill className="text-xs  cursor-pointer" />
                 </div>
-                <Link href={`${pathname}/${cat.fields.slug}`}>
-                  <span className="text-xs text-key cursor-pointer">
+                <Link
+                  className="pb-[2px]"
+                  href={`${pathname}/${cat.fields.slug}`}
+                >
+                  <span className="text-xs cursor-pointer text-highlight  h-full">
                     Read More
                   </span>
                 </Link>

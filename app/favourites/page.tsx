@@ -174,27 +174,27 @@ function page() {
           />
         </div>
         <div className="m-auto max-w-7xl mt-10 mb-5 flex items-center justify-between ">
-          <h1 className="text-2xl sm:text-3xl font-semibold hiddenRow ">
+          <h1 className="text-2xl sm:text-3xl w-full text-key font-semibold hiddenRow ">
             Your Favourites
           </h1>
+          <div className="flex text-xl space-x-3  justify-end hiddenRow">
+            <AiOutlineMail
+              className="cursor-pointer text-2xl"
+              onClick={(e) => {
+                e.preventDefault();
+                const section = document.getElementById("sendEmail");
+                section?.scrollIntoView({ behavior: "smooth" });
+                setSendEmail(true);
+              }}
+            />
+            <FiPrinter
+              onClick={() => window.print()}
+              className="cursor-pointer text-2xl"
+            />
+          </div>
         </div>
       </div>
       <div className="mt-2 mb-2 sm:mb-0 sm:mt-5 w-full ">
-        <div className="flex text-xl space-x-3 w-full justify-end hiddenRow">
-          <AiOutlineMail
-            className="cursor-pointer text-2xl"
-            onClick={(e) => {
-              e.preventDefault();
-              const section = document.getElementById("sendEmail");
-              section?.scrollIntoView({ behavior: "smooth" });
-              setSendEmail(true);
-            }}
-          />
-          <FiPrinter
-            onClick={() => window.print()}
-            className="cursor-pointer text-2xl"
-          />
-        </div>
         <div className="flex font-bold sapce-x-5 w-full justify-between pb-2 mb-10 h-full overflow-auto">
           {/* Optional table */}
           {!changeTable ? (
@@ -216,7 +216,7 @@ function page() {
                 </thead>
                 <tbody suppressHydrationWarning={true}>{rows}</tbody>
               </Table>
-              <div className="mt-10 sm:hidden grid grid-col-1 gap-y-6">
+              <div className="my-5 sm:hidden grid grid-col-1  ">
                 {favourites.map((el: any) => (
                   <FavMobileCard
                     key={el.title}
