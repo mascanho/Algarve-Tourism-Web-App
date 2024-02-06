@@ -49,26 +49,28 @@ const Selection = () => {
   };
 
   return (
-    <section className="w-full inline  sm:hidden overflow-x-clip fixed bottom-0 z-10 bg-darkwhite border-t px-1 h-18 pt-1 ">
+    <section className="w-full inline text-center   sm:hidden overflow-x-clip fixed top-8  z-10 bg-darkwhite  px-1 h-18 pt-3 ">
       {pathname === "/" ? null : (
         <>
-          <span className="absolute -top-[13px] bg-darkwhite px-6 py-1 m-auto rounded-t-xl left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            {pathname}
-          </span>
-          <section className="overflow-hidden w-full">
+          <section className="overflow-hidden w-full shadow-2xl border-b py-2">
+            <span className="mx-auto text-center text-key pt-10 font-semibold ">
+              {pathname?.replace(/^\//, "")?.charAt(0)?.toUpperCase() +
+                pathname?.slice(2)}
+            </span>
             <Carousel
+              dragFree
               nextControlIcon={
                 <BiChevronRight style={{ width: rem(16), height: rem(16) }} />
               }
               previousControlIcon={
                 <BiChevronLeft style={{ width: rem(16), height: rem(16) }} />
               }
-              align={"center"}
-              className="w-full overflow-hidden mx-auto flex flex-wrap"
+              align={"start"}
+              className="w-full overflow-hidden mx-auto flex flex-wrap px-3 pt-2"
             >
               {catArr.map((cat: any) => (
                 <div
-                  className={`py-1  ${
+                  className={`pb-1  ${
                     activeCategory === cat
                       ? "bg-key rounded-xl w-20 text-white"
                       : ""
