@@ -13,6 +13,7 @@ import { Carousel } from "@mantine/carousel";
 import { LuHeart, LuShare } from "react-icons/lu";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { usePathname } from "next/navigation";
+import { TiArrowBackOutline } from "react-icons/ti";
 
 const PRIMARY_COL_HEIGHT = rem(300);
 
@@ -73,7 +74,7 @@ export function LeadGrid({ filteredData }: any) {
           className={`w-full sm:h-fit min-h-full h-fit relative  overflow-hidden `}
         >
           {/* SHOW CAROUSEL IMAGES ON MOBILE */}
-          <IoChevronBack
+          <TiArrowBackOutline
             onClick={() => window.history.back()}
             className="absolute top-2 z-10 left-2 sm:hidden text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
           />

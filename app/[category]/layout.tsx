@@ -3,7 +3,7 @@ import "../../app/globals.css";
 import type { Metadata } from "next";
 import SidePanel from "@/components/Layout/SidePanel";
 import { NextAuthProvider } from "../providers/AuthProvider";
-import { IoChevronBack } from "react-icons/io5";
+import Selection from "@/components/Selection";
 
 export const metadata: Metadata = {
   title: {
@@ -55,6 +55,7 @@ export default function RootLayout({
           <Breadcrumbs />
         </div>
         <section className="sm:pl-4 xl:pl-0    max-w-7xl mx-auto flex   justify-start transition-all ease-in delay-75 top-11  ">
+          <Selection />
           <SidePanel />
           <div className="flex-1 sm:bg-gray-50 sm:rounded-xl sm:pt-2 mb-20">
             {children}

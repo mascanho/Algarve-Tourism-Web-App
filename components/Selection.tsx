@@ -1,93 +1,81 @@
 "use client";
-import { catArr } from "@/Data/Categories";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import React, { useState, useRef } from "react";
+import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
-import { Box, ScrollArea, Select } from "@mantine/core";
-import { Carousel } from "@mantine/carousel";
-import {
-  MdBusiness,
-  MdBusinessCenter,
-  MdEvent,
-  MdSportsHandball,
-} from "react-icons/md";
-import { PiMountainsFill } from "react-icons/pi";
-import {
-  FaArrowLeft,
-  FaArrowRight,
-  FaHiking,
-  FaUtensils,
-} from "react-icons/fa";
-import { GiBeachBucket, GiWoodCabin } from "react-icons/gi";
-import { useState } from "react";
-import { rem } from "@mantine/core";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-
-const categoryIcons: any = {
-  Beaches: <GiBeachBucket />,
-  Restaurants: <FaUtensils />,
-  Events: <MdEvent />,
-  Adventure: <PiMountainsFill />,
-  Business: <MdBusinessCenter />,
-  Hiking: <FaHiking />,
-  Sports: <MdSportsHandball />,
-  Stays: <GiWoodCabin />,
-};
+import { Carousel } from "@mantine/carousel";
+import { catArr } from "@/Data/Categories";
+import { GiBeachBucket, GiWoodCabin } from "react-icons/gi";
+import { FaHiking, FaUtensils } from "react-icons/fa";
+import { MdBusinessCenter, MdEvent, MdSportsHandball } from "react-icons/md";
+import { PiMountainsFill } from "react-icons/pi";
+import Link from "next/link";
 
 const Selection = () => {
-  const router = useRouter();
   const pathname = usePathname();
   const [activeCategory, setActiveCategory] = useState(null);
-  const goToPage = (e: any) => {
-    const route = e.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+  const carouselRef = useRef(null); // Ref for Carousel component
 
-    router.push(`${route}`);
+  const handleClick = (cat) => {
+    setActiveCategory(cat);
+    // Get the DOM element of the category to scroll into view
+    const categoryElement = document.getElementById(cat.route);
+    // If the category element exists, scroll it into view
+    if (categoryElement) {
+      categoryElement.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
-  const handleClick = (cat: any) => {
-    setActiveCategory(cat);
+  const categoryIcons: any = {
+    Beaches: <GiBeachBucket />,
+    Restaurants: <FaUtensils />,
+    Events: <MdEvent />,
+    Adventure: <PiMountainsFill />,
+    Business: <MdBusinessCenter />,
+    Hiking: <FaHiking />,
+    Sports: <MdSportsHandball />,
+    Stays: <GiWoodCabin />,
   };
 
   return (
-    <section className="w-full inline text-center   sm:hidden overflow-x-clip fixed top-8  z-10 bg-white  px-1 h-18 pt-3 ">
+    <section className="w-full inline text-center   sm:hidden overflow-x-clip fixed top-8  z-20 bg-white  h-18 pt-3 ">
       {pathname === "/" ? null : (
         <>
           <section className="overflow-hidden w-full shadow-2xl border-b py-1">
-            <span className="mx-auto text-center text-key pt-10 font-semibold ">
-              {pathname?.replace(/^\//, "")?.charAt(0)?.toUpperCase() +
-                pathname?.slice(2)}
-            </span>
             <Carousel
+              ref={carouselRef} // Assign the ref to the Carousel component
               dragFree
-              nextControlIcon={
-                <BiChevronRight style={{ width: rem(16), height: rem(16) }} />
-              }
-              previousControlIcon={
-                <BiChevronLeft style={{ width: rem(16), height: rem(16) }} />
-              }
+              nextControlIcon={<BiChevronRight />}
+              previousControlIcon={<BiChevronLeft />}
               align={"start"}
-              className="w-full overflow-hidden mx-auto flex flex-wrap px-3 pt-1"
+              className="w-full overflow-hidden mx-auto flex flex-wrap pt-1"
             >
-              {catArr.map((cat: any) => (
+              {catArr.map((cat) => (
                 <div
-                  className={`pb-1  ${
-                    activeCategory === cat
-                      ? "bg-key text-white scale-95 rounded-lg"
-                      : ""
-                  } px-2 text-xs mr-2  my-1 text-right flex justify-end h-auto w-[95px] `}
-                  key={cat}
+                  className={`
+                   px-2 text-xs mr-2  my-1 text-right flex justify-end h-auto w-[95px] `}
+                  key={cat?.name}
                   onClick={() => handleClick(cat)}
                 >
-                  <Link href={`${cat.route}`}>
+                  <Link href={cat?.route}>
                     <div className="flex flex-col items-center rounded-xl justify-center ">
                       <span
-                        className={`text-2xl text-key ${activeCategory === cat ? "text-white" : "text-key"}`}
+                        className={`text-2xl text-gray-400 ${
+                          pathname?.includes(cat.route)
+                            ? "text-key"
+                            : "text-gray-400"
+                        }`}
                       >
                         {" "}
                         {categoryIcons[cat.name]}
                       </span>
                       <span
-                        className={`ml-1 ${activeCategory === cat ? "text-white" : "text-key"}`}
+                        className={`ml-1 ${
+                          pathname?.includes(cat.route)
+                            ? "text-key"
+                            : "text-gray-400"
+                        }`}
+                        id={cat.route} // Assign id to the span element
                       >
                         {cat?.name}
                       </span>
