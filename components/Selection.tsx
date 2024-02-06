@@ -49,7 +49,7 @@ const Selection = () => {
   };
 
   return (
-    <section className="w-full inline text-center   sm:hidden overflow-x-clip fixed top-7  z-10 bg-white  px-1 h-18 pt-3 ">
+    <section className="w-full inline text-center   sm:hidden overflow-x-clip fixed top-8  z-10 bg-white  px-1 h-18 pt-3 ">
       {pathname === "/" ? null : (
         <>
           <section className="overflow-hidden w-full shadow-2xl border-b py-1">
@@ -66,13 +66,13 @@ const Selection = () => {
                 <BiChevronLeft style={{ width: rem(16), height: rem(16) }} />
               }
               align={"start"}
-              className="w-full overflow-hidden mx-auto flex flex-wrap px-3 pt-2"
+              className="w-full overflow-hidden mx-auto flex flex-wrap px-3 pt-1"
             >
               {catArr.map((cat: any) => (
                 <div
                   className={`pb-1  ${
                     activeCategory === cat
-                      ? "bg-key rounded-xl w-20 text-white"
+                      ? "bg-key text-white scale-95 rounded-lg"
                       : ""
                   } px-2 text-xs mr-2  my-1 text-right flex justify-end h-auto w-[95px] `}
                   key={cat}
