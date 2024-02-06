@@ -25,13 +25,39 @@ const Hero = ({ categories }: any) => {
       <h1 className="text-5xl  font-bold pt-10 sm:pt-0  text-center sm:text-7xl bg-gradient-to-r from-green-500 via-key to-red-500 text-transparent   bg-clip-text pb-2 animate-gradient ">
         Algarve&apos;s Travel Guide
       </h1>
-      <h2 className="hidden sm:block text-center  mx-auto rounded-sm w-9/12 sm:w-8/12 sm:px-14 text-sm lg:max-w-2xl   text-gray-700">
-        Discover the breathtaking beauty of the Algarve! The ultimate guide to
-        the region&apos;s top tourism attractions and less known hidden gems
+
+      <h2 className="hidden sm:block text-center mx-auto rounded-sm w-9/12 sm:w-8/12 sm:px-14 text-sm lg:max-w-2xl text-gray-700">
+        Discover the breathtaking beauty of the Algarve! The{" "}
+        <strong className="relative inline-block">
+          ultimate guide{" "}
+          <span
+            className="absolute -bottom-[4px] left-0 w-full bg-no-repeat bg-center bg-contain"
+            style={{
+              backgroundImage:
+                "url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg')",
+              height: "0.75rem",
+              filter: "invert(1) sepia(1) saturate(5) hue-rotate(5deg)", // Change color to red
+            }}
+          ></span>
+        </strong>{" "}
+        to the region&apos;s top tourism attractions and less known hidden gems
       </h2>
-      <h2 className="sm:hidden mx-auto w-9/12 text-center rounded-sm sm:p-0 mt-1 sm:mt-0 sm:max-w-lg  sm:pt-2 text-gray-700">
-        {" "}
-        The region&apos;s top attractions and less known hidden gems
+
+      <h2 className="sm:hidden mx-auto w-9/12 text-center rounded-sm sm:p-0 mt-1 sm:mt-0 sm:max-w-lg sm:pt-2 text-gray-700">
+        The region&apos;s{" "}
+        <strong className="relative inline-block">
+          top attractions{" "}
+          <span
+            className="absolute -bottom-[4px] left-0 w-full bg-no-repeat bg-center bg-contain"
+            style={{
+              backgroundImage:
+                "url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg')",
+              height: "0.75rem",
+              filter: "invert(1) sepia(1) saturate(5) hue-rotate(5deg)", // Change color to red
+            }}
+          ></span>
+        </strong>{" "}
+        and less known hidden gems
       </h2>
       <SearchDesktop />
       <div className="sm:w-11/12 mx-auto relative max-h-full p-7 sm:p-0 sm:h-[420px] w-full flex flex-wrap flex-col rounded-lg  sm:rounded-t-lg max-w-3xl ">

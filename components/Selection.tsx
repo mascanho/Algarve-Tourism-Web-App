@@ -35,7 +35,7 @@ const Selection = ({ text }: any) => {
     <>
       {pathname === "/" ? null : (
         <section className="flex max-w-7xl w-full sm:hidden mx-auto px-2 py-2 overflow-hidden">
-          <ScrollArea w={400} h={40}>
+          <ScrollArea w={400} h={40} scrollbars="y">
             <Box w={500} className="">
               {catArr.map((cat: any) => (
                 <span className="mr-2 text-key text-sm" key={cat?.id}>
