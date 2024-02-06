@@ -11,6 +11,7 @@ module.exports = {
         sky: "#1ca0e3",
         key: "#0a1b25",
         highlight: "white",
+        darkwhite: "#F5F5F5",
       },
       keyframes: {
         animatedgradient: {

@@ -3,7 +3,7 @@ import { catArr } from "@/Data/Categories";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
-import { Select } from "@mantine/core";
+import { Box, ScrollArea, Select } from "@mantine/core";
 
 const Selection = ({ text }: any) => {
   const router = useRouter();
@@ -33,26 +33,17 @@ const Selection = ({ text }: any) => {
 
   return (
     <>
-      <div className="items-center justify-between hidden w-10/12 pb-12 pt-3 m-auto space-x-3 sm:flex max-w-7xl sm:w-11/12">
-        {catArr.map((cat) => (
-          <div
-            className="px-2 py-1 text-xs text-center transition-all ease-in delay-75 md:border md:rounded-md md:w-28  md:px-3 sm:py-2  w-14 sm:w-fit hover:cursor-pointer hover:bg-key hover:text-white"
-            key={Math.random()}
-            onClick={(e) => router.push(`${cat.route}`)}
-          >
-            {cat.name}
-          </div>
-        ))}
-      </div>
       {pathname === "/" ? null : (
-        <section className="flex max-w-7xl w-full sm:hidden mx-auto pt-5 overflow-hidden">
-          <Select
-            className="w-full mb-8 h-[100%] rounded-none outline-none"
-            placeholder={placeholder}
-            data={catArr.map((cat) => cat.name)}
-            onChange={(e) => goToPage(e)}
-            searchable={false}
-          />
+        <section className="flex max-w-7xl w-full sm:hidden mx-auto px-2 py-2 overflow-hidden">
+          <ScrollArea w={400} h={40}>
+            <Box w={500} className="">
+              {catArr.map((cat: any) => (
+                <span className="mr-2 text-key text-sm" key={cat?.id}>
+                  {cat?.name}
+                </span>
+              ))}
+            </Box>
+          </ScrollArea>
         </section>
       )}
     </>
