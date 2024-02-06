@@ -49,10 +49,10 @@ const Selection = () => {
   };
 
   return (
-    <section className="w-full inline text-center   sm:hidden overflow-x-clip fixed top-8  z-10 bg-darkwhite  px-1 h-18 pt-3 ">
+    <section className="w-full inline text-center   sm:hidden overflow-x-clip fixed top-7  z-10 bg-white  px-1 h-18 pt-3 ">
       {pathname === "/" ? null : (
         <>
-          <section className="overflow-hidden w-full shadow-2xl border-b py-2">
+          <section className="overflow-hidden w-full shadow-2xl border-b py-1">
             <span className="mx-auto text-center text-key pt-10 font-semibold ">
               {pathname?.replace(/^\//, "")?.charAt(0)?.toUpperCase() +
                 pathname?.slice(2)}

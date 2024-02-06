@@ -55,7 +55,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
 
   return (
     <>
-      <div className="overflow-hidden w-full">
+      <div className="overflow-hidden mt-28 sm:mt-0 w-full">
         <Selection />
         <section className="max-w-7xl transition-all ease-in delay-75 mx-auto w-11/12 sm:w-full  sm:px-6  grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  md:ml-auto gap-y-8 md:gap-x-6  mb-20">
           {category.map((cat: any) => (
