@@ -16,7 +16,7 @@ const Selection = () => {
   const [activeCategory, setActiveCategory] = useState(null);
   const carouselRef = useRef(null); // Ref for Carousel component
 
-  const handleClick = (cat) => {
+  const handleClick = (cat: any) => {
     setActiveCategory(cat);
 
     // Determine the index of the selected category within catArr
@@ -27,11 +27,11 @@ const Selection = () => {
     // If the carouselRef is available and the index is valid
     if (carouselRef.current && selectedIndex !== -1) {
       // Calculate the scroll position based on the index and the width of each slide
-      const slideWidth = carouselRef.current.offsetWidth;
+      const slideWidth = carouselRef?.current?.offsetWidth;
       const scrollLeft = selectedIndex * slideWidth;
 
       // Scroll the carousel to the calculated position
-      carouselRef.current.scrollTo({
+      carouselRef?.current?.scrollTo({
         left: scrollLeft,
         behavior: "smooth",
       });
@@ -81,16 +81,16 @@ const Selection = () => {
                     <div className="flex flex-col items-center rounded-xl justify-center">
                       <span
                         className={`text-2xl text-gray-400 ${
-                          pathname.includes(cat.route)
+                          pathname?.includes(cat.route)
                             ? "text-key"
                             : "text-gray-400"
                         }`}
                       >
-                        {categoryIcons[cat.name]}
+                        {categoryIcons[cat?.name]}
                       </span>
                       <span
                         className={`ml-1 ${
-                          pathname.includes(cat.route)
+                          pathname?.includes(cat.route)
                             ? "text-key"
                             : "text-gray-400"
                         }`}
