@@ -14,15 +14,13 @@ const IMAGES_DESKTOP = [
   "https://turismo.eurodicas.com.br/wp-content/uploads/2019/07/praias-do-algarve-1.jpg",
 ];
 
-const Hero = ({ categories }: any) => {
-  const [allTypes, setAllTypes] = useState<any[]>([]);
-
+const Hero = () => {
   return (
     <section
       id="search"
       className="mx-auto overflow-clip w-full space-y-2 sm:h-full z-0 sm:pt-10 sm:space-y-4 flex flex-wrap flex-col justify-center"
     >
-      <section className="flex flex-wrap mx-auto w-full sm:mt-10 sm:h-full md:h-[100%] sm:max-w-7xl">
+      <section className="flex flex-wrap mx-auto w-full sm:mt-10 sm:h-[60vh] sm:max-w-7xl">
         <div className="sm:text-center md:text-left px-4 sm:mx-auto md:my-auto sm:w-full md:w-full lg:w-2/4 flex flex-col justify-center">
           <h1 className="text-5xl w-full sm:w-full md:text-left font-bold pt-10 sm:pt-0 text-center sm:text-8xl bg-gradient-to-r from-green-500 via-key to-red-500 text-transparent bg-clip-text pb-2 animate-gradient">
             Algarve&apos;s Best Travel Guide

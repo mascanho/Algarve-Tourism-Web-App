@@ -10,15 +10,17 @@ const Acordion = () => {
   });
 
   const items = MainPageFaqs.map((item, index) => (
-    <Accordion.Item key={item?.value} value={item.value}>
-      <Accordion.Control>{item.value}</Accordion.Control>
-      <Accordion.Panel>{item.description}</Accordion.Panel>
+    <Accordion.Item key={item?.value} value={item?.value}>
+      <Accordion.Control>{item?.value}</Accordion.Control>
+      <Accordion.Panel className="text-key">
+        {item?.description}
+      </Accordion.Panel>
     </Accordion.Item>
   ));
 
   return (
     <section className="w-11/12 mx-auto max-w-7xl mt-20 pb-20" ref={ref}>
-      <h5 className="mt-4 mb-10 text-xl">FAQs</h5>
+      <h5 className="mt-4 mb-10 text-xl text-key">FAQs</h5>
       <Accordion
         variant="contained"
         defaultValue="Apples"
