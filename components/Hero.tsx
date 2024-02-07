@@ -28,7 +28,7 @@ const Hero = ({ categories }: any) => {
             Algarve&apos;s Best Travel Guide
           </h1>
           <h2 className="hidden mt-4 sm:text-center md:text-left sm:block text-center mx-auto rounded-sm w-9/12 sm:text-lg sm:py-6 md:w-10/12 ml-0 sm:mx-auto md:m-0  text-sm lg:max-w-2xl text-gray-700">
-            Discover the breathtaking beauty of the Algarve! The{" "}
+            Discover the breathtaking beauty of the Algarve! <br /> The{" "}
             <strong className="relative inline-block">
               ultimate guide{" "}
               <span
@@ -47,13 +47,9 @@ const Hero = ({ categories }: any) => {
           <SearchDesktop />
         </div>
 
-        <div className="w-[430px] mt-24 md:my-auto relative h-[430px] overflow-hidden hidden sm:flex items-center justify-center rounded-full border-[6px] border-dashed border-key p-20 mx-auto my-auto">
-          <div className="p-4 w-[90%] h-[90%]">
-            {" "}
-            {/* Adding padding and border to create gap */}
-            <div className="p-2  rounded-t-3xl hidden sm:flex rounded-full mx-auto  shadow-lg">
-              {" "}
-              {/* Adding border to the image */}
+        <div className="w-[430px] mt-24 md:m-auto relative h-[430px] hidden overflow-hidden sm:flex items-center justify-center rounded-full border-[6px] border-dashed border-key p-20 mx-auto my-auto">
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="p-2 rounded-t-3xl hidden sm:flex rounded-full shadow-lg">
               <Image
                 src={IMAGES_DESKTOP[2]}
                 alt="hero image"
