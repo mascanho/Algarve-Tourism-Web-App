@@ -11,6 +11,10 @@ import { BsShareFill } from "react-icons/bs";
 import { toast } from "react-hot-toast";
 import StarRating from "./Layout/StarRating";
 import { usePathname } from "next/navigation";
+import { IoIosStar } from "react-icons/io";
+import { Menu } from "@mantine/core";
+import { MenuDropdown } from "@mantine/core/lib/Menu/MenuDropdown/MenuDropdown";
+import { FaRegHeart } from "react-icons/fa";
 
 export const SearchCard = (item: any) => {
   const {
@@ -66,66 +70,73 @@ export const SearchCard = (item: any) => {
   }
 
   return (
-    <section className="border pb-2 mb-10 sm:pb-2 space-y-3 sm:space-y-2 text-left transition-all ease-in delay-75 rounded-md shadow-sm max-w-7xl w-[100%] mx-auto sm:w-full md:w-full  hover:border-key  hover:shadow-md z-0">
-      <div className="relative flex flex-col w-full h-48 sm:h-40 rounded-t-md ">
+    <section className="pb-2  mb-10 sm:pb-2  text-left transition-all p-3 ease-in delay-75 rounded-md max-w-7xl w-[100%] mx-auto sm:w-full md:w-full  z-0">
+      <div className="relative overflow-hidden flex flex-col  h-52 sm:h-40 rounded-t-md ">
         <img
           src={`https://${mainImage?.fields?.file?.url}`}
           alt="image"
-          className="block h-full z-0"
+          className="block h-52 z-0 rounded-xl object-cover"
           loading="lazy"
         />
-        <div className="absolute active:scale-90 w-8 h-8 flex items-center justify-center rounded-full p-1 bg-white top-2 right-2">
-          <AiFillHeart
+        <div className="absolute active:scale-90 w-7 h-7 flex items-center justify-center rounded-full p-1 bg-key top-2 right-2">
+          <FaRegHeart
             onClick={addToFavourites}
-            className="text-md  text-red-500"
+            className="text-md pt-[1px] text-red-500 "
           />
         </div>
-        <div className="absolute bg-white rounded-tl-md p-1 bottom-0 right-0">
-          <StarRating rating={rating} />
-        </div>
-        <span className="absolute left-0 py-1 pr-2 text-xs text-black bg-white rounded-r-full top-4 ">
+        <span className="absolute  py-1 pr-2 text-xs text-white bg-key rounded-r-full top-4 ">
           📍 {city}
         </span>
       </div>
-      <div className="flex items-center justify-between w-full px-2 text-left">
-        <h3 className="items-center w-full text-sm text-left text-black">
+      <div className="flex flex-wrap items-center justify-between w-full px-1 mt-2 text-left">
+        <h3 className="items-center font-semibold text-sm text-left text-black">
           {title}
         </h3>
+
+        <div className="flex flex-wrap items-center justify-center">
+          <IoIosStar className="m-auto text-key" />
+          <span className="m-auto text-key text-xs mt-[1px] ml-1">
+            {rating}
+          </span>
+        </div>
       </div>
-      <div className="w-full h-[1px] bg-gray-300" />
-      <div className="flex w-full px-2 mt-20 py-2">
-        <p className="line-clamp-3 text-xs text-gray-700">
-          {shortDescription}{" "}
-        </p>
-        {/* <span className="flex-1 text-xs text-sky">Read more</span> */}
-      </div>
-      <div className="text-[9px] space-x-2 pb-2 px-2">
+      <p className="line-clamp-3 my-2 px-1 text-xs text-gray-700">
+        {shortDescription}{" "}
+      </p>
+      <div className="text-[9px]  mt-4  h-8">
         {tags?.map((cat: any) => (
           <span
             key={cat}
-            className="items-center justify-center px-2 py-1 my-auto align-middle border rounded-full item"
+            className="items-center justify-center px-2 mr-1 py-1 my-auto align-middle border rounded-full item"
           >
             {cat}
           </span>
         ))}
       </div>
-      <div className="w-full h-[1px] bg-gray-300 px-2" />
-      <section className="flex justify-between w-full items-center">
-        <div className="flex items-center  w-full px-2  align-middl space-x-2">
-          <BsBookmarkHeart className="hover:scale-110 cursor-pointer" />
-          {/* <BsQrCodeScan className="hover:scale-110 cursor-pointer" /> */}
-          <a href={mapShare} target="_blank">
-            <BiMap className="hover:scale-110 cursor-pointer" />
-          </a>
-          <BsShareFill
-            onClick={handleCopyUrl}
-            className="text-xs hover:scale-110 cursor-pointer"
-          />
-          <BsGlobe className="text-xs hover:scale-110 cursor-pointer" />
-        </div>
+      <section className="flex justify-between bg-key rounded-b-xl text-highlight p-2 w-full items-center">
+        <Menu>
+          <Menu.Target className="ml-1 h-4 flex justify-start items-end cursor-pointer">
+            <span className="m-auto">...</span>
+          </Menu.Target>
+
+          <Menu.Dropdown className="rounded-lg">
+            <div className="flex items-center p-2 rounded-lg  text-key  w-full  space-x-2">
+              <BsBookmarkHeart className="hover:scale-110 cursor-pointer" />
+              {/* <BsQrCodeScan className="hover:scale-110 cursor-pointer" /> */}
+              <a href={mapShare} target="_blank">
+                <BiMap className="hover:scale-110 cursor-pointer" />
+              </a>
+              <BsShareFill
+                onClick={handleCopyUrl}
+                className="text-xs hover:scale-110 cursor-pointer"
+              />
+              <BsGlobe className="text-xs hover:scale-110 cursor-pointer" />
+            </div>
+          </Menu.Dropdown>
+        </Menu>
         <div className="flex items-center justify-end text-sm w-full pr-2 ">
           <Link href={`/${type}/${slug}`}>
-            <span className="flex text-xs text-key cursor-pointer">
+            <span className="flex text-xs text-highlight cursor-pointer">
               Read More
             </span>
           </Link>

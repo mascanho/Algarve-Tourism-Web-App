@@ -46,7 +46,7 @@ async function Search(searchParams: any) {
           </div>
         </Link>
         <SearchDrawerContent />
-        <div className="w-full flex justify-between items-center flex-wrap mt-10 mb-2 overflow-hidden">
+        <div className="w-11/12 sm:w-full flex justify-between items-center flex-wrap mx-auto mt-10 mb-2 overflow-hidden">
           <h3
             className="text-xl py-2  font-bold text-black sm:text-3xl"
             id="search"

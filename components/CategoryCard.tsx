@@ -12,6 +12,7 @@ import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import StarRating from "./Layout/StarRating";
 import { FaRegHeart } from "react-icons/fa";
 import { IoIosStar } from "react-icons/io";
+import { Menu } from "@mantine/core";
 
 interface Category {
   id: number;
@@ -55,7 +56,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
 
   return (
     <>
-      <div className="overflow-hidden mt-24 sm:mt-0 w-full">
+      <div className="overflow-hidden mt-20 sm:mt-0 w-full">
         {/* <Selection /> */}
         <section className="max-w-7xl transition-all ease-in delay-75 mx-auto w-11/12 sm:w-full  sm:px-6  grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  md:ml-auto gap-y-4 md:gap-x-6  mb-20">
           {category.map((cat: any) => (
@@ -133,13 +134,20 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
                 ))}
               </div>
               <div className="flex justify-between pl-1  text-right py-2 bg-key rounded-b-xl sm:py-1  w-full pr-4 ">
-                <div className="flex items-center  px-2 align-middle space-x-2">
-                  <BsQrCodeScan className=" cursor-pointer" />
-                  <a href={cat?.fields?.mapShare} target="_blank">
-                    <BiMap className="cursor-pointer" />
-                  </a>
-                  <BsShareFill className="text-xs  cursor-pointer" />
-                </div>
+                <Menu className="ml-3 bg-key">
+                  <Menu.Target>
+                    <span className="cursor-pointer">...</span>
+                  </Menu.Target>
+                  <Menu.Dropdown>
+                    <div className="flex items-center  px-2 align-middle space-x-2 bg-white p-2">
+                      <BsQrCodeScan className=" cursor-pointer" />
+                      <a href={cat?.fields?.mapShare} target="_blank">
+                        <BiMap className="cursor-pointer" />
+                      </a>
+                      <BsShareFill className="text-xs  cursor-pointer" />
+                    </div>
+                  </Menu.Dropdown>
+                </Menu>
                 <Link
                   className="pb-[2px]"
                   href={`${pathname}/${cat.fields.slug}`}
