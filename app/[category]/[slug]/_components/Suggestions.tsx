@@ -12,7 +12,12 @@ function Suggestions({ recomended }: any) {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   return (
-    <Carousel height={300} slideSize={mobile ? "55%" : "24%"} align={"start"}>
+    <Carousel
+      height={300}
+      slideSize={mobile ? "55%" : "24%"}
+      slideGap={"sm"}
+      align={"start"}
+    >
       {recomended.map((item: any) => (
         <Carousel.Slide key={item?.fields?.title} className="mr-2 relative">
           <div
@@ -22,7 +27,7 @@ function Suggestions({ recomended }: any) {
             <img
               src={"https:" + item?.fields?.mainImage?.fields?.file?.url}
               alt=""
-              className="object-cover h-full rounded-md filter brightness-[55%]"
+              className="object-cover h-full rounded-2xl filter brightness-[55%]"
             />
             <h5 className="absolute top-4 left-4 text-white text-3xl font-bold">
               {item?.fields?.title?.replace(/[\p{Emoji}]/gu, "")}
