@@ -19,10 +19,10 @@ const Hero = () => {
   return (
     <section
       id="search"
-      className="mx-auto overflow-clip sm:bg-gradient-to-r from-neutral-100 to-stone-200  w-full space-y-2 sm:h-[70vh] rounded-b-[100px] z-0 sm:space-y-4 flex flex-wrap flex-col justify-center sm:shadow-md"
+      className="mx-auto overflow-clip sm:bg-gradient-to-r from-neutral-100 to-stone-200  w-full space-y-2 sm:h-full rounded-b-[100px] z-0 sm:space-y-4 flex flex-wrap flex-col justify-center sm:shadow-md sm:py-20"
     >
-      <section className="flex  flex-wrap mx-auto w-full sm:mt-10 sm:h-full sm:max-w-7xl">
-        <div className="sm:text-center px-4 sm:mx-auto md:my-auto  sm:w-full md:w-full lg:w-2/4 flex flex-col justify-center">
+      <section className="flex items-center flex-wrap mx-auto w-full sm:mt-10 sm:h-full sm:max-w-7xl">
+        <div className="sm:text-center px-4 sm:mx-auto md:my-auto  sm:w-full md:w-full lg:w-2/4 flex flex-col justify-center ">
           <h1 className="text-5xl w-full sm:w-full sm:text-center lg:text-left md:text-center font-bold pt-10 sm:pt-0 text-center sm:text-8xl bg-gradient-to-r from-green-500 via-key to-red-500 text-transparent bg-clip-text pb-2 animate-gradient">
             Algarve&apos;s Best Travel Guide
           </h1>
@@ -47,7 +47,7 @@ const Hero = () => {
         </div>
 
         <div className="w-[430px] hidden mt-24 lg:ml-1 sm:mt-10 lg:my-auto sm:m-auto md:mx-auto relative h-[430px] sm:flex items-center justify-center rounded-full border-[6px] border-dashed border-key p-20">
-          <FaRegPaperPlane className="absolute top-20 -left-20 text-6xl text-key" />
+          <FaRegPaperPlane className="absolute -top-10 -left-8 text-6xl text-key" />
           <div className="w-full h-full flex items-center justify-center">
             <div className="p-2 rounded-t-3xl flex rounded-full">
               <Image

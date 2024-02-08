@@ -129,7 +129,7 @@ const Header = ({ currentUser, weatherData }: any) => {
       </section>
 
       <nav
-        className={`border-b  border  sm:rounded-b-3xl w-full   fixed flex flex-wrap bg-white  shadow-sm z-20 transition-all ease-in delay-100 `}
+        className={`border-b  border  w-full   fixed flex flex-wrap bg-white  shadow-sm z-20 transition-all ease-in delay-100 `}
       >
         <header
           className={`flex flex-wrap w-11/12 sm:w-full max-w-7xl sm:px-2 md:w-full lg:w-full  justify-between mx-auto py-2 transition-all ease-in delay-150 `}
