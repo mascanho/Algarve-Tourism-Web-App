@@ -92,8 +92,11 @@ function AlgarveSpecs() {
   });
 
   return (
-    <section ref={ref}>
-      <div className="max-w-7xl w-11/12 mx-auto space-y-4 mb-8 mt-20 sm:mt-28">
+    <section
+      ref={ref}
+      className="sm:bg-gradient-to-b from-neutral-100 to-stone-200 sm:w-full  rounded-[100px] sm:pb-10  shadow-t-md"
+    >
+      <div className="max-w-7xl w-11/12 mx-auto space-y-4 mb-8 mt-20 sm:pt-10">
         <h4 className="text-xl">Good To Know</h4>
       </div>
       <section

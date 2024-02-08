@@ -14,7 +14,7 @@ function Feedback({ name, job, rating, review, image }: any) {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   return (
-    <section className="max-w-7xl w-11/12 px-4 sm:px-0 mx-auto">
+    <section className="max-w-7xl w-11/12 px-4 sm:px-0 mx-auto mt-10 sm:mt-0">
       <Carousel
         align={mobile ? "start" : "center"}
         slideSize={mobile ? "100%" : "26%"}
