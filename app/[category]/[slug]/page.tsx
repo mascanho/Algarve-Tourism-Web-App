@@ -142,7 +142,7 @@ export default async function Home(props: any, req: any) {
               <div className="space-x-2 mt-4 sm:mt-0 hidden sm:inline">
                 {filteredData[0]?.fields?.tags.map((item: any) => (
                   <span
-                    key={item}
+                    key={item.id}
                     className="bg-gray-200 rounded-md px-2 text-xs sm:text-xs py-1 items-center m-auto "
                   >
                     {item}

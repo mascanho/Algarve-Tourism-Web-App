@@ -58,7 +58,7 @@ const Selection = () => {
   };
 
   return (
-    <section className="w-full inline text-center sm:hidden overflow-x-clip fixed top-10 h-18 z-10 bg-white h-18 pt-3 ">
+    <section className="w-full z-20 inline text-center sm:hidden overflow-x-clip fixed top-10 h-18 z-10 bg-white h-18 pt-3 ">
       {pathname === "/" ? null : (
         <>
           <section className="overflow-hidden w-full shadow-lg border-b h-14 ">

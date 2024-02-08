@@ -19,7 +19,7 @@ function SearchDesktop({ allTypes, placeholderText, categories }: any) {
       >
         <SearchDrawerContent />
       </Drawer>
-      <div className="hidden items-center sm:w-full sm:mx-auto md:mx-0 sm:flex sm:justify-center md:justify-start  space-x-3 w-10/12 mt-5 mb-10">
+      <div className="hidden items-center sm:w-full sm:mx-auto md:mx-auto sm:flex sm:justify-center md:justify-center lg:justify-start  space-x-3 w-10/12 mt-5 mb-10">
         <button
           onClick={open}
           className="p-5 text-key flex space-x-2 border border-key items-center justify-center   text-sm w-40 h-10 rounded-full hover:bg-white hover:text-key active:scale-95 transition ease-in-out delay-75"
@@ -28,7 +28,7 @@ function SearchDesktop({ allTypes, placeholderText, categories }: any) {
           <FaSearch className="w-5 h-5 p-1 bg-key rounded-full text-white" />
         </button>
         <Link href="/adventure">
-          <button className="p-5 text-black flex space-x-2 items-center justify-center bg-gray-100  h-12 rounded-lg text-sm">
+          <button className="p-5 text-black flex space-x-2 items-center justify-center   h-12 rounded-lg text-sm">
             view categories
             <FaChevronRight className="text-black ml-1 my-auto pb-[2px]  rounded-full" />
           </button>

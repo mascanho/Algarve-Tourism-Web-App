@@ -61,7 +61,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
         <section className="max-w-7xl transition-all ease-in delay-75 mx-auto w-11/12 sm:w-full  sm:px-6  grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  md:ml-auto gap-y-4 md:gap-x-6  mb-20">
           {category.map((cat: any) => (
             <section
-              key={cat?.id}
+              key={cat?.title}
               className="space-y-1 text-left p-2 group lg:w-full pb-2 transition-all ease-in delay-75"
             >
               <div className="w-full h-48 sm:h-56 md:h-48 xl:h-36 flex px-1   overflow-hidden relative">

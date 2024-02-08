@@ -42,7 +42,7 @@ function Card({
         p="xl"
         radius="lg"
         style={{
-          backgroundImage: `url(https:${image && (image[0] || image)})`,
+          backgroundImage: `url(https:${image && (image[1] || image)})`,
           backgroundBlendMode: "multiply",
           backgroundColor: "rgba(0, 0, 0, 0.3)",
         }}

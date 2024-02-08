@@ -4,6 +4,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { BiSearch } from "react-icons/bi";
 import SearchDesktop from "./SearchDesktop";
+import { FaPaperPlane, FaRegPaperPlane } from "react-icons/fa";
 
 const Search = dynamic(() => import("./Search"));
 
@@ -18,14 +19,14 @@ const Hero = () => {
   return (
     <section
       id="search"
-      className="mx-auto overflow-clip w-full space-y-2 sm:h-full z-0 sm:pt-10 sm:space-y-4 flex flex-wrap flex-col justify-center"
+      className="mx-auto overflow-clip sm:bg-gradient-to-r from-neutral-300 to-stone-400  w-full space-y-2 sm:h-[80vh] rounded-b-[100px] z-0 sm:pt-10 sm:space-y-4 flex flex-wrap flex-col justify-center"
     >
-      <section className="flex flex-wrap mx-auto w-full sm:mt-10 sm:h-[60vh] sm:max-w-7xl">
-        <div className="sm:text-center md:text-left px-4 sm:mx-auto md:my-auto sm:w-full md:w-full lg:w-2/4 flex flex-col justify-center">
-          <h1 className="text-5xl w-full sm:w-full md:text-left font-bold pt-10 sm:pt-0 text-center sm:text-8xl bg-gradient-to-r from-green-500 via-key to-red-500 text-transparent bg-clip-text pb-2 animate-gradient">
+      <section className="flex  flex-wrap mx-auto w-full sm:mt-10 sm:h-full sm:max-w-7xl">
+        <div className="sm:text-center px-4 sm:mx-auto md:my-auto  sm:w-full md:w-full lg:w-2/4 flex flex-col justify-center">
+          <h1 className="text-5xl w-full sm:w-full sm:text-center lg:text-left md:text-center font-bold pt-10 sm:pt-0 text-center sm:text-8xl bg-gradient-to-r from-green-500 via-key to-red-500 text-transparent bg-clip-text pb-2 animate-gradient">
             Algarve&apos;s Best Travel Guide
           </h1>
-          <h2 className="hidden mt-4 sm:text-center md:text-left sm:block text-center mx-auto rounded-sm w-9/12 sm:text-lg sm:py-6 md:w-10/12 ml-0 sm:mx-auto md:m-0 text-sm lg:max-w-2xl text-gray-700">
+          <h2 className="hidden mt-4 sm:text-center sm:w-full md:text-center lg:text-left lg:w-full sm:block text-center mx-auto rounded-sm w-9/12 sm:text-lg sm:py-6 md:w-10/12 md:mx-auto ml-0 sm:mx-auto md:m-0 text-sm lg:max-w-2xl text-gray-700">
             Discover the breathtaking beauty of the Algarve! <br /> The{" "}
             <strong className="relative inline-block">
               ultimate guide{" "}
@@ -45,15 +46,16 @@ const Hero = () => {
           <SearchDesktop />
         </div>
 
-        <div className="w-[430px] mt-24 sm:m-auto md:mx-auto relative h-[430px] hidden sm:flex items-center justify-center rounded-full border-[6px] border-dashed border-key p-20">
+        <div className="w-[430px] hidden mt-24 lg:ml-1 sm:mt-10 lg:my-auto sm:m-auto md:mx-auto relative h-[430px] sm:flex items-center justify-center rounded-full border-[6px] border-dashed border-key p-20">
+          <FaRegPaperPlane className="absolute top-20 -left-20 text-6xl text-key" />
           <div className="w-full h-full flex items-center justify-center">
-            <div className="p-2 rounded-t-3xl flex rounded-full shadow-lg">
+            <div className="p-2 rounded-t-3xl flex rounded-full">
               <Image
                 src={IMAGES_DESKTOP[2]}
                 alt="hero image"
                 fill
                 loading="eager"
-                className="p-3 rounded-full shadow-lg object-cover"
+                className="p-3 rounded-full object-cover"
               />
             </div>
           </div>
