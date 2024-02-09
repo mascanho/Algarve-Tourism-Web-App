@@ -2,8 +2,11 @@
 import { uploadMeal } from "@/app/actions/uploadMeal";
 import React from "react";
 import SubmitBtn from "./SubmitBtn";
+import { useFormState } from "react-dom";
 
 function UploadDailyForm() {
+  const { formState } = useFormState();
+
   return (
     <section className="w-full mx-auto bg-darkwhite ">
       <form

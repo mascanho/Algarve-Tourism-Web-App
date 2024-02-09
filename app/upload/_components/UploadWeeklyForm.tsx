@@ -4,7 +4,7 @@ import React from "react";
 
 function UploadWeeklyForm() {
   return (
-    <form className="flex flex-col w-11/12 mx-auto">
+    <form className="flex flex-col w-11/12 mx-auto py-16 px-3">
       <Accordion variant="contained">
         <Accordion.Item value="Monday">
           <Accordion.Control>Monday</Accordion.Control>
@@ -156,9 +156,9 @@ function UploadWeeklyForm() {
       </Accordion>
       <button
         type="submit"
-        className="bg-blue-500 text-white font-bold py-2 px-4 rounded"
+        className="bg-key text-white font-bold py-2 px-4 rounded mt-10"
       >
-        Submit
+        Upload
       </button>
     </form>
   );

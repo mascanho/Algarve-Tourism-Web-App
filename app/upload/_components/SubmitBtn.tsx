@@ -6,8 +6,6 @@ import { FaSpinner } from "react-icons/fa";
 function SubmitBtn() {
   const { loading, pending } = useFormStatus();
 
-  console.log(pending, loading);
-
   return (
     <button
       type="submit"
