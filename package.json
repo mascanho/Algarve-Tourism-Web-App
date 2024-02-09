@@ -25,7 +25,7 @@
     "@next/bundle-analyzer": "^14.1.0",
     "@next/mdx": "^14.0.4",
     "@next/third-parties": "^14.0.4",
-    "@prisma/client": "^4.16.2",
+    "@prisma/client": "^5.9.1",
     "@tabler/icons-react": "^2.44.0",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@types/mdx": "^2.0.10",
@@ -85,7 +85,7 @@
     "postcss-nesting": "^12.0.2",
     "prettier": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "prisma": "^5.7.1",
+    "prisma": "^5.9.1",
     "prisma-client": "^0.0.0",
     "tailwindcss": "^3.3.5",
     "tailwindcss-animated": "^1.0.1"
