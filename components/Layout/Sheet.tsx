@@ -148,6 +148,15 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
           <div
             className="flex items-center mb-2"
             onClick={() => {
+              router.push("/upload");
+              close();
+            }}
+          >
+            <span className="my-auto">Upload meals</span>
+          </div>{" "}
+          <div
+            className="flex items-center mb-2"
+            onClick={() => {
               router.push("/contact");
               close();
             }}

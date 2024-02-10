@@ -140,12 +140,6 @@ function RandomBanner({ categories }: any) {
       <div className="w-full mx-auto px-2">
         <div className="sm:space-x-8 mx-auto justify-center items-center   mt-8 sm:mt-8 w-full flex flex-wrap">
           <button
-            onClick={handleClickRandom}
-            className="px-6 w-52 text-sm mb-4 sm:mb-0 border sm:w-fit sm:text-base py-3 text-black hover:text-white hover:bg-black transition-all h-fit ease-in delay-75 bg-white rounded-md active:scale-95"
-          >
-            Discover The Best Places
-          </button>
-          <button
             onClick={GenerateRandomChoice}
             className="px-8 py-3 w-52 sm:w-fit text-sm sm:text-base m-auto text-white bg-key hover:bg-black hover:text-white transition-all ease-in delay-75 rounded-md active:scale-95"
           >

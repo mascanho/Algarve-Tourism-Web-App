@@ -6,14 +6,23 @@ import prisma from "@/app/libs/prismadb";
 async function MealsPage() {
   const allMeals = await prisma?.dailymeal?.findMany({});
 
+  console.log(allMeals);
+
   return (
-    <div>
+    <div className="h-screen pt-20 w-full">
+      <h1 className="text-black mb-10 text-xl font-semibold text-center">
+        Today's daily meals
+      </h1>
       {allMeals?.map((meal: any) => {
         return (
-          <div key={meal.id}>
-            <h1>{meal.meal}</h1>
-            <h1>{meal.price}</h1>
-            <h1>{meal.business}</h1>
+          <div
+            key={meal.id}
+            className="w-11/12 mx-auto border p-2 rounded-xl bg-white"
+          >
+            <h3 className="font-bold text-black">{meal?.business}</h3>
+            <h3 className="text-black">{meal?.meal}</h3>
+            <h3 className="text-black">{meal?.price}</h3>
+            <h3 className="text-black">{meal?.city}</h3>
           </div>
         );
       })}

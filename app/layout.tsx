@@ -63,7 +63,7 @@ export default async function RootLayout({
         <body className="bg-darkwhite w-screen min-w-[350px]">
           <ClientOnly>
             <ToasterProvider />
-            <section className="pb-12">
+            <section>
               <Header currentUser={currentUser} />
             </section>
             <SpeedInsights />

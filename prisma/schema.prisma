@@ -41,6 +41,7 @@ model Dailymeal {
   price     Float
   date      DateTime
   business  String?
+  city      String
   }
 
 

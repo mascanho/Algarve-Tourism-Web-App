@@ -58,22 +58,24 @@ const Selection = () => {
   };
 
   return (
-    <section className="w-full z-20 inline text-center sm:hidden overflow-x-clip fixed border top-9 h-18  bg-white h-18 pt-1 ">
+    <section className="w-full z-20 inline text-center sm:hidden overflow-x-clip fixed border top-[40px] h-18  bg-white h-18 pt-1 ">
       {pathname === "/" ? null : (
         <>
-          <section className="overflow-hidden flex w-full shadow-lg border-b h-14 ">
+          <section className="selection overflow-hidden flex w-full shadow-lg border-b h-14 pt-[2px] ">
             <Carousel
               ref={carouselRef} // Assign the ref to the Carousel component
               dragFree
               nextControlIcon={<BiChevronRight />}
               previousControlIcon={<BiChevronLeft />}
               align={"start"}
-              className="w-full overflow-hidden mx-auto flex flex-wrap"
-              slideSize={"10.333333%"}
+              className="w-fit overflow-hidden mx-auto flex flex-nowrap"
+              slideSize={"5%"}
+              controlSize={14}
+              loop
             >
               {catArr.map((cat) => (
                 <Carousel.Slide
-                  className={`px-2 text-xs mr-2 my-1 text-right h-auto w-[95px]`}
+                  className={`px-2 text-xs mr-2 my-1 text-right h-auto w-full`}
                   key={cat.name}
                   onClick={() => handleClick(cat)}
                 >

@@ -19,7 +19,7 @@ const Hero = () => {
   return (
     <section
       id="search"
-      className="mx-auto overflow-clip sm:bg-gradient-to-r from-neutral-100 to-stone-200  w-full space-y-2 sm:h-full rounded-b-[100px] z-0 sm:space-y-4 flex flex-wrap flex-col justify-center sm:shadow-md sm:py-20"
+      className="mx-auto overflow-clip sm:bg-gradient-to-r from-neutral-100 to-stone-200  w-full space-y-2 sm:h-full rounded-b-[100px] z-0 sm:space-y-4 flex flex-wrap flex-col justify-center sm:shadow-md pt-10 sm:py-20"
     >
       <section className="flex items-center flex-wrap mx-auto w-full sm:mt-10 sm:h-full sm:max-w-7xl">
         <div className="sm:text-center px-4 sm:mx-auto md:my-auto  sm:w-full md:w-full lg:w-2/4 flex flex-col justify-center ">

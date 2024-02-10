@@ -27,6 +27,7 @@ export async function uploadMeal(formData: FormData) {
           meal: formData.get("meal") as string,
           price: Number(formData.get("price")),
           business: formData.get("business") as string,
+          city: formData.get("city") as string,
         },
       });
       console.log("Existing daily meal updated successfully");
@@ -45,6 +46,7 @@ export async function uploadMeal(formData: FormData) {
           date: today,
           business: formData.get("business") as string,
           email: currentUser?.email as string,
+          city: formData.get("city") as string,
         },
       });
       console.log("New daily meal uploaded successfully");
