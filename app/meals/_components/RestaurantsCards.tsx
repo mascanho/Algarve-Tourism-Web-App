@@ -11,7 +11,7 @@ function RestaurantsCards({ restaurants }: any) {
         </Link>
       </div>
 
-      <div className="flex flex-col overflow-x-auto scrollbar-hide mb-10 ">
+      <div className="flex flex-col overflow-x-auto scrollbar-hide ml-4 mb-10 ">
         <div className="flex sm:w-11/12 justify-center mx-auto">
           {restaurants.map((rest: any, index: number) => (
             <Link
