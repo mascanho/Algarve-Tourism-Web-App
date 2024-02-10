@@ -35,7 +35,9 @@ export async function uploadMeal(formData: FormData) {
       // Create a new meal entry
       await prisma.dailymeal.create({
         data: {
-          name: currentUser?.name as string,
+          name:
+            (currentUser?.name as string) ||
+            (currentUser?.email.split("@")[0] as string),
           user: {
             connect: {
               id: currentUser?.id,

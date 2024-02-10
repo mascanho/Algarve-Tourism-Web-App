@@ -35,6 +35,17 @@ async function MealsPage(params: any) {
     },
   });
 
+  const reducedCities = Array.from(
+    citiesOnDb
+      ?.reduce((map, obj) => {
+        map.set(obj.city, obj); // Assuming city is the property name holding the city name
+        return map;
+      }, new Map())
+      .values(),
+  );
+
+  console.log(citiesOnDb, reducedCities, "00000000000000000000000000000000000");
+
   let allMeals = await prisma?.dailymeal?.findMany({});
 
   const search = await prisma?.dailymeal?.findMany({
@@ -51,7 +62,7 @@ async function MealsPage(params: any) {
       <h3 className="text-center">
         Discover the best meals of the day near you
       </h3>
-      <SegmentTab meals={allMeals} search={search} citiesOnDb={citiesOnDb} />
+      <SegmentTab meals={allMeals} search={search} citiesOnDb={reducedCities} />
       <RestaurantsCards restaurants={restaurants} />
     </div>
   );
