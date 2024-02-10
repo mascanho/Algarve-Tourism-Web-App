@@ -5,6 +5,40 @@ import SegmentTab from "./_components/SegmentTab";
 import SearchMeal from "./_components/SearchMeal";
 import { createClient } from "contentful";
 import RestaurantsCards from "./_components/RestaurantsCards";
+import type { Metadata, Viewport } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Find The Best Daily Meals in The Algarve | Algarve Wonders",
+    template: "%s | Algarve Wonders",
+  },
+  description: "Discover the best daily dishes in the Algarve",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/images/icon.png",
+    href: "/images/icon.png",
+    apple: "/apple-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon-precomposed.png",
+    },
+  },
+
+  // verification: {
+  //   google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
+  //   yandex: "14d2e73487fa6c71",
+  // },
+};
 
 // get data from contentful
 const getRestaurants = async () => {
