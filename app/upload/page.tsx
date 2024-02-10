@@ -34,7 +34,7 @@ function Upload() {
         </div>
 
         {uploadDay === "daily" && <UploadDailyForm />}
-        {uploadDay === "weekly" && <UploadWeeklyForm />}
+        {uploadDay === "weekly" && <p className="min-h-screen">soon...</p>}
       </div>
     );
   }

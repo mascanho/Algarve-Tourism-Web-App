@@ -38,7 +38,7 @@ async function Search(searchParams: any) {
   }
 
   return (
-    <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 pt-5 mb-28">
+    <section className="w-11/12 mx-auto max-w-7xl sm:w-11/12 pt-20 mb-28">
       <section className="max-w-7xl mx-auto sm:mb-10">
         <Link href="/#search">
           <div className="flex items-center w-full space-x-1 -mt-4 mb-4 sm:mb-0 sm:mt-0">

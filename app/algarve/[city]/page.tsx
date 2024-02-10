@@ -185,8 +185,8 @@ async function page(props: any) {
   const weather = documentToReactComponents(filteredData[0]?.fields?.weather);
 
   return (
-    <>
-      <div className="sm:hidden mt-5 w-11/12 max-w-7xl mx-auto">
+    <section className="sm:pt-8">
+      <div className="sm:hidden pt-5 w-11/12 max-w-7xl mx-auto">
         <TableAccordion tableData={tableData} />
       </div>
       <section className="sm:pt-10 pt-10 max-w-7xl w-11/12 mx-auto sm:flex">
@@ -270,7 +270,7 @@ async function page(props: any) {
           </Link>
         </div>
       </section>
-    </>
+    </section>
   );
 }
 

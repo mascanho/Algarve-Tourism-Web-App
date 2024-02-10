@@ -58,6 +58,16 @@ b {
   header,
   nav {
     display: none !important;
+    background-color: white;
+    background: white;
+  }
+
+  body {
+    background-color: white !important;
+  }
+
+  html {
+    background-color: white;
   }
 }
 
