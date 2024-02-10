@@ -28,5 +28,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui"), require("tailwindcss-animated")],
+  plugins: [
+    require("daisyui"),
+    require("tailwindcss-animated"),
+    require("tailwind-scrollbar-hide"),
+  ],
 };

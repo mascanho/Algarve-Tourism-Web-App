@@ -31,6 +31,7 @@ function UploadDailyForm() {
           name="business"
           placeholder="Restaurant ABC"
           className=" p-2 w-full rounded-md bg-white text-key border"
+          maxLength={50}
           required
         />
         <label htmlFor="business" className="text-left w-full mx-0 text-key">
@@ -42,6 +43,7 @@ function UploadDailyForm() {
           name="meal"
           placeholder="Frango Assado"
           className="p-2 w-full rounded-md bg-white text-key border"
+          maxLength={50}
         />
         <label htmlFor="business" className="text-left w-full mx-0 text-key">
           Price
@@ -54,6 +56,7 @@ function UploadDailyForm() {
           name="price"
           placeholder="12.99"
           className="p-2 w-full bg-white rounded-md text-key"
+          maxLength={4}
         />
         <label htmlFor="business" className="text-left w-full mx-0 text-key">
           City
@@ -64,6 +67,7 @@ function UploadDailyForm() {
           name="city"
           placeholder="Albufeira"
           className=" p-2 w-full rounded-md bg-white text-key border"
+          maxLength={50}
         />
         <SubmitBtn />
         {showMeal && (
