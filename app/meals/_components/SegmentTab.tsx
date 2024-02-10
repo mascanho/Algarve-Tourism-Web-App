@@ -6,8 +6,9 @@ import { IoReloadSharp } from "react-icons/io5";
 import SearchedMealResults from "./SearchedMealResults";
 import DailyMeals from "./DailyMeals";
 import { useRouter } from "next/navigation";
+import { SegmentedControl } from "@mantine/core";
 
-function SegmentTab({ meals, search }: any) {
+function SegmentTab({ meals, search, citiesOnDb }: any) {
   const [searchedMeals, setSearchedMeals] = useState(null);
   const [regime, setRegime] = useState("daily");
   const router = useRouter();
@@ -33,7 +34,15 @@ function SegmentTab({ meals, search }: any) {
 
   return (
     <section className="w-full mb-4">
-      {/* Your existing code for SegmentedControl */}
+      <SegmentedControl
+        className="mx-auto w-11/12 flex"
+        value={regime}
+        onChange={setRegime}
+        data={[
+          { value: "daily", label: "Daily" },
+          { value: "weekly", label: "Weekly" },
+        ]}
+      />
 
       {regime === "daily" && (
         <div className="mt-4">
@@ -48,11 +57,9 @@ function SegmentTab({ meals, search }: any) {
                 <option value="" disabled selected>
                   Select a city
                 </option>
-                {cityArr.map((city) => (
-                  <option key={city.id} value={city.name}>
-                    {city.name}
-                  </option>
-                ))}
+                {citiesOnDb?.map((city) => (
+                  <option key={city?.city}>{city.city}</option>
+                ))}{" "}
               </select>{" "}
               <button
                 className="rounded-r-md flex items-center bg-key text-white  justify-center w-16"
@@ -72,6 +79,10 @@ function SegmentTab({ meals, search }: any) {
             <DailyMeals meals={meals} />
           )}
         </div>
+      )}
+
+      {regime === "weekly" && (
+        <div className="mt-4 text-center">No weekly meals at the moment </div>
       )}
     </section>
   );

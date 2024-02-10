@@ -9,6 +9,12 @@ import SearchMeal from "./_components/SearchMeal";
 async function MealsPage(params: any) {
   const city = params?.searchParams?.city;
 
+  const citiesOnDb = await prisma?.dailymeal?.findMany({
+    select: {
+      city: true,
+    },
+  });
+
   let allMeals = await prisma?.dailymeal?.findMany({});
 
   const search = await prisma?.dailymeal?.findMany({
@@ -24,7 +30,7 @@ async function MealsPage(params: any) {
       <h1 className="text-black mb-10 text-xl font-semibold text-center">
         Today's daily meals
       </h1>
-      <SegmentTab meals={allMeals} search={search} />
+      <SegmentTab meals={allMeals} search={search} citiesOnDb={citiesOnDb} />
     </div>
   );
 }
