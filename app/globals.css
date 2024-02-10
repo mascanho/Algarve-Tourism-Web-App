@@ -246,3 +246,7 @@ button {
     appearance: none; /* Disable other browser native dropdown */
   }
 }
+
+input:focus {
+  outline: none !important;
+}

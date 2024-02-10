@@ -136,7 +136,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
               <div className="flex justify-between pl-1  text-right py-2 bg-key rounded-b-xl sm:py-1  w-full pr-4 ">
                 <Menu className="ml-3 bg-key">
                   <Menu.Target>
-                    <span className="cursor-pointer">...</span>
+                    <span className="cursor-pointer -mt-1">...</span>
                   </Menu.Target>
                   <Menu.Dropdown>
                     <div className="flex items-center  px-2 align-middle space-x-2 bg-white p-2">
