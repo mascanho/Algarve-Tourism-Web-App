@@ -17,8 +17,8 @@ function Upload() {
 
   if (isLoggedIn) {
     return (
-      <div className="h-full w-full flex flex-wrap flex-col items-center justify-center mt-10">
-        <h1 className="text-3xl mx-0 text-left font-bold mt-14 mb-5 text-key">
+      <div className="h-full w-full flex flex-wrap flex-col items-center justify-center">
+        <h1 className="text-3xl mx-0 text-left font-bold pt-28 mb-5 text-key">
           Upload your meal
         </h1>
         <p className="-mt-2">Publish your meal for others to see</p>

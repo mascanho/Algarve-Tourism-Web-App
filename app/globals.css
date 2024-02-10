@@ -215,3 +215,24 @@ button {
 .selection .mantine-act32r {
   top: 10px !important;
 }
+
+.mantine-1cn2mlo {
+  /* Reset all styles */
+  all: unset;
+
+  /* Alternatively, reset specific styles */
+  /* Example: reset padding and border */
+  padding: 0;
+  border: none;
+
+  /* Add your custom styles here */
+}
+
+@media (min-width: 268px) {
+  /* Adjust the breakpoint as needed */
+  select {
+    -webkit-appearance: none; /* Disable iOS native dropdown */
+    -moz-appearance: none; /* Disable Firefox native dropdown */
+    appearance: none; /* Disable other browser native dropdown */
+  }
+}
