@@ -1,4 +1,5 @@
 import React from "react";
+import prisma from "@/app/libs/prismadb";
 
 // get the data from Prisma
 

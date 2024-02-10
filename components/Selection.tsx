@@ -58,10 +58,10 @@ const Selection = () => {
   };
 
   return (
-    <section className="w-full z-20 inline text-center sm:hidden overflow-x-clip fixed top-10 h-18 z-10 bg-white h-18 pt-3 ">
+    <section className="w-full z-20 inline text-center sm:hidden overflow-x-clip fixed border top-9 h-18  bg-white h-18 pt-1 ">
       {pathname === "/" ? null : (
         <>
-          <section className="overflow-hidden w-full shadow-lg border-b h-14 ">
+          <section className="overflow-hidden flex w-full shadow-lg border-b h-14 ">
             <Carousel
               ref={carouselRef} // Assign the ref to the Carousel component
               dragFree
@@ -73,8 +73,7 @@ const Selection = () => {
             >
               {catArr.map((cat) => (
                 <Carousel.Slide
-                  className={`
-                                        px-2 text-xs mr-2 my-1 text-right flex justify-end h-auto w-[95px]`}
+                  className={`px-2 text-xs mr-2 my-1 text-right h-auto w-[95px]`}
                   key={cat.name}
                   onClick={() => handleClick(cat)}
                 >
