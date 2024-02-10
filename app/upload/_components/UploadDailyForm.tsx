@@ -1,17 +1,24 @@
 "use client";
 import { uploadMeal } from "@/app/actions/uploadMeal";
-import React from "react";
+import React, { useRef } from "react";
 import SubmitBtn from "./SubmitBtn";
 import { useFormState } from "react-dom";
+import { toast } from "react-hot-toast";
 
 function UploadDailyForm() {
   const { formState } = useFormState();
+  const ref = useRef<HTMLFormElement>(null);
 
   return (
     <section className="w-full mx-auto bg-darkwhite ">
       <form
+        ref={ref}
         className="flex rounded-3xl px-4  mb-20 flex-col justify-center items-center w-11/12 mx-auto gap-y-2 py-10"
-        action={uploadMeal}
+        action={async (formData: any) => {
+          await uploadMeal(formData);
+          ref?.current?.reset();
+          toast.success("Meal uploaded successfully");
+        }}
       >
         <label htmlFor="business" className="text-left text-key w-full mx-0">
           Business Name

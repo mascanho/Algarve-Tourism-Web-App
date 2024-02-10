@@ -3,9 +3,17 @@ import { useState } from "react";
 import UploadDailyForm from "./_components/UploadDailyForm";
 import UploadWeeklyForm from "./_components/UploadWeeklyForm";
 import { SegmentedControl } from "@mantine/core";
+import getCurrentUser from "../libs/getCurrentUser";
+import { useSession } from "next-auth/react";
+import { useLoginModalStore } from "../hooks/useLoginModal";
 
-const isLoggedIn = true;
 function Upload() {
+  const { data: session, status } = useSession();
+  const isLoggedIn = status === "authenticated";
+  const loginModal = useLoginModalStore();
+
+  console.log(session);
+
   const [uploadDay, setUploadDay] = useState("daily");
 
   if (isLoggedIn) {
@@ -33,7 +41,12 @@ function Upload() {
 
   return (
     <div className="h-screen w-full flex flex-wrap flex-col items-center justify-center">
-      <h1>Login</h1>
+      <h1
+        onClick={loginModal.onOpen}
+        className="text-xl mx-0  text-left font-bold mt-10 mb-5 text-key border rounded-xl px-5 py-2"
+      >
+        Login
+      </h1>
     </div>
   );
 }
