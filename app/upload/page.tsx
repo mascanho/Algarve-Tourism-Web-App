@@ -59,8 +59,8 @@ function Upload() {
         </ul>
       </Drawer>
       <div className="w-full sm:w-2/3 sm:mx-auto mb-20 flex flex-nowrap flex-col items-center justify-center pb-40">
-        <div className="w-11/12 rounded-xl text-black mx-auto bg-darkwhite flex py-5 px-2 justify-center text-center flex-col items-center mt-36 h-full">
-          <h1 className="text-3xl mx-0 text-left font-bold pt-3 mb-5">
+        <div className="w-11/12 rounded-xl text-black mx-auto bg-darkwhite flex py-5 px-2 justify-center text-center flex-col items-center mt-20 h-full">
+          <h1 className="text-5xl mx-0 text-left font-bold pt-3 mb-5">
             Upload Meals
           </h1>
           <h2>
@@ -70,9 +70,9 @@ function Upload() {
           </h2>{" "}
           <span
             onClick={loginModal.onOpen}
-            className="text-xl mx-0 w-32 cursor-pointer text-center font-bold text-white bg-key border mt-6 mb-3 rounded-xl px-5 py-2"
+            className="text-xl mx-0 w-fit active:bg-gray-500 transition-all ease-in-out cursor-pointer text-center font-bold text-white bg-key border mt-6 mb-3 rounded-xl px-7 py-2"
           >
-            Login
+            Start uploading
           </span>
         </div>
 
