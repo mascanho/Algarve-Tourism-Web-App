@@ -212,11 +212,11 @@ const Header = ({ currentUser, weatherData }: any) => {
             </div>
             <div
               onClick={openLoginMenu}
-              className="border rounded-full cursor-pointer flex flex-wrap items-center px-1 border-gray-500"
+              className="border rounded-full cursor-pointer flex flex-wrap items-center py-1 px-1 border-gray-500"
             >
               <RxHamburgerMenu className="font-semibold pl-1" />
               {currentUser?.image === "" ? (
-                <span className="rounded-full text-white bg-key h-6 text-sm w-6 m-[3px] ml-1 capitalize flex items-center justify-center">
+                <span className="rounded-full text-white bg-key h-6 text-sm w-6 ml-1 capitalize flex items-center justify-center">
                   {currentUser?.initials}
                 </span>
               ) : (
@@ -224,7 +224,7 @@ const Header = ({ currentUser, weatherData }: any) => {
                   src={currentUser?.image || "/images/person-placeholder.png"}
                   height={30}
                   width={30}
-                  className="rounded-full hidden sm:flex relative object-contain p-1 w-8 h-8 cursor-pointer"
+                  className="rounded-full hidden sm:flex relative object-contain w-6 h-6 cursor-pointer"
                   alt="avatar"
                 />
               )}
