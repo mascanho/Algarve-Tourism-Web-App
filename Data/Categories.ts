@@ -25,7 +25,7 @@ export const catArr = [
     icon: "",
     route: "/business",
     image:
-      "https://altrincham.todaynews.co.uk/content/images/size/w1304/wp-content/uploads/sites/7/2022/10/realalgarve.webp",
+      "https://a.cdn-hotels.com/gdcs/production88/d1085/de9dcea8-b117-4733-baea-cfa3227f5f18.jpg?impolicy=fcrop&w=800&h=533&q=medium",
     type: "category",
   },
   {

@@ -27,6 +27,7 @@ import DailyMenusDrawer from "./_components/DailyMenusDrawer";
 import { GrOverview } from "react-icons/gr";
 import { IoIosLeaf } from "react-icons/io";
 import BookingDrawer from "./_components/BookingDrawer";
+import { redirect } from "next/navigation";
 
 const Reviews = dynamic(() => import("../../../components/Layout/Reviews"), {});
 
@@ -34,12 +35,12 @@ const Reviews = dynamic(() => import("../../../components/Layout/Reviews"), {});
 export async function generateMetadata({ params, searchParams }: any) {
   const getDATA = async () => {
     const client = createClient({
-      space: process.env.CONTENTFUL_SPACE_ID!,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+      space: process?.env?.CONTENTFUL_SPACE_ID!,
+      accessToken: process?.env?.CONTENTFUL_ACCESS_TOKEN!,
     });
 
     try {
-      const res = await client.getEntries({
+      const res = await client?.getEntries({
         content_type: params?.category,
         limit: 10,
         include: 1,
@@ -61,7 +62,7 @@ export async function generateMetadata({ params, searchParams }: any) {
 
     return {
       // Remove the "-" from the title, separate words with spaces and uppercase the first letter
-      title: params.slug
+      title: params?.slug
         .split("-")
         .map((word: any) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" "),
@@ -81,13 +82,18 @@ export default async function Home(props: any, req: any) {
   const { category, slug } = props.params;
 
   async function getAllCategories() {
-    const client: any = createClient({
-      space: process.env.CONTENTFUL_SPACE_ID!,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
-    });
-    const res = await client.getEntries({ content_type: category });
+    try {
+      const client: any = createClient({
+        space: process?.env?.CONTENTFUL_SPACE_ID!,
+        accessToken: process?.env?.CONTENTFUL_ACCESS_TOKEN!,
+      });
+      const res = await client?.getEntries({ content_type: category || "" });
 
-    return await res.items;
+      return await res?.items;
+    } catch (error) {
+      console.error("Error fetching data from Contentful:", error);
+      redirect("/error");
+    }
   }
 
   const data = await getAllCategories();

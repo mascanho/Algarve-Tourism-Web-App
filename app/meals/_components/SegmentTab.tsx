@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { SegmentedControl } from "@mantine/core";
 import SearchedMealResults from "./SearchedMealResults";
 import DailyMeals from "./DailyMeals";
+import Link from "next/link";
 
 function SegmentTab({ meals, search, citiesOnDb }: any) {
   const [searchedMeals, setSearchedMeals] = useState(null);
@@ -89,8 +90,18 @@ function SegmentTab({ meals, search, citiesOnDb }: any) {
               <IoReloadSharp />
             </button>
           </div>
-
-          <SearchedMealResults searchedMeals={searchedMeals} />
+          {searchedMeals?.length > 0 ? (
+            <SearchedMealResults searchedMeals={searchedMeals} />
+          ) : (
+            <div className="mx-auto flex justify-center mt-10 w-11/12">
+              <span className="text-center w-full mx-auto">
+                No daily meals today, yet.
+                <Link className="underline ml-1" href={"/upload/"}>
+                  Add some
+                </Link>
+              </span>
+            </div>
+          )}
         </div>
       )}
 

@@ -126,8 +126,8 @@ function Footer() {
                 <p className="link link-hover">Best Adventures</p>
               </Link>
 
-              <Link href={"/algarve"}>
-                <p className="link link-hover">Best Cities</p>
+              <Link href={"/upload"}>
+                <p className="link link-hover">Upload Daily Meals</p>
               </Link>
               <Link href={"/submit"}>
                 <p className="link link-hover">Submit Places</p>
