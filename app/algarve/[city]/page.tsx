@@ -48,7 +48,7 @@ async function getAllCategories() {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
   });
   const res = await client.getEntries({
-    content_type: ["beaches", "events", "restaurants"],
+    content_type: ["beaches", "events", "restaurants", "adventure"],
   });
 
   return await res.items;
@@ -154,8 +154,6 @@ async function page(props: any) {
       .toLowerCase();
   });
 
-  console.log(test, "testing");
-
   //Shuffle the array with the cards
   function shuffleArray(array: any) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -186,7 +184,7 @@ async function page(props: any) {
 
   return (
     <section className="sm:pt-8">
-      <div className="sm:hidden pt-5 w-11/12 max-w-7xl mx-auto">
+      <div className="sm:hidden pt-10 w-11/12 max-w-7xl mx-auto">
         <TableAccordion tableData={tableData} />
       </div>
       <section className="sm:pt-10 pt-10 max-w-7xl w-11/12 mx-auto sm:flex">
