@@ -184,7 +184,7 @@ const Card = ({
                     href={`/${cat?.fields?.type}/${cat?.fields?.slug}`}
                   >
                     <span className="flex text-xs text-highlight mr-2">
-                      Read More
+                      View place
                     </span>
                   </Link>
                 </div>
