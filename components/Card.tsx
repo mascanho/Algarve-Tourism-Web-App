@@ -164,7 +164,7 @@ const Card = ({
               <section className="flex justify-between bg-key shadow-md rounded-b-lg w-full py-2 items-center">
                 <div className="flex items-center  w-full px-2 align-middl space-x-3">
                   {/* <BsQrCodeScan className="hover:scale-110 cursor-pointer" /> */}
-                  <a href={mapShare} target="_blank">
+                  <a aria-label={`View on map`} href={mapShare} target="_blank">
                     <BiMap className="hover:scale-110 cursor-pointer" />
                   </a>
                   <BsShareFill
@@ -172,6 +172,7 @@ const Card = ({
                     className="text-xs hover:scale-110 cursor-pointer"
                   />
                   <a
+                    aria-label={`View on website in new tab`}
                     target="_blank"
                     href={`/${cat.fields.type}/${cat?.fields?.slug}`}
                   >

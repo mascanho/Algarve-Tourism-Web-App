@@ -86,8 +86,8 @@ const Hero = () => {
           className="rounded-t-3xl z-0 sm:hidden rounded-2xl w-full h-full mx-auto shadow-lg object-fill brightness-75"
           src="/images/mobile-bg.webp"
           alt="hero image"
-          width={800}
-          height={100}
+          width={200}
+          height={700}
           loading="eager"
         />
         <div className="-mt-10 w-20 active:scale-90 z-10 h-20 bg-white rounded-full flex sm:hidden items-center justify-center shadow-lg m-auto">
