@@ -51,8 +51,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
-<<<<<<< Updated upstream
-=======
     {
       url: "https://www.algarvewonders.com/meals",
       changeFrequency: "weekly",
@@ -63,6 +61,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
->>>>>>> Stashed changes
   ];
 }
