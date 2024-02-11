@@ -40,6 +40,10 @@ export const metadata: Metadata = {
   // },
 };
 
+// define TODAY's date
+const today = new Date();
+today.setHours(0, 0, 0, 0); // Set hours, minutes, seconds, and milliseconds to zero to represent the start of the day
+
 // get data from contentful
 const getRestaurants = async () => {
   const client: any = createClient({
@@ -69,16 +73,26 @@ async function MealsPage(params: any) {
     },
   });
 
+  // filter the cities and remove duplicates
   const reducedCities = Array.from(
     citiesOnDb
-      ?.reduce((map, obj) => {
+      ?.reduce((map: any, obj: any) => {
         map.set(obj.city, obj); // Assuming city is the property name holding the city name
         return map;
       }, new Map())
       .values(),
   );
 
-  console.log(citiesOnDb, reducedCities, "00000000000000000000000000000000000");
+  // find the date in the db and return the object in an Array
+  const mealDates = await prisma?.dailymeal?.findMany({
+    select: {
+        date: true      
+    } 
+  });
+
+  console.log(mealDates);
+
+  // filter the meals in prisma by date, showing only todays meals, using a standard date format
 
   let allMeals = await prisma?.dailymeal?.findMany({});
 
