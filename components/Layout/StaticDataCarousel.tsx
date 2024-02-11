@@ -56,18 +56,18 @@ function Card({
               {type === "city" ? "Algarve" : type}
             </Text>
           )}
-          <Text size={"xs"} className="flex items-center text-xs">
-            {price && (
-              <Badge
-                className="m-auto"
-                color={price === "Free" ? "green" : "red"}
-                size="xs"
-                variant="light"
-              >
-                {price}
-              </Badge>
-            )}
-          </Text>
+          {/* <Text size={"xs"} className="flex items-center text-xs"> */}
+          {/*   {price && ( */}
+          {/*     <Badge */}
+          {/*       className="m-auto" */}
+          {/*       color={price === "Free" ? "green" : "red"} */}
+          {/*       size="xs" */}
+          {/*       variant="light" */}
+          {/*     > */}
+          {/*       {price} */}
+          {/*     </Badge> */}
+          {/*   )} */}
+          {/* </Text> */}
         </div>
         <Title
           order={3}

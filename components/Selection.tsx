@@ -16,31 +16,19 @@ const Selection = () => {
   const [activeCategory, setActiveCategory] = useState(null);
   const carouselRef = useRef(null); // Ref for Carousel component
 
-  const handleClick = (cat: any) => {
+  const handleClick = (cat:any) => {
     setActiveCategory(cat);
-
-    // Determine the index of the selected category within catArr
     const selectedIndex = catArr.findIndex(
       (category) => category.name === cat.name,
     );
 
-    // If the carouselRef is available and the index is valid
     if (carouselRef.current && selectedIndex !== -1) {
-      // Calculate the scroll position based on the index and the width of each slide
       const slideWidth = carouselRef?.current?.offsetWidth;
       const scrollLeft = selectedIndex * slideWidth;
-
-      // Scroll the carousel to the calculated position
-      carouselRef?.current?.scrollTo({
-        left: scrollLeft,
-        behavior: "smooth",
-      });
+      carouselRef?.current?.scrollTo({ left: scrollLeft, behavior: "smooth" });
     }
 
-    // Get the DOM element of the category link to scroll into view
     const categoryLink = document.getElementById(`category-link-${cat.route}`);
-
-    // If the category link element exists, scroll it into view
     if (categoryLink) {
       categoryLink.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
@@ -68,7 +56,7 @@ const Selection = () => {
               nextControlIcon={<BiChevronRight />}
               previousControlIcon={<BiChevronLeft />}
               align={"start"}
-              className="w-fit overflow-hidden mx-auto flex flex-nowrap"
+              className="w-full overflow-hidden mx-auto flex flex-nowrap"
               slideSize={"5%"}
               controlSize={14}
               loop

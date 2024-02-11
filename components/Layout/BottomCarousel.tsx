@@ -53,20 +53,18 @@ function Card({
           <Text className="text-white/50  uppercase font-semibold" size="xs">
             {city}
           </Text>
-          <Text size={"xs"} className="flex items-center text-xs">
-            <Badge
-              className="m-auto"
-              color={price === "Free" ? "green" : "red"}
-              size="xs"
-              variant="light"
-            >
-              {price}
-            </Badge>
-          </Text>
+          {/* <Text size={"xs"} className="flex items-center text-xs"> */}
+          {/*   <Badge */}
+          {/*     className="m-auto" */}
+          {/*     color={price === "Free" ? "green" : "red"} */}
+          {/*     size="xs" */}
+          {/*     variant="light" */}
+          {/*   > */}
+          {/*     {price} */}
+          {/*   </Badge> */}
+          {/* </Text> */}
         </div>
-        <Title order={3} className={classes.title}>
-          {title}
-        </Title>
+        <span className="text-3xl font-bold text-white">{title}</span>
       </div>
       <div>
         <Link href={`/${type}/${slug}`} className="w-full h-full">
