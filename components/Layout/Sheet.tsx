@@ -135,7 +135,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
           >
             <span className="my-auto flex items-center">
               Daily Meals{" "}
-              <span className="rounded-xl py-1 px-2 ml-2 text-[9px] bg-green-500 text-white">
+              <span className="rounded-xl py-[1px] px-2 ml-2 text-[9px] bg-green-500 text-white">
                 New
               </span>
             </span>

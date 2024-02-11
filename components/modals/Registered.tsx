@@ -153,7 +153,10 @@ function RegisteredModal({ currentUser }: any) {
           </div>
           <span className="text-xs text-gray-300">
             No account?{" "}
-            <span onClick={handlechangeModal} className="text-key">
+            <span
+              onClick={handlechangeModal}
+              className="text-key underline cursor-pointer"
+            >
               Register now.{" "}
             </span>
           </span>

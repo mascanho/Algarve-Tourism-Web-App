@@ -215,13 +215,19 @@ const Header = ({ currentUser, weatherData }: any) => {
               className="border rounded-full cursor-pointer flex flex-wrap items-center px-1 border-gray-500"
             >
               <RxHamburgerMenu className="font-semibold pl-1" />
-              <img
-                src={currentUser?.image || "/images/person-placeholder.png"}
-                height={30}
-                width={30}
-                className="rounded-full hidden sm:flex relative object-contain p-1 w-8 h-8 cursor-pointer"
-                alt="avatar"
-              />
+              {currentUser.image === "" ? (
+                <span className="rounded-full text-white bg-key h-6 text-sm w-6 m-[3px] ml-1 capitalize flex items-center justify-center">
+                  {currentUser?.initials}
+                </span>
+              ) : (
+                <img
+                  src={currentUser?.image || "/images/person-placeholder.png"}
+                  height={30}
+                  width={30}
+                  className="rounded-full hidden sm:flex relative object-contain p-1 w-8 h-8 cursor-pointer"
+                  alt="avatar"
+                />
+              )}
             </div>
             {openLogin && (
               <ul className="z-10 absolute w-36 sm:w-36 p-2 text-sm bg-white border text-right shadow-sm menu  sm:-left-3 sm:top-11 border-t-3 border-t-key rounded-b-md -left-24 top-10">

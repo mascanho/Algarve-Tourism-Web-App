@@ -9,6 +9,7 @@ export async function POST(request: Request) {
 
   const hashedPassword = await bcrypt.hash(password, 12);
   const userImage = "/images/anonymous.png";
+  const initialLetter = email.charAt(0);
 
   // If user already exists
   if (await prisma.user.findUnique({ where: { email } })) {
@@ -19,7 +20,8 @@ export async function POST(request: Request) {
     data: {
       email,
       hashedPassword,
-      image: userImage,
+      image: "",
+      initials: initialLetter,
     },
   });
 
