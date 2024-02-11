@@ -73,34 +73,33 @@ async function MealsPage(params: any) {
     },
   });
 
+  // filter the meals in prisma by date, showing only todays meals, using a standard date format
+
+  let allMeals = await prisma?.dailymeal?.findMany({});
+
+  let search = await prisma?.dailymeal?.findMany({
+    where: {
+      city: city,
+    },
+  });
+
+  // filter the restaurants in prisma by date, showing only todays restaurants, using a standard date format
+  search = search.filter((meal: any) => {
+    return (
+      meal?.date.toISOString().split("T")[0] ===
+      today.toISOString().split("T")[0]
+    );
+  });
+
   // filter the cities and remove duplicates
   const reducedCities = Array.from(
-    citiesOnDb
+    search
       ?.reduce((map: any, obj: any) => {
         map.set(obj.city, obj); // Assuming city is the property name holding the city name
         return map;
       }, new Map())
       .values(),
   );
-
-  // find the date in the db and return the object in an Array
-  const mealDates = await prisma?.dailymeal?.findMany({
-    select: {
-        date: true      
-    } 
-  });
-
-  console.log(mealDates);
-
-  // filter the meals in prisma by date, showing only todays meals, using a standard date format
-
-  let allMeals = await prisma?.dailymeal?.findMany({});
-
-  const search = await prisma?.dailymeal?.findMany({
-    where: {
-      city: city,
-    },
-  });
 
   return (
     <div className="pt-20 w-full">

@@ -82,7 +82,7 @@ function SegmentTab({ meals, search, citiesOnDb }: any) {
               ))}
             </select>
             <button
-              className="rounded-r-md flex items-center bg-key text-white justify-center w-16"
+              className="rounded-r-xl flex items-center bg-key text-white justify-center w-20"
               type="button"
               onClick={handleReloadButtonClick}
             >
