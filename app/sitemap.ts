@@ -51,5 +51,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: "https://www.algarvewonders.com/meals/",
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    {
+      url: "https://www.algarvewonders.com/upload/",
+      changeFrequency: "weekly",
+      priority: 1,
+    },
   ];
 }
