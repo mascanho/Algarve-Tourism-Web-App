@@ -179,7 +179,10 @@ const Card = ({
                   </a>
                 </div>
                 <div className="flex items-center justify-end text-sm w-full pr-2 ">
-                  <Link href={`/${cat?.fields?.type}/${cat?.fields?.slug}`}>
+                  <Link
+                    aria-label={`Discover the best of ${cat?.fields?.title}`}
+                    href={`/${cat?.fields?.type}/${cat?.fields?.slug}`}
+                  >
                     <span className="flex text-xs text-highlight mr-2">
                       Read More
                     </span>
