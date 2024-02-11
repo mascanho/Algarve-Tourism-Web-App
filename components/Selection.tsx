@@ -16,7 +16,7 @@ const Selection = () => {
   const [activeCategory, setActiveCategory] = useState(null);
   const carouselRef = useRef(null); // Ref for Carousel component
 
-  const handleClick = (cat:any) => {
+  const handleClick = (cat: any) => {
     setActiveCategory(cat);
     const selectedIndex = catArr.findIndex(
       (category) => category.name === cat.name,
@@ -46,7 +46,7 @@ const Selection = () => {
   };
 
   return (
-    <section className="w-full z-20 inline text-center sm:hidden overflow-x-clip fixed border top-[40px] h-18  bg-white h-18 pt-1 ">
+    <section className="w-full z-20 inline text-center sm:hidden overflow-x-clip fixed border top-[240px] h-18  bg-white h-18 pt-1 ">
       {pathname === "/" ? null : (
         <>
           <section className="selection overflow-hidden flex w-full shadow-lg border-b h-14 pt-[2px] ">
