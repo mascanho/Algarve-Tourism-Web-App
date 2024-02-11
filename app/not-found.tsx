@@ -1,5 +1,4 @@
-import React from "react";
-import { catArr } from "@/Data/Categories";
+"use client";
 import Link from "next/link";
 
 function NotFound() {
