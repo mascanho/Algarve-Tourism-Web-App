@@ -15,7 +15,7 @@ export const quotes: any = [
     rating: "5",
     review:
       "Visiting the Algarve was a dream come true! The golden sand beaches, crystal-clear waters, and vibrant nightlife left me wanting more.",
-    image: "/images/quotes/1.jpg",
+    image: "/images/quotes/1.webp",
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ export const quotes: any = [
     rating: "4.5",
     review:
       "Exceeded my expectations! The rich history, authentic culture, and mouthwatering local cuisine made it an unforgettable journey",
-    image: "/images/quotes/2.jpg",
+    image: "/images/quotes/2.webp",
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ export const quotes: any = [
     rating: "5",
     review:
       "I can't stop raving about it! From the picturesque towns to the exhilarating water sports, it was an adventure-filled paradise",
-    image: "/images/quotes/5.jpg",
+    image: "/images/quotes/5.webp",
   },
   {
     id: 6,
@@ -60,6 +60,6 @@ export const quotes: any = [
     rating: "4",
     review:
       "The Algarve stole my heart! Exploring the hidden coves, indulging in delicious pastries, and witnessing stunning sunsets made it a romantic getaway.",
-    image: "/images/quotes/6.jpg",
+    image: "/images/quotes/6.webp",
   },
 ];
