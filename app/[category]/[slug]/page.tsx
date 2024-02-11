@@ -78,20 +78,6 @@ export async function generateMetadata({ params, searchParams }: any) {
   }
 }
 
-export async function generateStaticParams() {
-  const client: any = createClient({
-    space: process?.env?.CONTENTFUL_SPACE_ID!,
-    accessToken: process?.env?.CONTENTFUL_ACCESS_TOKEN!,
-  });
-  const res = await client?.getEntries({
-    content_type: ["beaches", "events", "restaurants"],
-  });
-  return res?.items?.map((item: any) => ({
-    category: item?.fields?.slug,
-    slug: item?.fields?.slug,
-  }));
-}
-
 export default async function Home(props: any, req: any) {
   const { category, slug } = props.params;
 
@@ -404,4 +390,31 @@ export default async function Home(props: any, req: any) {
       </section>
     </>
   );
+}
+
+export async function generateStaticParams({ params }: any) {
+  console.log(
+    params,
+    "from the slug stuff --------------------------------------------------------------------",
+  );
+
+  const client: any = createClient({
+    space: process?.env?.CONTENTFUL_SPACE_ID!,
+    accessToken: process?.env?.CONTENTFUL_ACCESS_TOKEN!,
+  });
+  const res = await client?.getEntries({
+    content_type: [
+      "beaches",
+      "events",
+      "restaurants",
+      "stays",
+      "business",
+      "adventures",
+      "hiking",
+    ],
+  });
+  return res?.items?.map((item: any) => ({
+    category: item?.fields?.slug,
+    slug: item?.fields?.slug,
+  }));
 }
