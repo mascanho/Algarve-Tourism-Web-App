@@ -13,7 +13,7 @@ import {
 } from "react-icons/md";
 import { PiMountainsFill } from "react-icons/pi";
 
-const SearchDrawerContent = () => {
+const SearchDrawerContent = ({ close }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -58,7 +58,9 @@ const SearchDrawerContent = () => {
       }
       router.replace(`/search${`?${params.toString()}`}`);
       router.push(`/search${`?${params.toString()}`}`);
-      console.log(params.get("q"), "from the input");
+      if (pathname !== "/search") {
+        close();
+      }
     }
   };
 

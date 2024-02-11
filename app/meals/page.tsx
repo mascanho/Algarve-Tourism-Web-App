@@ -102,7 +102,7 @@ async function MealsPage(params: any) {
   );
 
   return (
-    <div className="pt-20 w-full">
+    <div className="pt-20 w-full max-w-4xl mx-auto">
       <h1 className="text-black mb-2 text-4xl font-semibold text-center">
         Daily meals
       </h1>

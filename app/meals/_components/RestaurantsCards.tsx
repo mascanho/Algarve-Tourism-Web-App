@@ -12,16 +12,16 @@ function RestaurantsCards({ restaurants }: any) {
       </div>
 
       <div className="flex flex-col overflow-x-auto scrollbar-hide ml-4 mb-10 ">
-        <div className="flex sm:w-11/12 justify-center mx-auto">
+        <div className="flex justify-center mx-auto">
           {restaurants.map((rest: any, index: number) => (
             <Link
               key={rest.title}
               href={`/restaurants/${rest?.fields?.slug}`}
-              className="w-28 mr-4 sm:mx-auto"
+              className="w-28 sm:w-32 mr-4  sm:mx-auto"
             >
               <div
                 key={index}
-                className=" w-28 border flex-wrap h-28 p-2 mr-4 rounded-xl sm:min-w-28 sm:w-28 relative bg-white  mb-2 shadow-md"
+                className=" w-28 border flex-wrap h-28 p-2 mr-4 sm:mr-8 rounded-xl sm:min-w-28 sm:w-28 relative bg-white  mb-2 shadow-md"
                 style={{
                   backgroundImage: `url(${rest?.fields?.mainImage?.fields?.file?.url})`,
                   backgroundSize: "cover",

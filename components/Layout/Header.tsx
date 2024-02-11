@@ -169,7 +169,12 @@ const Header = ({ currentUser, weatherData }: any) => {
             </div>
           </div>
           <section className="hidden sm:flex flex-wrap w-1/2 justify-around">
-            <NavMenu trigger={false} title={"Search"} url={"/"} />
+            <NavMenu
+              trigger={"hover"}
+              title={"Search"}
+              url={"/"}
+              search={true}
+            />
             <NavMenu
               expandedMenu={false}
               trigger={"hover"}
