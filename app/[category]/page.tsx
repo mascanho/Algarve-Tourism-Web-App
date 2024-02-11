@@ -23,28 +23,31 @@ async function Page(props: any) {
   let routeMatched = false;
 
   async function getData() {
-    // pathname = "events";
+    try {
+      const client: any = createClient({
+        space: process.env.CONTENTFUL_SPACE_ID!,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+      });
 
-    const client: any = createClient({
-      space: process.env.CONTENTFUL_SPACE_ID!,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
-    });
-
-    for (const obj of catArr) {
-      const plainPathname = obj.route.replace("/", "");
-      switch (pathname) {
-        case plainPathname:
-          routeMatched = true;
-          break;
+      for (const obj of catArr) {
+        const plainPathname = obj.route.replace("/", "");
+        switch (pathname) {
+          case plainPathname:
+            routeMatched = true;
+            break;
+        }
       }
-    }
 
-    if (!routeMatched) {
-      return <p>Hi</p>;
-    }
+      if (!routeMatched) {
+        return <p>Hi</p>;
+      }
 
-    const data = await client.getEntries({ content_type: `${pathname}` });
-    return await data.items;
+      const data = await client.getEntries({ content_type: `${pathname}` });
+      return await data.items;
+    } catch (error) {
+      console.log(error);
+      notFound();
+    }
   }
 
   const category: any = await getData();
