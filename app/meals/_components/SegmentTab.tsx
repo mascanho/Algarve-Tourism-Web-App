@@ -67,7 +67,7 @@ function SegmentTab({ meals, search, citiesOnDb }: any) {
       />
 
       {regime === "daily" && (
-        <div className="mt-4">
+        <div className="mt-5 sm:mt-10">
           <div className="w-11/12 flex mx-auto mb-4">
             <select
               className="appearance-none border border-gray-300 rounded-l-xl bg-white w-full bg-transparent text-black px-3 py-2"

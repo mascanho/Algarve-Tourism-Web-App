@@ -263,7 +263,7 @@ async function page(props: any) {
         </div>
         <div className="py-10">
           <Link href="/algarve">
-            <button type="button" className="flex items-center btn">
+            <button type="button" className="flex items-center">
               <IoArrowBack className="mr-1" />
               Go back
             </button>

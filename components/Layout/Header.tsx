@@ -206,7 +206,7 @@ const Header = ({ currentUser, weatherData }: any) => {
               onClick={showFavourites}
             >
               <MdCardTravel className="cursor-pointer relative  sm:text-2xl" />
-              <span className="h-3 w-3 text-[8px] bg-key absolute right-0 -top-1  text-white rounded-full flex flex-wrap justify-center items-center text-center">
+              <span className="h-3 w-3 text-[8px] bg-key absolute -right-1 -top-1  text-white rounded-full flex flex-wrap justify-center items-center text-center">
                 {favouritesLength}
               </span>
             </div>

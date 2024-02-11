@@ -123,7 +123,7 @@ function page(props: any) {
       </div>
       <div className="py-10  mx-auto max-w-7xl px-3">
         <Link href="/">
-          <button type="button" className="btn hover:text-white flex">
+          <button type="button" className="flex text-key items-center">
             <IoArrowBack className="mr-1" />
             Home
           </button>

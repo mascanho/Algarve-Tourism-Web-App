@@ -17,7 +17,7 @@ function Upload() {
 
   if (isLoggedIn) {
     return (
-      <div className="h-full w-full flex flex-wrap flex-col items-center justify-center">
+      <div className="h-full w-full flex flex-wrap flex-col items-center justify-center max-w-4xl mx-auto">
         <h1 className="text-3xl mx-0 text-left font-bold pt-28 mb-5 text-key">
           Upload your meal
         </h1>
@@ -34,7 +34,11 @@ function Upload() {
         </div>
 
         {uploadDay === "daily" && <UploadDailyForm />}
-        {uploadDay === "weekly" && <p className="min-h-screen">soon...</p>}
+        {uploadDay === "weekly" && (
+          <p className="min-h-screen mt-20">
+            This section will be available soon
+          </p>
+        )}
       </div>
     );
   }

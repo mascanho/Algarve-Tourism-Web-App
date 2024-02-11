@@ -74,7 +74,7 @@ function UploadDailyForm() {
           <span className="mt-10 w-11/12 mx-auto  text-center">
             Whooohooo. We got your meal. See it published{" "}
             <Link href="/meals">
-              <span className="underline">here</span>
+              <span className="underline text-key">here</span>
             </Link>
           </span>
         )}
