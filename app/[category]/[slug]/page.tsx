@@ -27,7 +27,7 @@ import DailyMenusDrawer from "./_components/DailyMenusDrawer";
 import { GrOverview } from "react-icons/gr";
 import { IoIosLeaf } from "react-icons/io";
 import BookingDrawer from "./_components/BookingDrawer";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 const Reviews = dynamic(() => import("../../../components/Layout/Reviews"), {});
 
@@ -92,7 +92,7 @@ export default async function Home(props: any, req: any) {
       return await res?.items;
     } catch (error) {
       console.error("Error fetching data from Contentful:", error);
-      redirect("/error");
+      notFound();
     }
   }
 
