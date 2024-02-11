@@ -142,7 +142,10 @@ export function NavMenu({
           <Link href="/algarve">
             <Menu.Item className="sm:hidden text-gray-400">Algarve</Menu.Item>
           </Link>
-          <Link href="/beaches">
+          <Link
+            aria-label="Category Beaches with all the beaches in the Algarve"
+            href="/beaches"
+          >
             <Menu.Item className="sm:hidden text-gray-400">
               Categories
             </Menu.Item>

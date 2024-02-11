@@ -60,7 +60,7 @@ const DrawerContent = ({ close, title }: any) => {
         <>
           <div className="flex flex-col space-y-2 mb-2">
             <span className="text-gray-400 mb-2">Add places & experiences</span>
-            <Link href="/beaches">
+            <Link arias-label="check the beaches" href="/beaches">
               <button
                 onClick={close}
                 className="w-full bg-key text-white px-3 py-2 font-semibold rounded-md"
