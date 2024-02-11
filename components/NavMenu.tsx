@@ -65,8 +65,11 @@ export function NavMenu({
           <SearchDrawerContent close={close} />
         </Modal>
 
-        <Menu.Dropdown>
-          <Menu.Item onClick={open} className="text-black">
+        <Menu.Dropdown className="border-t-key border-3">
+          <Menu.Item
+            onClick={open}
+            className="text-black border-t-key border-3"
+          >
             Search Places
           </Menu.Item>
           <Menu.Item
