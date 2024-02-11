@@ -9,7 +9,7 @@ export default function SidePanel() {
   const pathname = usePathname();
 
   return (
-    <div className="hidden sm:block mb-40 relative">
+    <div className="hidden sm:block mb-40 relative hiddenRow">
       <div className="w-36 space-y-4 cursor-pointer pr-4 sm:mt-1  h-full sticky bottom-4  transition-all ease-in delay-75 overflow-hidden  ">
         {catArr.map((item) => (
           <div

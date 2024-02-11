@@ -364,7 +364,7 @@ export default async function Home(props: any, req: any) {
         </main>
 
         {/* DESKTOP TABS START HERE */}
-        <div className="pt-5 sm:pt-10 w-11/12 sm:w-full mx-auto hidden sm:flex  ">
+        <div className="pt-5 sm:pt-10 w-11/12 sm:w-full mx-auto hidden sm:flex  print:bg-white  ">
           <TabsRow
             filteredData={filteredData}
             slug={slug}
@@ -372,14 +372,14 @@ export default async function Home(props: any, req: any) {
           />
         </div>
 
-        <section className="overflow-hidden w-11/12 sm:w-full pt-20 mx-auto">
+        <section className="overflow-hidden w-11/12 sm:w-full pt-20 mx-auto hiddenRow">
           <h3 className="text-black mb-10 font-semibold text-4xl">
             Other {category}
           </h3>
           <Suggestions recomended={recomended} />
         </section>
       </section>
-      <section className="mx-auto w-11/12 sm:w-full  py-10 overflow-hidden">
+      <section className="mx-auto w-11/12 sm:w-full  py-10 overflow-hidden print:hidden">
         <Link href={`/${category}` || ""} className="text-sm text-key">
           <button type="button" className="flex items-center ">
             <IoArrowBack className="mr-1" />
