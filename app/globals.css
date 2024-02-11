@@ -247,6 +247,6 @@ button {
   }
 }
 
-input:focus {
+select:focus {
   outline: none !important;
 }
