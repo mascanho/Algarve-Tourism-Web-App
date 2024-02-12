@@ -32,6 +32,7 @@ import { notFound, redirect } from "next/navigation";
 const Reviews = dynamic(() => import("../../../components/Layout/Reviews"), {});
 
 // TODO: Check this stuff
+
 export async function generateMetadata({ params, searchParams }: any) {
   const getDATA = async () => {
     const client = createClient({
@@ -53,7 +54,7 @@ export async function generateMetadata({ params, searchParams }: any) {
     } catch (error) {
       // Handle potential errors when fetching data
       console.error("Error fetching data from Contentful:", error);
-      return null;
+      throw error; // Re-throw the error to be caught by the outer try-catch block
     }
   };
 
@@ -71,7 +72,6 @@ export async function generateMetadata({ params, searchParams }: any) {
     };
   } catch (error) {
     // Handle errors that might occur during metadata generation
-
     return {
       description: "",
     };
