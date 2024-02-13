@@ -134,7 +134,7 @@ export const SearchCard = (item: any) => {
             </div>
           </Menu.Dropdown>
         </Menu>
-        <div className="flex items-center justify-end text-sm w-full pr-2 ">
+        <div className="flex items-center justify-end text-sm py-1 w-full pr-2 ">
           <Link href={`/${type}/${slug}`}>
             <span className="flex text-xs text-highlight cursor-pointer">
               Read More
