@@ -184,13 +184,13 @@ async function page(props: any) {
 
   return (
     <section className="sm:pt-8">
-      <div className="sm:hidden pt-10 w-11/12 max-w-7xl mx-auto">
-        <TableAccordion tableData={tableData} />
-      </div>
       <section className="sm:pt-10 pt-10 max-w-7xl w-11/12 mx-auto sm:flex">
         <div className="w-full">
-          <div className="text-gray-400 mb-4">
+          <div className="text-gray-400 mb-2 pt-4">
             <Breadcrumbs />
+          </div>
+          <div className="sm:hidden w-full max-w-7xl mb-3 mx-auto">
+            <TableAccordion tableData={tableData} />
           </div>
           <div className="sm:w-full max-w-5xl  sm:pr-10">
             <img
