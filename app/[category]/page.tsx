@@ -39,7 +39,7 @@ async function Page(props: any) {
       }
 
       if (!routeMatched) {
-        return <p>Hi</p>;
+        notFound();
       }
 
       const data = await client.getEntries({ content_type: `${pathname}` });

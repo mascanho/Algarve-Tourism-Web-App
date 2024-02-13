@@ -25,100 +25,22 @@ export function NavMenu({
   const [opened, { open, close }] = useDisclosure(false);
   const pathname = usePathname();
 
-  if (title === "Algarve") {
-    return (
-      <Menu trigger={trigger} shadow="md" width={"fit"}>
-        <Menu.Target>
-          <button
-            className={`text-black flex items-center mr-1 rounded-md transition duration-300 ease-in-out`}
-          >
-            {title && trigger ? title : null}{" "}
-            {trigger ? <IoChevronDownSharp /> : null}
-          </button>
-        </Menu.Target>
-        <Menu.Dropdown className="flex w-fit">
-          <div className="grid grid-cols-3 ">
-            <div className="">
-              {cityArr.slice(0, 5).map((item) => (
-                <Menu.Item>{item.name}</Menu.Item>
-              ))}
-            </div>
-            <div className="flex flex-col ">
-              {cityArr.slice(6, cityArr.length - 1).map((item) => (
-                <Menu.Item
-                  key={item.id}
-                  className="flex justify-center items-center text-black "
-                >
-                  {item.name}
-                </Menu.Item>
-              ))}
-            </div>
-            <div className="flex flex-col border-l border-l-key  ">
-              {cityArr.slice(6, cityArr.length - 1).map((item) => (
-                <Menu.Item
-                  key={item.id}
-                  className="flex justify-center items-center text-black "
-                >
-                  {item.name}
-                </Menu.Item>
-              ))}
-            </div>
-          </div>
-        </Menu.Dropdown>
-      </Menu>
-    );
-  }
-
-  if (title === "Categories") {
-    return (
-      <Menu trigger={trigger} shadow="md" width={"fit"}>
-        <Menu.Target>
-          <button
-            className={`text-black flex items-center mr-1 rounded-md transition duration-300 ease-in-out`}
-          >
-            {title && trigger ? title : null}{" "}
-            {trigger ? <IoChevronDownSharp /> : null}
-          </button>
-        </Menu.Target>
-        <Menu.Dropdown className="flex w-fit">
-          <div className="grid grid-cols-2 w-full gap-x-2 ">
-            <div className="w-full">
-              {catArr.slice(0, 4).map((item) => (
-                <Link key={item.id} href={`${item?.route}`}>
-                  <Menu.Item className="w-full">{item.name}</Menu.Item>
-                </Link>
-              ))}
-            </div>
-            <div className="flex flex-col w-full ">
-              {catArr.slice(4, catArr.length).map((item) => (
-                <Link key={item.id} href={`${item?.route}`}>
-                  <Menu.Item
-                    key={item.id}
-                    className="flex justify-center w-full items-center text-black "
-                  >
-                    {item.name}
-                  </Menu.Item>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </Menu.Dropdown>
-      </Menu>
-    );
-  }
-
   if (search) {
     return (
       <Menu trigger={trigger} shadow="md" width={"fit"}>
         <Menu.Target>
           <Link href={url} className="flex items-center">
             <button
-              className={`text-black flex items-center mr-1 rounded-md transition duration-300 ease-in-out`}
+              className={`text-black ${
+                pathname?.includes("/search")
+                  ? "font-semibold underline underline-offset-[16px] decoration-4"
+                  : ""
+              } flex items-center mr-1 rounded-md transition duration-300 ease-in-out`}
             >
               {trigger ? (
                 <>
                   {title}{" "}
-                  {trigger ? <IoChevronDownSharp className="md:pl-1" /> : ""}
+                  {trigger ? <IoChevronDownSharp className="pl-1" /> : ""}
                 </>
               ) : (
                 title
@@ -137,7 +59,7 @@ export function NavMenu({
           <SearchDrawerContent close={close} />
         </Modal>
 
-        <Menu.Dropdown className="border-key border-3 w-96 mx-auto">
+        <Menu.Dropdown className="border-key/50 border-1 w-96 mx-auto">
           <Menu.Item
             onClick={open}
             className="text-black border-t-key border-3 w-full mx-auto"
@@ -180,12 +102,106 @@ export function NavMenu({
       </Menu>
     );
   }
+  if (title === "Algarve") {
+    return (
+      <Menu trigger={trigger} shadow="md" width={"fit"}>
+        <Menu.Target>
+          <button
+            className={`text-black ${
+              cityArr.some((city: any) => pathname?.includes(city.route))
+                ? "underline underline-offset-[16px] decoration-4"
+                : ""
+            } flex items-center mr-1 rounded-md transition duration-300 ease-in-out`}
+          >
+            {title && trigger ? title : null}{" "}
+            {trigger ? <IoChevronDownSharp className="pl-1" /> : null}
+          </button>
+        </Menu.Target>
+        <Menu.Dropdown className="flex w-fit border-key/50 border-3">
+          <div className="grid grid-cols-2 ">
+            <div className="">
+              {cityArr.slice(0, 5).map((item) => (
+                <Link href={`/algarve/${item.route}`} key={item.id}>
+                  <Menu.Item>{item.name}</Menu.Item>
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-col ">
+              {cityArr.slice(6, cityArr.length - 1).map((item) => (
+                <Link href={`/algarve/${item.route}`} key={item.id}>
+                  <Menu.Item
+                    key={item.id}
+                    className="flex justify-center items-center text-black "
+                  >
+                    {item.name}
+                  </Menu.Item>
+                </Link>
+              ))}
+            </div>
+            {/* <div className="flex flex-col border-l border-l-key  "> */}
+            {/*   {cityArr.slice(6, cityArr.length - 1).map((item) => ( */}
+            {/*     <Menu.Item */}
+            {/*       key={item.id} */}
+            {/*       className="flex justify-center items-center text-black " */}
+            {/*     > */}
+            {/*       {item.name} */}
+            {/*     </Menu.Item> */}
+            {/*   ))} */}
+            {/* </div> */}
+          </div>
+        </Menu.Dropdown>
+      </Menu>
+    );
+  }
+
+  if (title === "Categories") {
+    return (
+      <Menu trigger={trigger} shadow="md" width={"fit"}>
+        <Menu.Target>
+          <button
+            className={`text-black ${
+              catArr.some((cat: any) => pathname?.includes(cat.route))
+                ? "text-key underline font-semibold underline-offset-[16px] decoration-4"
+                : ""
+            } flex items-center mr-1 rounded-md transition duration-300 ease-in-out`}
+          >
+            {title && trigger ? title : null}{" "}
+            {trigger ? <IoChevronDownSharp className="pl-1" /> : null}
+          </button>
+        </Menu.Target>
+
+        <Menu.Dropdown className="flex w-fit border-key/50 border-3">
+          <div className="grid grid-cols-2 w-full gap-x-2 ">
+            <div className="w-full">
+              {catArr.slice(0, 4).map((item) => (
+                <Link key={item.id} href={`${item?.route}`}>
+                  <Menu.Item className="w-full">{item.name}</Menu.Item>
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-col w-full ">
+              {catArr.slice(4, catArr.length).map((item) => (
+                <Link key={item.id} href={`${item?.route}`}>
+                  <Menu.Item
+                    key={item.id}
+                    className="flex justify-center w-full items-center text-black "
+                  >
+                    {item.name}
+                  </Menu.Item>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </Menu.Dropdown>
+      </Menu>
+    );
+  }
 
   if (title === "Blog") {
     return (
       <Link href="/blog" className="flex items-center">
         <button
-          className={`text-black flex items-center mr-1 rounded-md transition duration-300 ease-in-out`}
+          className={`text-black flex ${pathname === "/blog" && "font-semibold underline underline-offset-[16px] decoration-4"} items-center mr-1 rounded-md transition duration-300 ease-in-out`}
         >
           {title}
         </button>
