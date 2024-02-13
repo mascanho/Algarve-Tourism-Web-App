@@ -9,21 +9,27 @@ import Link from "next/link";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Button } from "@mantine/core";
 import SearchDrawerContent from "@/app/search/_components/SearchDrawerContent";
-import { FaSearch } from "react-icons/fa";
-import { GiHotMeal, GiMeal } from "react-icons/gi";
+import { FaHiking, FaSearch, FaUtensils } from "react-icons/fa";
+import { GiBeachBucket, GiHotMeal, GiMeal, GiWoodCabin } from "react-icons/gi";
 import { MenuDropdown } from "@mantine/core/lib/Menu/MenuDropdown/MenuDropdown";
+import { MdBusinessCenter, MdEvent, MdSportsHandball } from "react-icons/md";
+import { PiMountainsFill } from "react-icons/pi";
 
-export function NavMenu({
-  title,
-  trigger,
-  url,
-  cities,
-  mobile,
-  search,
-}: any | null) {
+export function NavMenu({ title, trigger, url, search }: any | null) {
   const router = useRouter();
   const [opened, { open, close }] = useDisclosure(false);
   const pathname = usePathname();
+
+  const categoryIcons: any = {
+    Beaches: <GiBeachBucket />,
+    Restaurants: <FaUtensils />,
+    Events: <MdEvent />,
+    Adventure: <PiMountainsFill />,
+    Business: <MdBusinessCenter />,
+    Hiking: <FaHiking />,
+    Sports: <MdSportsHandball />,
+    Stays: <GiWoodCabin />,
+  };
 
   if (search) {
     return (
@@ -118,16 +124,16 @@ export function NavMenu({
           </button>
         </Menu.Target>
         <Menu.Dropdown className="flex w-fit border-key/50 border-3">
-          <div className="grid grid-cols-2 ">
+          <div className="grid grid-cols-3 ">
             <div className="">
-              {cityArr.slice(0, 5).map((item) => (
+              {cityArr.slice(0, 4).map((item) => (
                 <Link href={`/algarve/${item.route}`} key={item.id}>
                   <Menu.Item>{item.name}</Menu.Item>
                 </Link>
               ))}
             </div>
             <div className="flex flex-col ">
-              {cityArr.slice(6, cityArr.length - 1).map((item) => (
+              {cityArr.slice(4, 8).map((item) => (
                 <Link href={`/algarve/${item.route}`} key={item.id}>
                   <Menu.Item
                     key={item.id}
@@ -138,6 +144,19 @@ export function NavMenu({
                 </Link>
               ))}
             </div>
+            <div className="flex flex-col ">
+              {cityArr.slice(8, cityArr.length).map((item) => (
+                <Link href={`/algarve/${item.route}`} key={item.id}>
+                  <Menu.Item
+                    key={item.id}
+                    className="flex justify-center items-center text-black "
+                  >
+                    {item.name}
+                  </Menu.Item>
+                </Link>
+              ))}
+            </div>
+
             {/* <div className="flex flex-col border-l border-l-key  "> */}
             {/*   {cityArr.slice(6, cityArr.length - 1).map((item) => ( */}
             {/*     <Menu.Item */}
@@ -161,7 +180,7 @@ export function NavMenu({
           <button
             className={`text-black ${
               catArr.some((cat: any) => pathname?.includes(cat.route))
-                ? "text-key underline font-semibold underline-offset-[16px] decoration-4"
+                ? "font-semibold underline underline-offset-[16px] decoration-4"
                 : ""
             } flex items-center mr-1 rounded-md transition duration-300 ease-in-out`}
           >
@@ -175,7 +194,15 @@ export function NavMenu({
             <div className="w-full">
               {catArr.slice(0, 4).map((item) => (
                 <Link key={item.id} href={`${item?.route}`}>
-                  <Menu.Item className="w-full">{item.name}</Menu.Item>
+                  <Menu.Item className="w-full flex items-center">
+                    {/* Icon and text container */}
+                    <div className="flex items-center">
+                      {/* Render the icon component for each category */}
+                      {categoryIcons[item.name]}{" "}
+                      {/* Access icon based on category name */}
+                      <span className="ml-2">{item.name}</span>
+                    </div>
+                  </Menu.Item>
                 </Link>
               ))}
             </div>
@@ -186,7 +213,13 @@ export function NavMenu({
                     key={item.id}
                     className="flex justify-center w-full items-center text-black "
                   >
-                    {item.name}
+                    {/* Icon and text container */}
+                    <div className="flex items-center">
+                      {/* Render the icon component for each category */}
+                      {categoryIcons[item.name]}{" "}
+                      {/* Access icon based on category name */}
+                      <span className="ml-2">{item.name}</span>
+                    </div>
                   </Menu.Item>
                 </Link>
               ))}
