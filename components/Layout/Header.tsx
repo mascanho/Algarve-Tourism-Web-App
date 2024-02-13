@@ -172,7 +172,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             <NavMenu
               trigger={"hover"}
               title={"Search"}
-              url={"/"}
+              url={"/search"}
               search={true}
             />
             <NavMenu
@@ -183,22 +183,18 @@ const Header = ({ currentUser, weatherData }: any) => {
               url={"/algarve"}
             />
             <NavMenu
+              expandedMenu={false}
               trigger={"hover"}
               title={"Categories"}
-              url={"/beaches"}
-              categories={true}
+              cities={true}
+              url={"/algarve"}
             />
             <NavMenu
+              expandedMenu={false}
               trigger={"hover"}
-              title={"marco"}
-              fixed={true}
-              url={"/beaches"}
-            />
-            <NavMenu
-              trigger={false}
               title={"Blog"}
+              cities={true}
               url={"/blog"}
-              categories={true}
             />
           </section>
           <div
