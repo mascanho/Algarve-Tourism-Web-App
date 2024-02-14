@@ -1,5 +1,5 @@
 "use client";
-import { usePathname } from "next/navigation";
+import { notFound, usePathname } from "next/navigation";
 import { HiQrCode } from "react-icons/hi2";
 import React, { useState } from "react";
 import { BiMapPin } from "react-icons/bi";
@@ -49,8 +49,12 @@ const Buttons = ({ filteredData }: any) => {
 
     const url = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
 
-    navigator.clipboard.writeText(url);
-    window.open(url, "_blank");
+    try {
+      navigator.clipboard.writeText(url);
+      window.open(url, "_blank");
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   // handle copying the url to share
@@ -60,13 +64,25 @@ const Buttons = ({ filteredData }: any) => {
     toast.success("URL copied to clipboard");
   }
 
+  const handlePrint = () => {
+    try {
+      window?.print();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  if (!filteredData[0]?.fields?.website) {
+    notFound();
+  }
+
   return (
     <section className="text-gray-500 flex space-x-2">
       <BsFillSuitHeartFill
         className="w-8 h-8 outline-none fav p-[6px] border tooltip rounded-full hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75 text-xs"
         onClick={addFav}
       />
-      <Link href={filteredData[0]?.fields?.website} target="_blank">
+      <Link href={filteredData[0]?.fields?.website || ""} target="_blank">
         <BsGlobe className="w-8 h-8 p-[6px] border rounded-full hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75  " />
       </Link>
       <BiMapPin
@@ -80,7 +96,7 @@ const Buttons = ({ filteredData }: any) => {
       />
       {/* <HiQrCode className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" /> */}
       <FiPrinter
-        onClick={() => window?.print()}
+        onClick={handlePrint}
         className="urlCopy hidden sm:flex w-8 h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75"
       />
       <a
