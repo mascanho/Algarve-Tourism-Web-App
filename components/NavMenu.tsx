@@ -4,14 +4,12 @@ import { usePathname, useRouter } from "next/navigation";
 import { IoChevronDownSharp } from "react-icons/io5";
 import { cityArr } from "@/Data/Cities";
 import { catArr } from "@/Data/Categories";
-import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Button } from "@mantine/core";
 import SearchDrawerContent from "@/app/search/_components/SearchDrawerContent";
 import { FaHiking, FaSearch, FaUtensils } from "react-icons/fa";
 import { GiBeachBucket, GiHotMeal, GiMeal, GiWoodCabin } from "react-icons/gi";
-import { MenuDropdown } from "@mantine/core/lib/Menu/MenuDropdown/MenuDropdown";
 import { MdBusinessCenter, MdEvent, MdSportsHandball } from "react-icons/md";
 import { PiMountainsFill } from "react-icons/pi";
 
