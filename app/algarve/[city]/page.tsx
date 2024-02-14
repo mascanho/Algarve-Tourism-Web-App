@@ -196,7 +196,7 @@ async function page(props: any) {
             <img
               src={filteredData[0]?.fields?.mainImage?.fields?.file?.url}
               alt="image"
-              className="mx-auto relative filter w-full object-cover rounded-md"
+              className="mx-auto relative filter w-full max-h-[300px] object-cover rounded-md"
             />
           </div>
         </div>
