@@ -60,26 +60,6 @@ const Buttons = ({ filteredData }: any) => {
     toast.success("URL copied to clipboard");
   }
 
-  const handleShare = () => {
-    const shareURL = "https://example.com"; // Replace with your content
-    const shareText = "Check out this awesome content!"; // Replace with your content
-
-    const shareLink = `https://share.example.com?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareURL)}`;
-
-    if (navigator.share) {
-      navigator
-        .share({
-          title: "Share Title",
-          text: "Check out this awesome content!",
-          url: "https://example.com",
-        })
-        .then(() => console.log("Successfully shared."))
-        .catch((error) => console.error("Error sharing:", error.message));
-    } else {
-      window.location.href = shareLink;
-    }
-  };
-
   return (
     <section className="text-gray-500 flex space-x-2">
       <BsFillSuitHeartFill
@@ -100,7 +80,7 @@ const Buttons = ({ filteredData }: any) => {
       />
       {/* <HiQrCode className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" /> */}
       <FiPrinter
-        onClick={() => window.print()}
+        onClick={() => window?.print()}
         className="urlCopy hidden sm:flex w-8 h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75"
       />
       <a

@@ -57,7 +57,7 @@ export default function RootLayout({
         <section className="sm:pl-4 xl:pl-0    max-w-7xl mx-auto flex   justify-start transition-all ease-in delay-75 top-11  ">
           <Selection />
           <SidePanel />
-          <div className="flex-1 sm:bg-gray-50 print:bg-white sm:rounded-xl sm:pt-2 mb-20">
+          <div className="flex-1 print:bg-white sm:rounded-xl  mb-20">
             {children}
           </div>
         </section>

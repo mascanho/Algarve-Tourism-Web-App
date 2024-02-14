@@ -79,7 +79,7 @@ export async function generateMetadata({ params, searchParams }: any) {
 }
 
 export default async function Home(props: any, req: any) {
-  const { category, slug } = props.params;
+  const { category, slug } = props?.params;
 
   async function getAllCategories() {
     try {
@@ -111,7 +111,7 @@ export default async function Home(props: any, req: any) {
         <div className="space-y-1 w-11/12 sm:w-full mx-auto">
           <div className="hidden sm:flex items-centert space-x-2">
             {filteredData[0]?.fields?.hiddenGem ? (
-              <div className="flex items-center space-x-1 bg-gray-200 w-fit px-2 rounded-md text-green-500 text-xs py-1">
+              <div className="flex items-center space-x-1 w-fit px-2 rounded-md text-green-500 text-xs py-1">
                 <div className="flex items-center space-x-2">
                   <FaRegGem />
                   <span className="text-xs">Hidden Gem</span>
@@ -393,11 +393,6 @@ export default async function Home(props: any, req: any) {
 }
 
 export async function generateStaticParams({ params }: any) {
-  console.log(
-    params,
-    "from the slug stuff --------------------------------------------------------------------",
-  );
-
   const client: any = createClient({
     space: process?.env?.CONTENTFUL_SPACE_ID!,
     accessToken: process?.env?.CONTENTFUL_ACCESS_TOKEN!,
