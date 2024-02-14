@@ -92,8 +92,6 @@ export default async function Home(props: any, req: any) {
       return await res?.items;
     } catch (error) {
       console.error("Error fetching data from Contentful:", error);
-      // notFound();
-      redirect("/");
     }
   }
 
