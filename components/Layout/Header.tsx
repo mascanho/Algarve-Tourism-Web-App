@@ -204,7 +204,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             {/* <AuthenticationModal /> */}
             <NotificationsModal />
             <div
-              className="cursor-pointer text-black relative"
+              className="cursor-pointer text-black  relative"
               onClick={showFavourites}
             >
               <MdCardTravel className="cursor-pointer relative  sm:text-2xl" />

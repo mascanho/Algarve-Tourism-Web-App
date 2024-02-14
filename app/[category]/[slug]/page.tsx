@@ -259,10 +259,6 @@ export default async function Home(props: any, req: any) {
             <MobileButtons {...filteredData} />
           </section>
 
-          {/* <section className="border-b w-11/12 mx-auto"></section> */}
-
-          {/* Handles the bookings in the UI */}
-
           {filteredData[0]?.fields.booking &&
             !filteredData[0]?.fields?.bookingUrl && (
               <section className="w-11/12 border-b pb-5 mx-auto">
