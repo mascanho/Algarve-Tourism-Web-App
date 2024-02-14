@@ -4,7 +4,6 @@ import React from "react";
 
 const MobileBottomCategoryBanner = (filteredData: any) => {
   const addFavourites = useAddToFavourites();
-  const favourites = useAddToFavourites();
 
   function addFav() {
     addFavourites.addFavourite({
