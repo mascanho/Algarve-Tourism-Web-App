@@ -18,19 +18,19 @@ export const metadata: Metadata = {
 };
 
 async function Page(props: any) {
-  let pathname = props.params.category;
+  let pathname = props?.params?.category;
   // Fetch Contentful data
   let routeMatched = false;
 
   async function getData() {
     try {
       const client: any = createClient({
-        space: process.env.CONTENTFUL_SPACE_ID!,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+        space: process?.env?.CONTENTFUL_SPACE_ID!,
+        accessToken: process?.env?.CONTENTFUL_ACCESS_TOKEN!,
       });
 
       for (const obj of catArr) {
-        const plainPathname = obj.route.replace("/", "");
+        const plainPathname = obj?.route?.replace("/", "");
         switch (pathname) {
           case plainPathname:
             routeMatched = true;
@@ -42,8 +42,8 @@ async function Page(props: any) {
         notFound();
       }
 
-      const data = await client.getEntries({ content_type: `${pathname}` });
-      return await data.items;
+      const data = await client?.getEntries({ content_type: `${pathname}` });
+      return await data?.items;
     } catch (error) {
       console.log(error);
       notFound();
