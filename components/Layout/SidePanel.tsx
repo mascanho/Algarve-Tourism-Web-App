@@ -24,7 +24,7 @@ export default function SidePanel() {
   };
 
   return (
-    <div className="hidden sm:block bg-white mb-40 h-[460px] sticky top-20 shadow-md hiddenRow border border-key rounded-xl p-1">
+    <div className="hidden sm:block bg-white mb-40 h-[460px] sticky top-24 shadow-md hiddenRow border border-key rounded-xl p-1">
       <div className="w-32 space-y-4 cursor-pointer sm:mt-1 h-full sticky bottom-4 transition-all ease-in delay-75 overflow-hidden">
         {catArr.map((item: any) => (
           <div
