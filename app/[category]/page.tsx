@@ -50,15 +50,19 @@ async function Page(props: any) {
     }
   }
 
-  const category: any = await getData();
-
-  // If the route matches Contentful categories then render the categorey card
-  if (routeMatched) {
-    const shuffledCategory = category?.sort(() => 0.5 - Math.random());
-    // return <CategoryCard category={shuffledCategory} />;
+  try {
+    const category: any = await getData();
+    // If the route matches Contentful categories then render the categorey card
+    if (routeMatched) {
+      const shuffledCategory = category?.sort(() => 0.5 - Math.random());
+      return <CategoryCard category={shuffledCategory} />;
+    }
+    // If the route does not match Contentful categories then render the a warning
+    console.log("not matched");
+  } catch (error) {
+    console.log(error);
+    notFound();
   }
-  // If the route does not match Contentful categories then render the a warning
-  redirect("/");
 }
 
 export default Page;
