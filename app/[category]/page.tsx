@@ -1,7 +1,7 @@
 import { createClient } from "contentful";
 import { catArr } from "@/Data/Categories";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import dynamic from "next/dynamic";
 
 const CategoryCard = dynamic(() => import("@/components/CategoryCard"), {});
@@ -58,7 +58,7 @@ async function Page(props: any) {
     // return <CategoryCard category={shuffledCategory} />;
   }
   // If the route does not match Contentful categories then render the a warning
-  notFound();
+  redirect("/");
 }
 
 export default Page;
