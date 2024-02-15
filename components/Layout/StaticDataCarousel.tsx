@@ -35,52 +35,56 @@ function Card({
   cat,
 }: any) {
   return (
-    <Paper
-      shadow="md"
-      p="xl"
-      radius="lg"
-      style={{
-        backgroundImage: `url(${image})`,
-        backgroundBlendMode: "multiply",
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-      }}
-      className="h-56 sm:h-full w-full  flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
-    >
-      <div className="w-full group">
-        <div className="flex items-center justify-between w-full">
-          {city && (
-            <Text
-              className="text-white/50  uppercase font-semibold m-0"
-              size="xs"
-            >
-              {type === "city" ? "Algarve" : type}
-            </Text>
-          )}
+    <Link href={type === "category" ? route : "/algarve/" + route}>
+      <Paper
+        shadow="md"
+        p="xl"
+        radius="lg"
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundBlendMode: "multiply",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+        }}
+        className="h-56 sm:h-full w-full  flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+      >
+        <div className="w-full group">
+          <div className="flex items-center justify-between w-full">
+            {city && (
+              <Text
+                className="text-white/50  uppercase font-semibold m-0"
+                size="xs"
+              >
+                {type === "city" ? "Algarve" : type}
+              </Text>
+            )}
+          </div>
+          <Title
+            order={3}
+            className={
+              type === "city" ? "text-4xl text-white" : "text-white text-2xl"
+            }
+          >
+            {city}
+          </Title>
         </div>
-        <Title
-          order={3}
-          className={
-            type === "city" ? "text-4xl text-white" : "text-white text-2xl"
-          }
-        >
-          {city}
-        </Title>
-      </div>
 
-      {type === "city" || type === "category" ? (
-        <Link href={type === "category" ? route : "/algarve/" + route}>
-          <Button variant="white" className="bg-white" color="dark">
+        {type === "city" || type === "category" ? (
+          <Button
+            variant="white"
+            className="bg-white sm:flex hidden"
+            color="dark"
+          >
             {type === "city" ? "View " + city : "View "}
           </Button>
-        </Link>
-      ) : (
-        <div>
-          <a href={url} className="w-full h-full">
-            <ImNewTab className="w-8 h-8 text-white" />
-          </a>
-        </div>
-      )}
-    </Paper>
+        ) : (
+          <div>
+            <a href={url} className="w-full h-full">
+              <ImNewTab className="w-8 h-8 text-white" />
+            </a>
+          </div>
+        )}
+      </Paper>
+    </Link>
   );
 }
 
@@ -119,7 +123,7 @@ function StaticDataCarousel({
   ));
 
   return (
-    <section className="mt-16 sm:mt-20">
+    <section className="sm:mt-20">
       <h2 className="max-w-7xl mx-auto text-left w-11/12 text-3xl sm:text-5xl text-black font-semibold sm:pb-6">
         {title}
       </h2>
