@@ -84,7 +84,7 @@ const Hero = () => {
         </div>
         <Image
           className="rounded-t-3xl z-0 sm:hidden rounded-2xl w-full h-full mx-auto shadow-lg brightness-75"
-          src="/images/bg-mobile.jpeg"
+          src="/images/mobile.webp"
           alt="hero image"
           width={400}
           height={780}
