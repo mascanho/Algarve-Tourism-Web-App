@@ -83,7 +83,7 @@ const Hero = () => {
           <img src="/images/icon.png" className="w-14 h-14" alt="logo" />
         </div>
         <Image
-          className="rounded-t-3xl z-0 sm:hidden rounded-2xl w-full h-full mx-auto shadow-lg brightness-75"
+          className="rounded-t-3xl z-0 sm:hidden rounded-2xl w-full h-full mx-auto shadow-lg brightness-90"
           src="/images/mobile.webp"
           alt="hero image"
           width={400}
