@@ -47,7 +47,7 @@ function Card({
           backgroundBlendMode: "multiply",
           backgroundColor: "rgba(0, 0, 0, 0.3)",
         }}
-        className="h-56 sm:h-full w-56 flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+        className="h-56 sm:h-full w-56 sm:max-w-96 sm:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
       >
         <div className="w-full">
           <div className="flex items-center justify-between w-full">
@@ -152,9 +152,9 @@ function BottomCarousel({
           >
             {slides}
 
-            <div className=" w-[250px] lg:w-[420px]  sm:h-full h-56 border flex justify-center items-center  rounded-2xl">
-              <Link className="h-56 sm:h-full" href={`${"/beaches"}`}>
-                <div className="lg:w-[380px] w-[250px] relative sm:h-full h-56 flex justify-center  items-center rounded-2xl underline  overflow-clip   text-white">
+            <div className=" w-[250px] lg:w-[420px] sm:w-[310px]  sm:h-full h-56 border flex justify-center items-center  rounded-2xl">
+              <Link className="h-56 sm:h-full sm:w-full" href={`${"/beaches"}`}>
+                <div className="lg:w-[380px] sm:w-[250px] relative sm:h-full h-56 flex justify-center  items-center rounded-2xl underline  overflow-clip   text-white">
                   <img
                     src="/images/bg-3.webp"
                     alt=""
