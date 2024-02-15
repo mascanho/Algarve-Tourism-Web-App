@@ -44,7 +44,7 @@ function Card({
         backgroundBlendMode: "multiply",
         backgroundColor: "rgba(0, 0, 0, 0.5)",
       }}
-      className="h-[300px] sm:h-full w-full  flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+      className="h-56 sm:h-full w-full  flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
     >
       <div className="w-full group">
         <div className="flex items-center justify-between w-full">
@@ -56,18 +56,6 @@ function Card({
               {type === "city" ? "Algarve" : type}
             </Text>
           )}
-          {/* <Text size={"xs"} className="flex items-center text-xs"> */}
-          {/*   {price && ( */}
-          {/*     <Badge */}
-          {/*       className="m-auto" */}
-          {/*       color={price === "Free" ? "green" : "red"} */}
-          {/*       size="xs" */}
-          {/*       variant="light" */}
-          {/*     > */}
-          {/*       {price} */}
-          {/*     </Badge> */}
-          {/*   )} */}
-          {/* </Text> */}
         </div>
         <Title
           order={3}
@@ -132,7 +120,7 @@ function StaticDataCarousel({
 
   return (
     <section className="mt-16 sm:mt-20">
-      <h2 className="max-w-7xl mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6">
+      <h2 className="max-w-7xl mx-auto text-left w-11/12 text-3xl sm:text-5xl text-black font-semibold sm:pb-6">
         {title}
       </h2>
       <section

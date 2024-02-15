@@ -36,35 +36,42 @@ function Card({
 }: any) {
   return (
     <>
-      <Paper
-        shadow="md"
-        p="xl"
-        radius="lg"
-        style={{
-          backgroundImage: `url(https:${image && (image[1] || image)})`,
-          backgroundBlendMode: "multiply",
-          backgroundColor: "rgba(0, 0, 0, 0.3)",
-        }}
-        className={`h-56 sm:h-full w-56 sm:max-w-96 sm:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in ${ptsans.className}`}
-      >
-        <div className="w-full">
-          <div className="flex items-center justify-between w-full">
-            <Text className="text-white/50  uppercase font-semibold" size="xs">
-              {city}
-            </Text>
+      <Link href={`/${type}/${slug}`} className="w-full h-full">
+        <Paper
+          shadow="md"
+          p="xl"
+          radius="lg"
+          style={{
+            backgroundImage: `url(https:${image && (image[1] || image)})`,
+            backgroundBlendMode: "multiply",
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
+          }}
+          className={`h-56 sm:h-full w-56 sm:max-w-96 sm:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in ${ptsans.className}`}
+        >
+          <div className="w-full">
+            <div className="flex items-center justify-between w-full">
+              <Text
+                className="text-white/50  uppercase font-semibold"
+                size="xs"
+              >
+                {city}
+              </Text>
+            </div>
+            <span className={`text-2xl sm:text-3xl text-white font-bold`}>
+              {title}
+            </span>
           </div>
-          <span className={`text-2xl sm:text-3xl text-white font-bold`}>
-            {title}
-          </span>
-        </div>
-        <div>
-          <Link href={`/${type}/${slug}`} className="w-full h-full">
-            <Button variant="white" className="bg-white" color="dark">
+          <div>
+            <Button
+              variant="white"
+              className="bg-white sm:inline hidden"
+              color="dark"
+            >
               View {singleName}
             </Button>
-          </Link>
-        </div>
-      </Paper>
+          </div>
+        </Paper>
+      </Link>
     </>
   );
 }
@@ -106,9 +113,11 @@ function GenericCarousel({
 
   return (
     <section className="mb-20 sm:pb-6 mt-20">
-      <h2 className="mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6 mt-20 max-w-7xl">
-        {title}
-      </h2>
+      <div>
+        <h2 className="mx-auto text-left w-11/12 text-3xl sm:text-5xl text-black font-semibold sm:pb-6 mt-20 max-w-7xl">
+          {title}
+        </h2>
+      </div>
       <section
         ref={ref}
         style={{
