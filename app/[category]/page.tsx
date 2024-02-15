@@ -46,7 +46,7 @@ async function Page(props: any) {
       return await data?.items;
     } catch (error) {
       console.log(error);
-      notFound();
+      // notFound();
     }
   }
 
@@ -61,7 +61,7 @@ async function Page(props: any) {
     console.log("not matched");
   } catch (error) {
     console.log(error);
-    notFound();
+    // notFound();
   }
 }
 
