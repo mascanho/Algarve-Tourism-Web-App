@@ -46,7 +46,7 @@ async function Page(props: any) {
       return await data?.items;
     } catch (error) {
       console.log(error);
-      // notFound();
+      notFound();
     }
   }
 
@@ -60,8 +60,8 @@ async function Page(props: any) {
     // If the route does not match Contentful categories then render the a warning
     console.log("not matched");
   } catch (error) {
-    console.log(error);
-    // notFound();
+    console.log(error, " Error fetching data from Contentful");
+    notFound();
   }
 }
 

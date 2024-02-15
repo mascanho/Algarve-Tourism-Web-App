@@ -10,11 +10,11 @@ function NotFound() {
         <h3>Oh dear... seems like you are lost</h3>
         <h4>Here... we will point you the way. Check below</h4>
         <div className="pt-4">
-          <Link aria-label="Go to categories" href="/adventure/">
-            <button className="border border-dashed border-key px-4 rounded-xl cursor-pointer py-1 hover:bg-key hover:text-highlight ">
-              View categories
-            </button>
-          </Link>
+          {/* <Link aria-label="Go to categories" href="/adventure/"> */}
+          <button className="border border-dashed border-key px-4 rounded-xl cursor-pointer py-1 hover:bg-key hover:text-highlight ">
+            View categories
+          </button>
+          {/* </Link> */}
         </div>
       </section>
     </div>
