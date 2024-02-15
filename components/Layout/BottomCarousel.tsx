@@ -152,13 +152,13 @@ function BottomCarousel({
           >
             {slides}
 
-            <div className=" w-[250px] lg:w-[420px]  h-full border flex justify-center items-center  rounded-2xl">
-              <Link className="h-[300px]" href={`${"/beaches"}`}>
-                <div className="lg:w-[380px] w-[250px] relative  flex justify-center  items-center rounded-2xl underline h-full overflow-clip   text-white">
+            <div className=" w-[250px] lg:w-[420px]  sm:h-full h-56 border flex justify-center items-center  rounded-2xl">
+              <Link className="h-56 sm:h-full" href={`${"/beaches"}`}>
+                <div className="lg:w-[380px] w-[250px] relative sm:h-full h-56 flex justify-center  items-center rounded-2xl underline  overflow-clip   text-white">
                   <img
                     src="/images/bg-3.webp"
                     alt=""
-                    className="object-fil blur-sm w-full h-full bg-black brightness-50 "
+                    className="object-fil blur-sm w-full h-56 sm:h-full bg-black brightness-50 "
                   />
                   <span className="text-black bg-white absolute font-semibold top-30 px-5 py-1 rounded-lg">
                     View more...
