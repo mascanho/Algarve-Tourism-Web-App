@@ -33,7 +33,6 @@ function Card({
   slug,
   singleName,
   type,
-  last,
 }: any) {
   return (
     <>
@@ -46,25 +45,17 @@ function Card({
           backgroundBlendMode: "multiply",
           backgroundColor: "rgba(0, 0, 0, 0.3)",
         }}
-        className={`h-[300px] sm:h-full w-full sm:max-w-96 sm:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in ${ptsans.className}`}
+        className={`h-56 sm:h-full w-56 sm:max-w-96 sm:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in ${ptsans.className}`}
       >
         <div className="w-full">
           <div className="flex items-center justify-between w-full">
             <Text className="text-white/50  uppercase font-semibold" size="xs">
               {city}
             </Text>
-            {/* <Text size={"xs"} className="flex items-center text-xs"> */}
-            {/*   <Badge */}
-            {/*     className="m-auto" */}
-            {/*     color={price === "Free" ? "green" : "red"} */}
-            {/*     size="xs" */}
-            {/*     variant="light" */}
-            {/*   > */}
-            {/*     {price} */}
-            {/*   </Badge> */}
-            {/* </Text> */}
           </div>
-          <span className={`text-3xl text-white font-bold`}>{title}</span>
+          <span className={`text-2xl sm:text-3xl text-white font-bold`}>
+            {title}
+          </span>
         </div>
         <div>
           <Link href={`/${type}/${slug}`} className="w-full h-full">
@@ -74,7 +65,6 @@ function Card({
           </Link>
         </div>
       </Paper>
-      {last}
     </>
   );
 }
@@ -129,19 +119,19 @@ function GenericCarousel({
         {inView && (
           <Carousel
             className={`bottomCarousel mt-10 ${ptsans.className}`}
-            slideSize={mobile ? "63.333333%" : "23.333333%"}
+            slideSize={mobile ? "43.333333%" : "23.333333%"}
             slideGap={mobile ? "md" : "md"}
             slidesToScroll={mobile ? 1 : 1}
             height={300}
             initialSlide={1}
           >
             {slides}
-            <div className=" sm:w-[310px] md:w-[420px] h-full border flex justify-center items-center  rounded-2xl">
+            <div className=" sm:w-[310px] md:w-[420px] h-56 border flex justify-center items-center  rounded-2xl">
               <Link
-                className="h-[300px]"
+                className="h-56 rounded-xl sm:h-[300px]"
                 href={`${title === "Where to eat" ? "/restaurants" : "/adventure"}`}
               >
-                <div className=" sm:w-[280px] xl:w-[400px] w-[250px] relative  flex justify-center  items-center rounded-2xl underline h-full overflow-clip   text-white">
+                <div className=" sm:w-[280px] xl:w-[400px] w-[250px] relative  flex justify-center  items-center rounded-2xl underline h-56 overflow-clip   text-white">
                   <img
                     src={
                       title === "Where to eat"
@@ -149,7 +139,7 @@ function GenericCarousel({
                         : "/images/bg-3.webp"
                     }
                     alt=""
-                    className="object-scale blur-sm  w-full h-full bg-black brightness-50 "
+                    className="object-scale blur-sm  w-full h-56 sm:h-full bg-black brightness-50 "
                   />
                   <span className="text-black bg-white font-semibold absolute top-30 px-5 py-1 rounded-lg">
                     View more...

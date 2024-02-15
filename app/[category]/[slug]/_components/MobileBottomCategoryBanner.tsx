@@ -26,7 +26,7 @@ const MobileBottomCategoryBanner = (filteredData: any) => {
   }
 
   return (
-    <aside className="fixed bottom-0 bg-white flex z-[500] sm:hidden flex-nowrap items-center justify-between  m-auto h-16 left-0 right-0 border-t">
+    <aside className="fixed bottom-0 bg-white flex z-10 sm:hidden flex-nowrap items-center justify-between  m-auto h-16 left-0 right-0 border-t">
       <section className="w-11/12 flex justify-between mx-auto">
         <div className="line-clamp-2 w-2/3 pl-2">
           <p className="text-xs text-black font-semibold">
