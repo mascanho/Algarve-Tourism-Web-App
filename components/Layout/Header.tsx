@@ -228,6 +228,7 @@ const Header = ({ currentUser, weatherData }: any) => {
                   width={30}
                   className="rounded-full hidden sm:flex relative object-contain w-6 h-6 cursor-pointer"
                   alt="avatar"
+                  loading="lazy"
                 />
               )}
             </div>
