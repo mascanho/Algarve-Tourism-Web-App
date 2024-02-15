@@ -61,7 +61,7 @@ async function Page(props: any) {
     console.log("not matched");
   } catch (error) {
     console.log(error, " Error fetching data from Contentful");
-    notFound();
+    redirect("/");
   }
 }
 
