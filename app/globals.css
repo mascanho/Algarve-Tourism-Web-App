@@ -195,7 +195,14 @@ button {
   /* Add your custom styles here */
 }
 
-select {
+.mantine-1ix1d88:focus,
+.mantine-1ix1d88:focus-within {
+  outline: none !important;
+}
+
+select,
+textarea,
+input {
   -webkit-appearance: none; /* Disable iOS native dropdown */
   -moz-appearance: none; /* Disable Firefox native dropdown */
   appearance: none; /* Disable other browser native dropdown */

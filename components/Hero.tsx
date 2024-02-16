@@ -69,8 +69,7 @@ const Hero = () => {
           <span
             className="absolute -bottom-[4px] left-0 w-full bg-no-repeat bg-center bg-contain"
             style={{
-              backgroundImage:
-                "url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg')",
+              backgroundImage: "url('/images/underline.svg')",
               height: "0.75rem",
               filter: "invert(1) sepia(1) saturate(5) hue-rotate(5deg)",
             }}
