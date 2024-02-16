@@ -47,7 +47,7 @@ function Card({
           backgroundBlendMode: "multiply",
           backgroundColor: "rgba(0, 0, 0, 0.3)",
         }}
-        className="h-56 sm:h-full w-56 flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+        className="h-56 sm:h-full w-56 sm:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
       >
         <div className="w-full">
           <div className="flex items-center justify-between w-full">
@@ -139,7 +139,7 @@ function BottomCarousel({
         {inView && (
           <Carousel
             // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-            className="bottomCarousel mt-10"
+            className="bottomCarousel mt-10 w-full"
             slideSize={mobile ? "43.333333%" : "23.333333%"}
             slideGap={"md"}
             // align="start"
@@ -151,18 +151,10 @@ function BottomCarousel({
             initialSlide={1}
           >
             {slides}
-
-            <div className=" w-[250px] lg:w-[420px] sm:w-[310px]  sm:h-full h-56 border flex justify-center items-center  rounded-2xl">
-              <Link className="h-56 sm:h-full sm:w-full" href={`${"/beaches"}`}>
-                <div className="lg:w-[380px] w-[250px] relative sm:h-full h-56 flex justify-center  items-center rounded-2xl underline  overflow-clip   text-white">
-                  <img
-                    src="/images/bg-3.webp"
-                    alt=""
-                    className="object-fil blur-sm w-full h-56 sm:h-full bg-black brightness-50 "
-                  />
-                  <span className="text-black bg-white absolute font-semibold top-30 px-5 py-1 rounded-lg">
-                    View more...
-                  </span>
+            <div className="flex items-center text-center">
+              <Link href="/beaches/" className="w-40 m-auto text-black">
+                <div className="w-40 text-xl underline m-auto text-black">
+                  view all
                 </div>
               </Link>
             </div>

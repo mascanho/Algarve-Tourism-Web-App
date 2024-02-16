@@ -94,7 +94,7 @@ export default async function Home(props: any) {
       {/* <StaticDataCarousel categories={carRentals} title="Car rentals" /> */}
       <RandomBanner categories={categories} />
       <Feedback {...quotes} />
-      {/* <AlgarveSpecs /> */}
+      <AlgarveSpecs />
       {/* <Acordion /> */}
     </section>
   );
