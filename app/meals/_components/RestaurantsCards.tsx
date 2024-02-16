@@ -5,7 +5,7 @@ function RestaurantsCards({ restaurants }: any) {
   return (
     <>
       <div className="flex justify-between text-black w-11/12 mx-auto my-4 mt-20">
-        <h3>Restaurants near you</h3>
+        <h3 className="font-semibold">Restaurants near you</h3>
         <Link href="/restaurants">
           <span className="text-xs underline">view all</span>
         </Link>

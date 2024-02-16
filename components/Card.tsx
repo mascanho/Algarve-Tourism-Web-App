@@ -205,10 +205,10 @@ const Card = ({
           </Link>
         </div>
       </section>
-      <div className="w-fit mx-auto flex justify-center">
+      <div className="w-fit mx-auto flex justify-center sm:my-14">
         <Link href={"/beaches"}>
           <button
-            className="border text-gray-700 mt-10 rounded-md active:bg-key active:text-white transition-all hidden ease-in px-7 hover:bg-key hover:text-white py-2 mx-auto sm:flex justify-center text-center"
+            className="border mt-10 rounded-md bg-key text-white active:bg-gray-500 active:text-white transition-all hidden ease-in px-7 hover:bg-key hover:text-white py-2 mx-auto sm:flex justify-center text-center"
             type="button"
           >
             View more

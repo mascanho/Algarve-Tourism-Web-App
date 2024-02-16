@@ -144,7 +144,7 @@ function BottomCarousel({
             slideGap={"md"}
             // align="start"
             slidesToScroll={mobile ? 1 : 1}
-            height={mobile}
+            height={300}
             // withControls={mobile ? false : true}
             // withControls={false}
             // loop
