@@ -127,7 +127,7 @@ function RandomBanner({ categories }: any) {
   };
 
   return (
-    <div className="animate-fade-in mt-20 sm:mb-28  w-11/12 overflow-hidden  max-w-7xl py-10 mx-auto sm:space-y-2 text-center text-white sm:w-full">
+    <div className="animate-fade-in mb-20 mt-10 sm:mt-24 sm:mb-28  w-11/12 overflow-hidden  max-w-7xl sm:py-10 mx-auto sm:space-y-2 text-center text-white sm:w-full">
       <div className=" sm:mt-0 space-y-2 sm:space-y-6">
         <h3 className="sm:text-7xl font-semibold text-black  text-5xl">
           Start your journey
