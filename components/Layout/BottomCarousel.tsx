@@ -139,19 +139,19 @@ function BottomCarousel({
         {inView && (
           <Carousel
             // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-            className="bottomCarousel mt-10 w-full"
+            className="bottomCarousel mt-10 w-full h-fit"
             slideSize={mobile ? "43.333333%" : "23.333333%"}
             slideGap={"md"}
             // align="start"
             slidesToScroll={mobile ? 1 : 1}
-            height={300}
+            height={mobile}
             // withControls={mobile ? false : true}
             // withControls={false}
             // loop
             initialSlide={1}
           >
             {slides}
-            <div className="flex items-center text-center">
+            <div className="flex items-center text-center h-56 sm:h-full">
               <Link href="/beaches/" className="w-40 m-auto text-black">
                 <div className="w-40 text-xl underline m-auto text-black">
                   view all

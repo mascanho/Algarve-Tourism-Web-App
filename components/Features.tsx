@@ -28,7 +28,7 @@ const mockData = [
     icon: <IoShareSocialOutline />,
     name: "Share with Others",
     description:
-      "Create awesome wishlists and easialy share them with your friends and family. Happiness is meant to be shared, after all",
+      "Create awesome wishlists and easelly share them with your friends and family. Happiness is meant to be shared, after all",
   },
 
   {
@@ -59,7 +59,7 @@ function Features() {
   const [showEl, setShowEl] = useState(false);
 
   return (
-    <section className="max-w-7xl sm:hidden w-11/12 mx-auto my-16 sm:mt-28">
+    <section className="max-w-7xl sm:hidden w-11/12 mx-auto mt-14 mb-16 sm:mt-28">
       <div
         onClick={() => setShowEl(!showEl)} // Toggle the state on click
         className="space-y-4 mb-10 mx-auto text-center animate-fade-in cursor-pointer"

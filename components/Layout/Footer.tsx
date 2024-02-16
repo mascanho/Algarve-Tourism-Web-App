@@ -162,7 +162,7 @@ function Footer() {
             </div>
           </section>
         </footer>
-        <footer className="footer max-w-7xl w-11/12 mx-auto  py-4 border-t text-white  text-base-content border-base-300">
+        <footer className="footer max-w-7xl w-11/12 mx-auto  py-4 border-t text-white  border-base-300">
           <div className="items-center grid-flow-col px-4 sm:px-0">
             <svg
               width="24"

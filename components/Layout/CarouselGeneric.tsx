@@ -135,27 +135,14 @@ function GenericCarousel({
             initialSlide={1}
           >
             {slides}
-            <div className=" sm:w-[310px] md:w-[420px] h-56 sm:h-full border flex justify-center items-center  rounded-2xl">
-              <Link
-                className="h-56 rounded-xl sm:h-[300px] w-full"
-                href={`${title === "Where to eat" ? "/restaurants" : "/adventure"}`}
-              >
-                <div className=" sm:w-[280px] xl:w-[300px] w-56 relative sm:h-full  flex justify-center  items-center rounded-2xl underline h-56 overflow-clip   text-white">
-                  <img
-                    src={
-                      title === "Where to eat"
-                        ? "/images/bg2.webp"
-                        : "/images/bg-3.webp"
-                    }
-                    alt=""
-                    className="object-scale blur-sm  w-full h-56 sm:h-full bg-black brightness-50 "
-                  />
-                  <span className="text-black bg-white font-semibold absolute top-30 px-5 py-1 rounded-lg">
-                    View more...
-                  </span>
-                </div>
-              </Link>
-            </div>
+            <Link
+              className="h-56 rounded-xl sm:h-[300px] w-full flex justify-center items-center"
+              href={`${title === "Where to eat" ? "/restaurants" : "/adventure"}`}
+            >
+              <div className="w-40 text-xl underline flex justify-center m-auto text-black">
+                view all
+              </div>
+            </Link>
           </Carousel>
         )}
       </section>
