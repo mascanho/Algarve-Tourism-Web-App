@@ -88,7 +88,7 @@ const Hero = () => {
           alt="hero image"
           width={400}
           height={780}
-          loading="lazy"
+          loading="eager"
         />
         <div className="-mt-10 w-20 active:scale-90 z-10 h-20 bg-white rounded-full flex sm:hidden items-center justify-center shadow-lg m-auto">
           <div className="m-auto flex items-center justify-center pt-2 w-full h-full">

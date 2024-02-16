@@ -93,39 +93,6 @@ input[type="text"] {
   @apply rounded-none outline-none active:outline-none active:rounded-none;
 }
 
-/* Animations and preferences */
-/* @media (prefers-reduced-motion: no-preference) { */
-/*   .animate-fade { */
-/*     animation: fade-out linear; */
-/*     animation-timeline: view(); */
-/*     animation-range: exit -200px; */
-/*   } */
-/**/
-/*   .animate-fade-in { */
-/*     animation: fade-in linear forwards; */
-/*     animation-timeline: view(); */
-/*     animation-range-start: cover; */
-/*     animation-range-end: 550px; */
-/*   } */
-/**/
-/*   @keyframes fade-out { */
-/*     to { */
-/*       opacity: 0; */
-/*     } */
-/*   } */
-/**/
-/*   @keyframes fade-in { */
-/*     from { */
-/*       scale: 0.8; */
-/*       opacity: 0; */
-/*     } */
-/*     to { */
-/*       scale: 1; */
-/*       opacity: 1; */
-/*     } */
-/*   } */
-/* } */
-
 .changelog {
   @apply font-bold mt-12;
 
@@ -208,16 +175,6 @@ button {
   font-family: "PT Sans" !important;
 }
 
-/* Search Drawer animations */
-/* .slide-up { */
-/*   transform: translateY(100%); */
-/*   transition: transform 0.75s ease-in-out; */
-/* } */
-/**/
-/* .slide-up.visible { */
-/*   transform: translateY(0px); */
-/* } */
-
 .custom-shape-divider-bottom-1707076088 .shape-fill {
   @apply fill-key;
 }
@@ -238,13 +195,10 @@ button {
   /* Add your custom styles here */
 }
 
-@media (min-width: 268px) {
-  /* Adjust the breakpoint as needed */
-  select {
-    -webkit-appearance: none; /* Disable iOS native dropdown */
-    -moz-appearance: none; /* Disable Firefox native dropdown */
-    appearance: none; /* Disable other browser native dropdown */
-  }
+select {
+  -webkit-appearance: none; /* Disable iOS native dropdown */
+  -moz-appearance: none; /* Disable Firefox native dropdown */
+  appearance: none; /* Disable other browser native dropdown */
 }
 
 select:focus,
