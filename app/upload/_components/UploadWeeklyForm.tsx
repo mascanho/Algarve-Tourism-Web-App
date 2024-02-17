@@ -31,7 +31,7 @@ function UploadWeeklyForm() {
           type="date"
           id="weekday"
           name="weekday"
-          className="p-2 w-full rounded-md  bg-white placeholder:text-key text-key  border"
+          className="p-2 w-full rounded-md  bg-white placeholder:text-gray-500 text-black  border"
         />
       </div>
       <label htmlFor="business" className="text-left text-key w-full mx-0">
@@ -76,13 +76,18 @@ function UploadWeeklyForm() {
       <select
         required
         name="city"
-        className="p-2 w-full rounded-md bg-white border text-black"
+        className="p-2 w-full rounded-md bg-white border text-black placeholder-gray-500"
       >
-        <option value="" disabled selected>
+        <option
+          value=""
+          disabled
+          selected
+          className="text-gray-500 placeholder:text-gray-500"
+        >
           Select your City
         </option>
         {cityArr.map((city) => (
-          <option key={city?.name} value={city?.name}>
+          <option key={city?.name} value={city?.name} className="text-black">
             {city?.name}
           </option>
         ))}

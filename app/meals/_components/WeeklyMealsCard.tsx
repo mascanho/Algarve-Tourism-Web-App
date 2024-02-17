@@ -5,8 +5,6 @@ import { GiHotMeal } from "react-icons/gi";
 import { GrRestaurant } from "react-icons/gr";
 
 function WeeklyMealsCard({ meal }: any) {
-  console.log(meal.userId, " from the weekly meal card");
-
   return (
     <div className="mt-10">
       <div
