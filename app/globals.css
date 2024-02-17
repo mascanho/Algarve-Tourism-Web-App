@@ -212,3 +212,8 @@ select:focus,
 input:focus {
   outline: none !important;
 }
+.mantine-1hher0m[data-active] {
+  border-color: #000 !important;
+  color: #000;
+  font-weight: 500;
+}
