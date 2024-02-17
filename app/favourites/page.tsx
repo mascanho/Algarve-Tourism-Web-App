@@ -26,7 +26,7 @@ function page() {
   const [changeTable, setChangeTable]: any = useState(false);
   const [userEmail, setUserEmail]: any = useState("");
   const [loading, setLoading]: any = useState(false);
-  const [sendEmail, setSendEmail] = useState(true);
+  const [sendEmail, setSendEmail] = useState(false);
   const session = useSession();
   const loginModal = useLoginModalStore();
   const { removeFavourite } = useAddToFavourites();
@@ -175,11 +175,12 @@ function page() {
             className="w-full object-cover rounded-xl"
           />
         </div>
-        <div className="m-auto max-w-7xl w-11/12 sm:w-full mt-1 sm:mt-2 mb-5 flex items-center justify-between ">
+        <div className="m-auto max-w-7xl w-11/12 sm:w-full mt-1 sm:mt-2 flex items-center justify-between ">
           <h1 className="text-2xl pt-10 sm:pt-0 sm:text-3xl w-full text-key font-semibold hiddenRow ">
             Your Favourites
           </h1>
-          <div className="fixed bottom-0 sm:relative flex justify-center space-x-8 sm:space-x-0 left-0 z-10 py-3 px-3 w-full sm:flex sm:flex-col  sm:w-40 sm:space-y-2 sm:flex-wrap sm:text-xl hiddenRow bg-key text-white sm:px-3 sm:py-2 sm:rounded-xl sm:justify-center">
+
+          <div className="fixed bottom-0 sm:relative flex justify-center sm:items-start space-x-8 sm:space-x-0 left-0 z-10 py-3 px-3 w-full sm:flex sm:flex-col sm:w-40 sm:space-y-2 sm:flex-wrap sm:text-xl hiddenRow bg-key text-white sm:px-3 sm:py-2 sm:rounded-xl ">
             <div
               onClick={(e) => {
                 e.preventDefault();
@@ -196,10 +197,10 @@ function page() {
               onClick={() => {
                 window?.print();
               }}
-              className="flex items-center sm:items-start space-x-1  justify-center sm:justify-center cursor-pointer"
+              className="flex items-center sm:items-start space-x-1 justify-center sm:justify-center cursor-pointer"
             >
               <FiPrinter className="cursor-pointer text-xl" />
-              <span className="text-xs">Email Favourites</span>
+              <span className="text-xs">Print Favourites</span>
             </div>
           </div>
         </div>
