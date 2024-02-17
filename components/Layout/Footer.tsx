@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { HiArrowUp } from "react-icons/hi2";
 import { usePathname } from "next/navigation";
 import { useInView } from "react-intersection-observer";
+import CookiesBanner from "./CookiesBanner";
 
 function Footer() {
   const [showToTop, setShowToTop] = useState(false);
@@ -67,6 +68,8 @@ function Footer() {
 
   return (
     <>
+      {/* COOKIE BANNER */}
+      <CookiesBanner />
       {!pathname?.match(
         /\/(?:restaurants|beaches|adventure|events|business|hiking|sports|stays)\//,
       ) &&
