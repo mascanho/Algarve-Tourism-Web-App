@@ -24,20 +24,8 @@ function Upload() {
         <p className="-mt-2 w-8/12 text-center pb-4 sm:pb-2 ">
           Publish your meals and reach new customers near you
         </p>
-        <div className="flex space-x-3 gap-x-3 mt-5 w-10/12 sm:max-w-lg">
-          <SegmentedControl
-            className="w-full"
-            value={uploadDay}
-            onChange={setUploadDay}
-            data={[
-              { value: "daily", label: "Daily" },
-              { value: "weekly", label: "Weekly" },
-            ]}
-          />
-        </div>
 
-        {uploadDay === "daily" && <UploadDailyForm />}
-        {uploadDay === "weekly" && <UploadWeeklyForm />}
+        <UploadWeeklyForm />
       </div>
     );
   }

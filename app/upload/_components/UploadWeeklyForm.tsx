@@ -6,6 +6,7 @@ import { toast } from "react-hot-toast";
 import { IoCalendar } from "react-icons/io5";
 import SubmitBtn from "./SubmitBtn";
 import Link from "next/link";
+import { cityArr } from "@/Data/Cities";
 
 function UploadWeeklyForm() {
   const ref = useRef<HTMLFormElement>(null);
@@ -20,10 +21,10 @@ function UploadWeeklyForm() {
         toast.success("Weekly meal uploaded successfully");
         setShowMeal(true);
       }}
-      className="flex flex-col w-11/12 mx-auto py-16 px-3"
+      className="flex flex-col w-11/12 mx-auto pb-16 mt-10 space-y-1 px-3"
     >
       <label className="text-black" for="birthday">
-        Weekdays
+        Weekday
       </label>
       <div className="flex relative w-full">
         <input
@@ -71,15 +72,24 @@ function UploadWeeklyForm() {
       <label htmlFor="business" className="text-left w-full mx-0 text-key">
         City
       </label>
-      <input
+
+      <select
         required
-        type="text"
         name="city"
-        placeholder="Albufeira"
-        className=" p-2 w-full rounded-md bg-white text-key border"
-        maxLength={50}
-      />
-      <SubmitBtn />
+        className="p-2 w-full rounded-md bg-white border text-black"
+      >
+        <option value="" disabled selected>
+          Select your City
+        </option>
+        {cityArr.map((city) => (
+          <option key={city?.name} value={city?.name}>
+            {city?.name}
+          </option>
+        ))}
+      </select>
+      <div className="mt-10">
+        <SubmitBtn />
+      </div>
       {showMeal && (
         <span className="mt-10 w-11/12 mx-auto  text-center">
           Whooohooo. We got your meal. See it published{" "}

@@ -7,8 +7,15 @@ import SearchedMealResults from "./SearchedMealResults";
 import DailyMeals from "./DailyMeals";
 import Link from "next/link";
 import WeeklyMeals from "./WeeklyMeals";
+import { cityArr } from "@/Data/Cities";
 
-function SegmentTab({ meals, search, citiesOnDb, weekMeals }: any) {
+function SegmentTab({
+  todayMeals,
+  search,
+  citiesOnDb,
+  weekMeals,
+  filtered,
+}: any) {
   const [searchedMeals, setSearchedMeals] = useState(null);
   const [regime, setRegime] = useState("daily");
   const router = useRouter();
@@ -79,8 +86,8 @@ function SegmentTab({ meals, search, citiesOnDb, weekMeals }: any) {
               <option value="" disabled selected>
                 Select a city
               </option>
-              {citiesOnDb?.map((city: any) => (
-                <option key={city?.city}>{city.city}</option>
+              {cityArr?.map((city: any) => (
+                <option key={city?.name}>{city.name}</option>
               ))}
             </select>
             <button
@@ -91,8 +98,8 @@ function SegmentTab({ meals, search, citiesOnDb, weekMeals }: any) {
               <IoReloadSharp />
             </button>
           </div>
-          {searchedMeals?.length > 0 ? (
-            <SearchedMealResults searchedMeals={searchedMeals} />
+          {todayMeals.length > 0 ? (
+            <SearchedMealResults searchedMeals={todayMeals} />
           ) : (
             <div className="mx-auto flex justify-center mt-10 w-11/12">
               <span className="text-center w-full mx-auto">
@@ -118,8 +125,8 @@ function SegmentTab({ meals, search, citiesOnDb, weekMeals }: any) {
               <option value="" disabled selected>
                 Select a city
               </option>
-              {citiesOnDb?.map((city: any) => (
-                <option key={city?.city}>{city.city}</option>
+              {cityArr?.map((city: any) => (
+                <option key={city?.name}>{city.name}</option>
               ))}
             </select>
             <button
@@ -130,18 +137,15 @@ function SegmentTab({ meals, search, citiesOnDb, weekMeals }: any) {
               <IoReloadSharp />
             </button>
           </div>
-          {weekMeals?.length > 0 ? (
-            <WeeklyMeals weeklyMeals={weekMeals} />
-          ) : (
-            <div className="mx-auto flex justify-center mt-10 w-11/12">
-              <span className="text-center w-full mx-auto">
-                No daily meals today, yet.
-                <Link className="underline ml-1" href={"/upload/"}>
-                  Add some
-                </Link>
-              </span>
-            </div>
-          )}
+          <WeeklyMeals weeklyMeals={weekMeals} />
+          <div className="mx-auto flex justify-center mt-10 w-11/12">
+            <span className="text-center w-full mx-auto">
+              No daily meals today, yet.
+              <Link className="underline ml-1" href={"/upload/"}>
+                Add some
+              </Link>
+            </span>
+          </div>
         </div>
       )}
     </section>

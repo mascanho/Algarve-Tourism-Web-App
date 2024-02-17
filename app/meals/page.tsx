@@ -6,6 +6,7 @@ import SearchMeal from "./_components/SearchMeal";
 import { createClient } from "contentful";
 import RestaurantsCards from "./_components/RestaurantsCards";
 import type { Metadata, Viewport } from "next";
+import { clear } from "console";
 
 export const metadata: Metadata = {
   title: {
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
 };
 
 // define TODAY's date
-const today = new Date();
+let today = new Date();
 today.setHours(0, 0, 0, 0); // Set hours, minutes, seconds, and milliseconds to zero to represent the start of the day
 
 // get data from contentful
@@ -67,41 +68,33 @@ const getRestaurants = async () => {
 async function MealsPage(params: any) {
   const restaurants = await getRestaurants();
   const city = params?.searchParams?.city;
-  const citiesOnDb = await prisma?.dailymeal?.findMany({
-    select: {
-      city: true,
+
+  // filter the meals in prisma by date, showing only todays meals, using a standard date format
+  let todayMeals = await prisma?.Weeklymeal?.findMany({
+    where: {
+      date: today,
     },
   });
 
-  // filter the meals in prisma by date, showing only todays meals, using a standard date format
-
-  let allMeals = await prisma?.dailymeal?.findMany({});
-
-  let search = await prisma?.dailymeal?.findMany({
+  const filteredToday = await prisma?.Weeklymeal?.findMany({
     where: {
+      date: today,
       city: city,
     },
   });
 
-  let weekMeals = await prisma?.Weeklymeal?.findMany({});
-  console.log(weekMeals);
-
-  // filter the restaurants in prisma by date, showing only todays restaurants, using a standard date format
-  search = search.filter((meal: any) => {
-    return (
-      meal?.date.toISOString().split("T")[0] ===
-      today.toISOString().split("T")[0]
-    );
+  const filteredWeek = await prisma?.Weeklymeal?.findMany({
+    where: {
+      city: city,
+    },
   });
+  let allMeals = await prisma?.Weeklymeal?.findMany({});
 
-  // filter the cities and remove duplicates
-  const reducedCities = Array.from(
-    search
-      ?.reduce((map: any, obj: any) => {
-        map.set(obj.city, obj); // Assuming city is the property name holding the city name
-        return map;
-      }, new Map())
-      .values(),
+  let weekMeals = await prisma?.Weeklymeal?.findMany({});
+
+  // order the meals in function of their publication date
+  weekMeals.sort(
+    (a, b) => new Date(a.dayOfWeek).getTime() - new Date(b.dayOfWeek).getTime(),
   );
 
   return (
@@ -114,9 +107,8 @@ async function MealsPage(params: any) {
       </h3>
       <SegmentTab
         meals={allMeals}
-        search={search}
-        citiesOnDb={reducedCities}
-        weekMeals={weekMeals}
+        weekMeals={city ? filteredWeek : weekMeals}
+        todayMeals={city ? filteredToday : todayMeals}
       />
       <RestaurantsCards restaurants={restaurants} />
     </div>
