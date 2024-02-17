@@ -139,7 +139,7 @@ export default async function Home(props: any, req: any) {
               </div>
             </div>
           </div>
-          <span className="flex items-center text-gray-400 text-sm text-left">
+          <span className="flex items-center text-gray-400 sm:pt-1 text-sm text-left">
             <FaMapMarkerAlt />
             <span className="ml-1">{filteredData[0]?.fields?.city}</span>
           </span>

@@ -139,7 +139,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
                     <span className="cursor-pointer -mt-1">...</span>
                   </Menu.Target>
                   <Menu.Dropdown>
-                    <div className="flex items-center  px-2 align-middle space-x-2 bg-white p-2">
+                    <div className="flex items-center  px-2 align-middle space-x-2 bg-white text-key p-2">
                       <BsQrCodeScan className=" cursor-pointer" />
                       <a href={cat?.fields?.mapShare} target="_blank">
                         <BiMap className="cursor-pointer" />

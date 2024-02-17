@@ -6,8 +6,9 @@ import { SegmentedControl } from "@mantine/core";
 import SearchedMealResults from "./SearchedMealResults";
 import DailyMeals from "./DailyMeals";
 import Link from "next/link";
+import WeeklyMeals from "./WeeklyMeals";
 
-function SegmentTab({ meals, search, citiesOnDb }: any) {
+function SegmentTab({ meals, search, citiesOnDb, weekMeals }: any) {
   const [searchedMeals, setSearchedMeals] = useState(null);
   const [regime, setRegime] = useState("daily");
   const router = useRouter();
@@ -106,7 +107,42 @@ function SegmentTab({ meals, search, citiesOnDb }: any) {
       )}
 
       {regime === "weekly" && (
-        <div className="mt-4 text-center">No weekly meals at the moment</div>
+        <div className="mt-5 sm:mt-10">
+          <div className="w-11/12 flex mx-auto mb-4">
+            <select
+              className="appearance-none border border-gray-300 rounded-l-xl bg-white w-full bg-transparent text-black px-3 py-2"
+              id="city_search"
+              name="city"
+              onChange={handleSelectChange}
+            >
+              <option value="" disabled selected>
+                Select a city
+              </option>
+              {citiesOnDb?.map((city: any) => (
+                <option key={city?.city}>{city.city}</option>
+              ))}
+            </select>
+            <button
+              className="rounded-r-xl flex items-center bg-key text-white justify-center w-20"
+              type="button"
+              onClick={handleReloadButtonClick}
+            >
+              <IoReloadSharp />
+            </button>
+          </div>
+          {weekMeals?.length > 0 ? (
+            <WeeklyMeals weeklyMeals={weekMeals} />
+          ) : (
+            <div className="mx-auto flex justify-center mt-10 w-11/12">
+              <span className="text-center w-full mx-auto">
+                No daily meals today, yet.
+                <Link className="underline ml-1" href={"/upload/"}>
+                  Add some
+                </Link>
+              </span>
+            </div>
+          )}
+        </div>
       )}
     </section>
   );

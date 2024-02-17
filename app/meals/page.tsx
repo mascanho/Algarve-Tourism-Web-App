@@ -83,6 +83,9 @@ async function MealsPage(params: any) {
     },
   });
 
+  let weekMeals = await prisma?.Weeklymeal?.findMany({});
+  console.log(weekMeals);
+
   // filter the restaurants in prisma by date, showing only todays restaurants, using a standard date format
   search = search.filter((meal: any) => {
     return (
@@ -109,7 +112,12 @@ async function MealsPage(params: any) {
       <h3 className="text-center">
         Discover the best meals of the day near you
       </h3>
-      <SegmentTab meals={allMeals} search={search} citiesOnDb={reducedCities} />
+      <SegmentTab
+        meals={allMeals}
+        search={search}
+        citiesOnDb={reducedCities}
+        weekMeals={weekMeals}
+      />
       <RestaurantsCards restaurants={restaurants} />
     </div>
   );

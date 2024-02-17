@@ -43,6 +43,7 @@ model Dailymeal {
   date      DateTime
   business  String?
   city      String
+  weekday   String
   }
 
 
@@ -55,10 +56,13 @@ model Weeklymeal {
   userId    String?  @db.ObjectId
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  dish      String   // The dish for the day
+  meal      String   // The dish for the day
   dayOfWeek String   // The day of the week (e.g., Monday, Tuesday, etc.)
   business  String?
   price     Float
+  date      DateTime
+  city      String
+  
 }
 
 model Account {

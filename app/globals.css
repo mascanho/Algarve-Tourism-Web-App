@@ -217,3 +217,7 @@ input:focus {
   color: #000;
   font-weight: 500;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(50%);
+}

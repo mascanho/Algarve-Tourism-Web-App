@@ -37,11 +37,7 @@ function Upload() {
         </div>
 
         {uploadDay === "daily" && <UploadDailyForm />}
-        {uploadDay === "weekly" && (
-          <p className="min-h-screen mt-20">
-            This section will be available soon
-          </p>
-        )}
+        {uploadDay === "weekly" && <UploadWeeklyForm />}
       </div>
     );
   }
