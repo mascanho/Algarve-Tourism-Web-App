@@ -147,7 +147,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             <Image
               src="/images/icon.png"
               alt="logo"
-              width={50}
+              width={60}
               height={20}
               className="sm:h-6 sm:w-6 mr-1 flex-wrap m-auto sm:flex hidden "
             />
