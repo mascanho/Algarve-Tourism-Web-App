@@ -116,7 +116,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
                 Favourites
                 {favourites.favourites.length > 0 ? (
                   <span className="text-sm text-gray-700 ml-2">
-                    <span className="font-semibold text-white">
+                    <span className="font-semibold text-black">
                       ({favourites.favourites.length})
                     </span>
                   </span>

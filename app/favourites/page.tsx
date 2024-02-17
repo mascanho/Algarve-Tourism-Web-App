@@ -18,13 +18,15 @@ import { useLoginModalStore } from "../hooks/useLoginModal";
 import useWindowSize from "react-use/lib/useWindowSize";
 import { FaSpinner } from "react-icons/fa";
 import FavMobileCard from "./components/FavMobileCard";
+import { IoMdSend } from "react-icons/io";
+import { FaSquare } from "react-icons/fa6";
 
 function page() {
   const [favourites, setFavourites] = useState<any[]>([]);
   const [changeTable, setChangeTable]: any = useState(false);
   const [userEmail, setUserEmail]: any = useState("");
   const [loading, setLoading]: any = useState(false);
-  const [sendEmail, setSendEmail] = useState(false);
+  const [sendEmail, setSendEmail] = useState(true);
   const session = useSession();
   const loginModal = useLoginModalStore();
   const { removeFavourite } = useAddToFavourites();
@@ -73,10 +75,10 @@ function page() {
 
   // Update the state when local storage changes
   useEffect(() => {
-    window.addEventListener("storage", getLocalStorageItems);
+    window?.addEventListener("storage", getLocalStorageItems);
 
     return () => {
-      window.removeEventListener("storage", getLocalStorageItems);
+      window?.removeEventListener("storage", getLocalStorageItems);
     };
   }, []);
 
@@ -166,31 +168,39 @@ function page() {
       suppressHydrationWarning={true}
     >
       <div className="relative justify-center overflow-hidden bg-cover bg-blend-multiply ">
-        <div className="w-full favBanner hidden sm:flex">
+        <div className="w-full favBanner hidden rounded-b-xl sm:flex sm:max-h-[300px] sm:pt-10">
           <img
             src="https://www.thetimes.co.uk/travel/wp-content/uploads/sites/6/2021/05/USE_Carvoeiro-Beach-Algarve-Portugal_Credit_Alamy_2AP6967.jpg?w=2200&h=880&crop=1"
             alt="beach"
-            className="w-full"
+            className="w-full object-cover rounded-xl"
           />
         </div>
-        <div className="m-auto max-w-7xl mt-10 mb-5 flex items-center justify-between ">
-          <h1 className="text-2xl sm:text-3xl w-full text-key font-semibold hiddenRow ">
+        <div className="m-auto max-w-7xl w-11/12 sm:w-full mt-1 sm:mt-2 mb-5 flex items-center justify-between ">
+          <h1 className="text-2xl pt-10 sm:pt-0 sm:text-3xl w-full text-key font-semibold hiddenRow ">
             Your Favourites
           </h1>
-          <div className="flex text-xl space-x-3  justify-end hiddenRow">
-            <AiOutlineMail
-              className="cursor-pointer text-2xl"
+          <div className="fixed bottom-0 sm:relative flex justify-center space-x-8 sm:space-x-0 left-0 z-10 py-3 px-3 w-full sm:flex sm:flex-col  sm:w-40 sm:space-y-2 sm:flex-wrap sm:text-xl hiddenRow bg-key text-white sm:px-3 sm:py-2 sm:rounded-xl sm:justify-center">
+            <div
               onClick={(e) => {
                 e.preventDefault();
                 const section = document.getElementById("sendEmail");
                 section?.scrollIntoView({ behavior: "smooth" });
                 setSendEmail(true);
               }}
-            />
-            <FiPrinter
-              onClick={() => window.print()}
-              className="cursor-pointer text-2xl"
-            />
+              className="flex items-center space-x-1 justify-center cursor-pointer"
+            >
+              <AiOutlineMail className="cursor-pointer text-xl" />
+              <span className="text-xs">Email Favourites</span>
+            </div>
+            <div
+              onClick={() => {
+                window?.print();
+              }}
+              className="flex items-center sm:items-start space-x-1  justify-center sm:justify-center cursor-pointer"
+            >
+              <FiPrinter className="cursor-pointer text-xl" />
+              <span className="text-xs">Email Favourites</span>
+            </div>
           </div>
         </div>
       </div>
@@ -249,8 +259,8 @@ function page() {
           )}
         </div>
       </div>
-      <div className="w-full flex justify-center mt-20" id="sendEmail">
-        <form action="submit" className="w-full">
+      <div className="w-full flex justify-center my-20 " id="sendEmail">
+        <form action="submit" className="w-fit relative">
           {sendEmail &&
             (session.status === "authenticated" ? (
               <div className="flex flex-col">
@@ -263,7 +273,7 @@ function page() {
                 ) : (
                   <>
                     <input
-                      className="h-10 max-w-sm w-full mx-auto rounded-md bg-white border p-2 text-black"
+                      className="h-10 max-w-sm w-72 sm:w-96 mx-auto relative rounded-md bg-white border p-2 text-black"
                       type="email"
                       name="email"
                       placeholder="Email your favourites"
@@ -272,18 +282,19 @@ function page() {
                       value={userEmail}
                     />
                     <button
-                      className="hiddenRow block mt-6 w-44 sm:w-52  btn m-auto text-sm sm:text-base disabled:text-gray-400 disabled:cursor-not-allowed hover:text-white z-10"
+                      className="hiddenRow block mt-6 absolute bottom-1 right-1 m-auto text-sm sm:text-base disabled:text-gray-400 disabled:cursor-not-allowed hover:text-white z-10"
                       type="button"
                       disabled={!favourites.length}
                       onClick={sendFavEmail}
                     >
                       {loading ? (
-                        <div className="flex items-center justify-center">
-                          <FaSpinner className="animate-spin mr-1" />
-                          <span>sending</span>
+                        <div className="bg-key text-white w-8 h-8 flex items-center justify-center rounded-md">
+                          <FaSpinner className="animate-spin" />
                         </div>
                       ) : (
-                        "Send email"
+                        <div className="bg-key text-white w-8 h-8 flex items-center justify-center rounded-md">
+                          <IoMdSend />
+                        </div>
                       )}
                     </button>
                   </>

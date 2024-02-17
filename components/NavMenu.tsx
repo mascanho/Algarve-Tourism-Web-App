@@ -63,15 +63,15 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
           <SearchDrawerContent close={close} />
         </Modal>
 
-        <Menu.Dropdown className="border-key/50 border-1 w-96 mx-auto">
+        <Menu.Dropdown className="border-key/50 border-1 w-64 mx-auto">
           <Menu.Item
             onClick={open}
-            className="text-black border-t-key border-3 w-full mx-auto"
+            className="text-black border-t-key border-3 w-fit mx-auto"
           >
             <div className="flex flex-col justify-center">
               <div className="flex items-center">
                 <div className="rounded-md w-8 h-8 bg-key flex items-center mr-2">
-                  <FaSearch className="w-6 m-auto text-lg  h-6 p-1 rounded-full text-white" />
+                  <FaSearch className="w-5 m-auto text-lg  h-5 p-1 rounded-full text-white" />
                 </div>
                 <div className="flex flex-col justify-center">
                   <span className="text-sm font-semibold">Search Places</span>
