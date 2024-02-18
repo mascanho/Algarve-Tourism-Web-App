@@ -164,7 +164,7 @@ function page() {
   ));
   return (
     <section
-      className="max-w-7xl mx-auto w-11/12 pt-5"
+      className="max-w-7xl mx-auto w-11/12 pt-5 min-h-screen"
       suppressHydrationWarning={true}
     >
       <div className="relative justify-center overflow-hidden bg-cover bg-blend-multiply ">

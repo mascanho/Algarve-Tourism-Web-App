@@ -71,7 +71,7 @@ export default async function Home(props: any) {
   const cities = cityArr;
 
   return (
-    <section className="w-full">
+    <section className="w-full min-h-screen">
       <Hero />
       <Features />
       <div className="space-y-4 mt-10 hidden sm:mt-10 mx-auto text-center sm:flex sm:flex-col sm:justify-center w-11/12 max-w-7xl ">

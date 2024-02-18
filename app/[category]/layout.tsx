@@ -49,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className=" sm:pt-12 h-full ">
+    <section className=" sm:pt-12 min-h-screen ">
       <NextAuthProvider>
         {/* <div className="w-10/12 sm:w-full sm:max-w-5xl sm:text-left print:hidden mx-auto pt-2 sm:mt-4 sm:p-0 pb-4 sm:mb-0 hidden  sm:flex  max-w-7xl xl:max-w-4x5"> */}
         {/*   <Breadcrumbs /> */}
