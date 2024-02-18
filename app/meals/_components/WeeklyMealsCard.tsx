@@ -11,9 +11,11 @@ function WeeklyMealsCard({ meal }: any) {
         key={meal.id}
         className="w-11/12 mx-auto border relative rounded-b-xl flex bg-white mb-1"
       >
-        <span className="absolute text-xs  text-center h-6 fles items-center pt-1 -top-6 bg-key text-white w-full rounded-t-xl">
-          {meal?.dayOfWeek}
-        </span>
+        <Link href={`/meals/${meal?.dayOfWeek.replace(/,/g, "")}`}>
+          <span className="absolute text-xs  text-center h-6 fles items-center pt-1 -top-6 bg-key text-white w-full rounded-t-xl">
+            {meal?.dayOfWeek}
+          </span>
+        </Link>
         <div className="w-full h-full flex my-auto ml-4 flex-col justify-center space-y-1 overflow-hidden">
           <Link href={`/user/${meal?.userId}`}>
             <h3 className="font-bold text-xs flex items-center text-key">

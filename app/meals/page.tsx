@@ -83,17 +83,22 @@ async function MealsPage(params: any) {
     },
   });
 
-  const filteredWeek = await prisma?.Weeklymeal?.findMany({
+  let filteredWeek = await prisma?.Weeklymeal?.findMany({
     where: {
       city: city,
     },
   });
+
+  const sortedFilteredWeekMeals = filteredWeek.sort(
+    (a, b) => new Date(a.dayOfWeek).getTime() - new Date(b.dayOfWeek).getTime(),
+  );
+
   let allMeals = await prisma?.Weeklymeal?.findMany({});
 
   let weekMeals = await prisma?.Weeklymeal?.findMany({});
 
   // order the meals in function of their publication date
-  weekMeals.sort(
+  const sortedWeekMeals = filteredWeek.sort(
     (a, b) => new Date(a.dayOfWeek).getTime() - new Date(b.dayOfWeek).getTime(),
   );
 
@@ -107,7 +112,7 @@ async function MealsPage(params: any) {
       </h3>
       <SegmentTab
         meals={allMeals}
-        weekMeals={city ? filteredWeek : weekMeals}
+        weekMeals={city ? sortedFilteredWeekMeals : sortedWeekMeals}
         todayMeals={city ? filteredToday : todayMeals}
       />
       <RestaurantsCards restaurants={restaurants} />
