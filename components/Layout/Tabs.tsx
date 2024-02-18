@@ -2,12 +2,10 @@
 import { Tabs } from "@mantine/core";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Reviews from "./Reviews";
-import { usePathname } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
 function TabsRow({ filteredData, reviews, slug, props }: any) {
-  const pathname = usePathname();
   const searchParams = useSearchParams();
   const search: any = searchParams?.getAll("reviews");
 
@@ -100,21 +98,23 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
       </Tabs.Panel>
       <Tabs.Panel value="booking" pt="xs" className="min-h-[400px]">
         <Suspense fallback={<div className="h-screen">Loading...</div>}>
-          {filteredData?.fields?.booking ? (
+          {filteredData?.fields?.booking && (
             <iframe
               src={filteredData[0]?.fields?.booking}
               width="100%"
               height="1000px"
               className="border-none mt-10"
             />
-          ) : (
-            <div className="mt-10">
+          )}
+
+          {filteredData[0]?.fields?.bookingUrl && (
+            <div className="mt-5">
               <a
-                className="border border-black px-4 py-2 mt-10 rounded-xl "
-                href={filteredData[0]?.fields?.bookingUrl || ""}
+                href={filteredData[0]?.fields?.bookingUrl}
                 target="_blank"
+                rel="noopener noreferrer"
               >
-                Book Today
+                {filteredData[0]?.fields?.bookingUrl}
               </a>
             </div>
           )}
