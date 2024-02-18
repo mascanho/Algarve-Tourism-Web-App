@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { HiArrowUp } from "react-icons/hi2";
 import { usePathname } from "next/navigation";
 import { useInView } from "react-intersection-observer";
+import CookiesBanner from "./CookiesBanner";
 
 function Footer() {
   const [showToTop, setShowToTop] = useState(false);
@@ -75,7 +76,7 @@ function Footer() {
             onClick={() => {
               window?.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="text-5xl text-black cursor-pointer fixed bottom-10 right-6 sm:right-10  bg-white border rounded-full p-1 py-2 transition-all ease-in-out delay-200"
+            className="text-5xl text-black cursor-pointer fixed bottom-10 right-6 sm:right-10  bg-white border rounded-full p-1 py-2 transition-all ease-in-out delay-200 z-10"
           />
         )}
 
@@ -162,7 +163,7 @@ function Footer() {
             </div>
           </section>
         </footer>
-        <footer className="footer max-w-7xl w-11/12 mx-auto  py-4 border-t text-white  text-base-content border-base-300">
+        <footer className="footer max-w-7xl w-11/12 mx-auto  py-4 border-t text-white  border-base-300">
           <div className="items-center grid-flow-col px-4 sm:px-0">
             <svg
               width="24"

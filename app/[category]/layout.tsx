@@ -7,7 +7,7 @@ import Selection from "@/components/Selection";
 
 export const metadata: Metadata = {
   title: {
-    default: "Algarve Wonders",
+    default: "Discover the best places in the Algarve",
     template: "%s | Algarve Wonders",
   },
   description:
@@ -49,15 +49,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className=" sm:pt-12 ">
+    <section className=" sm:pt-12 min-h-screen ">
       <NextAuthProvider>
-        <div className="w-10/12 sm:w-6/12 md:w-8/12  mx-auto pt-2 sm:mt-4  pb-4 sm:mb-0 hidden  sm:flex  max-w-7xl xl:max-w-4x5">
-          <Breadcrumbs />
-        </div>
-        <section className="sm:pl-4 xl:pl-0    max-w-7xl mx-auto flex   justify-start transition-all ease-in delay-75 top-11  ">
+        {/* <div className="w-10/12 sm:w-full sm:max-w-5xl sm:text-left print:hidden mx-auto pt-2 sm:mt-4 sm:p-0 pb-4 sm:mb-0 hidden  sm:flex  max-w-7xl xl:max-w-4x5"> */}
+        {/*   <Breadcrumbs /> */}
+        {/* </div> */}
+        <section className="sm:pl-4 xl:pl-0 relative    max-w-7xl mx-auto flex   justify-start transition-all ease-in delay-75 top-11  ">
           <Selection />
           <SidePanel />
-          <div className="flex-1 sm:bg-gray-50 sm:rounded-xl sm:pt-2 mb-20">
+          <div className="flex-1 print:bg-white sm:rounded-xl  mb-20">
             {children}
           </div>
         </section>

@@ -7,10 +7,9 @@ import { carRentals } from "@/Data/CarRentals";
 import Link from "next/link";
 import { catArr } from "@/Data/Categories";
 import dynamic from "next/dynamic";
-import Hero from "@/components/Hero";
 
 const Card = dynamic(() => import("@/components/Card"));
-// const Hero = dynamic(() => import("@/components/Hero"));
+const Hero = dynamic(() => import("@/components/Hero"));
 const Feedback = dynamic(() => import("@/components/Feedback"));
 const RandomBanner = dynamic(() => import("@/components/Layout/RandomBanner"));
 const Acordion = dynamic(() => import("@/components/Acordion"));
@@ -72,7 +71,7 @@ export default async function Home(props: any) {
   const cities = cityArr;
 
   return (
-    <section className="w-full">
+    <section className="w-full min-h-screen">
       <Hero />
       <Features />
       <div className="space-y-4 mt-10 hidden sm:mt-10 mx-auto text-center sm:flex sm:flex-col sm:justify-center w-11/12 max-w-7xl ">
@@ -96,7 +95,7 @@ export default async function Home(props: any) {
       <RandomBanner categories={categories} />
       <Feedback {...quotes} />
       <AlgarveSpecs />
-      <Acordion />
+      {/* <Acordion /> */}
     </section>
   );
 }

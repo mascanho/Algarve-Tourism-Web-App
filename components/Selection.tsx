@@ -18,29 +18,17 @@ const Selection = () => {
 
   const handleClick = (cat: any) => {
     setActiveCategory(cat);
-
-    // Determine the index of the selected category within catArr
     const selectedIndex = catArr.findIndex(
       (category) => category.name === cat.name,
     );
 
-    // If the carouselRef is available and the index is valid
     if (carouselRef.current && selectedIndex !== -1) {
-      // Calculate the scroll position based on the index and the width of each slide
       const slideWidth = carouselRef?.current?.offsetWidth;
       const scrollLeft = selectedIndex * slideWidth;
-
-      // Scroll the carousel to the calculated position
-      carouselRef?.current?.scrollTo({
-        left: scrollLeft,
-        behavior: "smooth",
-      });
+      carouselRef?.current?.scrollTo({ left: scrollLeft, behavior: "smooth" });
     }
 
-    // Get the DOM element of the category link to scroll into view
     const categoryLink = document.getElementById(`category-link-${cat.route}`);
-
-    // If the category link element exists, scroll it into view
     if (categoryLink) {
       categoryLink.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
@@ -58,24 +46,24 @@ const Selection = () => {
   };
 
   return (
-    <section className="w-full z-20 inline text-center sm:hidden overflow-x-clip fixed border top-[40px] h-18  bg-white h-18 pt-1 ">
+    <section className="w-full z-20 inline text-center sm:hidden overflow-x-clip fixed border top-[39px]  bg-white h-18 pt-1 ">
       {pathname === "/" ? null : (
         <>
-          <section className="selection overflow-hidden flex w-full shadow-lg border-b h-14 pt-[2px] ">
+          <section className="selection overflow-hidden flex w-full shadow-lg border-b h-14 items-center ">
             <Carousel
               ref={carouselRef} // Assign the ref to the Carousel component
               dragFree
               nextControlIcon={<BiChevronRight />}
               previousControlIcon={<BiChevronLeft />}
               align={"start"}
-              className="w-fit overflow-hidden mx-auto flex flex-nowrap"
+              className="w-full overflow-hidden mx-auto flex flex-nowrap"
               slideSize={"5%"}
               controlSize={14}
               loop
             >
               {catArr.map((cat) => (
                 <Carousel.Slide
-                  className={`px-2 text-xs mr-2 my-1 text-right h-auto w-full`}
+                  className={`px-2 text-xs mr-2 text-right h-auto w-full`}
                   key={cat.name}
                   onClick={() => handleClick(cat)}
                 >

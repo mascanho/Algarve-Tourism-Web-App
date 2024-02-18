@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaCity, FaEuroSign } from "react-icons/fa";
 import { GiHotMeal } from "react-icons/gi";
@@ -13,12 +14,14 @@ function SearchedMealResults({ searchedMeals }: any) {
             className="w-11/12 mx-auto border  rounded-xl flex bg-white mb-2"
           >
             <div className="w-full h-full flex my-auto ml-4 flex-col justify-center space-y-1 overflow-hidden">
-              <h3 className="font-bold text-xs flex items-center text-key">
-                <span>
-                  <GrRestaurant className="text-lg mr-2" />
-                </span>
-                {meal?.business}
-              </h3>
+              <Link href={`/user/${meal?.userId}`}>
+                <h3 className="font-bold text-xs flex items-center text-key">
+                  <span>
+                    <GrRestaurant className="text-lg mr-2" />
+                  </span>
+                  {meal?.business}
+                </h3>
+              </Link>
               <h3 className="text-key flex items-center text-xs my-auto">
                 <span className="">
                   <GiHotMeal className="text-lg  my-auto mr-2" />

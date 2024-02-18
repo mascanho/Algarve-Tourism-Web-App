@@ -147,7 +147,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             <Image
               src="/images/icon.png"
               alt="logo"
-              width={50}
+              width={60}
               height={20}
               className="sm:h-6 sm:w-6 mr-1 flex-wrap m-auto sm:flex hidden "
             />
@@ -172,7 +172,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             <NavMenu
               trigger={"hover"}
               title={"Search"}
-              url={"/"}
+              url={"/search"}
               search={true}
             />
             <NavMenu
@@ -183,16 +183,18 @@ const Header = ({ currentUser, weatherData }: any) => {
               url={"/algarve"}
             />
             <NavMenu
+              expandedMenu={false}
               trigger={"hover"}
               title={"Categories"}
-              url={"/beaches"}
-              categories={true}
+              cities={true}
+              url={"/algarve"}
             />
             <NavMenu
-              trigger={false}
+              expandedMenu={false}
+              trigger={"hover"}
               title={"Blog"}
+              cities={true}
               url={"/blog"}
-              categories={true}
             />
           </section>
           <div
@@ -202,7 +204,7 @@ const Header = ({ currentUser, weatherData }: any) => {
             {/* <AuthenticationModal /> */}
             <NotificationsModal />
             <div
-              className="cursor-pointer text-black relative"
+              className="cursor-pointer text-black  relative"
               onClick={showFavourites}
             >
               <MdCardTravel className="cursor-pointer relative  sm:text-2xl" />
@@ -226,6 +228,7 @@ const Header = ({ currentUser, weatherData }: any) => {
                   width={30}
                   className="rounded-full hidden sm:flex relative object-contain w-6 h-6 cursor-pointer"
                   alt="avatar"
+                  loading="lazy"
                 />
               )}
             </div>

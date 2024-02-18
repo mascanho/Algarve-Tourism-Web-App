@@ -27,11 +27,12 @@ import DailyMenusDrawer from "./_components/DailyMenusDrawer";
 import { GrOverview } from "react-icons/gr";
 import { IoIosLeaf } from "react-icons/io";
 import BookingDrawer from "./_components/BookingDrawer";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 const Reviews = dynamic(() => import("../../../components/Layout/Reviews"), {});
 
 // TODO: Check this stuff
+
 export async function generateMetadata({ params, searchParams }: any) {
   const getDATA = async () => {
     const client = createClient({
@@ -53,7 +54,7 @@ export async function generateMetadata({ params, searchParams }: any) {
     } catch (error) {
       // Handle potential errors when fetching data
       console.error("Error fetching data from Contentful:", error);
-      return null;
+      throw error; // Re-throw the error to be caught by the outer try-catch block
     }
   };
 
@@ -71,7 +72,6 @@ export async function generateMetadata({ params, searchParams }: any) {
     };
   } catch (error) {
     // Handle errors that might occur during metadata generation
-
     return {
       description: "",
     };
@@ -79,7 +79,7 @@ export async function generateMetadata({ params, searchParams }: any) {
 }
 
 export default async function Home(props: any, req: any) {
-  const { category, slug } = props.params;
+  const { category, slug } = props?.params;
 
   async function getAllCategories() {
     try {
@@ -92,7 +92,7 @@ export default async function Home(props: any, req: any) {
       return await res?.items;
     } catch (error) {
       console.error("Error fetching data from Contentful:", error);
-      redirect("/error");
+      notFound();
     }
   }
 
@@ -104,14 +104,14 @@ export default async function Home(props: any, req: any) {
 
   return (
     <>
-      <section className="overflow-hidden mt-28 sm:mt-0 bg-transparent rounded-lg text-left pb-16 sm:px-4 md:w-full md:px-6 lg:px-6 xl:pr-0 space-y-4  md:max-w-4xl lg:max-w-7xl lg:pl-6  mb-2 text-black">
+      <section className="overflow-hidden pt-16 sm:pt-0 sm:mt-0 bg-transparent rounded-lg text-left pb-16 sm:px-4 md:w-full md:px-6 lg:px-6 xl:pr-0 space-y-4  md:max-w-4xl lg:max-w-7xl lg:pl-6  mb-2 text-black">
         <section className="w-full">
           <LeadGrid filteredData={filteredData} />
         </section>
         <div className="space-y-1 w-11/12 sm:w-full mx-auto">
           <div className="hidden sm:flex items-centert space-x-2">
             {filteredData[0]?.fields?.hiddenGem ? (
-              <div className="flex items-center space-x-1 bg-gray-200 w-fit px-2 rounded-md text-green-500 text-xs py-1">
+              <div className="flex items-center space-x-1 w-fit px-2 rounded-md text-green-500 text-xs py-1">
                 <div className="flex items-center space-x-2">
                   <FaRegGem />
                   <span className="text-xs">Hidden Gem</span>
@@ -139,7 +139,7 @@ export default async function Home(props: any, req: any) {
               </div>
             </div>
           </div>
-          <span className="flex items-center text-gray-400 text-sm text-left">
+          <span className="flex items-center text-gray-400 sm:pt-1 text-sm text-left">
             <FaMapMarkerAlt />
             <span className="ml-1">{filteredData[0]?.fields?.city}</span>
           </span>
@@ -259,28 +259,24 @@ export default async function Home(props: any, req: any) {
             <MobileButtons {...filteredData} />
           </section>
 
-          {/* <section className="border-b w-11/12 mx-auto"></section> */}
-
-          {/* Handles the bookings in the UI */}
-
-          {filteredData[0]?.fields.booking &&
-            !filteredData[0]?.fields?.bookingUrl && (
+          {filteredData[0]?.fields.booking ||
+            (filteredData[0]?.fields.bookingUrl && (
               <section className="w-11/12 border-b pb-5 mx-auto">
                 <h5 className="text-sm">Bookings</h5>
 
                 <section className="flex space-x-4">
-                  {filteredData[0]?.fields?.type[0] === "restaurants" &&
-                    filteredData[0]?.fields?.type[0] === "adventure" && (
-                      <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
-                        <IoFastFoodOutline className="text-2xl" />
-                        <div className="flex space-y-1 flex-col">
-                          <DailyMenusDrawer />
-                          <span className="text-xs text-gray-500">
-                            Menu Availalbe
-                          </span>
-                        </div>
+                  {(filteredData[0]?.fields.type[0] === "restaurants" ||
+                    filteredData[0]?.fields.type[0] === "adventure") && (
+                    <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
+                      <IoFastFoodOutline className="text-2xl" />
+                      <div className="flex space-y-1 flex-col">
+                        <DailyMenusDrawer />
+                        <span className="text-xs text-gray-500">
+                          Menu Available
+                        </span>
                       </div>
-                    )}
+                    </div>
+                  )}
 
                   <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
                     <FaRegAddressBook className="text-2xl" />
@@ -301,13 +297,14 @@ export default async function Home(props: any, req: any) {
                         />
                       )}
                       <span className="text-xs text-gray-500">
-                        Don&apos;t miss it
+                        Don't miss it
                       </span>
                     </div>
                   </div>
                 </section>
               </section>
-            )}
+            ))}
+
           {filteredData[0]?.fields?.type[0] === "restaurants" &&
             !filteredData[0]?.fields.booking && (
               <section className="w-11/12 border-b pb-5 mx-auto">
@@ -317,12 +314,13 @@ export default async function Home(props: any, req: any) {
                   <div className="flex space-y-1 flex-col">
                     <DailyMenusDrawer />
                     <span className="text-xs text-gray-500">
-                      Menu Availalbe
+                      Menu Available
                     </span>
                   </div>
                 </div>
               </section>
             )}
+
           <section className="border-b mt-4 pb-4 w-11/12 mx-auto">
             <div>
               <h5 className="text-sm mb-2">Tags</h5>
@@ -364,7 +362,7 @@ export default async function Home(props: any, req: any) {
         </main>
 
         {/* DESKTOP TABS START HERE */}
-        <div className="pt-5 sm:pt-10 w-11/12 sm:w-full mx-auto hidden sm:flex  ">
+        <div className="pt-5 sm:pt-10 w-11/12 sm:w-full mx-auto hidden sm:flex  print:bg-white  ">
           <TabsRow
             filteredData={filteredData}
             slug={slug}
@@ -372,14 +370,14 @@ export default async function Home(props: any, req: any) {
           />
         </div>
 
-        <section className="overflow-hidden w-11/12 sm:w-full pt-20 mx-auto">
+        <section className="overflow-hidden w-11/12 sm:w-full pt-20 mx-auto hiddenRow">
           <h3 className="text-black mb-10 font-semibold text-4xl">
             Other {category}
           </h3>
           <Suggestions recomended={recomended} />
         </section>
       </section>
-      <section className="mx-auto w-11/12 sm:w-full  py-10 overflow-hidden">
+      <section className="mx-auto w-11/12 sm:w-full  py-10 overflow-hidden print:hidden">
         <Link href={`/${category}` || ""} className="text-sm text-key">
           <button type="button" className="flex items-center ">
             <IoArrowBack className="mr-1" />
@@ -390,4 +388,26 @@ export default async function Home(props: any, req: any) {
       </section>
     </>
   );
+}
+
+export async function generateStaticParams({ params }: any) {
+  const client: any = createClient({
+    space: process?.env?.CONTENTFUL_SPACE_ID!,
+    accessToken: process?.env?.CONTENTFUL_ACCESS_TOKEN!,
+  });
+  const res = await client?.getEntries({
+    content_type: [
+      "beaches",
+      "events",
+      "restaurants",
+      "stays",
+      "business",
+      "adventures",
+      "hiking",
+    ],
+  });
+  return res?.items?.map((item: any) => ({
+    category: item?.fields?.slug,
+    slug: item?.fields?.slug,
+  }));
 }

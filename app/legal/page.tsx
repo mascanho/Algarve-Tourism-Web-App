@@ -86,7 +86,7 @@ async function page() {
   ];
 
   return (
-    <section className=" sm:max-w-7xl sm:w-full mx-auto sm:h-full  ">
+    <section className=" sm:max-w-7xl sm:w-11/12 mx-auto sm:h-full  pt-10 text-black">
       <div className="relative flex justify-center  w-full mx-auto ">
         <div className="sm:border-r sm:w-full block  w-11/12 pt-10 mx-auto justify-center sm:ml-0">
           <h2

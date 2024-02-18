@@ -21,24 +21,11 @@ function Upload() {
         <h1 className="text-3xl mx-0 text-left font-bold pt-28 mb-5 text-key">
           Upload your meal
         </h1>
-        <p className="-mt-2">Publish your meal for others to see</p>
-        <div className="flex space-x-3 gap-x-3 mt-5">
-          <SegmentedControl
-            value={uploadDay}
-            onChange={setUploadDay}
-            data={[
-              { value: "daily", label: "Daily" },
-              { value: "weekly", label: "Weekly" },
-            ]}
-          />
-        </div>
+        <p className="-mt-2 w-8/12 text-center pb-4 sm:pb-2 ">
+          Publish your meals and reach new customers near you
+        </p>
 
-        {uploadDay === "daily" && <UploadDailyForm />}
-        {uploadDay === "weekly" && (
-          <p className="min-h-screen mt-20">
-            This section will be available soon
-          </p>
-        )}
+        <UploadWeeklyForm />
       </div>
     );
   }
@@ -52,7 +39,7 @@ function Upload() {
         radius="lg"
         position="bottom"
       >
-        <ul className="list-disc w-full list-inside mx-auto">
+        <ul className="list-inside space-y-2 w-full list-disc mx-auto">
           <li>
             Ensure your dish names and descriptions are descriptive and
             appealing.
@@ -67,7 +54,7 @@ function Upload() {
           <h1 className="text-5xl mx-0 text-left font-bold pt-3 mb-5">
             Upload Meals
           </h1>
-          <h2>
+          <h2 className="sm:max-w-lg my-6">
             Showcase your daily or weekly culinary masterpieces and attract food
             lovers to your establishment. Share your signature dishes, chef's
             specials, and must-try creations with our community.
@@ -80,7 +67,7 @@ function Upload() {
           </span>
         </div>
 
-        <div className="bg-white px-8 py-10 text-black mt-10 block w-11/12 rounded-xl">
+        <div className="bg-white px-8 py-10 text-black mt-10 block w-11/12 sm:max-w-xl rounded-xl">
           <h1 className="text-xl text-gray-400 text-center mx-0 font-bold mb-5">
             How it works
           </h1>
@@ -100,7 +87,10 @@ function Upload() {
             </li>
           </ol>
           <div className="pt-5">
-            <span className="mt-10 underline text-key" onClick={open}>
+            <span
+              className="mt-10 underline text-key cursor-pointer"
+              onClick={open}
+            >
               Uploading Guidelines
             </span>
           </div>

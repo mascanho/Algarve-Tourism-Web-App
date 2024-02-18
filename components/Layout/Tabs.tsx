@@ -2,13 +2,10 @@
 import { Tabs } from "@mantine/core";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Reviews from "./Reviews";
-import { usePathname } from "next/navigation";
 import { useSearchParams } from "next/navigation";
-import BookingDrawer from "@/app/[category]/[slug]/_components/BookingDrawer";
 import { Suspense } from "react";
 
 function TabsRow({ filteredData, reviews, slug, props }: any) {
-  const pathname = usePathname();
   const searchParams = useSearchParams();
   const search: any = searchParams?.getAll("reviews");
 
@@ -39,35 +36,32 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
     activeTab = "reviews";
   }
 
+  console.log(filteredData[0].fields.bookingUrl);
+
   return (
     <Tabs
-      color="teal"
+      color="black"
       defaultValue={activeTab === "" ? "first" : activeTab}
-      className="bg-transparent w-full pr-4"
+      className="bg-transparent w-full pr-4 decoration-black"
     >
       <Tabs.List justify="center" className="text-center ">
-        <Tabs.Tab className="ml-0 pl-0" value="first" color="blue">
+        <Tabs.Tab className="ml-0 pl-0" value="first" color="black">
           Description
         </Tabs.Tab>
-        <Tabs.Tab value="map" color="blue">
+        <Tabs.Tab value="map" color="black">
           Map
         </Tabs.Tab>
-        <Tabs.Tab value="third" color="blue">
+        <Tabs.Tab value="third" color="black">
           Price
         </Tabs.Tab>
-        <Tabs.Tab value="reviews" color="blue">
+        <Tabs.Tab value="reviews" color="black">
           Reviews
         </Tabs.Tab>
-        {filteredData[0]?.fields?.booking && (
-          <Tabs.Tab value="booking" color="blue">
+        {filteredData[0].fields.bookingUrl || filteredData[0].fields.booking ? (
+          <Tabs.Tab value="booking" color="black">
             Booking
           </Tabs.Tab>
-        )}
-        {filteredData[0]?.fields?.bookingUrl && (
-          <Tabs.Tab value="bookingURL" color="blue">
-            Booking
-          </Tabs.Tab>
-        )}
+        ) : null}
       </Tabs.List>
 
       <Tabs.Panel
@@ -106,23 +100,27 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
       </Tabs.Panel>
       <Tabs.Panel value="booking" pt="xs" className="min-h-[400px]">
         <Suspense fallback={<div className="h-screen">Loading...</div>}>
-          <iframe
-            src={filteredData[0]?.fields?.booking}
-            width="100%"
-            height="1000px"
-            className="border-none mt-10"
-          />
-        </Suspense>
-        <Tabs.Panel value="bookingURL" pt="xs" className="min-h-[400px]">
-          <Suspense fallback={<div className="h-screen">Loading...</div>}>
+          {filteredData?.fields?.booking && (
             <iframe
               src={filteredData[0]?.fields?.booking}
               width="100%"
               height="1000px"
               className="border-none mt-10"
             />
-          </Suspense>
-        </Tabs.Panel>
+          )}
+
+          {filteredData[0]?.fields?.bookingUrl && (
+            <div className="mt-5">
+              <a
+                href={filteredData[0]?.fields?.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {filteredData[0]?.fields?.bookingUrl}
+              </a>
+            </div>
+          )}
+        </Suspense>
       </Tabs.Panel>
     </Tabs>
   );

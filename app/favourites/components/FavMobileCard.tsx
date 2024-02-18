@@ -44,7 +44,7 @@ function FavMobileCard({
             className="text-xl absolute top-4 right-4 group-hover:scale-110 transition-all ease-in-out  text-red-500 hover:pt-[2px] pt-[1px]"
           />
         </div>
-        <div className="flex flex-wrap justify-between pt-2 px-3 items-center ">
+        <div className="flex flex-wrap justify-between pt-2 px-2 items-center ">
           <h3 className="text-left text-key ">{title}</h3>
           <div className="flex items-center">
             <IoIosStar className="text-key text-xs" />

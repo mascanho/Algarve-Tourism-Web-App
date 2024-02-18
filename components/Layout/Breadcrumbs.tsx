@@ -24,7 +24,7 @@ function Breadcrumbs() {
   ));
 
   return (
-    <section className="flex items-center">
+    <section className="flex items-center print:hidden">
       {/* <Bread>{items}</Bread> */}
       <IoChevronBack className="bg-black rounded-full w-6 h-6    sm:hidden hidden" />
       <Bread

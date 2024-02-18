@@ -33,50 +33,45 @@ function Card({
   slug,
   singleName,
   type,
-  last,
 }: any) {
   return (
     <>
-      <Paper
-        shadow="md"
-        p="xl"
-        radius="lg"
-        style={{
-          backgroundImage: `url(https:${image && (image[1] || image)})`,
-          backgroundBlendMode: "multiply",
-          backgroundColor: "rgba(0, 0, 0, 0.3)",
-        }}
-        className={`h-[300px] sm:h-full w-full sm:max-w-96 sm:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in ${ptsans.className}`}
-      >
-        <div className="w-full">
-          <div className="flex items-center justify-between w-full">
-            <Text className="text-white/50  uppercase font-semibold" size="xs">
-              {city}
-            </Text>
-            <Text size={"xs"} className="flex items-center text-xs">
-              <Badge
-                className="m-auto"
-                color={price === "Free" ? "green" : "red"}
+      <Link href={`/${type}/${slug}`} className="w-full h-full">
+        <Paper
+          shadow="md"
+          p="xl"
+          radius="lg"
+          style={{
+            backgroundImage: `url(https:${image && (image[1] || image)})`,
+            backgroundBlendMode: "multiply",
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
+          }}
+          className={`h-56 sm:h-full w-56 sm:max-w-96 sm:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in ${ptsans.className}`}
+        >
+          <div className="w-full">
+            <div className="flex items-center justify-between w-full">
+              <Text
+                className="text-white/50  uppercase font-semibold"
                 size="xs"
-                variant="light"
               >
-                {price}
-              </Badge>
-            </Text>
+                {city}
+              </Text>
+            </div>
+            <span className={`text-2xl sm:text-3xl text-white font-bold`}>
+              {title}
+            </span>
           </div>
-          <Title order={3} className={`${classes.title} sm:text-3xl`}>
-            {title}
-          </Title>
-        </div>
-        <div>
-          <Link href={`/${type}/${slug}`} className="w-full h-full">
-            <Button variant="white" className="bg-white" color="dark">
+          <div>
+            <Button
+              variant="white"
+              className="bg-white sm:inline hidden"
+              color="dark"
+            >
               View {singleName}
             </Button>
-          </Link>
-        </div>
-      </Paper>
-      {last}
+          </div>
+        </Paper>
+      </Link>
     </>
   );
 }
@@ -117,10 +112,12 @@ function GenericCarousel({
   ));
 
   return (
-    <section className="mb-20 sm:pb-6 mt-20">
-      <h2 className="mx-auto text-left w-11/12 text-4xl sm:text-5xl text-black font-semibold sm:pb-6 mt-20 max-w-7xl">
-        {title}
-      </h2>
+    <section className="sm:mb-20 sm:pb-6 sm:mt-20">
+      <div>
+        <h2 className="mx-auto text-left w-11/12 text-3xl sm:text-5xl text-black font-semibold sm:pb-6 sm:mt-20 max-w-7xl">
+          {title}
+        </h2>
+      </div>
       <section
         ref={ref}
         style={{
@@ -131,34 +128,21 @@ function GenericCarousel({
         {inView && (
           <Carousel
             className={`bottomCarousel mt-10 ${ptsans.className}`}
-            slideSize={mobile ? "63.333333%" : "23.333333%"}
+            slideSize={mobile ? "43.333333%" : "23.333333%"}
             slideGap={mobile ? "md" : "md"}
             slidesToScroll={mobile ? 1 : 1}
             height={300}
             initialSlide={1}
           >
             {slides}
-            <div className=" sm:w-[310px] md:w-[420px] h-full border flex justify-center items-center  rounded-2xl">
-              <Link
-                className="h-[300px]"
-                href={`${title === "Where to eat" ? "/restaurants" : "/adventure"}`}
-              >
-                <div className=" sm:w-[280px] xl:w-[400px] w-[250px] relative  flex justify-center  items-center rounded-2xl underline h-full overflow-clip   text-white">
-                  <img
-                    src={
-                      title === "Where to eat"
-                        ? "/images/bg2.webp"
-                        : "/images/bg-3.webp"
-                    }
-                    alt=""
-                    className="object-scale blur-sm  w-full h-full bg-black brightness-50 "
-                  />
-                  <span className="text-black bg-white font-semibold absolute top-30 px-5 py-1 rounded-lg">
-                    View more...
-                  </span>
-                </div>
-              </Link>
-            </div>
+            <Link
+              className="h-56 rounded-xl sm:h-[300px] w-full flex justify-center items-center"
+              href={`${title === "Where to eat" ? "/restaurants" : "/adventure"}`}
+            >
+              <div className="w-40 text-xl underline flex justify-center m-auto text-black">
+                view all
+              </div>
+            </Link>
           </Carousel>
         )}
       </section>

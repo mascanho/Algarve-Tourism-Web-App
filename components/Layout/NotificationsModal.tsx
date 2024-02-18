@@ -2,8 +2,8 @@ import { useDisclosure } from "@mantine/hooks";
 import { Modal, Button, ScrollArea } from "@mantine/core";
 import { AiOutlineNotification } from "react-icons/ai";
 import Notification from "../Notification";
-import { IoMdNotifications } from "react-icons/io";
 import { notes } from "@/Data/Notifications";
+import { FaRegBell } from "react-icons/fa";
 function NotificationsModal() {
   const [opened, { open, close }] = useDisclosure(false);
 
@@ -21,9 +21,9 @@ function NotificationsModal() {
       >
         <Notification />
       </Modal>
-      <IoMdNotifications
+      <FaRegBell
         onClick={open}
-        className="ml-1 text-black mr-1 hidden sm:inline cursor-pointer active:scale-90 z-50 text-2xl"
+        className="ml-1 text-black  hidden sm:inline cursor-pointer active:scale-90 z-50 text-xl"
       />{" "}
     </>
   );

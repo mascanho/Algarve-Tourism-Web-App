@@ -35,47 +35,35 @@ function Card({
   type,
 }: any) {
   return (
-    <Paper
-      shadow="md"
-      p="xl"
-      radius="lg"
-      style={{
-        backgroundImage: `url(https:${
-          image[Math.floor(Math.random()) * image.length]
-        })`,
-        backgroundBlendMode: "multiply",
-        backgroundColor: "rgba(0, 0, 0, 0.3)",
-      }}
-      className="h-[300px] sm:h-full w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
-    >
-      <div className="w-full">
-        <div className="flex items-center justify-between w-full">
-          <Text className="text-white/50  uppercase font-semibold" size="xs">
-            {city}
-          </Text>
-          <Text size={"xs"} className="flex items-center text-xs">
-            <Badge
-              className="m-auto"
-              color={price === "Free" ? "green" : "red"}
-              size="xs"
-              variant="light"
-            >
-              {price}
-            </Badge>
-          </Text>
+    <Link href={`/${type}/${slug}`} className="w-full h-full">
+      <Paper
+        shadow="md"
+        p="xl"
+        radius="lg"
+        style={{
+          backgroundImage: `url(https:${
+            image[Math.floor(Math.random()) * image.length]
+          })`,
+          backgroundBlendMode: "multiply",
+          backgroundColor: "rgba(0, 0, 0, 0.3)",
+        }}
+        className="h-56 sm:h-full w-56 sm:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+      >
+        <div className="w-full">
+          <div className="flex items-center justify-between w-full">
+            <Text className="text-white/50  uppercase font-semibold" size="xs">
+              {city}
+            </Text>
+          </div>
+          <span className="text-3xl font-bold text-white">{title}</span>
         </div>
-        <Title order={3} className={classes.title}>
-          {title}
-        </Title>
-      </div>
-      <div>
-        <Link href={`/${type}/${slug}`} className="w-full h-full">
+        <div className="sm:flex hidden">
           <Button variant="white" className="bg-white" color="dark">
             View {singleName}
           </Button>
-        </Link>
-      </div>
-    </Paper>
+        </div>
+      </Paper>
+    </Link>
   );
 }
 
@@ -137,8 +125,8 @@ function BottomCarousel({
   ));
 
   return (
-    <section className="mt-20">
-      <h2 className="max-w-7xl text-left sm:pb-6 mx-auto text-4xl sm:text-5xl w-11/12  font-semibold text-black">
+    <section className="sm:mt-20 ">
+      <h2 className="max-w-7xl text-left sm:pb-6 mx-auto text-3xl sm:text-5xl w-11/12  font-semibold text-black">
         {title}
       </h2>
       <section
@@ -151,8 +139,8 @@ function BottomCarousel({
         {inView && (
           <Carousel
             // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-            className="bottomCarousel mt-10"
-            slideSize={mobile ? "63.333333%" : "23.333333%"}
+            className="bottomCarousel mt-10 w-full h-fit"
+            slideSize={mobile ? "43.333333%" : "23.333333%"}
             slideGap={"md"}
             // align="start"
             slidesToScroll={mobile ? 1 : 1}
@@ -163,18 +151,10 @@ function BottomCarousel({
             initialSlide={1}
           >
             {slides}
-
-            <div className=" w-[250px] lg:w-[420px]  h-full border flex justify-center items-center  rounded-2xl">
-              <Link className="h-[300px]" href={`${"/beache"}`}>
-                <div className="lg:w-[380px] w-[250px] relative  flex justify-center  items-center rounded-2xl underline h-full overflow-clip   text-white">
-                  <img
-                    src="/images/bg-3.webp"
-                    alt=""
-                    className="object-fil blur-sm w-full h-full bg-black brightness-50 "
-                  />
-                  <span className="text-black bg-white absolute font-semibold top-30 px-5 py-1 rounded-lg">
-                    View more...
-                  </span>
+            <div className="flex items-center text-center h-56 sm:h-full">
+              <Link href="/beaches/" className="w-40 m-auto text-black">
+                <div className="w-40 text-xl underline m-auto text-black">
+                  view all
                 </div>
               </Link>
             </div>

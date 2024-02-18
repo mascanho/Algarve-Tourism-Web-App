@@ -151,7 +151,7 @@ const page = async (props: any) => {
   return (
     <section className="max-w-7xl w-11/12 sm:w-9/12 sm:flex mx-auto mt-4 sm:mt-10">
       <div className="sm:w-3/4 w-full flex-1 font-semibold">
-        <section className="mb-5 sm:mb-10 line-clamp-1 overflow-hidden text-xs">
+        <section className="mb-5 sm:mb-3 sm:pt-3 line-clamp-1 overflow-hidden text-xs">
           <BreadCrumbs />
         </section>
         <div className="sm:w-full mb-8 relative ">
