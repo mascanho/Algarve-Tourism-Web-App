@@ -57,9 +57,11 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
         <Tabs.Tab value="reviews" color="black">
           Reviews
         </Tabs.Tab>
-        <Tabs.Tab value="booking" color="black">
-          Booking
-        </Tabs.Tab>
+        {filteredData[0].fields.bookingUrl || filteredData[0].fields.booking ? (
+          <Tabs.Tab value="booking" color="black">
+            Booking
+          </Tabs.Tab>
+        ) : null}
       </Tabs.List>
 
       <Tabs.Panel
