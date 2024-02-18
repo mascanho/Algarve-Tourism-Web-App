@@ -9,13 +9,7 @@ import Link from "next/link";
 import WeeklyMeals from "./WeeklyMeals";
 import { cityArr } from "@/Data/Cities";
 
-function SegmentTab({
-  todayMeals,
-  search,
-  citiesOnDb,
-  weekMeals,
-  filtered,
-}: any) {
+function SegmentTab({ todayMeals, search, weekMeals, filtered }: any) {
   const [searchedMeals, setSearchedMeals] = useState(null);
   const [regime, setRegime] = useState("daily");
   const router = useRouter();
@@ -139,12 +133,16 @@ function SegmentTab({
           </div>
           <WeeklyMeals weeklyMeals={weekMeals} />
           <div className="mx-auto flex justify-center mt-10 w-11/12">
-            <span className="text-center w-full mx-auto">
-              No daily meals today, yet.
-              <Link className="underline ml-1" href={"/upload/"}>
-                Add some
-              </Link>
-            </span>
+            {todayMeals.length === 0 ||
+              weekMeals.length === 0 ||
+              (filtered === 0 && (
+                <span className="text-center w-full mx-auto">
+                  No weekly meals today, yet.
+                  <Link className="underline ml-1" href={"/upload/"}>
+                    Add some
+                  </Link>
+                </span>
+              ))}
           </div>
         </div>
       )}
