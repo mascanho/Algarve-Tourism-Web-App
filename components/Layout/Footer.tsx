@@ -68,8 +68,6 @@ function Footer() {
 
   return (
     <>
-      {/* COOKIE BANNER */}
-      <CookiesBanner />
       {!pathname?.match(
         /\/(?:restaurants|beaches|adventure|events|business|hiking|sports|stays)\//,
       ) &&

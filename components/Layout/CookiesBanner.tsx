@@ -11,7 +11,6 @@ export default function CookiesBanner() {
   };
 
   const handleNo = () => {
-    toast.error("You must accept cookies to use Algarve Wonders");
     window?.close();
   };
 
@@ -36,20 +35,13 @@ export default function CookiesBanner() {
             <p className="sm:text-base text-xs sm:px-0 px-3">
               This website uses cookies to enhance the user experience.
             </p>
-            <div className="flex space-x-2 sm:space-x-4 sm:pr-0 pr-2">
+            <div className="flex sm:space-x-6 sm:pr-0 mr-4">
               <button
                 type="button"
                 className=" sm:px-3 sm:text-base text-xs py-1 bg-green-500 rounded-xl w-14 sm:w-20"
                 onClick={handleYes}
               >
                 Accept
-              </button>
-              <button
-                type="button"
-                onClick={handleNo}
-                className="sm:px-3 py-1 rounded-xl bg-red-500 w-14 sm:text-base text-xs sm:w-20"
-              >
-                Decline
               </button>
             </div>
           </div>

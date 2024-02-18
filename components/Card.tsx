@@ -206,7 +206,10 @@ const Card = ({
         </div>
       </section>
       <div className="w-fit mx-auto flex justify-center sm:my-14">
-        <Link href={"/beaches"}>
+        <Link
+          href={"/beaches"}
+          aria-label="View more beaches and other categories"
+        >
           <button
             className="border mt-10 rounded-md bg-key text-white active:bg-gray-500 active:text-white transition-all hidden ease-in px-7 hover:bg-key hover:text-white py-2 mx-auto sm:flex justify-center text-center"
             type="button"

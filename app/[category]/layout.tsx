@@ -7,7 +7,7 @@ import Selection from "@/components/Selection";
 
 export const metadata: Metadata = {
   title: {
-    default: "Algarve Wonders",
+    default: "Discover the best places in the Algarve",
     template: "%s | Algarve Wonders",
   },
   description:
