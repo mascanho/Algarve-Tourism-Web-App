@@ -26,7 +26,6 @@ model User {
   accounts       Account[]
   reviews        Reviews[]
   comments       Comments[]
-  dailymeals     Dailymeal[]
   weeklymeals    Weeklymeal[]
 }
 

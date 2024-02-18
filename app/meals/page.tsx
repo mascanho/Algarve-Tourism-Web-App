@@ -10,7 +10,7 @@ import { clear } from "console";
 
 export const metadata: Metadata = {
   title: {
-    default: "Find The Best Daily Meals in The Algarve | Algarve Wonders",
+    default: "Find The Best Daily Meals in The Algarve",
     template: "%s | Algarve Wonders",
   },
   description: "Discover the best daily dishes in the Algarve",
