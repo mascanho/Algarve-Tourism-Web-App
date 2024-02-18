@@ -172,9 +172,9 @@ const Card = ({
                     className="text-xs hover:scale-110 cursor-pointer"
                   />
                   <a
+                    href={`/${cat.fields.type}/${cat?.fields?.slug}`}
                     aria-label={`View on website in new tab`}
                     target="_blank"
-                    href={`/${cat.fields.type}/${cat?.fields?.slug}`}
                   >
                     <BsGlobe className="text-xs hover:scale-110 cursor-pointer" />
                   </a>
