@@ -2,7 +2,7 @@ import { GiBeachBucket } from "react-icons/gi";
 
 export const catArr = [
   {
-    id: 4,
+    id: 1,
     name: "Adventure",
     icon: "",
     route: "/adventure",
@@ -20,7 +20,7 @@ export const catArr = [
     type: "category",
   },
   {
-    id: 9,
+    id: 3,
     name: "Business",
     icon: "",
     route: "/business",
@@ -29,7 +29,7 @@ export const catArr = [
     type: "category",
   },
   {
-    id: 8,
+    id: 4,
     name: "Events",
     icon: "",
     route: "/events",
@@ -38,7 +38,7 @@ export const catArr = [
     type: "category",
   },
   {
-    id: 3,
+    id: 5,
     name: "Hiking",
     icon: "",
     route: "/hiking",
@@ -47,7 +47,7 @@ export const catArr = [
     type: "category",
   },
   {
-    id: 7,
+    id: 6,
     name: "Restaurants",
     icon: "",
     route: "/restaurants",
@@ -56,7 +56,7 @@ export const catArr = [
     type: "category",
   },
   {
-    id: 5,
+    id: 7,
     name: "Sports",
     icon: "",
     route: "/sports",
@@ -65,7 +65,7 @@ export const catArr = [
     type: "category",
   },
   {
-    id: 6,
+    id: 8,
     name: "Stays",
     icon: "",
     route: "/stays",
