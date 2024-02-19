@@ -38,7 +38,7 @@ function Card({
     <>
       <Link href={`/${type}/${slug}`} className="w-full h-full">
         <Paper
-          shadow="md"
+          // shadow="sm"
           p="xl"
           radius="lg"
           style={{
@@ -112,7 +112,7 @@ function GenericCarousel({
   ));
 
   return (
-    <section className="sm:mb-20 sm:pb-6 sm:mt-20">
+    <section className="sm:mb-20 sm:pb-6 sm:mt-20 mb-10">
       <div>
         <h2 className="mx-auto text-left w-11/12 text-3xl sm:text-5xl text-black font-semibold sm:pb-6 sm:mt-20 max-w-7xl">
           {title}
@@ -131,7 +131,7 @@ function GenericCarousel({
             slideSize={mobile ? "43.333333%" : "23.333333%"}
             slideGap={mobile ? "md" : "md"}
             slidesToScroll={mobile ? 1 : 1}
-            height={300}
+            height={!mobile ? 300 : 230}
             initialSlide={1}
           >
             {slides}

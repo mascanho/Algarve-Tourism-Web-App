@@ -2,15 +2,7 @@
 
 import { Carousel } from "@mantine/carousel";
 import { useMediaQuery } from "@mantine/hooks";
-import {
-  Button,
-  Paper,
-  Title,
-  useMantineTheme,
-  Text,
-  Rating,
-  Badge,
-} from "@mantine/core";
+import { Button, Paper, Title, useMantineTheme, Text } from "@mantine/core";
 import classes from "./BottomCarousel.module.css";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
@@ -23,21 +15,11 @@ interface CardProps {
   categories: any;
 }
 
-function Card({
-  image,
-  url,
-  city,
-  rating,
-  price,
-  type,
-  route,
-  catImg,
-  cat,
-}: any) {
+function Card({ image, url, city, type, route }: any) {
   return (
     <Link href={type === "category" ? route : "/algarve/" + route}>
       <Paper
-        shadow="md"
+        // shadow="md"
         p="xl"
         radius="lg"
         style={{
@@ -123,7 +105,7 @@ function StaticDataCarousel({
   ));
 
   return (
-    <section className="sm:mt-20">
+    <section className="sm:mt-20 sm:mb-0 mb-10">
       <h2 className="max-w-7xl mx-auto text-left w-11/12 text-3xl sm:text-5xl text-black font-semibold sm:pb-6">
         {title}
       </h2>
@@ -142,7 +124,7 @@ function StaticDataCarousel({
             slideGap={"md"}
             // align="start"
             slidesToScroll={mobile ? 1 : 1}
-            height={300}
+            height={!mobile ? 300 : 230}
             // withControls={mobile ? false : true}
             // withControls={false}
             // loop

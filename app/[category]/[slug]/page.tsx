@@ -259,54 +259,49 @@ export default async function Home(props: any, req: any) {
             <MobileButtons {...filteredData} />
           </section>
 
-          {filteredData[0]?.fields.booking ||
-            (filteredData[0]?.fields.bookingUrl && (
-              <section className="w-11/12 border-b pb-5 mx-auto">
-                <h5 className="text-sm">Bookings</h5>
+          <section className="w-11/12 border-b pb-5 mx-auto">
+            <h5 className="text-sm">Bookings</h5>
 
-                <section className="flex space-x-4">
-                  {(filteredData[0]?.fields.type[0] === "restaurants" ||
-                    filteredData[0]?.fields.type[0] === "adventure") && (
-                    <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
-                      <IoFastFoodOutline className="text-2xl" />
-                      <div className="flex space-y-1 flex-col">
-                        <DailyMenusDrawer />
-                        <span className="text-xs text-gray-500">
-                          Menu Available
-                        </span>
-                      </div>
-                    </div>
+            <section className="flex space-x-4">
+              {/* {filteredData[0]?.fields.type[0] === "restaurants" || ( */}
+              {/*   <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4"> */}
+              {/*     <IoFastFoodOutline className="text-2xl" /> */}
+              {/*     <div className="flex space-y-1 flex-col"> */}
+              {/*       <DailyMenusDrawer /> */}
+              {/*       <span className="text-xs text-gray-500"> */}
+              {/*         Menu Available */}
+              {/*       </span> */}
+              {/*     </div> */}
+              {/*   </div> */}
+              {/* )} */}
+
+              <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
+                <FaRegAddressBook className="text-2xl" />
+                <div className="flex space-y-1 flex-col">
+                  {filteredData[0]?.fields?.bookingUrl ? (
+                    <a
+                      href={filteredData[0]?.fields?.bookingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-sm"
+                    >
+                      Book now
+                    </a>
+                  ) : (
+                    <BookingDrawer
+                      title="Book Now"
+                      url={filteredData[0]?.fields?.booking}
+                    />
                   )}
+                  <span className="text-xs text-gray-500">Don't miss it</span>
+                </div>
+              </div>
+            </section>
+          </section>
 
-                  <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
-                    <FaRegAddressBook className="text-2xl" />
-                    <div className="flex space-y-1 flex-col">
-                      {filteredData[0]?.fields?.bookingUrl ? (
-                        <a
-                          href={filteredData[0]?.fields?.bookingUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="underline text-sm"
-                        >
-                          Book now
-                        </a>
-                      ) : (
-                        <BookingDrawer
-                          title="Book Now"
-                          url={filteredData[0]?.fields?.booking}
-                        />
-                      )}
-                      <span className="text-xs text-gray-500">
-                        Don't miss it
-                      </span>
-                    </div>
-                  </div>
-                </section>
-              </section>
-            ))}
-
-          {filteredData[0]?.fields?.type[0] === "restaurants" &&
-            !filteredData[0]?.fields.booking && (
+          {(filteredData[0]?.fields?.type[0] === "restaurants" &&
+            !filteredData[0]?.fields.booking) ||
+            (!filteredData[0]?.fields.bookingUrl && (
               <section className="w-11/12 border-b pb-5 mx-auto">
                 <h5 className="text-sm">Eat in</h5>
                 <div className="w-2/5 mt-2 rounded-md flex flex-col space-y-2 border p-4">
@@ -319,7 +314,7 @@ export default async function Home(props: any, req: any) {
                   </div>
                 </div>
               </section>
-            )}
+            ))}
 
           <section className="border-b mt-4 pb-4 w-11/12 mx-auto">
             <div>

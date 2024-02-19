@@ -37,7 +37,7 @@ function Card({
   return (
     <Link href={`/${type}/${slug}`} className="w-full h-full">
       <Paper
-        shadow="md"
+        // shadow="md"
         p="xl"
         radius="lg"
         style={{
@@ -125,7 +125,7 @@ function BottomCarousel({
   ));
 
   return (
-    <section className="sm:mt-20 ">
+    <section className="sm:mt-20 mt-10 mb-20 sm:mb-0 ">
       <h2 className="max-w-7xl text-left sm:pb-6 mx-auto text-3xl sm:text-5xl w-11/12  font-semibold text-black">
         {title}
       </h2>
@@ -144,7 +144,7 @@ function BottomCarousel({
             slideGap={"md"}
             // align="start"
             slidesToScroll={mobile ? 1 : 1}
-            height={300}
+            height={!mobile ? 300 : 230}
             // withControls={mobile ? false : true}
             // withControls={false}
             // loop
