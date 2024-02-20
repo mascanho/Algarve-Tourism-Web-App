@@ -63,20 +63,20 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
           <SearchDrawerContent close={close} />
         </Modal>
 
-        <Menu.Dropdown className="border-key/50 border-1 w-64 mx-auto">
+        <Menu.Dropdown className="border-key/50 border-1 w-72 mx-auto">
           <Menu.Item
             onClick={open}
-            className="text-black border-t-key border-3 w-fit mx-auto"
+            className="text-black border-t-key border-3 mx-auto w-full"
           >
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center items-start">
               <div className="flex items-center">
-                <div className="rounded-md w-8 h-8 bg-key flex items-center mr-2">
+                <div className="rounded-md w-8  h-8 bg-key flex items-center mr-2">
                   <FaSearch className="w-5 m-auto text-lg  h-5 p-1 rounded-full text-white" />
                 </div>
                 <div className="flex flex-col justify-center">
                   <span className="text-sm font-semibold">Search Places</span>
                   <span className="text-xs text-gray-500">
-                    Discover the most unique places near you
+                    Discover the most unique places
                   </span>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
                     Search Daily Meals
                   </span>
                   <span className="text-xs text-gray-500">
-                    Find the best daily dishes around your city
+                    Find the best daily dishes
                   </span>
                 </div>
               </div>
