@@ -46,7 +46,7 @@ const Selection = () => {
   };
 
   return (
-    <section className="w-full z-20 inline text-center sm:hidden overflow-x-clip fixed border top-[39px]  bg-white h-36 pt-1 ">
+    <section className="w-full z-20 inline overflow-hidden text-center sm:hidden overflow-x-clip fixed border top-[39px]  bg-white  pt-1 ">
       {pathname === "/" ? null : (
         <>
           <section className="selection flex w-full shadow-lg bg-white border-b h-14 items-center ">
@@ -56,7 +56,7 @@ const Selection = () => {
               nextControlIcon={<BiChevronRight />}
               previousControlIcon={<BiChevronLeft />}
               align={"start"}
-              className="w-full h-16 items-center  mx-auto flex flex-nowrap"
+              className="w-full h-16 items-center overflow-hidden mx-auto flex flex-nowrap"
               slideSize={"5%"}
               controlSize={14}
               loop
