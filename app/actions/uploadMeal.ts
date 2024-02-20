@@ -30,7 +30,6 @@ export async function uploadMeal(formData: FormData) {
           city: formData.get("city") as string,
         },
       });
-      console.log("Existing daily meal updated successfully");
     } else {
       // Create a new meal entry
       await prisma.dailymeal.create({
@@ -51,7 +50,6 @@ export async function uploadMeal(formData: FormData) {
           city: formData.get("city") as string,
         },
       });
-      console.log("New daily meal uploaded successfully");
     }
   } catch (error) {
     console.error("Error uploading daily meal:", error);

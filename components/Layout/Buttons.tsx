@@ -52,9 +52,7 @@ const Buttons = ({ filteredData }: any) => {
     try {
       navigator.clipboard.writeText(url);
       window.open(url, "_blank");
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 
   // handle copying the url to share
@@ -67,9 +65,7 @@ const Buttons = ({ filteredData }: any) => {
   const handlePrint = () => {
     try {
       window?.print();
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   if (!filteredData[0]?.fields?.website) {

@@ -36,8 +36,6 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
     activeTab = "reviews";
   }
 
-  console.log(filteredData[0].fields.bookingUrl);
-
   return (
     <Tabs
       color="black"

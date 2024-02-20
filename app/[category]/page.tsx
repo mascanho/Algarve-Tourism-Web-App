@@ -58,9 +58,7 @@ async function Page(props: any) {
       return <CategoryCard category={shuffledCategory} />;
     }
     // If the route does not match Contentful categories then render the a warning
-    console.log("not matched");
   } catch (error) {
-    console.log(error, " Error fetching data from Contentful");
     redirect("/404");
   }
 }

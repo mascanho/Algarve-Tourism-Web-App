@@ -81,7 +81,6 @@ const beachesToVisit = [
 ];
 
 const randomCats = Math.floor(Math.random() * contentCatArr.length - 1);
-console.log(randomCats, "from the cats");
 
 async function page() {
   const categoriesContentful = await getContentfulData(

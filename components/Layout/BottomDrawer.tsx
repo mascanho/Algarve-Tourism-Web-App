@@ -26,7 +26,6 @@ function BottomDrawer({ favouritesLength }: any) {
   const favouritesArray = JSON.parse(favouritesFromLocalStorage) || [];
 
   const removeFavouriteGlobal = (id: any) => {
-    console.log(id);
     // Remove the favorite from the local state
     removeFavourite(id);
     const updatedFavourites = favourites.filter((fav: any) => fav.id === id);
