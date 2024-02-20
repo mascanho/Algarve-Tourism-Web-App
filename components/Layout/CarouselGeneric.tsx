@@ -112,7 +112,7 @@ function GenericCarousel({
   ));
 
   return (
-    <section className="sm:mb-20 sm:pb-6 sm:mt-20 mb-10">
+    <section className="sm:mb-20 sm:pb-6 sm:mt-20 mt-14 mb-10">
       <div>
         <h2 className="mx-auto text-left w-11/12 text-3xl sm:text-5xl text-black font-semibold sm:pb-6 sm:mt-20 max-w-7xl">
           {title}
