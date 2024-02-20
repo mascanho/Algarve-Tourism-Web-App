@@ -46,24 +46,24 @@ const Selection = () => {
   };
 
   return (
-    <section className="w-full z-20 inline text-center sm:hidden overflow-x-clip fixed border top-[39px]  bg-white h-18 pt-1 ">
+    <section className="w-full z-20 inline text-center sm:hidden overflow-x-clip fixed border top-[39px]  bg-white h-36 pt-1 ">
       {pathname === "/" ? null : (
         <>
-          <section className="selection overflow-hidden flex w-full shadow-lg border-b h-14 items-center ">
+          <section className="selection flex w-full shadow-lg bg-white border-b h-14 items-center ">
             <Carousel
               ref={carouselRef} // Assign the ref to the Carousel component
               dragFree
               nextControlIcon={<BiChevronRight />}
               previousControlIcon={<BiChevronLeft />}
               align={"start"}
-              className="w-full overflow-hidden mx-auto flex flex-nowrap"
+              className="w-full h-16 items-center  mx-auto flex flex-nowrap"
               slideSize={"5%"}
               controlSize={14}
               loop
             >
               {catArr.map((cat) => (
                 <Carousel.Slide
-                  className={`px-2 text-xs mr-2 text-right h-auto w-full`}
+                  className={`px-2 text-xs mr-2 text-right h-14 flex items-center w-full`}
                   key={cat.name}
                   onClick={() => handleClick(cat)}
                 >
@@ -81,7 +81,7 @@ const Selection = () => {
                       <span
                         className={`ml-1 ${
                           pathname?.includes(cat.route)
-                            ? "text-key underline underline-key underline-offset-3 decoration-2"
+                            ? "text-key underline underline-key underline-offset-[8px] z-10 decoration-4"
                             : "text-gray-400"
                         }`}
                         id={cat.route} // Assign id to the span element
