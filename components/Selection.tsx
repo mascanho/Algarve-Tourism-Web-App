@@ -81,7 +81,7 @@ const Selection = () => {
                       <span
                         className={`ml-1 ${
                           pathname?.includes(cat.route)
-                            ? "text-key"
+                            ? "text-key underline underline-key underline-offset-2 decoration-2"
                             : "text-gray-400"
                         }`}
                         id={cat.route} // Assign id to the span element

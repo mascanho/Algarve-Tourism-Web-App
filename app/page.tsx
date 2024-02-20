@@ -54,18 +54,18 @@ async function getCategories(catNumber: number, catType: any) {
 const getCategory = cache(getCategories);
 
 export default async function Home(props: any) {
-  const categories = await getCategory(7, ["beaches", "restaurants"]);
+  const categories = await getCategory(5, ["beaches", "restaurants"]);
 
   const catCards = catArr;
 
   // Filter restaurants from all the categories
-  const restaurants = await getCategory(6, "restaurants");
+  const restaurants = await getCategory(5, "restaurants");
 
   // filter beaches from all the PopularCategories
-  const beaches: any = await getCategory(6, "beaches");
+  const beaches: any = await getCategory(5, "beaches");
 
   // filter adventure from all the PopularCategories
-  const adventure = await getCategory(6, "adventure");
+  const adventure = await getCategory(5, "adventure");
 
   // Filter the cities
   const cities = cityArr;
