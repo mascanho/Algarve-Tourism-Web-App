@@ -4,6 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: "https://www.algarvewonders.com",
+      changeFrequency: "weekly",
       priority: 1,
     },
     {
