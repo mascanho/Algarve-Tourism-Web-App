@@ -21,7 +21,6 @@ async function fetchSearchQuery(query: any) {
     });
 
     const data = res.items;
-    console.log(data);
     return data; // Return the data
   } catch (error) {
     console.error("Error fetching data:", error);

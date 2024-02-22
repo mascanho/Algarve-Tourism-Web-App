@@ -5,8 +5,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { MdOutlineChevronRight } from "react-icons/md";
 
 export default function Categorydrawer(filteredData: any, { text }: any) {
-  console.log(filteredData, "From the new stuff");
-
   const [opened, { open, close }] = useDisclosure(false);
 
   const options = {

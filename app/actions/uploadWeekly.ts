@@ -22,8 +22,6 @@ export async function uploadWeekly(formData: FormData) {
     date,
   );
 
-  console.log(normalDateString);
-
   const daysOfWeek = [
     "Sunday",
     "Monday",
@@ -35,8 +33,6 @@ export async function uploadWeekly(formData: FormData) {
   ];
 
   const dayName = daysOfWeek[dayOfweek];
-
-  console.log(formData.get("weekday"), " ------> ", dayName);
 
   try {
     await prisma?.weeklymeal.create({

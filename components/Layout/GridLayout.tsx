@@ -35,7 +35,6 @@ export function LeadGrid({ filteredData }: any) {
           text: "Check out this awesome place in the algarve",
           url: window?.location?.href,
         })
-        .then(() => console.log("Successfully shared."))
         .catch((error) => console.error("Error sharing:", error.message));
     } else {
       window.location.href = shareLink;

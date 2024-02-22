@@ -46,7 +46,7 @@ async function Mealslug({ params }) {
     console.error("Error occurred:", error);
     // Handle the error gracefully, e.g., display an error message
     return (
-      <div className="text-red-500 h-screen">
+      <div className="text-red-500 h-screen pt-20 flex  items-center justify-center">
         An error occurred while processing the request.
       </div>
     );

@@ -9,7 +9,6 @@ function SearchMeal() {
     <form
       action={async (formData: FormData) => {
         const data = await SearchMeals(formData);
-        console.log(data, "from the Form component");
       }}
       className="flex w-full mx-auto justify-center rounded-xl my-4   "
     >
