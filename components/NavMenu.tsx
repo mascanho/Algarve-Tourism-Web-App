@@ -6,7 +6,7 @@ import { cityArr } from "@/Data/Cities";
 import { catArr } from "@/Data/Categories";
 import Link from "next/link";
 import { useDisclosure } from "@mantine/hooks";
-import { Modal, Button } from "@mantine/core";
+import { Modal } from "@mantine/core";
 import SearchDrawerContent from "@/app/search/_components/SearchDrawerContent";
 import { FaHiking, FaSearch, FaUtensils } from "react-icons/fa";
 import { GiBeachBucket, GiHotMeal, GiMeal, GiWoodCabin } from "react-icons/gi";
@@ -70,9 +70,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
           >
             <div className="flex flex-col justify-center items-start">
               <div className="flex items-center">
-                <div className="rounded-md w-8  h-8 bg-key flex items-center mr-2">
-                  <FaSearch className="w-5 m-auto text-lg  h-5 p-1 rounded-full text-white" />
-                </div>
+                <FaSearch className="w-5 m-auto text-lg  h-5 mr-3  rounded-full text-key" />
                 <div className="flex flex-col justify-center">
                   <span className="text-sm font-semibold">Search Places</span>
                   <span className="text-xs text-gray-500">
@@ -88,9 +86,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
               onClick={() => router.push("/meals")}
             >
               <div className="flex items-center">
-                <div className="rounded-md w-8 h-8 bg-key flex items-center mr-2">
-                  <GiHotMeal className="w-5 m-auto text-lg  h-5  rounded-full text-white" />
-                </div>
+                <GiHotMeal className="w-5 text-lg mr-3  h-5  rounded-full text-key" />
                 <div className="flex flex-col justify-center">
                   <span className="text-sm font-semibold">
                     Search Daily Meals

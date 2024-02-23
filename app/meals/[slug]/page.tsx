@@ -18,7 +18,7 @@ async function Mealslug({ params }) {
       year: "numeric",
     });
 
-    const restFromMealDb = await prisma?.Weeklymeal?.findMany({
+    const restFromMealDb = await prisma?.weeklymeal?.findMany({
       where: {
         dayOfWeek: formattedDate,
       },
