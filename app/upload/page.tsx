@@ -1,9 +1,7 @@
 "use client";
 import { useState } from "react";
-import UploadDailyForm from "./_components/UploadDailyForm";
 import UploadWeeklyForm from "./_components/UploadWeeklyForm";
-import { SegmentedControl, Drawer } from "@mantine/core";
-import getCurrentUser from "../libs/getCurrentUser";
+import { Drawer } from "@mantine/core";
 import { useSession } from "next-auth/react";
 import { useLoginModalStore } from "../hooks/useLoginModal";
 import { useDisclosure } from "@mantine/hooks";

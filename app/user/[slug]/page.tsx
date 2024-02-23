@@ -16,10 +16,10 @@ async function Mealslug({ params }) {
   });
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen max-w-7xl mx-auto">
       <div className="pt-16 sm:pt-24 mb-14 sm:mb-10 flex items-center justify-center relative ">
         <Link href="/meals">
-          <IoArrowBackSharp className="text-black my-auto absolute  bottom-1 left-6 text-xl" />
+          <IoArrowBackSharp className="text-black my-auto absolute  bottom-1 left-0 text-xl" />
         </Link>
         <h1 className="text-xl font-semibold m-auto text-center w-full text-black">
           {restFromMealDb[0].business}
