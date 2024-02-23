@@ -221,3 +221,7 @@ input:focus {
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(50%);
 }
+
+.selection .mantine-act32r {
+  top: 19px !important;
+}
