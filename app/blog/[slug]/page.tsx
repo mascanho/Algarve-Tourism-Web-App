@@ -158,10 +158,11 @@ const page = async (props: any) => {
           <div className="w-full max-h-[300px] rounded-md overflow-hidden">
             <Image
               width={900}
-              height={700}
+              height={200}
               src={"https:" + blog[0]?.fields?.image?.fields?.file.url}
               alt={blog[0]?.fields?.title}
-              className="sm:mb-0 object-fill w-full h-full rounded-md"
+              className="sm:mb-0 w-full h-full rounded-md"
+              objectFit="fill"
             />
           </div>
           <section className="hidden">
@@ -176,7 +177,7 @@ const page = async (props: any) => {
                   alt={blog[0]?.fields?.author}
                   width={80}
                   height={80}
-                  objectFit="contain"
+                  objectFit="cover"
                   className="rounded-full w-14 h-14"
                 />
               </div>

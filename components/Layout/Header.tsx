@@ -5,7 +5,7 @@ import { MdCardTravel } from "react-icons/md";
 import { useDisclosure } from "@mantine/hooks";
 import LoginModal from "../modals/Login";
 import DrawerContent from "../modals/DrawerContent";
-import { Modal, Group, Button, Drawer } from "@mantine/core";
+import { Modal } from "@mantine/core";
 import {
   useLoginModalStore,
   useRegisteredModalStore,
@@ -24,7 +24,6 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
 
 const Header = ({ currentUser, weatherData }: any) => {
-  const router = useRouter();
   const [openLogin, setOpenLogin] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
   const favourites = useAddToFavourites();
