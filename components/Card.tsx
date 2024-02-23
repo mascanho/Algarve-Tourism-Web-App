@@ -1,42 +1,17 @@
 "use client";
 import Image from "next/image";
-import { AiFillHeart } from "react-icons/ai";
-import { useRouter } from "next/navigation";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { toast } from "react-hot-toast";
 import { BsBookmarkHeart, BsGlobe } from "react-icons/bs";
-import { BsQrCodeScan } from "react-icons/bs";
 import { BiMap } from "react-icons/bi";
 import Link from "next/link";
 import { BsShareFill } from "react-icons/bs";
-import StarRating from "./Layout/StarRating";
-import { usePathname } from "next/navigation";
-import "aos/dist/aos.css";
-import { useEffect, Suspense } from "react";
+// import "aos/dist/aos.css";
 import { useInView } from "react-intersection-observer";
 import { FaRegHeart, FaStar } from "react-icons/fa";
 import { IoIosStar } from "react-icons/io";
 
-const Card = ({
-  category,
-  title,
-  slug,
-  date,
-  mainImage,
-  city,
-  image,
-  tags,
-  description,
-  type,
-  hiddenGem,
-  rating,
-  embededMap,
-  mapShare,
-  price,
-  shortDescription,
-  id,
-  categories,
-}: any) => {
+const Card = ({ slug, type, mapShare, categories }: any) => {
   const addFav = useAddToFavourites();
   const { ref, inView } = useInView({
     threshold: 0.5,
@@ -80,7 +55,7 @@ const Card = ({
   // handle copying the url to share
   function handleCopyUrl() {
     const url = `https://www.algarvewonders.com/${type}/${slug}`;
-    navigator.clipboard.writeText(url);
+    navigator?.clipboard.writeText(url);
     toast.success("URL copied to clipboard");
   }
 
@@ -193,7 +168,7 @@ const Card = ({
             </div>
           );
         })}
-        <div className=" border border-dashed rounded-md  sm:h-96 md:h-[430px] lg:h-[400px] xl:[]  max-h-[fit] w-full flex flex-wrap flex-col  justify-center items-center shadow-sm">
+        <div className=" border border-dashed rounded-md  sm:h-[350px] md:h-[430px] lg:h-[360px] mt-3 max-h-[fit] w-64 flex flex-wrap flex-col  justify-center items-center shadow-sm">
           <span className="text-xs text-gray-700">We saved a spot for you</span>
           <Link href="/submit">
             <button

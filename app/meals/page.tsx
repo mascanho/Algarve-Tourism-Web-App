@@ -95,11 +95,16 @@ async function MealsPage(params: any) {
 
   let allMeals = await prisma?.Weeklymeal?.findMany({});
 
-  let weekMeals = await prisma?.Weeklymeal?.findMany({});
+  // only return dates that are today or in the future
+  filteredWeek = allMeals.filter((meal: any) => {
+    const mealDate = new Date(meal.dayOfWeek);
+    return mealDate >= today;
+  });
 
   // order the meals in function of their publication date
   const sortedWeekMeals = filteredWeek.sort(
-    (a, b) => new Date(a.dayOfWeek).getTime() - new Date(b.dayOfWeek).getTime(),
+    (a: any, b: any) =>
+      new Date(a.dayOfWeek).getTime() - new Date(b.dayOfWeek).getTime(),
   );
 
   return (
