@@ -1,6 +1,7 @@
 import { IoArrowBackSharp } from "react-icons/io5";
 import WeeklyMealsCard from "../_components/WeeklyMealsCard";
 import Link from "next/link";
+import prisma from "@/app/libs/prismadb";
 
 async function Mealslug({ params }) {
   try {
