@@ -80,7 +80,7 @@ function GenericCarousel({
   categories,
   title,
 }: {
-  categories: any[];
+  categories: any;
   title: string;
 }) {
   const { inView, ref } = useInView({

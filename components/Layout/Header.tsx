@@ -37,7 +37,7 @@ const Header = ({ currentUser, weatherData }: any) => {
   };
   const [showMobileBurger, setShowMobileBurger] = useState(false);
 
-  const [weatherModal, setWeatherModal] = useState(false);
+  // const [weatherModal, setWeatherModal] = useState(false);
 
   const userLogsOut = () => {
     toast.success("Logging you out... bye!");
@@ -53,52 +53,49 @@ const Header = ({ currentUser, weatherData }: any) => {
   }, [favourites]);
 
   const showFavourites = () => {
-    if (weatherModal) {
-      setWeatherModal(false);
-    }
     open();
   };
 
-  const handleYposition = useCallback(() => {
-    const currentScrollPos = window.pageYOffset;
+  // const handleYposition = useCallback(() => {
+  //   const currentScrollPos = window.pageYOffset;
+  //
+  //   setIsScrollingUp(
+  //     currentScrollPos < prevScrollPos || currentScrollPos < 100,
+  //   );
+  //   setPrevScrollPos(currentScrollPos);
+  // }, [prevScrollPos]);
+  //
+  // useEffect(() => {
+  //   window?.addEventListener("scroll", handleYposition);
+  //
+  //   return () => {
+  //     window?.removeEventListener("scroll", handleYposition);
+  //   };
+  // }, [handleYposition]);
 
-    setIsScrollingUp(
-      currentScrollPos < prevScrollPos || currentScrollPos < 100,
-    );
-    setPrevScrollPos(currentScrollPos);
-  }, [prevScrollPos]);
+  // const handleScroll = () => {
+  //   const currentScrollPos = window?.scrollY;
+  //
+  //   if (currentScrollPos > prevScrollPos) {
+  //     // Scrolling down
+  //     setNav(false);
+  //   } else {
+  //     // Scrolling up
+  //     setNav(true);
+  //   }
+  //
+  //   setPrevScrollPos(currentScrollPos);
+  // };
 
-  useEffect(() => {
-    window?.addEventListener("scroll", handleYposition);
-
-    return () => {
-      window?.removeEventListener("scroll", handleYposition);
-    };
-  }, [handleYposition]);
-
-  const handleScroll = () => {
-    const currentScrollPos = window?.scrollY;
-
-    if (currentScrollPos > prevScrollPos) {
-      // Scrolling down
-      setNav(false);
-    } else {
-      // Scrolling up
-      setNav(true);
-    }
-
-    setPrevScrollPos(currentScrollPos);
-  };
-
-  useEffect(() => {
-    window?.addEventListener("scroll", handleScroll);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window?.removeEventListener("scroll", handleScroll);
-    };
-  }, [prevScrollPos]);
-
+  // useEffect(() => {
+  //   window?.addEventListener("scroll", handleScroll);
+  //
+  //   // Cleanup the event listener on component unmount
+  //   return () => {
+  //     window?.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [prevScrollPos]);
+  //
   return (
     <>
       <section>
@@ -112,19 +109,6 @@ const Header = ({ currentUser, weatherData }: any) => {
         ) : (
           ""
         )}{" "}
-        <Modal
-          opened={opened}
-          onClose={close}
-          title={weatherModal ? "Weather" : "Favourites"}
-          centered
-        >
-          {/* Modal content */}
-          {weatherModal ? (
-            <WeatherModal weatherData={weatherData} />
-          ) : (
-            <DrawerContent close={close} />
-          )}
-        </Modal>
       </section>
 
       <nav

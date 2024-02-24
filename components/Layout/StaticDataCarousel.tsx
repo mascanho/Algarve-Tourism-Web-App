@@ -3,7 +3,6 @@
 import { Carousel } from "@mantine/carousel";
 import { useMediaQuery } from "@mantine/hooks";
 import { Button, Paper, Title, useMantineTheme, Text } from "@mantine/core";
-import classes from "./BottomCarousel.module.css";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 
