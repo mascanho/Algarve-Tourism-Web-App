@@ -109,6 +109,16 @@ const Header = ({ currentUser, weatherData }: any) => {
         ) : (
           ""
         )}{" "}
+        <Modal opened={opened} onClose={close} title={"Favourites"} centered>
+          {/* Modal content */}
+          {null ? (
+            {
+              /* <WeatherModal weatherData={weatherData} /> */
+            }
+          ) : (
+            <DrawerContent close={close} />
+          )}
+        </Modal>
       </section>
 
       <nav
