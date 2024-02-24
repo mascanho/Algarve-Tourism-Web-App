@@ -97,28 +97,24 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
         </section>
       </Tabs.Panel>
       <Tabs.Panel value="booking" pt="xs" className="min-h-[400px]">
-        <Suspense fallback={<div className="h-screen">Loading...</div>}>
-          {filteredData?.fields?.booking && (
-            <iframe
-              src={filteredData[0]?.fields?.booking}
-              width="100%"
-              height="1000px"
-              className="border-none mt-10"
-            />
-          )}
+        <iframe
+          src={filteredData[0]?.fields?.booking}
+          width="100%"
+          height="1000px"
+          className="border-none mt-10"
+        />
 
-          {filteredData[0]?.fields?.bookingUrl && (
-            <div className="mt-5">
-              <a
-                href={filteredData[0]?.fields?.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {filteredData[0]?.fields?.bookingUrl}
-              </a>
-            </div>
-          )}
-        </Suspense>
+        {filteredData[0]?.fields?.bookingUrl && (
+          <div className="mt-5">
+            <a
+              href={filteredData[0]?.fields?.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {filteredData[0]?.fields?.bookingUrl}
+            </a>
+          </div>
+        )}
       </Tabs.Panel>
     </Tabs>
   );

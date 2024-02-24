@@ -66,7 +66,7 @@ function RegisteredModal({ currentUser }: any) {
       if (callback?.ok) {
         router.refresh();
         closeRegisteredModal.onClose();
-        window.location.reload();
+        window?.location?.reload();
         toast.success("Howdy, you have been logged in!");
       } else {
         toast.error("Something went wrong");

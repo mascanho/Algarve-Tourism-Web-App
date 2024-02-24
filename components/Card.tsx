@@ -180,7 +180,7 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
           </Link>
         </div>
       </section>
-      <div className="w-fit mx-auto flex justify-center sm:my-14">
+      <div className="w-fit mx-auto flex justify-center sm:mb-14 sm:mt-5">
         <Link
           href={"/beaches"}
           aria-label="View more beaches and other categories"

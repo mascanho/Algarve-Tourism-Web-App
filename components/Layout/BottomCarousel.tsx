@@ -13,7 +13,7 @@ interface CardProps {
   categories: string[];
 }
 
-function Card({ image, title, city, slug, singleName, type }: any) {
+function Card({ image, title, city, slug, type }: any) {
   return (
     <Link href={`/${type}/${slug}`} className="w-full h-full">
       <Paper
@@ -39,7 +39,7 @@ function Card({ image, title, city, slug, singleName, type }: any) {
         </div>
         <div className="sm:flex hidden">
           <Button variant="white" className="bg-white" color="dark">
-            View {singleName}
+            View
           </Button>
         </div>
       </Paper>

@@ -12,10 +12,6 @@ export const metadata: Metadata = {
   },
   description:
     "Discover the best places in the Algarve. Find the hidden gems and enjoy the culture",
-  viewport: {
-    initialScale: 1,
-    maximumScale: 1,
-  },
   robots: {
     index: true,
     follow: true,

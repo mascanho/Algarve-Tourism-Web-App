@@ -40,7 +40,7 @@ function BottomDrawer({ favouritesLength }: any) {
     // UPDATE LOCAL storage
     localStorage.clear();
     localStorage.setItem("favourites", JSON.stringify([]));
-    window.location.reload();
+    window?.location?.reload();
   };
 
   useEffect(() => {

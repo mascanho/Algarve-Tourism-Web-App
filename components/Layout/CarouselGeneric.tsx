@@ -2,41 +2,18 @@
 import Image from "next/image";
 import { Carousel } from "@mantine/carousel";
 import { useMediaQuery } from "@mantine/hooks";
-import {
-  Button,
-  Paper,
-  Title,
-  useMantineTheme,
-  Text,
-  Rating,
-  Badge,
-} from "@mantine/core";
+import { Button, Paper, useMantineTheme, Text } from "@mantine/core";
 import classes from "./BottomCarousel.module.css";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import { PT_Sans } from "next/font/google";
 
-interface CardProps {
-  image: string;
-  category: string;
-  categories: any;
-}
-
 const ptsans = PT_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
-function Card({
-  image,
-  title,
-  city,
-
-  price,
-  slug,
-  singleName,
-  type,
-}: any) {
+function Card({ image, title, city, slug, type }: any) {
   return (
     <>
-      <Link href={`/${type}/${slug}`} className="w-full h-full">
+      <Link href={`/${type}/${slug}`} className="w-full h-full ">
         <Paper
           // shadow="sm"
           p="xl"
@@ -46,7 +23,7 @@ function Card({
             backgroundBlendMode: "multiply",
             backgroundColor: "rgba(0, 0, 0, 0.3)",
           }}
-          className="h-56 sm:h-full w-60 sm:w-full lg:w-72 xl:w-full  sm:max-w-lg flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+          className="h-56 sm:h-full w-60 sm:w-full lg:w-72 xl:w-full  sm:max-w-lg flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in "
         >
           <div className="w-full">
             <div className="flex items-center justify-between w-full">
@@ -67,7 +44,7 @@ function Card({
               className="bg-white sm:inline hidden"
               color="dark"
             >
-              View {singleName}
+              View
             </Button>
           </div>
         </Paper>
