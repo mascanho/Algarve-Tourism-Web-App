@@ -68,7 +68,7 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
               key={cat?.title}
               className="pb-2 group sm:pb-2 mb-5 space-y-3 p-4 sm:space-y-1 text-left transition-all ease-in delay-75 rounded-xl max-w-7xl w-11/12  mx-auto sm:w-full"
             >
-              <div className="relative flex flex-col w-full px-1  h-[200px] sm:h-40 md:h-52 xl:h-44 rounded-t-md ">
+              <div className="relative flex flex-col w-full px-1  h-[200px] sm:h-40 md:h-36 xl:h-44 rounded-t-md ">
                 <Image
                   fill
                   loading="lazy"

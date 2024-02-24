@@ -46,7 +46,7 @@ function Card({
             backgroundBlendMode: "multiply",
             backgroundColor: "rgba(0, 0, 0, 0.3)",
           }}
-          className="h-56 sm:h-full w-60 sm:w-full  sm:max-w-lg flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+          className="h-56 sm:h-full w-60 sm:w-full lg:w-72 xl:w-full  sm:max-w-lg flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
         >
           <div className="w-full">
             <div className="flex items-center justify-between w-full">
@@ -129,7 +129,7 @@ function GenericCarousel({
           <Carousel
             className={`bottomCarousel mt-10 ${ptsans.className}`}
             slideSize={mobile ? "43.333333%" : "21.333333%"}
-            slideGap={mobile ? "md" : "xs"}
+            slideGap={mobile ? "md" : "md"}
             slidesToScroll={mobile ? 1 : 1}
             height={!mobile ? 300 : 230}
             initialSlide={1}

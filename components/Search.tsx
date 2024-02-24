@@ -35,7 +35,7 @@ function Search({ allTypes, placeholderText, categories }: any) {
       <div className="flex items-center">
         <FaSearch
           onClick={open}
-          className="w-full h-full p-6 text-black text-bla mt-7 text-sm"
+          className="w-full h-full p-6 text-black text-bla mt-8 text-sm"
         />
       </div>
     </section>

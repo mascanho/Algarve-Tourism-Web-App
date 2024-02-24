@@ -2,16 +2,7 @@
 
 import { Carousel } from "@mantine/carousel";
 import { useMediaQuery } from "@mantine/hooks";
-import {
-  Button,
-  Paper,
-  Title,
-  useMantineTheme,
-  Text,
-  Rating,
-  Badge,
-} from "@mantine/core";
-import classes from "./BottomCarousel.module.css";
+import { Button, Paper, useMantineTheme, Text } from "@mantine/core";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 
@@ -22,18 +13,7 @@ interface CardProps {
   categories: string[];
 }
 
-function Card({
-  image,
-  title,
-  city,
-  category,
-  description,
-  rating,
-  price,
-  slug,
-  singleName,
-  type,
-}: any) {
+function Card({ image, title, city, slug, singleName, type }: any) {
   return (
     <Link href={`/${type}/${slug}`} className="w-full h-full">
       <Paper
@@ -47,7 +27,7 @@ function Card({
           backgroundBlendMode: "multiply",
           backgroundColor: "rgba(0, 0, 0, 0.3)",
         }}
-        className="h-56 sm:h-full w-56 sm:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+        className="h-56 sm:h-full w-56 sm:w-full lg:w-72 xl:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
       >
         <div className="w-full">
           <div className="flex items-center justify-between w-full">
