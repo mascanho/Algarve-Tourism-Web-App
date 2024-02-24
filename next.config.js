@@ -6,9 +6,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 const withMDX = require("@next/mdx")();
 const nextConfig = {
-  experimental: {
-    ppr: true,
-  },
   images: {
     domains: ["images.ctfassets.net"],
   },
