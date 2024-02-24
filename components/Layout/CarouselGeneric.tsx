@@ -46,7 +46,7 @@ function Card({
             backgroundBlendMode: "multiply",
             backgroundColor: "rgba(0, 0, 0, 0.3)",
           }}
-          className="h-56 sm:h-full w-full  sm:max-w-lg flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+          className="h-56 sm:h-full w-60 sm:w-full  sm:max-w-lg flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
         >
           <div className="w-full">
             <div className="flex items-center justify-between w-full">
