@@ -59,7 +59,7 @@ function Features() {
   const [showEl, setShowEl] = useState(false);
 
   return (
-    <section className="max-w-7xl sm:hidden w-11/12 mx-auto mt-14 mb-16 sm:mb-20 sm:mt-28">
+    <section className="max-w-7xl sm:hidden  w-11/12 mx-auto mt-14 mb-16 sm:mb-20 sm:mt-28">
       <div
         onClick={() => setShowEl(!showEl)} // Toggle the state on click
         className="space-y-4 mb-10 mx-auto text-center animate-fade-in cursor-pointer"
@@ -83,9 +83,9 @@ function Features() {
           >
             <div className="text-5xl text-key">{item.icon}</div>
 
-            <div className="font-semibold text-gray-700">{item.name}</div>
+            <div className="font-semibold text-black">{item.name}</div>
             <div className="w-16 h-[2px] bg-key" />
-            <div className="text-sm text-gray-400 pt-2">{item.description}</div>
+            <div className="text-sm text-black pt-2">{item.description}</div>
           </div>
         ))}
       </div>

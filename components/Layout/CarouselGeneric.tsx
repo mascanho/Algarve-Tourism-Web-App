@@ -83,7 +83,7 @@ function GenericCarousel({
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const slides = items.map((item, index) => (
-    <Carousel.Slide key={item.title}>
+    <Carousel.Slide key={item.title} className="xl:max-w-[400px]">
       <Card {...item} last="last" />
     </Carousel.Slide>
   ));

@@ -139,7 +139,11 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
               <section className="flex justify-between bg-key shadow-md rounded-b-lg w-full py-2 items-center">
                 <div className="flex items-center  w-full px-2 align-middl space-x-3">
                   {/* <BsQrCodeScan className="hover:scale-110 cursor-pointer" /> */}
-                  <a href={mapShare} aria-label={`View on map`} target="_blank">
+                  <a
+                    href={mapShare}
+                    aria-label={`View on map`}
+                    // target="_blank"
+                  >
                     <BiMap className="hover:scale-110 cursor-pointer" />
                   </a>
                   <BsShareFill
@@ -149,7 +153,7 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
                   <a
                     href={`/${cat.fields.type}/${cat?.fields?.slug}`}
                     aria-label={`View on website in new tab`}
-                    target="_blank"
+                    // target="_blank"
                   >
                     <BsGlobe className="text-xs hover:scale-110 cursor-pointer" />
                   </a>
@@ -168,7 +172,7 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
             </div>
           );
         })}
-        <div className=" border border-dashed rounded-md  sm:h-[350px] md:h-[430px] lg:h-[360px] mt-3 max-h-[fit] w-64 flex flex-wrap flex-col  justify-center items-center shadow-sm">
+        <div className=" border border-dashed rounded-md h-[300px] sm:h-[350px] md:w-[220px] md:h-[330px] lg:h-[360px] lg:w-[260px] mt-3 max-h-[fit] w-64 flex flex-wrap flex-col  justify-center items-center shadow-sm">
           <span className="text-xs text-gray-700">We saved a spot for you</span>
           <Link href="/submit">
             <button

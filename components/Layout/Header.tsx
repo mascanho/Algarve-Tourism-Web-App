@@ -29,9 +29,6 @@ const Header = ({ currentUser, weatherData }: any) => {
   const favourites = useAddToFavourites();
   const [favouritesLength, setFavouritesLength] = useState(0);
   const [showMobileSearch, setShowMobileSearch] = useState(false);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [nav, setNav] = useState(true);
-  const [isScrollingUp, setIsScrollingUp] = useState(true);
   const openLoginMenu = () => {
     setOpenLogin(!openLogin);
   };
@@ -56,46 +53,6 @@ const Header = ({ currentUser, weatherData }: any) => {
     open();
   };
 
-  // const handleYposition = useCallback(() => {
-  //   const currentScrollPos = window.pageYOffset;
-  //
-  //   setIsScrollingUp(
-  //     currentScrollPos < prevScrollPos || currentScrollPos < 100,
-  //   );
-  //   setPrevScrollPos(currentScrollPos);
-  // }, [prevScrollPos]);
-  //
-  // useEffect(() => {
-  //   window?.addEventListener("scroll", handleYposition);
-  //
-  //   return () => {
-  //     window?.removeEventListener("scroll", handleYposition);
-  //   };
-  // }, [handleYposition]);
-
-  // const handleScroll = () => {
-  //   const currentScrollPos = window?.scrollY;
-  //
-  //   if (currentScrollPos > prevScrollPos) {
-  //     // Scrolling down
-  //     setNav(false);
-  //   } else {
-  //     // Scrolling up
-  //     setNav(true);
-  //   }
-  //
-  //   setPrevScrollPos(currentScrollPos);
-  // };
-
-  // useEffect(() => {
-  //   window?.addEventListener("scroll", handleScroll);
-  //
-  //   // Cleanup the event listener on component unmount
-  //   return () => {
-  //     window?.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [prevScrollPos]);
-  //
   return (
     <>
       <section>
@@ -211,7 +168,7 @@ const Header = ({ currentUser, weatherData }: any) => {
               onClick={openLoginMenu}
               className="border rounded-full cursor-pointer flex flex-wrap items-center py-1 px-1 border-gray-500"
             >
-              <RxHamburgerMenu className="font-semibold pl-1" />
+              <RxHamburgerMenu className="font-semibold my-1 mx-2" />
               {currentUser?.image === "" ? (
                 <span className="rounded-full text-white bg-key h-6 text-sm w-6 ml-1 capitalize flex items-center justify-center">
                   {currentUser?.initials}
