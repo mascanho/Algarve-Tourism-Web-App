@@ -26,10 +26,10 @@ function Card({ image, url, city, type, route }: any) {
           backgroundBlendMode: "multiply",
           backgroundColor: "rgba(0, 0, 0, 0.5)",
         }}
-        className="h-56 sm:h-full w-full xl:w-full  flex flex-col lg:w-72 justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+        className="h-56 sm:h-full w-[280px] md:w-[385px] max-w-[400px]  flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
       >
-        <div className="w-full group">
-          <div className="flex items-center justify-between w-full">
+        <div className="group">
+          <div className="flex items-center justify-between w-fit">
             {city && (
               <Text
                 className="text-white/50  uppercase font-semibold m-0"
@@ -98,7 +98,7 @@ function StaticDataCarousel({
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const slides = items.map((item) => (
-    <Carousel.Slide key={item.title} className="xl:max-w-[400px]">
+    <Carousel.Slide key={item.title} className="max-w-[400px]">
       <Card {...item} />
     </Carousel.Slide>
   ));

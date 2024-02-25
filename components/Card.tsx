@@ -172,7 +172,7 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
             </div>
           );
         })}
-        <div className=" border border-dashed rounded-md  sm:h-[350px] md:h-[430px] lg:h-[360px] mt-3 max-h-[fit] w-64 flex flex-wrap flex-col  justify-center items-center shadow-sm">
+        <div className=" border border-dashed rounded-md h-[300px] sm:h-[350px] md:w-[220px] md:h-[330px] lg:h-[360px] lg:w-[260px] mt-3 max-h-[fit] w-64 flex flex-wrap flex-col  justify-center items-center shadow-sm">
           <span className="text-xs text-gray-700">We saved a spot for you</span>
           <Link href="/submit">
             <button
