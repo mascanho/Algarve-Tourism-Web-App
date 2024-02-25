@@ -26,7 +26,7 @@ function Card({ image, url, city, type, route }: any) {
           backgroundBlendMode: "multiply",
           backgroundColor: "rgba(0, 0, 0, 0.5)",
         }}
-        className="h-56 sm:h-full w-[280px] md:w-[385px] max-w-[400px]  flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+        className="h-56 sm:h-full w-[250px] sm:w-[280px] md:w-[385px] max-w-[400px]  flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
       >
         <div className="group">
           <div className="flex items-center justify-between w-fit">
@@ -98,7 +98,7 @@ function StaticDataCarousel({
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const slides = items.map((item) => (
-    <Carousel.Slide key={item.title} className="max-w-[400px]">
+    <Carousel.Slide key={item.title}>
       <Card {...item} />
     </Carousel.Slide>
   ));
@@ -117,9 +117,9 @@ function StaticDataCarousel({
       >
         {inView && (
           <Carousel
-            // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
+            // slideSize={{ base: "10%", sm: "10%", md: "33.333333%" }}
             className="bottomCarousel mt-10"
-            slideSize={mobile ? "63.333333%" : "21.333333%"}
+            slideSize={mobile ? "63.333333%" : "16.333333%"}
             slideGap={"md"}
             // align="start"
             slidesToScroll={mobile ? 1 : 1}
