@@ -1,10 +1,7 @@
-import Image from "next/image";
 import { cache, Suspense } from "react";
 import { quotes } from "@/Data/Quotes";
 import { createClient } from "contentful";
 import { cityArr } from "@/Data/Cities";
-import { carRentals } from "@/Data/CarRentals";
-import Link from "next/link";
 import { catArr } from "@/Data/Categories";
 import dynamic from "next/dynamic";
 
@@ -12,7 +9,7 @@ const Card = dynamic(() => import("@/components/Card"));
 const Hero = dynamic(() => import("@/components/Hero"));
 const Feedback = dynamic(() => import("@/components/Feedback"));
 const RandomBanner = dynamic(() => import("@/components/Layout/RandomBanner"));
-const Acordion = dynamic(() => import("@/components/Acordion"));
+// const Acordion = dynamic(() => import("@/components/Acordion"));
 const BottomCarousel = dynamic(
   () => import("@/components/Layout/BottomCarousel"),
 );
