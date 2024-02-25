@@ -150,7 +150,7 @@ const page = async (props: any) => {
 
   return (
     <section className="max-w-7xl w-11/12 sm:w-9/12 sm:flex mx-auto mt-4 sm:mt-10 relative">
-      <div className="scroll-watcher w-full bg-gradient-to-r from-key via-green-500 to-red-500 fixed sm:top-[50px] top-[40px] left-0 z-10 h-1 sm:h-1" />
+      <div className="scroll-watcher w-full bg-gradient-to-r from-key via-green-900 to-red-800 fixed sm:top-[50px] top-[40px] left-0 z-10 h-1 sm:h-1" />
       <div className="sm:w-3/4 w-full flex-1 font-semibold">
         <section className="mb-5 sm:mb-3 sm:pt-3 line-clamp-1 overflow-hidden text-xs">
           <BreadCrumbs />
