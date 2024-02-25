@@ -120,7 +120,7 @@ function BottomCarousel({
           <Carousel
             // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
             className="bottomCarousel mt-10 w-full h-fit"
-            slideSize={mobile ? "43.333333%" : "23.333333%"}
+            slideSize={mobile ? "43.333333%" : "26.333333%"}
             slideGap={"md"}
             // align="start"
             slidesToScroll={mobile ? 1 : 1}
