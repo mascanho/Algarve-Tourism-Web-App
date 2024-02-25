@@ -26,7 +26,7 @@ function Card({ image, url, city, type, route }: any) {
           backgroundBlendMode: "multiply",
           backgroundColor: "rgba(0, 0, 0, 0.5)",
         }}
-        className="h-56 sm:h-full w-56 sm:w-[280px] md:w-[385px] max-w-[400px]  flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+        className="h-56 sm:h-full w-56 sm:w-56 md:w-[385px] max-w-[400px]  flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
       >
         <div className="group">
           <div className="flex items-center justify-between w-fit">
