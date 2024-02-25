@@ -149,7 +149,8 @@ const page = async (props: any) => {
   const post = documentToReactComponents(blog[0]?.fields?.body, options);
 
   return (
-    <section className="max-w-7xl w-11/12 sm:w-9/12 sm:flex mx-auto mt-4 sm:mt-10">
+    <section className="max-w-7xl w-11/12 sm:w-9/12 sm:flex mx-auto mt-4 sm:mt-10 relative">
+      <div className="scroll-watcher w-full bg-gradient-to-r from-key via-green-900 to-red-800 fixed sm:top-[50px] top-[40px] left-0 z-10 h-1 sm:h-1" />
       <div className="sm:w-3/4 w-full flex-1 font-semibold">
         <section className="mb-5 sm:mb-3 sm:pt-3 line-clamp-1 overflow-hidden text-xs">
           <BreadCrumbs />
@@ -158,10 +159,11 @@ const page = async (props: any) => {
           <div className="w-full max-h-[300px] rounded-md overflow-hidden">
             <Image
               width={900}
-              height={700}
+              height={200}
               src={"https:" + blog[0]?.fields?.image?.fields?.file.url}
               alt={blog[0]?.fields?.title}
-              className="sm:mb-0 object-fill w-full h-full rounded-md"
+              className="sm:mb-0 w-full h-full rounded-md"
+              objectFit="fill"
             />
           </div>
           <section className="hidden">
@@ -176,7 +178,7 @@ const page = async (props: any) => {
                   alt={blog[0]?.fields?.author}
                   width={80}
                   height={80}
-                  objectFit="contain"
+                  objectFit="cover"
                   className="rounded-full w-14 h-14"
                 />
               </div>
@@ -184,12 +186,12 @@ const page = async (props: any) => {
                 <span className="text-black text-xs">
                   {blog[0]?.fields?.author}
                 </span>
-                <span className="text-xs font-semibold">
+                <span className="text-xs font-thin">
                   {blog[0]?.fields?.role}
                 </span>
               </div>
             </div>
-            <div className="flex flex-col space-y-1 w-full text-right">
+            <div className="flex flex-col font-thin space-y-1 w-full text-right">
               <span className="text-xs w-full">
                 {new Intl.DateTimeFormat("en-US", {
                   day: "numeric",

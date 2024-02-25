@@ -221,3 +221,22 @@ input:focus {
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(50%);
 }
+
+.selection .mantine-act32r {
+  top: 19px !important;
+}
+
+/* Blog Progress bar */
+
+.scroll-watcher {
+  scale: 0 1;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+  transform-origin: left;
+}
+
+@keyframes scroll-watcher {
+  to {
+    scale: 1 1;
+  }
+}

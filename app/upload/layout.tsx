@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "Upload Your Daily Dishes | Algarve Wonders",
+    default: "Upload Your Daily Dishes",
     template: "%s | Algarve Wonders",
   },
   description:

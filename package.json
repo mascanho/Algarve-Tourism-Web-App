@@ -50,7 +50,7 @@
     "handlebars": "^4.7.8",
     "jsdom": "^23.0.1",
     "lucide-react": "^0.321.0",
-    "next": "^14.1.0",
+    "next": "^14.1.1-canary.71",
     "next-absolute-url": "^1.2.2",
     "next-auth": "^4.24.5",
     "nodemailer": "^6.9.7",
@@ -80,6 +80,7 @@
     "zustand": "^4.4.6"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "@types/bcrypt": "^5.0.2",
     "autoprefixer": "^10.4.16",
     "eslint-config-prettier": "^9.1.0",

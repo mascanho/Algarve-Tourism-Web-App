@@ -58,7 +58,10 @@ export default async function RootLayout({
   const currentUser = await getCurrentUser();
 
   return (
-    <html lang="en" className={`${ptsans.className} overflow-x-hidden `}>
+    <html
+      lang="en"
+      className={`${ptsans.className} overflow-x-hidden bg-darkwhite `}
+    >
       <NextAuthProvider>
         <body className="bg-darkwhite w-screen min-w-[350px]">
           <ClientOnly>

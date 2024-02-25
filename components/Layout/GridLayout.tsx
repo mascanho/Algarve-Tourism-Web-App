@@ -23,8 +23,8 @@ export function LeadGrid({ filteredData }: any) {
   const pathname = usePathname();
 
   const handleShare = () => {
-    const shareURL = `https://www.algarvewonders.com${pathname}`;
-    const shareText = "Check out this awesome content!"; // Replace with your content
+    // const shareURL = `https://www.algarvewonders.com${pathname}`;
+    // const shareText = "Check out this awesome content!"; // Replace with your content
 
     const shareLink = window.location.href;
 
@@ -41,7 +41,7 @@ export function LeadGrid({ filteredData }: any) {
     }
   };
   const theme = useMantineTheme();
-  const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - ${theme.spacing.md} / 2)`;
+  // const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - ${theme.spacing.md} / 2)`;
 
   const addFavourites = useAddToFavourites();
 
@@ -88,7 +88,7 @@ export function LeadGrid({ filteredData }: any) {
             className="absolute top-2  right-2 z-10 sm:hidden flex items-center justify-center pl-[6px] p-[6px] text-xs shadow-sm  bg-white rounded-full w-7 h-7 font-thin p-1 pl-[2px]"
           />
           <Carousel
-            className="sm:hidden h-full w-full max-h-64 rounded-xl relative overflow-hidden car"
+            className="sm:hidden transition-all delay-100 ease-in h-full w-full max-h-64 rounded-xl relative overflow-hidden car"
             loop
             slideSize="100%"
             withControls={false}

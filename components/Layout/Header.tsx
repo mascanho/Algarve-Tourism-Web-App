@@ -5,7 +5,7 @@ import { MdCardTravel } from "react-icons/md";
 import { useDisclosure } from "@mantine/hooks";
 import LoginModal from "../modals/Login";
 import DrawerContent from "../modals/DrawerContent";
-import { Modal, Group, Button, Drawer } from "@mantine/core";
+import { Modal } from "@mantine/core";
 import {
   useLoginModalStore,
   useRegisteredModalStore,
@@ -24,7 +24,6 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
 
 const Header = ({ currentUser, weatherData }: any) => {
-  const router = useRouter();
   const [openLogin, setOpenLogin] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
   const favourites = useAddToFavourites();
@@ -38,7 +37,7 @@ const Header = ({ currentUser, weatherData }: any) => {
   };
   const [showMobileBurger, setShowMobileBurger] = useState(false);
 
-  const [weatherModal, setWeatherModal] = useState(false);
+  // const [weatherModal, setWeatherModal] = useState(false);
 
   const userLogsOut = () => {
     toast.success("Logging you out... bye!");
@@ -54,52 +53,49 @@ const Header = ({ currentUser, weatherData }: any) => {
   }, [favourites]);
 
   const showFavourites = () => {
-    if (weatherModal) {
-      setWeatherModal(false);
-    }
     open();
   };
 
-  const handleYposition = useCallback(() => {
-    const currentScrollPos = window.pageYOffset;
+  // const handleYposition = useCallback(() => {
+  //   const currentScrollPos = window.pageYOffset;
+  //
+  //   setIsScrollingUp(
+  //     currentScrollPos < prevScrollPos || currentScrollPos < 100,
+  //   );
+  //   setPrevScrollPos(currentScrollPos);
+  // }, [prevScrollPos]);
+  //
+  // useEffect(() => {
+  //   window?.addEventListener("scroll", handleYposition);
+  //
+  //   return () => {
+  //     window?.removeEventListener("scroll", handleYposition);
+  //   };
+  // }, [handleYposition]);
 
-    setIsScrollingUp(
-      currentScrollPos < prevScrollPos || currentScrollPos < 100,
-    );
-    setPrevScrollPos(currentScrollPos);
-  }, [prevScrollPos]);
+  // const handleScroll = () => {
+  //   const currentScrollPos = window?.scrollY;
+  //
+  //   if (currentScrollPos > prevScrollPos) {
+  //     // Scrolling down
+  //     setNav(false);
+  //   } else {
+  //     // Scrolling up
+  //     setNav(true);
+  //   }
+  //
+  //   setPrevScrollPos(currentScrollPos);
+  // };
 
-  useEffect(() => {
-    window?.addEventListener("scroll", handleYposition);
-
-    return () => {
-      window?.removeEventListener("scroll", handleYposition);
-    };
-  }, [handleYposition]);
-
-  const handleScroll = () => {
-    const currentScrollPos = window?.scrollY;
-
-    if (currentScrollPos > prevScrollPos) {
-      // Scrolling down
-      setNav(false);
-    } else {
-      // Scrolling up
-      setNav(true);
-    }
-
-    setPrevScrollPos(currentScrollPos);
-  };
-
-  useEffect(() => {
-    window?.addEventListener("scroll", handleScroll);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window?.removeEventListener("scroll", handleScroll);
-    };
-  }, [prevScrollPos]);
-
+  // useEffect(() => {
+  //   window?.addEventListener("scroll", handleScroll);
+  //
+  //   // Cleanup the event listener on component unmount
+  //   return () => {
+  //     window?.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [prevScrollPos]);
+  //
   return (
     <>
       <section>
@@ -113,15 +109,12 @@ const Header = ({ currentUser, weatherData }: any) => {
         ) : (
           ""
         )}{" "}
-        <Modal
-          opened={opened}
-          onClose={close}
-          title={weatherModal ? "Weather" : "Favourites"}
-          centered
-        >
+        <Modal opened={opened} onClose={close} title={"Favourites"} centered>
           {/* Modal content */}
-          {weatherModal ? (
-            <WeatherModal weatherData={weatherData} />
+          {null ? (
+            {
+              /* <WeatherModal weatherData={weatherData} /> */
+            }
           ) : (
             <DrawerContent close={close} />
           )}
@@ -208,7 +201,9 @@ const Header = ({ currentUser, weatherData }: any) => {
               onClick={showFavourites}
             >
               <MdCardTravel className="cursor-pointer relative  sm:text-2xl" />
-              <span className="h-3 w-3 text-[8px] bg-key absolute -right-1 -top-1  text-white rounded-full flex flex-wrap justify-center items-center text-center">
+              <span
+                className={`h-3 w-3 text-[8px] bg-key absolute -right-1 -top-1  text-white rounded-full flex flex-wrap justify-center ${favouritesLength > 0 && "animate-bounce animate-once"} items-center text-center ${favouritesLength === 0 ? "hidden" : "flex"} `}
+              >
                 {favouritesLength}
               </span>
             </div>
