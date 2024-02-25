@@ -139,7 +139,11 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
               <section className="flex justify-between bg-key shadow-md rounded-b-lg w-full py-2 items-center">
                 <div className="flex items-center  w-full px-2 align-middl space-x-3">
                   {/* <BsQrCodeScan className="hover:scale-110 cursor-pointer" /> */}
-                  <a href={mapShare} aria-label={`View on map`} target="_blank">
+                  <a
+                    href={mapShare}
+                    aria-label={`View on map`}
+                    // target="_blank"
+                  >
                     <BiMap className="hover:scale-110 cursor-pointer" />
                   </a>
                   <BsShareFill
@@ -149,7 +153,7 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
                   <a
                     href={`/${cat.fields.type}/${cat?.fields?.slug}`}
                     aria-label={`View on website in new tab`}
-                    target="_blank"
+                    // target="_blank"
                   >
                     <BsGlobe className="text-xs hover:scale-110 cursor-pointer" />
                   </a>
