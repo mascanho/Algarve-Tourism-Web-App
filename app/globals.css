@@ -233,10 +233,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   animation: scroll-watcher linear;
   animation-timeline: scroll();
   transform-origin: left;
+  -webkit-transform-origin: left;
+  -webkit-transform: scale(0, 1);
 }
 
 @keyframes scroll-watcher {
   to {
     scale: 1 1;
+    -webkit-transform: scale(1, 1);
   }
 }
