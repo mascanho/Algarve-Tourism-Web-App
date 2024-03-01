@@ -18,7 +18,7 @@ const ptsans = PT_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Algarve Wonders - The Best Hidden Gems in The Algarve",
+    default: "The Best Hidden Gems in The Algarve",
     template: "%s | Algarve Wonders",
   },
   description:

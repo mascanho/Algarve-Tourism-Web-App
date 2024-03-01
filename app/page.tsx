@@ -27,7 +27,7 @@ const Features = dynamic(() => import("@/components/Features"));
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
-  description: "The Best Place To Find The Hidden Gems In Algarve",
+  description: "The Best Place To Find The Hidden Gems In the Algarve",
   icons: {
     icon: "/images/icon.png",
     href: "/images/icon.png",

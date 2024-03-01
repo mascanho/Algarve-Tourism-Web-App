@@ -77,7 +77,7 @@ export async function generateMetadata({ params }: any) {
   }
 }
 
-export default async function Home(props: any, req: any) {
+export default async function Home(props: any) {
   const { category, slug } = props?.params;
 
   async function getAllCategories() {
@@ -374,7 +374,7 @@ export default async function Home(props: any, req: any) {
   );
 }
 
-export async function generateStaticParams({ params }: any) {
+export async function generateStaticParams() {
   const client: any = createClient({
     space: process?.env?.CONTENTFUL_SPACE_ID!,
     accessToken: process?.env?.CONTENTFUL_ACCESS_TOKEN!,

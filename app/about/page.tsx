@@ -1,5 +1,4 @@
 import React from "react";
-import { createClient } from "contentful";
 import Link from "next/link";
 import { Metadata } from "next";
 import { IoArrowBack } from "react-icons/io5";
@@ -7,22 +6,9 @@ import { getContentfulData } from "@/libs/getContentfulData";
 import BlogCarousel from "../blog/_components/Carousel";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Us | Algarve Wonders",
   description: "Discover the latest news and blog posts about the Algarve",
 };
-
-// Get all blogs from contentful
-async function getBlogs() {
-  const client: any = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID3!,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN3!,
-  });
-  const res = await client.getEntries({
-    content_type: "blog",
-  });
-
-  return await res.items;
-}
 
 // generate random categories on load
 const contentCatArr = [
@@ -86,12 +72,6 @@ async function page() {
     contentCatArr[randomCats],
     5,
   );
-
-  // Generate random items
-  const randomItems = (array: any) => {
-    const randomIndex = Math.floor(Math.random() * (array.length - 1)) + 1;
-    return array[randomIndex];
-  };
 
   return (
     <section className=" sm:max-w-7xl sm:w-full mx-auto sm:h-full sm:px-4 pt-10 sm:pt-20  ">
