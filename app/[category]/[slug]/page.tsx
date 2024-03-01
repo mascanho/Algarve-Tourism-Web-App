@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { LeadGrid } from "@/components/Layout/GridLayout";
 import { FaDog, FaRegAddressBook, FaRegGem } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
@@ -22,18 +21,18 @@ import MobileBottomCategoryBanner from "./_components/MobileBottomCategoryBanner
 import MobileButtons from "./_components/MobileButtons";
 import { RiMoneyEuroCircleLine } from "react-icons/ri";
 import dynamic from "next/dynamic";
-import { BiCar, BiFoodMenu, BiHealth } from "react-icons/bi";
+import { BiHealth } from "react-icons/bi";
 import DailyMenusDrawer from "./_components/DailyMenusDrawer";
 import { GrOverview } from "react-icons/gr";
 import { IoIosLeaf } from "react-icons/io";
 import BookingDrawer from "./_components/BookingDrawer";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 const Reviews = dynamic(() => import("../../../components/Layout/Reviews"), {});
 
 // TODO: Check this stuff
 
-export async function generateMetadata({ params, searchParams }: any) {
+export async function generateMetadata({ params }: any) {
   const getDATA = async () => {
     const client = createClient({
       space: process?.env?.CONTENTFUL_SPACE_ID!,

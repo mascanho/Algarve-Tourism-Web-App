@@ -50,7 +50,7 @@ async function getCategories(catNumber: number, catType: any) {
 
 const getCategory = cache(getCategories);
 
-export default async function Home(props: any) {
+export default async function Home() {
   const categories = await getCategory(7, ["beaches", "restaurants"]);
 
   const catCards = catArr;

@@ -1,6 +1,5 @@
 import React from "react";
 import { createClient } from "contentful";
-import { catArr } from "@/Data/Categories";
 import Link from "next/link";
 import { Metadata } from "next";
 import { IoArrowBack } from "react-icons/io5";
