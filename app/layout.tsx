@@ -1,7 +1,7 @@
 import "@mantine/carousel/esm/index";
 import Header from "@/components/Layout/Header";
 import "./globals.css";
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import ClientOnly from "@/components/ClientOnly";
 import "react-toastify/dist/ReactToastify.css";
 import getCurrentUser from "./libs/getCurrentUser";
