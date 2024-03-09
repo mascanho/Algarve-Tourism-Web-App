@@ -122,7 +122,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
               {trigger ? <IoChevronDownSharp className="pl-1" /> : null}
             </button>
           </Menu.Target>
-          <Menu.Dropdown className="flex w-fit border-key/50 border-3">
+          <Menu.Dropdown className="flex w-fit border-key/50 border-3 mt-1">
             <div className="grid grid-cols-3 ">
               <div className="">
                 {cityArr.slice(0, 4).map((item) => (
