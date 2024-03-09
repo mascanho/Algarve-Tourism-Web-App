@@ -32,7 +32,7 @@ export const catArr = [
     icon: "",
     route: "/culture",
     image:
-      "https://www.walkalgarve.com/wp-content/uploads/2016/10/SandsSculpture-1.jpg",
+      "https://www.algarvehousing.net/wp-content/uploads/2016/05/traditional-folklore.jpg",
     type: "category",
   },
   {
