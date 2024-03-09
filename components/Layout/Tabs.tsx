@@ -97,12 +97,14 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
         </section>
       </Tabs.Panel>
       <Tabs.Panel value="booking" pt="xs" className="min-h-[400px]">
-        <iframe
-          src={filteredData[0]?.fields?.booking}
-          width="100%"
-          height="1000px"
-          className="border-none mt-10"
-        />
+        {filteredData[0]?.fields?.booking && (
+          <iframe
+            src={filteredData[0]?.fields?.booking}
+            width="100%"
+            height="1000px"
+            className="border-none mt-10"
+          />
+        )}
 
         {filteredData[0]?.fields?.bookingUrl && (
           <div className="mt-5">
@@ -110,8 +112,9 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
               href={filteredData[0]?.fields?.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
+              className="px-3 py-2 border border-black rounded-xl hover:bg-black hover:text-white transition-all duration-300"
             >
-              {filteredData[0]?.fields?.bookingUrl}
+              Book now
             </a>
           </div>
         )}
