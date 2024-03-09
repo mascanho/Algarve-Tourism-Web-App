@@ -17,6 +17,7 @@ import {
   MdSportsHandball,
 } from "react-icons/md";
 import { PiMountainsFill } from "react-icons/pi";
+import { More } from "@/Data/More";
 
 export function NavMenu({ title, trigger, url, search }: any | null) {
   const router = useRouter();
@@ -219,6 +220,40 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
                     key={item.id}
                     className="flex justify-center w-full items-center text-black "
                   >
+                    {/* Icon and text container */}
+                    <div className="flex items-center">
+                      {/* Render the icon component for each category */}
+                      {categoryIcons[item.name]}{" "}
+                      {/* Access icon based on category name */}
+                      <span className="ml-2">{item.name}</span>
+                    </div>
+                  </Menu.Item>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </Menu.Dropdown>
+      </Menu>
+    );
+  }
+
+  if (title === "More") {
+    return (
+      <Menu trigger={trigger} shadow="md" width={"fit"}>
+        <Menu.Target>
+          <button
+            className={`text-black flex items-center mr-1 rounded-md transition duration-300 ease-in-out`}
+          >
+            {title && trigger ? title : null}{" "}
+            {trigger ? <IoChevronDownSharp className="pl-1" /> : null}
+          </button>
+        </Menu.Target>
+        <Menu.Dropdown className="flex w-fit border-key/50 border-3">
+          <div className="grid grid-cols-1 w-full gap-x-2 ">
+            <div className="w-full">
+              {More.slice(0, 5).map((item) => (
+                <Link key={item.id} href={`${item?.route}`}>
+                  <Menu.Item className="w-full flex items-center">
                     {/* Icon and text container */}
                     <div className="flex items-center">
                       {/* Render the icon component for each category */}

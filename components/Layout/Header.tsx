@@ -142,6 +142,12 @@ const Header = ({ currentUser, weatherData }: any) => {
             <NavMenu
               expandedMenu={false}
               trigger={"hover"}
+              title={"More"}
+              cities={true}
+            />
+            <NavMenu
+              expandedMenu={false}
+              trigger={"hover"}
               title={"Blog"}
               cities={true}
               url={"/blog"}
