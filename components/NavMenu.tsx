@@ -10,7 +10,12 @@ import { Modal } from "@mantine/core";
 import SearchDrawerContent from "@/app/search/_components/SearchDrawerContent";
 import { FaHiking, FaSearch, FaUtensils } from "react-icons/fa";
 import { GiBeachBucket, GiHotMeal, GiMeal, GiWoodCabin } from "react-icons/gi";
-import { MdBusinessCenter, MdEvent, MdSportsHandball } from "react-icons/md";
+import {
+  MdBusinessCenter,
+  MdEvent,
+  MdOutlineMuseum,
+  MdSportsHandball,
+} from "react-icons/md";
 import { PiMountainsFill } from "react-icons/pi";
 
 export function NavMenu({ title, trigger, url, search }: any | null) {
@@ -21,6 +26,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
   const categoryIcons: any = {
     Beaches: <GiBeachBucket />,
     Restaurants: <FaUtensils />,
+    Culture: <MdOutlineMuseum />,
     Events: <MdEvent />,
     Adventure: <PiMountainsFill />,
     Business: <MdBusinessCenter />,
@@ -192,7 +198,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
         <Menu.Dropdown className="flex w-fit border-key/50 border-3">
           <div className="grid grid-cols-2 w-full gap-x-2 ">
             <div className="w-full">
-              {catArr.slice(0, 4).map((item) => (
+              {catArr.slice(0, 5).map((item) => (
                 <Link key={item.id} href={`${item?.route}`}>
                   <Menu.Item className="w-full flex items-center">
                     {/* Icon and text container */}
@@ -207,7 +213,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
               ))}
             </div>
             <div className="flex flex-col w-full ">
-              {catArr.slice(4, catArr.length).map((item) => (
+              {catArr.slice(5, catArr.length).map((item) => (
                 <Link key={item.id} href={`${item?.route}`}>
                   <Menu.Item
                     key={item.id}

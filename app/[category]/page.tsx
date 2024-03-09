@@ -57,6 +57,7 @@ async function Page(props: any) {
       const shuffledCategory = category?.sort(() => 0.5 - Math.random());
       return <CategoryCard category={shuffledCategory} />;
     }
+
     // If the route does not match Contentful categories then render the a warning
   } catch (error) {
     redirect("/404");

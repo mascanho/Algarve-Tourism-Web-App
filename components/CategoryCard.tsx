@@ -54,6 +54,15 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   //   window?.scrollTo(0, 0);
   // }, [pathname]);
 
+  // Handle when category is empty []
+  if (category.length === 0) {
+    return (
+      <p className="w-full min-h-screen m-auto flex justify-center items-center">
+        Coming Soon
+      </p>
+    );
+  }
+
   return (
     <>
       <div className="overflow-hidden mt-20 sm:mt-0 w-full min-h-screen">

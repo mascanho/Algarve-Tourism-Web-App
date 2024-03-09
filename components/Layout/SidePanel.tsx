@@ -4,7 +4,12 @@ import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { GiBeachBucket, GiWoodCabin } from "react-icons/gi";
 import { FaHiking, FaUtensils } from "react-icons/fa";
-import { MdBusinessCenter, MdEvent, MdSportsHandball } from "react-icons/md";
+import {
+  MdBusinessCenter,
+  MdEvent,
+  MdOutlineMuseum,
+  MdSportsHandball,
+} from "react-icons/md";
 import { PiMountainsFill } from "react-icons/pi";
 import { catArr } from "@/Data/Categories";
 
@@ -15,6 +20,7 @@ export default function SidePanel() {
   const categoryIcons: any = {
     Beaches: <GiBeachBucket />,
     Restaurants: <FaUtensils />,
+    Culture: <MdOutlineMuseum />,
     Events: <MdEvent />,
     Adventure: <PiMountainsFill />,
     Business: <MdBusinessCenter />,
@@ -24,8 +30,8 @@ export default function SidePanel() {
   };
 
   return (
-    <div className="hidden sm:block bg-white mb-40 h-[460px] sticky top-24 shadow-md hiddenRow border border-key rounded-xl p-1">
-      <div className="w-32 space-y-4 cursor-pointer sm:mt-1 h-full sticky bottom-4 transition-all ease-in delay-75 overflow-hidden">
+    <div className="hidden sm:block bg-white mb-40 h-[440px] sticky top-24 shadow-md hiddenRow border border-key rounded-xl p-1">
+      <div className="w-32 space-y-2 cursor-pointer sm:mt-1 h-full sticky bottom-4 transition-all ease-in delay-75 overflow-hidden">
         {catArr.map((item: any) => (
           <div
             onClick={() => router.push(`${item.route}`)}

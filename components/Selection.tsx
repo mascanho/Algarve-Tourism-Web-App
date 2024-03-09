@@ -7,7 +7,12 @@ import { Carousel } from "@mantine/carousel";
 import { catArr } from "@/Data/Categories";
 import { GiBeachBucket, GiWoodCabin } from "react-icons/gi";
 import { FaHiking, FaUtensils } from "react-icons/fa";
-import { MdBusinessCenter, MdEvent, MdSportsHandball } from "react-icons/md";
+import {
+  MdBusinessCenter,
+  MdEvent,
+  MdSportsHandball,
+  MdOutlineMuseum,
+} from "react-icons/md";
 import { PiMountainsFill } from "react-icons/pi";
 import Link from "next/link";
 
@@ -37,6 +42,7 @@ const Selection = () => {
   const categoryIcons = {
     Beaches: <GiBeachBucket />,
     Restaurants: <FaUtensils />,
+    Culture: <MdOutlineMuseum />,
     Events: <MdEvent />,
     Adventure: <PiMountainsFill />,
     Business: <MdBusinessCenter />,

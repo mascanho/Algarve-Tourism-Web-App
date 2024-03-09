@@ -1,5 +1,3 @@
-import { GiBeachBucket } from "react-icons/gi";
-
 export const catArr = [
   {
     id: 1,
@@ -30,6 +28,15 @@ export const catArr = [
   },
   {
     id: 4,
+    name: "Culture",
+    icon: "",
+    route: "/culture",
+    image:
+      "https://www.walkalgarve.com/wp-content/uploads/2016/10/SandsSculpture-1.jpg",
+    type: "category",
+  },
+  {
+    id: 5,
     name: "Events",
     icon: "",
     route: "/events",
@@ -38,7 +45,7 @@ export const catArr = [
     type: "category",
   },
   {
-    id: 5,
+    id: 6,
     name: "Hiking",
     icon: "",
     route: "/hiking",
@@ -47,7 +54,7 @@ export const catArr = [
     type: "category",
   },
   {
-    id: 6,
+    id: 7,
     name: "Restaurants",
     icon: "",
     route: "/restaurants",
@@ -56,7 +63,7 @@ export const catArr = [
     type: "category",
   },
   {
-    id: 7,
+    id: 8,
     name: "Sports",
     icon: "",
     route: "/sports",
@@ -65,7 +72,7 @@ export const catArr = [
     type: "category",
   },
   {
-    id: 8,
+    id: 9,
     name: "Stays",
     icon: "",
     route: "/stays",

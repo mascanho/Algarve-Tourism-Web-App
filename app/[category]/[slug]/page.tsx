@@ -388,6 +388,7 @@ export async function generateStaticParams() {
       "business",
       "adventures",
       "hiking",
+      "culture"
     ],
   });
   return res?.items?.map((item: any) => ({
