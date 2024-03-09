@@ -104,70 +104,72 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
   }
   if (title === "Algarve") {
     return (
-      <Menu trigger={trigger} shadow="md" width={"fit"}>
-        <Menu.Target>
-          <button
-            className={`text-black ${
-              cityArr.some(
-                (city: any) =>
-                  pathname?.includes(city.route) &&
-                  !pathname?.includes("/blog"),
-              )
-                ? "underline underline-offset-[16px] decoration-4"
-                : ""
-            } flex items-center mr-1 rounded-md transition duration-300 ease-in-out`}
-          >
-            {title && trigger ? title : null}{" "}
-            {trigger ? <IoChevronDownSharp className="pl-1" /> : null}
-          </button>
-        </Menu.Target>
-        <Menu.Dropdown className="flex w-fit border-key/50 border-3">
-          <div className="grid grid-cols-3 ">
-            <div className="">
-              {cityArr.slice(0, 4).map((item) => (
-                <Link href={`/algarve/${item.route}`} key={item.id}>
-                  <Menu.Item>{item.name}</Menu.Item>
-                </Link>
-              ))}
-            </div>
-            <div className="flex flex-col ">
-              {cityArr.slice(4, 8).map((item) => (
-                <Link href={`/algarve/${item.route}`} key={item.id}>
-                  <Menu.Item
-                    key={item.id}
-                    className="flex justify-center items-center text-black "
-                  >
-                    {item.name}
-                  </Menu.Item>
-                </Link>
-              ))}
-            </div>
-            <div className="flex flex-col ">
-              {cityArr.slice(8, cityArr.length).map((item) => (
-                <Link href={`/algarve/${item.route}`} key={item.id}>
-                  <Menu.Item
-                    key={item.id}
-                    className="flex justify-center items-center text-black "
-                  >
-                    {item.name}
-                  </Menu.Item>
-                </Link>
-              ))}
-            </div>
+      <Link href="/algarve" className="flex items-center">
+        <Menu trigger={trigger} shadow="md" width={"fit"}>
+          <Menu.Target>
+            <button
+              className={`text-black ${
+                cityArr.some(
+                  (city: any) =>
+                    pathname?.includes(city.route) &&
+                    !pathname?.includes("/blog"),
+                )
+                  ? "underline underline-offset-[16px] decoration-4"
+                  : ""
+              } flex items-center mr-1 rounded-md transition duration-300 ease-in-out`}
+            >
+              {title && trigger ? title : null}{" "}
+              {trigger ? <IoChevronDownSharp className="pl-1" /> : null}
+            </button>
+          </Menu.Target>
+          <Menu.Dropdown className="flex w-fit border-key/50 border-3">
+            <div className="grid grid-cols-3 ">
+              <div className="">
+                {cityArr.slice(0, 4).map((item) => (
+                  <Link href={`/algarve/${item.route}`} key={item.id}>
+                    <Menu.Item>{item.name}</Menu.Item>
+                  </Link>
+                ))}
+              </div>
+              <div className="flex flex-col ">
+                {cityArr.slice(4, 8).map((item) => (
+                  <Link href={`/algarve/${item.route}`} key={item.id}>
+                    <Menu.Item
+                      key={item.id}
+                      className="flex justify-center items-center text-black "
+                    >
+                      {item.name}
+                    </Menu.Item>
+                  </Link>
+                ))}
+              </div>
+              <div className="flex flex-col ">
+                {cityArr.slice(8, cityArr.length).map((item) => (
+                  <Link href={`/algarve/${item.route}`} key={item.id}>
+                    <Menu.Item
+                      key={item.id}
+                      className="flex justify-center items-center text-black "
+                    >
+                      {item.name}
+                    </Menu.Item>
+                  </Link>
+                ))}
+              </div>
 
-            {/* <div className="flex flex-col border-l border-l-key  "> */}
-            {/*   {cityArr.slice(6, cityArr.length - 1).map((item) => ( */}
-            {/*     <Menu.Item */}
-            {/*       key={item.id} */}
-            {/*       className="flex justify-center items-center text-black " */}
-            {/*     > */}
-            {/*       {item.name} */}
-            {/*     </Menu.Item> */}
-            {/*   ))} */}
-            {/* </div> */}
-          </div>
-        </Menu.Dropdown>
-      </Menu>
+              {/* <div className="flex flex-col border-l border-l-key  "> */}
+              {/*   {cityArr.slice(6, cityArr.length - 1).map((item) => ( */}
+              {/*     <Menu.Item */}
+              {/*       key={item.id} */}
+              {/*       className="flex justify-center items-center text-black " */}
+              {/*     > */}
+              {/*       {item.name} */}
+              {/*     </Menu.Item> */}
+              {/*   ))} */}
+              {/* </div> */}
+            </div>
+          </Menu.Dropdown>
+        </Menu>
+      </Link>
     );
   }
 

@@ -23,10 +23,11 @@ function page(props: any) {
       <div className="sm:-mt-12 pt-8 sm:pt-0 mb-8 w-11/12 sm:w-full mx-auto">
         <Breadcrumbs />
       </div>
-      <div className="w-11/12 sm:w-full mx-auto">
+      <div className="w-11/12 sm:w-full mx-auto ">
         <img
           src="https://lp-cms-production.imgix.net/2022-05/GettyRF_1013112160.jpg?auto=format&w=1440&h=810&fit=crop&q=75"
           alt=""
+          className="max-h-96 w-full object-cover rounded-xl"
         />
         <div className="space-y-4 mt-10 text-black">
           <h1 className="text-3xl sm:text-6xl text-black font-bold mb-8">
