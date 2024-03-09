@@ -110,7 +110,7 @@ export default async function Home(props: any) {
         <div className="space-y-1 w-11/12 sm:w-full mx-auto">
           <div className="hidden sm:flex items-centert space-x-2">
             {filteredData[0]?.fields?.hiddenGem ? (
-              <div className="flex items-center space-x-1 w-fit px-2 rounded-md text-green-500 text-xs py-1">
+              <div className="flex items-center space-x-1 w-fit px-2 rounded-md text-green-500 bg-gray-200   text-xs py-1">
                 <div className="flex items-center space-x-2">
                   <FaRegGem />
                   <span className="text-xs">Hidden Gem</span>
@@ -388,7 +388,7 @@ export async function generateStaticParams() {
       "business",
       "adventures",
       "hiking",
-      "culture"
+      "culture",
     ],
   });
   return res?.items?.map((item: any) => ({
