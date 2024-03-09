@@ -27,7 +27,7 @@ const Features = dynamic(() => import("@/components/Features"));
 
 export const metadata = {
   title: "Algarve Wonders - Find The Best Hidden Gems",
-  description: "The Best Place To Find The Hidden Gems In Algarve",
+  description: "The Best Place To Find The Hidden Gems In the Algarve",
   icons: {
     icon: "/images/icon.png",
     href: "/images/icon.png",
@@ -50,7 +50,7 @@ async function getCategories(catNumber: number, catType: any) {
 
 const getCategory = cache(getCategories);
 
-export default async function Home(props: any) {
+export default async function Home() {
   const categories = await getCategory(7, ["beaches", "restaurants"]);
 
   const catCards = catArr;

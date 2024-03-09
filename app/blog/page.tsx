@@ -10,7 +10,7 @@ import { getContentfulData } from "@/libs/getContentfulData";
 
 export const metadata: Metadata = {
   title: {
-    default: "Algarve Wonders - The Blog",
+    default: "The Blog About Algarve",
     template: "%s | Algarve Wonders",
   },
   description: "The place to find the best places in the Algarve",

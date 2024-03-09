@@ -1,7 +1,7 @@
 import "@mantine/carousel/esm/index";
 import Header from "@/components/Layout/Header";
 import "./globals.css";
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import ClientOnly from "@/components/ClientOnly";
 import "react-toastify/dist/ReactToastify.css";
 import getCurrentUser from "./libs/getCurrentUser";
@@ -18,7 +18,7 @@ const ptsans = PT_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Algarve Wonders - The Best Hidden Gems in The Algarve",
+    default: "The Best Hidden Gems in The Algarve",
     template: "%s | Algarve Wonders",
   },
   description:

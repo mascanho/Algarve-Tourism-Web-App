@@ -1,12 +1,9 @@
 import React from "react";
 import prisma from "@/app/libs/prismadb";
-import { SegmentedControl } from "@mantine/core";
 import SegmentTab from "./_components/SegmentTab";
-import SearchMeal from "./_components/SearchMeal";
 import { createClient } from "contentful";
 import RestaurantsCards from "./_components/RestaurantsCards";
-import type { Metadata, Viewport } from "next";
-import { clear } from "console";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
