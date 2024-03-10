@@ -3,6 +3,7 @@ import React from "react";
 import { GiMeal } from "react-icons/gi";
 import DrawerExample from "./_components/Drawer";
 import { MdAddLocationAlt, MdLiveTv } from "react-icons/md";
+import { createClient } from "contentful";
 
 export const metadata: Metadata = {
   title: "Advertise Your Business | Algarve Wonders",
@@ -24,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-function page() {
+
+async function page() {
   return (
     <main className="min-h-screen mt-20 max-w-7xl w-11/12 sm:mx-auto">
       <div className="text-blac">
@@ -110,7 +112,9 @@ function page() {
             <button className="text-white bg-key px-6 py-2 rounded-md">
               Advertise
             </button>{" "}
-            <DrawerExample title="Weekly Meals" />{" "}
+            <DrawerExample
+              title="List Locations"
+            />{" "}
           </div>
         </div>
       </section>
