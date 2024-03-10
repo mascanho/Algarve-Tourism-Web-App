@@ -1,13 +1,10 @@
 import React from "react";
-import { createClient } from "contentful";
-import { catArr } from "@/Data/Categories";
 import Link from "next/link";
 import { Metadata } from "next";
-import BlogCarousel from "../blog/_components/Carousel";
 
 export const metadata: Metadata = {
   title: {
-    default: "Algarve Wonders - Legal",
+    default: "Legal",
     template: "%s | Algarve Wonders",
   },
   description: "The place to find the best places in the Algarve",
@@ -32,10 +29,10 @@ export const metadata: Metadata = {
     },
   },
 
-  verification: {
-    google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
-    yandex: "14d2e73487fa6c71",
-  },
+  // verification: {
+  //   google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
+  //   yandex: "14d2e73487fa6c71",
+  // },
 };
 
 async function page() {

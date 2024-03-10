@@ -4,6 +4,41 @@ import { createClient } from "contentful";
 import { SearchCard } from "@/components/SearchCard";
 import BottomAssets from "@/components/BottomAssets";
 import SearchDrawerContent from "./_components/SearchDrawerContent";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Search For The Best Hidden Gems in The Algarve ",
+    template: "%s | Algarve Wonders",
+  },
+  description:
+    "Search, save and share the best hidden gems the Algarve has to offer. All in one place. Hassle free.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/images/icon.png",
+    href: "/images/icon.png",
+    apple: "/images/icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon-precomposed.png",
+    },
+  },
+
+  // verification: {
+  //   google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
+  //   yandex: "14d2e73487fa6c71",
+  // },
+};
 
 async function fetchSearchQuery(query: any) {
   const client = createClient({

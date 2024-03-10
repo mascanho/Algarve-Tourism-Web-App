@@ -170,7 +170,7 @@ function page() {
       <div className="relative justify-center overflow-hidden bg-cover bg-blend-multiply ">
         <div className="w-full favBanner hidden rounded-b-xl sm:flex sm:max-h-[300px] sm:pt-10">
           <img
-            src="https://www.thetimes.co.uk/travel/wp-content/uploads/sites/6/2021/05/USE_Carvoeiro-Beach-Algarve-Portugal_Credit_Alamy_2AP6967.jpg?w=2200&h=880&crop=1"
+            src="https://www.lartisien.com/blog/wp-content/uploads/2023/05/shutterstock_721857286-2.jpg"
             alt="beach"
             className="w-full object-cover rounded-xl"
           />

@@ -12,7 +12,6 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import getCurrentUser from "@/app/libs/getCurrentUser";
 import prisma from "@/app/libs/prismadb";
 import { IoArrowBack } from "react-icons/io5";
-import { Button } from "@mantine/core";
 import LoginButton from "../_components/LoginButton";
 
 // Fetch comments from Mongo DB
@@ -21,6 +20,7 @@ export async function getComments() {
   return comments;
 }
 
+// TODO: Remove redundancy and make the code cleaner
 export async function generateStaticParams() {
   async function getAllBlogs() {
     const client: any = createClient({
@@ -58,7 +58,7 @@ async function getAllBlogs() {
   return await res.items;
 }
 
-export async function generateMetadata({ params, searchParams }: any) {
+export async function generateMetadata({ params }: any) {
   const titleCaseTitle = params.slug
     .split("-")
     .map((word: any) => word.charAt(0).toUpperCase() + word.slice(1))

@@ -127,8 +127,11 @@ function Footer() {
                 <p className="link link-hover">Best Adventures</p>
               </Link>
 
-              <Link href={"/upload"}>
-                <p className="link link-hover">Upload Daily Meals</p>
+              <Link href={"/advertise"} className="flex items-center space-x-1">
+                <p className="link link-hover">Advertise </p>
+                <span className="text-xs text-white bg-green-500 px-2 rounded-full">
+                  Free
+                </span>
               </Link>
               <Link href={"/submit"}>
                 <p className="link link-hover">Submit Places</p>

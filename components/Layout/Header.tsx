@@ -66,7 +66,13 @@ const Header = ({ currentUser, weatherData }: any) => {
         ) : (
           ""
         )}{" "}
-        <Modal opened={opened} onClose={close} title={"Favourites"} centered>
+        <Modal
+          opened={opened}
+          onClose={close}
+          title={"Favourites"}
+          centered
+          overlayProps={{ opacity: 0.55, blur: 3 }}
+        >
           {/* Modal content */}
           {null ? (
             {
@@ -138,6 +144,12 @@ const Header = ({ currentUser, weatherData }: any) => {
               title={"Categories"}
               cities={true}
               url={"/algarve"}
+            />
+            <NavMenu
+              expandedMenu={false}
+              trigger={"hover"}
+              title={"More"}
+              cities={true}
             />
             <NavMenu
               expandedMenu={false}

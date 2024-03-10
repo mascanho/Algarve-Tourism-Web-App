@@ -1,20 +1,26 @@
 "use client";
 import React, { useState, useRef } from "react";
-import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { Carousel } from "@mantine/carousel";
 import { catArr } from "@/Data/Categories";
 import { GiBeachBucket, GiWoodCabin } from "react-icons/gi";
 import { FaHiking, FaUtensils } from "react-icons/fa";
-import { MdBusinessCenter, MdEvent, MdSportsHandball } from "react-icons/md";
+import {
+  MdBusinessCenter,
+  MdEvent,
+  MdSportsHandball,
+  MdOutlineMuseum,
+} from "react-icons/md";
 import { PiMountainsFill } from "react-icons/pi";
 import Link from "next/link";
+import { useMediaQuery } from "@mantine/hooks";
 
 const Selection = () => {
   const pathname = usePathname();
   const [activeCategory, setActiveCategory] = useState(null);
   const carouselRef = useRef(null); // Ref for Carousel component
+  const mobile = useMediaQuery("(max-width: 768px)");
 
   const handleClick = (cat: any) => {
     setActiveCategory(cat);
@@ -37,6 +43,7 @@ const Selection = () => {
   const categoryIcons = {
     Beaches: <GiBeachBucket />,
     Restaurants: <FaUtensils />,
+    Culture: <MdOutlineMuseum />,
     Events: <MdEvent />,
     Adventure: <PiMountainsFill />,
     Business: <MdBusinessCenter />,
@@ -46,18 +53,18 @@ const Selection = () => {
   };
 
   return (
-    <section className="w-full z-20 inline overflow-hidden text-center sm:hidden overflow-x-clip fixed border top-[39px]  bg-white  pt-1 ">
+    <section className="w-full z-20 inline overflow-hidden text-center sm:hidden  overflow-x-clip fixed border sm:border-0 top-[39px] sm:top-[45px] sm:left-0  bg-white  pt-1 ">
       {pathname === "/" ? null : (
         <>
-          <section className="selection flex w-full shadow-lg bg-white border-b h-14 items-center ">
+          <section className="selection flex w-full shadow-lg bg-white border-b h-14 items-center sm:w-full sm:mx-auto ">
             <Carousel
               ref={carouselRef} // Assign the ref to the Carousel component
               dragFree
               nextControlIcon={<BiChevronRight />}
               previousControlIcon={<BiChevronLeft />}
               align={"start"}
-              className="w-full h-16 items-center overflow-hidden mx-auto flex flex-nowrap"
-              slideSize={"5%"}
+              className="w-full h-16 items-center overflow-hidden mx-auto flex flex-nowrap sm:mx-auto sm:justify-center sm:max-w-7xl"
+              slideSize={mobile ? "5%" : "8%"}
               controlSize={14}
               loop
             >

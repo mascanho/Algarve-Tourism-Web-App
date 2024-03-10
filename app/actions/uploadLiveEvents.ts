@@ -1,8 +1,9 @@
 "use server";
+
 import { revalidatePath } from "next/cache";
 import getCurrentUser from "../libs/getCurrentUser";
 
-export async function uploadWeekly(formData: FormData) {
+export async function uploadLiveEvents(formData: FormData) {
   const currentUser = await getCurrentUser();
   const today = new Date();
   today.setHours(0, 0, 0, 0); // Set hours, minutes, seconds, and milliseconds to zero to represent the start of the day
@@ -34,22 +35,24 @@ export async function uploadWeekly(formData: FormData) {
   const dayName = daysOfWeek[dayOfweek];
 
   try {
-    await prisma?.weeklymeal.create({
+    // create the event on Mongo DB
+    const liveEvent = await prisma?.live?.create({
       data: {
-        name: currentUser.email,
-        email: currentUser.email,
-        meal: formData.get("meal"),
-        dayOfWeek: normalDateString,
-        price: Number(formData.get("price")),
-        business: formData.get("business"),
-        city: formData.get("city"),
+        name: currentUser?.name,
+        email: currentUser?.email,
+        title: formData.get("title") as string,
+        website: formData.get("website") as string,
+        image: formData.get("image") as string,
+        location: formData.get("location") as string,
+        description: formData.get("description") as string,
+        date: formData.get("date") as string,
+        time: formData.get("time") as string,
+        city: formData.get("city") as string,
         userId: currentUser?.id,
-        date: dateString + "T00:00:00.000Z",
       },
     });
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
+    console.log(error);
   }
-
-  revalidatePath("/");
+  revalidatePath("/live");
 }

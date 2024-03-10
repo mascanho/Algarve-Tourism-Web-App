@@ -103,7 +103,7 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
                 >
                   <FaRegHeart className="text-xl group-hover:scale-110 transition-all ease-in-out  text-red-500 hover:pt-[2px] pt-[1px]" />
                 </div>
-                <span className="absolute left-1 py-1 pr-2 text-xs text-highlight bg-key rounded-r-full top-4 ">
+                <span className="absolute left-1 py-1 pr-2 pl-1 text-xs text-highlight bg-key rounded-r-full top-4 ">
                   📍 {cat?.fields?.city}
                 </span>
               </div>

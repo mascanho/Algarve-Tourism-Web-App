@@ -9,6 +9,7 @@ import {
   MdBusiness,
   MdBusinessCenter,
   MdEvent,
+  MdOutlineMuseum,
   MdSportsHandball,
 } from "react-icons/md";
 import { PiMountainsFill } from "react-icons/pi";
@@ -33,6 +34,7 @@ const SearchDrawerContent = ({ close }) => {
   const categoryIcons: any = {
     Beaches: <GiBeachBucket />,
     Restaurants: <FaUtensils />,
+    Culture: <MdOutlineMuseum />,
     Events: <MdEvent />,
     Adventure: <PiMountainsFill />,
     Business: <MdBusinessCenter />,

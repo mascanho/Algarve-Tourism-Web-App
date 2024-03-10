@@ -2,11 +2,10 @@ import Form from "./Form";
 import Image from "next/image";
 
 import type { Metadata, Viewport } from "next";
-import BreadCrumbs from "@/components/Layout/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: {
-    default: "Algarve Wonders - The Best Hidden Gems in The Algarve",
+    default: "The Best Hidden Gems in The Algarve",
     template: "%s | Algarve Wonders",
   },
   description: "The place to find the best places in the Algarve",
@@ -31,10 +30,10 @@ export const metadata: Metadata = {
     },
   },
 
-  verification: {
-    google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
-    yandex: "14d2e73487fa6c71",
-  },
+  // verification: {
+  //   google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
+  //   yandex: "14d2e73487fa6c71",
+  // },
 };
 
 export const viewport: Viewport = {

@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     },
   },
 
-  verification: {
-    google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
-    yandex: "14d2e73487fa6c71",
-  },
+  // verification: {
+  //   google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
+  //   yandex: "14d2e73487fa6c71",
+  // },
 };
 
 export const viewport: Viewport = {
