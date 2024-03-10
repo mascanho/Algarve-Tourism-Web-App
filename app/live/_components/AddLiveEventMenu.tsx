@@ -29,7 +29,16 @@ function AddLiveEventMenu() {
       />
 
       {isLoggedIn.status === "authenticated" ? (
-        <Modal opened={opened} onClose={close} title="Add Live Event">
+        <Modal
+          opened={opened}
+          onClose={close}
+          overlayProps={{
+            backgroundOpacity: 0.55,
+            blur: 3,
+          }}
+          centered
+          title="Add Live Event"
+        >
           <LiveUploadForm />
         </Modal>
       ) : null}

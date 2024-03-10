@@ -18,6 +18,8 @@ function NotificationsModal() {
         onClose={close}
         title="Notifications"
         scrollAreaComponent={ScrollArea.Autosize}
+        centered
+        overlayProps={{ opacity: 0.55, blur: 3 }}
       >
         <Notification />
       </Modal>

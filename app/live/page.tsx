@@ -91,7 +91,10 @@ const Data = [
   },
 ];
 
-function LivePage() {
+async function LivePage() {
+  let liveEvents = await prisma?.live?.findMany({});
+
+
   return (
     <main className="text-black text-2xl sm:mt-20 mx-auto w-full">
       <div className="flex items-center max-w-7xl mx-auto">
