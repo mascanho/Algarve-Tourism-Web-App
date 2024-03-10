@@ -9,7 +9,7 @@ import { useLoginModalStore } from "@/app/hooks/useLoginModal";
 import { useSession } from "next-auth/react";
 
 function AddLiveEventMenu() {
-  const [opened, { open, close }] = useDisclosure(true);
+  const [opened, { open, close }] = useDisclosure(false);
   const signIn = useLoginModalStore();
   const isLoggedIn = useSession();
 
