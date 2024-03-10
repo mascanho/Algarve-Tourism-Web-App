@@ -21,7 +21,7 @@ function CarouselEl({ children }) {
           },
         },
       }}
-      className="w-full"
+      className="liveCar w-full"
       style={{ flex: "1" }}
     >
       {children}

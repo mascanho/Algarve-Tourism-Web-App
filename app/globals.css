@@ -243,3 +243,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     -webkit-transform: scale(1, 1);
   }
 }
+
+.liveCar .mantine-vcl0d1 {
+  @apply -top-12 justify-end space-x-1;
+}
