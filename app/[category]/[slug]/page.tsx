@@ -27,6 +27,7 @@ import { GrOverview } from "react-icons/gr";
 import { IoIosLeaf } from "react-icons/io";
 import BookingDrawer from "./_components/BookingDrawer";
 import { notFound } from "next/navigation";
+import { GiPortugal } from "react-icons/gi";
 
 const Reviews = dynamic(() => import("../../../components/Layout/Reviews"), {});
 
@@ -212,6 +213,13 @@ export default async function Home(props: any) {
                   <span className="text-xs">Outdoors</span>
                 </>
               )}
+
+              {filteredData[0]?.fields?.type[0] === "culture" && (
+                <>
+                  <GiPortugal className="text-black text-xl" />
+                  <span className="text-xs">Cultural</span>
+                </>
+              )}
             </div>
             <div className="border-r border-l px-8 text-center flex  flex-col items-center">
               {filteredData[0]?.fields?.hiddenGem ? (
@@ -260,6 +268,7 @@ export default async function Home(props: any) {
 
           {filteredData[0]?.fields?.type[0] !== "events" &&
           filteredData[0]?.fields?.type[0] !== "beaches" &&
+          filteredData[0]?.fields?.type[0] !== "culture" &&
           filteredData[0]?.fields?.type[0] !== "business" ? (
             <section className="w-11/12 border-b pb-5 mx-auto">
               <h5 className="text-sm">Bookings</h5>

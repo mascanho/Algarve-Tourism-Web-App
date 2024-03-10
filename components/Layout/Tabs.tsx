@@ -3,7 +3,6 @@ import { Tabs } from "@mantine/core";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Reviews from "./Reviews";
 import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
 
 function TabsRow({ filteredData, reviews, slug, props }: any) {
   const searchParams = useSearchParams();
