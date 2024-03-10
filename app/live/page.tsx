@@ -1,11 +1,9 @@
 import React from "react";
 import MusicCard from "./_components/MusicCard";
 import { Metadata } from "next";
-import { Carousel } from "@mantine/carousel";
 import CarouselEl from "./_components/Carousel";
 import AddLiveEventMenu from "./_components/AddLiveEventMenu";
-import { useSession } from "next-auth/react";
-import getCurrentUser from "../libs/getCurrentUser";
+import prisma from "@/app/libs/prismadb";
 
 export const metadata: Metadata = {
   title: "Live Shows in The Algarve | Algarve Wonders",
@@ -93,7 +91,6 @@ const Data = [
 
 async function LivePage() {
   let liveEvents = await prisma?.live?.findMany({});
-
 
   return (
     <main className="text-black text-2xl sm:mt-20 mx-auto w-full">
