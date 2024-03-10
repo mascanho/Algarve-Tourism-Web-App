@@ -15,7 +15,7 @@ function Suggestions({ recomended }: any) {
     <Carousel
       height={300}
       withControls={mobile ? false : true}
-      slideSize={mobile ? "53%" : "24%"}
+      slideSize={mobile ? "56%" : "24%"}
       align={"start"}
     >
       {recomended.map((item: any) => (

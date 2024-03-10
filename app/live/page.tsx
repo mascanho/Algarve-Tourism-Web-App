@@ -94,50 +94,18 @@ const Data = [
 function LivePage() {
   return (
     <main className="text-black text-2xl sm:mt-20 mx-auto w-full">
-      <div className="flex items-center w-full">
+      <div className="flex items-center max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold w-fit break-keep">Live Events</h1>
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center  max-w-7xl mx-auto mt-2">
         <p className="text-sm text-black/50">Add your own live event</p>
         <AddLiveEventMenu className="w-fit" />
       </div>
       {/* Live Bands */}
       <div className="mt-10">
-        <h2 className="text-black/50 text-lg mb-5">Live Bands</h2>
-        <CarouselEl>
-          {Data.map((data: any) => (
-            <MusicCard
-              key={data.id}
-              name={data.name}
-              website={data.website}
-              image={data.image}
-              location={data.location}
-              description={data.description}
-              date={data.date}
-              time={data.time}
-            />
-          ))}
-        </CarouselEl>
-      </div>
-      <div className="mt-10">
-        <h2 className="text-black/50 text-lg mb-5">Others</h2>
-        <CarouselEl>
-          {Data.map((data: any) => (
-            <MusicCard
-              key={data.id}
-              name={data.name}
-              website={data.website}
-              image={data.image}
-              location={data.location}
-              description={data.description}
-              date={data.date}
-              time={data.time}
-            />
-          ))}
-        </CarouselEl>
-      </div>
-      <div className="mt-10">
-        <h2 className="text-black/50 text-lg mb-5">Seminairs</h2>
+        <h2 className="text-black/50 text-lg mb-5 mx-auto  max-w-7xl">
+          Live Bands
+        </h2>
         <CarouselEl>
           {Data.map((data: any) => (
             <MusicCard

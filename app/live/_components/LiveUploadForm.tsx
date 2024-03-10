@@ -1,15 +1,29 @@
 import { cityArr } from "@/Data/Cities";
+import { uploadLiveEvents } from "@/app/actions/uploadLiveEvents";
 import React from "react";
 
 function LiveUploadForm() {
   return (
-    <form className="flex flex-col">
+    <form
+      action={async (formData: FormData) => {
+        uploadLiveEvents(formData);
+        console.log("Submitted");
+      }}
+      className="flex flex-col"
+    >
       <label className="text-sm mb-1">Name</label>
       <input
         className="bg-transparent placeholder:text-xs text-sm p-1 border rounded-md"
         type="text"
         name="title"
         placeholder="The Rolling Stones"
+      />
+      <label className="text-sm mb-1 mt-2">Website</label>
+      <input
+        className="bg-transparent placeholder:text-xs text-sm p-1 border rounded-md"
+        type="text"
+        name="website"
+        placeholder="www.therollingstones.com"
       />
       <div className="flex flex-nowrap items-center space-x-2 mt-3">
         <label className="text-sm ">Location</label>
@@ -20,8 +34,13 @@ function LiveUploadForm() {
           placeholder="The Gold Lion, Faro"
         />
         <label className="text-sm ">City</label>
-        <select className="bg-transparent placeholder:text-xs text-sm p-1 border rounded-md w-full">
-          <option value="">Select a city</option>
+        <select
+          name="city"
+          className="bg-transparent placeholder:text-xs text-sm p-1 border rounded-md w-full"
+        >
+          <option selected value="">
+            Select a city
+          </option>
           {cityArr.map((city: any) => (
             <option key={city.name} value={city.name}>
               {city.name}
@@ -40,7 +59,7 @@ function LiveUploadForm() {
       <input
         className="bg-transparent placeholder:text-xs text-sm p-1 border rounded-md"
         type="text"
-        name="description"
+        name="image"
         placeholder="https://example.com/yourimage.jpg"
       />
       <div className="flex space-x-3 justify-between mt-4">

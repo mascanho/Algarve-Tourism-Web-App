@@ -245,5 +245,5 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .liveCar .mantine-vcl0d1 {
-  @apply -top-12 justify-end space-x-1;
+  @apply -top-12 justify-end space-x-1 max-w-7xl mx-auto;
 }

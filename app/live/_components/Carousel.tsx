@@ -11,16 +11,16 @@ function CarouselEl({ children }) {
       slideGap="md"
       // loop
       align="start"
-      slidesToScroll={1}
+      slidesToScroll={2}
       withControls={true}
-      styles={{
-        control: {
-          "&[data-inactive]": {
-            opacity: 0,
-            cursor: "default",
-          },
-        },
-      }}
+      // styles={{
+      //   control: {
+      //     "&[data-inactive]": {
+      //       opacity: 0,
+      //       cursor: "default",
+      //     },
+      //   },
+      // }}
       className="liveCar w-full"
       style={{ flex: "1" }}
     >

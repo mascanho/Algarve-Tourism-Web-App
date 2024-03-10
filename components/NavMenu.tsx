@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal } from "@mantine/core";
 import SearchDrawerContent from "@/app/search/_components/SearchDrawerContent";
-import { FaHiking, FaSearch, FaUtensils } from "react-icons/fa";
+import { FaEye, FaHiking, FaSearch, FaUtensils } from "react-icons/fa";
 import { GiBeachBucket, GiHotMeal, GiMeal, GiWoodCabin } from "react-icons/gi";
 import {
   MdBusinessCenter,
@@ -28,6 +28,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
     Beaches: <GiBeachBucket />,
     Restaurants: <FaUtensils />,
     Culture: <MdOutlineMuseum />,
+    Live: <FaEye/>,
     Events: <MdEvent />,
     Adventure: <PiMountainsFill />,
     Business: <MdBusinessCenter />,
@@ -249,7 +250,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
           </button>
         </Menu.Target>
         <Menu.Dropdown className="flex w-fit border-key/50 border-3">
-          <div className="grid grid-cols-1 w-full gap-x-2 ">
+          <div className="grid grid-cols-1 w-full ">
             <div className="w-full">
               {More.slice(0, 5).map((item) => (
                 <Link key={item.id} href={`${item?.route}`}>

@@ -27,6 +27,7 @@ model User {
   reviews        Reviews[]
   comments       Comments[]
   weeklymeals    Weeklymeal[]
+  live           Live[]
 }
 
 
@@ -39,14 +40,17 @@ model Live {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   title     String
-  date      DateTime
+  date      String
   time      String
   city      String
   description String
   image     String
+  website   String?
+  location  String
 
   }
-  
+
+
 
 model Weeklymeal {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
