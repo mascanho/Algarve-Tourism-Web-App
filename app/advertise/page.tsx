@@ -4,6 +4,7 @@ import { GiMeal } from "react-icons/gi";
 import DrawerExample from "./_components/Drawer";
 import { MdAddLocationAlt, MdLiveTv } from "react-icons/md";
 import { createClient } from "contentful";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Advertise Your Business | Algarve Wonders",
@@ -72,9 +73,11 @@ async function page() {
             eating avenue. Let the world see what you have been cooking up to.
           </p>
           <div className="space-x-4 mt-8  w-full">
-            <button className="text-white bg-key px-6 py-2 rounded-md">
-              Advertise
-            </button>{" "}
+            <Link href="/upload/">
+              <button className="text-white bg-key px-6 py-2 rounded-md">
+                Advertise
+              </button>{" "}
+            </Link>
             <DrawerExample title="Weekly Meals" />{" "}
           </div>
         </div>
@@ -90,9 +93,11 @@ async function page() {
             eating avenue. Let the world see what you have been cooking up to.
           </p>
           <div className="space-x-4 mt-8  w-full">
-            <button className="text-white bg-key px-6 py-2 rounded-md">
-              Advertise
-            </button>{" "}
+            <Link href="/live/">
+              <button className="text-white bg-key px-6 py-2 rounded-md">
+                Advertise
+              </button>{" "}
+            </Link>
             <DrawerExample title="Live Events" />{" "}
           </div>
         </div>
@@ -108,9 +113,11 @@ async function page() {
             eating avenue. Let the world see what you have been cooking up to.
           </p>
           <div className="space-x-4 mt-8  w-full">
+            <Link href="/submit">
             <button className="text-white bg-key px-6 py-2 rounded-md">
               Advertise
             </button>{" "}
+            </Link>
             <DrawerExample title="List Locations" />{" "}
           </div>
         </div>

@@ -94,16 +94,18 @@ async function LivePage() {
 
   return (
     <main className="text-black text-2xl sm:mt-20 mx-auto w-full">
-      <div className="flex items-center max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold w-fit break-keep">Live Events</h1>
-      </div>
-      <div className="flex items-center  max-w-7xl mx-auto mt-2">
-        <p className="text-sm text-black/50">Add your own live event</p>
-        <AddLiveEventMenu className="w-fit" />
+      <div className="flex flex-col items-center max-w-7xl mx-auto ">
+        <h1 className="text-3xl font-bold break-keep mt-16 sm:mt-0 w-11/12">
+          Live Events
+        </h1>
+        <div className="w-11/12 flex items-center mt-3 sm:mt-2">
+          <p className="text-sm text-black/50">Add your own live event</p>
+          <AddLiveEventMenu className="w-fit" />
+        </div>
       </div>
       {/* Live Bands */}
       <div className="mt-10">
-        <h2 className="text-black/50 text-lg mb-5 mx-auto  max-w-7xl">
+        <h2 className="text-black/50 text-lg mb-5 mx-auto w-11/12  max-w-7xl">
           Live Bands
         </h2>
         <CarouselEl>
