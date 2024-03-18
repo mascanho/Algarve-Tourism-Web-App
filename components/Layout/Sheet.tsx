@@ -135,7 +135,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
           >
             <span className="my-auto flex items-center">
               Daily Meals{" "}
-              <span className="rounded-xl py-[1px] px-2 ml-2 text-[9px] bg-green-500 text-white">
+              <span className="rounded-xl py-[1px] px-2 ml-2 text-xs bg-green-500 text-white">
                 New
               </span>
             </span>
@@ -153,20 +153,16 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
           <div
             className="flex items-center mb-2"
             onClick={() => {
-              router.push("/submit");
+              router.push("/advertise");
               close();
             }}
           >
-            <span className="my-auto">Submit a place</span>
-          </div>{" "}
-          <div
-            className="flex items-center mb-2"
-            onClick={() => {
-              router.push("/upload");
-              close();
-            }}
-          >
-            <span className="my-auto">Upload meals</span>
+            <span className="my-auto flex items-center">
+              Advertise{" "}
+              <span className="rounded-full bg-blue-400 text-white ml-2 px-2 py-[2px] text-xs">
+                Free
+              </span>
+            </span>
           </div>{" "}
           <div
             className="flex items-center mb-2"
