@@ -25,15 +25,14 @@ export const metadata: Metadata = {
   },
 };
 
-
 async function page() {
   return (
-    <main className="min-h-screen mt-20 max-w-7xl w-11/12 sm:mx-auto">
-      <div className="text-blac">
+    <main className="min-h-screen my-20 max-w-7xl w-11/12 mx-auto">
+      <div className="text-black">
         <div className="flex items-center justify-center mb-2  ">
-          <h1 className="text-5xl font-semibold flex items-center text-black">
+          <h1 className="sm:text-5xl text-4xl font-semibold flex items-center text-black">
             Advertise & Promote
-            <span className="text-lg text-left ml-4 bg-green-500 text-white px-2 rounded-xl">
+            <span className="sm:text-lg text-base text-left ml-4 bg-green-500 text-white px-2 rounded-xl">
               Free
             </span>
           </h1>
@@ -112,9 +111,7 @@ async function page() {
             <button className="text-white bg-key px-6 py-2 rounded-md">
               Advertise
             </button>{" "}
-            <DrawerExample
-              title="List Locations"
-            />{" "}
+            <DrawerExample title="List Locations" />{" "}
           </div>
         </div>
       </section>
