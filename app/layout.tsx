@@ -11,6 +11,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { PT_Sans } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import dynamic from "next/dynamic";
+import { Analytics } from "@vercel/analytics/react";
 
 const Footer = dynamic(() => import("@/components/Layout/Footer"));
 
@@ -69,6 +70,7 @@ export default async function RootLayout({
             <Header currentUser={currentUser} />
             <SpeedInsights />
             {children}
+            <Analytics />
           </ClientOnly>
           <GoogleTagManager gtmId="GTM-MHX7R9FF" />
           <div className="custom-shape-divider-bottom-1707076088 hiddenRow">
