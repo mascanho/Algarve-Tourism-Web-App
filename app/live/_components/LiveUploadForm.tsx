@@ -11,74 +11,78 @@ function LiveUploadForm() {
       }}
       className="flex flex-col"
     >
-      <label className="text-sm mb-1">Name</label>
+      <label className="mb-1 text-sm">Name</label>
       <input
-        className="bg-transparent placeholder:text-xs text-sm p-1 pb-2 pl-2 border rounded-md"
+        className="rounded-md border bg-transparent p-1 pl-2 text-sm placeholder:text-xs"
         type="text"
         name="title"
         placeholder="The Rolling Stones"
         required
       />
-      <label className="text-sm mb-1 mt-2">Website</label>
+      <label className="mb-1 mt-2 text-sm">Website</label>
       <input
-        className="bg-transparent placeholder:text-xs text-sm p-1 pb-2 pl-2 border rounded-md"
+        className="rounded-md border bg-transparent p-1 pb-2 sm:pb-1 pl-2 text-sm placeholder:text-xs"
         type="text"
         name="website"
         placeholder="www.therollingstones.com"
       />
-      <div className="flex flex-nowrap items-center space-x-2 mt-3">
+      <div className="mt-3 w-full flex-nowrap sm:items-center sm:space-x-2 sm:flex">
         <label className="text-sm ">Location</label>
         <input
-          className="bg-transparent placeholder:text-xs placeholder:pb-2 pl-2 pb-2 text-sm p-1 border rounded-md"
+          className="rounded-md border bg-transparent p-1 pb-1 pl-2 text-sm placeholder:pb-2 placeholder:text-xs block"
           type="text"
           name="location"
           placeholder="The Gold Lion"
           required
         />
-        <label className="text-sm ">City</label>
-        <select
-          name="city"
-          className="bg-transparent pl-2 placeholder:text-xs text-sm p-1 border rounded-md w-full"
-          required
-        >
-          <option selected>Select a city</option>
-          {cityArr.map((city: any) => (
-            <option key={city.name} value={city.name}>
-              {city.name}
+        <div className="w-full sm:flex sm:items-center sm:space-x-2">
+          <label className="text-sm ">City</label>
+          <select
+            name="city"
+            className="w-full rounded-md border bg-transparent p-1 pl-2 text-sm placeholder:text-xs"
+            required
+          >
+            <option className="w-full" selected>
+              Select a city
             </option>
-          ))}
-        </select>
+            {cityArr.map((city: any) => (
+              <option key={city.name} value={city.name}>
+                {city.name}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-      <label className="text-sm mt-2 mb-1">Description</label>
+      <label className="mb-1 mt-2 text-sm">Description</label>
       <input
-        className="bg-transparent placeholder:text-xs text-sm p-1 border rounded-md pb-2 pl-2"
+        className="rounded-md border bg-transparent p-1  pl-2 text-sm placeholder:text-xs"
         type="text"
         name="description"
         placeholder="The best band in the galaxy"
         required
       />
-      <label className="text-sm mt-2 mb-1">Image</label>
+      <label className="mb-1 mt-2 text-sm">Image</label>
       <input
-        className="bg-transparent placeholder:text-xs text-sm p-1 border rounded-md pl-2 pb-2"
+        className="rounded-md border bg-transparent p-1 pb-2 sm:pb-1 pl-2 text-sm placeholder:text-xs"
         type="text"
         name="image"
         placeholder="https://example.com/yourimage.jpg"
         required
       />
-      <div className="flex space-x-3 justify-between mt-4">
+      <div className="mt-4 flex justify-between space-x-3">
         <div className="space-x-1">
-          <label className="text-sm mt-2 mb-1">Date</label>
+          <label className="mb-1 mt-2 text-sm">Date</label>
           <input
-            className="bg-transparent placeholder:text-xs text-sm p-1 border rounded-md  pl-2"
+            className="rounded-md border bg-transparent p-1 pl-2 text-sm  placeholder:text-xs"
             type="date"
             name="date"
             required
           />
         </div>
         <div className="space-x-1">
-          <label className="text-sm mt-2 mb-1">Time</label>
+          <label className="mb-1 mt-2 text-sm">Time</label>
           <input
-            className="bg-transparent placeholder:text-xs text-sm p-1 border rounded-md pl-2"
+            className="rounded-md border bg-transparent p-1 pl-2 text-sm placeholder:text-xs"
             type="time"
             name="time"
             required
@@ -86,7 +90,7 @@ function LiveUploadForm() {
         </div>
       </div>
       <button
-        className="w-full mt-8 rounded-md border bg-key text-white px-2 py-2 "
+        className="mt-8 w-full rounded-md border bg-key px-2 py-2 text-white "
         type="submit"
       >
         Create
