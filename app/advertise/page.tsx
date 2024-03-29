@@ -28,17 +28,17 @@ export const metadata: Metadata = {
 
 async function page() {
   return (
-    <main className="min-h-screen my-20 max-w-7xl w-11/12 mx-auto">
-      <div className="text-black">
-        <div className="flex items-center justify-center mb-2  ">
-          <h1 className="sm:text-5xl text-4xl font-semibold flex items-center text-black">
+    <main className="mx-auto my-20 min-h-screen w-11/12 max-w-7xl">
+      <div className="pt-10">
+        <div className="mb-2 flex items-center justify-center  ">
+          <h1 className="flex items-center text-3xl font-semibold text-black sm:text-5xl">
             Advertise & Promote
-            <span className="sm:text-lg text-base text-left ml-4 bg-green-500 text-white px-2 rounded-xl">
+            <span className="ml-4 rounded-xl bg-green-500 px-2 text-left text-base text-white sm:text-lg">
               Free
             </span>
           </h1>
         </div>
-        <div className="max-w-4xl flex flex-col flex-wrap text-black bg-white p-4 w-fit mx-auto rounded-xl my-8">
+        <div className="mx-auto my-8 mt-10 flex w-fit max-w-4xl flex-col flex-wrap rounded-xl bg-white p-4 text-black">
           <p>
             Advertise your business, your products or services{" "}
             <span className="underline">for free,</span> on any of the below
@@ -46,9 +46,8 @@ async function page() {
           </p>
           <p className="mt-4">
             Leverage the power and reach of{" "}
-            <span className="font-semibold">Algarve Wonders</span> by
-            advertising and reaching broader audiences. <br /> Build your brand
-            and reach new customers.
+            <span className="font-semibold">Algarve Wonders</span> and promote
+            your business.
           </p>
           <p className="mt-4">
             Our modular approach on advertising allows a quick and easy setup,
@@ -56,25 +55,27 @@ async function page() {
           </p>
         </div>
       </div>
-      <div className="my-9 w-11/12 mx-auto">
-        <h2 className="text-3xl font-semibold text-black text-center">
-          Modules
+      <div className="mx-auto my-12 sm:mt-20 w-11/12">
+        <h2 className="text-center text-3xl font-semibold text-black">
+          Advertising Modules
         </h2>
       </div>
-      <section className="grid sm:grid-cols-2 gap-8 mt-10 text-black">
+      <section className="mt-10 grid gap-8 text-black sm:grid-cols-2">
         {/* Weekly Meals */}
-        <div className="px-4 py-6 border border-key border-dashed rounded-md hover:bg-white group">
+        <div className="group rounded-md border border-dashed border-key p-6 hover:bg-white">
           <div className="flex  items-center space-x-4">
-            <GiMeal className="text-black text-7xl" />
-            <p className="text-black text-3xl font-semibold">Weekly Meals</p>
+            <GiMeal className="text-7xl text-black" />
+            <p className="text-3xl font-semibold text-black">Weekly Meals</p>
           </div>
           <p className="mt-3">
             Showcase your best daily meals from your Restaurant, local Pub or
-            eating avenue. Let the world see what you have been cooking up to.
+            eating avenue. Let the world see what you have been cooking up to.{" "}
+            <br />
+            Bring your weekly menus online with Algarve Wonders.
           </p>
-          <div className="space-x-4 mt-8  w-full">
+          <div className="mt-8 w-full  space-x-4">
             <Link href="/upload/">
-              <button className="text-white bg-key px-6 py-2 rounded-md">
+              <button className="rounded-md bg-key px-6 py-2 text-white">
                 Advertise
               </button>{" "}
             </Link>
@@ -83,18 +84,19 @@ async function page() {
         </div>
 
         {/* Live Events */}
-        <div className="px-4 py-6 border border-key border-dashed rounded-md group hover:bg-white">
+        <div className="group rounded-md border border-dashed border-key p-6 hover:bg-white">
           <div className="flex  items-center space-x-4">
-            <MdLiveTv className="text-black text-7xl" />
-            <p className="text-black text-3xl font-semibold">Live Events</p>
+            <MdLiveTv className="text-7xl text-black" />
+            <p className="text-3xl font-semibold text-black">Live Events</p>
           </div>
           <p className="mt-3">
-            Showcase your best daily meals from your Restaurant, local Pub or
-            eating avenue. Let the world see what you have been cooking up to.
+            Let the world know what you are up to. <br />
+            Advertise your live events on Algarve Wonders, engage with a bigger
+            audience and garantee that your event will be a success.
           </p>
-          <div className="space-x-4 mt-8  w-full">
+          <div className="mt-8 w-full  space-x-4">
             <Link href="/live/">
-              <button className="text-white bg-key px-6 py-2 rounded-md">
+              <button className="rounded-md bg-key px-6 py-2 text-white">
                 Advertise
               </button>{" "}
             </Link>
@@ -103,20 +105,22 @@ async function page() {
         </div>
 
         {/* List a location */}
-        <div className="px-4 py-6 border border-key border-dashed rounded-md group hover:bg-white">
+        <div className="group rounded-md border border-dashed border-key p-6 hover:bg-white">
           <div className="flex  items-center space-x-4">
-            <MdAddLocationAlt className="text-black text-7xl" />
-            <p className="text-black text-3xl font-semibold">List Locations</p>
+            <MdAddLocationAlt className="text-7xl text-black" />
+            <p className="text-3xl font-semibold text-black">List Locations</p>
           </div>
           <p className="mt-3">
-            Showcase your best daily meals from your Restaurant, local Pub or
-            eating avenue. Let the world see what you have been cooking up to.
+            List your locations on Algarve Wonders at ease and hassle free.{" "}
+            <br />
+            Advertise your local business with us using one of our many
+            categories, for free! <br />
           </p>
-          <div className="space-x-4 mt-8  w-full">
+          <div className="mt-8 w-full  space-x-4">
             <Link href="/submit">
-            <button className="text-white bg-key px-6 py-2 rounded-md">
-              Advertise
-            </button>{" "}
+              <button className="rounded-md bg-key px-6 py-2 text-white">
+                Advertise
+              </button>{" "}
             </Link>
             <DrawerExample title="List Locations" />{" "}
           </div>

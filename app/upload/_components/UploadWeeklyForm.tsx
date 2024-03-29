@@ -76,7 +76,7 @@ function UploadWeeklyForm() {
       <select
         required
         name="city"
-        className="p-2 w-full rounded-md bg-white border text-black placeholder-gray-500"
+        className="p-2 w-full rounded-md bg-white border text-black"
       >
         <option
           value=""
