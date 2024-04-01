@@ -12,6 +12,8 @@ import {
 } from "react-icons/md";
 import { PiMountainsFill } from "react-icons/pi";
 import { catArr } from "@/Data/Categories";
+import { cityArr } from "@/Data/Cities";
+import { Select } from "@mantine/core";
 
 export default function SidePanel() {
   const router = useRouter();
@@ -27,6 +29,12 @@ export default function SidePanel() {
     Hiking: <FaHiking />,
     Sports: <MdSportsHandball />,
     Stays: <GiWoodCabin />,
+  };
+
+  const handleSelection = (city: string) => {
+    // router.push(`/${city}`);
+    console.log(city);
+    router.push(`${pathname}/?city=${city}`);
   };
 
   return (
@@ -57,6 +65,23 @@ export default function SidePanel() {
             </span>
           </div>
         ))}
+      </div>
+      <div className="flex flex-col mt-5 w-32 bg-white border-key border rounded-xl py-2 pl-2 shadow-md">
+        <Select
+          className="text-sm text-black w-full"
+          comboboxProps={{
+            transitionProps: { transition: "pop", duration: 200 },
+          }}
+          label="Filter city"
+          placeholder="All"
+          data={cityArr.map((c: any) => ({
+            value: c.route,
+            label: c.name,
+          }))}
+          onChange={(city) => {
+            handleSelection(city);
+          }}
+        />{" "}
       </div>
     </div>
   );

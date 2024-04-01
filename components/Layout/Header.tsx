@@ -145,12 +145,12 @@ const Header = ({ currentUser, weatherData }: any) => {
               cities={true}
               url={"/algarve"}
             />
-            <NavMenu
-              expandedMenu={false}
-              trigger={"hover"}
-              title={"More"}
-              cities={true}
-            />
+            {/* <NavMenu */}
+            {/*   expandedMenu={false} */}
+            {/*   trigger={"hover"} */}
+            {/*   title={"More"} */}
+            {/*   cities={true} */}
+            {/* /> */}
             <NavMenu
               expandedMenu={false}
               trigger={"hover"}

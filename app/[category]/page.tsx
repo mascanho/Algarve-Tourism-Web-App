@@ -22,6 +22,8 @@ async function Page(props: any) {
   // Fetch Contentful data
   let routeMatched = false;
 
+  const filteredCity = props.searchParams.city;
+
   async function getData() {
     try {
       const client: any = createClient({
@@ -51,10 +53,19 @@ async function Page(props: any) {
   }
 
   try {
-    const category: any = await getData();
+    let category: any = await getData();
+
+    if (filteredCity) {
+      // filter the data based on the city
+      category = category?.filter((obj: any) => {
+        return obj?.fields?.city?.toLowerCase() === filteredCity;
+      });
+    }
+
     // If the route matches Contentful categories then render the categorey card
     if (routeMatched) {
-      const shuffledCategory = category?.sort(() => 0.5 - Math.random());
+      let shuffledCategory = category?.sort(() => 0.5 - Math.random());
+
       return <CategoryCard category={shuffledCategory} />;
     }
 

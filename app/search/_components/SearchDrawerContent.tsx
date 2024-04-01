@@ -14,7 +14,7 @@ import {
 } from "react-icons/md";
 import { PiMountainsFill } from "react-icons/pi";
 
-const SearchDrawerContent = ({ close }) => {
+const SearchDrawerContent = ({ close }: any) => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
