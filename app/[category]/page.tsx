@@ -22,7 +22,9 @@ async function Page(props: any) {
   // Fetch Contentful data
   let routeMatched = false;
 
-  const filteredCity = props.searchParams.city;
+  const filteredCity = props.searchParams.city
+    ?.normalize("NFD")
+    ?.replace(/[\u0300-\u036f]/g, "");
 
   async function getData() {
     try {
@@ -58,7 +60,12 @@ async function Page(props: any) {
     if (filteredCity) {
       // filter the data based on the city
       category = category?.filter((obj: any) => {
-        return obj?.fields?.city?.toLowerCase() === filteredCity;
+        return (
+          obj?.fields?.city
+            ?.normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase() === filteredCity
+        );
       });
     }
 

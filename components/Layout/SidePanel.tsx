@@ -75,7 +75,6 @@ export default function SidePanel() {
             className="mr-[10px]"
             onClick={() => {
               router.push(`https://www.algarvewonders.com/${pathname}`);
-              window?.location?.reload();
               // window?.history?.back();
             }}
           />
