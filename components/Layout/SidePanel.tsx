@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { GiBeachBucket, GiWoodCabin } from "react-icons/gi";
@@ -14,10 +14,12 @@ import { PiMountainsFill } from "react-icons/pi";
 import { catArr } from "@/Data/Categories";
 import { cityArr } from "@/Data/Cities";
 import { Select } from "@mantine/core";
+import { CiRedo } from "react-icons/ci";
 
 export default function SidePanel() {
   const router = useRouter();
   const pathname = usePathname();
+  const ref = useRef();
 
   const categoryIcons: any = {
     Beaches: <GiBeachBucket />,
@@ -38,20 +40,20 @@ export default function SidePanel() {
   };
 
   return (
-    <div className="hidden sm:block bg-white mb-40 h-[440px] sticky top-24 shadow-md hiddenRow border border-key rounded-xl p-1">
-      <div className="w-32 space-y-2 cursor-pointer sm:mt-1 h-full sticky bottom-4 transition-all ease-in delay-75 overflow-hidden">
+    <div className="hiddenRow sticky top-24 mb-40 hidden h-[440px] rounded-xl border border-key bg-white p-1 shadow-md sm:block">
+      <div className="sticky bottom-4 h-full w-32 cursor-pointer space-y-2 overflow-hidden transition-all delay-75 ease-in sm:mt-1">
         {catArr.map((item: any) => (
           <div
             onClick={() => router.push(`${item.route}`)}
             key={item.id}
             className={`
-              p-2 
               rounded-md 
-              hover:bg-key 
-              hover:text-white 
+              p-2 
               transition-all 
+              delay-100 
               ease-in-out 
-              delay-100  
+              hover:bg-key 
+              hover:text-white  
               ${
                 pathname?.includes(item?.route)
                   ? "bg-key text-white border-gray-400 transition-all"
@@ -59,20 +61,31 @@ export default function SidePanel() {
               }
             `}
           >
-            <span className="flex items-center space-x-2 cursor-pointer">
+            <span className="flex cursor-pointer items-center space-x-2">
               {categoryIcons[item.name]} {/* Render icon */}
               <span>{item.name}</span> {/* Render category name */}
             </span>
           </div>
         ))}
       </div>
-      <div className="flex flex-col mt-5 w-32 bg-white border-key border rounded-xl py-2 pl-2 shadow-md">
+      <div className="mt-5 flex w-32 flex-col rounded-xl border border-key bg-white py-2 pl-2 shadow-md">
+        <div className="flex flex-wrap text-black mb-1 items-center justify-between">
+          <h3>Select city</h3>
+          <CiRedo
+            className="mr-[10px]"
+            onClick={() => {
+              router.push(`https://www.algarvewonders.com/${pathname}`);
+              window?.location?.reload();
+              // window?.history?.back();
+            }}
+          />
+        </div>
         <Select
-          className="text-sm text-black w-full"
+          ref={ref}
+          className="w-full text-sm text-black"
           comboboxProps={{
             transitionProps: { transition: "pop", duration: 200 },
           }}
-          label="Filter city"
           placeholder="All"
           data={cityArr.map((c: any) => ({
             value: c.route,
