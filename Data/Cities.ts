@@ -9,6 +9,15 @@ export const cityArr = [
     type: "city",
   },
   {
+    id: 12,
+    name: "Alvor",
+    icon: "",
+    route: "alvor",
+    image:
+      "https://cdn.travel-in-portugal.com/sites/default/files/photos/alvor-algarve.jpg",
+    type: "city",
+  },
+  {
     id: 2,
     name: "Carvoeiro",
     icon: "",
