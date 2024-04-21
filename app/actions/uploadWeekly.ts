@@ -1,6 +1,7 @@
 "use server";
 import { revalidatePath } from "next/cache";
 import getCurrentUser from "../libs/getCurrentUser";
+import prisma from "../libs/prismadb";
 
 export async function uploadWeekly(formData: FormData) {
   const currentUser = await getCurrentUser();
