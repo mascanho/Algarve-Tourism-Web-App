@@ -42,3 +42,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 app/\[category\]/\[slug\]/._page.tsx
+package-lock.json
