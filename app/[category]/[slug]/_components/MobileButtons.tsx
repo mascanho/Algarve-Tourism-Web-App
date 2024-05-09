@@ -3,11 +3,12 @@ import React from "react";
 import { BsGlobe } from "react-icons/bs";
 import { RiMapPinLine } from "react-icons/ri";
 import { LuClipboardCheck } from "react-icons/lu";
-import { FaPaperPlane } from "react-icons/fa";
+import { FaPaperPlane, FaRegCalendarAlt } from "react-icons/fa";
 import { BiHeart } from "react-icons/bi";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { usePathname } from "next/navigation";
 import { toast } from "react-hot-toast";
+import CalendarMenu from "@/components/Layout/CalendarMenu";
 
 const MobileButtons = (filteredData: any) => {
   const addFavourites = useAddToFavourites();
@@ -81,6 +82,15 @@ const MobileButtons = (filteredData: any) => {
           </a>
           <span className="text-xs text-gray-500">
             share tihs location via email{" "}
+          </span>
+        </div>
+      </div>
+      <div className="flex space-x-3 items-start justify-center my-2">
+        <FaRegCalendarAlt className="mt-1" />
+        <div className="flex flex-col flex-wrap w-full space-y-1">
+          <CalendarMenu mobile={"text"} />
+          <span className="text-xs text-gray-500">
+            Open {filteredData[0]?.fields?.title} website on a new tab
           </span>
         </div>
       </div>

@@ -1,18 +1,17 @@
 "use client";
 import { notFound, usePathname } from "next/navigation";
-import { HiQrCode } from "react-icons/hi2";
 import React, { useState } from "react";
 import { BiMapPin } from "react-icons/bi";
 import { BiShareAlt } from "react-icons/bi";
-import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { toast } from "react-hot-toast";
 import { BsFillSuitHeartFill, BsGlobe } from "react-icons/bs";
 import { FiPrinter } from "react-icons/fi";
 import Link from "next/link";
-import { FaEnvelope, FaEnvelopeSquare } from "react-icons/fa";
 import { MdAttachEmail, MdOutlineEmail } from "react-icons/md";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import CalendarMenu from "./CalendarMenu";
 
 const Buttons = ({ filteredData }: any) => {
   const [isCopied, setIsCopied] = useState(false);
@@ -75,31 +74,33 @@ const Buttons = ({ filteredData }: any) => {
   return (
     <section className="text-gray-500 flex space-x-2">
       <BsFillSuitHeartFill
-        className="w-8 h-8 outline-none fav p-[6px] border tooltip rounded-full hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75 text-xs"
+        className="w-8 h-8 outline-none fav p-[6px] border tooltip rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75 text-xs"
         onClick={addFav}
       />
       <Link href={filteredData[0]?.fields?.website || ""} target="_blank">
-        <BsGlobe className="w-8 h-8 p-[6px] border rounded-full hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75  " />
+        <BsGlobe className="w-8 h-8 p-[6px] border rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75  " />
       </Link>
-      <BiMapPin
-        onClick={handleClickGps}
-        className="w-8 h-8 p-1 tooltip border rounded-full hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75"
-      />
+      {/* <BiMapPin */}
+      {/*   onClick={handleClickGps} */}
+      {/*   className="w-8 h-8 p-1 tooltip border rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75" */}
+      {/* /> */}
+      <CalendarMenu />
+
       <BiShareAlt
         data-tooltip-content="Share this page"
         onClick={handleCopyUrl}
-        className="urlCopy w-8 h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75"
+        className="urlCopy w-8 h-8 p-1 border rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75"
       />
-      {/* <HiQrCode className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" /> */}
+      {/* <HiQrCode className="urlCopy w-6 h-6 sm:w-8 sm:h-8 p-1 border rounded-lg hover:cursor-pointer hover:bg-sky hover:text-white transition-all ease-in delay-75" /> */}
       <FiPrinter
         onClick={handlePrint}
-        className="urlCopy hidden sm:flex w-8 h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75"
+        className="urlCopy hidden sm:flex w-8 h-8 p-1 border rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75"
       />
       <a
         target="_blank"
         href={`mailto:?subject=Check%20this%20place%20I%20found%20in%20the%20Algarve&body=${window?.location?.href}`}
       >
-        <MdOutlineEmail className="urlCopy w-8 h-8 p-1 border rounded-full hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75" />
+        <MdOutlineEmail className="urlCopy w-8 h-8 p-1 border rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75" />
       </a>
     </section>
   );
