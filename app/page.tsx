@@ -4,6 +4,7 @@ import { createClient } from "contentful";
 import { cityArr } from "@/Data/Cities";
 import { catArr } from "@/Data/Categories";
 import dynamic from "next/dynamic";
+import Youtube from "@/components/Youtube";
 
 const Card = dynamic(() => import("@/components/Card"));
 const Hero = dynamic(() => import("@/components/Hero"));
@@ -79,7 +80,6 @@ export default async function Home() {
           This week&apos;s selection of popular places and events
         </h4>
       </div>
-
       <Suspense fallback={<p>Loading...</p>}>
         <Card categories={categories} />
       </Suspense>

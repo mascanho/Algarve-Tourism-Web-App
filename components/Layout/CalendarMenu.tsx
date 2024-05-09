@@ -15,7 +15,7 @@ function CalendarMenu({ mobile }: any) {
     <Menu trigger={mobile ? "click" : "hover"} shadow="md" width={200}>
       <Menu.Target>
         {mobile ? (
-          <span className="text-sm underline">Add To Calendar</span>
+          <span className="text-sm underline">Add To calendar</span>
         ) : (
           <FaRegCalendarAlt className="urlCopy w-8 h-8 p-[5px] border rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75" />
         )}
@@ -25,7 +25,7 @@ function CalendarMenu({ mobile }: any) {
         className={`absolute top-10 ${mobile ? "right-16" : "right-28"} `}
       >
         <Menu.Dropdown>
-          <Menu.Label>Calendars</Menu.Label>
+          <Menu.Label>Add to calendars</Menu.Label>
           <Menu.Item className="flex items-center">
             <FaGoogle className="inline mt-[1px]" />
             <span className="pt-4 ml-1 text-black/60"> Google Calendar</span>

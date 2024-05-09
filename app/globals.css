@@ -251,3 +251,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .mantine-Select-dropdown {
   @apply ring-0 ring-black;
 }
+
+.yt-lite {
+  @apply w-1/2 !important;
+}

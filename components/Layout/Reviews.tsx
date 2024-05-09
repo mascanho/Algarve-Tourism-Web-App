@@ -1,6 +1,5 @@
 import Review from "../Review";
 import ReviewForm from "../ReviewForm";
-import { usePathname } from "next/navigation";
 
 function Reviews(reviews: any) {
   return (

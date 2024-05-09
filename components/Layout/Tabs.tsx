@@ -3,6 +3,8 @@ import { Tabs } from "@mantine/core";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Reviews from "./Reviews";
 import { useSearchParams } from "next/navigation";
+import { YouTubeEmbed } from "@next/third-parties/google";
+import Youtube from "../Youtube";
 
 function TabsRow({ filteredData, reviews, slug, props }: any) {
   const searchParams = useSearchParams();
@@ -67,6 +69,8 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
         className="leading-7 text-gray-700 min-h-[400px]"
       >
         <div className="mt-2">{parsedContent}</div>
+
+        <Youtube id="RlFoSmcTy-Y" />
       </Tabs.Panel>
 
       <Tabs.Panel value="map" pt="xs" className="min-h-[400px]">
