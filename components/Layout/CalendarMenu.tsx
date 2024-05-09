@@ -8,11 +8,11 @@ import {
   IconTrash,
   IconArrowsLeftRight,
 } from "@tabler/icons-react";
-import { FaRegCalendarAlt } from "react-icons/fa";
+import { FaGoogle, FaRegCalendarAlt } from "react-icons/fa";
 
 function CalendarMenu({ mobile }: any) {
   return (
-    <Menu trigger={mobile ? "hover" : "click"} shadow="md" width={200}>
+    <Menu trigger={mobile ? "click" : "hover"} shadow="md" width={200}>
       <Menu.Target>
         {mobile ? (
           <span className="text-sm underline">Add To Calendar</span>
@@ -25,13 +25,10 @@ function CalendarMenu({ mobile }: any) {
         className={`absolute top-10 ${mobile ? "right-16" : "right-28"} `}
       >
         <Menu.Dropdown>
-          <Menu.Label>Application</Menu.Label>
-          <Menu.Item
-            leftSection={
-              <IconSettings style={{ width: rem(14), height: rem(14) }} />
-            }
-          >
-            Settings
+          <Menu.Label>Calendars</Menu.Label>
+          <Menu.Item className="flex items-center">
+            <FaGoogle className="inline mt-[1px]" />
+            <span className="pt-4 ml-1 text-black/60"> Google Calendar</span>
           </Menu.Item>
           <Menu.Item
             leftSection={

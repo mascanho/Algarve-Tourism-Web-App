@@ -84,7 +84,9 @@ const Buttons = ({ filteredData }: any) => {
       {/*   onClick={handleClickGps} */}
       {/*   className="w-8 h-8 p-1 tooltip border rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75" */}
       {/* /> */}
-      <CalendarMenu />
+      <div className="relative">
+        <CalendarMenu />
+      </div>
 
       <BiShareAlt
         data-tooltip-content="Share this page"

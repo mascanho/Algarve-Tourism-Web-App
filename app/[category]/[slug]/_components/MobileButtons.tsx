@@ -28,7 +28,7 @@ const MobileButtons = (filteredData: any) => {
     if (navigator.share) {
       navigator
         .share({
-          title: "algarve Wonders - The best plces to visit",
+          title: "Algarve Wonders - The best plces to visit",
           text: "Check out this awesome place in the algarve",
           url: window?.location.href,
         })
@@ -90,7 +90,7 @@ const MobileButtons = (filteredData: any) => {
         <div className="flex flex-col flex-wrap w-full space-y-1">
           <CalendarMenu mobile={"text"} />
           <span className="text-xs text-gray-500">
-            Open {filteredData[0]?.fields?.title} website on a new tab
+            Add {filteredData[0]?.fields?.title} to your calendar
           </span>
         </div>
       </div>
