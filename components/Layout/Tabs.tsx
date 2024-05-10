@@ -70,7 +70,7 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
       >
         <div className="mt-2">{parsedContent}</div>
 
-        <Youtube id="RlFoSmcTy-Y" />
+        {/* <Youtube id="RlFoSmcTy-Y" /> */}
       </Tabs.Panel>
 
       <Tabs.Panel value="map" pt="xs" className="min-h-[400px]">

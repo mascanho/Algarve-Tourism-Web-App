@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev ",
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
@@ -14,6 +14,7 @@
     "@formspree/react": "^2.5.1",
     "@mantine/carousel": "^6.0.21",
     "@mantine/core": "^6.0.21",
+    "@mantine/dates": "^7.9.1",
     "@mantine/form": "^6.0.21",
     "@mantine/hooks": "^6.0.21",
     "@mantine/modals": "^6.0.21",
@@ -44,6 +45,7 @@
     "clsx": "^2.1.0",
     "contentful": "^9.3.5",
     "daisyui": "^2.52.0",
+    "dayjs": "^1.11.11",
     "embla-carousel-autoplay": "^7.1.0",
     "embla-carousel-react": "^7.1.0",
     "eslint": "8.37.0",

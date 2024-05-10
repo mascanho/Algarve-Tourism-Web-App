@@ -1,15 +1,7 @@
-import { google, outlook, office365, yahoo, ics } from "calendar-link";
+import React from "react";
 
-export default function AddToCalendar() {
-
-
-  const event = {
-    title: "Event Title",
-    description: "Event Description",
-    location: "Event Location",
-    startTime: new Date(),
-    endTime: new Date(),
-    timeZone: "UTC",
-
+function AddToCalendar({ event }: any) {
   return <div>AddToCalendar</div>;
 }
+
+export default AddToCalendar;

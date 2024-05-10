@@ -19,6 +19,23 @@ const Buttons = ({ filteredData }: any) => {
   const addFavourites = useAddToFavourites();
   const favourites = useAddToFavourites();
 
+  const CalendarData = {
+    title: filteredData[0]?.fields?.title,
+    description: filteredData[0]?.fields?.description,
+    image: filteredData[0]?.fields?.mainImage?.fields?.file?.url,
+    slug: filteredData[0]?.fields?.slug,
+    rating: filteredData[0]?.fields?.rating,
+    city: filteredData[0]?.fields?.city,
+    type: filteredData[0]?.fields?.type,
+    price: filteredData[0]?.fields?.price,
+    pathname: window?.location?.pathname,
+    shortDescription: filteredData[0]?.fields?.shortDescription,
+    embededMap: filteredData[0]?.fields?.embededMap,
+    mapShare: filteredData[0]?.fields?.mapShare,
+    tags: filteredData[0]?.fields?.tags,
+    date: filteredData[0]?.fields?.date,
+  };
+
   function addFav() {
     addFavourites.addFavourite({
       id: filteredData[0]?.fields?.title,
@@ -85,7 +102,7 @@ const Buttons = ({ filteredData }: any) => {
       {/*   className="w-8 h-8 p-1 tooltip border rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75" */}
       {/* /> */}
       <div className="relative">
-        <CalendarMenu />
+        <CalendarMenu calendarData={CalendarData} />
       </div>
 
       <BiShareAlt
