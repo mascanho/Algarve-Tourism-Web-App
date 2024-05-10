@@ -9,6 +9,19 @@ import {
   IconArrowsLeftRight,
 } from "@tabler/icons-react";
 import { FaGoogle, FaRegCalendarAlt } from "react-icons/fa";
+import { google, outlook, office365, yahoo, ics } from "calendar-link";
+
+const event: any = {
+  title: "My birthday party",
+  description: "Be there!",
+  start: "2019-12-29 18:00:00 +0100",
+  duration: [3, "hour"],
+};
+
+const handleClick = () => {
+  console.log("clicked");
+  google(event);
+};
 
 function CalendarMenu({ mobile }: any) {
   return (
@@ -28,7 +41,10 @@ function CalendarMenu({ mobile }: any) {
           <Menu.Label>Add to calendars</Menu.Label>
           <Menu.Item className="flex items-center">
             <FaGoogle className="inline mt-[1px]" />
-            <span className="pt-4 ml-1 text-black/60"> Google Calendar</span>
+            <span className="pt-4 ml-1 text-black/60" onClick={handleClick}>
+              {" "}
+              Google Calendar
+            </span>
           </Menu.Item>
           <Menu.Item
             leftSection={

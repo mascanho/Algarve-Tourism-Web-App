@@ -39,6 +39,7 @@
     "aos": "3.0.0-beta.6",
     "axios": "^1.6.2",
     "bcrypt": "^5.1.1",
+    "calendar-link": "^2.6.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "contentful": "^9.3.5",
