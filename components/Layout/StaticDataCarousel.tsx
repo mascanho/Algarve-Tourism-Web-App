@@ -104,8 +104,8 @@ function StaticDataCarousel({
   ));
 
   return (
-    <section className="sm:mt-20 sm:mb-0 mb-10 mt-14">
-      <h2 className="max-w-7xl mx-auto text-left w-11/12 text-3xl sm:text-5xl text-black font-semibold sm:pb-6">
+    <section className="sm:mt-20 sm:mb-0 mb-10 mt-14 w-full max-w-7xl mx-auto">
+      <h2 className="mx-auto text-left text-3xl sm:text-5xl text-black font-semibold sm:pb-6">
         {title}
       </h2>
       <section
@@ -117,16 +117,16 @@ function StaticDataCarousel({
       >
         {inView && (
           <Carousel
-            className="bottomCarousel mt-10"
-            slideSize={mobile ? "53.333333%" : "1.333333%"}
-            slideGap={"md"}
-            // align="start"
+            className="bottomCarousel mt-10 mx-auto w-full  "
+            slideSize={mobile ? "43.333333%" : "1.333333%"}
+            slideGap={mobile ? "xs" : "md"}
+            align={mobile ? "start" : "start"}
             slidesToScroll={mobile ? 1 : 1}
             height={!mobile ? 300 : 230}
             // withControls={mobile ? false : true}
             // withControls={false}
             // loop
-            initialSlide={1}
+            initialSlide={0}
           >
             {slides}
           </Carousel>

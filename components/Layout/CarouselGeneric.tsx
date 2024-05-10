@@ -89,9 +89,9 @@ function GenericCarousel({
   ));
 
   return (
-    <section className="sm:mb-20 sm:pb-6 sm:mt-20 mt-14 mb-10">
+    <section className="sm:mb-20 sm:pb-6 sm:mt-20 mt-14 mb-10 max-w-7xl mx-auto">
       <div>
-        <h2 className="mx-auto text-left w-11/12 text-3xl sm:text-5xl text-black font-semibold sm:pb-6 sm:mt-20 max-w-7xl">
+        <h2 className="mx-auto text-left text-3xl sm:text-5xl text-black font-semibold sm:pb-6 sm:mt-20 max-w-7xl">
           {title}
         </h2>
       </div>
@@ -104,12 +104,13 @@ function GenericCarousel({
       >
         {inView && (
           <Carousel
-            className={`bottomCarousel mt-10 ${ptsans.className}`}
+            className={`bottomCarousel mt-10 ${ptsans.className} mx-auto `}
             slideSize={mobile ? "43.333333%" : "30.333333%"}
-            slideGap={mobile ? "md" : "md"}
+            slideGap={mobile ? "xs" : "md"}
             slidesToScroll={mobile ? 1 : 1}
             height={!mobile ? 300 : 230}
-            initialSlide={1}
+            align={mobile ? "start" : "start"}
+            initialSlide={0}
           >
             {slides}
             <Link

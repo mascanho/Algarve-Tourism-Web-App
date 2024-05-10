@@ -105,8 +105,8 @@ function BottomCarousel({
   ));
 
   return (
-    <section className="sm:mt-20 mt-14 mb-20 sm:mb-0 ">
-      <h2 className="max-w-7xl text-left sm:pb-6 mx-auto text-3xl sm:text-5xl w-11/12  font-semibold text-black">
+    <section className="sm:mt-20 mt-14 mb-20 sm:mb-0 mx-auto max-w-7xl ">
+      <h2 className="max-w-7xl text-left sm:pb-6 mx-auto text-3xl sm:text-5xl  font-semibold text-black">
         {title}
       </h2>
       <section
@@ -119,10 +119,10 @@ function BottomCarousel({
         {inView && (
           <Carousel
             // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-            className="bottomCarousel mt-10 w-full h-fit"
+            className="bottomCarousel mt-10 mx-auto h-fit "
             slideSize={mobile ? "43.333333%" : "33.333333%"}
-            slideGap={"md"}
-            // align="start"
+            slideGap={mobile ? "xs" : "md"}
+            align={mobile ? "start" : "start"}
             slidesToScroll={mobile ? 1 : 1}
             height={!mobile ? 300 : 230}
             // withControls={mobile ? false : true}
