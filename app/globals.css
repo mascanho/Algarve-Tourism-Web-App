@@ -253,5 +253,5 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .yt-lite {
-  @apply w-1/2 !important;
+  @apply sm:w-1/2 !important;
 }

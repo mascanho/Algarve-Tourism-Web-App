@@ -9,6 +9,8 @@ import Link from "next/link";
 import TableOfContentsFloating from "@/app/blog/[slug]/TableOfContents";
 import Breadcrumbs from "@/components/Layout/Breadcrumbs";
 import { IoArrowBack } from "react-icons/io5";
+import { YouTubeEmbed } from "@next/third-parties/google";
+import Youtube from "@/components/Youtube";
 
 const options = {
   renderNode: {
@@ -100,6 +102,13 @@ const tableData: any = [
     label: "What is the weather like?",
     url: "#weather",
     link: "#weather",
+    order: 1,
+  },
+  {
+    id: 6,
+    label: "Watch the video",
+    url: "#video",
+    link: "#food",
     order: 1,
   },
 ];
@@ -259,6 +268,15 @@ async function page(props: any) {
           <h2 className="sm:text-3xl text-3xl text-black font-bold">Weather</h2>
           <div className="richText">{weather}</div>
         </div>
+        {/* embeded Youtube section */}
+        {filteredData[0]?.fields?.youtubeId ? (
+          <div id="video" className="pt-10">
+            <Youtube id={filteredData[0]?.fields?.youtubeId} />
+            <span className="text-xs text-black/50">
+              &copy; All rights reserved to the video creator/owner
+            </span>
+          </div>
+        ) : null}
         <div className="py-10">
           <Link href="/algarve">
             <button type="button" className="flex items-center">
