@@ -104,7 +104,7 @@ function StaticDataCarousel({
   ));
 
   return (
-    <section className="sm:mt-20 sm:mb-0 mb-10 mt-14 w-full max-w-7xl mx-auto">
+    <section className="sm:mt-20 sm:mb-0 mb-10 mt-14 w-11/12 sm:w-full max-w-7xl mx-auto">
       <h2 className="mx-auto text-left text-3xl sm:text-5xl text-black font-semibold sm:pb-6">
         {title}
       </h2>

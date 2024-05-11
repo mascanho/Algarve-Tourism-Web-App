@@ -105,7 +105,7 @@ function BottomCarousel({
   ));
 
   return (
-    <section className="sm:mt-20 mt-14 mb-20 sm:mb-0 mx-auto max-w-7xl ">
+    <section className="sm:mt-20 mt-14 mb-20 sm:mb-0 mx-auto max-w-7xl w-11/12 sm:w-full ">
       <h2 className="max-w-7xl text-left sm:pb-6 mx-auto text-3xl sm:text-5xl  font-semibold text-black">
         {title}
       </h2>
