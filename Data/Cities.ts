@@ -41,7 +41,7 @@ export const cityArr = [
     icon: "",
     route: "lagos",
     image:
-      "https://fullsuitcase.com/wp-content/uploads/2022/12/Lagos-Portugal.jpg",
+      "https://www.iberian-escapes.com/images/Aerial-view-lagos-algarve-portugal.jpg",
     type: "city",
   },
   {

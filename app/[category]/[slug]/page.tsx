@@ -28,7 +28,6 @@ import { IoIosLeaf } from "react-icons/io";
 import BookingDrawer from "./_components/BookingDrawer";
 import { notFound } from "next/navigation";
 import { GiPortugal } from "react-icons/gi";
-import { google, outlook, office365, yahoo, ics } from "calendar-link";
 
 const Reviews = dynamic(() => import("../../../components/Layout/Reviews"), {});
 

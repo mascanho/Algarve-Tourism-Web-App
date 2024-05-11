@@ -31,9 +31,6 @@ function CalendarMenu({ mobile, calendarData }: any) {
   const apple = ics(event); // standard ICS file based on https://icalendar.org
 
   const googleURL = google(event);
-  console.log(googleURL);
-  console.log(calendarData);
-  console.log(window.location.href);
 
   return (
     <>

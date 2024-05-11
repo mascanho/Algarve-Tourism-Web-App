@@ -3,8 +3,8 @@ import { Tabs } from "@mantine/core";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Reviews from "./Reviews";
 import { useSearchParams } from "next/navigation";
-import { YouTubeEmbed } from "@next/third-parties/google";
 import Youtube from "../Youtube";
+import { PiYoutubeLogoLight } from "react-icons/pi";
 
 function TabsRow({ filteredData, reviews, slug, props }: any) {
   const searchParams = useSearchParams();
@@ -53,14 +53,20 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
         <Tabs.Tab value="third" color="black">
           Price
         </Tabs.Tab>
-        <Tabs.Tab value="reviews" color="black">
-          Reviews
-        </Tabs.Tab>
         {filteredData[0].fields.bookingUrl || filteredData[0].fields.booking ? (
           <Tabs.Tab value="booking" color="black">
             Booking
           </Tabs.Tab>
         ) : null}
+
+        {filteredData[0].fields.youtubeId && (
+          <Tabs.Tab value="calendar" color="black" className="flex">
+            <PiYoutubeLogoLight className="inline" /> Video
+          </Tabs.Tab>
+        )}
+        <Tabs.Tab value="reviews" color="black">
+          Reviews
+        </Tabs.Tab>
       </Tabs.List>
 
       <Tabs.Panel
@@ -69,8 +75,6 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
         className="leading-7 text-gray-700 min-h-[400px]"
       >
         <div className="mt-2">{parsedContent}</div>
-
-        {/* <Youtube id="RlFoSmcTy-Y" /> */}
       </Tabs.Panel>
 
       <Tabs.Panel value="map" pt="xs" className="min-h-[400px]">
@@ -119,6 +123,18 @@ function TabsRow({ filteredData, reviews, slug, props }: any) {
             >
               Book now
             </a>
+          </div>
+        )}
+      </Tabs.Panel>
+
+      <Tabs.Panel value="calendar" pt="xs" className="min-h-[400px]">
+        {/* embeded Youtube video */}
+        {filteredData[0]?.fields?.youtubeId && (
+          <div className="pt-5">
+            <Youtube id={filteredData[0]?.fields?.youtubeId} />
+            <span className="text-xs text-black/50">
+              &copy; All rights reserved to the video creator/owner
+            </span>
           </div>
         )}
       </Tabs.Panel>

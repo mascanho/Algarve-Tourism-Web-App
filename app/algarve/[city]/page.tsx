@@ -270,7 +270,10 @@ async function page(props: any) {
         </div>
         {/* embeded Youtube section */}
         {filteredData[0]?.fields?.youtubeId ? (
-          <div id="video" className="pt-10">
+          <div id="video" className="space-y-3 pt-5">
+            <h2 className="sm:text-3xl text-3xl text-black font-bold">
+              Watch the video
+            </h2>
             <Youtube id={filteredData[0]?.fields?.youtubeId} />
             <span className="text-xs text-black/50">
               &copy; All rights reserved to the video creator/owner

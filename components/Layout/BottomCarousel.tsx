@@ -128,7 +128,7 @@ function BottomCarousel({
             // withControls={mobile ? false : true}
             // withControls={false}
             // loop
-            initialSlide={1}
+            initialSlide={0}
           >
             {slides}
             <div className="flex items-center text-center h-56 sm:h-full">

@@ -3,6 +3,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { Drawer, Button } from "@mantine/core";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { MdOutlineChevronRight } from "react-icons/md";
+import Youtube from "@/components/Youtube";
 
 export default function Categorydrawer(filteredData: any, { text }: any) {
   const [opened, { open, close }] = useDisclosure(false);
@@ -38,6 +39,14 @@ export default function Categorydrawer(filteredData: any, { text }: any) {
       >
         {/* Drawer content */}
         <div className="mt-2 richText">{parsedContent}</div>
+        {filteredData[0]?.fields?.youtubeId && (
+          <div className="pt-5 pb-10">
+            <Youtube id={filteredData[0]?.fields?.youtubeId} />
+            <span className="text-xs text-black/50">
+              &copy; All rights reserved to the video creator/owner
+            </span>
+          </div>
+        )}
       </Drawer>
 
       <span
