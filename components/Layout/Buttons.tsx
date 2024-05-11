@@ -1,7 +1,6 @@
 "use client";
 import { notFound, usePathname } from "next/navigation";
 import React, { useState } from "react";
-import { BiMapPin } from "react-icons/bi";
 import { BiShareAlt } from "react-icons/bi";
 import "react-tooltip/dist/react-tooltip.css";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
@@ -10,7 +9,6 @@ import { BsFillSuitHeartFill, BsGlobe } from "react-icons/bs";
 import { FiPrinter } from "react-icons/fi";
 import Link from "next/link";
 import { MdAttachEmail, MdOutlineEmail } from "react-icons/md";
-import { FaRegCalendarAlt } from "react-icons/fa";
 import CalendarMenu from "./CalendarMenu";
 
 const Buttons = ({ filteredData }: any) => {
