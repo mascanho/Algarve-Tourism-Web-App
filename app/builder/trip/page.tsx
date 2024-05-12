@@ -1,5 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import AiTripCard from "./components/aiTripCard";
+import CitySelection from "./components/CitySelection";
 
 const TripPage = () => {
   const [tripData, setTripData] = useState([]);
@@ -16,17 +18,9 @@ const TripPage = () => {
     return <h1>Not tripo data</h1>;
   }
 
-  console.log(tripData.days);
-
   return (
-    <section className="min-h-screen pt-20">
-      {tripData.categories?.map((category: string) => {
-        return (
-          <div key={category}>
-            <h1>{category}</h1>
-          </div>
-        );
-      })}
+    <section className="min-h-screen  max-w-7xl flex flex-col justify-center items-center">
+      <CitySelection />
     </section>
   );
 };

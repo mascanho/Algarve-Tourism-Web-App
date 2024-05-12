@@ -20,7 +20,13 @@ export const BuilderFooter = () => {
       if (!dataObj) {
         console.log("No data found in localStorage.");
       }
-      setHasBuilderData(true);
+      if (
+        dataObj.days > 0 &&
+        dataObj.attractions > 0 &&
+        dataObj.categories.length > 0
+      ) {
+        setHasBuilderData(true);
+      }
     };
 
     // Add event listener for mouse clicks on the document
@@ -35,6 +41,9 @@ export const BuilderFooter = () => {
   const handleNextClick = () => {
     if (pathname === "/builder") {
       router.push("/builder/trip");
+    }
+    if (pathname === "/builder/trip") {
+      router.push("/builder/summary");
     }
   };
 
@@ -57,9 +66,9 @@ export const BuilderFooter = () => {
           onClick={handleNextClick}
           type="button"
           disabled={!hasBuilderData}
-          className="w-24 bg-key text-white py-1 rounded-lg px-4 disabled:opacity-50 disabled:cursor-not-allowed "
+          className="w-24 bg-key text-white py-1 rounded-lg px-4 disabled:opacity-20 disabled:cursor-not-allowed "
         >
-          {pathname === "/builder/trip" ? "Generate" : "Next"}
+          {pathname === "/builder/trip" ? "Next" : "Next"}
         </button>
       </div>
     </div>

@@ -49,6 +49,13 @@ function Demo() {
       categories: updatedCategories,
     };
 
+    // Remove any "null" or "undefined" values from DATA object
+    Object.keys(DATA).forEach((key) => {
+      if (DATA[key] === null || DATA[key] === undefined) {
+        delete DATA[key];
+      }
+    });
+
     // Update localStorage
     localStorage.setItem("Builder", JSON.stringify(DATA));
   };
@@ -64,7 +71,7 @@ function Demo() {
           min={1}
         />
         <NumberInput
-          placeholder="Number of attractions"
+          placeholder="Number of attractions per day"
           onChange={(attractions) =>
             handleDataInputs(undefined, attractions, undefined)
           }
