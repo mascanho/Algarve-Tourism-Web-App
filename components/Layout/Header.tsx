@@ -1,6 +1,5 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { MdCardTravel } from "react-icons/md";
 import { useDisclosure } from "@mantine/hooks";
 import LoginModal from "../modals/Login";
@@ -16,12 +15,12 @@ import { toast } from "react-hot-toast";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { NavMenu } from "../NavMenu";
 import Image from "next/image";
-import WeatherModal from "../modals/WeatherModal";
 import Sheet from "./Sheet";
 import NotificationsModal from "./NotificationsModal";
 import BottomDrawer from "./BottomDrawer";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = ({ currentUser, weatherData }: any) => {
   const [openLogin, setOpenLogin] = useState(false);
@@ -34,12 +33,12 @@ const Header = ({ currentUser, weatherData }: any) => {
   };
   const [showMobileBurger, setShowMobileBurger] = useState(false);
 
-  // const [weatherModal, setWeatherModal] = useState(false);
-
   const userLogsOut = () => {
     toast.success("Logging you out... bye!");
     signOut();
   };
+
+  const pathname = usePathname();
 
   // Modals using Zustand
   const loginModal = useLoginModalStore();
@@ -66,26 +65,10 @@ const Header = ({ currentUser, weatherData }: any) => {
         ) : (
           ""
         )}{" "}
-        <Modal
-          opened={opened}
-          onClose={close}
-          title={"Favourites"}
-          centered
-          overlayProps={{ opacity: 0.55, blur: 3 }}
-        >
-          {/* Modal content */}
-          {null ? (
-            {
-              /* <WeatherModal weatherData={weatherData} /> */
-            }
-          ) : (
-            <DrawerContent close={close} />
-          )}
-        </Modal>
       </section>
 
       <nav
-        className={`border-b  border  w-full   fixed flex top-0 flex-wrap bg-white  shadow-sm z-20 transition-all ease-in delay-100 `}
+        className={`border-b ${pathname?.includes("/builder") && "hidden"}  border  w-full   fixed flex top-0 flex-wrap bg-white  shadow-sm z-20 transition-all ease-in delay-100 `}
       >
         <header
           className={`flex flex-wrap w-11/12 sm:w-full max-w-7xl sm:px-2 md:w-full lg:w-full  justify-between mx-auto py-2 transition-all ease-in delay-150 `}

@@ -12,6 +12,7 @@ import { PT_Sans } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import dynamic from "next/dynamic";
 import { Analytics } from "@vercel/analytics/react";
+import { headers } from "next/headers";
 
 const Footer = dynamic(() => import("@/components/Layout/Footer"));
 
@@ -51,6 +52,13 @@ export const metadata: Metadata = {
   // },
 };
 
+const headersList = headers();
+
+const domain = headersList.get("host") || "";
+const fullUrl = headersList.get("referer") || "";
+const [, pathname] =
+  fullUrl.match(new RegExp(`https?:\/\/${domain}(.*)`)) || [];
+
 export default async function RootLayout({
   children,
 }: {
@@ -73,7 +81,9 @@ export default async function RootLayout({
             <Analytics />
           </ClientOnly>
           <GoogleTagManager gtmId="GTM-MHX7R9FF" />
-          <div className="custom-shape-divider-bottom-1707076088 hiddenRow">
+          <div
+            className={`${pathname?.includes("/builder") ? "hidden" : ""} custom-shape-divider-bottom-1707076088 hiddenRow`}
+          >
             <svg
               data-name="Layer 1"
               xmlns="http://www.w3.org/2000/svg"

@@ -4,7 +4,6 @@ import { createClient } from "contentful";
 import { cityArr } from "@/Data/Cities";
 import { catArr } from "@/Data/Categories";
 import dynamic from "next/dynamic";
-import Youtube from "@/components/Youtube";
 
 const Card = dynamic(() => import("@/components/Card"));
 const Hero = dynamic(() => import("@/components/Hero"));

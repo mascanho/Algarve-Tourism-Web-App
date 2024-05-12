@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import { HiArrowUp } from "react-icons/hi2";
 import { usePathname } from "next/navigation";
 import { useInView } from "react-intersection-observer";
-import CookiesBanner from "./CookiesBanner";
 
 function Footer() {
   const [showToTop, setShowToTop] = useState(false);
@@ -80,7 +79,10 @@ function Footer() {
           />
         )}
 
-      <section ref={ref} className="bg-key  z-0 -mt-[1px] ">
+      <section
+        ref={ref}
+        className={`bg-key ${pathname?.includes("/builder") && "hidden"}  z-0 -mt-[1px]`}
+      >
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto w-11/12 ">
           <section className="grid grid-cols-2 w-full sm:flex justify-between px-4 sm:px-0 ">
             <div className="flex flex-col space-y-1 text-white">
