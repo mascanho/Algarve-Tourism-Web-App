@@ -260,15 +260,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .card {
   --background: #fff;
-  --background-checkbox: #0082ff;
+  --background-checkbox: black;
   --background-image: #fff, rgba(0, 107, 175, 0.2);
   --text-color: #666;
   --text-headline: #000;
-  --card-shadow: #0082ff;
-  --card-height: 190px;
+  --card-shadow: black;
+  --card-height: 160px;
   --card-width: 190px;
   --card-radius: 12px;
-  --header-height: 47px;
+  --header-height: 37px;
   --blend-mode: overlay;
   --transition: 0.15s;
   -webkit-user-select: none;
@@ -434,7 +434,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 13px;
 }
 
-html {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
+.mantine-lkp1wu {
+  @apply min-h-14 min-w-full;
+}
+
+/* Stepper */
+.mantine-7qna17 {
+  @pply text-xs text-red-500 !important;
 }

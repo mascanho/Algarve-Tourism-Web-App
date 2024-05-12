@@ -1,15 +1,18 @@
+import Link from "next/link";
 import React from "react";
-import { FaCrow } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 
 export const BuilderHeader = () => {
   return (
-    <div className="h-20 mb-2  border bg-white w-full text-black justify-center flex items-center absolute top-0 ">
-      <section>
-        <span>POWERED BY AI</span>
-      </section>
-      <IoClose className="absolute right-10" />
-    </div>
+    <section>
+      <div className="h-16 mb-2 overflow-hidden  border bg-white w-full z-20  text-black justify-center flex items-center fixed top-0 ">
+        <section>GENERATED AI</section>
+        <Link className="absolute right-10" href="/">
+          <IoClose />
+        </Link>
+      </div>
+      {/* <div className="mt-16 w-1/2 h-[5px] bg-black" /> */}
+    </section>
   );
 };
 
