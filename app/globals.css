@@ -127,7 +127,7 @@ input[type="text"] {
 }
 
 .bottomCarousel .mantine-vcl0d1 {
-  @apply sm:flex hidden flex -top-16 justify-end  mx-auto space-x-2 !important;
+  @apply sm:flex hidden flex px-2 justify-between   mx-auto text-xl !important;
 }
 
 .animate-gradient {

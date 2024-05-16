@@ -23,7 +23,7 @@ function Card({ image, title, city, slug, type }: any) {
             backgroundBlendMode: "multiply",
             backgroundColor: "rgba(0, 0, 0, 0.3)",
           }}
-          className="h-56 sm:h-full w-56 sm:w-[320px] md:w-[320px] lg:w-[320px] xl:w-full  sm:max-w-lg flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in "
+          className="h-56 sm:h-full w-56 sm:w-[300px] flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
         >
           <div className="w-full">
             <div className="flex items-center justify-between w-full">
@@ -83,7 +83,7 @@ function GenericCarousel({
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const slides = items.map((item, index) => (
-    <Carousel.Slide key={item.title} className="xl:max-w-[400px]">
+    <Carousel.Slide key={item.title}>
       <Card {...item} last="last" />
     </Carousel.Slide>
   ));
@@ -105,12 +105,20 @@ function GenericCarousel({
         {inView && (
           <Carousel
             className={`bottomCarousel mt-10 ${ptsans.className} mx-auto `}
-            slideSize={mobile ? "43.333333%" : "30.333333%"}
-            slideGap={mobile ? "xs" : "md"}
+            slideSize={mobile ? "43.333333%" : 100 / 4 + "%"}
+            slideGap={mobile ? "xs" : "xl"}
             slidesToScroll={mobile ? 1 : 1}
             height={!mobile ? 300 : 230}
             align={mobile ? "start" : "start"}
             initialSlide={0}
+            styles={{
+              control: {
+                "&[data-inactive]": {
+                  opacity: 0,
+                  cursor: "default",
+                },
+              },
+            }}
           >
             {slides}
             <Link

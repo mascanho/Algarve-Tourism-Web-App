@@ -27,7 +27,7 @@ function Card({ image, title, city, slug, type }: any) {
           backgroundBlendMode: "multiply",
           backgroundColor: "rgba(0, 0, 0, 0.3)",
         }}
-        className="h-56 sm:h-full w-56 sm:w-full lg:w-72 xl:w-full flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+        className="h-56 sm:h-full w-56 sm:w-[305px]  flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
       >
         <div className="w-full">
           <div className="flex items-center justify-between w-full">
@@ -99,7 +99,7 @@ function BottomCarousel({
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const slides = items.map((item) => (
-    <Carousel.Slide key={item.title} className="xl:max-w-[400px]">
+    <Carousel.Slide key={item.title}>
       <Card {...item} />
     </Carousel.Slide>
   ));
@@ -119,15 +119,27 @@ function BottomCarousel({
         {inView && (
           <Carousel
             // slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-            className="bottomCarousel mt-10 mx-auto h-fit "
-            slideSize={mobile ? "43.333333%" : "33.333333%"}
-            slideGap={mobile ? "xs" : "md"}
+            className="bottomCarousel mt-10  h-fit flex justify-center "
+            slideSize={mobile ? "43.333333%" : 100 / 4 + "%"}
+            slideGap={mobile ? "xs" : "lg"}
             align={mobile ? "start" : "start"}
             slidesToScroll={mobile ? 1 : 1}
             height={!mobile ? 300 : 230}
             // withControls={mobile ? false : true}
             // withControls={false}
             // loop
+            withControls={true}
+            // change ctrol size
+            // controlSize={mobile ? 30 : 40}
+            withIndicators={false}
+            styles={{
+              control: {
+                "&[data-inactive]": {
+                  opacity: 0,
+                  cursor: "default",
+                },
+              },
+            }}
             initialSlide={0}
           >
             {slides}

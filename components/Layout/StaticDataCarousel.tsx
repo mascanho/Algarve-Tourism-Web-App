@@ -8,12 +8,6 @@ import { useInView } from "react-intersection-observer";
 
 import { ImNewTab } from "react-icons/im";
 
-interface CardProps {
-  image: string;
-  category: string;
-  categories: any;
-}
-
 function Card({ image, url, city, type, route }: any) {
   return (
     <Link href={type === "category" ? route : "/algarve/" + route}>
@@ -26,7 +20,7 @@ function Card({ image, url, city, type, route }: any) {
           backgroundBlendMode: "multiply",
           backgroundColor: "rgba(0, 0, 0, 0.3)",
         }}
-        className="h-56 sm:h-full w-56 sm:w-56 md:w-[385px] max-w-[400px]  flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+        className="h-56 sm:h-full w-56 sm:w-[300px]  flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
       >
         <div className="group">
           <div className="flex items-center justify-between w-fit">
@@ -95,6 +89,8 @@ function StaticDataCarousel({
     };
   });
 
+  console.log(categories, "where are the categories");
+
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const slides = items.map((item) => (
@@ -104,7 +100,7 @@ function StaticDataCarousel({
   ));
 
   return (
-    <section className="sm:mt-20 sm:mb-0 mb-10 mt-14 w-11/12 sm:w-full max-w-7xl mx-auto">
+    <section className="sm:mt-20 sm:mb-0 mb-10 mt-14 w-11/12 sm:w-11/12 max-w-7xl mx-auto">
       <h2 className="mx-auto text-left text-3xl sm:text-5xl text-black font-semibold sm:pb-6">
         {title}
       </h2>
@@ -118,14 +114,22 @@ function StaticDataCarousel({
         {inView && (
           <Carousel
             className="bottomCarousel mt-10 mx-auto w-full  "
-            slideSize={mobile ? "43.333333%" : "1.333333%"}
-            slideGap={mobile ? "xs" : "md"}
+            slideSize={mobile ? 100 / 3 + "%" : 100 / 4 + "%"}
+            slideGap={mobile ? "xs" : "xl"}
             align={mobile ? "start" : "start"}
             slidesToScroll={mobile ? 1 : 1}
             height={!mobile ? 300 : 230}
             // withControls={mobile ? false : true}
             // withControls={false}
             // loop
+            styles={{
+              control: {
+                "&[data-inactive]": {
+                  opacity: 0,
+                  cursor: "default",
+                },
+              },
+            }}
             initialSlide={0}
           >
             {slides}
