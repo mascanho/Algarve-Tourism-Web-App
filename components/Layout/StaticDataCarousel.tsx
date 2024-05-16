@@ -114,7 +114,7 @@ function StaticDataCarousel({
         {inView && (
           <Carousel
             className="bottomCarousel mt-10 mx-auto w-full  "
-            slideSize={mobile ? 100 / 3 + "%" : 100 / 4 + "%"}
+            slideSize={mobile ? 100 / 3 + "%" : 100 / 5 + "%"}
             slideGap={mobile ? "xs" : "xl"}
             align={mobile ? "start" : "start"}
             slidesToScroll={mobile ? 1 : 1}

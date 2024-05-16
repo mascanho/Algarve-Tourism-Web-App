@@ -65,6 +65,22 @@ const Header = ({ currentUser, weatherData }: any) => {
         ) : (
           ""
         )}{" "}
+        <Modal
+          opened={opened}
+          onClose={close}
+          title={"Favourites"}
+          centered
+          overlayProps={{ opacity: 0.55, blur: 3 }}
+        >
+          {/* Modal content */}
+          {null ? (
+            {
+              /* <WeatherModal weatherData={weatherData} /> */
+            }
+          ) : (
+            <DrawerContent close={close} />
+          )}
+        </Modal>
       </section>
 
       <nav
