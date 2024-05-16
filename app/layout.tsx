@@ -52,19 +52,19 @@ export const metadata: Metadata = {
   // },
 };
 
-const headersList = headers();
-
-const domain = headersList?.get("host") || "";
-const fullUrl = headersList?.get("referer") || "";
-const [, pathname] =
-  fullUrl?.match(new RegExp(`https?:\/\/${domain}(.*)`)) || [];
-
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const currentUser = await getCurrentUser();
+
+  const headersList = headers();
+
+  const domain = headersList?.get("host") || "";
+  const fullUrl = headersList?.get("referer") || "";
+  const [, pathname] =
+    fullUrl?.match(new RegExp(`https?:\/\/${domain}(.*)`)) || [];
 
   return (
     <html
