@@ -12,17 +12,19 @@ export const BuilderHeader = () => {
       <div className="h-16 mb-2 overflow-hidden  border bg-white w-full z-20  text-black justify-center flex items-center fixed top-0 ">
         <section className="flex items-center">
           {pathname === "/builder" && (
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-4 ">
               <h1 className="text-3xl font-bold">Builder</h1>
-              <span className="mt-2 text-key/40">
+              <span className="mt-1 text-xs  text-key/40">
                 Select days, activities and more
               </span>
             </div>
           )}
           {pathname?.includes("/trip") && (
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-4">
               <h1 className="text-3xl font-bold">Builder</h1>
-              <span className="mt-2 text-key/40">select cities to visit</span>
+              <span className="mt-1 text-xs text-key/40">
+                select cities to visit
+              </span>
             </div>
           )}
         </section>
