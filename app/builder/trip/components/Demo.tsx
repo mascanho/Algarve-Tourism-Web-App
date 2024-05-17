@@ -36,8 +36,8 @@ function Demo() {
 
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      <section className="mt-10">
-        <div className="grid sm:grid-cols-4 gap-6">
+      <section>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 my-36 sm:my-auto">
           {cityArr.map((obj) => {
             return (
               <div key={obj?.name}>

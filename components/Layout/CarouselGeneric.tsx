@@ -23,7 +23,7 @@ function Card({ image, title, city, slug, type }: any) {
             backgroundBlendMode: "multiply",
             backgroundColor: "rgba(0, 0, 0, 0.3)",
           }}
-          className="h-56 sm:h-full w-56 sm:w-[300px] flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+          className="h-56 sm:h-full w-56 sm:w-[285px] flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
         >
           <div className="w-full">
             <div className="flex items-center justify-between w-full">
@@ -82,6 +82,7 @@ function GenericCarousel({
 
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
+  const desktopSM = useMediaQuery(`(max-width: "600px")`);
   const slides = items.map((item, index) => (
     <Carousel.Slide key={item.title}>
       <Card {...item} last="last" />
@@ -89,7 +90,7 @@ function GenericCarousel({
   ));
 
   return (
-    <section className="sm:mb-20 sm:pb-6 sm:mt-20 mt-14 mb-10 max-w-7xl w-11/12 sm:w-full mx-auto">
+    <section className="sm:mb-20 sm:pb-6 sm:mt-20 mt-14 mb-10 max-w-7xl w-11/12 sm:w-11/12 mx-auto">
       <div>
         <h2 className="mx-auto text-left text-3xl sm:text-5xl text-black font-semibold sm:pb-6 sm:mt-20 max-w-7xl">
           {title}

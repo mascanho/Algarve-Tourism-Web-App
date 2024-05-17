@@ -27,7 +27,7 @@ function Card({ image, title, city, slug, type }: any) {
           backgroundBlendMode: "multiply",
           backgroundColor: "rgba(0, 0, 0, 0.3)",
         }}
-        className="h-56 sm:h-full w-56 sm:w-[305px]  flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
+        className="h-56 sm:h-full w-56 sm:w-[285px] flex flex-col justify-between items-start bg-cover bg-center  transition-all duration-100 ease-in"
       >
         <div className="w-full">
           <div className="flex items-center justify-between w-full">
@@ -105,7 +105,7 @@ function BottomCarousel({
   ));
 
   return (
-    <section className="sm:mt-20 mt-14 mb-20 sm:mb-0 mx-auto max-w-7xl w-11/12 sm:w-full ">
+    <section className="sm:mt-20 mt-14 mb-20 sm:mb-0 mx-auto max-w-7xl w-11/12 sm:w-11/12 ">
       <h2 className="max-w-7xl text-left sm:pb-6 mx-auto text-3xl sm:text-5xl  font-semibold text-black">
         {title}
       </h2>

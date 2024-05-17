@@ -12,6 +12,7 @@ import { SegmentedControl } from "@mantine/core";
 import { Chip } from "@mantine/core";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { NumberInput } from "@mantine/core";
+import Link from "next/link";
 
 // Generate random items
 const randomItems = (array: any) => {
@@ -139,12 +140,11 @@ function RandomBanner({ categories }: any) {
 
       <div className="w-full mx-auto px-2">
         <div className="sm:space-x-8 mx-auto justify-center items-center   mt-8 sm:mt-8 w-full flex flex-wrap">
-          <button
-            onClick={GenerateRandomChoice}
-            className="px-8 py-3 w-52 sm:w-fit text-sm sm:text-base m-auto text-white bg-key hover:bg-black hover:text-white transition-all ease-in delay-75 rounded-md active:scale-95"
-          >
-            Generate AI Journey
-          </button>
+          <Link href="/builder" className="mt-4">
+            <button className="px-8 py-3 w-52 sm:w-fit text-sm sm:text-base m-auto text-white bg-key hover:bg-black hover:text-white transition-all ease-in delay-75 rounded-md active:scale-95">
+              Generate AI Journey
+            </button>
+          </Link>
         </div>
       </div>
       <Modal

@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import AiTripCard from "./components/aiTripCard";
 import CitySelection from "./components/CitySelection";
 
 const TripPage = () => {
@@ -19,7 +18,7 @@ const TripPage = () => {
   }
 
   return (
-    <section className="min-h-screen  max-w-7xl flex flex-col justify-center items-center">
+    <section className="min-h-screen  max-w-7xl flex flex-col justify-center items-center mx-auto">
       <CitySelection />
     </section>
   );

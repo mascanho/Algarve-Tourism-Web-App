@@ -61,8 +61,8 @@ function Demo() {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center items-center">
-      <div className="flex justify-around h-full max-w-4xl px-8 space-x-10 w-full">
+    <div className="w-full flex flex-col justify-center items-center min-h-screen my-32 sm:my-auto">
+      <div className="flex justify-around  max-w-4xl px-8 space-x-10 w-full">
         <NumberInput
           placeholder="Number of days"
           onChange={(days) => handleDataInputs(days, undefined, undefined)}
@@ -81,7 +81,7 @@ function Demo() {
         />
       </div>
       <section className="mt-10">
-        <div className="grid sm:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
           {catArr.map((obj) => {
             return (
               <div key={obj?.name}>
