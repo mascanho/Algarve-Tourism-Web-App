@@ -27,6 +27,12 @@ export const BuilderHeader = () => {
               </span>
             </div>
           )}
+          {pathname?.includes("/summary") && (
+            <div className="flex items-center space-x-4">
+              <h1 className="text-3xl font-bold">Builder</h1>
+              <span className="mt-1 text-xs text-key/40">summary</span>
+            </div>
+          )}
         </section>
         <Link className="absolute right-10" href="/">
           <IoClose />

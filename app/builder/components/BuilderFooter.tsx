@@ -45,6 +45,9 @@ export const BuilderFooter = () => {
     if (pathname === "/builder/trip") {
       router.push("/builder/summary");
     }
+    if (pathname === "/builder/summary") {
+      router.push("/builder/summary");
+    }
   };
 
   return (
@@ -68,7 +71,9 @@ export const BuilderFooter = () => {
           disabled={!hasBuilderData}
           className="w-24 bg-key text-white py-1 rounded-lg px-4 disabled:opacity-20 disabled:cursor-not-allowed "
         >
-          {pathname === "/builder/trip" ? "Next" : "Next"}
+          {pathname === "/builder/trip" || pathname === "/builder/"
+            ? "Next"
+            : "Generate"}
         </button>
       </div>
     </div>
