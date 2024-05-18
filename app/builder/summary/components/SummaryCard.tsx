@@ -12,23 +12,24 @@ export const SummaryCard = ({ tripData }: any) => {
 
   return (
     <section className="w-full">
-      <h2 className="text-left w-11/12 max-w-4xl">
+      <h2 className="text-left w-11/12 max-w-4xl text-lg font-bold text-black">
         Days: {dataObj?.days}
         <br />
         Attractions per day: {dataObj?.attractions}
       </h2>
-      <div className="grid grid-cols-5 gap-4 w-full max-w-4xl mt-10">
+      <h3 className="mt-10 mb-2">Categoriues to visit</h3>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full max-w-4xl font-bold">
         {// map through the localstorage cities and if they exist in the cityArr display the image that corresponds to the city inside the cityArr corresponding to that city name
         dataObj?.categories?.map((cat: any) => {
           if (catArr.map((c: any) => c.name.toLowerCase()).includes(cat)) {
             return (
-              <div className="block rounded-lg p-4 shadow-sm shadow-indigo-100">
+              <div className="block rounded-lg p-4 shadow-sm shadow-indigo-100 card__body card__body__summary border border-dashed">
                 <img
                   alt=""
                   src={
                     catArr.find((c: any) => c.name.toLowerCase() === cat)?.image
                   }
-                  className="h-24 w-full rounded-md object-cover"
+                  className="rounded-md object-cover card__body-cover-image summary__image "
                 />
                 <div className="mt-2">
                   <dl>
@@ -42,21 +43,24 @@ export const SummaryCard = ({ tripData }: any) => {
           }
         })}
       </div>
-      <div className="grid grid-cols-5 gap-4 w-full max-w-4xl mt-10">
+      <h3 className="mt-10 mb-2">Cities to visit</h3>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full max-w-4xl">
         {// map through the localstorage cities and if they exist in the cityArr display the image that corresponds to the city inside the cityArr corresponding to that city name
         dataObj?.cities?.map((city: any) => {
           if (cityArr.map((c: any) => c.route).includes(city)) {
             return (
-              <div className="block rounded-lg p-4 shadow-sm shadow-indigo-100">
+              <div className="block rounded-lg p-4 shadow-sm shadow-indigo-100 card__body card__body__summary border">
                 <img
                   alt=""
                   src={cityArr.find((c: any) => c.route === city)?.image}
-                  className="h-24 w-full rounded-md object-cover"
+                  className="h-24 w-full rounded-md object-cover card__body-cover-image summary__image"
                 />
                 <div className="mt-2">
                   <dl>
                     <div>
-                      <dd className="text-sm text-gray-500">{city}</dd>
+                      <dd className="text-sm text-gray-500 font-bold">
+                        {city}
+                      </dd>
                     </div>
                   </dl>
                 </div>

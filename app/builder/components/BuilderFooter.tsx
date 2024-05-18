@@ -50,6 +50,18 @@ export const BuilderFooter = () => {
     }
   };
 
+  const buttonText = () => {
+    if (pathname === "/builder") {
+      return "Next";
+    }
+    if (pathname === "/builder/trip") {
+      return "Next";
+    }
+    if (pathname === "/builder/summary") {
+      return "Generate";
+    }
+  };
+
   return (
     <div className="h-16  border bg-white w-full flex justify-center z-20  text-black  items-center fixed bottom-0 ">
       <div className="w-11/12 mx-auto flex items-center justify-end max-w-[53rem]  ">
@@ -65,15 +77,14 @@ export const BuilderFooter = () => {
           ""
         )}
         <StepperEl />
+
         <button
           onClick={handleNextClick}
           type="button"
           disabled={!hasBuilderData}
-          className="w-24 bg-key text-white py-1 rounded-lg px-4 disabled:opacity-20 disabled:cursor-not-allowed "
+          className="w-24 bg-key text-white py-1 rounded-lg px-4 disabled:opacity-20 disabled:cursor-not-allowed"
         >
-          {pathname === "/builder/trip" || pathname === "/builder/"
-            ? "Next"
-            : "Generate"}
+          {buttonText()}
         </button>
       </div>
     </div>

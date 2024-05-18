@@ -333,6 +333,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: var(--card-radius);
   overflow: hidden;
   position: relative;
+
   cursor: pointer;
   box-shadow: var(--shadow, 0 4px 4px 0 rgba(0, 0, 0, 0.02));
   transition:
@@ -369,6 +370,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: var(--c-border);
+  height: 110px;
+  width: 100%;
   filter: var(--filter-bg, grayscale(1));
   -webkit-clip-path: polygon(
     0% 0%,
@@ -387,6 +390,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     var(--x-y4, 0% 85%)
   );
 }
+
 .card__body-cover-checkbox {
   background: var(--check-bg, var(--background-checkbox));
   border: 2px solid var(--check-border, #fff);
@@ -441,4 +445,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* Stepper */
 .mantine-7qna17 {
   @pply text-xs text-red-500 !important;
+}
+
+.card__body__summary {
+  @apply w-48 rounded-lg !important;
+}
+
+.summary__image {
+  filter: var(--filter-bg, grayscale(0));
+  width: 320px !important;
+  border-radius: 12px !important;
 }
