@@ -1,7 +1,7 @@
 "use client";
 
 import { NumberInput } from "@mantine/core";
-import Demo from "../../trip/components/Demo";
+import Demo from "../../cities/components/Demo";
 
 const CitySelection = () => {
   return (

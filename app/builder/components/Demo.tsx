@@ -2,15 +2,19 @@
 import { NumberInput } from "@mantine/core";
 import { catArr } from "@/Data/Categories";
 import BuilderAction from "@/app/actions/BuilderAction";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 function Demo() {
+  const router = useRouter();
+
   return (
     <form
       action={async (formData: FormData) => {
         await BuilderAction(formData);
+        router.push("/builder/cities");
       }}
-      className="w-full flex flex-col justify-center items-center min-h-screen my-32 sm:my-auto"
+      className="w-full flex flex-col justify-center items-center min-h-screen mb-32 sm:my-auto"
     >
       <div className="flex justify-around  max-w-4xl px-8 space-x-10 w-full">
         <NumberInput
@@ -67,13 +71,7 @@ function Demo() {
         </div>
       </section>
       <footer className="fixed bottom-0 left-0 right-0 flex w-ful justify-between p-4 bg-white">
-        <div className="w-full flex justify-between max-w-4xl mx-auto px-8">
-          <button
-            className="bg-key text-white px-2 w-20 py-1 rounded-md"
-            type="submit"
-          >
-            Prev
-          </button>
+        <div className="w-full flex justify-end max-w-4xl mx-auto px-8">
           <button
             className="bg-key text-white px-2 w-20 py-1 rounded-md"
             type="submit"
