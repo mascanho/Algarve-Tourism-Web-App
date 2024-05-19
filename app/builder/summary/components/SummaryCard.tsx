@@ -3,7 +3,8 @@ import { cityArr } from "@/Data/Cities";
 import { catArr } from "@/Data/Categories";
 import React, { useEffect } from "react";
 import useAddBuilderData from "@/app/hooks/useAddBuilderData";
-import useGetCookie from "@/app/hooks/usegetCookies";
+
+import Cookies from "js-cookie";
 
 // check local storage for Builder data
 const data = localStorage.getItem("Builder");
@@ -12,10 +13,17 @@ const dataObj = JSON.parse(data || "{}");
 export const SummaryCard = ({ tripData }: any) => {
   const addToBuilderData: any = useAddBuilderData();
 
+  const getCookie = (cookieName) => {
+    return Cookies.get(cookieName);
+  };
+
   const builderData = addToBuilderData.builderData;
 
-  const cookies = useGetCookie("builderData");
+  const cookies = getCookie("myCookieName");
+
   const parsedCookies = cookies ? JSON.parse(cookies) : {};
+
+  console.log(parsedCookies);
 
   return (
     <section className="w-full">
