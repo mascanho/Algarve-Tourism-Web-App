@@ -4,6 +4,7 @@ import StepperEl from "./StepperEl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
+import FetchBuilderData from "@/app/libs/FetchBuilderData";
 
 export const BuilderFooter = () => {
   const pathname = usePathname();
@@ -38,6 +39,7 @@ export const BuilderFooter = () => {
     };
   }, []);
 
+  // handle next click programatically
   const handleNextClick = () => {
     if (pathname === "/builder") {
       router.push("/builder/trip");
@@ -47,6 +49,9 @@ export const BuilderFooter = () => {
     }
     if (pathname === "/builder/summary") {
       router.push("/builder/summary");
+    }
+    if (pathname === "/builder/summary") {
+      router.push("/builder/journey");
     }
   };
 

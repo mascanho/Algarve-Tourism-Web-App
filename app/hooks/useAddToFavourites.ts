@@ -39,7 +39,7 @@ const useAddToFavourites = create<FavouriteProps>((set) => ({
   removeFavourite(id: number) {
     set((state) => {
       const updatedFavourites = state.favourites.filter(
-        (item) => item.id !== id
+        (item) => item.id !== id,
       );
       if (typeof window !== "undefined") {
         localStorage?.setItem("favourites", JSON.stringify(updatedFavourites));

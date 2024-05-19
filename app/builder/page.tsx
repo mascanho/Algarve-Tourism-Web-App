@@ -1,6 +1,4 @@
 import React from "react";
-import BuilderFooter from "./components/BuilderFooter";
-import BuilderHeader from "./components/header";
 import AiSelection from "./components/AiSelection";
 
 const page = () => {

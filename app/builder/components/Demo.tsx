@@ -1,83 +1,31 @@
-import { useEffect, useState } from "react";
+"use client";
 import { NumberInput } from "@mantine/core";
 import { catArr } from "@/Data/Categories";
+import BuilderAction from "@/app/actions/BuilderAction";
+import { useRouter } from "next/router";
 
 function Demo() {
-  const [days, setDays] = useState(0);
-  const [attractions, setAttractions] = useState(0);
-  const [selectedCategories, setSelectedCategories] = useState([]);
-
-  // check if localstorage contains previous data, if it does then remove it
-  useEffect(() => {
-    const data = localStorage.getItem("Builder");
-    const dataObj = JSON.parse(data || "{}");
-    if (dataObj) {
-      localStorage.removeItem("Builder");
-    }
-  }, []);
-
-  const handleDataInputs = (daysValue, attractionsValue, category) => {
-    // Check if the category is already present in the selectedCategories array
-    const categoryIndex = selectedCategories.indexOf(category);
-
-    // Toggle the presence of the category in selectedCategories array
-    let updatedCategories = [];
-    if (categoryIndex !== -1) {
-      // If category is already present, remove it
-      updatedCategories = selectedCategories.filter((cat) => cat !== category);
-    } else {
-      // If category is not present, add it
-      updatedCategories = [...selectedCategories, category];
-    }
-
-    // Update selectedCategories state
-    setSelectedCategories(updatedCategories);
-
-    // Update days and attractions values
-    if (daysValue !== undefined) {
-      setDays(daysValue);
-    }
-    if (attractionsValue !== undefined) {
-      setAttractions(attractionsValue);
-    }
-
-    // Construct DATA object
-    const DATA = {
-      days: daysValue !== undefined ? daysValue : days,
-      attractions:
-        attractionsValue !== undefined ? attractionsValue : attractions,
-      categories: updatedCategories,
-    };
-
-    // Remove any "null" or "undefined" values from DATA object
-    Object.keys(DATA).forEach((key) => {
-      if (DATA[key] === null || DATA[key] === undefined) {
-        delete DATA[key];
-      }
-    });
-
-    // Update localStorage
-    localStorage.setItem("Builder", JSON.stringify(DATA));
-  };
-
   return (
-    <div className="w-full flex flex-col justify-center items-center min-h-screen my-32 sm:my-auto">
+    <form
+      action={async (formData: FormData) => {
+        await BuilderAction(formData);
+      }}
+      className="w-full flex flex-col justify-center items-center min-h-screen my-32 sm:my-auto"
+    >
       <div className="flex justify-around  max-w-4xl px-8 space-x-10 w-full">
         <NumberInput
           placeholder="Number of days"
-          onChange={(days) => handleDataInputs(days, undefined, undefined)}
           className="w-full"
           required
           min={1}
+          name="days"
         />
         <NumberInput
           placeholder="Number of attractions per day"
-          onChange={(attractions) =>
-            handleDataInputs(undefined, attractions, undefined)
-          }
           className="w-full"
           required
           min={1}
+          name="attractions"
         />
       </div>
       <section className="mt-10">
@@ -90,13 +38,7 @@ function Demo() {
                     className="card__input"
                     type="checkbox"
                     id={obj?.name}
-                    onChange={(e) =>
-                      handleDataInputs(
-                        undefined,
-                        undefined,
-                        obj?.name.toLowerCase(),
-                      )
-                    }
+                    name={obj?.name}
                   />
                   <div className="card__body">
                     <div className="card__body-cover">
@@ -124,7 +66,23 @@ function Demo() {
           })}
         </div>
       </section>
-    </div>
+      <footer className="fixed bottom-0 left-0 right-0 flex w-ful justify-between p-4 bg-white">
+        <div className="w-full flex justify-between max-w-4xl mx-auto px-8">
+          <button
+            className="bg-key text-white px-2 w-20 py-1 rounded-md"
+            type="submit"
+          >
+            Prev
+          </button>
+          <button
+            className="bg-key text-white px-2 w-20 py-1 rounded-md"
+            type="submit"
+          >
+            Next
+          </button>
+        </div>
+      </footer>
+    </form>
   );
 }
 
