@@ -8,21 +8,8 @@ export const BuilderHeader = () => {
   const pathname = usePathname();
   const [percentage, setPerecentage] = useState(1);
 
-  // useEffect to check the percentage
-  useEffect(() => {
-    if (pathname === "/builder") {
-      setPerecentage(1);
-    }
-    if (pathname?.includes("/cities")) {
-      setPerecentage(2);
-    }
-    if (pathname?.includes("/summary")) {
-      setPerecentage(3);
-    }
-  }, [pathname]);
-
   return (
-    <section>
+    <section className="relative">
       <div className="h-16 overflow-hidden  border bg-white w-full z-20  text-black justify-center flex items-center fixed top-0 ">
         <section className="flex items-center">
           {pathname === "/builder" && (
@@ -52,7 +39,17 @@ export const BuilderHeader = () => {
           <IoClose />
         </Link>
       </div>
-      <div className={`mt-16 w-${percentage}/4 h-[5px] bg-black fixed`} />
+      <div
+      // className={`mt-16 w-${percentage}/4 ${pathname === "/planner" && "w-full"} h-[5px] bg-black absolute top-0 z-10`}
+      />
+
+      <div
+        className={` bg-black h-[5px] z-20 fixed top-16 ${
+          (pathname === "/builder" && "w-32") ||
+          (pathname === "/builder/cities" && "w-2/4") ||
+          (pathname === "/builder/summary" && "w-4/5")
+        } `}
+      />
     </section>
   );
 };
