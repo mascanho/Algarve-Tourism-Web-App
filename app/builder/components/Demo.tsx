@@ -1,7 +1,7 @@
 "use client";
 import { NumberInput } from "@mantine/core";
 import { catArr } from "@/Data/Categories";
-import BuilderAction from "@/app/actions/BuilderAction";
+import { BuilderAction } from "@/app/actions/BuilderAction";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 

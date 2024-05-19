@@ -3,6 +3,7 @@ import { cityArr } from "@/Data/Cities";
 import { catArr } from "@/Data/Categories";
 import React, { useEffect } from "react";
 import useAddBuilderData from "@/app/hooks/useAddBuilderData";
+import useGetCookie from "@/app/hooks/usegetCookies";
 
 // check local storage for Builder data
 const data = localStorage.getItem("Builder");
@@ -11,15 +12,10 @@ const dataObj = JSON.parse(data || "{}");
 export const SummaryCard = ({ tripData }: any) => {
   const addToBuilderData: any = useAddBuilderData();
 
-  // check if localstorage has data from the builder, if it does then add it to global zustand store
-  useEffect(() => {
-    if (dataObj) {
-      addToBuilderData.addBuilderData(dataObj);
-    }
-  }, []);
-
   const builderData = addToBuilderData.builderData;
-  console.log(builderData, "builder data");
+
+  const cookies = useGetCookie("builderData");
+  const parsedCookies = cookies ? JSON.parse(cookies) : {};
 
   return (
     <section className="w-full">
