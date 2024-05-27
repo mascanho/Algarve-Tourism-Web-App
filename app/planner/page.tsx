@@ -13,17 +13,11 @@ const JourneyPage = async () => {
   const normalizeCityName = (city) => {
     // Replace specific encoding artifacts with correct characters
     let normalizedCity = city
-      .replace(/Ã/g, "aã") // Replace "Ã" with "A" (adjust as per your specific encoding issue)
+      .replace(/Ã£o/g, "ão") // Replace "Ã£o" with "ão"
       .replace(/Õ£/g, "e") // Replace "Õ£" with "e" (adjust as per your specific encoding issue)
       .replace(/Õƒ/g, "i") // Replace "Õƒ" with "i" (adjust as per your specific encoding issue)
       .replace(/Õ€/g, "o") // Replace "Õ€" with "o" (adjust as per your specific encoding issue)
       .replace(/Õ„/g, "u"); // Replace "Õ„" with "u" (adjust as per your specific encoding issue)
-
-    // Convert city name to lowercase and remove non-alphanumeric characters
-    normalizedCity = normalizedCity
-      // .toLowerCase()
-      .replace(/[^a-z0-9\s]/gi, "")
-      .trim();
 
     return normalizedCity;
   };
@@ -82,9 +76,7 @@ const JourneyPage = async () => {
     });
 
   const filterItems = (cities, items, key) => {
-    return items.filter((object) =>
-      cities.includes(object.fields[key].toLowerCase()),
-    );
+    return items.filter((object) => cities.includes(object.fields[key]));
   };
 
   const CITIES_FILTERED = filterItems(cities, items, "city");
@@ -101,7 +93,7 @@ const JourneyPage = async () => {
       {CITIES_FILTERED.map((item) => {
         return (
           <div key={item.sys.id}>
-            <h3>{item.fields.city.toLowerCase()}</h3>
+            <h3>{item.fields.city}</h3>
           </div>
         );
       })}

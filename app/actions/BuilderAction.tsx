@@ -39,13 +39,7 @@ async function BuilderAction(formData: FormData) {
 // Function to normalize city names, explicitly handling encoding artifacts
 const normalizeCityName = (city) => {
   // Replace specific encoding artifacts with correct characters
-  let normalizedCity = city.replace(/ã£/g, "ã");
-
-  // Convert city name to lowercase and remove non-alphanumeric characters
-  normalizedCity = normalizedCity
-    .toLowerCase()
-    .replace(/[^a-z0-9\s]/gi, "")
-    .trim();
+  let normalizedCity = city.replace(/Ã£o/g, "ão"); // Replace "Ã£o" with "ão"
 
   return normalizedCity;
 };
@@ -65,7 +59,7 @@ async function BuilderActionCities(formData: FormData) {
   const normalizedCities = cities.map(normalizeCityName);
 
   // Update resultObject with normalized cities
-  resultObject.cities.push(...normalizedCities);
+  resultObject.cities.push(...cities);
 
   // Set the cookie store with the updated resultObject data
   cookieStore.set("builderData", JSON.stringify(resultObject));
