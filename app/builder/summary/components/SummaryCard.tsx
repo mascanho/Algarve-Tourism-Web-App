@@ -15,7 +15,17 @@ export const SummaryCard = ({ tripData }: any) => {
 
   console.log(parsedCookies);
 
+  // Remove duplicates from categories and cities
+  const uniqueCategories = [...new Set(parsedCookies?.categories)];
+  const uniqueCities = [...new Set(parsedCookies?.cities)];
+
   useEffect(() => {}, []);
+
+  // Function to normalize city names
+  const normalizeCityName = (name: string) => {
+    // Normalize to lowercase and remove any non-alphanumeric characters
+    return name.toLowerCase().replace(/[^a-z0-9]/gi, "");
+  };
 
   return (
     <section className="w-full h-full">
@@ -29,14 +39,14 @@ export const SummaryCard = ({ tripData }: any) => {
       </div>
       <h3 className="mb-4 underline text-black">Category types:</h3>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full max-w-4xl font-bold">
-        {parsedCookies?.categories?.map((cat: any) => {
+        {uniqueCategories?.map((cat: any, index: number) => {
           const category = catArr.find(
             (c: any) => c.name.toLowerCase() === cat.toLowerCase(),
           );
           if (category) {
             return (
               <div
-                key={cat}
+                key={`${cat}-${index}`}
                 className="block rounded-lg p-4 shadow-sm shadow-indigo-100 card__body card__body__summary border border-dashed"
               >
                 <img
@@ -59,14 +69,18 @@ export const SummaryCard = ({ tripData }: any) => {
       </div>
       <h3 className="mt-10 mb-2 underline text-black mb-4">Cities to visit</h3>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full max-w-4xl">
-        {parsedCookies?.cities?.map((city: any) => {
+        {uniqueCities?.map((city: any, index: number) => {
+          // Normalize city name from cookies for comparison
+          const normalizedCookieCity = normalizeCityName(city);
+
+          // Find city data with normalized name
           const cityData = cityArr.find(
-            (c: any) => c.name.toLowerCase() === city.toLowerCase(),
+            (c: any) => normalizeCityName(c.name) === normalizedCookieCity,
           );
           if (cityData) {
             return (
               <div
-                key={cityData.name} // Assuming city name is unique
+                key={`${cityData.name}-${index}`}
                 className="block rounded-lg p-4 shadow-sm shadow-indigo-100 card__body card__body__summary border border-dashed"
               >
                 <img
