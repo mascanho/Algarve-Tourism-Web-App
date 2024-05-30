@@ -1,7 +1,7 @@
 "use client";
 import { NumberInput } from "@mantine/core";
 import { catArr } from "@/Data/Categories";
-import { BuilderAction } from "@/app/actions/BuilderAction";
+import { BuilderAction, deleteCookies } from "@/app/actions/BuilderAction";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -35,9 +35,13 @@ function Demo() {
     }
   }, [days, attractions, selectedCategories]);
 
+  useEffect(() => {
+    deleteCookies();
+  }, []);
+
   return (
     <form
-      action={async (formData) => {
+      action={async (formData: any) => {
         await BuilderAction(formData);
         router.push("/builder/cities");
       }}

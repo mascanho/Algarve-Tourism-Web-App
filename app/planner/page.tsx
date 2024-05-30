@@ -66,7 +66,7 @@ const JourneyPage = async () => {
   const catType = "beaches"; // Replace with your actual content type ID
   const placeNames = ["faro", "albufeira"]; // Array of place names to search for
 
-  const items = await getCategories(catType, placeNames)
+  const ALLDB = await getCategories(catType, placeNames)
     .then((items) => {
       // console.log("Fetched items:", items, items.length);
       return items;
@@ -75,25 +75,36 @@ const JourneyPage = async () => {
       console.error("Error fetching categories:", error);
     });
 
-  const filterItems = (cities, items, key) => {
-    return items.filter((object) => cities.includes(object.fields[key]));
-  };
+  // From ALLDB find the ones that match items inside of the arrays for cities and categories
 
-  const CITIES_FILTERED = filterItems(cities, items, "city");
+  const CITIES_FILTERED = ALLDB?.filter((item) => {
+    return cities.includes(item.fields.city);
+  });
 
-  console.log(CITIES_FILTERED, "Cities filtered");
+  const CATEGORIES_FILTERED = CITIES_FILTERED.filter((item) => {
+    return categories.some((category) =>
+      item.fields.type.includes(category.toLowerCase()),
+    );
+  });
 
-  console.log(cities);
+  console.log(
+    CATEGORIES_FILTERED,
+    "FINAL FILTERED DATA: ",
+    CATEGORIES_FILTERED?.length,
+  );
+
+  console.log(categories);
 
   return (
     <div className="pt-20">
       <h3>heelllooooooooo</h3>
 
-      <span>{CITIES_FILTERED.length}</span>
-      {CITIES_FILTERED.map((item) => {
+      <span>{CITIES_FILTERED?.length}</span>
+      {CATEGORIES_FILTERED?.map((item) => {
         return (
           <div key={item.sys.id}>
             <h3>{item.fields.city}</h3>
+            <p>{item.fields.title}</p>
           </div>
         );
       })}

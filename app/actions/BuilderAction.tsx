@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import { revalidatePath } from "next/cache";
 
 // Initial object structure to store form data
-const resultObject = {
+const initialResultObject = {
   days: "",
   attractions: "",
   categories: [],
@@ -19,6 +19,15 @@ async function BuilderAction(formData: FormData) {
   // Convert FormData to array to iterate over
   const data = Array.from(formData.entries());
 
+  // Get current data from the cookie
+  const cookieData = cookieStore.get("builderData");
+  const resultObject = JSON.parse(
+    cookieData?.value || JSON.stringify(initialResultObject),
+  ); // Initialize with default if cookieData is undefined
+
+  // Initialize a Set to handle categories without duplicates
+  const categoriesSet = new Set(resultObject.categories);
+
   // Iterate through form data entries
   for (const entry of data) {
     const key = entry[0];
@@ -28,9 +37,12 @@ async function BuilderAction(formData: FormData) {
     if (key === "days" || key === "attractions") {
       resultObject[key] = value.toString(); // Ensure value is converted to string
     } else if (value === "on") {
-      resultObject.categories.push(key); // Add category key to categories array
+      categoriesSet.add(key); // Add category key to categories Set
     }
   }
+
+  // Update resultObject with unique categories
+  resultObject.categories = Array.from(categoriesSet);
 
   // Set the cookie store with the updated resultObject data
   cookieStore.set("builderData", JSON.stringify(resultObject));
@@ -40,7 +52,6 @@ async function BuilderAction(formData: FormData) {
 const normalizeCityName = (city) => {
   // Replace specific encoding artifacts with correct characters
   let normalizedCity = city.replace(/Ã£o/g, "ão"); // Replace "Ã£o" with "ão"
-
   return normalizedCity;
 };
 
@@ -49,7 +60,7 @@ async function BuilderActionCities(formData: FormData) {
   const cookieStore = cookies();
   const cookieData = cookieStore.get("builderData");
   const resultObject = JSON.parse(
-    cookieData?.value || JSON.stringify(resultObject),
+    cookieData?.value || JSON.stringify(initialResultObject),
   ); // Initialize with default if cookieData is undefined
 
   // Convert FormData to array of city names
@@ -58,8 +69,14 @@ async function BuilderActionCities(formData: FormData) {
   // Normalize city names
   const normalizedCities = cities.map(normalizeCityName);
 
-  // Update resultObject with normalized cities
-  resultObject.cities.push(...cities);
+  // Initialize a Set to handle cities without duplicates
+  const citiesSet = new Set(resultObject.cities);
+
+  // Add normalized cities to the Set
+  normalizedCities.forEach((city) => citiesSet.add(city));
+
+  // Update resultObject with unique cities
+  resultObject.cities = Array.from(citiesSet);
 
   // Set the cookie store with the updated resultObject data
   cookieStore.set("builderData", JSON.stringify(resultObject));
@@ -68,5 +85,11 @@ async function BuilderActionCities(formData: FormData) {
   revalidatePath("/builder");
 }
 
+async function deleteCookies() {
+  const cookieStore = cookies();
+  cookieStore.delete("builder");
+  cookieStore.delete("builderData");
+}
+
 // Export functions for use in other parts of the application
-export { BuilderAction, BuilderActionCities };
+export { BuilderAction, BuilderActionCities, deleteCookies };
