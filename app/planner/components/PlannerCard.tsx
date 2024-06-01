@@ -7,9 +7,9 @@ export const PlannerCard = ({ item }) => {
   const [opened, { toggle }] = useDisclosure(false);
 
   return (
-    <section className="border w-fit mx-auto rounded-lg overflow-hidden">
+    <section className="border w-fit mx-auto rounded-lg overflow-hidden relative">
       <div className="flex flex-col p-3 space-y-2 typewriter overflow-hidden flex-nowrap h-80 line-clamp-2">
-        <h4 className="text-key font-semibold flex flex-wrap truncate">
+        <h4 className="text-key font-semibold flex flex-wrap truncate text-sm">
           {item.fields.title}
         </h4>
         <div key={item.sys.id} className="space-y-2">

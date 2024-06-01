@@ -123,7 +123,7 @@ const JourneyPage = async () => {
       <h3>heelllooooooooo</h3>
 
       <span>{CITIES_FILTERED?.length}</span>
-      <section className=" grid sm:grid-cols-3 md:grid-cols-4  gap-y-6 self-center mx-auto max-w-5xl  mb-20 items-center justify-center align-middle">
+      <section className=" grid sm:grid-cols-3 md:grid-cols-4 h-full pb-20  gap-y-6 self-center mx-auto max-w-5xl  mb-20 items-center justify-center align-middle">
         {CATEGORIES_FILTERED?.map((item) => {
           return <PlannerCard key={item.sys.id} item={item} />;
         })}
