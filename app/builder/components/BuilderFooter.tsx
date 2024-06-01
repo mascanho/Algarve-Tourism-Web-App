@@ -65,12 +65,15 @@ export const BuilderFooter = () => {
     if (pathname === "/builder/summary") {
       return "Generate";
     }
+    if (pathname === "/planner") {
+      return "Next";
+    }
   };
 
   return (
     <div className="h-16  border bg-white w-full flex justify-center z-20  text-black  items-center fixed bottom-0 ">
       <div className="w-11/12 mx-auto flex items-center justify-end max-w-[53rem]  ">
-        {pathname !== "/builder" ? (
+        {pathname !== "/builder" && pathname !== "/planner" ? (
           <button
             type="button"
             className="w-32 bg-key text-white py-1 rounded-lg "
@@ -86,7 +89,7 @@ export const BuilderFooter = () => {
         <button
           onClick={handleNextClick}
           type="button"
-          disabled={!hasBuilderData}
+          disabled={!hasBuilderData && pathname !== "/planner"}
           className="w-24 bg-key text-white py-1 rounded-lg px-4 disabled:opacity-20 disabled:cursor-not-allowed"
         >
           {buttonText()}

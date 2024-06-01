@@ -1,6 +1,8 @@
 import React from "react";
 import { cookies } from "next/headers";
 import { createClient } from "contentful";
+import { PlannerCard } from "./components/PlannerCard";
+import BuilderFooter from "../builder/components/BuilderFooter";
 
 const JourneyPage = async () => {
   // retrieve the cookies from the server
@@ -77,11 +79,11 @@ const JourneyPage = async () => {
 
   // From ALLDB find the ones that match items inside of the arrays for cities and categories
 
-  const CITIES_FILTERED = ALLDB?.filter((item) => {
+  let CITIES_FILTERED = ALLDB?.filter((item) => {
     return cities.includes(item.fields.city);
   });
 
-  const CATEGORIES_FILTERED = CITIES_FILTERED.filter((item) => {
+  let CATEGORIES_FILTERED = CITIES_FILTERED.filter((item) => {
     return categories.some((category) =>
       item.fields.type.includes(category.toLowerCase()),
     );
@@ -94,20 +96,54 @@ const JourneyPage = async () => {
   );
 
   console.log(categories);
+  console.log(typeof days);
+
+  // Shuffle the objects in the array
+
+  function shuffleArray(array: any) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  shuffleArray(CATEGORIES_FILTERED);
+
+  // limit the numbewr of attractions based on user input
+
+  if (attractions) {
+    CATEGORIES_FILTERED = CATEGORIES_FILTERED.slice(
+      0,
+      parseInt(attractions) * Number(days),
+    );
+  }
 
   return (
     <div className="pt-20">
       <h3>heelllooooooooo</h3>
 
       <span>{CITIES_FILTERED?.length}</span>
-      {CATEGORIES_FILTERED?.map((item) => {
-        return (
-          <div key={item.sys.id}>
-            <h3>{item.fields.city}</h3>
-            <p>{item.fields.title}</p>
-          </div>
-        );
-      })}
+      <section className=" grid sm:grid-cols-3 md:grid-cols-4  gap-y-6 self-center mx-auto max-w-5xl  mb-20 items-center justify-center align-middle">
+        {CATEGORIES_FILTERED?.map((item) => {
+          return <PlannerCard key={item.sys.id} item={item} />;
+        })}
+      </section>
+      <div className="h-16  border bg-white w-full flex justify-between z-20  text-black  items-center fixed bottom-0 ">
+        <div className="w-11/12 mx-auto flex items-center justify-end max-w-[53rem]  justify-between ">
+          <button
+            type="button"
+            className="w-32 bg-key text-white py-1 rounded-lg "
+          >
+            Back
+          </button>
+          <button
+            type="button"
+            className="w-24 bg-key text-white py-1 rounded-lg px-4 disabled:opacity-20 disabled:cursor-not-allowed"
+          >
+            text
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

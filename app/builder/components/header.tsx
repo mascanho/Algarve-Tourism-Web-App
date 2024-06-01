@@ -34,6 +34,12 @@ export const BuilderHeader = () => {
               <span className="mt-1 text-xs text-key/40">summary</span>
             </div>
           )}
+          {pathname === "/planner" && (
+            <div className="flex items-center space-x-4">
+              <h1 className="text-3xl font-bold">Your Journey</h1>
+              <span className="mt-1 text-xs text-key/40">Selection</span>
+            </div>
+          )}
         </section>
         <Link className="absolute right-10" href="/">
           <IoClose />
@@ -45,6 +51,7 @@ export const BuilderHeader = () => {
 
       <div
         className={` bg-black h-[5px] z-20 fixed top-16 ${
+          (pathname === "/planner" && "w-full") ||
           (pathname === "/builder" && "w-32") ||
           (pathname === "/builder/cities" && "w-2/4") ||
           (pathname === "/builder/summary" && "w-4/5")
