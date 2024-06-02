@@ -1,7 +1,7 @@
 "use client";
 import { Button, Group, Text, Collapse, Box } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { FaMap } from "react-icons/fa";
+import { FaMap, FaMapPin } from "react-icons/fa";
 
 export const PlannerCard = ({ item }) => {
   const [opened, { toggle }] = useDisclosure(false);
@@ -13,7 +13,11 @@ export const PlannerCard = ({ item }) => {
           {item.fields.title}
         </h4>
         <div key={item.sys.id} className="space-y-2">
-          <div className="fade-in-image">
+          <div className="fade-in-image relative">
+            <div className="bg-key  p-1 pr-2 absolute bottom-2 flex space-x-1 rounded-r-lg items-center">
+              <FaMapPin className="text-[11px] text-red-500 " />
+              <span className="text-[11px] text-white">{item.fields.city}</span>
+            </div>
             <img
               src={"https://" + item.fields.mainImage.fields.file.url}
               alt={item.fields.title}

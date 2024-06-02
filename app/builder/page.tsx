@@ -1,6 +1,5 @@
 import React from "react";
 import AiSelection from "./components/AiSelection";
-import { cookies } from "next/headers";
 
 const page = async () => {
   return (
