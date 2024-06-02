@@ -107,7 +107,7 @@ export const cityArr = [
   },
   {
     id: 13,
-    name: "Vila Real de Santo António",
+    name: "V.R.S.A",
     icon: "",
     route: "vila-real-de-santo-antonio",
     image:

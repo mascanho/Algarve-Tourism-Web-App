@@ -4,6 +4,7 @@ import { createClient } from "contentful";
 import { PlannerCard } from "./components/PlannerCard";
 import BuilderFooter from "../builder/components/BuilderFooter";
 import PreviousButton from "./components/PreviousButton";
+import AddPlannerButton from "./components/AddPlannerButton";
 
 const JourneyPage = async () => {
   // retrieve the cookies from the server
@@ -90,15 +91,6 @@ const JourneyPage = async () => {
     );
   });
 
-  console.log(
-    CATEGORIES_FILTERED,
-    "FINAL FILTERED DATA: ",
-    CATEGORIES_FILTERED?.length,
-  );
-
-  console.log(categories);
-  console.log(typeof days);
-
   // Shuffle the objects in the array
 
   function shuffleArray(array: any) {
@@ -108,8 +100,6 @@ const JourneyPage = async () => {
     }
   }
 
-  shuffleArray(CATEGORIES_FILTERED);
-
   // limit the numbewr of attractions based on user input
 
   if (attractions) {
@@ -117,16 +107,15 @@ const JourneyPage = async () => {
       0,
       parseInt(attractions) * Number(days),
     );
+
+    CATEGORIES_FILTERED = Object.freeze(CATEGORIES_FILTERED);
   }
 
   return (
     <>
-      <div className="pt-20 max-w-5xl mx-auto">
-        <h3>heelllooooooooo</h3>
-
-        <span>{CITIES_FILTERED?.length}</span>
-        <section className="w-11/12 sm:w-full grid grid-cols-2 gap-x-4 sm:grid-cols-3 md:grid-cols-4 h-full pb-20 gap-y-4 sm:gap-y-6 self-center mx-auto max-w-5xl  mb-20 items-center justify-center align-middle">
-          {CATEGORIES_FILTERED?.map((item) => {
+      <div className="pt-20 max-w-4xl mx-auto">
+        <section className="w-11/12 sm:w-full grid grid-cols-2 gap-x-8 sm:grid-cols-3 md:grid-cols-4 h-full sm:pt-10 sm:pb-10 pb-20 gap-y-4 sm:gap-y-6 self-center mx-auto max-w-5xl  mb-20 items-center justify-center align-middle">
+          {CATEGORIES_FILTERED.map((item) => {
             return <PlannerCard key={item.sys.id} item={item} />;
           })}
         </section>
@@ -134,12 +123,7 @@ const JourneyPage = async () => {
       <div className="h-16  border bg-white w-full flex justify-between z-20  text-black  items-center fixed bottom-0 ">
         <div className="w-11/12 mx-auto flex items-center max-w-4xl  justify-between ">
           <PreviousButton />
-          <button
-            type="button"
-            className="w-28 bg-key text-white py-1 rounded-lg px-4 disabled:opacity-20 disabled:cursor-not-allowed"
-          >
-            text
-          </button>
+          <AddPlannerButton />
         </div>
       </div>
     </>

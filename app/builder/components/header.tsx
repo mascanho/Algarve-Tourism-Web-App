@@ -1,12 +1,20 @@
 "use client";
+import { getClientSideCookie } from "@/app/libs/getClientSideCookie";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 
 export const BuilderHeader = () => {
   const pathname = usePathname();
-  const [percentage, setPerecentage] = useState(1);
+  let serverCookies = getClientSideCookie("builderData");
+
+  if (!serverCookies) {
+    serverCookies = "{}";
+  }
+  serverCookies = decodeURIComponent(serverCookies);
+  serverCookies = JSON?.parse(serverCookies);
+
+  console.log(serverCookies);
 
   return (
     <section className="relative">
@@ -37,7 +45,16 @@ export const BuilderHeader = () => {
           {pathname === "/planner" && (
             <div className="flex items-center space-x-4">
               <h1 className="text-3xl font-bold">Your Journey</h1>
-              <span className="mt-1 text-xs text-key/40">Selection</span>
+              <div className="flex items-center justify-center">
+                <p className="text-sm">Days: </p>
+                <span className="ml-1 text-key/40">{serverCookies?.days}</span>
+              </div>
+              <div className="flex items-center justify-center">
+                <p className="text-sm">Attractions per day: </p>
+                <span className="ml-1 text-key/40">
+                  {serverCookies?.attractions}
+                </span>
+              </div>
             </div>
           )}
         </section>

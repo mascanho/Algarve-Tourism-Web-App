@@ -1,17 +1,20 @@
 "use client";
 import { Button, Group, Text, Collapse, Box } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { FaMap, FaMapPin } from "react-icons/fa";
+import { FaHeart, FaMap, FaMapPin } from "react-icons/fa";
 
 export const PlannerCard = ({ item }) => {
   const [opened, { toggle }] = useDisclosure(false);
 
   return (
-    <section className="border w-full sm:w-fit mx-auto rounded-lg overflow-hidden relative fade-in-image">
-      <div className="flex flex-col p-3 space-y-2 typewriter overflow-hidden flex-nowrap min-h-72  sm:h-80 line-clamp-2">
-        <h4 className="text-key font-semibold flex flex-wrap truncate text-sm">
-          {item.fields.title}
-        </h4>
+    <section className="border w-full sm:w-52 mx-auto rounded-lg overflow-hidden relative fade-in-image">
+      <div className="flex flex-col p-3 space-y-2 typewriter overflow-hidden flex-nowrap min-h-72  sm:h-[19rem] py-1 line-clamp-2">
+        <div className="flex justify-between items-center">
+          <h4 className="text-key font-semibold flex flex-wrap truncate text-sm pt-2 ">
+            {item.fields.title}
+          </h4>
+          <FaHeart className="text-key hover:text-red-500 mt-1 mr-1 text-sm hover:cursor-pointer ease-in delay-75 transition-all" />
+        </div>
         <div key={item.sys.id} className="space-y-2">
           <div className="fade-in-image relative">
             <div className="bg-key  p-1 pr-2 absolute bottom-2 flex space-x-1 rounded-r-lg items-center">
@@ -42,8 +45,8 @@ export const PlannerCard = ({ item }) => {
             >
               <iframe
                 className="rounded-md"
-                width={192}
-                height={130}
+                width={180}
+                height={100}
                 src={item.fields.embededMap}
               ></iframe>
             </Collapse>
@@ -51,7 +54,7 @@ export const PlannerCard = ({ item }) => {
 
           <div className="flex sm:w-48 justify-between typewriter min-h-20 h-10 max-h-40 overflow-hidden">
             <div>
-              <h4 className="text-xs w-44 text-black">
+              <h4 className="text-xs sm:w-44 w-40 text-black">
                 {item.fields.shortDescription}
               </h4>
             </div>
