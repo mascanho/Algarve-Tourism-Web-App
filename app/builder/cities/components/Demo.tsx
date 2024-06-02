@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { cityArr } from "../../../../Data/Cities";
 import { useRouter } from "next/navigation";
 import { BuilderActionCities } from "@/app/actions/BuilderAction";
+import PreviousButton from "@/app/planner/components/PreviousButton";
 
 function Demo() {
   const [selectedCities, setSelectedCities] = useState([]);
@@ -50,8 +51,10 @@ function Demo() {
                       </svg>
                     </span>
                   </div>
-                  <header className="card__body-header">
-                    <h2 className="card__body-header-title">{obj?.name}</h2>
+                  <header className="card__body-header flex">
+                    <h2 className="card__body-header-title my-auto">
+                      {obj?.name}
+                    </h2>
                   </header>
                 </div>
               </label>
@@ -61,9 +64,10 @@ function Demo() {
       </section>
 
       <footer className="fixed bottom-0 left-0 right-0 flex w-ful justify-between p-4 bg-white">
-        <div className="w-full flex justify-end max-w-4xl mx-auto px-8">
+        <div className="w-full flex justify-between max-w-4xl mx-auto px-8">
+          <PreviousButton />
           <button
-            className="bg-key text-white px-2 w-20 py-1 rounded-md disabled:bg-gray-200 disabled:cursor-not-allowed"
+            className="bg-key text-white px-2 w-28 py-1 rounded-md disabled:bg-gray-200 disabled:cursor-not-allowed"
             type="submit"
             disabled={selectedCities.length === 0}
           >

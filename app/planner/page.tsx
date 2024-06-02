@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import { createClient } from "contentful";
 import { PlannerCard } from "./components/PlannerCard";
 import BuilderFooter from "../builder/components/BuilderFooter";
+import PreviousButton from "./components/PreviousButton";
 
 const JourneyPage = async () => {
   // retrieve the cookies from the server
@@ -130,12 +131,7 @@ const JourneyPage = async () => {
       </section>
       <div className="h-16  border bg-white w-full flex justify-between z-20  text-black  items-center fixed bottom-0 ">
         <div className="w-11/12 mx-auto flex items-center justify-end max-w-[53rem]  justify-between ">
-          <button
-            type="button"
-            className="w-32 bg-key text-white py-1 rounded-lg "
-          >
-            Back
-          </button>
+          <PreviousButton />
           <button
             type="button"
             className="w-24 bg-key text-white py-1 rounded-lg px-4 disabled:opacity-20 disabled:cursor-not-allowed"

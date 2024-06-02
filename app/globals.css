@@ -268,7 +268,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   --card-height: 160px;
   --card-width: 190px;
   --card-radius: 12px;
-  --header-height: 37px;
+  --header-height: 57px;
   --blend-mode: overlay;
   --transition: 0.15s;
   -webkit-user-select: none;
@@ -426,6 +426,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: var(--header-height);
   background: var(--background);
   padding: 0 10px 10px 10px;
+  display: flex;
+  justify-items: center;
 }
 .card__body-header-title {
   color: var(--text-headline);

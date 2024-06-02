@@ -4,6 +4,7 @@ import { catArr } from "@/Data/Categories";
 import React, { useEffect } from "react";
 import Cookies from "js-cookie";
 import Link from "next/link";
+import PreviousButton from "@/app/planner/components/PreviousButton";
 
 export const SummaryCard = ({ tripData }: any) => {
   const getCookie = (cookieName: any) => {
@@ -104,7 +105,8 @@ export const SummaryCard = ({ tripData }: any) => {
         })}
       </div>
       <footer className="fixed bottom-0 left-0 right-0 flex w-full justify-between p-4 bg-white">
-        <div className="w-full flex justify-end max-w-4xl mx-auto px-8">
+        <div className="w-full flex justify-between max-w-4xl mx-auto px-8">
+          <PreviousButton />
           <Link href="/planner">
             <button
               className="bg-key text-white px-2 w-28 py-1 rounded-md"
