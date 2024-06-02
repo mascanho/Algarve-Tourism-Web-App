@@ -92,9 +92,11 @@ const Buttons = ({ filteredData }: any) => {
         className="w-8 h-8 outline-none fav p-[6px] border tooltip rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75 text-xs"
         onClick={addFav}
       />
-      <Link href={filteredData[0]?.fields?.website || ""} target="_blank">
-        <BsGlobe className="w-8 h-8 p-[6px] border rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75  " />
-      </Link>
+      {filteredData[0].fields?.website === "/" ? null : (
+        <Link href={filteredData[0]?.fields?.website || ""} target="_blank">
+          <BsGlobe className="w-8 h-8 p-[6px] border rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75  " />
+        </Link>
+      )}
       {/* <BiMapPin */}
       {/*   onClick={handleClickGps} */}
       {/*   className="w-8 h-8 p-1 tooltip border rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75" */}
