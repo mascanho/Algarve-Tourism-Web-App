@@ -18,7 +18,7 @@ const TripPage = () => {
   }
 
   return (
-    <section className="min-h-screen my-20  max-w-7xl flex flex-col justify-center items-center mx-auto">
+    <section className="min-h-screen sm:my-20  max-w-7xl flex flex-col justify-center items-center mx-auto">
       <CitySelection />
     </section>
   );

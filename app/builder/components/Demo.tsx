@@ -45,12 +45,12 @@ function Demo() {
         await BuilderAction(formData);
         router.push("/builder/cities");
       }}
-      className="w-full flex flex-col justify-center items-center min-h-screen mb-32 sm:my-auto"
+      className="w-full flex flex-col sm:justify-center  items-center min-h-screen mb-32 sm:my-auto"
     >
-      <div className="flex justify-around max-w-4xl px-8 space-x-10 w-full">
+      <div className="flex justify-between sm:justify-around max-w-4xl sm:px-8 px-3 sm:space-x-10 space-x-2 w-full">
         <NumberInput
           placeholder="Number of days"
-          className="w-full"
+          className="sm:w-full sm:text-base text-xs placeholder:text-xs"
           required
           min={1}
           name="days"
@@ -58,7 +58,7 @@ function Demo() {
         />
         <NumberInput
           placeholder="Number of attractions per day"
-          className="w-full"
+          className="sm:w-full sm:text-base text-xs placeholder:text-xs"
           required
           min={1}
           name="attractions"

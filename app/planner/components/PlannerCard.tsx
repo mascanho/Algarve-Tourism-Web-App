@@ -7,8 +7,8 @@ export const PlannerCard = ({ item }) => {
   const [opened, { toggle }] = useDisclosure(false);
 
   return (
-    <section className="border w-fit mx-auto rounded-lg overflow-hidden relative fade-in-image">
-      <div className="flex flex-col p-3 space-y-2 typewriter overflow-hidden flex-nowrap h-80 line-clamp-2">
+    <section className="border w-full sm:w-fit mx-auto rounded-lg overflow-hidden relative fade-in-image">
+      <div className="flex flex-col p-3 space-y-2 typewriter overflow-hidden flex-nowrap min-h-72  sm:h-80 line-clamp-2">
         <h4 className="text-key font-semibold flex flex-wrap truncate text-sm">
           {item.fields.title}
         </h4>
@@ -17,7 +17,7 @@ export const PlannerCard = ({ item }) => {
             <img
               src={"https://" + item.fields.mainImage.fields.file.url}
               alt={item.fields.title}
-              className="h-32 w-full object-cover rounded-md max-w-48"
+              className="sm:h-32 w-full object-cover rounded-md max-w-48"
             />
           </div>
 
@@ -45,7 +45,7 @@ export const PlannerCard = ({ item }) => {
             </Collapse>
           </Box>
 
-          <div className="flex w-48 justify-between typewriter min-h-20 h-10 max-h-40 overflow-hidden">
+          <div className="flex sm:w-48 justify-between typewriter min-h-20 h-10 max-h-40 overflow-hidden">
             <div>
               <h4 className="text-xs w-44 text-black">
                 {item.fields.shortDescription}

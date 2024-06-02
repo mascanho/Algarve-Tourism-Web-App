@@ -120,27 +120,29 @@ const JourneyPage = async () => {
   }
 
   return (
-    <div className="pt-20">
-      <h3>heelllooooooooo</h3>
+    <>
+      <div className="pt-20 max-w-5xl mx-auto">
+        <h3>heelllooooooooo</h3>
 
-      <span>{CITIES_FILTERED?.length}</span>
-      <section className=" grid sm:grid-cols-3 md:grid-cols-4 h-full pb-20  gap-y-6 self-center mx-auto max-w-5xl  mb-20 items-center justify-center align-middle">
-        {CATEGORIES_FILTERED?.map((item) => {
-          return <PlannerCard key={item.sys.id} item={item} />;
-        })}
-      </section>
+        <span>{CITIES_FILTERED?.length}</span>
+        <section className="w-11/12 sm:w-full grid grid-cols-2 gap-x-4 sm:grid-cols-3 md:grid-cols-4 h-full pb-20 gap-y-4 sm:gap-y-6 self-center mx-auto max-w-5xl  mb-20 items-center justify-center align-middle">
+          {CATEGORIES_FILTERED?.map((item) => {
+            return <PlannerCard key={item.sys.id} item={item} />;
+          })}
+        </section>
+      </div>
       <div className="h-16  border bg-white w-full flex justify-between z-20  text-black  items-center fixed bottom-0 ">
-        <div className="w-11/12 mx-auto flex items-center justify-end max-w-[53rem]  justify-between ">
+        <div className="w-11/12 mx-auto flex items-center max-w-4xl  justify-between ">
           <PreviousButton />
           <button
             type="button"
-            className="w-24 bg-key text-white py-1 rounded-lg px-4 disabled:opacity-20 disabled:cursor-not-allowed"
+            className="w-28 bg-key text-white py-1 rounded-lg px-4 disabled:opacity-20 disabled:cursor-not-allowed"
           >
             text
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

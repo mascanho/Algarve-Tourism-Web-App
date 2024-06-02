@@ -24,7 +24,7 @@ function Demo() {
       className="w-full flex flex-col justify-center items-center"
     >
       <section>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 my-36 sm:my-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 my-24 sm:my-auto">
           {cityArr.map((obj) => (
             <div key={obj?.name}>
               <label className="card">
