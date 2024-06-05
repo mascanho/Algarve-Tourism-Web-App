@@ -5,6 +5,9 @@ import { PlannerCard } from "./components/PlannerCard";
 import BuilderFooter from "../builder/components/BuilderFooter";
 import PreviousButton from "./components/PreviousButton";
 import AddPlannerButton from "./components/AddPlannerButton";
+import useAddToFavourites from "../hooks/useAddToFavourites";
+import { createTrip } from "../actions/createTip";
+import { revalidatePath } from "next/cache";
 
 const JourneyPage = async () => {
   // retrieve the cookies from the server
@@ -111,12 +114,24 @@ const JourneyPage = async () => {
     CATEGORIES_FILTERED = Object.freeze(CATEGORIES_FILTERED);
   }
 
+  createTrip(CATEGORIES_FILTERED);
+
+  // set the cookies with the new trip
+
+  createTrip(CATEGORIES_FILTERED);
+
   return (
     <>
       <div className="pt-20 max-w-4xl mx-auto">
         <section className="w-11/12 sm:w-full grid grid-cols-2 gap-x-8 sm:grid-cols-3 md:grid-cols-4 h-full sm:pt-10 sm:pb-10 pb-20 gap-y-4 sm:gap-y-6 self-center mx-auto max-w-5xl  mb-20 items-center justify-center align-middle">
           {CATEGORIES_FILTERED.map((item) => {
-            return <PlannerCard key={item.sys.id} item={item} />;
+            return (
+              <PlannerCard
+                key={item.sys.id}
+                item={item}
+                trip={CATEGORIES_FILTERED}
+              />
+            );
           })}
         </section>
       </div>
