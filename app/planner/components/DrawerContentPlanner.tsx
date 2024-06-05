@@ -14,6 +14,7 @@ const DrawerContentPlanner = () => {
 
   // Import useAddToFavourites hook
   const addToFavs = useAddToFavourites();
+  const favourites = useAddToFavourites();
 
   // Function to validate, decode, and parse cookie data
   const parseCookie = (cookie) => {
@@ -73,12 +74,15 @@ const DrawerContentPlanner = () => {
       </Box>
 
       {
+        // show the saved cookie trip name
+        selectedTrip && <p className="text-xl font-bold">{selectedTrip.name}</p>
+      }
+
+      {
         // show the saved cookie name
-        selectedTrip && (
-          <div className="text-green-500">
-            <p>{selectedTrip.name}</p>
-          </div>
-        )
+        favourites.favourites.map((trip) => (
+          <p key={trip.id}>{trip.title}</p>
+        ))
       }
 
       {cookieError && (
