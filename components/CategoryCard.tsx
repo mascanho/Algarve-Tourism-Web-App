@@ -1,18 +1,15 @@
 "use client";
 import React, { useEffect } from "react";
 import Link from "next/link";
-import Selection from "@/components/Selection";
-import { AiFillHeart } from "react-icons/ai";
 import { usePathname } from "next/navigation";
-import { BsBookmarkHeart } from "react-icons/bs";
 import { BsQrCodeScan } from "react-icons/bs";
 import { BiMap } from "react-icons/bi";
 import { BsShareFill } from "react-icons/bs";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
-import StarRating from "./Layout/StarRating";
 import { FaRegHeart } from "react-icons/fa";
 import { IoIosStar } from "react-icons/io";
 import { Menu } from "@mantine/core";
+import JsonLd from "@/libs/JsonLd";
 
 interface Category {
   id: number;
