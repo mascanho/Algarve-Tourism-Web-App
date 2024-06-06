@@ -3,7 +3,7 @@ import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import React, { useEffect, useState } from "react";
 import { getClientSideCookie } from "@/app/libs/getClientSideCookie";
 import { FaPlus } from "react-icons/fa";
-import { Box, Collapse } from "@mantine/core";
+import { Box, Collapse, Group, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
 const DrawerContentPlanner = () => {
@@ -11,13 +11,16 @@ const DrawerContentPlanner = () => {
   const [selectedTrip, setSelectedTrip] = useState(null);
   const [cookieError, setCookieError] = useState(null);
   const [opened, { toggle }] = useDisclosure(false);
+  const [openCollapses, setOpenCollapses] = useState<{
+    [key: string]: boolean;
+  }>({});
 
   // Import useAddToFavourites hook
   const addToFavs = useAddToFavourites();
   const favourites = useAddToFavourites();
 
   // Function to validate, decode, and parse cookie data
-  const parseCookie = (cookie) => {
+  const parseCookie = (cookie: string) => {
     try {
       const decodedCookie = decodeURIComponent(cookie);
       return JSON.parse(decodedCookie);
@@ -41,6 +44,14 @@ const DrawerContentPlanner = () => {
     setSelectedTrip(TRIP); // Update state immediately after saving
 
     toggle();
+  };
+
+  // Toggle collapse for a specific trip
+  const handleToggleCollapse = (id: string) => {
+    setOpenCollapses((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
   };
 
   return (
@@ -73,17 +84,37 @@ const DrawerContentPlanner = () => {
         </Collapse>
       </Box>
 
-      {
-        // show the saved cookie trip name
-        selectedTrip && <p className="text-xl font-bold">{selectedTrip.name}</p>
-      }
+      {selectedTrip && (
+        <p className="mt-2 text-xl font-bold">{selectedTrip.name}</p>
+      )}
 
-      {
-        // show the saved cookie name
-        favourites.favourites.map((trip) => (
-          <p key={trip.id}>{trip.title}</p>
-        ))
-      }
+      <div className="pt-1">
+        {favourites.favourites.map((trip) => (
+          <div key={trip.id} className="flex items-center">
+            <div className="w-16 h-16 rounded-md flex items-center">
+              <img
+                src={"https:" + trip?.image}
+                className="w-full h-full rounded-md object-cover"
+                alt=""
+              />
+            </div>
+            <div className="w-8/12">
+              <p>{trip?.title}</p>
+              <Box maw={400} mx="auto">
+                <Group justify="center" mb={5}>
+                  <span onClick={() => handleToggleCollapse(trip.id)}>
+                    Toggle content
+                  </span>
+                </Group>
+
+                <Collapse in={openCollapses[trip.id]}>
+                  <Text>{trip?.description || "No description available"}</Text>
+                </Collapse>
+              </Box>
+            </div>
+          </div>
+        ))}
+      </div>
 
       {cookieError && (
         <div className="text-red-500">

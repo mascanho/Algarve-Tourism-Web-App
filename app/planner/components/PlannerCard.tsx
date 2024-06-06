@@ -6,6 +6,7 @@ import Link from "next/link";
 import DrawerContentPlanner from "./DrawerContentPlanner";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { toast } from "react-hot-toast";
+import { BiPlus } from "react-icons/bi";
 
 interface Item {
   sys: {
@@ -74,7 +75,7 @@ export const PlannerCard: React.FC<PlannerCardProps> = ({ item, trip }) => {
                 {item.fields.title}
               </h4>
             </Link>
-            <FaHeart
+            <BiPlus
               onClick={() =>
                 handleOpenDrawer({
                   title: item.fields.title,
@@ -89,7 +90,7 @@ export const PlannerCard: React.FC<PlannerCardProps> = ({ item, trip }) => {
                   pathname: window?.location?.pathname,
                 })
               }
-              className="text-key hover:text-red-500 mt-1 mr-1 text-sm hover:cursor-pointer ease-in delay-75 transition-all"
+              className="text-gray-500 hover:text-key mt-1 hover:scale-110  text-base hover:cursor-pointer ease-in delay-75 transition-all"
             />
           </div>
           <div key={item.sys.id} className="space-y-2">
