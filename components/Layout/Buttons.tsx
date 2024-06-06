@@ -65,21 +65,25 @@ const Buttons = ({ filteredData }: any) => {
 
     try {
       navigator.clipboard.writeText(url);
-      window.open(url, "_blank");
-    } catch (error) {}
+      window?.open(url, "_blank");
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   // handle copying the url to share
   function handleCopyUrl() {
     const url = `https://www.algarvewonders.com${pathname}`;
-    navigator.clipboard.writeText(url);
+    navigator?.clipboard.writeText(url);
     toast.success("URL copied to clipboard");
   }
 
   const handlePrint = () => {
     try {
       window?.print();
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   if (!filteredData[0]?.fields?.website) {

@@ -31,7 +31,7 @@ const JourneyPage = async () => {
 
   // Function to normalize an array of city names
   const normalizeCityNames = (cities) => {
-    return cities.map(normalizeCityName);
+    return cities?.map(normalizeCityName);
   };
 
   const data = getCookie("builderData");
@@ -85,12 +85,12 @@ const JourneyPage = async () => {
   // From ALLDB find the ones that match items inside of the arrays for cities and categories
 
   let CITIES_FILTERED = ALLDB?.filter((item) => {
-    return cities.includes(item.fields.city);
+    return cities?.includes(item?.fields?.city);
   });
 
   let CATEGORIES_FILTERED = CITIES_FILTERED.filter((item) => {
     return categories.some((category) =>
-      item.fields.type.includes(category.toLowerCase()),
+      item?.fields?.type.includes(category.toLowerCase()),
     );
   });
 

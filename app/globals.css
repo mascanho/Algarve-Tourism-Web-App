@@ -209,6 +209,7 @@ input {
 }
 
 select:focus,
+.mantine-1cn2mlo,
 input:focus {
   outline: none !important;
 }
