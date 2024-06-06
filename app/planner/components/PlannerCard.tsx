@@ -5,6 +5,7 @@ import { FaHeart, FaMap, FaMapPin } from "react-icons/fa";
 import Link from "next/link";
 import DrawerContentPlanner from "./DrawerContentPlanner";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
+import { toast } from "react-hot-toast";
 
 interface Item {
   sys: {
@@ -82,6 +83,7 @@ export const PlannerCard: React.FC<PlannerCardProps> = ({ item, trip }) => {
                   type: item.fields.type,
                   slug: item.fields.slug,
                   embededMap: item.fields.embededMap,
+                  rating: item.fields.rating,
                   shortDescription: item.fields.shortDescription,
                   id: item.sys.id,
                   pathname: window?.location?.pathname,

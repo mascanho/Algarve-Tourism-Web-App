@@ -1,34 +1,41 @@
 import { toast } from "react-hot-toast";
 import { create } from "zustand";
 
+interface FavouriteItem {
+  id: number;
+  [key: string]: any;
+}
+
 interface FavouriteProps {
-  favourites: any[];
-  addFavourite: (data: any, fromLocalStorage?: boolean) => void;
+  favourites: FavouriteItem[];
+  addFavourite: (data: FavouriteItem, fromLocalStorage?: boolean) => void;
   removeFavourite: (id: number) => void;
 }
 
-const isAlreadyAdded = (favourites: any[], data: any) => {
+const isAlreadyAdded = (favourites: FavouriteItem[], data: FavouriteItem) => {
   return favourites.some((item) => item.id === data.id);
 };
 
 const useAddToFavourites = create<FavouriteProps>((set) => ({
   favourites: [],
-  addFavourite(data: any, fromLocalStorage = false) {
+  addFavourite(data: FavouriteItem, fromLocalStorage = false) {
     set((state) => {
       const existingItem = isAlreadyAdded(state.favourites, data);
 
-      if (existingItem && !fromLocalStorage) {
-        toast.error("Already added to favourites");
+      if (existingItem) {
+        if (!fromLocalStorage) {
+          toast.error("Already added to favourites");
+        }
         return state;
       }
 
-      if (!existingItem && !fromLocalStorage) {
+      if (!fromLocalStorage) {
         toast.success("Added to favourites");
       }
 
       const updatedFavourites = [data, ...state.favourites];
       if (typeof window !== "undefined") {
-        localStorage?.setItem("favourites", JSON.stringify(updatedFavourites));
+        localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
       }
 
       return {
@@ -42,7 +49,7 @@ const useAddToFavourites = create<FavouriteProps>((set) => ({
         (item) => item.id !== id,
       );
       if (typeof window !== "undefined") {
-        localStorage?.setItem("favourites", JSON.stringify(updatedFavourites));
+        localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
       }
       return {
         favourites: updatedFavourites,
@@ -53,9 +60,10 @@ const useAddToFavourites = create<FavouriteProps>((set) => ({
 
 // Initialization logic outside the store creation
 if (typeof window !== "undefined") {
-  const favourites = localStorage?.getItem("favourites");
+  const favourites = localStorage.getItem("favourites");
   if (favourites) {
     useAddToFavourites.setState({ favourites: JSON.parse(favourites) });
   }
 }
+
 export default useAddToFavourites;
