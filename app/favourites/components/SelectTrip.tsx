@@ -30,7 +30,7 @@ const SelectTrip = () => {
   }, [localStorage.getItem("trip")]);
 
   return (
-    <div className="mt-5 sm:mt-10 flex mx-auto  w-11/12 justify-between gap-x-4 text-xs text-black sm:w-full sm:text-base">
+    <div className="mt-5 sm:mt-10 flex mx-auto sm:flex-row flex-col space-y-3 sm:space-y-0  w-11/12 justify-between gap-x-4 text-xs text-black sm:w-full sm:text-base">
       {tripName ? (
         <div className="relative w-full">
           <input
@@ -41,7 +41,7 @@ const SelectTrip = () => {
             placeholder="Enter Trip Name"
           />
           <button
-            className="absolute right-2 top-2 rounded-lg border border-key p-2 px-3"
+            className="absolute right-2 sm:top-2 top-2.5 rounded-lg border border-key p-2 px-3"
             type="button"
             onClick={() => handleConfirm()}
           >

@@ -30,11 +30,11 @@ export const SummaryCard = ({ tripData }: any) => {
 
   return (
     <section className="w-full h-full">
-      <div className="flex justify-start items-center sm:space-x-4 mb-6">
+      <div className="flex sm:flex-row flex-col sm:justify-start sm:items-center sm:space-x-4 mb-6">
         <h2 className="font-bold text-black">
           Number of days: <span>{parsedCookies?.days}</span>
         </h2>
-        <h3 className="mt-2 mb-2">
+        <h3 className="mt-2 mb-2 font-bold text-key">
           Attractions per day: {parsedCookies?.attractions}
         </h3>
       </div>

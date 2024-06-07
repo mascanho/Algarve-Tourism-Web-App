@@ -58,6 +58,17 @@ const DrawerContentPlanner = () => {
     }));
   };
 
+  // Check for trip data in localStorage
+  useEffect(() => {
+    const tripData = localStorage.getItem("trip");
+    if (tripData) {
+      const parsedData = parseCookie(tripData);
+      if (parsedData) {
+        setSelectedTrip(parsedData);
+      }
+    }
+  }, []);
+
   return (
     <div className="flex flex-col space-y-2 h-full justify-between items-stretch">
       <div className="flex items-center" onClick={toggle}>
@@ -66,7 +77,10 @@ const DrawerContentPlanner = () => {
       </div>
       <Box className="flex flex-col">
         <Collapse in={opened}>
-          <form className="flex flex-col" onSubmit={(e) => e.preventDefault()}>
+          <form
+            className="flex flex-col mb-5"
+            onSubmit={(e) => e.preventDefault()}
+          >
             <input
               className="bg-transparent p-2 my-2 text-key border border-key rounded-md"
               type="text"
@@ -76,11 +90,15 @@ const DrawerContentPlanner = () => {
               onChange={(e) => setTripName(e.target.value)}
               placeholder="My Lagos dream trip"
             />
-            <div className="flex justify-between">
-              <button onClick={toggle} type="button">
+            <div className="flex justify-between w-full px-1 mx-auto">
+              <button className="underline" onClick={toggle} type="button">
                 Cancel
               </button>
-              <button onClick={handleTripCreation} type="button">
+              <button
+                className="underline"
+                onClick={handleTripCreation}
+                type="button"
+              >
                 Save
               </button>
             </div>
@@ -89,7 +107,10 @@ const DrawerContentPlanner = () => {
       </Box>
 
       {selectedTrip && (
-        <p className="mt-2 text-xl font-bold">{selectedTrip.name}</p>
+        <div className="flex items-center py-3 space-x-2 flex-wrap">
+          <span className="text-key-60">Trip:</span>
+          <p className="text-xl font-bold">{selectedTrip.name}</p>
+        </div>
       )}
 
       <div className="pt-1 space-y-2">
@@ -98,42 +119,42 @@ const DrawerContentPlanner = () => {
             key={trip.id}
             className="flex items-center justify-start border p-1 rounded-md"
           >
-            <Link
-              href={`/${trip.type}/${trip.slug}`}
-              className="w-full flex items-center"
-            >
-              <div className="w-16 h-16 rounded-md flex items-center mr-2">
+            <div className="w-16 h-16 rounded-md flex items-center mr-2">
+              <Link
+                href={`/${trip.type}/${trip.slug}`}
+                className="w-full h-full rounded-md object-cover flex items-center"
+              >
                 <img
                   src={"https:" + trip?.image}
                   className="w-full h-full rounded-md object-cover"
                   alt=""
                 />
-              </div>
-              <div className="w-8/12">
-                <p className="text-base font-semibold">{trip?.title}</p>
-                <p className="text-xs">{trip?.city}</p>
-                <Box maw={400} mx="auto">
-                  <Group justify="center" mb={5}>
-                    <span
-                      className="text-xs"
-                      onClick={() => handleToggleCollapse(trip.id)}
-                    >
-                      <Rating
-                        value={trip?.rating}
-                        fractions={2}
-                        readOnly
-                        size="xs"
-                        className="text-xs mt-1"
-                      />
-                    </span>
-                  </Group>
+              </Link>
+            </div>
+            <div className="w-8/12">
+              <p className="text-base font-semibold">{trip?.title}</p>
+              <p className="text-xs">{trip?.city}</p>
+              <Box maw={400} mx="auto">
+                <Group justify="center" mb={5}>
+                  <span
+                    className="text-xs cursor-pointer"
+                    onClick={() => handleToggleCollapse(trip.id)}
+                  >
+                    <Rating
+                      value={trip?.rating}
+                      fractions={2}
+                      readOnly
+                      size="xs"
+                      className="text-xs mt-1 cursor-pointer"
+                    />
+                  </span>
+                </Group>
 
-                  <Collapse in={openCollapses[trip.id]}>
-                    <span className="text-xs">{trip?.shortDescription}</span>
-                  </Collapse>
-                </Box>
-              </div>
-            </Link>
+                <Collapse in={openCollapses[trip.id]}>
+                  <span className="text-xs">{trip?.shortDescription}</span>
+                </Collapse>
+              </Box>
+            </div>
           </div>
         ))}
       </div>
