@@ -9,7 +9,7 @@ const AddPlannerButton = () => {
   const [opened, { open, close }] = useDisclosure(false);
 
   const handleClick = async () => {
-    await createTrip();
+    // await createTrip();
     open();
   };
 

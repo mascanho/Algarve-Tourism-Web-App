@@ -106,8 +106,8 @@ const JourneyPage = async () => {
 
   return (
     <>
-      <div className="pt-20 max-w-4xl mx-auto">
-        <section className="w-11/12 sm:w-full grid grid-cols-2 gap-x-8 sm:grid-cols-3 md:grid-cols-4 h-full sm:pt-10 sm:pb-10 pb-20 gap-y-4 sm:gap-y-6 self-center mx-auto max-w-5xl mb-20 items-center justify-center align-middle">
+      <div className="sm:pt-20 pt-28 max-w-4xl mx-auto">
+        <section className="w-11/12 sm:w-full grid grid-cols-2 sm:gap-x-8 gap-x-4 sm:grid-cols-3 md:grid-cols-4 h-full sm:pt-10 sm:pb-10 pb-20 gap-y-4 sm:gap-y-6 self-center mx-auto max-w-5xl mb-20 items-center justify-center align-middle">
           {CATEGORIES_FILTERED.map((item) => (
             <PlannerCard
               key={item.sys.id}
