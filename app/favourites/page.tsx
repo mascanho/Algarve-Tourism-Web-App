@@ -20,6 +20,7 @@ import { FaSpinner } from "react-icons/fa";
 import FavMobileCard from "./components/FavMobileCard";
 import { IoMdSend } from "react-icons/io";
 import { FaSquare } from "react-icons/fa6";
+import SelectTrip from "./components/SelectTrip";
 
 function page() {
   const [favourites, setFavourites] = useState<any[]>([]);
@@ -189,12 +190,12 @@ function page() {
           />
         </div>
         <div className="m-auto max-w-7xl w-11/12 sm:w-full mt-1 sm:mt-2 flex items-center justify-between ">
-          <div className="flex flex-col w-fit ">
+          <div className="flex flex-col w-fit items-center justify-center">
             <h1 className="text-2xl pt-10 sm:pt-0 sm:text-3xl w-full text-key font-semibold hiddenRow  ">
               Your Favourites{" "}
             </h1>
             {TRIPNAME && (
-              <span className=" w-full text-lg text-key-50 font-bold sm:text-xl pb-4">
+              <span className=" w-full text-lg mt-2 text-key-50 font-bold sm:text-xl pb-4">
                 {TRIPNAME}
               </span>
             )}
@@ -224,6 +225,9 @@ function page() {
           </div>
         </div>
       </div>
+      <section>
+        <SelectTrip />
+      </section>
       <div className="mt-2 mb-2 sm:mb-0 sm:mt-5 w-full ">
         <div className="flex font-bold sapce-x-5 w-full justify-between pb-2 mb-10 h-full overflow-auto">
           {/* Optional table */}
