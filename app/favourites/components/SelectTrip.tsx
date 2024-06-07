@@ -30,11 +30,11 @@ const SelectTrip = () => {
   }, [localStorage.getItem("trip")]);
 
   return (
-    <div className="mt-5 sm:mt-10 flex mx-auto sm:flex-row flex-col space-y-3 sm:space-y-0  w-11/12 justify-between gap-x-4 text-xs text-black sm:w-full sm:text-base">
+    <div className="mt-5 sm:mt-10 flex mx-auto sm:flex-row h-28 sm:h-14 flex-col space-y-3 sm:space-y-0  w-11/12 justify-between gap-x-4 text-xs text-black sm:w-full sm:text-base">
       {tripName ? (
-        <div className="relative w-full">
+        <div className="relative sm:w-11/12">
           <input
-            className="flex  w-full justify-center  rounded-lg border border-gray-300 bg-transparent p-4 delay-75 duration-200 ease-in-out hover:cursor-pointer hover:border-key"
+            className="flex h-14  min-w-full justify-center  rounded-lg border border-gray-300 bg-transparent p-5 delay-75 duration-200 ease-in-out hover:cursor-pointer hover:border-key"
             type="text"
             name=""
             onChange={(e) => handleCreateTrip(e)}
@@ -49,11 +49,12 @@ const SelectTrip = () => {
           </button>
         </div>
       ) : (
-        <div className="flex w-full  justify-center rounded-lg border border-gray-300 p-4 delay-75 duration-200 ease-in-out hover:cursor-pointer hover:border-key">
+        <div
+          onClick={() => setTripName(!tripName)}
+          className="flex sm:w-96  justify-center rounded-lg border border-gray-300 p-4 delay-75 duration-200 ease-in-out hover:cursor-pointer hover:border-key"
+        >
           <span>+</span>
-          <span onClick={() => setTripName(!tripName)}>
-            Create Your Own Trip
-          </span>
+          <span>Create Your Own Trip</span>
         </div>
       )}
       <div

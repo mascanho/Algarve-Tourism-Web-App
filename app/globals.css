@@ -426,7 +426,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .card__body-header {
   height: var(--header-height);
   background: var(--background);
-  padding: 0 10px 10px 10px;
+  padding: 10px 0 10px 10px;
   display: flex;
   justify-items: center;
 }
@@ -434,12 +434,44 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: var(--text-headline);
   font-weight: 700;
   margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .card__body-header-subtitle {
   color: var(--text-color);
   font-weight: 500;
   font-size: 13px;
 }
+
+/* Responsive styles */
+/* @media (max-width: 600px) { */
+/*   .card { */
+/*     --card-width: 180px; */
+/*     --card-height: 90%; */
+/*     margin-bottom: 20px; */
+/*   } */
+/**/
+/*   .card__body { */
+/*     grid-auto-rows: auto; */
+/*     height: 160px; */
+/**/
+/*     img { */
+/*       height: 170; */
+/*     } */
+/*   } */
+/**/
+/*   .card__body-cover-image { */
+/*     height: 150px; */
+/*   } */
+/**/
+/*   .card__body-header { */
+/*     flex-direction: column; */
+/*     align-items: flex-start; */
+/*     height: 40px; */
+/*     padding-top: 8px; */
+/*   } */
+/* } */
 
 .mantine-lkp1wu {
   @apply min-h-14 min-w-full;

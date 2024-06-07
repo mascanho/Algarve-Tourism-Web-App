@@ -189,8 +189,8 @@ function page() {
             className="w-full object-cover rounded-xl"
           />
         </div>
-        <div className="m-auto max-w-7xl w-11/12 sm:w-full mt-1 sm:mt-2 flex items-center justify-between ">
-          <div className="flex flex-col w-fit items-center justify-center">
+        <div className="m-auto max-w-7xl w-11/12 sm:w-full mt-1 sm:mt-2 flex items-start justify-between ">
+          <div className="flex flex-col w-fit items-start justify-start sm:min-h-24 min-h-32">
             <h1 className="text-2xl pt-10 sm:pt-0 sm:text-3xl w-full text-key font-semibold hiddenRow  ">
               Your Favourites{" "}
             </h1>

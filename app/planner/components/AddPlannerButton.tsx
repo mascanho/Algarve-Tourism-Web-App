@@ -15,12 +15,7 @@ const AddPlannerButton = () => {
 
   return (
     <>
-      <Drawer
-        opened={opened}
-        size={"xs"}
-        onClose={close}
-        // title="Authentication"
-      >
+      <Drawer opened={opened} size={"xs"} onClose={close} title="">
         <DrawerContentPlanner />
       </Drawer>
 

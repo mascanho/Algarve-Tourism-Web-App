@@ -47,7 +47,7 @@ function Demo() {
       }}
       className="w-full flex flex-col sm:justify-center  items-center min-h-screen mb-32 sm:my-auto"
     >
-      <div className="flex justify-between sm:justify-around max-w-4xl sm:px-8 px-3 sm:space-x-10 space-x-2 w-full">
+      <div className="flex sm:flex-row flex-col justify-between sm:justify-around max-w-4xl sm:px-8 px-3 sm:space-x-10 space-y-2 sm:space-y-0 sm:space-x-2 w-full">
         <NumberInput
           placeholder="Number of days"
           className="sm:w-full sm:text-base text-xs placeholder:text-xs"
@@ -66,7 +66,7 @@ function Demo() {
         />
       </div>
       <section className="mt-10">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 sm:gap-6 gap-3 mx-auto items-center">
           {catArr.map((obj) => (
             <div key={obj.name}>
               <label className="card">
