@@ -106,10 +106,10 @@ const DrawerContentPlanner = () => {
         </Collapse>
       </Box>
 
-      {selectedTrip && (
+      {localStorage.getItem("trip") && (
         <div className="flex items-center py-3 space-x-2 flex-wrap">
           <span className="text-key-60">Trip:</span>
-          <p className="text-xl font-bold">{selectedTrip.name}</p>
+          <p className="text-xl font-bold">{selectedTrip?.name}</p>
         </div>
       )}
 
