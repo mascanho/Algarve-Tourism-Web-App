@@ -464,12 +464,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .card__body-cover-image {
     height: 120px;
   }
-
-  .card__body-header {
-    flex-direction: column;
-    align-items: flex-start;
-    height: 40px;
-  }
 }
 
 .mantine-lkp1wu {
