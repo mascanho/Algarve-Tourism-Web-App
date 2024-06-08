@@ -1,4 +1,5 @@
 "use client";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Group,
@@ -15,6 +16,7 @@ import DrawerContentPlanner from "./DrawerContentPlanner";
 import useAddToFavourites from "@/app/hooks/useAddToFavourites";
 import { toast } from "react-hot-toast";
 import { BiPlus } from "react-icons/bi";
+import styles from "./styles.module.css"; // Import your CSS file
 
 interface Item {
   sys: {
@@ -39,15 +41,26 @@ interface Item {
 
 interface PlannerCardProps {
   item: Item;
+  index: number;
 }
 
-export const PlannerCard: React.FC<PlannerCardProps> = ({ item, trip }) => {
+export const PlannerCard: React.FC<PlannerCardProps> = ({ item, index }) => {
   const [drawerOpened, { open: openDrawer, close: closeDrawer }] =
     useDisclosure(false);
   const [collapseOpened, { toggle: toggleCollapse, close: closeCollapse }] =
     useDisclosure(false);
 
   const addToFavs = useAddToFavourites();
+  const [shouldFlip, setShouldFlip] = useState(false);
+
+  useEffect(() => {
+    // Set a timeout to trigger the flip animation for each card
+    const timeout = setTimeout(() => {
+      setShouldFlip(true);
+    }, index * 200); // Adjust delay as per your preference
+
+    return () => clearTimeout(timeout);
+  }, [index]);
 
   const handleOpenDrawer = (itemCard) => {
     closeCollapse(); // Ensure collapse is closed when opening the drawer
@@ -71,8 +84,12 @@ export const PlannerCard: React.FC<PlannerCardProps> = ({ item, trip }) => {
       >
         <DrawerContentPlanner />
       </Drawer>
-      <section className="fade-in-image relative mx-auto w-full overflow-hidden rounded-lg border sm:w-52">
-        <div className="typewriter line-clamp-2 flex min-h-72 flex-col flex-nowrap space-y-2 overflow-hidden  p-3 sm:h-[19rem]  sm:min-h-80 sm:py-1">
+      <section
+        className={`fade-in-image relative mx-auto w-full overflow-hidden rounded-lg border sm:w-52 ${
+          shouldFlip ? styles["card-flip"] : ""
+        }`}
+      >
+        <div className="typewriter line-clamp-2 flex min-h-72 flex-col flex-nowrap space-y-2 overflow-hidden p-3 sm:h-[19rem] sm:min-h-80 sm:py-1">
           <div className="flex items-center justify-between">
             <Link
               target="_blank"
