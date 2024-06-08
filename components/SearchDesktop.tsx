@@ -27,9 +27,9 @@ function SearchDesktop({ allTypes, placeholderText, categories }: any) {
           <span className="text-lg font-semibold">Search</span>
           <FaSearch className="w-5 h-5 p-1 bg-key rounded-full text-white" />
         </button>
-        <Link href="/adventure">
+        <Link href="/#aishenanigans">
           <button className="p-5 text-black flex space-x-2 items-center justify-center   h-12 rounded-lg text-sm">
-            view categories
+            <span className="text-lg font-semibold">Generate escapade</span>
             <FaChevronRight className="text-black ml-1 my-auto pb-[2px]  rounded-full" />
           </button>
         </Link>
