@@ -36,7 +36,7 @@ export const SummaryCard = ({ tripData }: any) => {
           Attractions per day: {parsedCookies?.attractions}
         </h3>
       </div>
-      <h3 className="mb-4 underline text-black">Category types:</h3>
+      <h3 className="mb-4 underline text-black">Category:</h3>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full max-w-4xl font-bold">
         {uniqueCategories?.map((cat: any, index: number) => {
           const category = catArr.find(
