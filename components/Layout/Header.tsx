@@ -22,6 +22,12 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+// Say hello to peepers
+console.log(
+  "%cHope you Enjoy it ;)",
+  "color: #f709bb; font-family: sans-serif; text-decoration: underline;",
+);
+
 const Header = ({ currentUser, weatherData }: any) => {
   const [openLogin, setOpenLogin] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);

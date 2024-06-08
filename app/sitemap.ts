@@ -72,7 +72,6 @@ export async function fetchItems() {
       });
     });
 
-    console.log(sitemapArr);
     return sitemapArr; // Return sitemap array
   } catch (error) {
     console.error("Error fetching Contentful entries:", error);

@@ -89,8 +89,6 @@ function StaticDataCarousel({
     };
   });
 
-  console.log(categories, "where are the categories");
-
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const slides = items.map((item) => (

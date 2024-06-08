@@ -7,14 +7,12 @@ const SelectTrip = () => {
   const [name, setName] = useState("");
   const handleCreateTrip = (e) => {
     setName(event.target.value);
-    console.log(name);
   };
 
   const router = useRouter();
 
   const handleConfirm = () => {
     localStorage.setItem("trip", JSON.stringify({ name }));
-    console.log(localStorage.getItem("trip"));
     router.refresh();
     setName("");
     setTripName(false);

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { DotLoader, GridLoader, ScaleLoader } from "react-spinners";
 
 export default function Loading() {

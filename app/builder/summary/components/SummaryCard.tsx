@@ -14,8 +14,6 @@ export const SummaryCard = ({ tripData }: any) => {
   const cookies = getCookie("builderData");
   const parsedCookies = cookies ? JSON.parse(cookies) : {};
 
-  console.log(parsedCookies);
-
   // Remove duplicates from categories and cities
   const uniqueCategories = [...new Set(parsedCookies?.categories)];
   const uniqueCities = [...new Set(parsedCookies?.cities)];
@@ -105,7 +103,7 @@ export const SummaryCard = ({ tripData }: any) => {
         })}
       </div>
       <footer className="fixed bottom-0 left-0 right-0 flex w-full justify-between p-4 bg-white">
-        <div className="w-full flex justify-between max-w-4xl mx-auto px-8">
+        <div className="w-full flex justify-between max-w-4xl mx-auto sm:px-8">
           <PreviousButton />
           <Link href="/planner">
             <button

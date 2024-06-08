@@ -14,7 +14,6 @@ export const BuilderFooter = () => {
   //check if the user has data in localstorage, with all the fields
   useEffect(() => {
     const handleClick = (event) => {
-      console.log("Mouse clicked on the page.");
       // Add your logic to handle the click event hereconst data = localStorage.getItem("Builder");
       const data = localStorage?.getItem("Builder");
       const dataObj = JSON.parse(data || "{}");

@@ -46,7 +46,6 @@ export const PlannerCard: React.FC<PlannerCardProps> = ({ item, trip }) => {
     openDrawer();
 
     addToFavs.addFavourite(itemCard, true);
-    console.log(itemCard);
   };
 
   const handleToggleCollapse = () => {

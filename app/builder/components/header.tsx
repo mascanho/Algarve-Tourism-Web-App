@@ -17,14 +17,14 @@ export const BuilderHeader = () => {
   console.log(serverCookies);
 
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       <div className="h-16 overflow-hidden  border bg-white w-full z-20  text-black justify-center flex items-center fixed top-0 ">
         <section className="flex items-center">
           {pathname === "/builder" && (
-            <div className="flex items-center space-x-4 ">
+            <div className="flex items-center space-x-2 ">
               <h1 className="text-3xl font-bold">Builder</h1>
               <span className="mt-1 text-xs  text-key/40">
-                Select days, activities and more
+                Select days and activities
               </span>
             </div>
           )}
@@ -58,7 +58,7 @@ export const BuilderHeader = () => {
             </div>
           )}
         </section>
-        <Link className="absolute right-10" href="/">
+        <Link className="absolute sm:right-10 right-5" href="/">
           <IoClose />
         </Link>
       </div>

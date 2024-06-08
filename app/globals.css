@@ -445,33 +445,33 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /* Responsive styles */
-/* @media (max-width: 600px) { */
-/*   .card { */
-/*     --card-width: 180px; */
-/*     --card-height: 90%; */
-/*     margin-bottom: 20px; */
-/*   } */
-/**/
-/*   .card__body { */
-/*     grid-auto-rows: auto; */
-/*     height: 160px; */
-/**/
-/*     img { */
-/*       height: 170; */
-/*     } */
-/*   } */
-/**/
-/*   .card__body-cover-image { */
-/*     height: 150px; */
-/*   } */
-/**/
-/*   .card__body-header { */
-/*     flex-direction: column; */
-/*     align-items: flex-start; */
-/*     height: 40px; */
-/*     padding-top: 8px; */
-/*   } */
-/* } */
+@media (min-width: 300px) and (max-width: 600px) {
+  .card {
+    --card-width: 170px;
+    --card-height: 1px;
+    margin-bottom: 20px;
+  }
+
+  .card__body {
+    grid-auto-rows: auto;
+    height: 180px;
+
+    img {
+      height: 120px; /* Added px unit */
+    }
+  }
+
+  .card__body-cover-image {
+    height: 120px;
+  }
+
+  .card__body-header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 40px;
+    padding-top: 2px;
+  }
+}
 
 .mantine-lkp1wu {
   @apply min-h-14 min-w-full;

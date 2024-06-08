@@ -45,7 +45,7 @@ function Demo() {
         await BuilderAction(formData);
         router.push("/builder/cities");
       }}
-      className="w-full flex flex-col sm:justify-center  items-center min-h-screen mb-32 sm:my-auto"
+      className="w-11/12 flex flex-col sm:justify-center  items-center min-h-screen mb-32 sm:my-auto"
     >
       <div className="flex sm:flex-row flex-col justify-between sm:justify-around max-w-4xl sm:px-8 px-3 sm:space-x-10 space-y-2 sm:space-y-0 sm:space-x-2 w-full">
         <NumberInput
@@ -103,7 +103,7 @@ function Demo() {
         </div>
       </section>
       <footer className="fixed bottom-0 left-0 right-0 flex w-full justify-between p-4 bg-white">
-        <div className="w-full flex justify-end max-w-4xl mx-auto px-8">
+        <div className="w-full flex justify-end sm:max-w-4xl mx-auto sm:px-8 px-4">
           <button
             className="bg-key text-white px-2 w-20 py-1 rounded-md disabled:bg-gray-200 disabled:cursor-not-allowed"
             type="submit"

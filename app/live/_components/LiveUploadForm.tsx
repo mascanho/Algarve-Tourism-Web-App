@@ -7,7 +7,6 @@ function LiveUploadForm() {
     <form
       action={async (formData: FormData) => {
         uploadLiveEvents(formData);
-        console.log("Submitted");
       }}
       className="flex flex-col"
     >
