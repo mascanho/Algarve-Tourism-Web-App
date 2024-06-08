@@ -454,7 +454,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .card__body {
     grid-auto-rows: auto;
-    height: 180px;
+    height: 200px;
 
     img {
       height: 130px; /* Added px unit */
