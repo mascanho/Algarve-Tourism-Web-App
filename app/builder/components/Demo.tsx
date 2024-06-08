@@ -45,7 +45,7 @@ function Demo() {
         await BuilderAction(formData);
         router.push("/builder/cities");
       }}
-      className="w-11/12 flex flex-col sm:justify-center  items-center min-h-screen mb-32 sm:my-auto"
+      className="w-full px-2 sm:px-auto flex flex-col sm:justify-center  items-center min-h-screen mb-32 sm:my-auto"
     >
       <div className="flex sm:flex-row flex-col justify-between sm:justify-around max-w-4xl sm:px-8 px-3 sm:space-x-10 space-y-2 sm:space-y-0 sm:space-x-2 w-full">
         <NumberInput
