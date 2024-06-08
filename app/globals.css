@@ -277,18 +277,21 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -ms-user-select: none;
   user-select: none;
 }
+
 .card:nth-child(odd) .card__body-cover-image {
   --x-y1: 100% 90%;
   --x-y2: 67% 83%;
   --x-y3: 33% 90%;
   --x-y4: 0% 85%;
 }
+
 .card:nth-child(even) .card__body-cover-image {
   --x-y1: 100% 85%;
   --x-y2: 73% 93%;
   --x-y3: 25% 85%;
   --x-y4: 0% 90%;
 }
+
 .card__input {
   position: absolute;
   display: block;
@@ -299,32 +302,40 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin: 0;
   -webkit-appearance: none;
 }
+
 .card__input:checked ~ .card__body {
   --shadow: 0 0 0 3px var(--card-shadow);
 }
+
 .card__input:checked ~ .card__body .card__body-cover-checkbox {
   --check-bg: var(--background-checkbox);
   --check-border: #fff;
   --check-scale: 1;
   --check-opacity: 1;
 }
+
 .card__input:checked ~ .card__body .card__body-cover-checkbox--svg {
   --stroke-color: #fff;
   --stroke-dashoffset: 0;
 }
+
 .card__input:checked ~ .card__body .card__body-cover:after {
   --opacity-bg: 0;
 }
+
 .card__input:checked ~ .card__body .card__body-cover-image {
   --filter-bg: grayscale(0);
 }
+
 .card__input:disabled ~ .card__body {
   cursor: not-allowed;
   opacity: 0.5;
 }
+
 .card__input:disabled ~ .card__body:active {
   --scale: 1;
 }
+
 .card__body {
   display: grid;
   grid-auto-rows: calc(var(--card-height) - var(--header-height)) auto;
@@ -334,7 +345,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: var(--card-radius);
   overflow: hidden;
   position: relative;
-
   cursor: pointer;
   box-shadow: var(--shadow, 0 4px 4px 0 rgba(0, 0, 0, 0.02));
   transition:
@@ -342,9 +352,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     box-shadow var(--transition);
   transform: scale(var(--scale, 1)) translateZ(0);
 }
+
 .card__body:active {
   --scale: 0.96;
 }
+
 .card__body-cover {
   --c-border: var(--card-radius) var(--card-radius) 0 0;
   --c-width: 100%;
@@ -352,6 +364,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   position: relative;
   overflow: hidden;
 }
+
 .card__body-cover:after {
   content: "";
   position: absolute;
@@ -365,14 +378,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: var(--opacity-bg, 1);
   transition: opacity var(--transition) linear;
 }
+
 .card__body-cover-image {
   width: var(--c-width);
   height: var(--c-height);
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: var(--c-border);
-  height: 110px;
-  width: 100%;
   filter: var(--filter-bg, grayscale(1));
   -webkit-clip-path: polygon(
     0% 0%,
@@ -408,6 +420,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     opacity calc(var(--transition) * 1.2) linear;
   transform: scale(var(--check-scale, 0));
 }
+
 .card__body-cover-checkbox--svg {
   width: 13px;
   height: 11px;
@@ -423,13 +436,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   stroke-dashoffset: var(--stroke-dashoffset, 16px);
   transition: stroke-dashoffset 0.4s ease var(--transition);
 }
+
 .card__body-header {
   height: var(--header-height);
   background: var(--background);
   padding: 10px 0 10px 10px;
   display: flex;
-  justify-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
+
 .card__body-header-title {
   color: var(--text-headline);
   font-weight: 700;
@@ -438,10 +454,38 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   justify-content: space-between;
   align-items: center;
 }
+
 .card__body-header-subtitle {
   color: var(--text-color);
   font-weight: 500;
   font-size: 13px;
+}
+
+/* Additional Mobile Styles */
+@media (max-width: 600px) {
+  .card {
+    --card-width: calc(100% - 20px); /* Adjust card width for mobile */
+    --card-height: auto; /* Let card height adjust to content */
+    margin-bottom: 20px;
+  }
+
+  .card__body {
+    height: auto; /* Let card body height adjust to content */
+  }
+
+  .card__body-header {
+    flex-direction: column; /* Stack header content vertically */
+    align-items: flex-start;
+    padding: 10px; /* Add padding for spacing */
+  }
+
+  .card__body-header-title {
+    margin-bottom: 4px; /* Reduce margin between title and subtitle */
+  }
+
+  .card__body-header-subtitle {
+    font-size: 12px; /* Adjust subtitle font size for readability */
+  }
 }
 
 .mantine-lkp1wu {
