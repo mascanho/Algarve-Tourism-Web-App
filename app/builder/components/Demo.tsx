@@ -105,7 +105,7 @@ function Demo() {
       <footer className="fixed bottom-0 left-0 right-0 flex w-full justify-between p-4 bg-white">
         <div className="w-full flex justify-end sm:max-w-4xl mx-auto sm:px-8 px-4">
           <button
-            className="bg-key text-white px-2 w-20 py-1 rounded-md disabled:bg-gray-200 disabled:cursor-not-allowed"
+            className="bg-key text-white px-2 w-28 py-1 rounded-md disabled:bg-gray-200 disabled:cursor-not-allowed"
             type="submit"
             disabled={!allSelected}
           >

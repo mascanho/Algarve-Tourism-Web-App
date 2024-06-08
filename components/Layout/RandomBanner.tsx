@@ -128,13 +128,16 @@ function RandomBanner({ categories }: any) {
   };
 
   return (
-    <div className="animate-fade-in mb-20 mt-10 sm:mt-24 sm:mb-28  w-11/12 overflow-hidden  max-w-7xl sm:py-10 mx-auto sm:space-y-2 text-center text-white sm:w-full">
+    <div
+      id="aishenanigans"
+      className="anchor-offset animate-fade-in mb-20 mt-10 sm:mt-24 sm:mb-28  w-11/12 overflow-hidden  max-w-7xl sm:py-10 mx-auto sm:space-y-2 text-center text-white sm:w-full"
+    >
       <div className=" sm:mt-0 space-y-2 sm:space-y-6">
         <h3 className="sm:text-7xl font-semibold text-black  text-5xl">
-          Start your journey
+          Kickoff your epic adventure!
         </h3>
         <h3 className="sm:text-4xl  sm:block text-gray-500 pt-4 sm:pt-0 sm:mt-0">
-          Generate your new journey
+          Let us create a legendary escapade for you.
         </h3>
       </div>
 
@@ -142,7 +145,7 @@ function RandomBanner({ categories }: any) {
         <div className="sm:space-x-8 mx-auto justify-center items-center   mt-8 sm:mt-8 w-full flex flex-wrap">
           <Link href="/builder" className="mt-4">
             <button className="px-8 py-3 w-52 sm:w-fit text-sm sm:text-base m-auto text-white bg-key hover:bg-black hover:text-white transition-all ease-in delay-75 rounded-md active:scale-95">
-              Generate AI Journey
+              Launch the AI Shenanigans!
             </button>
           </Link>
         </div>

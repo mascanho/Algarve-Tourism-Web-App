@@ -1,7 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import useSearchedData from "@/app/hooks/useSearchedData";
-import { IoIosSearch } from "react-icons/io";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useDisclosure } from "@mantine/hooks";
 import { Drawer, Button } from "@mantine/core";

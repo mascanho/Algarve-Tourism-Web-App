@@ -172,7 +172,7 @@ const DrawerContentPlanner = () => {
           }}
           className="btn w-full"
         >
-          Save All
+          Export Favourites
         </button>
       </Link>
     </div>
