@@ -63,7 +63,7 @@ function Demo() {
         </div>
       </section>
 
-      <footer className="fixed bottom-0 left-0 right-0 flex w-ful justify-between p-4 bg-white">
+      <footer className="fixed bottom-0 left-0 right-0 flex w-ful justify-between p-4 bg-white border-t">
         <div className="w-full flex justify-between max-w-4xl mx-auto sm:px-8">
           <PreviousButton />
           <button

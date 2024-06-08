@@ -28,7 +28,7 @@ export const SummaryCard = ({ tripData }: any) => {
 
   return (
     <section className="w-full h-full">
-      <div className="flex sm:flex-row flex-col sm:justify-start sm:items-center sm:space-x-4 mb-6">
+      <div className="flex sm:flex-row flex-col sm:justify-start sm:items-center sm:space-x-4 my-6">
         <h2 className="font-bold text-black p-4 border w-full border-dashed border-key/50">
           Number of days: <span>{parsedCookies?.days}</span>
         </h2>
@@ -102,7 +102,7 @@ export const SummaryCard = ({ tripData }: any) => {
           return null;
         })}
       </div>
-      <footer className="fixed bottom-0 left-0 right-0 flex w-full justify-between p-4 bg-white">
+      <footer className="fixed bottom-0 left-0 right-0 flex w-full justify-between p-4 bg-white border border-t">
         <div className="w-full flex justify-between max-w-4xl mx-auto sm:px-8">
           <PreviousButton />
           <Link href="/planner">
