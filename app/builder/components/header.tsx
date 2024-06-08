@@ -43,14 +43,16 @@ export const BuilderHeader = () => {
             </div>
           )}
           {pathname === "/planner" && (
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               <h1 className="sm:text-3xl hidden font-bold">Your Journey</h1>
               <div className="flex items-center justify-center">
-                <p className="text-sm">Days: </p>
+                <p className="text-sm sm:font-bold sm:text-lg">Days: </p>
                 <span className="ml-1 text-key/40">{serverCookies?.days}</span>
               </div>
               <div className="flex items-center justify-center">
-                <p className="text-sm">Attractions per day: </p>
+                <p className="text-sm sm:text-lg sm:font-bold">
+                  Attractions per day:{" "}
+                </p>
                 <span className="ml-1 text-key/40">
                   {serverCookies?.attractions}
                 </span>

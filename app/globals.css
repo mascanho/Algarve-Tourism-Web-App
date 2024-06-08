@@ -494,6 +494,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* Image fadding */
 
+.fade-in-planner {
+  animation: fadeIn 6s;
+}
+
 .fade-in-image {
   animation: fadeIn 5s;
 }
