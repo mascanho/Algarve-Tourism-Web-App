@@ -71,36 +71,17 @@ export const PlannerCard: React.FC<PlannerCardProps> = ({ item, trip }) => {
       >
         <DrawerContentPlanner />
       </Drawer>
-      <section className="border w-full sm:w-52 mx-auto rounded-lg overflow-hidden relative fade-in-image">
-        <div className="flex flex-col p-3 space-y-2 typewriter overflow-hidden flex-nowrap min-h-64  sm:min-h-72 sm:h-[19rem]  sm:py-1 line-clamp-2">
-          <div className="flex justify-between items-center">
+      <section className="fade-in-image relative mx-auto w-full overflow-hidden rounded-lg border sm:w-52">
+        <div className="typewriter line-clamp-2 flex min-h-72 flex-col flex-nowrap space-y-2 overflow-hidden  p-3 sm:h-[19rem]  sm:min-h-80 sm:py-1">
+          <div className="flex items-center justify-between">
             <Link
               target="_blank"
               href={`/${item.fields.type}/${item.fields.slug}`}
             >
-              <h4 className="text-key font-semibold flex flex-wrap truncate text-sm pt-2">
+              <h4 className="flex flex-wrap truncate pt-2 text-sm font-semibold text-key">
                 {item.fields.title}
               </h4>
             </Link>
-            <Tooltip label="Add to favourites">
-              <BiPlus
-                onClick={() =>
-                  handleOpenDrawer({
-                    title: item.fields.title,
-                    city: item.fields.city,
-                    image: item.fields.mainImage.fields.file.url,
-                    type: item.fields.type,
-                    slug: item.fields.slug,
-                    embededMap: item.fields.embededMap,
-                    rating: item.fields.rating,
-                    shortDescription: item.fields.shortDescription,
-                    id: item.sys.id,
-                    pathname: window?.location?.pathname,
-                  })
-                }
-                className="text-gray-500 hover:text-key mt-1 hover:scale-110  text-base hover:cursor-pointer ease-in delay-75 transition-all"
-              />
-            </Tooltip>
           </div>
           <div key={item.sys.id} className="space-y-2">
             <Link
@@ -108,7 +89,7 @@ export const PlannerCard: React.FC<PlannerCardProps> = ({ item, trip }) => {
               href={`/${item.fields.type}/${item.fields.slug}`}
             >
               <div className="fade-in-image relative">
-                <div className="bg-key p-1 pr-2 absolute bottom-2 flex space-x-1 rounded-r-lg items-center">
+                <div className="absolute bottom-2 flex items-center space-x-1 rounded-r-lg bg-key p-1 pr-2">
                   <FaMapPin className="text-[11px] text-red-500" />
                   <span className="text-[11px] text-white">
                     {item.fields.city}
@@ -117,16 +98,16 @@ export const PlannerCard: React.FC<PlannerCardProps> = ({ item, trip }) => {
                 <img
                   src={`https://${item.fields.mainImage.fields.file.url}`}
                   alt={item.fields.title}
-                  className="sm:h-32 w-full object-cover rounded-md max-w-48"
+                  className="w-full max-w-48 rounded-md object-cover sm:h-32"
                 />
               </div>
             </Link>
             <Box maw={400} mx="auto">
               <Group justify="left" mb={5}>
-                <div className="sm:flex space-x-1 hidden">
+                <div className="hidden space-x-1 sm:flex">
                   <FaMap className="text-sm" />
                   <span
-                    className="text-xs cursor-pointer"
+                    className="cursor-pointer text-xs"
                     onClick={handleToggleCollapse}
                   >
                     View Map
@@ -142,21 +123,40 @@ export const PlannerCard: React.FC<PlannerCardProps> = ({ item, trip }) => {
                 <iframe
                   className="rounded-md"
                   width={180}
-                  height={100}
+                  height={115}
                   src={item.fields.embededMap}
                   title="Location Map"
                 ></iframe>
               </Collapse>
             </Box>
 
-            <div className="flex sm:w-48 justify-between typewriter min-h-20 h-10 max-h-40 overflow-hidden">
-              <div>
-                <h4 className="text-xs sm:w-44 w-40 text-black">
+            <div className="typewriter flex h-10 max-h-40 min-h-20 justify-between overflow-hidden sm:w-48">
+              <div className="relative">
+                <h4 className="w-40 text-xs text-black sm:w-44">
                   {item.fields.shortDescription}
                 </h4>
               </div>
             </div>
           </div>
+          <Tooltip label="Add to favourites">
+            <BiPlus
+              onClick={() =>
+                handleOpenDrawer({
+                  title: item.fields.title,
+                  city: item.fields.city,
+                  image: item.fields.mainImage.fields.file.url,
+                  type: item.fields.type,
+                  slug: item.fields.slug,
+                  embededMap: item.fields.embededMap,
+                  rating: item.fields.rating,
+                  shortDescription: item.fields.shortDescription,
+                  id: item.sys.id,
+                  pathname: window?.location?.pathname,
+                })
+              }
+              className=" absolute -right-1 sm:-bottom-1 -bottom-2  h-12 w-10  sm:h-12 sm:w-10 rotate-90 rounded-tl-sm sm:rounded-tr-md rounded-l-full bg-key p-2 sm:pl-3 text-lg text-white transition-all delay-75  ease-in  hover:cursor-pointer pr-2 active:text-red-500 "
+            />
+          </Tooltip>
         </div>
       </section>
     </>
