@@ -82,7 +82,7 @@ export default async function RootLayout({
           </ClientOnly>
           <GoogleTagManager gtmId="GTM-MHX7R9FF" />
           <div
-            className={`${pathname?.includes("/builder") ? "hidden" : ""} custom-shape-divider-bottom-1707076088 hiddenRow`}
+            className={`${pathname?.includes("/builder") || pathname === "/planner" ? "hidden" : ""} custom-shape-divider-bottom-1707076088 hiddenRow`}
           >
             <svg
               data-name="Layer 1"

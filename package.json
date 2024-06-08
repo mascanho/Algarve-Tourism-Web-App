@@ -52,6 +52,7 @@
     "eslint-config-next": "13.2.4",
     "framer-motion": "^10.16.5",
     "handlebars": "^4.7.8",
+    "js-cookie": "^3.0.5",
     "jsdom": "^23.0.1",
     "lucide-react": "^0.321.0",
     "next": "^14.2.3",

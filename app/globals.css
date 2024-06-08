@@ -209,6 +209,7 @@ input {
 }
 
 select:focus,
+.mantine-1cn2mlo,
 input:focus {
   outline: none !important;
 }
@@ -268,7 +269,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   --card-height: 160px;
   --card-width: 190px;
   --card-radius: 12px;
-  --header-height: 37px;
+  --header-height: 57px;
   --blend-mode: overlay;
   --transition: 0.15s;
   -webkit-user-select: none;
@@ -333,6 +334,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: var(--card-radius);
   overflow: hidden;
   position: relative;
+
   cursor: pointer;
   box-shadow: var(--shadow, 0 4px 4px 0 rgba(0, 0, 0, 0.02));
   transition:
@@ -369,6 +371,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: var(--c-border);
+  height: 110px;
+  width: 100%;
   filter: var(--filter-bg, grayscale(1));
   -webkit-clip-path: polygon(
     0% 0%,
@@ -387,6 +391,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     var(--x-y4, 0% 85%)
   );
 }
+
 .card__body-cover-checkbox {
   background: var(--check-bg, var(--background-checkbox));
   border: 2px solid var(--check-border, #fff);
@@ -421,17 +426,51 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .card__body-header {
   height: var(--header-height);
   background: var(--background);
-  padding: 0 10px 10px 10px;
+  padding: 10px 0 10px 10px;
+  display: flex;
+  justify-items: center;
 }
 .card__body-header-title {
   color: var(--text-headline);
   font-weight: 700;
   margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .card__body-header-subtitle {
   color: var(--text-color);
   font-weight: 500;
   font-size: 13px;
+}
+
+/* Responsive styles */
+@media (min-width: 300px) and (max-width: 600px) {
+  .card {
+    --card-width: 170px;
+    --card-height: 1px;
+    margin-bottom: 20px;
+  }
+
+  .card__body {
+    grid-auto-rows: auto;
+    height: 180px;
+
+    img {
+      height: 120px; /* Added px unit */
+    }
+  }
+
+  .card__body-cover-image {
+    height: 120px;
+  }
+
+  .card__body-header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 40px;
+    padding-top: 2px;
+  }
 }
 
 .mantine-lkp1wu {
@@ -441,4 +480,61 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* Stepper */
 .mantine-7qna17 {
   @pply text-xs text-red-500 !important;
+}
+
+.card__body__summary {
+  @apply w-48 rounded-lg !important;
+}
+
+.summary__image {
+  filter: var(--filter-bg, grayscale(0));
+  width: 320px !important;
+  border-radius: 12px !important;
+}
+
+/* Image fadding */
+
+.fade-in-image {
+  animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fade-in-text {
+  animation: fadeIn 5s;
+}
+
+.typewriter h4 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret 0.75s step-end infinite;
+  /* width: fit-content; */
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
 }

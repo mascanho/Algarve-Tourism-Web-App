@@ -65,21 +65,25 @@ const Buttons = ({ filteredData }: any) => {
 
     try {
       navigator.clipboard.writeText(url);
-      window.open(url, "_blank");
-    } catch (error) {}
+      window?.open(url, "_blank");
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   // handle copying the url to share
   function handleCopyUrl() {
     const url = `https://www.algarvewonders.com${pathname}`;
-    navigator.clipboard.writeText(url);
+    navigator?.clipboard.writeText(url);
     toast.success("URL copied to clipboard");
   }
 
   const handlePrint = () => {
     try {
       window?.print();
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   if (!filteredData[0]?.fields?.website) {
@@ -92,9 +96,11 @@ const Buttons = ({ filteredData }: any) => {
         className="w-8 h-8 outline-none fav p-[6px] border tooltip rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75 text-xs"
         onClick={addFav}
       />
-      <Link href={filteredData[0]?.fields?.website || ""} target="_blank">
-        <BsGlobe className="w-8 h-8 p-[6px] border rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75  " />
-      </Link>
+      {filteredData[0].fields?.website === "/" ? null : (
+        <Link href={filteredData[0]?.fields?.website || ""} target="_blank">
+          <BsGlobe className="w-8 h-8 p-[6px] border rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75  " />
+        </Link>
+      )}
       {/* <BiMapPin */}
       {/*   onClick={handleClickGps} */}
       {/*   className="w-8 h-8 p-1 tooltip border rounded-lg hover:cursor-pointer hover:bg-key hover:text-white transition-all ease-in delay-75" */}

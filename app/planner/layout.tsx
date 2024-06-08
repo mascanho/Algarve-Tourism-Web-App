@@ -1,4 +1,4 @@
-import BuilderHeader from "./components/header";
+import BuilderHeader from "../builder/components/header";
 
 const BuilderLayout = ({ children }: any) => {
   return (

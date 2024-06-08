@@ -105,4 +105,13 @@ export const cityArr = [
     image: "https://www.iberian-escapes.com/images/Praia-de-tavira.jpg",
     type: "city",
   },
+  {
+    id: 13,
+    name: "V.R.S.A",
+    icon: "",
+    route: "vila-real-de-santo-antonio",
+    image:
+      "https://www.travel-in-portugal.com/sites/default/files/vila-real-santo-antonio.jpg",
+    type: "city",
+  },
 ];

@@ -20,6 +20,7 @@ import { FaSpinner } from "react-icons/fa";
 import FavMobileCard from "./components/FavMobileCard";
 import { IoMdSend } from "react-icons/io";
 import { FaSquare } from "react-icons/fa6";
+import SelectTrip from "./components/SelectTrip";
 
 function page() {
   const [favourites, setFavourites] = useState<any[]>([]);
@@ -67,6 +68,19 @@ function page() {
     const storedItems = JSON.parse(localStorage.getItem("yourKey") || "[]");
     setLocalStorageItems(storedItems);
   };
+
+  const tripName = () => {
+    // check if localstorage exists
+
+    if (!localStorage.getItem("trip")) {
+      return null;
+    }
+    const name = localStorage.getItem("trip") || [];
+    const tripName = JSON.parse(name);
+    return tripName.name;
+  };
+
+  const TRIPNAME = tripName();
 
   // Initial load from local storage
   useEffect(() => {
@@ -175,11 +189,17 @@ function page() {
             className="w-full object-cover rounded-xl"
           />
         </div>
-        <div className="m-auto max-w-7xl w-11/12 sm:w-full mt-1 sm:mt-2 flex items-center justify-between ">
-          <h1 className="text-2xl pt-10 sm:pt-0 sm:text-3xl w-full text-key font-semibold hiddenRow ">
-            Your Favourites
-          </h1>
-
+        <div className="m-auto max-w-7xl w-11/12 sm:w-full mt-1 sm:mt-2 flex items-start justify-between ">
+          <div className="flex flex-col w-fit items-start justify-start sm:min-h-24 min-h-32">
+            <h1 className="text-2xl pt-10 sm:pt-0 sm:text-3xl w-full text-key font-semibold hiddenRow  ">
+              Your Favourites{" "}
+            </h1>
+            {TRIPNAME && (
+              <span className=" w-full text-lg mt-2 text-key-50 font-bold sm:text-xl pb-4">
+                {TRIPNAME}
+              </span>
+            )}
+          </div>
           <div className="fixed bottom-0 sm:relative flex justify-center sm:items-start space-x-8 sm:space-x-0 left-0 z-10 py-3 px-3 w-full sm:flex sm:flex-col sm:w-40 sm:space-y-2 sm:flex-wrap sm:text-xl hiddenRow bg-key text-white sm:px-3 sm:py-2 sm:rounded-xl ">
             <div
               onClick={(e) => {
@@ -205,6 +225,9 @@ function page() {
           </div>
         </div>
       </div>
+      <section>
+        <SelectTrip />
+      </section>
       <div className="mt-2 mb-2 sm:mb-0 sm:mt-5 w-full ">
         <div className="flex font-bold sapce-x-5 w-full justify-between pb-2 mb-10 h-full overflow-auto">
           {/* Optional table */}

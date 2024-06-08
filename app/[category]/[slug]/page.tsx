@@ -28,6 +28,7 @@ import { IoIosLeaf } from "react-icons/io";
 import BookingDrawer from "./_components/BookingDrawer";
 import { notFound } from "next/navigation";
 import { GiPortugal } from "react-icons/gi";
+import JsonLd from "@/libs/JsonLd";
 
 const Reviews = dynamic(() => import("../../../components/Layout/Reviews"), {});
 
@@ -378,6 +379,27 @@ export default async function Home(props: any) {
           </button>
         </Link>
         <MobileBottomCategoryBanner {...filteredData} />
+
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            headline: filteredData[0]?.fields?.title,
+            description: filteredData[0]?.fields?.shortDescription,
+            datePublished: filteredData[0]?.fields?.date,
+            image:
+              "https:" + filteredData[0]?.fields?.mainImage?.fields?.file?.url,
+            publisher: {
+              "@type": "Organization",
+              name: "AlgarveWonders",
+              url: "https://www.algarveholidays.com",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.algarveholidays.com/logo.png",
+              },
+            },
+          }}
+        />
       </section>
     </>
   );

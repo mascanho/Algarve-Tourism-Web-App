@@ -81,7 +81,7 @@ function Footer() {
 
       <section
         ref={ref}
-        className={`bg-key ${pathname?.includes("/builder") && "hidden"}  z-0 -mt-[1px]`}
+        className={`bg-key ${pathname?.includes("/builder") && "hidden"} ${pathname?.includes("/planner") && "hidden"}  z-0 -mt-[1px]`}
       >
         <footer className="footer  py-10 text-base-content max-w-7xl mx-auto w-11/12 ">
           <section className="grid grid-cols-2 w-full sm:flex justify-between px-4 sm:px-0 ">
