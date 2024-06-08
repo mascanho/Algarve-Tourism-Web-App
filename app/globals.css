@@ -457,12 +457,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     height: 180px;
 
     img {
-      height: 120px; /* Added px unit */
+      height: 130px; /* Added px unit */
     }
-  }
-
-  .card__body-cover-image {
-    height: 120px;
   }
 }
 
