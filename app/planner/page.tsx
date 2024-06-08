@@ -168,7 +168,7 @@ const JourneyPage = async () => {
           <div className="sm:py-20 pt-12 max-w-4xl mx-auto ">
             <div className="mx-auto text-center mt-10 sm:w-3/4 w-11/12 h-28 sm:h-16 text-key/50 text-xs">
               <Typewriter
-                text="Our AI minions have meticulously crafted a full-fledged Journey Planner just for you. Click the + to add them to your favorites!"
+                text="Our AI minions have meticulously crafted a full-fledged Journey Planner just for you. Click the + to add them to your favourites!"
                 delay={20}
                 heading={"h1"}
               />
