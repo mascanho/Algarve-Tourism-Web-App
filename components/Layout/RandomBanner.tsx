@@ -133,7 +133,7 @@ function RandomBanner({ categories }: any) {
       className="anchor-offset animate-fade-in mb-20 mt-10 sm:mt-24 sm:mb-28  w-11/12 overflow-hidden  max-w-7xl sm:py-10 mx-auto sm:space-y-2 text-center text-white sm:w-full"
     >
       <div className=" sm:mt-0 space-y-2 sm:space-y-6">
-        <h3 className="sm:text-7xl font-semibold text-black  text-5xl">
+        <h3 className="sm:text-7xl font-semibold text-black  text-4xl">
           Kickoff your epic adventure!
         </h3>
         <h3 className="sm:text-4xl  sm:block text-gray-500 pt-4 sm:pt-0 sm:mt-0">
@@ -143,10 +143,19 @@ function RandomBanner({ categories }: any) {
 
       <div className="w-full mx-auto px-2">
         <div className="sm:space-x-8 mx-auto justify-center items-center   mt-8 sm:mt-8 w-full flex flex-wrap">
-          <Link href="/builder" className="mt-4">
-            <button className="px-8 py-3 w-52 sm:w-fit text-sm sm:text-base m-auto text-white bg-key hover:bg-black hover:text-white transition-all ease-in delay-75 rounded-md active:scale-95">
-              Launch the AI Shenanigans!
-            </button>
+          <Link
+            href="/builder"
+            className="mt-4 relative inline-block text-lg group"
+          >
+            <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
+              <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
+              <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
+              <span className="relative">Start Journey</span>
+            </span>
+            <span
+              class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
+              data-rounded="rounded-lg"
+            ></span>
           </Link>
         </div>
       </div>

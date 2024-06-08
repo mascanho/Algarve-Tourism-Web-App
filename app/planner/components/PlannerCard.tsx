@@ -76,12 +76,7 @@ export const PlannerCard: React.FC<PlannerCardProps> = ({ item, index }) => {
 
   return (
     <>
-      <Drawer
-        opened={drawerOpened}
-        onClose={closeDrawer}
-        title="Authentication"
-        size={"xs"}
-      >
+      <Drawer opened={drawerOpened} onClose={closeDrawer} title="" size={"xs"}>
         <DrawerContentPlanner />
       </Drawer>
       <section
@@ -149,7 +144,7 @@ export const PlannerCard: React.FC<PlannerCardProps> = ({ item, index }) => {
 
             <div className="typewriter flex h-10 max-h-40 min-h-20 justify-between overflow-hidden sm:w-48">
               <div className="relative">
-                <h4 className="w-40 text-xs text-black sm:w-44">
+                <h4 className="text-xs text-black sm:w-44 line-clamp-4">
                   {item.fields.shortDescription}
                 </h4>
               </div>

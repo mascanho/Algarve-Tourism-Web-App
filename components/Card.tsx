@@ -10,6 +10,7 @@ import { BsShareFill } from "react-icons/bs";
 import { useInView } from "react-intersection-observer";
 import { FaRegHeart, FaStar } from "react-icons/fa";
 import { IoIosStar } from "react-icons/io";
+import GenericButton from "./Layout/GenericButton";
 
 const Card = ({ slug, type, mapShare, categories }: any) => {
   const addFav = useAddToFavourites();
@@ -185,17 +186,7 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
         </div>
       </section>
       <div className="w-fit mx-auto flex justify-center sm:mb-14 sm:mt-5">
-        <Link
-          href={"/beaches"}
-          aria-label="View more beaches and other categories"
-        >
-          <button
-            className="border mt-10 rounded-md bg-key text-white active:bg-gray-500 active:text-white transition-all hidden ease-in px-7 hover:bg-key hover:text-white py-2 mx-auto sm:flex justify-center text-center"
-            type="button"
-          >
-            View more
-          </button>
-        </Link>
+        <GenericButton title="View all places" url="/beaches" />
       </div>
     </main>
   );
