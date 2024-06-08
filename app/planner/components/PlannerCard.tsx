@@ -123,7 +123,7 @@ export const PlannerCard: React.FC<PlannerCardProps> = ({ item, trip }) => {
             </Link>
             <Box maw={400} mx="auto">
               <Group justify="left" mb={5}>
-                <div className="flex space-x-1 hidden">
+                <div className="sm:flex space-x-1 hidden">
                   <FaMap className="text-sm" />
                   <span
                     className="text-xs cursor-pointer"

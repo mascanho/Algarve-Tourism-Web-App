@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { FaEdit, FaRobot } from "react-icons/fa";
 
 const SelectTrip = () => {
   const [tripName, setTripName] = useState(false);
@@ -49,18 +50,18 @@ const SelectTrip = () => {
       ) : (
         <div
           onClick={() => setTripName(!tripName)}
-          className="flex sm:w-96  justify-center rounded-lg border border-gray-300 p-4 delay-75 duration-200 ease-in-out hover:cursor-pointer hover:border-key"
+          className="flex sm:w-96 items-center  hover:bg-key hover:text-white  justify-center rounded-lg border border-gray-300 p-4 delay-75 duration-200 ease-in-out hover:cursor-pointer hover:border-key"
         >
-          <span>+</span>
+          <FaEdit />
           <span>Create Your Own Trip</span>
         </div>
       )}
       <div
         onClick={() => router.push("/builder")}
-        className="flex w-full  justify-center rounded-lg border border-gray-300 p-4 delay-75 duration-200 ease-in-out hover:cursor-pointer hover:border-key"
+        className="flex w-full items-center space-x-2 hover:bg-key hover:text-white  justify-center rounded-lg border border-gray-300 p-4 delay-75 duration-200 ease-in-out hover:cursor-pointer hover:border-key"
       >
-        <span>@</span>
-        <span>Generate with AI</span>
+        <FaRobot />
+        <span>Auto Generate Trip </span>
       </div>
     </div>
   );
