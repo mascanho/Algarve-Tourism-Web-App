@@ -20,7 +20,7 @@ const AddPlannerButton = () => {
       </Drawer>
 
       <button
-        className="w-fit px-3 py-1 text-sm bg-key text-white rounded-md "
+        className="w-fit px-4 py-1 text-sm sm:text-base bg-key text-white rounded-md "
         onClick={handleClick}
       >
         Save To Favourites

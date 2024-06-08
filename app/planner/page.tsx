@@ -9,6 +9,40 @@ import { createTrip } from "../actions/createTrip"; // Adjust import path as nee
 import useTypewriter from "./components/Typewriter";
 import Typewriter from "./components/Typewriter";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Discover The Best Hidden Gems in The Algarve",
+  },
+  description:
+    "Automated generation of the best places to visit in the algarve. Discover the best hidden gems and enjoy the culture. Find the best restaurants, hotels and more.",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/images/icon.png",
+    href: "/images/icon.png",
+    apple: "/apple-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon-precomposed.png",
+    },
+  },
+
+  // verification: {
+  //   google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
+  //   yandex: "14d2e73487fa6c71",
+  // },
+};
 
 const JourneyPage = async () => {
   // Retrieve the cookies from the server
@@ -131,10 +165,10 @@ const JourneyPage = async () => {
         </div>
       ) : (
         <>
-          <div className="sm:py-20 pt-28 max-w-4xl mx-auto ">
-            <div className="mx-auto text-center mt-10 sm:w-3/4 sm:h-16 text-key/50">
+          <div className="sm:py-20 pt-12 max-w-4xl mx-auto ">
+            <div className="mx-auto text-center mt-10 sm:w-3/4 w-11/12 h-28 sm:h-16 text-key/50 text-xs">
               <Typewriter
-                text="Our AI minions have meticulously crafted a full-fledged Journey Planner just for you. Click the + to add it to your favorites and let the tiny geniuses work their magic!"
+                text="Our AI minions have meticulously crafted a full-fledged Journey Planner just for you. Click the + to add them to your favorites!"
                 delay={20}
                 heading={"h1"}
               />
