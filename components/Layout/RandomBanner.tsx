@@ -142,7 +142,7 @@ function RandomBanner({ categories }: any) {
       </div>
 
       <div className="w-full mx-auto px-2">
-        <div className="sm:space-x-8 mx-auto justify-center items-center   mt-8 sm:mt-8 w-full flex flex-wrap">
+        <div className="sm:space-x-8 mx-auto justify-center items-center   mt-8 sm:mt-8 w-full flex flex-wrap pb-2">
           <Link
             href="/builder"
             className="mt-4 relative inline-block text-lg group"

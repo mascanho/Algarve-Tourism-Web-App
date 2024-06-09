@@ -185,7 +185,7 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
           </Link>
         </div>
       </section>
-      <div className="w-fit mx-auto flex justify-center sm:mb-14 sm:mt-5">
+      <div className="w-fit mx-auto flex justify-center sm:mb-14 sm:mt-5 hidden sm:flex">
         <GenericButton title="View all places" url="/beaches" />
       </div>
     </main>
