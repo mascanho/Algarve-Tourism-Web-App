@@ -28,7 +28,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
     Beaches: <GiBeachBucket />,
     Restaurants: <FaUtensils />,
     Culture: <MdOutlineMuseum />,
-    Live: <FaEye/>,
+    Live: <FaEye />,
     Events: <MdEvent />,
     Adventure: <PiMountainsFill />,
     Business: <MdBusinessCenter />,
@@ -133,14 +133,14 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
           <Menu.Dropdown className="flex w-fit border-key/50 border-3 mt-1">
             <div className="grid grid-cols-3 ">
               <div className="">
-                {cityArr.slice(0, 4).map((item) => (
+                {cityArr.slice(0, 5).map((item) => (
                   <Link href={`/algarve/${item.route}`} key={item.id}>
                     <Menu.Item>{item.name}</Menu.Item>
                   </Link>
                 ))}
               </div>
               <div className="flex flex-col ">
-                {cityArr.slice(4, 8).map((item) => (
+                {cityArr.slice(5, 10).map((item) => (
                   <Link href={`/algarve/${item.route}`} key={item.id}>
                     <Menu.Item
                       key={item.id}
@@ -152,7 +152,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
                 ))}
               </div>
               <div className="flex flex-col ">
-                {cityArr.slice(8, cityArr.length).map((item) => (
+                {cityArr.slice(10, cityArr.length).map((item) => (
                   <Link href={`/algarve/${item.route}`} key={item.id}>
                     <Menu.Item
                       key={item.id}
