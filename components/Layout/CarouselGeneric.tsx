@@ -39,13 +39,12 @@ function Card({ image, title, city, slug, type }: any) {
             </span>
           </div>
           <div>
-            <Button
-              variant="white"
-              className="bg-white sm:inline hidden"
+            <button
+              className="bg-white font-sembold  sm:flex hidden p-2 px-5 rounded-lg"
               color="dark"
             >
               View
-            </Button>
+            </button>
           </div>
         </Paper>
       </Link>

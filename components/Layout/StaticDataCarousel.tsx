@@ -7,6 +7,9 @@ import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 
 import { ImNewTab } from "react-icons/im";
+import { PT_Sans } from "next/font/google";
+
+const ptsans = PT_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
 function Card({ image, url, city, type, route }: any) {
   return (
@@ -33,24 +36,19 @@ function Card({ image, url, city, type, route }: any) {
               </Text>
             )}
           </div>
-          <Title
-            order={3}
+          <button
             className={
               type === "city" ? "text-4xl text-white" : "text-white text-2xl"
             }
           >
             {city}
-          </Title>
+          </button>
         </div>
 
         {type === "city" || type === "category" ? (
-          <Button
-            variant="white"
-            className="bg-white sm:flex hidden"
-            color="dark"
-          >
+          <button className="bg-white font-sembold  sm:flex hidden p-2 px-5 rounded-lg">
             {type === "city" ? "View " + city : "View "}
-          </Button>
+          </button>
         ) : (
           <div>
             <a href={url} className="w-full h-full">

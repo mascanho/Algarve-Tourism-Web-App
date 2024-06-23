@@ -1,13 +1,10 @@
 "use client";
 import Link from "next/link";
 import { Carousel } from "@mantine/carousel";
-import Image from "next/image";
-// import { IconArrowRight, IconArrowLeft } from "@tabler/icons-react";
 
 function CarouselHero({
   categories,
   title,
-  subTitle,
   cities,
   restaurants,
   carRentals,

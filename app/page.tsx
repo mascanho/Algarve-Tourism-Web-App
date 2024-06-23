@@ -4,13 +4,13 @@ import { createClient } from "contentful";
 import { cityArr } from "@/Data/Cities";
 import { catArr } from "@/Data/Categories";
 import dynamic from "next/dynamic";
-import Youtube from "@/components/Youtube";
 
 const Card = dynamic(() => import("@/components/Card"));
 const Hero = dynamic(() => import("@/components/Hero"));
 const Feedback = dynamic(() => import("@/components/Feedback"));
 const RandomBanner = dynamic(() => import("@/components/Layout/RandomBanner"));
 // const Acordion = dynamic(() => import("@/components/Acordion"));
+
 const BottomCarousel = dynamic(
   () => import("@/components/Layout/BottomCarousel"),
 );
