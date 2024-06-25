@@ -531,3 +531,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-color: orange;
   }
 }
+
+/* modal reset */
+.mantine-1q36a81 {
+  @apply p-0 !important;
+}

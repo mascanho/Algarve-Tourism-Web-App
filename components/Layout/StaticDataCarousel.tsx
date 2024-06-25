@@ -38,7 +38,9 @@ function Card({ image, url, city, type, route }: any) {
           </div>
           <button
             className={
-              type === "city" ? "text-4xl text-white" : "text-white text-2xl"
+              type === "city"
+                ? "text-4xl text-white font-semibold"
+                : "text-white text-2xl font-semibold"
             }
           >
             {city}
