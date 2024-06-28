@@ -71,7 +71,7 @@ const SearchDrawerContent = ({ close }: any) => {
       className={`w-full sm:max-w-xl sm:mx-auto flex justify-start items-start`}
     >
       <section
-        className={`p-4 relative overflow-hidden flex flex-col flex-wrap shadow-lg  w-full slide-up space-y-4 border rounded-md   ${isVisible ? "visible" : ""}`}
+        className={`p-4 relative overflow-hidden flex flex-col flex-wrap   w-full slide-up space-y-4 rounded-md   ${isVisible ? "visible" : ""}`}
       >
         <input
           className="bg-transparent w-full h-10 text-black ring-0 focus:ring-0 focus:outline-none focus:ring-black focus:ring-0ffset-0 pl-9 border rounded-md "
@@ -83,7 +83,7 @@ const SearchDrawerContent = ({ close }: any) => {
         />
         <IoIosSearch className="absolute top-3 ml-3" />
         {pathname !== "/search" && (
-          <div className="flex flex-wrap mt-4 justify-start sm:justify-stretch">
+          <div className="flex flex-wrap justify-start sm:justify-stretch">
             {catArr.map((cat: any) => (
               <div
                 className={`py-2  ${

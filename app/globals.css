@@ -532,7 +532,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-/* modal reset */
-.mantine-1q36a81 {
-  @apply p-0 !important;
+.searchModal {
+  display: none;
 }
