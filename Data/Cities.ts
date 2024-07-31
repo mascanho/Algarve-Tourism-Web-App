@@ -32,7 +32,7 @@ export const cityArr = [
     icon: "",
     route: "faro",
     image:
-      "https://www.movingtoportugal.pt/wp-content/uploads/2021/06/Faro-4.png",
+      "https://images.resosys.com/destinations/7/articles/faro-city-algarve_en/inline/1673025900-farocitycenter.jpg",
     type: "city",
   },
   {
