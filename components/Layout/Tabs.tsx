@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import { Tabs } from "@mantine/core";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";

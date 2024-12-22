@@ -25,6 +25,29 @@ export const metadata: Metadata = {
   },
   description:
     "Search, save and share the best hidden gems the Algarve has to offer. All in one place. Hassle free.",
+  openGraph: {
+    title: "The Best Hidden Gems in The Algarve",
+    description:
+      "Search, save and share the best hidden gems the Algarve has to offer. All in one place. Hassle free.",
+    images: [
+      {
+        url: "https://www.algarvewonders.com/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Algarve Wonders",
+      },
+    ],
+    url: "https://www.algarvewonders.com",
+    siteName: "Algarve Wonders",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@AlgarveWonders",
+    title: "The Best Hidden Gems in The Algarve",
+    description:
+      "Search, save and share the best hidden gems the Algarve has to offer. All in one place. Hassle free.",
+    images: ["https://www.algarvewonders.com/images/og-image.png"],
+  },
   robots: {
     index: true,
     follow: true,

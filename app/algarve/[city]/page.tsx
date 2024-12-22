@@ -192,10 +192,10 @@ async function page(props: any) {
   const weather = documentToReactComponents(filteredData[0]?.fields?.weather);
 
   return (
-    <section className="sm:pt-8">
-      <section className="sm:pt-10 pt-10 max-w-7xl w-11/12 mx-auto sm:flex">
+    <section>
+      <section className="pt-10 sm:pt-4 max-w-7xl w-11/12 mx-auto sm:flex">
         <div className="w-full">
-          <div className="text-gray-400 mb-2 pt-4">
+          <div className="text-gray-400 mb-2 pt-4 sm:pt-0">
             <Breadcrumbs />
           </div>
           <div className="sm:hidden w-full max-w-7xl mb-3 mx-auto">

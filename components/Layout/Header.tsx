@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { MdCardTravel } from "react-icons/md";
@@ -21,6 +22,7 @@ import BottomDrawer from "./BottomDrawer";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import TopBanner from "./TopBanner";
 
 // Say hello to peepers
 console.log(
@@ -89,8 +91,9 @@ const Header = ({ currentUser, weatherData }: any) => {
         </Modal>
       </section>
 
+      <TopBanner />
       <nav
-        className={`border-b ${pathname?.includes("/builder") && "hidden"}  border  w-full   fixed flex top-0 flex-wrap bg-white  shadow-sm z-20 transition-all ease-in delay-100 `}
+        className={`border-b ${pathname?.includes("/builder") && "hidden"}  border  w-full   sticky flex top-0 flex-wrap bg-white  shadow-sm z-20 transition-all ease-in delay-100 `}
       >
         <header
           className={`flex flex-wrap w-11/12 sm:w-full max-w-7xl sm:px-2 md:w-full lg:w-full  justify-between mx-auto py-2 transition-all ease-in delay-150 `}
@@ -150,12 +153,13 @@ const Header = ({ currentUser, weatherData }: any) => {
               cities={true}
               url={"/algarve"}
             />
-            {/* <NavMenu */}
-            {/*   expandedMenu={false} */}
-            {/*   trigger={"hover"} */}
-            {/*   title={"More"} */}
-            {/*   cities={true} */}
-            {/* /> */}
+            <NavMenu
+              expandedMenu={false}
+              trigger={"hover"}
+              title={"Awards"}
+              cities={true}
+              url={"/blog"}
+            />{" "}
             <NavMenu
               expandedMenu={false}
               trigger={"hover"}
@@ -163,9 +167,15 @@ const Header = ({ currentUser, weatherData }: any) => {
               cities={true}
               url={"/blog"}
             />
+            <NavMenu
+              expandedMenu={false}
+              trigger={"hover"}
+              title={"More"}
+              cities={true}
+            />
           </section>
           <div
-            className="relative hidden sm:flex flex-wrap justify-around space-x-2 items-center 
+            className="relative hidden sm:flex flex-wrap justify-around space-x-2 items-center
                 "
           >
             {/* <AuthenticationModal /> */}

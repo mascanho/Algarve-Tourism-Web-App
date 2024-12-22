@@ -36,6 +36,10 @@ const LinksSubMenu = ({ data, close }: any) => {
               router.push(item.route);
               close();
             }
+            if (item.route === "/more/councils") {
+              router.push("/more/councils");
+              close();
+            }
           }}
         >
           {item.name}

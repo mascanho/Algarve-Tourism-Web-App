@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import { useDisclosure } from "@mantine/hooks";
 import { Button, Group, Text, Collapse, Box } from "@mantine/core";

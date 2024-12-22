@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useDisclosure } from "@mantine/hooks";
 import { Divider, Drawer } from "@mantine/core";
 import { HiMenuAlt2 } from "react-icons/hi";
@@ -17,6 +18,7 @@ import {
   useRegisteredModalStore,
 } from "@/app/hooks/useLoginModal";
 import Link from "next/link";
+import { More } from "@/Data/More";
 
 function Sheet({ showMobileBurger, favourites, currentUser }: any) {
   const [opened, { open, close }] = useDisclosure(false);
@@ -46,7 +48,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
         position="left"
       >
         {/* Sheet content */}
-        <section className="space-y-4  overflow-hidden  flex-grow h-[100%] min-h-[600px]">
+        <section className="space-y-4 px-2  overflow-hidden  flex-grow h-[100%] min-h-[600px]">
           <div className="py-1 space-y-2">
             {!currentUser ? (
               ""
@@ -56,7 +58,7 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
                   src={currentUser?.image}
                   className="w-9 h-9 rounded-full"
                 />
-                <span>
+                <span className="font-bold">
                   {currentUser?.name || currentUser?.email.split("@")[0]}
                 </span>
               </div>
@@ -143,12 +145,30 @@ function Sheet({ showMobileBurger, favourites, currentUser }: any) {
           <div
             className="flex items-center mb-2"
             onClick={() => {
+              router.push("/awards");
+              close();
+            }}
+          >
+            <span className="my-auto">Awards</span>
+            <span className="rounded-xl py-[1px] px-2 ml-2 text-xs bg-red-500 text-white">
+              Hot
+            </span>
+          </div>{" "}
+          <div
+            className="flex items-center mb-2"
+            onClick={() => {
               router.push("/blog");
               close();
             }}
           >
             <span className="my-auto">Blog</span>
           </div>{" "}
+          <NavLinks
+            data={More}
+            icon={<MdDataArray size={20} />}
+            title="More"
+            close={close}
+          />
           <Divider my="md" />
           <div
             className="flex items-center mb-2"

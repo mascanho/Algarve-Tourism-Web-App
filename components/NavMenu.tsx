@@ -13,11 +13,13 @@ import { GiBeachBucket, GiHotMeal, GiMeal, GiWoodCabin } from "react-icons/gi";
 import {
   MdBusinessCenter,
   MdEvent,
+  MdGroup,
   MdOutlineMuseum,
   MdSportsHandball,
 } from "react-icons/md";
 import { PiMountainsFill } from "react-icons/pi";
 import { More } from "@/Data/More";
+import { FaLandmark } from "react-icons/fa6";
 
 export function NavMenu({ title, trigger, url, search }: any | null) {
   const router = useRouter();
@@ -35,6 +37,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
     Hiking: <FaHiking />,
     Sports: <MdSportsHandball />,
     Stays: <GiWoodCabin />,
+    Councils: <FaLandmark />,
   };
 
   if (search) {
@@ -43,7 +46,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
         <Menu.Target>
           <Link href={url} className="flex items-center">
             <button
-              className={`text-black ${
+              className={`text-black text-sm${
                 pathname?.includes("/search")
                   ? "font-semibold underline underline-offset-[16px] decoration-4"
                   : ""
@@ -112,7 +115,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
   }
   if (title === "Algarve") {
     return (
-      <Link href="/algarve" className="flex items-center">
+      <Link href="/algarve" className="flex items-center text-sm">
         <Menu trigger={trigger} shadow="md" width={"fit"}>
           <Menu.Target>
             <button
@@ -186,7 +189,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
       <Menu trigger={trigger} shadow="md" width={"fit"}>
         <Menu.Target>
           <button
-            className={`text-black ${
+            className={`text-black text-sm ${
               catArr.some((cat: any) => pathname?.includes(cat.route))
                 ? "font-semibold underline underline-offset-[16px] decoration-4"
                 : ""
@@ -243,7 +246,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
       <Menu trigger={trigger} shadow="md" width={"fit"}>
         <Menu.Target>
           <button
-            className={`text-black flex items-center mr-1 rounded-md transition duration-300 ease-in-out`}
+            className={`text-black flex items-center mr-1 rounded-md transition duration-300 ease-in-out text-sm`}
           >
             {title && trigger ? title : null}{" "}
             {trigger ? <IoChevronDownSharp className="pl-1" /> : null}
@@ -276,7 +279,18 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
     return (
       <Link href="/blog" className="flex items-center">
         <button
-          className={`text-black flex ${pathname.includes("/blog") && "font-semibold underline underline-offset-[16px] decoration-4"} items-center mr-1 rounded-md transition duration-300 ease-in-out`}
+          className={`text-black flex text-sm ${pathname.includes("/blog") && "font-semibold underline underline-offset-[16px] decoration-4"} items-center mr-1 rounded-md transition duration-300 ease-in-out`}
+        >
+          {title}
+        </button>
+      </Link>
+    );
+  }
+  if (title === "Awards") {
+    return (
+      <Link href="/awards" className="flex items-center text-sm">
+        <button
+          className={`text-black flex ${pathname.includes("/awards") && "font-semibold underline underline-offset-[16px] decoration-4"} items-center mr-1 rounded-md transition duration-300 ease-in-out`}
         >
           {title}
         </button>

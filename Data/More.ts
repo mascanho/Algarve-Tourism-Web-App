@@ -7,14 +7,14 @@ export const More = [
   //   image: "",
   //   type: "more",
   // },
-  // {
-  //   id: 2,
-  //   name: "City Halls",
-  //   icon: "",
-  //   route: "/cityhalls",
-  //   image: "",
-  //   type: "more",
-  // },
+  {
+    id: 2,
+    name: "Councils",
+    icon: "",
+    route: "/more/councils",
+    image: "",
+    type: "more",
+  },
   // {
   //   id: 3,
   //   name: "Tourism Boards",
@@ -23,12 +23,12 @@ export const More = [
   //   image: "",
   //   type: "more",
   // },
-  {
-    id: 4,
-    name: "Live",
-    icon: "",
-    route: "/live",
-    image: "",
-    type: "more",
-  },
+  // {
+  //   id: 4,
+  //   name: "Live",
+  //   icon: "",
+  //   route: "/live",
+  //   image: "",
+  //   type: "more",
+  // },
 ];

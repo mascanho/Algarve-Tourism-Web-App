@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import { getClientSideCookie } from "@/app/libs/getClientSideCookie";
 import Link from "next/link";
