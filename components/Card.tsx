@@ -46,7 +46,7 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
       id: categories?.fields?.title,
       price: categories?.fields?.price,
       shortDescription: categories?.fields?.shortDescription,
-      type: categories?.fields?.type,
+      type: categories?.fields?.type.toLowerCase(),
       pathname: window?.location?.href,
     };
     addFav.addFavourite(data);
@@ -95,7 +95,7 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
                       id: cat?.fields?.title,
                       price: cat?.fields?.price,
                       shortDescription: cat?.fields?.shortDescription,
-                      type: cat?.fields?.type,
+                      type: cat?.fields?.type.toLowerCase(),
                       pathname: window?.location?.href,
                     };
                     addFav.addFavourite(data);
@@ -161,8 +161,8 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
                 </div>
                 <div className="flex items-center justify-end text-sm w-full pr-2 ">
                   <Link
-                    aria-label={`Discover the best of ${cat?.fields?.title}`}
-                    href={`/${cat?.fields?.type}/${cat?.fields?.slug}`}
+                    aria-label={`Discover the best of ${cat?.fields?.title || ""}`}
+                    href={`/${cat?.fields?.type?.toString().toLowerCase() || ""}/${cat?.fields?.slug || ""}`}
                   >
                     <span className="flex text-xs text-highlight mr-2">
                       View place
