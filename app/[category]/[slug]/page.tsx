@@ -366,7 +366,7 @@ export default async function Home(props: any) {
 
         <section className="overflow-hidden w-11/12 sm:w-full pt-20 mx-auto hiddenRow">
           <h3 className="text-black mb-10 font-semibold text-4xl">
-            Other {category}
+            More {category}
           </h3>
           <Suggestions recomended={recomended} />
         </section>
