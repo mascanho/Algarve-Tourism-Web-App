@@ -80,4 +80,13 @@ export const catArr = [
       "https://cf.bstatic.com/static/img/theme-index/bg_farmhouses/141149a16a0d641093ab4e9c11e5a365d71e6e8b.jpg",
     type: "category",
   },
+  {
+    id: 10,
+    name: "Industrial",
+    icon: "",
+    route: "/industrial",
+    image:
+      "https://api.visitalgarve.pt/uploads/1/1/Inspire-se/turismo_industrial/img_mina_salgema1.JPG?y_KVOTT1M04zDLckKkQpbWEueguiZZZw5xv1gzphqQPxs95dJu_UqK8GDnOv-ARwxlCb9Q8WcYR715YgVB1loA",
+    type: "category",
+  },
 ];

@@ -13,28 +13,28 @@ const directories = [
     description: "Find local government offices and services",
     icon: Building2,
     color: "bg-blue-500",
-    link: "/city-halls",
+    link: "/more/councils",
   },
   {
     title: "Hospitals",
     description: "Locate healthcare facilities and emergency services",
     icon: Stethoscope,
     color: "bg-red-500",
-    link: "/hospitals",
+    link: "/more/hospitals",
   },
   {
     title: "Universities",
     description: "Explore higher education institutions",
     icon: GraduationCap,
     color: "bg-yellow-500",
-    link: "/universities",
+    link: "/more/universities",
   },
   {
     title: "Tourism Boards",
     description: "Discover tourist information and local attractions",
     icon: Palmtree,
     color: "bg-green-500",
-    link: "/tourism",
+    link: "/more/tourism-boards",
   },
 ];
 

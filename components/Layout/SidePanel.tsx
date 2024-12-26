@@ -15,6 +15,7 @@ import { catArr } from "@/Data/Categories";
 import { cityArr } from "@/Data/Cities";
 import { Select } from "@mantine/core";
 import { CiRedo } from "react-icons/ci";
+import { FaIndustry } from "react-icons/fa6";
 
 export default function SidePanel() {
   const router = useRouter();
@@ -31,6 +32,7 @@ export default function SidePanel() {
     Hiking: <FaHiking />,
     Sports: <MdSportsHandball />,
     Stays: <GiWoodCabin />,
+    Industrial: <FaIndustry />,
   };
 
   const handleSelection = (city: string) => {
@@ -40,20 +42,20 @@ export default function SidePanel() {
   };
 
   return (
-    <div className="hiddenRow sticky top-24 mb-40 hidden h-[440px] rounded-xl border border-key bg-white p-1 shadow-md sm:block">
+    <div className="hiddenRow sticky top-20 mb-40 hidden h-[490px] rounded-xl border border-key bg-white p-1 shadow-md sm:block">
       <div className="sticky bottom-4 h-full w-32 cursor-pointer space-y-2 overflow-hidden transition-all delay-75 ease-in sm:mt-1">
         {catArr.map((item: any) => (
           <div
             onClick={() => router.push(`${item.route}`)}
             key={item.id}
             className={`
-              rounded-md 
-              p-2 
-              transition-all 
-              delay-100 
-              ease-in-out 
-              hover:bg-key 
-              hover:text-white  
+              rounded-md
+              p-2
+              transition-all
+              delay-100
+              ease-in-out
+              hover:bg-key
+              hover:text-white
               ${
                 pathname?.includes(item?.route)
                   ? "bg-key text-white border-gray-400 transition-all"

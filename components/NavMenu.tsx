@@ -19,7 +19,7 @@ import {
 } from "react-icons/md";
 import { PiMountainsFill } from "react-icons/pi";
 import { More } from "@/Data/More";
-import { FaLandmark } from "react-icons/fa6";
+import { FaLandmark, FaIndustry } from "react-icons/fa6";
 
 export function NavMenu({ title, trigger, url, search }: any | null) {
   const router = useRouter();
@@ -38,6 +38,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
     Sports: <MdSportsHandball />,
     Stays: <GiWoodCabin />,
     Councils: <FaLandmark />,
+    Industrial: <FaIndustry />,
   };
 
   if (search) {
