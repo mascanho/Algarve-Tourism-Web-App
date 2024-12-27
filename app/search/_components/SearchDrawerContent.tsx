@@ -13,12 +13,12 @@ import {
   MdSportsHandball,
 } from "react-icons/md";
 import { PiMountainsFill } from "react-icons/pi";
+import { FaIndustry } from "react-icons/fa6";
 
 const SearchDrawerContent = ({ close }: any) => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
-
   const [inputValue, setInputValue] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const router = useRouter();
@@ -41,6 +41,7 @@ const SearchDrawerContent = ({ close }: any) => {
     Hiking: <FaHiking />,
     Sports: <MdSportsHandball />,
     Stays: <GiWoodCabin />,
+    Industrial: <FaIndustry />,
   };
 
   const handleClick = (cat: any) => {
@@ -71,11 +72,10 @@ const SearchDrawerContent = ({ close }: any) => {
       className={`w-full sm:max-w-xl sm:mx-auto flex justify-start items-start`}
     >
       <section
-        className={`p-4 relative overflow-hidden flex flex-col flex-wrap   w-full slide-up space-y-4 rounded-md   ${isVisible ? "visible" : ""}`}
+        className={`p-4 relative overflow-hidden flex flex-col flex-wrap w-full slide-up space-y-4 rounded-md ${isVisible ? "visible" : ""}`}
       >
         <input
           className="bg-transparent w-full h-10 text-black ring-0 focus:ring-0 focus:outline-none focus:ring-black focus:ring-0ffset-0 pl-9 border rounded-md "
-          // data-autofocus
           id="search_modal"
           placeholder="Search for city or activities"
           type="text"
@@ -83,16 +83,16 @@ const SearchDrawerContent = ({ close }: any) => {
         />
         <IoIosSearch className="absolute top-3 ml-3" />
         {pathname !== "/search" && (
-          <div className="flex flex-wrap justify-start sm:justify-stretch">
+          <div className="flex flex-wrap justify-between sm:justify-start gap-2">
             {catArr.map((cat: any) => (
               <div
-                className={`py-2  ${
+                className={`py-2 ${
                   activeCategory === cat ? "bg-black text-white" : ""
-                } px-3 text-xs mr-2  my-1 text-right flex justify-end h-20 w-[81px] border rounded-md`}
+                } px-3 text-xs flex justify-center items-center h-20 w-[81px] border rounded-md`}
                 key={cat}
                 onClick={() => handleClick(cat)}
               >
-                <div className="flex flex-col items-end justify-end ">
+                <div className="flex flex-col items-center justify-center">
                   <span className="text-4xl"> {categoryIcons[cat.name]}</span>
                   <span className="ml-1">{cat?.name}</span>
                 </div>

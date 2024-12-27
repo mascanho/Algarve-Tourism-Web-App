@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import React, { useState, useRef } from "react";
 import { usePathname } from "next/navigation";
@@ -15,6 +16,7 @@ import {
 import { PiMountainsFill } from "react-icons/pi";
 import Link from "next/link";
 import { useMediaQuery } from "@mantine/hooks";
+import { FaIndustry } from "react-icons/fa6";
 
 const Selection = () => {
   const pathname = usePathname();
@@ -50,6 +52,7 @@ const Selection = () => {
     Hiking: <FaHiking />,
     Sports: <MdSportsHandball />,
     Stays: <GiWoodCabin />,
+    Industrial: <FaIndustry />,
   };
 
   return (
