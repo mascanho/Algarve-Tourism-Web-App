@@ -46,7 +46,7 @@ const Card = ({ slug, type, mapShare, categories }: any) => {
       id: categories?.fields?.title,
       price: categories?.fields?.price,
       shortDescription: categories?.fields?.shortDescription,
-      type: categories?.fields?.type.toLowerCase(),
+      type: categories?.fields?.type,
       pathname: window?.location?.href,
     };
     addFav.addFavourite(data);
