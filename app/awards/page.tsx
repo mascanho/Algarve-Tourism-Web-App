@@ -163,7 +163,7 @@ export default function Awards() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden max-w-7xl mx-auto">
       <main className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 sm:-mt-6">
         <Button onClick={() => router.back()} className="mb-4 hidden sm:inline">
           Go Back
