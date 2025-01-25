@@ -34,8 +34,7 @@ function page() {
             Algarve
           </h1>
           <p>
-            Nestled along the sun-drenched coastline of southern Portugal, the
-            Algarve stands as a testament to nature's artistry and the
+            The Algarve stands as a testament to nature's artistry and the
             harmonious blend of history and modernity. This captivating region
             is renowned for its pristine beaches, each one a unique masterpiece
             of nature's design. From the expansive sands of Praia da Rocha to

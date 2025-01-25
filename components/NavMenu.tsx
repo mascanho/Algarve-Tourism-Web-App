@@ -137,14 +137,14 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
           <Menu.Dropdown className="flex w-fit border-key/50 border-3 mt-1">
             <div className="grid grid-cols-3 ">
               <div className="">
-                {cityArr.slice(0, 5).map((item) => (
+                {cityArr.slice(0, 6).map((item) => (
                   <Link href={`/algarve/${item.route}`} key={item.id}>
                     <Menu.Item>{item.name}</Menu.Item>
                   </Link>
                 ))}
               </div>
               <div className="flex flex-col ">
-                {cityArr.slice(5, 10).map((item) => (
+                {cityArr.slice(6, 11).map((item) => (
                   <Link href={`/algarve/${item.route}`} key={item.id}>
                     <Menu.Item
                       key={item.id}
@@ -156,7 +156,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
                 ))}
               </div>
               <div className="flex flex-col ">
-                {cityArr.slice(10, cityArr.length).map((item) => (
+                {cityArr.slice(11, cityArr.length).map((item) => (
                   <Link href={`/algarve/${item.route}`} key={item.id}>
                     <Menu.Item
                       key={item.id}

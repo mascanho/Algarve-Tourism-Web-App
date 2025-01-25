@@ -9,7 +9,24 @@ export const cityArr = [
     type: "city",
   },
   {
-    id: 12,
+    id: 2,
+    name: "Alcoutim",
+    icon: "",
+    route: "alcoutim",
+    image: "https://www.revigorate.com/images/alcoutim-algarve-portugal.jpg",
+    type: "city",
+  },
+  {
+    id: 3,
+    name: "Aljezur",
+    icon: "",
+    route: "aljezur",
+    image:
+      "https://algarvediscovery.com/wp-content/uploads/2020/03/Aljezur.jpg",
+    type: "city",
+  },
+  {
+    id: 4,
     name: "Alvor",
     icon: "",
     route: "alvor",
@@ -18,7 +35,7 @@ export const cityArr = [
     type: "city",
   },
   {
-    id: 2,
+    id: 5,
     name: "Carvoeiro",
     icon: "",
     route: "carvoeiro",
@@ -27,7 +44,16 @@ export const cityArr = [
     type: "city",
   },
   {
-    id: 3,
+    id: 6,
+    name: "Castro Marim",
+    icon: "",
+    route: "castro-marim",
+    image:
+      "https://www.impulsiveaddiction.com/wp-content/uploads/2020/07/DJI_0749-1024x576.jpg",
+    type: "city",
+  },
+  {
+    id: 7,
     name: "Faro",
     icon: "",
     route: "faro",
@@ -36,7 +62,7 @@ export const cityArr = [
     type: "city",
   },
   {
-    id: 4,
+    id: 8,
     name: "Lagos",
     icon: "",
     route: "lagos",
@@ -45,7 +71,7 @@ export const cityArr = [
     type: "city",
   },
   {
-    id: 5,
+    id: 9,
     name: "Loulé",
     icon: "",
     route: "loule",
@@ -54,7 +80,7 @@ export const cityArr = [
     type: "city",
   },
   {
-    id: 6,
+    id: 10,
     name: "Olhão",
     icon: "",
     route: "olhao",
@@ -63,7 +89,7 @@ export const cityArr = [
     type: "city",
   },
   {
-    id: 7,
+    id: 11,
     name: "Portimão",
     icon: "",
     image:
@@ -72,7 +98,7 @@ export const cityArr = [
     type: "city",
   },
   {
-    id: 8,
+    id: 12,
     name: "Quarteira",
     icon: "",
     route: "quarteira",
@@ -81,7 +107,7 @@ export const cityArr = [
     type: "city",
   },
   {
-    id: 9,
+    id: 13,
     name: "Sagres",
     icon: "",
     route: "sagres",
@@ -89,7 +115,7 @@ export const cityArr = [
     type: "city",
   },
   {
-    id: 10,
+    id: 14,
     name: "Silves",
     icon: "",
     image:
@@ -98,7 +124,7 @@ export const cityArr = [
     type: "city",
   },
   {
-    id: 11,
+    id: 15,
     name: "Tavira",
     icon: "",
     route: "tavira",
@@ -106,7 +132,7 @@ export const cityArr = [
     type: "city",
   },
   {
-    id: 13,
+    id: 16,
     name: "V.R.S.A",
     icon: "",
     route: "vila-real-de-santo-antonio",

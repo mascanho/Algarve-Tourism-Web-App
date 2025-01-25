@@ -1,11 +1,12 @@
 // @ts-nocheck
+
 import { MapPin, Clock, Phone, Mail, Globe, ChevronRight } from "lucide-react";
 import { CityCouncils } from "@/Data/CityCouncils";
 
 export default function CityHallsDirectory() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <header className="bg-amber-700 text-white py-6">
+    <div className="min-h-screen bg-gray-100 max-w-7xl mx-auto">
+      <header className="bg-amber-700 text-white py-6 rounded-b-md">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold">City Councils Directory</h1>
         </div>

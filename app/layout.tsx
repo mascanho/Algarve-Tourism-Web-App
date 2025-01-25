@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       "Search, save and share the best hidden gems the Algarve has to offer. All in one place. Hassle free.",
     images: [
       {
-        url: "https://www.algarvewonders.com/images/og-image.png",
+        url: "https://www.algarvewonders.com/images/icon.png",
         width: 1200,
         height: 630,
         alt: "Algarve Wonders",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "The Best Hidden Gems in The Algarve",
     description:
       "Search, save and share the best hidden gems the Algarve has to offer. All in one place. Hassle free.",
-    images: ["https://www.algarvewonders.com/images/og-image.png"],
+    images: ["https://www.algarvewonders.com/images/icon.png"],
   },
   robots: {
     index: true,
