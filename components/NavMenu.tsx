@@ -37,7 +37,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
     Hiking: <FaHiking />,
     Sports: <MdSportsHandball />,
     Stays: <GiWoodCabin />,
-    Councils: <FaLandmark />,
+    "City councils": <FaLandmark />,
     Industrial: <FaIndustry />,
   };
 
