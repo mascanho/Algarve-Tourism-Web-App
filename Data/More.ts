@@ -9,7 +9,7 @@ export const More = [
   // },
   {
     id: 2,
-    name: "Councils",
+    name: "City councils",
     icon: "",
     route: "/more/councils",
     image: "",
