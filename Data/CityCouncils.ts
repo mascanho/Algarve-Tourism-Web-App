@@ -40,7 +40,7 @@ export const CityCouncils: CityCouncils[] = [
     openingHours: "Mon-Fri: 9:00 - 17:00",
     website: "https://www.cm-alcoutim.pt",
     imageUrl:
-      "https://www.sulinformacao.pt/wp-content/uploads/2016/10/camara-alcoutim-1200x675.jpg",
+      "https://maisalgarve.pt/wp-content/uploads/2018/12/images_Dezembro2018_CamaraMunAcoutim.JPG",
   },
   {
     id: 3,
@@ -138,7 +138,7 @@ export const CityCouncils: CityCouncils[] = [
     openingHours: "Mon-Fri: 9:00 - 17:00",
     website: "https://www.cm-monchique.pt",
     imageUrl:
-      "https://www.sulinformacao.pt/wp-content/uploads/2014/06/C%C3%A2mara-de-monchique.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/cf/Pa%C3%A7os_do_Concelho_-_Monchique_-_01.02.2020.jpg",
   },
   {
     id: 10,
@@ -155,7 +155,7 @@ export const CityCouncils: CityCouncils[] = [
     openingHours: "Mon-Fri: 9:00 - 17:00",
     website: "https://www.cm-olhao.pt",
     imageUrl:
-      "https://www.sulinformacao.pt/wp-content/uploads/2017/05/c%C3%A2mara-municipal-olh%C3%A3o-anamadeira-1024x683.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c6/2017-02-13_C%C3%A2mara_Municipal%2C_Olh%C3%A3o.JPG",
   },
   {
     id: 11,
@@ -215,7 +215,7 @@ export const CityCouncils: CityCouncils[] = [
     openingHours: "Mon-Fri: 9:00 - 17:00",
     website: "https://www.cm-tavira.pt",
     imageUrl:
-      "https://www.sulinformacao.pt/wp-content/uploads/2018/03/TAVIRA_3-1200x675.jpg",
+      "https://images.squarespace-cdn.com/content/v1/66a8bd053e8d5f4e97f63508/1722873018459-DOXKGYQLJU709U62J98K/cmtavira2023_orig.jpg",
   },
   {
     id: 15,
