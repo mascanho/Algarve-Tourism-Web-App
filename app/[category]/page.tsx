@@ -8,7 +8,8 @@ const CategoryCard = dynamic(() => import("@/components/CategoryCard"), {});
 
 export const metadata: Metadata = {
   title: "The Best Places",
-  description: "...",
+  description:
+    "Discover the best places to visit in the Algarve, the most beautiful gems and hidden treasures.",
   icons: {
     icon: "/images/icon.png",
     href: "/images/icon.png",
