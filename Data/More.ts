@@ -15,6 +15,16 @@ export const More = [
     image: "",
     type: "more",
   },
+
+  {
+    id: 3,
+    name: "The Dark Side",
+    icon: "",
+    route: "/darkside",
+    image: "",
+    type: "more",
+  },
+
   // {
   //   id: 3,
   //   name: "Tourism Boards",

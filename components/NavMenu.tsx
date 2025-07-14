@@ -19,7 +19,7 @@ import {
 } from "react-icons/md";
 import { PiMountainsFill } from "react-icons/pi";
 import { More } from "@/Data/More";
-import { FaLandmark, FaIndustry } from "react-icons/fa6";
+import { FaLandmark, FaIndustry, FaSkull } from "react-icons/fa6";
 
 export function NavMenu({ title, trigger, url, search }: any | null) {
   const router = useRouter();
@@ -39,6 +39,7 @@ export function NavMenu({ title, trigger, url, search }: any | null) {
     Stays: <GiWoodCabin />,
     "City councils": <FaLandmark />,
     Industrial: <FaIndustry />,
+    "The Dark Side": <FaSkull />,
   };
 
   if (search) {
