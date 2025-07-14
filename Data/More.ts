@@ -20,7 +20,7 @@ export const More = [
     id: 3,
     name: "The Dark Side",
     icon: "",
-    route: "/darkside",
+    route: "/about/darkside",
     image: "",
     type: "more",
   },
