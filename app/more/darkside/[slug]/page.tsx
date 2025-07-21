@@ -103,6 +103,27 @@ const cityData = {
         title: "NYC Subway System",
         description: "Underground transportation network in motion",
       },
+      {
+        id: 10,
+        type: "video",
+        url: "/placeholder.svg?height=400&width=600",
+        title: "NYC Subway System",
+        description: "Underground transportation network in motion",
+      },
+      {
+        id: 11,
+        type: "video",
+        url: "/placeholder.svg?height=400&width=600",
+        title: "NYC Subway System",
+        description: "Underground transportation network in motion",
+      },
+      {
+        id: 12,
+        type: "video",
+        url: "/placeholder.svg?height=400&width=600",
+        title: "NYC Subway System",
+        description: "Underground transportation network in motion",
+      },
     ],
     news: [
       {
@@ -522,7 +543,7 @@ export default function CityShowcase({
         </div>
       </section>
       {/* User Submission CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-emerald-50 to-teal-50">
+      <section className="py-16 md:py-24 bg-inherit">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-xl border border-white/20">
