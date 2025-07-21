@@ -6,6 +6,7 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Building2, Stethoscope, GraduationCap, Palmtree } from "lucide-react";
+import { BiSolidSkull } from "react-icons/bi";
 
 const directories = [
   {
@@ -35,6 +36,14 @@ const directories = [
     icon: Palmtree,
     color: "bg-green-500",
     link: "/more/tourism-boards",
+  },
+  {
+    title: "Dark Side",
+    description:
+      "Tourism often comes with a dark side, we are here to help navigate it",
+    icon: BiSolidSkull,
+    color: "bg-black",
+    link: "/more/darkside",
   },
 ];
 

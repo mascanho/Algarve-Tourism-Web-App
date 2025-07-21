@@ -13,7 +13,7 @@ import { useState } from "react";
 const TourismImpactedCities = [
   {
     id: 1,
-    link: "/more/darkside/albufeira",
+    link: "/more/albufeira",
     name: "Venice, Italy",
     imageUrl: "/placeholder.svg?height=300&width=400",
     population: "50,000 residents",
