@@ -97,21 +97,21 @@ export default async function Home(props: any) {
     }
   }
 
-  const data = await getAllCategories();
-  const reviewsArr = await getReviews();
+  // const data = await getAllCategories();
+  // const reviewsArr = await getReviews();
 
-  const filteredData: any = data.filter((obj: any) => obj.fields.slug === slug);
-  const recomended: any = data.filter((obj: any) => obj.fields.slug !== slug);
+  // const filteredData: any = data.filter((obj: any) => obj.fields.slug === slug);
+  // const recomended: any = data.filter((obj: any) => obj.fields.slug !== slug);
 
   return (
     <>
       <section className="overflow-hidden pt-16 sm:pt-0 sm:mt-0 bg-transparent rounded-lg text-left pb-16 sm:px-4 md:w-full md:px-6 lg:px-6 xl:pr-0 space-y-4  md:max-w-4xl lg:max-w-7xl lg:pl-6  mb-2 text-black">
         <section className="w-full">
-          <LeadGrid filteredData={filteredData} />
+          {/*<LeadGrid filteredData={filteredData} />*/}
         </section>
         <div className="space-y-1 w-11/12 sm:w-full mx-auto">
           <div className="hidden sm:flex items-centert space-x-2">
-            {filteredData[0]?.fields?.hiddenGem ? (
+            {/*{filteredData[0]?.fields?.hiddenGem ? (
               <div className="flex items-center space-x-1 w-fit px-2 rounded-md text-green-500 bg-gray-200   text-xs py-1">
                 <div className="flex items-center space-x-2">
                   <FaRegGem />
@@ -120,41 +120,41 @@ export default async function Home(props: any) {
               </div>
             ) : (
               ""
-            )}
+            )}*/}
           </div>
           <div className="flex justify-between  sm:space-y-2 w-full sm:pt-4  items-end ">
             <div className="sm:flex md:block lg:flex items-center sm:mt-0">
               <div>
                 <h1 className="text-2xl sm:text-4xl w-auto font-semibold min-w-fit sm:mr-4 text-black">
-                  {filteredData[0]?.fields?.title}
+                  {/*{filteredData[0]?.fields?.title}*/}
                 </h1>
               </div>
               <div className="hidden sm:flex md:my-2 ">
-                <StarRating rating={filteredData[0]?.fields?.rating} />
+                {/*<StarRating rating={filteredData[0]?.fields?.rating} />*/}
               </div>
             </div>
 
             <div className="flex  justify-between items-center ">
               <div className="sm:pr-4 space-x-2 items-center hidden sm:flex  ">
-                <Buttons filteredData={filteredData} data={data} />
+                {/*<Buttons filteredData={filteredData} data={data} />*/}
               </div>
             </div>
           </div>
           <span className="flex items-center text-gray-400 sm:pt-1 text-sm text-left">
             <FaMapMarkerAlt />
-            <span className="ml-1">{filteredData[0]?.fields?.city}</span>
+            {/*<span className="ml-1">{filteredData[0]?.fields?.city}</span>*/}
           </span>
           <div className="flex">
             <div className="flex-1 sm:pt-2">
               <div className="space-x-2 mt-4 sm:mt-0 hidden sm:inline">
-                {filteredData[0]?.fields?.tags.map((item: any) => (
+                {/*{filteredData[0]?.fields?.tags.map((item: any) => (
                   <span
                     key={item.id}
                     className="bg-gray-200 rounded-md px-2 text-xs sm:text-xs py-1 items-center m-auto "
                   >
                     {item}
                   </span>
-                ))}
+                ))}*/}
               </div>
             </div>
           </div>
@@ -165,7 +165,7 @@ export default async function Home(props: any) {
         <main className="w-full m-0 sm:hidden">
           <section className="border rounded-lg items-center text-sm sm:hidden  mx-auto px-2 py-2 flex w-11/12  justify-around">
             <div className="w-14 flex flex-col items-center text-center">
-              {filteredData[0]?.fields?.type[0] === "restaurants" && (
+              {/*{filteredData[0]?.fields?.type[0] === "restaurants" && (
                 <>
                   <IoRestaurant />
                   <span className="text-xs">Restaurant</span>
@@ -235,11 +235,11 @@ export default async function Home(props: any) {
                     Verified location
                   </span>
                 </div>
-              )}
+              )}*/}
             </div>
             <div className="flex flex-col w-14 text-xs items-center justify-center  text-center">
               <RiMoneyEuroCircleLine className="text-lg" />
-              <span className="text-xs">{filteredData[0]?.fields?.price}</span>
+              {/*<span className="text-xs">{filteredData[0]?.fields?.price}</span>*/}
             </div>
           </section>
 
@@ -247,9 +247,9 @@ export default async function Home(props: any) {
             <div className=" flex  flex-wrap justify-between items-center line-clamp-4">
               <div className="inline w-full">
                 <span className="text-xs leading-snug  ">
-                  {filteredData[0]?.fields?.shortDescription}
+                  {/*{filteredData[0]?.fields?.shortDescription}*/}
                 </span>
-                <Categorydrawer {...filteredData} />
+                {/*<Categorydrawer {...filteredData} />*/}
               </div>
             </div>
           </section>
@@ -258,16 +258,16 @@ export default async function Home(props: any) {
             <div>
               <h5 className="text-sm mb-2">Rating</h5>
               <div className="flex w-full">
-                <MobileRating value={filteredData[0]?.fields?.rating} />
+                {/*<MobileRating value={filteredData[0]?.fields?.rating} />*/}
               </div>
             </div>
           </section>
 
           <section className="mx-auto w-11/12 border-b my-2 pb-3">
-            <MobileButtons {...filteredData} />
+            {/*<MobileButtons {...filteredData} />*/}
           </section>
 
-          {filteredData[0]?.fields?.type[0] !== "events" &&
+          {/*{filteredData[0]?.fields?.type[0] !== "events" &&
           filteredData[0]?.fields?.type[0] !== "beaches" &&
           filteredData[0]?.fields?.type[0] !== "culture" &&
           filteredData[0]?.fields?.type[0] !== "business" ? (
@@ -291,14 +291,14 @@ export default async function Home(props: any) {
                       title="Book Now"
                       url={filteredData[0]?.fields?.booking}
                     />
-                  )}
-                  <span className="text-xs text-gray-500">Don't miss it</span>
+                  )}*/}
+          {/*<span className="text-xs text-gray-500">Don't miss it</span>
                 </div>
               </div>
             </section>
-          ) : null}
+          ) : null}*/}
 
-          {filteredData[0]?.fields?.type[0] === "restaurants" ??
+          {/*{filteredData[0]?.fields?.type[0] === "restaurants" ??
             !filteredData[0]?.fields.booking ??
             !filteredData[0]?.fields.bookingUrl ?? (
               <section className="w-11/12 border-b pb-5 mx-auto">
@@ -313,17 +313,17 @@ export default async function Home(props: any) {
                   </div>
                 </div>
               </section>
-            )}
+            )}*/}
 
           <section className="border-b mt-4 pb-4 w-11/12 mx-auto">
             <div>
               <h5 className="text-sm mb-2">Tags</h5>
               <div className="flex w-full">
-                {filteredData[0]?.fields?.tags.map((item: any) => (
+                {/*{filteredData[0]?.fields?.tags.map((item: any) => (
                   <span className="bg-gray-200 rounded-md px-2 py-1 mr-3 text-xs">
                     {item}
                   </span>
-                ))}
+                ))}*/}
               </div>
             </div>
           </section>
@@ -331,7 +331,7 @@ export default async function Home(props: any) {
             <div className="mx-auto mt-1">
               <h5 className="text-sm mb-4 mt-3">Where to find it</h5>
 
-              {filteredData[0]?.fields?.embededMap === undefined ? (
+              {/*{filteredData[0]?.fields?.embededMap === undefined ? (
                 <p>No map to display</p>
               ) : (
                 <iframe
@@ -343,32 +343,32 @@ export default async function Home(props: any) {
                   // referrerpolicy="no-referrer-when-downgrade"
                   className="w-full rounded-lg"
                 ></iframe>
-              )}
+              )}*/}
             </div>
           </section>
 
           <section className="border-b pb-6 w-11/12 mx-auto">
             <div className="mx-auto mt-1">
               <h5 className="text-sm  mt-3">Reviews</h5>
-              <Reviews reviews={reviewsArr} slug={slug} />
+              {/*<Reviews reviews={reviewsArr} slug={slug} />*/}
             </div>
           </section>
         </main>
 
         {/* DESKTOP TABS START HERE */}
         <div className="pt-5 sm:pt-10 w-11/12 sm:w-full mx-auto hidden sm:flex  print:bg-white  ">
-          <TabsRow
+          {/*<TabsRow
             filteredData={filteredData}
             slug={slug}
             reviews={reviewsArr}
-          />
+          />*/}
         </div>
 
         <section className="overflow-hidden w-11/12 sm:w-full pt-20 mx-auto hiddenRow">
           <h3 className="text-black mb-10 font-semibold text-4xl">
             More {category}
           </h3>
-          <Suggestions recomended={recomended} />
+          {/*<Suggestions recomended={recomended} />*/}
         </section>
       </section>
       <section className="mx-auto w-11/12 sm:w-full  py-10 overflow-hidden print:hidden">
@@ -378,9 +378,9 @@ export default async function Home(props: any) {
             back to {category}
           </button>
         </Link>
-        <MobileBottomCategoryBanner {...filteredData} />
+        {/*<MobileBottomCategoryBanner {...filteredData} />*/}
 
-        <JsonLd
+        {/*<JsonLd
           data={{
             "@context": "https://schema.org",
             "@type": "WebSite",
@@ -399,31 +399,31 @@ export default async function Home(props: any) {
               },
             },
           }}
-        />
+        />*/}
       </section>
     </>
   );
 }
 
-export async function generateStaticParams() {
-  const client: any = createClient({
-    space: process?.env?.CONTENTFUL_SPACE_ID!,
-    accessToken: process?.env?.CONTENTFUL_ACCESS_TOKEN!,
-  });
-  const res = await client?.getEntries({
-    content_type: [
-      "beaches",
-      "events",
-      "restaurants",
-      "stays",
-      "business",
-      "adventures",
-      "hiking",
-      "culture",
-    ],
-  });
-  return res?.items?.map((item: any) => ({
-    category: item?.fields?.slug,
-    slug: item?.fields?.slug,
-  }));
-}
+// export async function generateStaticParams() {
+//   const client: any = createClient({
+//     space: process?.env?.CONTENTFUL_SPACE_ID!,
+//     accessToken: process?.env?.CONTENTFUL_ACCESS_TOKEN!,
+//   });
+//   const res = await client?.getEntries({
+//     content_type: [
+//       "beaches",
+//       "events",
+//       "restaurants",
+//       "stays",
+//       "business",
+//       "adventures",
+//       "hiking",
+//       "culture",
+//     ],
+//   });
+//   return res?.items?.map((item: any) => ({
+//     category: item?.fields?.slug,
+//     slug: item?.fields?.slug,
+//   }));
+// }
